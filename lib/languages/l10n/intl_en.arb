@@ -1,0 +1,15 @@
+{
+    "changeLanguage" : "Change Language",
+    "getStarted" : "Get Started",
+    "getBack" : "Get Back",
+    "showLoading" : "Show Loading",
+    "ok" : "Ok",
+    "cancel" : "Cancel",
+    "info" : "Info",
+    "error" : "Error",
+    "confirm" : "Confirm",
+    "allow" : "Allow",
+    "toProceedeYouNeedToEnableThePermissionsAbove" : "To proceede, you need to enable the permissions above",
+    "youNeedPermissionToDisplayNotifications" : "You need permission to display notifications",
+    "showNotification" : "Show notification"
+}

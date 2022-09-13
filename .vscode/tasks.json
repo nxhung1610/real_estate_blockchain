@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"command": "fvm",
+			"args": [
+				"flutter",
+				"pub",
+				"run",
+				"build_runner",
+				"watch"
+			],
+			"problemMatcher": [
+				"$dart-build_runner"
+			],
+			"group": "build",
+			"label": "🏋🏻‍♂️ fvm: flutter pub run build_runner watch"
+		},
+		{
+			"command": "fvm",
+			"args": [
+				"flutter",
+				"pub",
+				"get"
+			],
+			"problemMatcher": [],
+			"label": "⛹🏻‍♂️ fvm : flutter pub get",
+			"detail": ""
+		}
+	]
+}

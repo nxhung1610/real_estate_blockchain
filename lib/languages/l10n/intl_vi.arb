@@ -1,0 +1,15 @@
+{
+    "changeLanguage" : "Thay đổi ngôn ngữ",
+    "getStarted" : "Bắt đầu",
+    "getBack"  : "Quay về",
+    "showLoading" : "Hiển thị vòng đợi",
+    "ok" : "Đồng ý",
+    "cancel" : "Huỷ",
+    "info" : "Thông báo",
+    "error" : "Lỗi",
+    "confirm" : "Xác nhận",
+    "allow" : "Cho phép",
+    "toProceedeYouNeedToEnableThePermissionsAbove" : "Để tiếp tục, bạn cần bật các quyền ở trên",
+    "youNeedPermissionToDisplayNotifications" : "Bạn cần cấp quyền để hiển thị thông báo",
+    "showNotification" : "Hiển thị thông báo"
+}
