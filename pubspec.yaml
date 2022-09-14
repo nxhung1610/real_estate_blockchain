@@ -34,6 +34,7 @@ dependencies:
   injectable:  
   get_it:  
   # Utils
+  flutter_native_splash: ^2.2.9
   flutter_dotenv: ^5.0.2
   freezed_annotation: ^2.1.0
   flutter_bloc: ^8.1.1
@@ -128,3 +129,6 @@ flutter_intl:
   enabled: true
   arb_dir: lib/languages/l10n
   output_dir: lib/languages/generated
+
+flutter_native_splash:
+  color : "#111827"
