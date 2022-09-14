@@ -5,7 +5,7 @@ import 'package:flutter_domain_driven_design/config/app_notification.dart';
 import 'package:flutter_domain_driven_design/injection_dependencies/injection_dependencies.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-import 'modules/app/presentation/app_widget.dart';
+import 'modules/app/presentation/app_page.dart';
 
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +16,6 @@ Future<void> main() async {
     AppNotification.instance.initialize(),
   ]);
 
-  runApp(const AppWidget());
+  runApp(const AppPage());
   FlutterNativeSplash.remove();
 }

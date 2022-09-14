@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_domain_driven_design/config/app_config.dart';
+import 'package:flutter_domain_driven_design/config/app_size.dart';
 import 'package:flutter_domain_driven_design/config/app_theme.dart';
 import 'package:flutter_domain_driven_design/injection_dependencies/injection_dependencies.dart';
 import 'package:flutter_domain_driven_design/languages/generated/l10n.dart';
 import 'package:flutter_domain_driven_design/modules/auth/application/auth_bloc.dart';
 import 'package:flutter_domain_driven_design/modules/core/core_module.dart';
 import 'package:flutter_domain_driven_design/modules/home/home_module.dart';
+import 'package:flutter_domain_driven_design/modules/splash/presentation/splash_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -16,8 +18,8 @@ import 'package:loader_overlay/loader_overlay.dart';
 import '../router/app_route.dart';
 import '../application/app_bloc.dart';
 
-class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+class AppPage extends StatelessWidget {
+  const AppPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +62,7 @@ class _AppCommonState extends State<_AppCommon> {
   GoRouter setUpRouter() {
     return GoRouter(
       routes: $appRoutes,
+      initialLocation: AppRoute().location,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },
@@ -80,28 +83,30 @@ class _AppCommonState extends State<_AppCommon> {
     final appRoute = setUpRouter();
 
     return GlobalLoaderOverlay(
-      child: MaterialApp.router(
-        theme: AppTheme.light,
-        debugShowCheckedModeBanner: false,
-        darkTheme: AppTheme.dark,
-        themeMode: _appBloc.state.mode,
-        locale: _appBloc.state.locale,
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
+      child: ScreenUtilInit(
+        designSize: AppSize.designSize,
         builder: (context, child) {
-          return ScreenUtilInit(
-            designSize: const Size(360, 690),
-            builder: (context, child2) => child2 ?? child ?? Container(),
+          return MaterialApp.router(
+            theme: AppTheme.light,
+            debugShowCheckedModeBanner: false,
+            darkTheme: AppTheme.dark,
+            themeMode: _appBloc.state.mode,
+            locale: _appBloc.state.locale,
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            builder: (context, child) {
+              return SplashPage(child: child ?? Container());
+            },
+            supportedLocales: S.delegate.supportedLocales,
+            routeInformationParser: appRoute.routeInformationParser,
+            routerDelegate: appRoute.routerDelegate,
+            routeInformationProvider: appRoute.routeInformationProvider,
           );
         },
-        supportedLocales: S.delegate.supportedLocales,
-        routeInformationParser: appRoute.routeInformationParser,
-        routerDelegate: appRoute.routerDelegate,
-        routeInformationProvider: appRoute.routeInformationProvider,
       ),
     );
   }

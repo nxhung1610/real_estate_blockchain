@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Realix`
+  String get appName {
+    return Intl.message(
+      'Realix',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real Estate Application`
+  String get appDescription {
+    return Intl.message(
+      'Real Estate Application',
+      name: 'appDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Change Language`
   String get changeLanguage {
     return Intl.message(

@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
+        "appDescription":
+            MessageLookupByLibrary.simpleMessage("Real Estate Application"),
+        "appName": MessageLookupByLibrary.simpleMessage("Realix"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),

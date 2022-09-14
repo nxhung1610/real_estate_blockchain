@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_domain_driven_design/assets/fonts.gen.dart';
 import 'package:flutter_domain_driven_design/config/app_color.dart';
+import 'package:flutter_domain_driven_design/config/app_style.dart';
 
 class AppTheme {
   const AppTheme._();
   static ThemeData light = ThemeData(
     brightness: Brightness.light,
-    fontFamily: 'Manrope',
+    fontFamily: FontFamily.manrope,
     splashFactory: InkRipple.splashFactory,
     backgroundColor: AppColor.kBackgroundLight,
     scaffoldBackgroundColor: AppColor.kBackgroundLight,
@@ -45,6 +47,25 @@ class AppTheme {
         foregroundColor: AppColor.kBackgroundButton,
       ),
     ),
+    textTheme: textTheme,
   );
   static ThemeData dark = ThemeData.dark().copyWith();
+
+  static TextTheme textTheme = TextTheme(
+    displayLarge: AppStyle.displayLarge,
+    displayMedium: AppStyle.displayMedium,
+    displaySmall: AppStyle.displaySmall,
+    headlineLarge: AppStyle.headlineLarge,
+    headlineMedium: AppStyle.headlineMedium,
+    headlineSmall: AppStyle.headlineSmall,
+    titleLarge: AppStyle.titleLarge,
+    titleMedium: AppStyle.titleMedium,
+    titleSmall: AppStyle.titleSmall,
+    labelLarge: AppStyle.labelLarge,
+    labelMedium: AppStyle.labelMedium,
+    labelSmall: AppStyle.labelSmall,
+    bodyLarge: AppStyle.bodyLarge,
+    bodyMedium: AppStyle.bodyMedium,
+    bodySmall: AppStyle.bodySmall,
+  );
 }

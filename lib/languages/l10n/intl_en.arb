@@ -1,4 +1,6 @@
 {
+    "appName" : "Realix",
+    "appDescription" : "Real Estate Application",
     "changeLanguage" : "Change Language",
     "getStarted" : "Get Started",
     "getBack" : "Get Back",
