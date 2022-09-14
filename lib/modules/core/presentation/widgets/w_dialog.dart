@@ -32,7 +32,6 @@ class WDialog extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 0,
-      backgroundColor: AppColor.kColor5,
       child: Container(
         padding: Constants.kDialogPadding,
         child: Column(
