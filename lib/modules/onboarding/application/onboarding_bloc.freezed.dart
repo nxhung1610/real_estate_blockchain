@@ -34,17 +34,17 @@ mixin _$OnboardingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(OnboardingEventStarted value) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(OnboardingEventStarted value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(OnboardingEventStarted value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,26 +68,29 @@ class _$OnboardingEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$OnboardingEventStartedCopyWith<$Res> {
+  factory _$$OnboardingEventStartedCopyWith(_$OnboardingEventStarted value,
+          $Res Function(_$OnboardingEventStarted) then) =
+      __$$OnboardingEventStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$OnboardingEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+class __$$OnboardingEventStartedCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res>
+    implements _$$OnboardingEventStartedCopyWith<$Res> {
+  __$$OnboardingEventStartedCopyWithImpl(_$OnboardingEventStarted _value,
+      $Res Function(_$OnboardingEventStarted) _then)
+      : super(_value, (v) => _then(v as _$OnboardingEventStarted));
 
   @override
-  _$_Started get _value => super._value as _$_Started;
+  _$OnboardingEventStarted get _value =>
+      super._value as _$OnboardingEventStarted;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$OnboardingEventStarted implements OnboardingEventStarted {
+  const _$OnboardingEventStarted();
 
   @override
   String toString() {
@@ -97,7 +100,7 @@ class _$_Started implements _Started {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$OnboardingEventStarted);
   }
 
   @override
@@ -134,7 +137,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(OnboardingEventStarted value) started,
   }) {
     return started(this);
   }
@@ -142,7 +145,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(OnboardingEventStarted value)? started,
   }) {
     return started?.call(this);
   }
@@ -150,7 +153,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(OnboardingEventStarted value)? started,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,8 +163,8 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements OnboardingEvent {
-  const factory _Started() = _$_Started;
+abstract class OnboardingEventStarted implements OnboardingEvent {
+  const factory OnboardingEventStarted() = _$OnboardingEventStarted;
 }
 
 /// @nodoc
@@ -184,17 +187,17 @@ mixin _$OnboardingState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(OnboardingStateInitial value) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(OnboardingStateInitial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(OnboardingStateInitial value)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -218,26 +221,29 @@ class _$OnboardingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$OnboardingStateInitialCopyWith<$Res> {
+  factory _$$OnboardingStateInitialCopyWith(_$OnboardingStateInitial value,
+          $Res Function(_$OnboardingStateInitial) then) =
+      __$$OnboardingStateInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$OnboardingStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
+class __$$OnboardingStateInitialCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res>
+    implements _$$OnboardingStateInitialCopyWith<$Res> {
+  __$$OnboardingStateInitialCopyWithImpl(_$OnboardingStateInitial _value,
+      $Res Function(_$OnboardingStateInitial) _then)
+      : super(_value, (v) => _then(v as _$OnboardingStateInitial));
 
   @override
-  _$_Initial get _value => super._value as _$_Initial;
+  _$OnboardingStateInitial get _value =>
+      super._value as _$OnboardingStateInitial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$OnboardingStateInitial implements OnboardingStateInitial {
+  const _$OnboardingStateInitial();
 
   @override
   String toString() {
@@ -247,7 +253,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$OnboardingStateInitial);
   }
 
   @override
@@ -284,7 +290,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(OnboardingStateInitial value) initial,
   }) {
     return initial(this);
   }
@@ -292,7 +298,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(OnboardingStateInitial value)? initial,
   }) {
     return initial?.call(this);
   }
@@ -300,7 +306,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(OnboardingStateInitial value)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -310,6 +316,6 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements OnboardingState {
-  const factory _Initial() = _$_Initial;
+abstract class OnboardingStateInitial implements OnboardingState {
+  const factory OnboardingStateInitial() = _$OnboardingStateInitial;
 }

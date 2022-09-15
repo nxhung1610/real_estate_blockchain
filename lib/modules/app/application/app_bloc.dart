@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/modules/app/domain/i_app_config_repository.dart';
 
 part 'app_bloc.freezed.dart';
 part 'app_event.dart';
@@ -12,12 +13,24 @@ part 'app_state.dart';
 
 @injectable
 class AppBloc extends Bloc<AppEvent, AppState> {
-  AppBloc() : super(AppState.initial()) {
+  final IAppConfigRepository _appConfigRepository;
+  AppBloc(this._appConfigRepository) : super(AppState.initial()) {
+    on<AppEventStarted>((event, emit) async {
+      final isFirstLaunch = await _appConfigRepository.isFirstLaunch();
+      isFirstLaunch.fold(
+        (l) => emit(state.copyWith(isFisrtLaunch: true)),
+        (r) => emit(state.copyWith(isFisrtLaunch: r)),
+      );
+    });
     on<AppEventChangedLanguage>(
       (event, emit) => emit(state.copyWith(locale: event.locale)),
     );
     on<AppEventChangedThemeMode>(
       (event, emit) => emit(state.copyWith(mode: event.mode)),
     );
+  }
+
+  void started() {
+    add(const AppEvent.started());
   }
 }

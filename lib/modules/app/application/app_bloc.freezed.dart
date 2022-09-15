@@ -18,18 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
     required TResult orElse(),
@@ -37,18 +40,21 @@ mixin _$AppEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
     required TResult orElse(),
@@ -69,6 +75,116 @@ class _$AppEventCopyWithImpl<$Res> implements $AppEventCopyWith<$Res> {
   final AppEvent _value;
   // ignore: unused_field
   final $Res Function(AppEvent) _then;
+}
+
+/// @nodoc
+abstract class _$$AppEventStartedCopyWith<$Res> {
+  factory _$$AppEventStartedCopyWith(
+          _$AppEventStarted value, $Res Function(_$AppEventStarted) then) =
+      __$$AppEventStartedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppEventStartedCopyWithImpl<$Res> extends _$AppEventCopyWithImpl<$Res>
+    implements _$$AppEventStartedCopyWith<$Res> {
+  __$$AppEventStartedCopyWithImpl(
+      _$AppEventStarted _value, $Res Function(_$AppEventStarted) _then)
+      : super(_value, (v) => _then(v as _$AppEventStarted));
+
+  @override
+  _$AppEventStarted get _value => super._value as _$AppEventStarted;
+}
+
+/// @nodoc
+
+class _$AppEventStarted implements AppEventStarted {
+  const _$AppEventStarted();
+
+  @override
+  String toString() {
+    return 'AppEvent.started()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppEventStarted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Locale locale) changedLanguage,
+    required TResult Function(ThemeMode mode) changedThemeMode,
+  }) {
+    return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? changedLanguage,
+    TResult Function(ThemeMode mode)? changedThemeMode,
+  }) {
+    return started?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? changedLanguage,
+    TResult Function(ThemeMode mode)? changedThemeMode,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventStarted value) started,
+    required TResult Function(AppEventChangedLanguage value) changedLanguage,
+    required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+  }) {
+    return started(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
+    TResult Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+  }) {
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
+    TResult Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventStarted implements AppEvent {
+  const factory AppEventStarted() = _$AppEventStarted;
 }
 
 /// @nodoc
@@ -138,6 +254,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
   }) {
@@ -147,6 +264,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
   }) {
@@ -156,6 +274,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
     required TResult orElse(),
@@ -169,6 +288,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
   }) {
@@ -178,6 +298,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
   }) {
@@ -187,6 +308,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
     required TResult orElse(),
@@ -276,6 +398,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
   }) {
@@ -285,6 +408,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
   }) {
@@ -294,6 +418,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
     required TResult orElse(),
@@ -307,6 +432,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
   }) {
@@ -316,6 +442,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
   }) {
@@ -325,6 +452,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
     required TResult orElse(),
@@ -350,6 +478,7 @@ abstract class AppEventChangedThemeMode implements AppEvent {
 mixin _$AppState {
   Locale get locale => throw _privateConstructorUsedError;
   ThemeMode get mode => throw _privateConstructorUsedError;
+  bool? get isFisrtLaunch => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
@@ -360,7 +489,7 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({Locale locale, ThemeMode mode});
+  $Res call({Locale locale, ThemeMode mode, bool? isFisrtLaunch});
 }
 
 /// @nodoc
@@ -375,6 +504,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   $Res call({
     Object? locale = freezed,
     Object? mode = freezed,
+    Object? isFisrtLaunch = freezed,
   }) {
     return _then(_value.copyWith(
       locale: locale == freezed
@@ -385,6 +515,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
+      isFisrtLaunch: isFisrtLaunch == freezed
+          ? _value.isFisrtLaunch
+          : isFisrtLaunch // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -395,7 +529,7 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({Locale locale, ThemeMode mode});
+  $Res call({Locale locale, ThemeMode mode, bool? isFisrtLaunch});
 }
 
 /// @nodoc
@@ -412,6 +546,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   $Res call({
     Object? locale = freezed,
     Object? mode = freezed,
+    Object? isFisrtLaunch = freezed,
   }) {
     return _then(_$_AppState(
       locale: locale == freezed
@@ -422,6 +557,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
+      isFisrtLaunch: isFisrtLaunch == freezed
+          ? _value.isFisrtLaunch
+          : isFisrtLaunch // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -430,7 +569,9 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 
 class _$_AppState implements _AppState {
   const _$_AppState(
-      {this.locale = const Locale('vi'), this.mode = ThemeMode.system});
+      {this.locale = const Locale('vi'),
+      this.mode = ThemeMode.system,
+      this.isFisrtLaunch = null});
 
   @override
   @JsonKey()
@@ -438,10 +579,13 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final ThemeMode mode;
+  @override
+  @JsonKey()
+  final bool? isFisrtLaunch;
 
   @override
   String toString() {
-    return 'AppState(locale: $locale, mode: $mode)';
+    return 'AppState(locale: $locale, mode: $mode, isFisrtLaunch: $isFisrtLaunch)';
   }
 
   @override
@@ -450,14 +594,17 @@ class _$_AppState implements _AppState {
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
             const DeepCollectionEquality().equals(other.locale, locale) &&
-            const DeepCollectionEquality().equals(other.mode, mode));
+            const DeepCollectionEquality().equals(other.mode, mode) &&
+            const DeepCollectionEquality()
+                .equals(other.isFisrtLaunch, isFisrtLaunch));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(locale),
-      const DeepCollectionEquality().hash(mode));
+      const DeepCollectionEquality().hash(mode),
+      const DeepCollectionEquality().hash(isFisrtLaunch));
 
   @JsonKey(ignore: true)
   @override
@@ -466,13 +613,17 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  const factory _AppState({final Locale locale, final ThemeMode mode}) =
-      _$_AppState;
+  const factory _AppState(
+      {final Locale locale,
+      final ThemeMode mode,
+      final bool? isFisrtLaunch}) = _$_AppState;
 
   @override
   Locale get locale;
   @override
   ThemeMode get mode;
+  @override
+  bool? get isFisrtLaunch;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>

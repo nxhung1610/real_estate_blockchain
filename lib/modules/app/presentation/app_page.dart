@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
@@ -8,6 +11,7 @@ import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/modules/auth/auth_module.dart';
 import 'package:real_estate_blockchain/modules/core/core_module.dart';
 import 'package:real_estate_blockchain/modules/home/home_module.dart';
+import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart';
 import 'package:real_estate_blockchain/modules/splash/presentation/splash_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,9 +51,14 @@ class _AppCommon extends StatefulWidget {
 class _AppCommonState extends State<_AppCommon> {
   late final AppBloc _appBloc;
   late final AuthBloc _authBloc;
+
+  //
+  late final Completer processIntital;
+
   @override
   void initState() {
     super.initState();
+    processIntital = Completer();
   }
 
   @override
@@ -57,6 +66,12 @@ class _AppCommonState extends State<_AppCommon> {
     super.didChangeDependencies();
     _appBloc = context.read<AppBloc>();
     _authBloc = context.read<AuthBloc>();
+
+    _intitial();
+  }
+
+  void _intitial() {
+    _appBloc.started();
   }
 
   GoRouter setUpRouter() {
@@ -68,11 +83,23 @@ class _AppCommonState extends State<_AppCommon> {
       },
       refreshListenable: GoRouterRefreshStream(_authBloc.stream),
       redirect: (state) {
-        // Wokring with authentication
-        final loggedIn = _authBloc.state is AuthStateAuthenticated;
-        final alreadyIn = state.subloc.startsWith(const HomeRoute().location);
-        if (!loggedIn && !alreadyIn) return const HomeRoute().location;
-        return null;
+        log(state.toString());
+        String? lastRoute;
+        // Check First Launch
+
+        if (_appBloc.state.isFisrtLaunch ?? true == true) {
+          lastRoute = OnBoardingRoute().location;
+        } else {
+          // Wokring with authentication
+          final loggedIn = _authBloc.state is AuthStateAuthenticated;
+          final alreadyIn = state.subloc.startsWith(const HomeRoute().location);
+          if (!loggedIn && !alreadyIn) lastRoute = const HomeRoute().location;
+        }
+        if (state.location != lastRoute) {
+          return lastRoute;
+        } else {
+          return null;
+        }
       },
     );
   }
@@ -82,31 +109,44 @@ class _AppCommonState extends State<_AppCommon> {
     // Initial Route App
     final appRoute = setUpRouter();
 
-    return GlobalLoaderOverlay(
-      child: ScreenUtilInit(
-        designSize: AppSize.designSize,
-        builder: (context, child) {
-          return MaterialApp.router(
-            theme: AppTheme.light,
-            debugShowCheckedModeBanner: false,
-            darkTheme: AppTheme.dark,
-            themeMode: _appBloc.state.mode,
-            locale: _appBloc.state.locale,
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            builder: (context, child) {
-              return SplashPage(child: child ?? Container());
-            },
-            supportedLocales: S.delegate.supportedLocales,
-            routeInformationParser: appRoute.routeInformationParser,
-            routerDelegate: appRoute.routerDelegate,
-            routeInformationProvider: appRoute.routeInformationProvider,
-          );
-        },
+    return BlocListener<AppBloc, AppState>(
+      listener: (context, state) {
+        log(state.toString());
+        if (state.isFisrtLaunch != null && !processIntital.isCompleted) {
+          processIntital.complete();
+        }
+      },
+      child: GlobalLoaderOverlay(
+        child: ScreenUtilInit(
+          designSize: AppSize.designSize,
+          builder: (context, child) {
+            return MaterialApp.router(
+              theme: AppTheme.light,
+              debugShowCheckedModeBanner: false,
+              darkTheme: AppTheme.dark,
+              themeMode: _appBloc.state.mode,
+              locale: _appBloc.state.locale,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              builder: (context, child) {
+                return SplashPage(
+                  child: child ?? Container(),
+                  onLoaded: () async {
+                    await processIntital.future;
+                  },
+                );
+              },
+              supportedLocales: S.delegate.supportedLocales,
+              routeInformationParser: appRoute.routeInformationParser,
+              routerDelegate: appRoute.routerDelegate,
+              routeInformationProvider: appRoute.routeInformationProvider,
+            );
+          },
+        ),
       ),
     );
   }

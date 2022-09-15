@@ -5,6 +5,7 @@ class AppState with _$AppState {
   const factory AppState({
     @Default(Locale('vi')) Locale locale,
     @Default(ThemeMode.system) ThemeMode mode,
+    @Default(null) bool? isFisrtLaunch,
   }) = _AppState;
   factory AppState.initial() {
     // Setup locale follow platform

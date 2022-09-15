@@ -9,10 +9,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatefulWidget {
   final Widget child;
+  final Future<void> Function()? onLoaded;
   final Color? backgroundColors;
   final Widget? splash;
   const SplashPage(
-      {super.key, required this.child, this.backgroundColors, this.splash});
+      {super.key,
+      required this.child,
+      this.backgroundColors,
+      this.splash,
+      this.onLoaded});
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -34,7 +39,12 @@ class _SplashPageState extends State<SplashPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await Future.delayed(Duration(milliseconds: timeDelay));
+      await Future.wait(
+        [
+          widget.onLoaded?.call() ?? Future.delayed(Duration.zero),
+          Future.delayed(Duration(milliseconds: timeDelay)),
+        ],
+      );
       isSplashComplete.value = true;
     });
   }

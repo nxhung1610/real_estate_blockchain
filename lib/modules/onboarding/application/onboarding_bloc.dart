@@ -6,9 +6,7 @@ part 'onboarding_state.dart';
 part 'onboarding_bloc.freezed.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  OnboardingBloc() : super(_Initial()) {
-    on<OnboardingEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  OnboardingBloc() : super(const OnboardingState.initial()) {
+    on<OnboardingEvent>((event, emit) {});
   }
 }

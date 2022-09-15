@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/modules/core/core_module.dart';
 import 'package:hive/hive.dart';
 
-abstract class ApiLocalHive {
+@singleton
+class ApiLocalHive {
   Future<T> get<T>(String boxName, String key) async {
     final box = await Hive.openBox<T>(boxName);
     final data = box.get(key);
