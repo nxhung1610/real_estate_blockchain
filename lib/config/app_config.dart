@@ -1,5 +1,5 @@
-import 'package:flutter_domain_driven_design/config/constant.dart';
-import 'package:flutter_domain_driven_design/config/environment.dart';
+import 'package:real_estate_blockchain/config/constant.dart';
+import 'package:real_estate_blockchain/config/environment.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppConfig {

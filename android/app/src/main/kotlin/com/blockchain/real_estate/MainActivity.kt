@@ -1,4 +1,4 @@
-package com.example.flutter_domain_driven_design
+package com.blockchain.real_estate
 
 import io.flutter.embedding.android.FlutterActivity
 

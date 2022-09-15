@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_domain_driven_design/injection_dependencies/injection_dependencies.dart';
-import 'package:flutter_domain_driven_design/modules/home/home_module.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/modules/home/home_module.dart';
 
 class HomeRoute extends GoRouteData {
   const HomeRoute();

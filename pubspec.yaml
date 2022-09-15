@@ -1,5 +1,5 @@
-name: flutter_domain_driven_design
-description: A new Flutter project.
+name: real_estate_blockchain
+description: Real Estate trading floor
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -56,7 +56,9 @@ dependencies:
   # Service
   dio: ^4.0.6
   pretty_dio_logger: ^1.1.1
-
+  # Database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -75,6 +77,7 @@ dev_dependencies:
   build_runner:  
   go_router_builder:
   flutter_gen_runner:
+  hive_generator:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

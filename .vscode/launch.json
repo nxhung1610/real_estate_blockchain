@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "flutter_domain_driven_design (dev mode)",
+      "name": "real_estate_blockchain (dev mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
@@ -18,14 +18,14 @@
       ]
     },
     {
-      "name": "flutter_domain_driven_design (profile mode)",
+      "name": "real_estate_blockchain (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile",
       "program": "lib/main.dart"
     },
     {
-      "name": "flutter_domain_driven_design (release mode)",
+      "name": "real_estate_blockchain (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release",

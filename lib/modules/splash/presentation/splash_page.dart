@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_domain_driven_design/assets/assets.gen.dart';
-import 'package:flutter_domain_driven_design/config/app_color.dart';
-import 'package:flutter_domain_driven_design/config/app_size.dart';
-import 'package:flutter_domain_driven_design/languages/languages.dart';
-import 'package:flutter_domain_driven_design/utils/extensions.dart';
+import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatefulWidget {

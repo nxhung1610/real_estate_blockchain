@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_domain_driven_design/languages/languages.dart';
-import 'package:flutter_domain_driven_design/utils/extensions.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extensions.dart';
 
 class ErrorPage extends StatefulWidget {
   const ErrorPage({super.key});

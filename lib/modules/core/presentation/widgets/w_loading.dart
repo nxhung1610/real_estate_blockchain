@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_domain_driven_design/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
 
 class WlLoading extends StatelessWidget {
   const WlLoading({Key? key}) : super(key: key);

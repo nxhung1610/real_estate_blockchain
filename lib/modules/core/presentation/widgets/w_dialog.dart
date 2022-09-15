@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_domain_driven_design/config/app_color.dart';
-import 'package:flutter_domain_driven_design/config/app_dialog.dart';
-import 'package:flutter_domain_driven_design/config/constant.dart';
-import 'package:flutter_domain_driven_design/languages/generated/l10n.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
+import 'package:real_estate_blockchain/config/constant.dart';
+import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WDialog extends StatelessWidget {

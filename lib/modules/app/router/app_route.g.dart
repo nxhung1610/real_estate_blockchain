@@ -18,6 +18,10 @@ GoRoute get $appRoute => GoRouteData.$route(
           path: 'home',
           factory: $HomeRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'onboarding',
+          factory: $OnBoardingRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -38,6 +42,18 @@ extension $HomeRouteExtension on HomeRoute {
 
   String get location => GoRouteData.$location(
         '/home',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+extension $OnBoardingRouteExtension on OnBoardingRoute {
+  static OnBoardingRoute _fromState(GoRouterState state) => OnBoardingRoute();
+
+  String get location => GoRouteData.$location(
+        '/onboarding',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

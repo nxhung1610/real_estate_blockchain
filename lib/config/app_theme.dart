@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_domain_driven_design/assets/fonts.gen.dart';
-import 'package:flutter_domain_driven_design/config/app_color.dart';
-import 'package:flutter_domain_driven_design/config/app_style.dart';
+import 'package:real_estate_blockchain/assets/fonts.gen.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_style.dart';
 
 class AppTheme {
   const AppTheme._();

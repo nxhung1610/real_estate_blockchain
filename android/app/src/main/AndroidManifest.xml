@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_domain_driven_design">
+    package="com.blockchain.real_estate">
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
    <application
-        android:label="flutter_domain_driven_design"
+        android:label="real_estate_blockchain"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
