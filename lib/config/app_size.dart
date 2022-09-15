@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-abstract class AppSize {
+class AppSize {
   AppSize._internal();
 
   // Iphone 12 Pro Max

@@ -19,6 +19,7 @@ class AppRoute extends GoRouteData {
   }
 }
 
-abstract class AppRoutePath {
+class AppRoutePath {
+  const AppRoutePath._();
   static const String root = '/';
 }
