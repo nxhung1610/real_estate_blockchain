@@ -7,4 +7,6 @@ class AppEvent with _$AppEvent {
       AppEventChangedLanguage;
   const factory AppEvent.changedThemeMode(ThemeMode mode) =
       AppEventChangedThemeMode;
+  const factory AppEvent.changeFirstLaunchStatus(bool status) =
+      AppEventChangedFirstLaunchStatus;
 }

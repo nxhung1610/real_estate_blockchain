@@ -8,6 +8,7 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/modules/app/app_module.dart';
 import 'package:real_estate_blockchain/modules/core/core_module.dart';
 import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart';
 import 'package:real_estate_blockchain/utils/extensions.dart';
@@ -23,12 +24,15 @@ class OnboardingPage extends StatefulWidget {
 
 class _OnboardingPageState extends State<OnboardingPage> {
   late final OnboardingBloc onboardingBloc;
+  late final AppBloc appBloc;
   late final PageController pageController;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    // Bloc
     onboardingBloc = context.read<OnboardingBloc>();
+    appBloc = context.read<AppBloc>();
     // Propeties
     pageController = PageController(
       initialPage: onboardingBloc.state.index,
@@ -90,7 +94,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         backgroundColor:
                             const MaterialStatePropertyAll(AppColor.kPrimary1),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        appBloc.changeFirstLaunchStatus(false);
+                      },
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                           vertical: AppSize.largeHeightDimens,

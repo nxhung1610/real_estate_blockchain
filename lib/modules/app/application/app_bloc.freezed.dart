@@ -21,6 +21,7 @@ mixin _$AppEvent {
     required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
+    required TResult Function(bool status) changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$AppEvent {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$AppEvent {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,8 @@ mixin _$AppEvent {
     required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+    required TResult Function(AppEventChangedFirstLaunchStatus value)
+        changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +55,8 @@ mixin _$AppEvent {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +64,8 @@ mixin _$AppEvent {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +129,7 @@ class _$AppEventStarted implements AppEventStarted {
     required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
+    required TResult Function(bool status) changeFirstLaunchStatus,
   }) {
     return started();
   }
@@ -130,6 +140,7 @@ class _$AppEventStarted implements AppEventStarted {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
   }) {
     return started?.call();
   }
@@ -140,6 +151,7 @@ class _$AppEventStarted implements AppEventStarted {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -154,6 +166,8 @@ class _$AppEventStarted implements AppEventStarted {
     required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+    required TResult Function(AppEventChangedFirstLaunchStatus value)
+        changeFirstLaunchStatus,
   }) {
     return started(this);
   }
@@ -164,6 +178,8 @@ class _$AppEventStarted implements AppEventStarted {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
   }) {
     return started?.call(this);
   }
@@ -174,6 +190,8 @@ class _$AppEventStarted implements AppEventStarted {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -257,6 +275,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
+    required TResult Function(bool status) changeFirstLaunchStatus,
   }) {
     return changedLanguage(locale);
   }
@@ -267,6 +286,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
   }) {
     return changedLanguage?.call(locale);
   }
@@ -277,6 +297,7 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (changedLanguage != null) {
@@ -291,6 +312,8 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+    required TResult Function(AppEventChangedFirstLaunchStatus value)
+        changeFirstLaunchStatus,
   }) {
     return changedLanguage(this);
   }
@@ -301,6 +324,8 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
   }) {
     return changedLanguage?.call(this);
   }
@@ -311,6 +336,8 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (changedLanguage != null) {
@@ -401,6 +428,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     required TResult Function() started,
     required TResult Function(Locale locale) changedLanguage,
     required TResult Function(ThemeMode mode) changedThemeMode,
+    required TResult Function(bool status) changeFirstLaunchStatus,
   }) {
     return changedThemeMode(mode);
   }
@@ -411,6 +439,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
   }) {
     return changedThemeMode?.call(mode);
   }
@@ -421,6 +450,7 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     TResult Function()? started,
     TResult Function(Locale locale)? changedLanguage,
     TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (changedThemeMode != null) {
@@ -435,6 +465,8 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     required TResult Function(AppEventStarted value) started,
     required TResult Function(AppEventChangedLanguage value) changedLanguage,
     required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+    required TResult Function(AppEventChangedFirstLaunchStatus value)
+        changeFirstLaunchStatus,
   }) {
     return changedThemeMode(this);
   }
@@ -445,6 +477,8 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
   }) {
     return changedThemeMode?.call(this);
   }
@@ -455,6 +489,8 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     TResult Function(AppEventStarted value)? started,
     TResult Function(AppEventChangedLanguage value)? changedLanguage,
     TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
     required TResult orElse(),
   }) {
     if (changedThemeMode != null) {
@@ -471,6 +507,163 @@ abstract class AppEventChangedThemeMode implements AppEvent {
   ThemeMode get mode;
   @JsonKey(ignore: true)
   _$$AppEventChangedThemeModeCopyWith<_$AppEventChangedThemeMode>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppEventChangedFirstLaunchStatusCopyWith<$Res> {
+  factory _$$AppEventChangedFirstLaunchStatusCopyWith(
+          _$AppEventChangedFirstLaunchStatus value,
+          $Res Function(_$AppEventChangedFirstLaunchStatus) then) =
+      __$$AppEventChangedFirstLaunchStatusCopyWithImpl<$Res>;
+  $Res call({bool status});
+}
+
+/// @nodoc
+class __$$AppEventChangedFirstLaunchStatusCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res>
+    implements _$$AppEventChangedFirstLaunchStatusCopyWith<$Res> {
+  __$$AppEventChangedFirstLaunchStatusCopyWithImpl(
+      _$AppEventChangedFirstLaunchStatus _value,
+      $Res Function(_$AppEventChangedFirstLaunchStatus) _then)
+      : super(_value, (v) => _then(v as _$AppEventChangedFirstLaunchStatus));
+
+  @override
+  _$AppEventChangedFirstLaunchStatus get _value =>
+      super._value as _$AppEventChangedFirstLaunchStatus;
+
+  @override
+  $Res call({
+    Object? status = freezed,
+  }) {
+    return _then(_$AppEventChangedFirstLaunchStatus(
+      status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppEventChangedFirstLaunchStatus
+    implements AppEventChangedFirstLaunchStatus {
+  const _$AppEventChangedFirstLaunchStatus(this.status);
+
+  @override
+  final bool status;
+
+  @override
+  String toString() {
+    return 'AppEvent.changeFirstLaunchStatus(status: $status)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppEventChangedFirstLaunchStatus &&
+            const DeepCollectionEquality().equals(other.status, status));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$AppEventChangedFirstLaunchStatusCopyWith<
+          _$AppEventChangedFirstLaunchStatus>
+      get copyWith => __$$AppEventChangedFirstLaunchStatusCopyWithImpl<
+          _$AppEventChangedFirstLaunchStatus>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Locale locale) changedLanguage,
+    required TResult Function(ThemeMode mode) changedThemeMode,
+    required TResult Function(bool status) changeFirstLaunchStatus,
+  }) {
+    return changeFirstLaunchStatus(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? changedLanguage,
+    TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
+  }) {
+    return changeFirstLaunchStatus?.call(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? changedLanguage,
+    TResult Function(ThemeMode mode)? changedThemeMode,
+    TResult Function(bool status)? changeFirstLaunchStatus,
+    required TResult orElse(),
+  }) {
+    if (changeFirstLaunchStatus != null) {
+      return changeFirstLaunchStatus(status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventStarted value) started,
+    required TResult Function(AppEventChangedLanguage value) changedLanguage,
+    required TResult Function(AppEventChangedThemeMode value) changedThemeMode,
+    required TResult Function(AppEventChangedFirstLaunchStatus value)
+        changeFirstLaunchStatus,
+  }) {
+    return changeFirstLaunchStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
+    TResult Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
+  }) {
+    return changeFirstLaunchStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventStarted value)? started,
+    TResult Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult Function(AppEventChangedFirstLaunchStatus value)?
+        changeFirstLaunchStatus,
+    required TResult orElse(),
+  }) {
+    if (changeFirstLaunchStatus != null) {
+      return changeFirstLaunchStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventChangedFirstLaunchStatus implements AppEvent {
+  const factory AppEventChangedFirstLaunchStatus(final bool status) =
+      _$AppEventChangedFirstLaunchStatus;
+
+  bool get status;
+  @JsonKey(ignore: true)
+  _$$AppEventChangedFirstLaunchStatusCopyWith<
+          _$AppEventChangedFirstLaunchStatus>
       get copyWith => throw _privateConstructorUsedError;
 }
 

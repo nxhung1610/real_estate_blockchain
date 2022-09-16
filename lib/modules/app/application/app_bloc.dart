@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -28,9 +29,20 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     on<AppEventChangedThemeMode>(
       (event, emit) => emit(state.copyWith(mode: event.mode)),
     );
+    on<AppEventChangedFirstLaunchStatus>(
+      (event, emit) async {
+        final result = await _appConfigRepository.setFirstLaunch(event.status);
+        log(result.toString());
+        emit(state.copyWith(isFisrtLaunch: event.status));
+      },
+    );
   }
 
   void started() {
     add(const AppEvent.started());
+  }
+
+  void changeFirstLaunchStatus(bool status) {
+    add(AppEvent.changeFirstLaunchStatus(status));
   }
 }
