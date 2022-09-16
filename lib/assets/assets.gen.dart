@@ -56,10 +56,23 @@ class $AssetsIconsGen {
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/onboarding1.png
+  AssetGenImage get onboarding1 =>
+      const AssetGenImage('assets/images/onboarding1.png');
+
+  /// File path: assets/images/onboarding2.png
+  AssetGenImage get onboarding2 =>
+      const AssetGenImage('assets/images/onboarding2.png');
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $EnvsGen envs = $EnvsGen();
   static const $FontsGen fonts = $FontsGen();
 }

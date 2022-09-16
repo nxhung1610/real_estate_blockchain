@@ -80,11 +80,21 @@ class S {
     );
   }
 
+  /// `Onboarding`
+  String get onboarding {
+    return Intl.message(
+      'Onboarding',
+      name: 'onboarding',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Get Started`
-  String get getStarted {
+  String get onboardingGetStatred {
     return Intl.message(
       'Get Started',
-      name: 'getStarted',
+      name: 'onboardingGetStatred',
       desc: '',
       args: [],
     );

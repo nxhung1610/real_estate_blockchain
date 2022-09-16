@@ -18,33 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OnboardingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(List<OnboardingData> datas) initial,
     required TResult Function() started,
+    required TResult Function(int index) onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
     TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
     TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(OnboardingEventInitial value) initial,
     required TResult Function(OnboardingEventStarted value) started,
+    required TResult Function(OnboardingEventChangeSlide value) onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
     TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
     TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +77,154 @@ class _$OnboardingEventCopyWithImpl<$Res>
   final OnboardingEvent _value;
   // ignore: unused_field
   final $Res Function(OnboardingEvent) _then;
+}
+
+/// @nodoc
+abstract class _$$OnboardingEventInitialCopyWith<$Res> {
+  factory _$$OnboardingEventInitialCopyWith(_$OnboardingEventInitial value,
+          $Res Function(_$OnboardingEventInitial) then) =
+      __$$OnboardingEventInitialCopyWithImpl<$Res>;
+  $Res call({List<OnboardingData> datas});
+}
+
+/// @nodoc
+class __$$OnboardingEventInitialCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res>
+    implements _$$OnboardingEventInitialCopyWith<$Res> {
+  __$$OnboardingEventInitialCopyWithImpl(_$OnboardingEventInitial _value,
+      $Res Function(_$OnboardingEventInitial) _then)
+      : super(_value, (v) => _then(v as _$OnboardingEventInitial));
+
+  @override
+  _$OnboardingEventInitial get _value =>
+      super._value as _$OnboardingEventInitial;
+
+  @override
+  $Res call({
+    Object? datas = freezed,
+  }) {
+    return _then(_$OnboardingEventInitial(
+      datas == freezed
+          ? _value._datas
+          : datas // ignore: cast_nullable_to_non_nullable
+              as List<OnboardingData>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnboardingEventInitial implements OnboardingEventInitial {
+  const _$OnboardingEventInitial(final List<OnboardingData> datas)
+      : _datas = datas;
+
+  final List<OnboardingData> _datas;
+  @override
+  List<OnboardingData> get datas {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_datas);
+  }
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.initial(datas: $datas)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnboardingEventInitial &&
+            const DeepCollectionEquality().equals(other._datas, _datas));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_datas));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$OnboardingEventInitialCopyWith<_$OnboardingEventInitial> get copyWith =>
+      __$$OnboardingEventInitialCopyWithImpl<_$OnboardingEventInitial>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<OnboardingData> datas) initial,
+    required TResult Function() started,
+    required TResult Function(int index) onChangeSlide,
+  }) {
+    return initial(datas);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
+    TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
+  }) {
+    return initial?.call(datas);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
+    TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(datas);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnboardingEventInitial value) initial,
+    required TResult Function(OnboardingEventStarted value) started,
+    required TResult Function(OnboardingEventChangeSlide value) onChangeSlide,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
+    TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
+    TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnboardingEventInitial implements OnboardingEvent {
+  const factory OnboardingEventInitial(final List<OnboardingData> datas) =
+      _$OnboardingEventInitial;
+
+  List<OnboardingData> get datas;
+  @JsonKey(ignore: true)
+  _$$OnboardingEventInitialCopyWith<_$OnboardingEventInitial> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -109,7 +269,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(List<OnboardingData> datas) initial,
     required TResult Function() started,
+    required TResult Function(int index) onChangeSlide,
   }) {
     return started();
   }
@@ -117,7 +279,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
     TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
   }) {
     return started?.call();
   }
@@ -125,7 +289,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<OnboardingData> datas)? initial,
     TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -137,7 +303,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(OnboardingEventInitial value) initial,
     required TResult Function(OnboardingEventStarted value) started,
+    required TResult Function(OnboardingEventChangeSlide value) onChangeSlide,
   }) {
     return started(this);
   }
@@ -145,7 +313,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
     TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) {
     return started?.call(this);
   }
@@ -153,7 +323,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnboardingEventInitial value)? initial,
     TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -168,38 +340,157 @@ abstract class OnboardingEventStarted implements OnboardingEvent {
 }
 
 /// @nodoc
-mixin _$OnboardingState {
+abstract class _$$OnboardingEventChangeSlideCopyWith<$Res> {
+  factory _$$OnboardingEventChangeSlideCopyWith(
+          _$OnboardingEventChangeSlide value,
+          $Res Function(_$OnboardingEventChangeSlide) then) =
+      __$$OnboardingEventChangeSlideCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$OnboardingEventChangeSlideCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res>
+    implements _$$OnboardingEventChangeSlideCopyWith<$Res> {
+  __$$OnboardingEventChangeSlideCopyWithImpl(
+      _$OnboardingEventChangeSlide _value,
+      $Res Function(_$OnboardingEventChangeSlide) _then)
+      : super(_value, (v) => _then(v as _$OnboardingEventChangeSlide));
+
+  @override
+  _$OnboardingEventChangeSlide get _value =>
+      super._value as _$OnboardingEventChangeSlide;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_$OnboardingEventChangeSlide(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnboardingEventChangeSlide implements OnboardingEventChangeSlide {
+  const _$OnboardingEventChangeSlide(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.onChangeSlide(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnboardingEventChangeSlide &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$OnboardingEventChangeSlideCopyWith<_$OnboardingEventChangeSlide>
+      get copyWith => __$$OnboardingEventChangeSlideCopyWithImpl<
+          _$OnboardingEventChangeSlide>(this, _$identity);
+
+  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(List<OnboardingData> datas) initial,
+    required TResult Function() started,
+    required TResult Function(int index) onChangeSlide,
+  }) {
+    return onChangeSlide(index);
+  }
+
+  @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
+    TResult Function(List<OnboardingData> datas)? initial,
+    TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
+  }) {
+    return onChangeSlide?.call(index);
+  }
+
+  @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<OnboardingData> datas)? initial,
+    TResult Function()? started,
+    TResult Function(int index)? onChangeSlide,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    if (onChangeSlide != null) {
+      return onChangeSlide(index);
+    }
+    return orElse();
+  }
+
+  @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnboardingStateInitial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(OnboardingEventInitial value) initial,
+    required TResult Function(OnboardingEventStarted value) started,
+    required TResult Function(OnboardingEventChangeSlide value) onChangeSlide,
+  }) {
+    return onChangeSlide(this);
+  }
+
+  @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingStateInitial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
+    TResult Function(OnboardingEventInitial value)? initial,
+    TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+  }) {
+    return onChangeSlide?.call(this);
+  }
+
+  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnboardingStateInitial value)? initial,
+    TResult Function(OnboardingEventInitial value)? initial,
+    TResult Function(OnboardingEventStarted value)? started,
+    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
     required TResult orElse(),
-  }) =>
+  }) {
+    if (onChangeSlide != null) {
+      return onChangeSlide(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnboardingEventChangeSlide implements OnboardingEvent {
+  const factory OnboardingEventChangeSlide(final int index) =
+      _$OnboardingEventChangeSlide;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$OnboardingEventChangeSlideCopyWith<_$OnboardingEventChangeSlide>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$OnboardingState {
+  List<OnboardingData> get datas => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $OnboardingStateCopyWith<OnboardingState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -208,6 +499,7 @@ abstract class $OnboardingStateCopyWith<$Res> {
   factory $OnboardingStateCopyWith(
           OnboardingState value, $Res Function(OnboardingState) then) =
       _$OnboardingStateCopyWithImpl<$Res>;
+  $Res call({List<OnboardingData> datas, int index});
 }
 
 /// @nodoc
@@ -218,104 +510,119 @@ class _$OnboardingStateCopyWithImpl<$Res>
   final OnboardingState _value;
   // ignore: unused_field
   final $Res Function(OnboardingState) _then;
-}
-
-/// @nodoc
-abstract class _$$OnboardingStateInitialCopyWith<$Res> {
-  factory _$$OnboardingStateInitialCopyWith(_$OnboardingStateInitial value,
-          $Res Function(_$OnboardingStateInitial) then) =
-      __$$OnboardingStateInitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OnboardingStateInitialCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res>
-    implements _$$OnboardingStateInitialCopyWith<$Res> {
-  __$$OnboardingStateInitialCopyWithImpl(_$OnboardingStateInitial _value,
-      $Res Function(_$OnboardingStateInitial) _then)
-      : super(_value, (v) => _then(v as _$OnboardingStateInitial));
 
   @override
-  _$OnboardingStateInitial get _value =>
-      super._value as _$OnboardingStateInitial;
+  $Res call({
+    Object? datas = freezed,
+    Object? index = freezed,
+  }) {
+    return _then(_value.copyWith(
+      datas: datas == freezed
+          ? _value.datas
+          : datas // ignore: cast_nullable_to_non_nullable
+              as List<OnboardingData>,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_OnboardingStateCopyWith<$Res>
+    implements $OnboardingStateCopyWith<$Res> {
+  factory _$$_OnboardingStateCopyWith(
+          _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
+      __$$_OnboardingStateCopyWithImpl<$Res>;
+  @override
+  $Res call({List<OnboardingData> datas, int index});
+}
+
+/// @nodoc
+class __$$_OnboardingStateCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res>
+    implements _$$_OnboardingStateCopyWith<$Res> {
+  __$$_OnboardingStateCopyWithImpl(
+      _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
+      : super(_value, (v) => _then(v as _$_OnboardingState));
+
+  @override
+  _$_OnboardingState get _value => super._value as _$_OnboardingState;
+
+  @override
+  $Res call({
+    Object? datas = freezed,
+    Object? index = freezed,
+  }) {
+    return _then(_$_OnboardingState(
+      datas: datas == freezed
+          ? _value._datas
+          : datas // ignore: cast_nullable_to_non_nullable
+              as List<OnboardingData>,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$OnboardingStateInitial implements OnboardingStateInitial {
-  const _$OnboardingStateInitial();
+class _$_OnboardingState implements _OnboardingState {
+  const _$_OnboardingState(
+      {final List<OnboardingData> datas = const [], this.index = 0})
+      : _datas = datas;
+
+  final List<OnboardingData> _datas;
+  @override
+  @JsonKey()
+  List<OnboardingData> get datas {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_datas);
+  }
+
+  @override
+  @JsonKey()
+  final int index;
 
   @override
   String toString() {
-    return 'OnboardingState.initial()';
+    return 'OnboardingState(datas: $datas, index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnboardingStateInitial);
+        (other.runtimeType == runtimeType &&
+            other is _$_OnboardingState &&
+            const DeepCollectionEquality().equals(other._datas, _datas) &&
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_datas),
+      const DeepCollectionEquality().hash(index));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(OnboardingStateInitial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingStateInitial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnboardingStateInitial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
+      __$$_OnboardingStateCopyWithImpl<_$_OnboardingState>(this, _$identity);
 }
 
-abstract class OnboardingStateInitial implements OnboardingState {
-  const factory OnboardingStateInitial() = _$OnboardingStateInitial;
+abstract class _OnboardingState implements OnboardingState {
+  const factory _OnboardingState(
+      {final List<OnboardingData> datas, final int index}) = _$_OnboardingState;
+
+  @override
+  List<OnboardingData> get datas;
+  @override
+  int get index;
+  @override
+  @JsonKey(ignore: true)
+  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -24,7 +24,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  late ValueNotifier<bool> isSplashComplete;
+  late bool isSplashComplete;
 
   int timeDelay = 2000;
   double iconSize = 120.w;
@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    isSplashComplete = ValueNotifier<bool>(false);
+    isSplashComplete = false;
   }
 
   @override
@@ -45,29 +45,21 @@ class _SplashPageState extends State<SplashPage> {
           Future.delayed(Duration(milliseconds: timeDelay)),
         ],
       );
-      isSplashComplete.value = true;
+      setState(() {
+        isSplashComplete = true;
+      });
     });
   }
 
   @override
   void dispose() {
-    isSplashComplete.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ValueListenableBuilder<bool>(
-        valueListenable: isSplashComplete,
-        builder: (context, value, child) {
-          if (value) {
-            return widget.child;
-          } else {
-            return getSplashBody();
-          }
-        },
-      ),
+      body: isSplashComplete ? widget.child : getSplashBody(),
     );
   }
 

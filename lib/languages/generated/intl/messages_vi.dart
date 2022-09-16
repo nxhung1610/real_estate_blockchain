@@ -32,9 +32,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
-        "getStarted": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
+        "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
+        "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":

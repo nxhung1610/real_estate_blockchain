@@ -48,6 +48,7 @@ dependencies:
   awesome_notifications: ^0.6.21
   flutter_svg:
   flutter_animate: ^1.0.0
+  smooth_page_indicator: ^1.0.0+2
   # Language
   intl: ^0.17.0
   intl_utils: ^2.7.0
@@ -100,6 +101,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - fonts/
+    - assets/
+    - assets/images/
     - assets/icons/
     - envs/
   # An image asset can refer to one or more resolution-specific "variants", see

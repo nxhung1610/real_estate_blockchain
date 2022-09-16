@@ -125,7 +125,7 @@ class AppNotification {
     bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
     if (!isAllowed) {
       isAllowed = await context.appDialog.showAppDialog<bool>(
-            message: s.youNeedPermissionToDisplayNotifications,
+            message: s.appName,
             type: AppDialogType.confirm,
             positiveText: s.allow,
             onNegative: () {

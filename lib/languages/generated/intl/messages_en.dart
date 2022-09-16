@@ -32,9 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
-        "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
+        "onboardingGetStatred":
+            MessageLookupByLibrary.simpleMessage("Get Started"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),

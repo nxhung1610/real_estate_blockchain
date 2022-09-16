@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/assets/fonts.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_style.dart';
 
 class AppTheme {
@@ -22,6 +23,9 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSize.extraRadius),
+        ),
         textStyle: TextStyle(color: AppColor.kNeutrals.shade50),
         elevation: 0,
         shadowColor: Colors.transparent,

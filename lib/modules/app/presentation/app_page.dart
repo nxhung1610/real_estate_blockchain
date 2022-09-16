@@ -83,10 +83,9 @@ class _AppCommonState extends State<_AppCommon> {
       },
       refreshListenable: GoRouterRefreshStream(_authBloc.stream),
       redirect: (state) {
-        log(state.toString());
+        log(_appBloc.state.toString());
         String? lastRoute;
         // Check First Launch
-
         if (_appBloc.state.isFisrtLaunch ?? true == true) {
           lastRoute = OnBoardingRoute().location;
         } else {
