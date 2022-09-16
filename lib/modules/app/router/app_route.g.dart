@@ -7,38 +7,17 @@ part of 'app_route.dart';
 // **************************************************************************
 
 List<GoRoute> get $appRoutes => [
-      $appRoute,
+      $appHomeRoute,
+      $appOnboardingRoute,
     ];
 
-GoRoute get $appRoute => GoRouteData.$route(
-      path: '/',
-      factory: $AppRouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: 'home',
-          factory: $HomeRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'onboarding',
-          factory: $OnBoardingRouteExtension._fromState,
-        ),
-      ],
+GoRoute get $appHomeRoute => GoRouteData.$route(
+      path: '/home',
+      factory: $AppHomeRouteExtension._fromState,
     );
 
-extension $AppRouteExtension on AppRoute {
-  static AppRoute _fromState(GoRouterState state) => AppRoute();
-
-  String get location => GoRouteData.$location(
-        '/',
-      );
-
-  void go(BuildContext context) => context.go(location, extra: this);
-
-  void push(BuildContext context) => context.push(location, extra: this);
-}
-
-extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+extension $AppHomeRouteExtension on AppHomeRoute {
+  static AppHomeRoute _fromState(GoRouterState state) => const AppHomeRoute();
 
   String get location => GoRouteData.$location(
         '/home',
@@ -49,8 +28,14 @@ extension $HomeRouteExtension on HomeRoute {
   void push(BuildContext context) => context.push(location, extra: this);
 }
 
-extension $OnBoardingRouteExtension on OnBoardingRoute {
-  static OnBoardingRoute _fromState(GoRouterState state) => OnBoardingRoute();
+GoRoute get $appOnboardingRoute => GoRouteData.$route(
+      path: '/onboarding',
+      factory: $AppOnboardingRouteExtension._fromState,
+    );
+
+extension $AppOnboardingRouteExtension on AppOnboardingRoute {
+  static AppOnboardingRoute _fromState(GoRouterState state) =>
+      const AppOnboardingRoute();
 
   String get location => GoRouteData.$location(
         '/onboarding',

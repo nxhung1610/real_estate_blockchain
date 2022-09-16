@@ -14,14 +14,14 @@ import 'package:real_estate_blockchain/utils/extensions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 part 'onboarding_data.dart';
 
-class OnBoardingPage extends StatefulWidget {
-  const OnBoardingPage({super.key});
+class OnboardingPage extends StatefulWidget {
+  const OnboardingPage({super.key});
 
   @override
-  State<OnBoardingPage> createState() => _OnBoardingPageState();
+  State<OnboardingPage> createState() => _OnboardingPageState();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
+class _OnboardingPageState extends State<OnboardingPage> {
   late final OnboardingBloc onboardingBloc;
   late final PageController pageController;
 
@@ -67,7 +67,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           // when swap vertival
           _backgroundBuild(),
 
-          //
           Positioned.fill(
             bottom: 50.h,
             child: Align(

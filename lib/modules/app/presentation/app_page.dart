@@ -77,7 +77,6 @@ class _AppCommonState extends State<_AppCommon> {
   GoRouter setUpRouter() {
     return GoRouter(
       routes: $appRoutes,
-      initialLocation: AppRoute().location,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },
@@ -87,12 +86,15 @@ class _AppCommonState extends State<_AppCommon> {
         String? lastRoute;
         // Check First Launch
         if (_appBloc.state.isFisrtLaunch ?? true == true) {
-          lastRoute = OnBoardingRoute().location;
+          lastRoute = const AppOnboardingRoute().location;
         } else {
           // Wokring with authentication
           final loggedIn = _authBloc.state is AuthStateAuthenticated;
-          final alreadyIn = state.subloc.startsWith(const HomeRoute().location);
-          if (!loggedIn && !alreadyIn) lastRoute = const HomeRoute().location;
+          final alreadyIn =
+              state.subloc.startsWith(const AppHomeRoute().location);
+          if (!loggedIn && !alreadyIn) {
+            lastRoute = const AppHomeRoute().location;
+          }
         }
         if (state.location != lastRoute) {
           return lastRoute;

@@ -6,17 +6,18 @@ import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart
 import 'package:real_estate_blockchain/modules/onboarding/presentation/onboarding_page.dart';
 import 'package:go_router/go_router.dart';
 
-class OnBoardingRoute extends GoRouteData {
+class OnboardingRoute extends GoRouteData {
+  const OnboardingRoute();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt.call<OnboardingBloc>(),
-      child: const OnBoardingPage(),
+      child: const OnboardingPage(),
     );
   }
 }
 
 class OnboardingRoutePath {
   OnboardingRoutePath._();
-  static const String root = 'onboarding';
+  static const String root = '/onboarding';
 }

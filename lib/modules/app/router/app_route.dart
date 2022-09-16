@@ -5,18 +5,18 @@ import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart
 import 'package:go_router/go_router.dart';
 part 'app_route.g.dart';
 
-@TypedGoRoute<AppRoute>(
-  path: AppRoutePath.root,
-  routes: [
-    TypedGoRoute<HomeRoute>(path: HomeRoutePath.root),
-    TypedGoRoute<OnBoardingRoute>(path: OnboardingRoutePath.root),
-  ],
+@TypedGoRoute<AppHomeRoute>(
+  path: HomeRoutePath.root,
 )
-class AppRoute extends GoRouteData {
-  @override
-  Widget build(BuildContext context) {
-    return const SizedBox.shrink();
-  }
+class AppHomeRoute extends HomeRoute {
+  const AppHomeRoute();
+}
+
+@TypedGoRoute<AppOnboardingRoute>(
+  path: OnboardingRoutePath.root,
+)
+class AppOnboardingRoute extends OnboardingRoute {
+  const AppOnboardingRoute();
 }
 
 class AppRoutePath {
