@@ -63,59 +63,67 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Scaffold(
-      extendBody: true,
-      body: Stack(
-        children: [
-          // Show background image of slide on boarding
-          // when swap vertival
-          _backgroundBuild(),
+    return BlocListener<AppBloc, AppState>(
+      listener: (context, state) {
+        if (state.isFisrtLaunch == false) {
+          const AppHomeRoute().go(context);
+        }
+      },
+      child: Scaffold(
+        extendBody: true,
+        body: Stack(
+          children: [
+            // Show background image of slide on boarding
+            // when swap vertival
+            _backgroundBuild(),
 
-          Positioned.fill(
-            bottom: 50.h,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  BlocBuilder<OnboardingBloc, OnboardingState>(
-                    builder: (context, state) {
-                      return _slideBuild();
-                    },
-                  ),
-                  40.h.verticalSpace,
-                  Container(
-                    margin: EdgeInsets.symmetric(
-                      horizontal: AppSize.extraWidthDimens,
-                    ),
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: context.theme.elevatedButtonTheme.style?.copyWith(
-                        backgroundColor:
-                            const MaterialStatePropertyAll(AppColor.kPrimary1),
-                      ),
-                      onPressed: () {
-                        appBloc.changeFirstLaunchStatus(false);
+            Positioned.fill(
+              bottom: 50.h,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    BlocBuilder<OnboardingBloc, OnboardingState>(
+                      builder: (context, state) {
+                        return _slideBuild();
                       },
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: AppSize.largeHeightDimens,
+                    ),
+                    40.h.verticalSpace,
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: AppSize.extraWidthDimens,
+                      ),
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style:
+                            context.theme.elevatedButtonTheme.style?.copyWith(
+                          backgroundColor: const MaterialStatePropertyAll(
+                              AppColor.kPrimary1),
                         ),
-                        child: Text(
-                          s.onboardingGetStatred,
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            color: AppColor.kNeutrals.shade50,
-                            fontWeight: FontWeight.bold,
+                        onPressed: () {
+                          appBloc.changeFirstLaunchStatus(false);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: AppSize.largeHeightDimens,
+                          ),
+                          child: Text(
+                            s.onboardingGetStatred,
+                            style: context.textTheme.bodyLarge?.copyWith(
+                              color: AppColor.kNeutrals.shade50,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
