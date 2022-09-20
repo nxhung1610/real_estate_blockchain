@@ -16,8 +16,3 @@ class OnboardingRoute extends GoRouteData {
     );
   }
 }
-
-class OnboardingRoutePath {
-  OnboardingRoutePath._();
-  static const String root = '/onboarding';
-}

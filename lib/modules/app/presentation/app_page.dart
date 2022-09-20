@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -82,20 +83,43 @@ class _AppCommonState extends State<_AppCommon> {
       },
       refreshListenable: GoRouterRefreshStream(_authBloc.stream),
       redirect: (state) {
-        log(_appBloc.state.toString());
+        log(state.location);
         String? lastRoute;
         // Check First Launch
-        if (_appBloc.state.isFisrtLaunch ?? true == true) {
-          lastRoute = const AppOnboardingRoute().location;
-        } else {
-          // Wokring with authentication
-          final loggedIn = _authBloc.state is AuthStateAuthenticated;
-          final alreadyIn =
-              state.subloc.startsWith(const AppHomeRoute().location);
-          if (!loggedIn && !alreadyIn) {
-            lastRoute = const AppHomeRoute().location;
+
+        lastRoute = (() {
+          if (_appBloc.state.isFisrtLaunch ?? true == true) {
+            return const AppOnboardingRoute().location;
+          } else {
+            final unAuthentcationRoutes = [
+              const AppOnboardingRoute().location,
+              const AppLoginRoute().location,
+            ];
+            // Wokring with authentication
+            // Check if authentication or not
+            final isLoggedIn = _authBloc.state is AuthStateAuthenticated;
+
+            // If user is not login and not in Login or Register page
+            // Redirect them to Login page
+            final alreadyInLogin =
+                [const AppLoginRoute().location].contains(state.subloc);
+            if (!isLoggedIn && !alreadyInLogin) {
+              return const AppLoginRoute().location;
+            }
+
+            // If user is login and
+            // route location not match [Login,Register] will not redirect
+            // Or redirect to [Home]
+            if (isLoggedIn) {
+              if (unAuthentcationRoutes.contains(state.location)) {
+                return const AppHomeRoute().location;
+              } else {
+                return null;
+              }
+            }
           }
-        }
+        })();
+
         if (state.location != lastRoute) {
           return lastRoute;
         } else {

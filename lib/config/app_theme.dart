@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/fonts.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -52,6 +53,23 @@ class AppTheme {
       ),
     ),
     textTheme: textTheme,
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppSize.largeRadius),
+        borderSide: const BorderSide(
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: AppColor.kNeutrals.shade400,
+      contentPadding: EdgeInsets.symmetric(
+        vertical: 14.h,
+        horizontal: 20.w,
+      ),
+      labelStyle: textTheme.bodyMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+        color: AppColor.kNeutrals.shade700,
+      ),
+    ),
   );
   static ThemeData dark = ThemeData.dark().copyWith();
 
