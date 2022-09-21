@@ -33,9 +33,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "loginDontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
+        "loginEmail": MessageLookupByLibrary.simpleMessage("Email"),
+        "loginForgotPassword":
+            MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+        "loginPassword": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "loginSignIn": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
+        "loginSigninToYourAccount":
+            MessageLookupByLibrary.simpleMessage("Đăng nhập vào tài khoản"),
+        "loginWelcomeBack":
+            MessageLookupByLibrary.simpleMessage("Mừng trở lại!"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
+        "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":

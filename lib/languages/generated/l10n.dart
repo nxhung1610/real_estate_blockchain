@@ -80,26 +80,6 @@ class S {
     );
   }
 
-  /// `Onboarding`
-  String get onboarding {
-    return Intl.message(
-      'Onboarding',
-      name: 'onboarding',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Get Started`
-  String get onboardingGetStatred {
-    return Intl.message(
-      'Get Started',
-      name: 'onboardingGetStatred',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Get Back`
   String get getBack {
     return Intl.message(
@@ -205,6 +185,106 @@ class S {
     return Intl.message(
       'Show notification',
       name: 'showNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Onboarding`
+  String get onboarding {
+    return Intl.message(
+      'Onboarding',
+      name: 'onboarding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get onboardingGetStatred {
+    return Intl.message(
+      'Get Started',
+      name: 'onboardingGetStatred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back!`
+  String get loginWelcomeBack {
+    return Intl.message(
+      'Welcome Back!',
+      name: 'loginWelcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in to your account`
+  String get loginSigninToYourAccount {
+    return Intl.message(
+      'Sign in to your account',
+      name: 'loginSigninToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get loginEmail {
+    return Intl.message(
+      'Email',
+      name: 'loginEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get loginPassword {
+    return Intl.message(
+      'Password',
+      name: 'loginPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get loginSignIn {
+    return Intl.message(
+      'Sign In',
+      name: 'loginSignIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get loginForgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'loginForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dont't have an account?`
+  String get loginDontHaveAnAccount {
+    return Intl.message(
+      'Dont\'t have an account?',
+      name: 'loginDontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get registerSignUp {
+    return Intl.message(
+      'Sign Up',
+      name: 'registerSignUp',
       desc: '',
       args: [],
     );

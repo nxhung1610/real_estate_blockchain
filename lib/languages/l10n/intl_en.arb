@@ -2,8 +2,6 @@
   "appName": "Realix",
   "appDescription": "Real Estate Application",
   "changeLanguage": "Change Language",
-  "onboarding" : "Onboarding",
-  "onboardingGetStatred" : "Get Started",
   "getBack": "Get Back",
   "showLoading": "Show Loading",
   "ok": "Ok",
@@ -14,5 +12,15 @@
   "allow": "Allow",
   "toProceedeYouNeedToEnableThePermissionsAbove": "To proceede, you need to enable the permissions above",
   "youNeedPermissionToDisplayNotifications": "You need permission to display notifications",
-  "showNotification": "Show notification"
+  "showNotification": "Show notification",
+  "onboarding": "Onboarding",
+  "onboardingGetStatred": "Get Started",
+  "loginWelcomeBack": "Welcome Back!",
+  "loginSigninToYourAccount": "Sign in to your account",
+  "loginEmail": "Email",
+  "loginPassword": "Password",
+  "loginSignIn": "Sign In",
+  "loginForgotPassword": "Forgot Password?",
+  "loginDontHaveAnAccount": "Dont't have an account?",
+  "registerSignUp" : "Sign Up"
 }

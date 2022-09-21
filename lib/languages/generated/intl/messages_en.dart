@@ -33,10 +33,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "loginDontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
+        "loginEmail": MessageLookupByLibrary.simpleMessage("Email"),
+        "loginForgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "loginPassword": MessageLookupByLibrary.simpleMessage("Password"),
+        "loginSignIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "loginSigninToYourAccount":
+            MessageLookupByLibrary.simpleMessage("Sign in to your account"),
+        "loginWelcomeBack":
+            MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),

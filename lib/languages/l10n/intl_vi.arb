@@ -2,8 +2,6 @@
   "appName": "Realix",
   "appDescription": "Sàn giao dịch Bất Động Sản",
   "changeLanguage": "Thay đổi ngôn ngữ",
-  "onboarding" : "Giới thiệu",
-  "onboardingGetStatred" : "Bắt đầu",
   "getBack": "Quay về",
   "showLoading": "Hiển thị vòng đợi",
   "ok": "Đồng ý",
@@ -14,5 +12,15 @@
   "allow": "Cho phép",
   "toProceedeYouNeedToEnableThePermissionsAbove": "Để tiếp tục, bạn cần bật các quyền ở trên",
   "youNeedPermissionToDisplayNotifications": "Bạn cần cấp quyền để hiển thị thông báo",
-  "showNotification": "Hiển thị thông báo"
+  "showNotification": "Hiển thị thông báo",
+  "onboarding": "Giới thiệu",
+  "onboardingGetStatred": "Bắt đầu",
+  "loginWelcomeBack": "Mừng trở lại!",
+  "loginSigninToYourAccount": "Đăng nhập vào tài khoản",
+  "loginEmail": "Email",
+  "loginPassword": "Mật khẩu",
+  "loginSignIn": "Đăng nhập",
+  "loginForgotPassword": "Quên mật khẩu?",
+  "loginDontHaveAnAccount": "Chưa có tài khoản?",
+  "registerSignUp" : "Đăng ký"
 }

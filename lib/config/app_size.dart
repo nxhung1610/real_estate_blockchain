@@ -73,6 +73,12 @@ class AppSize {
   /// 12
   static const double largeElevation = 12;
 
+  /// 16
+  static const double extraElevation = 16;
+
+  /// 24
+  static const double extraLargeElevation = 24;
+
   /// Button border radius
   static final double buttonBorderRadius = 20.r;
 

@@ -52,6 +52,14 @@ class $FontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_eye_hide.svg
+  SvgGenImage get icEyeHide =>
+      const SvgGenImage('assets/icons/ic_eye_hide.svg');
+
+  /// File path: assets/icons/ic_eye_show.svg
+  SvgGenImage get icEyeShow =>
+      const SvgGenImage('assets/icons/ic_eye_show.svg');
+
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 }

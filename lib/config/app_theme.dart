@@ -27,15 +27,18 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.extraRadius),
         ),
-        textStyle: TextStyle(color: AppColor.kNeutrals.shade50),
         elevation: 0,
         shadowColor: Colors.transparent,
         splashFactory: InkRipple.splashFactory,
-        foregroundColor: AppColor.kBackgroundButton,
+        foregroundColor: AppColor.kNeutrals.shade50,
+        backgroundColor: AppColor.kBackgroundButton,
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSize.extraRadius),
+        ),
         textStyle: TextStyle(color: AppColor.kNeutrals.shade50),
         elevation: 0,
         shadowColor: Colors.transparent,
@@ -46,6 +49,9 @@ class AppTheme {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         side: const BorderSide(color: AppColor.kBackgroundButton, width: 2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSize.extraRadius),
+        ),
         elevation: 0,
         shadowColor: Colors.transparent,
         splashFactory: InkRipple.splashFactory,
@@ -68,7 +74,10 @@ class AppTheme {
           color: AppColor.kPrimary1,
         ),
       ),
-      hintStyle: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
+      hintStyle: textTheme.bodyMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+        color: AppColor.kNeutrals.shade600,
+      ),
       filled: true,
       fillColor: AppColor.kNeutrals.shade400,
       contentPadding: EdgeInsets.symmetric(
