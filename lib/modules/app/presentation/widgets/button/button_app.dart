@@ -75,20 +75,35 @@ class ButtonApp extends StatelessWidget {
       child: child,
     );
 
+    // Type of button
     switch (type) {
       case ButtonType.primary:
-        return _ButtonPrimary(
+        child = _ButtonPrimary(
           enable: enable,
           onPressed: onPressed,
           child: child,
         );
+        break;
       case ButtonType.secondary:
-        return _ButtonSecondary(
+        child = _ButtonSecondary(
           enable: enable,
           onPressed: onPressed,
           child: child,
         );
     }
+
+    // Style
+    switch (style) {
+      case ButtonScaleStyle.expand:
+        child = SizedBox(
+          width: double.infinity,
+          child: child,
+        );
+        break;
+      case ButtonScaleStyle.tight:
+        break;
+    }
+    return child;
   }
 }
 

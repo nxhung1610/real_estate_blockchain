@@ -76,13 +76,10 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             AppSize.extraHeightDimens.verticalSpace,
-                            SizedBox(
-                              width: double.infinity,
-                              child: ButtonApp(
-                                type: ButtonType.primary,
-                                label: s.loginSignIn,
-                                onPressed: () {},
-                              ),
+                            ButtonApp(
+                              type: ButtonType.primary,
+                              label: s.loginSignIn,
+                              onPressed: () {},
                             ),
                             AppSize.extraHeightDimens.verticalSpace,
                             GestureDetector(
