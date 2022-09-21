@@ -145,30 +145,40 @@ class _AppCommonState extends State<_AppCommon> {
         child: ScreenUtilInit(
           designSize: AppSize.designSize,
           builder: (context, child) {
-            return MaterialApp.router(
-              theme: AppTheme.light,
-              debugShowCheckedModeBanner: false,
-              darkTheme: AppTheme.dark,
-              themeMode: _appBloc.state.mode,
-              locale: _appBloc.state.locale,
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              builder: (context, child) {
-                return SplashPage(
-                  child: child ?? Container(),
-                  onLoaded: () async {
-                    await processIntital.future;
-                  },
-                );
+            return GestureDetector(
+              onTap: () {
+                // Unfocus when tap out side
+                FocusScopeNode currentNode = FocusScope.of(context);
+                if (!currentNode.hasPrimaryFocus) {
+                  currentNode.unfocus();
+                  currentNode.requestFocus(FocusNode());
+                }
               },
-              supportedLocales: S.delegate.supportedLocales,
-              routeInformationParser: appRoute.routeInformationParser,
-              routerDelegate: appRoute.routerDelegate,
-              routeInformationProvider: appRoute.routeInformationProvider,
+              child: MaterialApp.router(
+                theme: AppTheme.light,
+                debugShowCheckedModeBanner: false,
+                darkTheme: AppTheme.dark,
+                themeMode: _appBloc.state.mode,
+                locale: _appBloc.state.locale,
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                builder: (context, child) {
+                  return SplashPage(
+                    child: child ?? Container(),
+                    onLoaded: () async {
+                      await processIntital.future;
+                    },
+                  );
+                },
+                supportedLocales: S.delegate.supportedLocales,
+                routeInformationParser: appRoute.routeInformationParser,
+                routerDelegate: appRoute.routerDelegate,
+                routeInformationProvider: appRoute.routeInformationProvider,
+              ),
             );
           },
         ),

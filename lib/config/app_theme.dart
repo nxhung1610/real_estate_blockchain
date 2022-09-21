@@ -58,8 +58,18 @@ class AppTheme {
         borderRadius: BorderRadius.circular(AppSize.largeRadius),
         borderSide: const BorderSide(
           style: BorderStyle.none,
+          width: 0,
         ),
       ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppSize.largeRadius),
+        borderSide: BorderSide(
+          width: 1.w,
+          color: AppColor.kPrimary1,
+        ),
+      ),
+      hintStyle: textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
+      filled: true,
       fillColor: AppColor.kNeutrals.shade400,
       contentPadding: EdgeInsets.symmetric(
         vertical: 14.h,
