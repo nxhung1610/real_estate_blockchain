@@ -11,7 +11,7 @@ import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/onboarding/module.dart';
-import 'package:real_estate_blockchain/utils/extensions.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 part 'onboarding_data.dart';
 

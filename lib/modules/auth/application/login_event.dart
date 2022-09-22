@@ -2,5 +2,11 @@ part of 'login_bloc.dart';
 
 @freezed
 class LoginEvent with _$LoginEvent {
-  const factory LoginEvent.started() = _Started;
+  const factory LoginEvent.emailChanged(String emailAddress) =
+      LoginEventEmailChanged;
+  const factory LoginEvent.passwordChanged(String password) =
+      LoginEventPasswordChanged;
+  const factory LoginEvent.passwordVisibleChanged(bool visible) =
+      LoginEventPasswordVisibleChanged;
+  const factory LoginEvent.loginPressed() = LoginEventLoginPressed;
 }

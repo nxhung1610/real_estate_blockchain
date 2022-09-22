@@ -17,8 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Status {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
@@ -26,8 +25,7 @@ mixin _$Status {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -35,8 +33,7 @@ mixin _$Status {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -45,8 +42,7 @@ mixin _$Status {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
@@ -54,8 +50,7 @@ mixin _$Status {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -63,8 +58,7 @@ mixin _$Status {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -87,126 +81,6 @@ class _$StatusCopyWithImpl<$Res> implements $StatusCopyWith<$Res> {
   final Status _value;
   // ignore: unused_field
   final $Res Function(Status) _then;
-}
-
-/// @nodoc
-abstract class _$$_StatusCopyWith<$Res> {
-  factory _$$_StatusCopyWith(_$_Status value, $Res Function(_$_Status) then) =
-      __$$_StatusCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_StatusCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
-    implements _$$_StatusCopyWith<$Res> {
-  __$$_StatusCopyWithImpl(_$_Status _value, $Res Function(_$_Status) _then)
-      : super(_value, (v) => _then(v as _$_Status));
-
-  @override
-  _$_Status get _value => super._value as _$_Status;
-}
-
-/// @nodoc
-
-class _$_Status implements _Status {
-  _$_Status();
-
-  @override
-  String toString() {
-    return 'Status()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Status);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
-    required TResult Function(dynamic value) success,
-    required TResult Function(dynamic value) failure,
-    required TResult Function() loading,
-    required TResult Function() idle,
-  }) {
-    return $default();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
-  }) {
-    return $default?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
-    required TResult Function(StatusSuccess value) success,
-    required TResult Function(StatusFailure value) failure,
-    required TResult Function(StatusLoading value) loading,
-    required TResult Function(StatusIdle value) idle,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Status implements Status {
-  factory _Status() = _$_Status;
 }
 
 /// @nodoc
@@ -272,8 +146,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
@@ -284,8 +157,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -296,8 +168,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -312,8 +183,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
@@ -324,8 +194,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -336,8 +205,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -423,8 +291,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
@@ -435,8 +302,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -447,8 +313,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -463,8 +328,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
@@ -475,8 +339,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -487,8 +350,7 @@ class _$StatusFailure implements StatusFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -550,8 +412,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
@@ -562,8 +423,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -574,8 +434,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -590,8 +449,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
@@ -602,8 +460,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -614,8 +471,7 @@ class _$StatusLoading implements StatusLoading {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -672,8 +528,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
@@ -684,8 +539,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -696,8 +550,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
@@ -712,8 +565,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Status value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
@@ -724,8 +576,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
@@ -736,8 +587,7 @@ class _$StatusIdle implements StatusIdle {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Status value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,

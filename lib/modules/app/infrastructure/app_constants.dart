@@ -1,5 +1,5 @@
-class HiveConstants {
-  HiveConstants._();
+class AppConstants {
+  AppConstants._();
 
   // Box App Config
 

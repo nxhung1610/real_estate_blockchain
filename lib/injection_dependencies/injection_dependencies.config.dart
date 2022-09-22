@@ -8,17 +8,20 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../modules/app/application/app_bloc.dart' as _i12;
+import '../modules/app/application/app_bloc.dart' as _i15;
 import '../modules/app/domain/i_app_config_repository.dart' as _i7;
 import '../modules/app/infrastructure/local/app_config_repository.dart' as _i8;
 import '../modules/auth/application/auth_bloc.dart' as _i5;
-import '../modules/auth/application/login_bloc.dart' as _i10;
+import '../modules/auth/application/login_bloc.dart' as _i13;
+import '../modules/auth/infrastructure/remote/auth_repository.dart' as _i11;
+import '../modules/auth/module.dart' as _i10;
+import '../modules/core/infrastructure/infrastructure.dart' as _i12;
 import '../modules/core/infrastructure/local/api_local_hive.dart' as _i3;
 import '../modules/core/infrastructure/remote/api_remote.dart' as _i4;
 import '../modules/core/module.dart' as _i9;
 import '../modules/home/application/home_bloc.dart' as _i6;
 import '../modules/onboarding/application/onboarding_bloc.dart'
-    as _i11; // ignore_for_file: unnecessary_lambdas
+    as _i14; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -31,9 +34,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i6.HomeBloc>(() => _i6.HomeBloc());
   gh.singleton<_i7.IAppConfigRepository>(
       _i8.AppConfigRepository(get<_i9.ApiLocalHive>()));
-  gh.factory<_i10.LoginBloc>(() => _i10.LoginBloc());
-  gh.factory<_i11.OnboardingBloc>(
-      () => _i11.OnboardingBloc(get<_i7.IAppConfigRepository>()));
-  gh.factory<_i12.AppBloc>(() => _i12.AppBloc(get<_i7.IAppConfigRepository>()));
+  gh.lazySingleton<_i10.IAuthRepository>(
+      () => _i11.AuthRepository(get<_i12.ApiRemote>()));
+  gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(get<_i10.IAuthRepository>()));
+  gh.factory<_i14.OnboardingBloc>(
+      () => _i14.OnboardingBloc(get<_i7.IAppConfigRepository>()));
+  gh.factory<_i15.AppBloc>(() => _i15.AppBloc(get<_i7.IAppConfigRepository>()));
   return get;
 }

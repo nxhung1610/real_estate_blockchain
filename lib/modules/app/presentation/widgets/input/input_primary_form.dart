@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/utils/extensions.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class InputPrimaryForm extends StatefulWidget {
   final String? lable;
@@ -11,8 +11,8 @@ class InputPrimaryForm extends StatefulWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final TextInputType? keyboardType;
-  final void Function(String)? onChanged;
-  final void Function(String)? onFieldSubmitted;
+  final void Function(String value)? onChanged;
+  final void Function(String value)? onFieldSubmitted;
   final TextEditingController? controller;
   final FocusNode? focusNode;
   final bool obscureText;

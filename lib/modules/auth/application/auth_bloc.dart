@@ -9,6 +9,19 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(const AuthState.unAuthenticated()) {
-    on<AuthEvent>((event, emit) {});
+    on<AuthEventLogin>((event, emit) {
+      emit(const AuthState.authenticated());
+    });
+    on<AuthEventLogout>((event, emit) {
+      emit(const AuthState.unAuthenticated());
+    });
+  }
+
+  void login() {
+    add(const AuthEvent.login());
+  }
+
+  void logout() {
+    add(const AuthEvent.logout());
   }
 }

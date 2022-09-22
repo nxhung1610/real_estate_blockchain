@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -9,22 +12,33 @@ class AppDialog {
   bool isShowing = false;
 
   AppDialog._(this._buildContext);
-
+  static Completer? _waitProcess;
   static AppDialog of(BuildContext context) {
     return AppDialog._(context);
   }
 
-  Future<void> showLoading({bool isDismiss = false}) async {
-    await dimissDialog();
-    return Future.delayed(
-      Duration.zero,
-      () {
-        if (_buildContext.loaderOverlay.visible) {
-          return;
-        }
-        _buildContext.loaderOverlay.show(widget: const WlLoading());
-      },
-    );
+  /// To check if another process show or dismiss is
+  Future<void> _checkProcess() async {
+    if (_waitProcess == null || _waitProcess!.isCompleted) {
+      _waitProcess = Completer();
+      return;
+    }
+    return _waitProcess!.future;
+  }
+
+  void _finishProcess() {
+    if (_waitProcess?.isCompleted == true) return;
+    _waitProcess?.complete();
+  }
+
+  void showLoading({bool isDismiss = false}) async {
+    await _checkProcess();
+    await _dimissDialog(checkProcess: false);
+    if (_buildContext.loaderOverlay.visible) {
+      return;
+    }
+    _buildContext.loaderOverlay.show(widget: const WlLoading());
+    _finishProcess();
   }
 
   Future<T?> showAppDialog<T>({
@@ -37,7 +51,7 @@ class AppDialog {
     String? negativeText,
   }) async {
     positiveText ??= S.of(_buildContext).ok;
-    await dimissDialog();
+    await _dimissDialog(checkProcess: false);
     return Future<T?>.delayed(
       Duration.zero,
       () async {
@@ -64,8 +78,13 @@ class AppDialog {
     );
   }
 
-  Future<void> dimissDialog() async {
-    await _dismissLoading();
+  Future<void> dismissDialog() async {
+    return _dimissDialog();
+  }
+
+  Future<void> _dimissDialog({bool checkProcess = true}) async {
+    if (checkProcess) await _checkProcess();
+    _dismissLoading();
     return Future.delayed(
       Duration.zero,
       () {
@@ -80,16 +99,13 @@ class AppDialog {
         }
         isShowing = false;
       },
-    );
+    ).then((value) {
+      if (checkProcess) _finishProcess();
+    });
   }
 
-  Future<void> _dismissLoading() async {
-    return Future.delayed(
-      Duration.zero,
-      () {
-        _buildContext.loaderOverlay.hide();
-      },
-    );
+  void _dismissLoading() {
+    _buildContext.loaderOverlay.hide();
   }
 }
 

@@ -19,32 +19,44 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() login,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(AuthEventLogin value) login,
+    required TResult Function(AuthEventLogout value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +117,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() login,
+    required TResult Function() logout,
   }) {
     return started();
   }
@@ -113,6 +127,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
   }) {
     return started?.call();
   }
@@ -121,6 +137,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -133,6 +151,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(AuthEventLogin value) login,
+    required TResult Function(AuthEventLogout value) logout,
   }) {
     return started(this);
   }
@@ -141,6 +161,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
   }) {
     return started?.call(this);
   }
@@ -149,6 +171,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,6 +184,227 @@ class _$_Started implements _Started {
 
 abstract class _Started implements AuthEvent {
   const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$$AuthEventLoginCopyWith<$Res> {
+  factory _$$AuthEventLoginCopyWith(
+          _$AuthEventLogin value, $Res Function(_$AuthEventLogin) then) =
+      __$$AuthEventLoginCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthEventLoginCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$AuthEventLoginCopyWith<$Res> {
+  __$$AuthEventLoginCopyWithImpl(
+      _$AuthEventLogin _value, $Res Function(_$AuthEventLogin) _then)
+      : super(_value, (v) => _then(v as _$AuthEventLogin));
+
+  @override
+  _$AuthEventLogin get _value => super._value as _$AuthEventLogin;
+}
+
+/// @nodoc
+
+class _$AuthEventLogin implements AuthEventLogin {
+  const _$AuthEventLogin();
+
+  @override
+  String toString() {
+    return 'AuthEvent.login()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthEventLogin);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() login,
+    required TResult Function() logout,
+  }) {
+    return login();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
+  }) {
+    return login?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(AuthEventLogin value) login,
+    required TResult Function(AuthEventLogout value) logout,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
+  }) {
+    return login?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthEventLogin implements AuthEvent {
+  const factory AuthEventLogin() = _$AuthEventLogin;
+}
+
+/// @nodoc
+abstract class _$$AuthEventLogoutCopyWith<$Res> {
+  factory _$$AuthEventLogoutCopyWith(
+          _$AuthEventLogout value, $Res Function(_$AuthEventLogout) then) =
+      __$$AuthEventLogoutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthEventLogoutCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$AuthEventLogoutCopyWith<$Res> {
+  __$$AuthEventLogoutCopyWithImpl(
+      _$AuthEventLogout _value, $Res Function(_$AuthEventLogout) _then)
+      : super(_value, (v) => _then(v as _$AuthEventLogout));
+
+  @override
+  _$AuthEventLogout get _value => super._value as _$AuthEventLogout;
+}
+
+/// @nodoc
+
+class _$AuthEventLogout implements AuthEventLogout {
+  const _$AuthEventLogout();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthEventLogout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() login,
+    required TResult Function() logout,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? login,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(AuthEventLogin value) login,
+    required TResult Function(AuthEventLogout value) logout,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(AuthEventLogin value)? login,
+    TResult Function(AuthEventLogout value)? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthEventLogout implements AuthEvent {
+  const factory AuthEventLogout() = _$AuthEventLogout;
 }
 
 /// @nodoc

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/utils/extensions.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import 'button_enums.dart';
 
