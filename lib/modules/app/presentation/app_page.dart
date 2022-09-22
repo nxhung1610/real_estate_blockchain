@@ -50,45 +50,47 @@ class _AppCommon extends StatefulWidget {
 }
 
 class _AppCommonState extends State<_AppCommon> {
-  late final AppBloc _appBloc;
-  late final AuthBloc _authBloc;
+  late final AppBloc appBloc;
+  late final AuthBloc authBloc;
+  late final GoRouter appRoute;
 
-  //
+  // Value manage process
   late final Completer processIntital;
 
   @override
   void initState() {
     super.initState();
+
     processIntital = Completer();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _appBloc = context.read<AppBloc>();
-    _authBloc = context.read<AuthBloc>();
-
-    _intitial();
+    appBloc = context.read<AppBloc>();
+    authBloc = context.read<AuthBloc>();
+    setupRouter();
+    intitial();
   }
 
-  void _intitial() {
-    _appBloc.started();
+  void intitial() {
+    appBloc.started();
   }
 
-  GoRouter setUpRouter() {
-    return GoRouter(
+  void setupRouter() {
+    appRoute = GoRouter(
       routes: $appRoutes,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },
-      refreshListenable: GoRouterRefreshStream(_authBloc.stream),
+      refreshListenable: GoRouterRefreshStream(authBloc.stream),
       redirect: (state) {
         log(state.location);
         String? lastRoute;
         // Check First Launch
 
         lastRoute = (() {
-          if (_appBloc.state.isFisrtLaunch ?? true == true) {
+          if (appBloc.state.isFisrtLaunch ?? true == true) {
             return const AppOnboardingRoute().location;
           } else {
             final unAuthentcationRoutes = [
@@ -97,7 +99,7 @@ class _AppCommonState extends State<_AppCommon> {
             ];
             // Wokring with authentication
             // Check if authentication or not
-            final isLoggedIn = _authBloc.state is AuthStateAuthenticated;
+            final isLoggedIn = authBloc.state is AuthStateAuthenticated;
 
             // If user is not login and not in Login or Register page
             // Redirect them to Login page
@@ -132,7 +134,6 @@ class _AppCommonState extends State<_AppCommon> {
   @override
   Widget build(BuildContext context) {
     // Initial Route App
-    final appRoute = setUpRouter();
 
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
@@ -159,8 +160,8 @@ class _AppCommonState extends State<_AppCommon> {
                 scrollBehavior: const ScrollBehaviorModified(),
                 debugShowCheckedModeBanner: false,
                 darkTheme: AppTheme.dark,
-                themeMode: _appBloc.state.mode,
-                locale: _appBloc.state.locale,
+                themeMode: appBloc.state.mode,
+                locale: appBloc.state.locale,
                 localizationsDelegates: const [
                   S.delegate,
                   GlobalMaterialLocalizations.delegate,

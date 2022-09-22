@@ -82,6 +82,7 @@ class AppDialog {
     return _dimissDialog();
   }
 
+  /// [checkProcess] value to check if the function need wait until another process dialog finish
   Future<void> _dimissDialog({bool checkProcess = true}) async {
     if (checkProcess) await _checkProcess();
     _dismissLoading();
