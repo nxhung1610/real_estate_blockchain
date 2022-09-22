@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
-import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart';
+import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 
 import 'package:real_estate_blockchain/modules/onboarding/presentation/onboarding_page.dart';
 import 'package:go_router/go_router.dart';

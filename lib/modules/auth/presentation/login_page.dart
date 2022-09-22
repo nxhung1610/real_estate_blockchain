@@ -5,7 +5,7 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
-import 'package:real_estate_blockchain/modules/app/app_module.dart';
+import 'package:real_estate_blockchain/modules/app/module.dart';
 import 'package:real_estate_blockchain/modules/app/presentation/widgets/button/button_enums.dart';
 import 'package:real_estate_blockchain/utils/extensions.dart';
 

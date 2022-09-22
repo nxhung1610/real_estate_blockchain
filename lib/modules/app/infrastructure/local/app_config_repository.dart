@@ -3,7 +3,7 @@ import 'package:real_estate_blockchain/modules/app/domain/app_config_failure.dar
 import 'package:dartz/dartz.dart';
 import 'package:real_estate_blockchain/modules/app/domain/i_app_config_repository.dart';
 import 'package:real_estate_blockchain/modules/app/infrastructure/local/hive_constants.dart';
-import 'package:real_estate_blockchain/modules/core/core_module.dart';
+import 'package:real_estate_blockchain/modules/core/module.dart';
 
 @Singleton(as: IAppConfigRepository)
 class AppConfigRepository implements IAppConfigRepository {

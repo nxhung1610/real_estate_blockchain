@@ -13,9 +13,9 @@ import '../modules/app/domain/i_app_config_repository.dart' as _i7;
 import '../modules/app/infrastructure/local/app_config_repository.dart' as _i8;
 import '../modules/auth/application/auth_bloc.dart' as _i5;
 import '../modules/auth/application/login_bloc.dart' as _i10;
-import '../modules/core/core_module.dart' as _i9;
 import '../modules/core/infrastructure/local/api_local_hive.dart' as _i3;
 import '../modules/core/infrastructure/remote/api_remote.dart' as _i4;
+import '../modules/core/module.dart' as _i9;
 import '../modules/home/application/home_bloc.dart' as _i6;
 import '../modules/onboarding/application/onboarding_bloc.dart'
     as _i11; // ignore_for_file: unnecessary_lambdas

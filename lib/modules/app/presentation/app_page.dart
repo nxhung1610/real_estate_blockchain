@@ -9,10 +9,10 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
-import 'package:real_estate_blockchain/modules/auth/auth_module.dart';
-import 'package:real_estate_blockchain/modules/core/core_module.dart';
-import 'package:real_estate_blockchain/modules/home/home_module.dart';
-import 'package:real_estate_blockchain/modules/onboarding/onboarding_module.dart';
+import 'package:real_estate_blockchain/modules/auth/module.dart';
+import 'package:real_estate_blockchain/modules/core/module.dart';
+import 'package:real_estate_blockchain/modules/home/module.dart';
+import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:real_estate_blockchain/modules/splash/presentation/splash_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -156,6 +156,7 @@ class _AppCommonState extends State<_AppCommon> {
               },
               child: MaterialApp.router(
                 theme: AppTheme.light,
+                scrollBehavior: const ScrollBehaviorModified(),
                 debugShowCheckedModeBanner: false,
                 darkTheme: AppTheme.dark,
                 themeMode: _appBloc.state.mode,

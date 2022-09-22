@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/modules/core/core_module.dart';
+import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:hive/hive.dart';
 
 @singleton

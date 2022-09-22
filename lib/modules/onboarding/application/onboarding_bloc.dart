@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/modules/app/domain/i_app_config_repository.dart';
 
-import '../onboarding_module.dart';
+import '../module.dart';
 
 part 'onboarding_event.dart';
 part 'onboarding_state.dart';
