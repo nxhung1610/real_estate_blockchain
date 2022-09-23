@@ -231,20 +231,30 @@ class S {
   }
 
   /// `Email`
-  String get loginEmail {
+  String get email {
     return Intl.message(
       'Email',
-      name: 'loginEmail',
+      name: 'email',
       desc: '',
       args: [],
     );
   }
 
   /// `Password`
-  String get loginPassword {
+  String get password {
     return Intl.message(
       'Password',
-      name: 'loginPassword',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message(
+      'Full Name',
+      name: 'fullName',
       desc: '',
       args: [],
     );
@@ -285,6 +295,46 @@ class S {
     return Intl.message(
       'Sign Up',
       name: 'registerSignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a`
+  String get registerCreateANameAccount1 {
+    return Intl.message(
+      'Create a',
+      name: 'registerCreateANameAccount1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `account`
+  String get registerCreateANameAccount2 {
+    return Intl.message(
+      'account',
+      name: 'registerCreateANameAccount2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account to continue`
+  String get registerCreateAnAccountToContinue {
+    return Intl.message(
+      'Create an account to continue',
+      name: 'registerCreateAnAccountToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You already have an account?`
+  String get registerYouAlreadyHaveAnAccount {
+    return Intl.message(
+      'You already have an account?',
+      name: 'registerYouAlreadyHaveAnAccount',
       desc: '',
       args: [],
     );

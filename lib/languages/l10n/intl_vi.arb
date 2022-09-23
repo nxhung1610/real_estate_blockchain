@@ -17,10 +17,15 @@
   "onboardingGetStatred": "Bắt đầu",
   "loginWelcomeBack": "Mừng trở lại!",
   "loginSigninToYourAccount": "Đăng nhập vào tài khoản",
-  "loginEmail": "Email",
-  "loginPassword": "Mật khẩu",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "fullName" : "Họ và tên",
   "loginSignIn": "Đăng nhập",
   "loginForgotPassword": "Quên mật khẩu?",
   "loginDontHaveAnAccount": "Chưa có tài khoản?",
-  "registerSignUp" : "Đăng ký"
+  "registerSignUp" : "Đăng ký",
+  "registerCreateANameAccount1" : "Tạo một",
+  "registerCreateANameAccount2" : "tài khoản",
+  "registerCreateAnAccountToContinue" : "Tạo tài khoản để tiếp tục",
+  "registerYouAlreadyHaveAnAccount" : "Bạn đã có tài khoản?"
 }

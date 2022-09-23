@@ -11,7 +11,8 @@ class AppSnackBar {
     return AppSnackBar._(context);
   }
 
-  show(String content) {
+  show(String? content) {
+    if (content == null) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         margin: EdgeInsets.all(

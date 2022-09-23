@@ -1,30 +1,30 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/modules/auth/domain/value_objects.dart';
-import 'package:real_estate_blockchain/modules/auth/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
 
-part 'login_event.dart';
-part 'login_state.dart';
-part 'login_bloc.freezed.dart';
+import '../module.dart';
+
+part 'register_event.dart';
+part 'register_state.dart';
+part 'register_bloc.freezed.dart';
 
 @injectable
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
+class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final IAuthRepository authRepository;
-  LoginBloc(this.authRepository) : super(LoginState.initial()) {
-    on<LoginEventEmailChanged>((event, emit) {
+  RegisterBloc(this.authRepository) : super(RegisterState.intitial()) {
+    on<RegisterEventEmailChanged>((event, emit) {
       emit(state.copyWith(emailAddress: EmailAddressAuth(event.emailAddress)));
     });
-    on<LoginEventPasswordChanged>((event, emit) {
+    on<RegisterEventPasswordChanged>((event, emit) {
       emit(state.copyWith(password: PasswordAuth(event.password)));
     });
-    on<LoginEventPasswordVisibleChanged>(
+    on<RegisterEventPasswordVisibleChanged>(
       (event, emit) => emit(
         state.copyWith(passwordVisible: event.visible),
       ),
     );
-    on<LoginEventLoginPressed>((event, emit) async {
+    on<RegisterEventReggisterPressed>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
       // Valid input
       final isEmailValid = state.emailAddress.isValid();
@@ -54,19 +54,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     });
   }
 
+  void nameChanged(String name) {
+    add(RegisterEvent.nameChanged(name));
+  }
+
   void emailChanged(String input) {
-    add(LoginEvent.emailChanged(input));
+    add(RegisterEvent.emailChanged(input));
   }
 
   void passwordChanged(String input) {
-    add(LoginEvent.passwordChanged(input));
+    add(RegisterEvent.passwordChanged(input));
   }
 
   void passwordVisibleChanged(bool visible) {
-    add(LoginEvent.passwordVisibleChanged(visible));
+    add(RegisterEvent.passwordVisibleChanged(visible));
   }
 
   void loginPressed() {
-    add(const LoginEvent.loginPressed());
+    add(const RegisterEvent.registerPressed());
   }
 }

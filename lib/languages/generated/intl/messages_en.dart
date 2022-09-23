@@ -30,15 +30,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
-        "loginEmail": MessageLookupByLibrary.simpleMessage("Email"),
         "loginForgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
-        "loginPassword": MessageLookupByLibrary.simpleMessage("Password"),
         "loginSignIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "loginSigninToYourAccount":
             MessageLookupByLibrary.simpleMessage("Sign in to your account"),
@@ -48,7 +48,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "registerCreateANameAccount1":
+            MessageLookupByLibrary.simpleMessage("Create a"),
+        "registerCreateANameAccount2":
+            MessageLookupByLibrary.simpleMessage("account"),
+        "registerCreateAnAccountToContinue":
+            MessageLookupByLibrary.simpleMessage(
+                "Create an account to continue"),
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+            "You already have an account?"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),

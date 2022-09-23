@@ -8,11 +8,12 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../modules/app/application/app_bloc.dart' as _i15;
+import '../modules/app/application/app_bloc.dart' as _i16;
 import '../modules/app/domain/i_app_config_repository.dart' as _i7;
 import '../modules/app/infrastructure/local/app_config_repository.dart' as _i8;
 import '../modules/auth/application/auth_bloc.dart' as _i5;
 import '../modules/auth/application/login_bloc.dart' as _i13;
+import '../modules/auth/application/register_bloc.dart' as _i15;
 import '../modules/auth/infrastructure/remote/auth_repository.dart' as _i11;
 import '../modules/auth/module.dart' as _i10;
 import '../modules/core/infrastructure/infrastructure.dart' as _i12;
@@ -39,6 +40,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(get<_i10.IAuthRepository>()));
   gh.factory<_i14.OnboardingBloc>(
       () => _i14.OnboardingBloc(get<_i7.IAppConfigRepository>()));
-  gh.factory<_i15.AppBloc>(() => _i15.AppBloc(get<_i7.IAppConfigRepository>()));
+  gh.factory<_i15.RegisterBloc>(
+      () => _i15.RegisterBloc(get<_i10.IAuthRepository>()));
+  gh.factory<_i16.AppBloc>(() => _i16.AppBloc(get<_i7.IAppConfigRepository>()));
   return get;
 }

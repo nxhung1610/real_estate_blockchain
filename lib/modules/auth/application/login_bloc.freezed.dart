@@ -674,7 +674,7 @@ abstract class LoginEventLoginPressed implements LoginEvent {
 /// @nodoc
 mixin _$LoginState {
   EmailAddressAuth get emailAddress => throw _privateConstructorUsedError;
-  PasswordAuth get passwordAuth => throw _privateConstructorUsedError;
+  PasswordAuth get password => throw _privateConstructorUsedError;
   bool get passwordVisible => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
@@ -690,7 +690,7 @@ abstract class $LoginStateCopyWith<$Res> {
       _$LoginStateCopyWithImpl<$Res>;
   $Res call(
       {EmailAddressAuth emailAddress,
-      PasswordAuth passwordAuth,
+      PasswordAuth password,
       bool passwordVisible,
       Status status});
 
@@ -708,7 +708,7 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
   @override
   $Res call({
     Object? emailAddress = freezed,
-    Object? passwordAuth = freezed,
+    Object? password = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
@@ -717,9 +717,9 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddressAuth,
-      passwordAuth: passwordAuth == freezed
-          ? _value.passwordAuth
-          : passwordAuth // ignore: cast_nullable_to_non_nullable
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
       passwordVisible: passwordVisible == freezed
           ? _value.passwordVisible
@@ -749,7 +749,7 @@ abstract class _$$_LoginStateCopyWith<$Res>
   @override
   $Res call(
       {EmailAddressAuth emailAddress,
-      PasswordAuth passwordAuth,
+      PasswordAuth password,
       bool passwordVisible,
       Status status});
 
@@ -770,7 +770,7 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? emailAddress = freezed,
-    Object? passwordAuth = freezed,
+    Object? password = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
@@ -779,9 +779,9 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddressAuth,
-      passwordAuth: passwordAuth == freezed
-          ? _value.passwordAuth
-          : passwordAuth // ignore: cast_nullable_to_non_nullable
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
       passwordVisible: passwordVisible == freezed
           ? _value.passwordVisible
@@ -800,14 +800,14 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 class _$_LoginState implements _LoginState {
   const _$_LoginState(
       {required this.emailAddress,
-      required this.passwordAuth,
+      required this.password,
       this.passwordVisible = false,
       this.status = const Status.idle()});
 
   @override
   final EmailAddressAuth emailAddress;
   @override
-  final PasswordAuth passwordAuth;
+  final PasswordAuth password;
   @override
   @JsonKey()
   final bool passwordVisible;
@@ -817,7 +817,7 @@ class _$_LoginState implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(emailAddress: $emailAddress, passwordAuth: $passwordAuth, passwordVisible: $passwordVisible, status: $status)';
+    return 'LoginState(emailAddress: $emailAddress, password: $password, passwordVisible: $passwordVisible, status: $status)';
   }
 
   @override
@@ -827,8 +827,7 @@ class _$_LoginState implements _LoginState {
             other is _$_LoginState &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordAuth, passwordAuth) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality()
                 .equals(other.passwordVisible, passwordVisible) &&
             const DeepCollectionEquality().equals(other.status, status));
@@ -838,7 +837,7 @@ class _$_LoginState implements _LoginState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(passwordAuth),
+      const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(passwordVisible),
       const DeepCollectionEquality().hash(status));
 
@@ -851,14 +850,14 @@ class _$_LoginState implements _LoginState {
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {required final EmailAddressAuth emailAddress,
-      required final PasswordAuth passwordAuth,
+      required final PasswordAuth password,
       final bool passwordVisible,
       final Status status}) = _$_LoginState;
 
   @override
   EmailAddressAuth get emailAddress;
   @override
-  PasswordAuth get passwordAuth;
+  PasswordAuth get password;
   @override
   bool get passwordVisible;
   @override

@@ -14,3 +14,14 @@ class LoginRoute extends GoRouteData {
     );
   }
 }
+
+class RegisterRoute extends GoRouteData {
+  const RegisterRoute();
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt.call<RegisterBloc>(),
+      child: const RegisterPage(),
+    );
+  }
+}

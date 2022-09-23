@@ -22,4 +22,17 @@ class AuthRepository extends IAuthRepository {
       return left(const AuthFailures.unknow());
     }
   }
+
+  @override
+  Future<Either<AuthFailures, Unit>> register(
+      EmailAddressAuth emailAddressAuth, PasswordAuth passwordAuth) async {
+    final emailStr = emailAddressAuth.value.getOrElse(() => 'INVALID_EMAIL');
+    final passwordStr = passwordAuth.value.getOrElse(() => 'INVALID_PASSWORD');
+    try {
+      // TODO : register login here
+      return right(unit);
+    } catch (e) {
+      return left(const AuthFailures.unknow());
+    }
+  }
 }

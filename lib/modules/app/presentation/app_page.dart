@@ -96,6 +96,7 @@ class _AppCommonState extends State<_AppCommon> {
             final unAuthentcationRoutes = [
               const AppOnboardingRoute().location,
               const AppLoginRoute().location,
+              const AppRegisterRoute().location
             ];
             // Wokring with authentication
             // Check if authentication or not
@@ -103,8 +104,7 @@ class _AppCommonState extends State<_AppCommon> {
 
             // If user is not login and not in Login or Register page
             // Redirect them to Login page
-            final alreadyInLogin =
-                [const AppLoginRoute().location].contains(state.subloc);
+            final alreadyInLogin = unAuthentcationRoutes.contains(state.subloc);
             if (!isLoggedIn && !alreadyInLogin) {
               return const AppLoginRoute().location;
             }

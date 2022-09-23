@@ -17,10 +17,15 @@
   "onboardingGetStatred": "Get Started",
   "loginWelcomeBack": "Welcome Back!",
   "loginSigninToYourAccount": "Sign in to your account",
-  "loginEmail": "Email",
-  "loginPassword": "Password",
+  "email": "Email",
+  "password": "Password",
+  "fullName" : "Full Name",
   "loginSignIn": "Sign In",
   "loginForgotPassword": "Forgot Password?",
   "loginDontHaveAnAccount": "Dont't have an account?",
-  "registerSignUp" : "Sign Up"
+  "registerSignUp" : "Sign Up",
+  "registerCreateANameAccount1" : "Create a",
+  "registerCreateANameAccount2" : "account",
+  "registerCreateAnAccountToContinue" : "Create an account to continue",
+  "registerYouAlreadyHaveAnAccount" : "You already have an account?"
 }

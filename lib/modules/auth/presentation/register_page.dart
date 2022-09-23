@@ -1,63 +1,28 @@
-import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
-import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
-import 'package:real_estate_blockchain/modules/app/presentation/widgets/button/button_enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../module.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  late final AuthBloc authBloc;
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    authBloc = context.read<AuthBloc>();
-  }
-
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return BlocListener<LoginBloc, LoginState>(
-      listener: (context, state) {
-        state.status.whenOrNull(
-          idle: () {
-            // log('Hide bloc loading');
-            context.appDialog.dismissDialog();
-          },
-          loading: () {
-            // log('Show bloc loading');
-            context.appDialog.showLoading();
-          },
-          failure: (value) {
-            context.appSnackBar.show((value as AuthFailures).mapOrNull(
-              emailAddressInvalid: (value) => 'Email not valid',
-              passwordInvalid: (value) => 'Password not valid',
-              unknow: (value) => 'Unknow',
-            ));
-          },
-          success: (value) {
-            authBloc.login();
-          },
-        );
-      },
+    return BlocListener<RegisterBloc, RegisterState>(
+      listener: (context, state) {},
       child: Scaffold(
         extendBody: true,
         body: SafeArea(
@@ -78,28 +43,51 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          s.loginWelcomeBack,
-                          style: context.textTheme.headlineSmall?.copyWith(
-                            color: AppColor.kNeutrals.shade800,
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: s.registerCreateANameAccount1,
+                                style:
+                                    context.textTheme.headlineSmall?.copyWith(
+                                  color: AppColor.kNeutrals.shade800,
+                                ),
+                              ),
+                              const TextSpan(text: ' '),
+                              TextSpan(
+                                text: s.appName,
+                                style:
+                                    context.textTheme.headlineSmall?.copyWith(
+                                  color: AppColor.kPrimary1,
+                                ),
+                              ),
+                              const TextSpan(text: ' '),
+                              TextSpan(
+                                text: s.registerCreateANameAccount2,
+                                style:
+                                    context.textTheme.headlineSmall?.copyWith(
+                                  color: AppColor.kNeutrals.shade800,
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         8.h.verticalSpace,
                         Text(
-                          s.loginSigninToYourAccount,
+                          s.registerCreateAnAccountToContinue,
                           style: context.textTheme.bodyLarge?.copyWith(
                             color: AppColor.kNeutrals.shade600,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
                         40.h.verticalSpace,
-                        const _LoginForm(),
+                        const _RegisterForm(),
                         const Spacer(),
                         Align(
                           alignment: Alignment.center,
                           child: Text.rich(
                             TextSpan(
-                                text: s.loginDontHaveAnAccount,
+                                text: s.registerYouAlreadyHaveAnAccount,
                                 style: context.textTheme.bodyLarge?.copyWith(
                                   color: AppColor.kNeutrals.shade700,
                                 ),
@@ -107,15 +95,14 @@ class _LoginPageState extends State<LoginPage> {
                                   WidgetSpan(
                                     child: GestureDetector(
                                       onTap: () {
-                                        // TODO : go to register route
-                                        const AppRegisterRoute().go(context);
+                                        const AppLoginRoute().go(context);
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.only(
                                           left: AppSize.smallWidthDimens,
                                         ),
                                         child: Text(
-                                          s.registerSignUp,
+                                          s.loginSignIn,
                                           style: context.textTheme.bodyLarge
                                               ?.copyWith(
                                             fontWeight: FontWeight.w800,
@@ -141,31 +128,27 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class _LoginForm extends StatefulWidget {
-  const _LoginForm({super.key});
-
-  @override
-  State<_LoginForm> createState() => __LoginFormState();
-}
-
-class __LoginFormState extends State<_LoginForm> {
-  late final LoginBloc bloc;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    bloc = context.read<LoginBloc>();
-  }
+class _RegisterForm extends StatelessWidget {
+  const _RegisterForm({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<RegisterBloc>();
     final s = S.of(context);
-    return BlocBuilder<LoginBloc, LoginState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       builder: (context, state) {
         return Form(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              InputPrimaryForm(
+                keyboardType: TextInputType.name,
+                hint: s.fullName,
+                onChanged: (value) {
+                  bloc.nameChanged(value);
+                },
+              ),
+              AppSize.largeHeightDimens.verticalSpace,
               InputPrimaryForm(
                 keyboardType: TextInputType.emailAddress,
                 hint: s.email,
@@ -199,7 +182,7 @@ class __LoginFormState extends State<_LoginForm> {
               AppSize.extraHeightDimens.verticalSpace,
               ButtonApp(
                 type: ButtonType.primary,
-                label: s.loginSignIn,
+                label: s.registerSignUp,
                 onPressed: () {
                   bloc.loginPressed();
                 },

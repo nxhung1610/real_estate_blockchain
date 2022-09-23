@@ -20,6 +20,7 @@ mixin _$AuthFailures {
   TResult when<TResult extends Object?>({
     required TResult Function() emailAddressInvalid,
     required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
     required TResult Function() unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$AuthFailures {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$AuthFailures {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) =>
@@ -44,6 +47,7 @@ mixin _$AuthFailures {
         emailAddressInvalid,
     required TResult Function(AuthFailuresPasswordInvalid value)
         passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +56,7 @@ mixin _$AuthFailures {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +65,7 @@ mixin _$AuthFailures {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) =>
@@ -130,6 +136,7 @@ class _$AuthFailuresEmailAddressInvalid
   TResult when<TResult extends Object?>({
     required TResult Function() emailAddressInvalid,
     required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
     required TResult Function() unknow,
   }) {
     return emailAddressInvalid();
@@ -140,6 +147,7 @@ class _$AuthFailuresEmailAddressInvalid
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
   }) {
     return emailAddressInvalid?.call();
@@ -150,6 +158,7 @@ class _$AuthFailuresEmailAddressInvalid
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -166,6 +175,7 @@ class _$AuthFailuresEmailAddressInvalid
         emailAddressInvalid,
     required TResult Function(AuthFailuresPasswordInvalid value)
         passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return emailAddressInvalid(this);
@@ -177,6 +187,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return emailAddressInvalid?.call(this);
@@ -188,6 +199,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -250,6 +262,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
   TResult when<TResult extends Object?>({
     required TResult Function() emailAddressInvalid,
     required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
     required TResult Function() unknow,
   }) {
     return passwordInvalid();
@@ -260,6 +273,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
   }) {
     return passwordInvalid?.call();
@@ -270,6 +284,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -286,6 +301,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
         emailAddressInvalid,
     required TResult Function(AuthFailuresPasswordInvalid value)
         passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return passwordInvalid(this);
@@ -297,6 +313,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return passwordInvalid?.call(this);
@@ -308,6 +325,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -320,6 +338,131 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
 
 abstract class AuthFailuresPasswordInvalid implements AuthFailures {
   const factory AuthFailuresPasswordInvalid() = _$AuthFailuresPasswordInvalid;
+}
+
+/// @nodoc
+abstract class _$$AuthFailureFullNameInvalidCopyWith<$Res> {
+  factory _$$AuthFailureFullNameInvalidCopyWith(
+          _$AuthFailureFullNameInvalid value,
+          $Res Function(_$AuthFailureFullNameInvalid) then) =
+      __$$AuthFailureFullNameInvalidCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthFailureFullNameInvalidCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res>
+    implements _$$AuthFailureFullNameInvalidCopyWith<$Res> {
+  __$$AuthFailureFullNameInvalidCopyWithImpl(
+      _$AuthFailureFullNameInvalid _value,
+      $Res Function(_$AuthFailureFullNameInvalid) _then)
+      : super(_value, (v) => _then(v as _$AuthFailureFullNameInvalid));
+
+  @override
+  _$AuthFailureFullNameInvalid get _value =>
+      super._value as _$AuthFailureFullNameInvalid;
+}
+
+/// @nodoc
+
+class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
+  const _$AuthFailureFullNameInvalid();
+
+  @override
+  String toString() {
+    return 'AuthFailures.fullNameInvalid()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthFailureFullNameInvalid);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() emailAddressInvalid,
+    required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
+    required TResult Function() unknow,
+  }) {
+    return fullNameInvalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? emailAddressInvalid,
+    TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
+    TResult Function()? unknow,
+  }) {
+    return fullNameInvalid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? emailAddressInvalid,
+    TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
+    TResult Function()? unknow,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalid != null) {
+      return fullNameInvalid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthFailuresEmailAddressInvalid value)
+        emailAddressInvalid,
+    required TResult Function(AuthFailuresPasswordInvalid value)
+        passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
+    required TResult Function(AuthFailuresUnknow value) unknow,
+  }) {
+    return fullNameInvalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult Function(AuthFailuresUnknow value)? unknow,
+  }) {
+    return fullNameInvalid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult Function(AuthFailuresUnknow value)? unknow,
+    required TResult orElse(),
+  }) {
+    if (fullNameInvalid != null) {
+      return fullNameInvalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthFailureFullNameInvalid implements AuthFailures {
+  const factory AuthFailureFullNameInvalid() = _$AuthFailureFullNameInvalid;
 }
 
 /// @nodoc
@@ -365,6 +508,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
   TResult when<TResult extends Object?>({
     required TResult Function() emailAddressInvalid,
     required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
     required TResult Function() unknow,
   }) {
     return unknow();
@@ -375,6 +519,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
   }) {
     return unknow?.call();
@@ -385,6 +530,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? emailAddressInvalid,
     TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -401,6 +547,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
         emailAddressInvalid,
     required TResult Function(AuthFailuresPasswordInvalid value)
         passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return unknow(this);
@@ -412,6 +559,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return unknow?.call(this);
@@ -423,6 +571,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {

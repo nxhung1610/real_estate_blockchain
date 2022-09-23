@@ -1,14 +1,15 @@
-part of 'login_bloc.dart';
+part of 'register_bloc.dart';
 
 @freezed
-class LoginState with _$LoginState {
-  const factory LoginState({
+class RegisterState with _$RegisterState {
+  const factory RegisterState({
     required EmailAddressAuth emailAddress,
     required PasswordAuth password,
     @Default(false) bool passwordVisible,
     @Default(Status.idle()) Status status,
-  }) = _LoginState;
-  factory LoginState.initial() => LoginState(
+  }) = _RegisterState;
+
+  factory RegisterState.intitial() => RegisterState(
         emailAddress: EmailAddressAuth(''),
         password: PasswordAuth(''),
       );

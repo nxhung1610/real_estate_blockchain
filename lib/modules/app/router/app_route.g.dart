@@ -9,6 +9,7 @@ part of 'app_route.dart';
 List<GoRoute> get $appRoutes => [
       $appOnboardingRoute,
       $appLoginRoute,
+      $appRegisterRoute,
       $appHomeRoute,
     ];
 
@@ -40,6 +41,24 @@ extension $AppLoginRouteExtension on AppLoginRoute {
 
   String get location => GoRouteData.$location(
         '/login',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+GoRoute get $appRegisterRoute => GoRouteData.$route(
+      path: '/register',
+      factory: $AppRegisterRouteExtension._fromState,
+    );
+
+extension $AppRegisterRouteExtension on AppRegisterRoute {
+  static AppRegisterRoute _fromState(GoRouterState state) =>
+      const AppRegisterRoute();
+
+  String get location => GoRouteData.$location(
+        '/register',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

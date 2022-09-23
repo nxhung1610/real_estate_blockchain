@@ -20,6 +20,13 @@ class AppLoginRoute extends LoginRoute {
   const AppLoginRoute();
 }
 
+@TypedGoRoute<AppRegisterRoute>(
+  path: '/register',
+)
+class AppRegisterRoute extends RegisterRoute {
+  const AppRegisterRoute();
+}
+
 @TypedGoRoute<AppHomeRoute>(
   path: '/home',
 )
