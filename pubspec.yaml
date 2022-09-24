@@ -144,6 +144,9 @@ flutter_intl:
 
 flutter_native_splash:
   color : "#111827"
+  android_12:
+    color : "#111827"
+    image : ""
 
 flutter_gen:
   output: lib/assets/

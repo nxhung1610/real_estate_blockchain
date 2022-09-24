@@ -141,6 +141,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   duration: const Duration(milliseconds: 500),
                   child: Image(
                     height: double.infinity,
+                    width: double.infinity,
                     key: Key(state.index.toString()),
                     image: data.background.image,
                     fit: BoxFit.cover,
