@@ -12,7 +12,13 @@ class AppTheme {
     fontFamily: FontFamily.manrope,
     splashFactory: InkRipple.splashFactory,
     backgroundColor: AppColor.kBackgroundLight,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColor.kNeutrals.shade300,
+    ),
     scaffoldBackgroundColor: AppColor.kBackgroundLight,
+    iconTheme: IconThemeData(
+      color: AppColor.kNeutrals.shade800,
+    ),
     colorScheme: const ColorScheme.light(
       primary: AppColor.kPrimary2,
       primaryContainer: AppColor.kPrimary2,
@@ -58,7 +64,10 @@ class AppTheme {
         foregroundColor: AppColor.kBackgroundButton,
       ),
     ),
-    textTheme: textTheme,
+    textTheme: textTheme.apply(
+      bodyColor: AppColor.kNeutrals.shade700,
+      displayColor: AppColor.kNeutrals.shade900,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(AppSize.largeRadius),

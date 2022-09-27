@@ -9,3 +9,6 @@ export 'infrastructure/infrastructure.dart';
 
 // Domain
 export 'domain/domain.dart';
+
+// Router
+export 'router/router.dart';

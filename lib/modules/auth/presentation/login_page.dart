@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                                     child: GestureDetector(
                                       onTap: () {
                                         // TODO : go to register route
-                                        const AppRegisterRoute().go(context);
+                                        context.go(AppRoute.auth.register);
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.only(

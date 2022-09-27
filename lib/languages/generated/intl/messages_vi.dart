@@ -30,10 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
+        "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
@@ -44,10 +46,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng nhập vào tài khoản"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Mừng trở lại!"),
+        "message": MessageLookupByLibrary.simpleMessage("Tin nhắn"),
+        "myHome": MessageLookupByLibrary.simpleMessage("Nhà của tôi"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Tạo một"),
         "registerCreateANameAccount2":

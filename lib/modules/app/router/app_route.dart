@@ -2,34 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/modules/auth/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/home/module.dart';
+import 'package:real_estate_blockchain/modules/main/module.dart';
 import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:go_router/go_router.dart';
-part 'app_route.g.dart';
 
-@TypedGoRoute<AppOnboardingRoute>(
-  path: '/onboarding',
-)
-class AppOnboardingRoute extends OnboardingRoute {
-  const AppOnboardingRoute();
-}
+const $appRoute = AppRoute('/');
 
-@TypedGoRoute<AppLoginRoute>(
-  path: '/login',
-)
-class AppLoginRoute extends LoginRoute {
-  const AppLoginRoute();
-}
+class AppRoute extends BaseRoute {
+  const AppRoute(super.root);
+  static const OnboardingRoute onboarding = OnboardingRoute('/onboarding');
+  static const MainRoute main = MainRoute('/main');
+  static const AuthRoute auth = AuthRoute('/');
 
-@TypedGoRoute<AppRegisterRoute>(
-  path: '/register',
-)
-class AppRegisterRoute extends RegisterRoute {
-  const AppRegisterRoute();
-}
-
-@TypedGoRoute<AppHomeRoute>(
-  path: '/home',
-)
-class AppHomeRoute extends HomeRoute {
-  const AppHomeRoute();
+  @override
+  List<RouteBase> get routes => [
+        ...onboarding.routes,
+        ...main.routes,
+        ...auth.routes,
+      ];
 }

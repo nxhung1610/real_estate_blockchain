@@ -5,4 +5,4 @@ export 'application/app_bloc.dart';
 export 'presentation/presentation.dart';
 
 // Router
-export 'router/app_route.dart';
+export 'router/router.dart';

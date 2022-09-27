@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -66,7 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state.isFisrtLaunch == false) {
-          const AppHomeRoute().go(context);
+          context.go(AppRoute.main.root);
         }
       },
       child: Scaffold(

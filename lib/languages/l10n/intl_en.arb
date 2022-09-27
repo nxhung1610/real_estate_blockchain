@@ -27,5 +27,10 @@
   "registerCreateANameAccount1" : "Create a",
   "registerCreateANameAccount2" : "account",
   "registerCreateAnAccountToContinue" : "Create an account to continue",
-  "registerYouAlreadyHaveAnAccount" : "You already have an account?"
+  "registerYouAlreadyHaveAnAccount" : "You already have an account?",
+  "home" : "Home",
+  "message" : "Message",
+  "discover" : "Discover",
+  "myHome" : "My Home",
+  "profile" : "Profile"
 }

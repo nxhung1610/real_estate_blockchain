@@ -9,19 +9,17 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
+import 'package:real_estate_blockchain/modules/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/modules/auth/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
-import 'package:real_estate_blockchain/modules/home/module.dart';
-import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:real_estate_blockchain/modules/splash/presentation/splash_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-
-import '../router/app_route.dart';
 import '../application/app_bloc.dart';
+import '../router/app_route.dart';
 
 class AppPage extends StatelessWidget {
   const AppPage({Key? key}) : super(key: key);
@@ -79,24 +77,25 @@ class _AppCommonState extends State<_AppCommon> {
 
   void setupRouter() {
     appRoute = GoRouter(
-      routes: $appRoutes,
+      // routes: $appRoutes,
+      routes: $appRoute.routes,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },
       refreshListenable: GoRouterRefreshStream(authBloc.stream),
-      redirect: (state) {
+      redirect: (context, state) {
         log(state.location);
         String? lastRoute;
         // Check First Launch
 
         lastRoute = (() {
           if (appBloc.state.isFisrtLaunch ?? true == true) {
-            return const AppOnboardingRoute().location;
+            return AppRoute.onboarding.root;
           } else {
             final unAuthentcationRoutes = [
-              const AppOnboardingRoute().location,
-              const AppLoginRoute().location,
-              const AppRegisterRoute().location
+              AppRoute.onboarding.root,
+              AppRoute.auth.login,
+              AppRoute.auth.register,
             ];
             // Wokring with authentication
             // Check if authentication or not
@@ -106,15 +105,15 @@ class _AppCommonState extends State<_AppCommon> {
             // Redirect them to Login page
             final alreadyInLogin = unAuthentcationRoutes.contains(state.subloc);
             if (!isLoggedIn && !alreadyInLogin) {
-              return const AppLoginRoute().location;
+              return AppRoute.auth.login;
             }
 
             // If user is login and
             // route location not match [Login,Register] will not redirect
-            // Or redirect to [Home]
+            // Or redirect to [Main]
             if (isLoggedIn) {
               if (unAuthentcationRoutes.contains(state.location)) {
-                return const AppHomeRoute().location;
+                return AppRoute.main.root;
               } else {
                 return null;
               }

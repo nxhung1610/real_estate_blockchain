@@ -60,6 +60,46 @@ class $AssetsIconsGen {
   SvgGenImage get icEyeShow =>
       const SvgGenImage('assets/icons/ic_eye_show.svg');
 
+  /// File path: assets/icons/ic_home_bold.svg
+  SvgGenImage get icHomeBold =>
+      const SvgGenImage('assets/icons/ic_home_bold.svg');
+
+  /// File path: assets/icons/ic_home_light.svg
+  SvgGenImage get icHomeLight =>
+      const SvgGenImage('assets/icons/ic_home_light.svg');
+
+  /// File path: assets/icons/ic_location_bold.svg
+  SvgGenImage get icLocationBold =>
+      const SvgGenImage('assets/icons/ic_location_bold.svg');
+
+  /// File path: assets/icons/ic_location_light.svg
+  SvgGenImage get icLocationLight =>
+      const SvgGenImage('assets/icons/ic_location_light.svg');
+
+  /// File path: assets/icons/ic_message_bold.svg
+  SvgGenImage get icMessageBold =>
+      const SvgGenImage('assets/icons/ic_message_bold.svg');
+
+  /// File path: assets/icons/ic_message_light.svg
+  SvgGenImage get icMessageLight =>
+      const SvgGenImage('assets/icons/ic_message_light.svg');
+
+  /// File path: assets/icons/ic_myhome_bold.svg
+  SvgGenImage get icMyhomeBold =>
+      const SvgGenImage('assets/icons/ic_myhome_bold.svg');
+
+  /// File path: assets/icons/ic_myhome_light.svg
+  SvgGenImage get icMyhomeLight =>
+      const SvgGenImage('assets/icons/ic_myhome_light.svg');
+
+  /// File path: assets/icons/ic_profile_bold.svg
+  SvgGenImage get icProfileBold =>
+      const SvgGenImage('assets/icons/ic_profile_bold.svg');
+
+  /// File path: assets/icons/ic_profile_light.svg
+  SvgGenImage get icProfileLight =>
+      const SvgGenImage('assets/icons/ic_profile_light.svg');
+
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 }

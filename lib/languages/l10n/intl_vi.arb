@@ -27,5 +27,10 @@
   "registerCreateANameAccount1" : "Tạo một",
   "registerCreateANameAccount2" : "tài khoản",
   "registerCreateAnAccountToContinue" : "Tạo tài khoản để tiếp tục",
-  "registerYouAlreadyHaveAnAccount" : "Bạn đã có tài khoản?"
+  "registerYouAlreadyHaveAnAccount" : "Bạn đã có tài khoản?",
+  "home" : "Trang chủ",
+  "message" : "Tin nhắn",
+  "discover" : "Khám phá",
+  "myHome" : "Nhà của tôi",
+  "profile" : "Profile"
 }

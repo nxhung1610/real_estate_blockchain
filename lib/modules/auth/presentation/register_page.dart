@@ -96,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   WidgetSpan(
                                     child: GestureDetector(
                                       onTap: () {
-                                        const AppLoginRoute().go(context);
+                                        context.go(AppRoute.auth.login);
                                       },
                                       child: Padding(
                                         padding: EdgeInsets.only(

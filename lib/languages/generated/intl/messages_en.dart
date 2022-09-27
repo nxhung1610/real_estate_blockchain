@@ -30,10 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
@@ -44,11 +46,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign in to your account"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "myHome": MessageLookupByLibrary.simpleMessage("My Home"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
             MessageLookupByLibrary.simpleMessage("Get Started"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Create a"),
         "registerCreateANameAccount2":
