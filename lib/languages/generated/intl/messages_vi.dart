@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "loginForgotPassword":
@@ -52,7 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
-        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Tạo một"),
         "registerCreateANameAccount2":
@@ -62,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":

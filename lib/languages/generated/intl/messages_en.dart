@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "location": MessageLookupByLibrary.simpleMessage("Location"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
         "loginForgotPassword":
@@ -64,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),

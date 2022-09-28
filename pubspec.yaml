@@ -48,6 +48,7 @@ dependencies:
   awesome_notifications: ^0.6.21
   flutter_svg:
   flutter_animate: ^1.0.0
+  dropdown_button2: ^1.8.2
   smooth_page_indicator: ^1.0.0+2
   # Language
   intl: ^0.17.0

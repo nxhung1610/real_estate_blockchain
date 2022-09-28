@@ -34,6 +34,6 @@ class MainRoute extends BaseRoute {
 
   @override
   void setupRoutes() {
-    _homeRoute = HomeRoute(generatePath('home'));
+    _homeRoute = HomeRoute(generatePath('/home'));
   }
 }

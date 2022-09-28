@@ -32,5 +32,7 @@
   "message" : "Tin nhắn",
   "discover" : "Khám phá",
   "myHome" : "Nhà của tôi",
-  "profile" : "Profile"
+  "profile" : "Cá nhân",
+  "location"  : "Địa điểm",
+  "search" :"Tìm kiếm"
 }

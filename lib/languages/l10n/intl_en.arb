@@ -32,5 +32,8 @@
   "message" : "Message",
   "discover" : "Discover",
   "myHome" : "My Home",
-  "profile" : "Profile"
+  "profile" : "Profile",
+  "location"  : "Location",
+  "search" :"Search"
+
 }

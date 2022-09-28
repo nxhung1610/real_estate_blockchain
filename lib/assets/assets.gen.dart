@@ -52,6 +52,10 @@ class $FontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_category_light.svg
+  SvgGenImage get icCategoryLight =>
+      const SvgGenImage('assets/icons/ic_category_light.svg');
+
   /// File path: assets/icons/ic_eye_hide.svg
   SvgGenImage get icEyeHide =>
       const SvgGenImage('assets/icons/ic_eye_hide.svg');
@@ -59,6 +63,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_eye_show.svg
   SvgGenImage get icEyeShow =>
       const SvgGenImage('assets/icons/ic_eye_show.svg');
+
+  /// File path: assets/icons/ic_filter_light.svg
+  SvgGenImage get icFilterLight =>
+      const SvgGenImage('assets/icons/ic_filter_light.svg');
 
   /// File path: assets/icons/ic_home_bold.svg
   SvgGenImage get icHomeBold =>
@@ -92,6 +100,10 @@ class $AssetsIconsGen {
   SvgGenImage get icMyhomeLight =>
       const SvgGenImage('assets/icons/ic_myhome_light.svg');
 
+  /// File path: assets/icons/ic_notification_light.svg
+  SvgGenImage get icNotificationLight =>
+      const SvgGenImage('assets/icons/ic_notification_light.svg');
+
   /// File path: assets/icons/ic_profile_bold.svg
   SvgGenImage get icProfileBold =>
       const SvgGenImage('assets/icons/ic_profile_bold.svg');
@@ -99,6 +111,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_profile_light.svg
   SvgGenImage get icProfileLight =>
       const SvgGenImage('assets/icons/ic_profile_light.svg');
+
+  /// File path: assets/icons/ic_search_light.svg
+  SvgGenImage get icSearchLight =>
+      const SvgGenImage('assets/icons/ic_search_light.svg');
 
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');

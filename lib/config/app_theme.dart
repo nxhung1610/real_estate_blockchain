@@ -18,6 +18,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColor.kBackgroundLight,
     iconTheme: IconThemeData(
       color: AppColor.kNeutrals.shade800,
+      size: AppSize.mediumIcon,
     ),
     colorScheme: const ColorScheme.light(
       primary: AppColor.kPrimary2,
