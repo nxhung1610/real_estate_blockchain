@@ -62,6 +62,7 @@ class _EmptyPage extends StatelessWidget {
                   onPressed: () {},
                   type: ButtonType.primary,
                   style: ButtonScaleStyle.tight,
+                  size: ButtonSize.small,
                 )
               ],
             ),
