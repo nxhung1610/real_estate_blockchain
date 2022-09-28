@@ -67,7 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state.isFisrtLaunch == false) {
-          context.go(AppRoute.main.root);
+          context.go($appRoute.mainHome);
         }
       },
       child: Scaffold(

@@ -6,18 +6,31 @@ import 'package:real_estate_blockchain/modules/main/module.dart';
 import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:go_router/go_router.dart';
 
-const $appRoute = AppRoute('/');
+final $appRoute = AppRoute('/');
 
 class AppRoute extends BaseRoute {
-  const AppRoute(super.root);
-  static const OnboardingRoute onboarding = OnboardingRoute('/onboarding');
-  static const MainRoute main = MainRoute('/main');
-  static const AuthRoute auth = AuthRoute('/');
+  AppRoute(super.root);
+  // Route
+  late final OnboardingRoute _onboardingRoute;
+  late final MainRoute _mainRoute;
+  late final AuthRoute _authRoute;
+  // Path
+  String get onboarding => _onboardingRoute.root;
+  String get authRegister => _authRoute.register;
+  String get authLogin => _authRoute.login;
+  String get mainHome => _mainRoute.home;
 
   @override
   List<RouteBase> get routes => [
-        ...onboarding.routes,
-        ...main.routes,
-        ...auth.routes,
+        ..._onboardingRoute.routes,
+        ..._mainRoute.routes,
+        ..._authRoute.routes,
       ];
+
+  @override
+  void setupRoutes() {
+    _mainRoute = MainRoute(generatePath('/main'));
+    _authRoute = AuthRoute(generatePath('/'));
+    _onboardingRoute = OnboardingRoute(generatePath('/onboarding'));
+  }
 }

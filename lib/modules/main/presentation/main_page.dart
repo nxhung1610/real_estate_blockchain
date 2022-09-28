@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
-import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
@@ -10,7 +9,9 @@ import 'package:real_estate_blockchain/modules/main/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  final MainRouteParams? params;
+  final Widget child;
+  const MainPage({super.key, this.params, required this.child});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -18,15 +19,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   late final MainCubit cubit;
-  late final TabController tabController;
   @override
   void initState() {
     super.initState();
     cubit = context.read<MainCubit>();
-    tabController = TabController(
-      length: MainSub.values.length,
-      vsync: this,
-    );
   }
 
   @override
@@ -35,7 +31,6 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
     final iconColor = context.theme.iconTheme.color;
     return BlocListener<MainCubit, MainState>(
       listener: (context, state) {
-        tabController.animateTo(state.sub.index);
         switch (state.sub) {
           case MainSub.home:
             break;
@@ -50,26 +45,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
         }
       },
       child: Scaffold(
-        body: TabBarView(
-          controller: tabController,
-          children: [
-            Center(
-              child: Text('1'),
-            ),
-            Center(
-              child: Text('2'),
-            ),
-            Center(
-              child: Text('3'),
-            ),
-            Center(
-              child: Text('4'),
-            ),
-            Center(
-              child: Text('5'),
-            ),
-          ],
-        ),
+        body: widget.child,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: context.watch<MainCubit>().state.sub.index,
           onTap: (value) {

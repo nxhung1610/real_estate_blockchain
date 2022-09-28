@@ -6,7 +6,7 @@ import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:go_router/go_router.dart';
 
 class OnboardingRoute extends BaseRoute {
-  const OnboardingRoute(super.root);
+  OnboardingRoute(super.root);
   @override
   List<RouteBase> get routes => [
         GoRoute(
@@ -19,4 +19,7 @@ class OnboardingRoute extends BaseRoute {
           },
         ),
       ];
+
+  @override
+  void setupRoutes() {}
 }

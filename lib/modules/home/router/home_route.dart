@@ -8,7 +8,7 @@ import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/home/module.dart';
 
 class HomeRoute extends BaseRoute {
-  const HomeRoute(super.root);
+  HomeRoute(super.root);
 
   @override
   List<RouteBase> get routes => [
@@ -22,4 +22,7 @@ class HomeRoute extends BaseRoute {
           },
         ),
       ];
+
+  @override
+  void setupRoutes() {}
 }

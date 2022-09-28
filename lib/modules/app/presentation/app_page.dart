@@ -90,12 +90,12 @@ class _AppCommonState extends State<_AppCommon> {
 
         lastRoute = (() {
           if (appBloc.state.isFisrtLaunch ?? true == true) {
-            return AppRoute.onboarding.root;
+            return $appRoute.onboarding;
           } else {
             final unAuthentcationRoutes = [
-              AppRoute.onboarding.root,
-              AppRoute.auth.login,
-              AppRoute.auth.register,
+              $appRoute.onboarding,
+              $appRoute.authLogin,
+              $appRoute.authRegister,
             ];
             // Wokring with authentication
             // Check if authentication or not
@@ -105,7 +105,7 @@ class _AppCommonState extends State<_AppCommon> {
             // Redirect them to Login page
             final alreadyInLogin = unAuthentcationRoutes.contains(state.subloc);
             if (!isLoggedIn && !alreadyInLogin) {
-              return AppRoute.auth.login;
+              return $appRoute.authLogin;
             }
 
             // If user is login and
@@ -113,7 +113,7 @@ class _AppCommonState extends State<_AppCommon> {
             // Or redirect to [Main]
             if (isLoggedIn) {
               if (unAuthentcationRoutes.contains(state.location)) {
-                return AppRoute.main.root;
+                return $appRoute.mainHome;
               } else {
                 return null;
               }

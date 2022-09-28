@@ -1,9 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class BaseRoute {
   final String? _root;
-  const BaseRoute(this._root);
-  String get root => _root ?? '/';
+  BaseRoute(this._root) {
+    setupRoutes();
+  }
+  String get root => (() {
+        return _root ?? '/';
+      })();
   List<RouteBase> get routes;
 
   String generatePath(String path) {
@@ -19,4 +24,6 @@ abstract class BaseRoute {
 
     return genPath;
   }
+
+  void setupRoutes();
 }
