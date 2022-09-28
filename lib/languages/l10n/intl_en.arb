@@ -34,6 +34,13 @@
   "myHome" : "My Home",
   "profile" : "Profile",
   "location"  : "Location",
-  "search" :"Search"
-
+  "search" :"Search",
+  "myHomeEmptyTitle" : "Ready to sell your home?",
+  "myHomeEmptyDesc" :"{name} is making it simpler to sell your home and move forward.",
+  "@myHomeEmptyDesc" : {
+    "placeholders" : {
+      "name" : {}
+    }
+  },
+  "myHomeEmptyBtnAdd" : "Add property"
 }

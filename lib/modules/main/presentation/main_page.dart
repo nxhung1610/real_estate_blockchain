@@ -33,12 +33,14 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       listener: (context, state) {
         switch (state.sub) {
           case MainSub.home:
+            context.go($appRoute.mainHome);
             break;
           case MainSub.message:
             break;
           case MainSub.discover:
             break;
           case MainSub.myHome:
+            context.go($appRoute.mainMyHome);
             break;
           case MainSub.profile:
             break;

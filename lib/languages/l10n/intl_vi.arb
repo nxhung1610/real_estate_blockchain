@@ -34,5 +34,13 @@
   "myHome" : "Nhà của tôi",
   "profile" : "Cá nhân",
   "location"  : "Địa điểm",
-  "search" :"Tìm kiếm"
+  "search" :"Tìm kiếm",
+  "myHomeEmptyTitle" : "Sẵn sàng bán nhà của bạn?",
+  "myHomeEmptyDesc" :"{name} đang làm cho việc bán nhà của bạn và tiến lên phía trước trở nên đơn giản hơn.",
+  "@myHomeEmptyDesc" : {
+    "placeholders" : {
+      "name" : {}
+    }
+  },
+  "myHomeEmptyBtnAdd" : "Thêm tài sản"
 }

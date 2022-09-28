@@ -409,6 +409,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Ready to sell your home?`
+  String get myHomeEmptyTitle {
+    return Intl.message(
+      'Ready to sell your home?',
+      name: 'myHomeEmptyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{name} is making it simpler to sell your home and move forward.`
+  String myHomeEmptyDesc(Object name) {
+    return Intl.message(
+      '$name is making it simpler to sell your home and move forward.',
+      name: 'myHomeEmptyDesc',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Add property`
+  String get myHomeEmptyBtnAdd {
+    return Intl.message(
+      'Add property',
+      name: 'myHomeEmptyBtnAdd',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

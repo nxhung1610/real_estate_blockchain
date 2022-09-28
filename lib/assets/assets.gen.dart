@@ -123,6 +123,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/my_home_background.png
+  AssetGenImage get myHomeBackground =>
+      const AssetGenImage('assets/images/my_home_background.png');
+
   /// File path: assets/images/onboarding1.png
   AssetGenImage get onboarding1 =>
       const AssetGenImage('assets/images/onboarding1.png');

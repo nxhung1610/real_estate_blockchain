@@ -223,6 +223,8 @@ class __NewFeedState extends State<_NewFeed> {
                         AppSize.mediumWidthDimens,
                       ),
                       child: Assets.icons.icFilterLight.svg(
+                        width: context.theme.iconTheme.size,
+                        height: context.theme.iconTheme.size,
                         color: AppColor.kNeutrals.shade50,
                       ),
                     ),
