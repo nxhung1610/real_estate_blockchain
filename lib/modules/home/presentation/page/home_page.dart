@@ -10,6 +10,7 @@ import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/home/application/home_bloc.dart';
+import 'package:real_estate_blockchain/modules/home/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class HomePage extends StatefulWidget {
@@ -144,7 +145,7 @@ class _HomePageState extends State<HomePage>
               topbar(),
 
               // Body
-              const _NewFeed(),
+              const Expanded(child: _NewFeed()),
             ],
           ),
         ),
@@ -239,6 +240,7 @@ class __NewFeedState extends State<_NewFeed> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
             padding: EdgeInsets.only(
@@ -246,6 +248,21 @@ class __NewFeedState extends State<_NewFeed> {
             ),
             child: searchWidget(),
           ),
+          ListView.separated(
+            physics: const NeverScrollableScrollPhysics(
+                parent: BouncingScrollPhysics()),
+            padding: EdgeInsets.symmetric(
+              vertical: AppSize.extraHeightDimens,
+            ),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return const HouseNewsFeed();
+            },
+            separatorBuilder: (context, index) {
+              return AppSize.extraHeightDimens.verticalSpace;
+            },
+            itemCount: 3,
+          )
         ],
       ),
     );
