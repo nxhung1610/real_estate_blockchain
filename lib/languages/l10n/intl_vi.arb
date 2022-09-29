@@ -42,5 +42,6 @@
       "name" : {}
     }
   },
-  "myHomeEmptyBtnAdd" : "Thêm tài sản"
+  "myHomeEmptyBtnAdd" : "Thêm tài sản",
+  "myHomeEmptyBtnAdd2" : "Thêm tài sản mới"
 }

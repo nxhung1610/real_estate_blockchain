@@ -13,6 +13,9 @@ class ButtonApp extends StatelessWidget {
   final ButtonType type;
   final ButtonSize size;
   final ButtonScaleStyle style;
+  final ButtonIconAlign iconAlign;
+  final Color? backgroundColor;
+  final Widget? icon;
   const ButtonApp({
     super.key,
     this.enable = true,
@@ -21,6 +24,9 @@ class ButtonApp extends StatelessWidget {
     required this.type,
     this.size = ButtonSize.large,
     this.style = ButtonScaleStyle.expand,
+    this.iconAlign = ButtonIconAlign.left,
+    this.icon,
+    this.backgroundColor,
   });
 
   @override
@@ -59,7 +65,14 @@ class ButtonApp extends StatelessWidget {
 
     child = Row(
       mainAxisSize: MainAxisSize.min,
+      textDirection: iconAlign == ButtonIconAlign.left
+          ? TextDirection.ltr
+          : TextDirection.rtl,
       children: [
+        if (icon != null) ...[
+          icon!,
+          12.w.horizontalSpace,
+        ],
         Text(
           label,
           style: textStyle,
@@ -79,6 +92,7 @@ class ButtonApp extends StatelessWidget {
     switch (type) {
       case ButtonType.primary:
         child = _ButtonPrimary(
+          backgroundColor: backgroundColor,
           enable: enable,
           onPressed: onPressed,
           child: child,
@@ -110,16 +124,20 @@ class ButtonApp extends StatelessWidget {
 class _ButtonPrimary extends StatelessWidget {
   final bool enable;
   final Widget child;
+  final Color? backgroundColor;
   final void Function()? onPressed;
   const _ButtonPrimary({
     required this.enable,
     required this.onPressed,
     required this.child,
+    required this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: context.theme.elevatedButtonTheme.style?.copyWith(
+          backgroundColor: MaterialStateProperty.all(backgroundColor)),
       onPressed: onPressed,
       child: child,
     );

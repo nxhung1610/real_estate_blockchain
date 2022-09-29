@@ -42,5 +42,6 @@
       "name" : {}
     }
   },
-  "myHomeEmptyBtnAdd" : "Add property"
+  "myHomeEmptyBtnAdd" : "Add property",
+  "myHomeEmptyBtnAdd2" : "Add new property"
 }

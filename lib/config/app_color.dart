@@ -27,4 +27,16 @@ class AppColor {
   static const Color kBackgroundDark = Color(0xff111827);
 
   static const Color kBackgroundButton = Color(0xff111827);
+
+  static Color kBorderColor(ThemeMode mode) {
+    return mode == ThemeMode.dark ? kNeutrals.shade600 : kNeutrals.shade400;
+  }
+
+  static Color kIconColorPrimary(ThemeMode mode) {
+    return mode == ThemeMode.dark ? kNeutrals.shade50 : kNeutrals.shade800;
+  }
+
+  static Color kIconColorSecondary(ThemeMode mode) {
+    return mode == ThemeMode.dark ? kNeutrals.shade600 : kNeutrals.shade700;
+  }
 }

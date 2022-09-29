@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHome": MessageLookupByLibrary.simpleMessage("Nhà của tôi"),
         "myHomeEmptyBtnAdd":
             MessageLookupByLibrary.simpleMessage("Thêm tài sản"),
+        "myHomeEmptyBtnAdd2":
+            MessageLookupByLibrary.simpleMessage("Thêm tài sản mới"),
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),

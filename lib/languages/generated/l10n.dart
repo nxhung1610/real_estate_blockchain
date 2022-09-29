@@ -439,6 +439,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add new property`
+  String get myHomeEmptyBtnAdd2 {
+    return Intl.message(
+      'Add new property',
+      name: 'myHomeEmptyBtnAdd2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -52,6 +52,17 @@ class $FontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_bathroom.svg
+  SvgGenImage get icBathroom =>
+      const SvgGenImage('assets/icons/ic_bathroom.svg');
+
+  /// File path: assets/icons/ic_bed.svg
+  SvgGenImage get icBed => const SvgGenImage('assets/icons/ic_bed.svg');
+
+  /// File path: assets/icons/ic_btn_plus.svg
+  SvgGenImage get icBtnPlus =>
+      const SvgGenImage('assets/icons/ic_btn_plus.svg');
+
   /// File path: assets/icons/ic_category_light.svg
   SvgGenImage get icCategoryLight =>
       const SvgGenImage('assets/icons/ic_category_light.svg');
@@ -115,6 +126,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_search_light.svg
   SvgGenImage get icSearchLight =>
       const SvgGenImage('assets/icons/ic_search_light.svg');
+
+  /// File path: assets/icons/ic_square.svg
+  SvgGenImage get icSquare => const SvgGenImage('assets/icons/ic_square.svg');
 
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');

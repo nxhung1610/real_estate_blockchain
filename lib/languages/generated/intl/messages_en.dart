@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHome": MessageLookupByLibrary.simpleMessage("My Home"),
         "myHomeEmptyBtnAdd":
             MessageLookupByLibrary.simpleMessage("Add property"),
+        "myHomeEmptyBtnAdd2":
+            MessageLookupByLibrary.simpleMessage("Add new property"),
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
