@@ -82,8 +82,11 @@ class AppSize {
   /// Button border radius
   static final double buttonBorderRadius = 20.r;
 
-  /// Avatar
-  static final double avatar = 56.r;
+  /// Avatar 48.r
+  static final double avatarMedium = 48.r;
+
+  /// Avatar 56.r
+  static final double avatarLarge = 56.r;
 
   /// Icon
   /// 16.r

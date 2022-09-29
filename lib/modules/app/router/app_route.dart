@@ -20,6 +20,7 @@ class AppRoute extends BaseRoute {
   String get authLogin => _authRoute.login;
   String get mainHome => _mainRoute.home;
   String get mainMyHome => _mainRoute.myHome;
+  String get mainMessage => _mainRoute.message;
 
   @override
   List<RouteBase> get routes => [
