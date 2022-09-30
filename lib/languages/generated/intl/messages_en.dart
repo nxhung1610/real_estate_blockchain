@@ -63,6 +63,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "optionMyFavorites":
+            MessageLookupByLibrary.simpleMessage("My favorites"),
+        "optionMyListings": MessageLookupByLibrary.simpleMessage("My listings"),
+        "optionPastTour": MessageLookupByLibrary.simpleMessage("Past Tour"),
+        "optionRecentltyViewed":
+            MessageLookupByLibrary.simpleMessage("Recentlty viewed"),
+        "optionSellMyHome":
+            MessageLookupByLibrary.simpleMessage("Sell my home"),
+        "optionSettings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "optionTitleGeneral": MessageLookupByLibrary.simpleMessage("General"),
+        "optionTitleHomeSearch":
+            MessageLookupByLibrary.simpleMessage("Home search"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "registerCreateANameAccount1":

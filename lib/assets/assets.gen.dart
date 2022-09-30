@@ -52,6 +52,22 @@ class $FontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_arrow_down.svg
+  SvgGenImage get icArrowDown =>
+      const SvgGenImage('assets/icons/ic_arrow_down.svg');
+
+  /// File path: assets/icons/ic_arrow_left.svg
+  SvgGenImage get icArrowLeft =>
+      const SvgGenImage('assets/icons/ic_arrow_left.svg');
+
+  /// File path: assets/icons/ic_arrow_right.svg
+  SvgGenImage get icArrowRight =>
+      const SvgGenImage('assets/icons/ic_arrow_right.svg');
+
+  /// File path: assets/icons/ic_arrow_up.svg
+  SvgGenImage get icArrowUp =>
+      const SvgGenImage('assets/icons/ic_arrow_up.svg');
+
   /// File path: assets/icons/ic_bathroom.svg
   SvgGenImage get icBathroom =>
       const SvgGenImage('assets/icons/ic_bathroom.svg');
@@ -67,6 +83,22 @@ class $AssetsIconsGen {
   SvgGenImage get icCategoryLight =>
       const SvgGenImage('assets/icons/ic_category_light.svg');
 
+  /// File path: assets/icons/ic_document_bold.svg
+  SvgGenImage get icDocumentBold =>
+      const SvgGenImage('assets/icons/ic_document_bold.svg');
+
+  /// File path: assets/icons/ic_document_light.svg
+  SvgGenImage get icDocumentLight =>
+      const SvgGenImage('assets/icons/ic_document_light.svg');
+
+  /// File path: assets/icons/ic_edit_bold.svg
+  SvgGenImage get icEditBold =>
+      const SvgGenImage('assets/icons/ic_edit_bold.svg');
+
+  /// File path: assets/icons/ic_edit_light.svg
+  SvgGenImage get icEditLight =>
+      const SvgGenImage('assets/icons/ic_edit_light.svg');
+
   /// File path: assets/icons/ic_eye_hide.svg
   SvgGenImage get icEyeHide =>
       const SvgGenImage('assets/icons/ic_eye_hide.svg');
@@ -78,6 +110,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_filter_light.svg
   SvgGenImage get icFilterLight =>
       const SvgGenImage('assets/icons/ic_filter_light.svg');
+
+  /// File path: assets/icons/ic_heart_bold.svg
+  SvgGenImage get icHeartBold =>
+      const SvgGenImage('assets/icons/ic_heart_bold.svg');
+
+  /// File path: assets/icons/ic_heart_light.svg
+  SvgGenImage get icHeartLight =>
+      const SvgGenImage('assets/icons/ic_heart_light.svg');
+
+  /// File path: assets/icons/ic_home_2.svg
+  SvgGenImage get icHome2 => const SvgGenImage('assets/icons/ic_home_2.svg');
 
   /// File path: assets/icons/ic_home_bold.svg
   SvgGenImage get icHomeBold =>
@@ -127,8 +170,20 @@ class $AssetsIconsGen {
   SvgGenImage get icSearchLight =>
       const SvgGenImage('assets/icons/ic_search_light.svg');
 
+  /// File path: assets/icons/ic_setting_bold.svg
+  SvgGenImage get icSettingBold =>
+      const SvgGenImage('assets/icons/ic_setting_bold.svg');
+
+  /// File path: assets/icons/ic_setting_light.svg
+  SvgGenImage get icSettingLight =>
+      const SvgGenImage('assets/icons/ic_setting_light.svg');
+
   /// File path: assets/icons/ic_square.svg
   SvgGenImage get icSquare => const SvgGenImage('assets/icons/ic_square.svg');
+
+  /// File path: assets/icons/ic_video_time.svg
+  SvgGenImage get icVideoTime =>
+      const SvgGenImage('assets/icons/ic_video_time.svg');
 
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');

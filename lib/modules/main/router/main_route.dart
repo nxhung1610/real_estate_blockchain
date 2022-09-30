@@ -6,6 +6,7 @@ import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/home/module.dart';
 import 'package:real_estate_blockchain/modules/message/module.dart';
 import 'package:real_estate_blockchain/modules/my_home/module.dart';
+import 'package:real_estate_blockchain/modules/profile/module.dart';
 
 import '../module.dart';
 part 'main_route_params.dart';
@@ -16,11 +17,12 @@ class MainRoute extends BaseRoute {
   late final HomeRoute _homeRoute;
   late final MyHomeRoute _myHomeRoute;
   late final MessageRoute _messageRoute;
-
+  late final ProfileRoute _profileRoute;
   // Path
   String get home => _homeRoute.root;
   String get myHome => _myHomeRoute.root;
   String get message => _messageRoute.root;
+  String get profile => _profileRoute.root;
 
   @override
   List<RouteBase> get routes => [
@@ -39,6 +41,7 @@ class MainRoute extends BaseRoute {
             ..._homeRoute.routes,
             ..._myHomeRoute.routes,
             ..._messageRoute.routes,
+            ..._profileRoute.routes,
           ],
         ),
       ];
@@ -48,5 +51,6 @@ class MainRoute extends BaseRoute {
     _homeRoute = HomeRoute(generatePath('/home'));
     _myHomeRoute = MyHomeRoute(generatePath('/myhome'));
     _messageRoute = MessageRoute(generatePath('/message'));
+    _profileRoute = ProfileRoute(generatePath('/profile'));
   }
 }

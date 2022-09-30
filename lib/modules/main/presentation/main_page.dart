@@ -44,6 +44,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
             context.go($appRoute.mainMyHome);
             break;
           case MainSub.profile:
+            context.go($appRoute.mainProfile);
             break;
         }
       },

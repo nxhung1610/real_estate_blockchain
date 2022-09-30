@@ -62,6 +62,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
+        "optionMyFavorites":
+            MessageLookupByLibrary.simpleMessage("Mục yêu thích"),
+        "optionMyListings":
+            MessageLookupByLibrary.simpleMessage("Danh sách nhà của tôi"),
+        "optionPastTour": MessageLookupByLibrary.simpleMessage("Lịch đã đặt"),
+        "optionRecentltyViewed":
+            MessageLookupByLibrary.simpleMessage("Đã xem gần đây"),
+        "optionSellMyHome": MessageLookupByLibrary.simpleMessage("Bán nhà"),
+        "optionSettings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
+        "optionTitleGeneral": MessageLookupByLibrary.simpleMessage("Chung"),
+        "optionTitleHomeSearch":
+            MessageLookupByLibrary.simpleMessage("Tìm nhà"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "registerCreateANameAccount1":

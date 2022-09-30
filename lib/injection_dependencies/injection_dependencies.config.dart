@@ -8,12 +8,12 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../modules/app/application/app_bloc.dart' as _i19;
+import '../modules/app/application/app_bloc.dart' as _i20;
 import '../modules/app/domain/i_app_config_repository.dart' as _i7;
 import '../modules/app/infrastructure/local/app_config_repository.dart' as _i8;
 import '../modules/auth/application/auth_bloc.dart' as _i5;
 import '../modules/auth/application/login_bloc.dart' as _i13;
-import '../modules/auth/application/register_bloc.dart' as _i18;
+import '../modules/auth/application/register_bloc.dart' as _i19;
 import '../modules/auth/infrastructure/remote/auth_repository.dart' as _i11;
 import '../modules/auth/module.dart' as _i10;
 import '../modules/core/infrastructure/infrastructure.dart' as _i12;
@@ -24,8 +24,9 @@ import '../modules/home/application/home_bloc.dart' as _i6;
 import '../modules/main/application/main_cubit.dart' as _i14;
 import '../modules/message/application/message_bloc.dart' as _i15;
 import '../modules/my_home/application/my_home_bloc.dart' as _i16;
-import '../modules/onboarding/application/onboarding_bloc.dart'
-    as _i17; // ignore_for_file: unnecessary_lambdas
+import '../modules/onboarding/application/onboarding_bloc.dart' as _i17;
+import '../modules/profile/application/profile_bloc.dart'
+    as _i18; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -46,8 +47,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i16.MyHomeBloc>(() => _i16.MyHomeBloc());
   gh.factory<_i17.OnboardingBloc>(
       () => _i17.OnboardingBloc(get<_i7.IAppConfigRepository>()));
-  gh.factory<_i18.RegisterBloc>(
-      () => _i18.RegisterBloc(get<_i10.IAuthRepository>()));
-  gh.factory<_i19.AppBloc>(() => _i19.AppBloc(get<_i7.IAppConfigRepository>()));
+  gh.factory<_i18.ProfileBloc>(() => _i18.ProfileBloc());
+  gh.factory<_i19.RegisterBloc>(
+      () => _i19.RegisterBloc(get<_i10.IAuthRepository>()));
+  gh.factory<_i20.AppBloc>(() => _i20.AppBloc(get<_i7.IAppConfigRepository>()));
   return get;
 }

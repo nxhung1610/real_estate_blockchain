@@ -390,6 +390,86 @@ class S {
     );
   }
 
+  /// `Home search`
+  String get optionTitleHomeSearch {
+    return Intl.message(
+      'Home search',
+      name: 'optionTitleHomeSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get optionTitleGeneral {
+    return Intl.message(
+      'General',
+      name: 'optionTitleGeneral',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recentlty viewed`
+  String get optionRecentltyViewed {
+    return Intl.message(
+      'Recentlty viewed',
+      name: 'optionRecentltyViewed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My favorites`
+  String get optionMyFavorites {
+    return Intl.message(
+      'My favorites',
+      name: 'optionMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Past Tour`
+  String get optionPastTour {
+    return Intl.message(
+      'Past Tour',
+      name: 'optionPastTour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sell my home`
+  String get optionSellMyHome {
+    return Intl.message(
+      'Sell my home',
+      name: 'optionSellMyHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My listings`
+  String get optionMyListings {
+    return Intl.message(
+      'My listings',
+      name: 'optionMyListings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get optionSettings {
+    return Intl.message(
+      'Settings',
+      name: 'optionSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Location`
   String get location {
     return Intl.message(

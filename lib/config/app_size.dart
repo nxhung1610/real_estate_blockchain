@@ -88,6 +88,12 @@ class AppSize {
   /// Avatar 56.r
   static final double avatarLarge = 56.r;
 
+  /// Avatar 65.r
+  static final double avatarExtra = 64.r;
+
+  /// Avatar 72.r
+  static final double avatarExtraLarge = 72.r;
+
   /// Icon
   /// 16.r
   static final double smallIcon = 16.r;

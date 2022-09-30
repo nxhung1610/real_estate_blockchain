@@ -33,6 +33,14 @@
   "discover" : "Discover",
   "myHome" : "My Home",
   "profile" : "Profile",
+  "optionTitleHomeSearch" : "Home search",
+  "optionTitleGeneral" : "General",
+  "optionRecentltyViewed" : "Recentlty viewed",
+  "optionMyFavorites" : "My favorites",
+  "optionPastTour" : "Past Tour",
+  "optionSellMyHome" : "Sell my home",
+  "optionMyListings" :"My listings",
+  "optionSettings" : "Settings", 
   "location"  : "Location",
   "search" :"Search",
   "myHomeEmptyTitle" : "Ready to sell your home?",
@@ -44,4 +52,5 @@
   },
   "myHomeEmptyBtnAdd" : "Add property",
   "myHomeEmptyBtnAdd2" : "Add new property"
+
 }
