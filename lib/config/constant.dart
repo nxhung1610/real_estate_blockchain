@@ -6,6 +6,8 @@ class Constants {
   static const String kBaseUrl = "BASE_URL";
   static const String kConnectionTimeout = "CONNECTION_TIMEOUT";
   static const String kReceiveTimeout = "RECEIVE_TIMEOUT";
+  static const String kAccessTokenMap = 'ACCESS_TOKEN_MAP';
+  static const String kStringStyleUrlMap = 'STRING_STYLE_URL_MAP';
 
   // Default Padding
   static const EdgeInsets kDialogPadding =

@@ -21,4 +21,6 @@ class AppConfig {
   int get connectionTimeout =>
       int.parse(dotenv.get(Constants.kConnectionTimeout));
   int get receiveTimeout => int.parse(dotenv.get(Constants.kReceiveTimeout));
+  String get accessTokenMap => dotenv.get(Constants.kAccessTokenMap);
+  String get stringStyleUrlMap => dotenv.get(Constants.kStringStyleUrlMap);
 }

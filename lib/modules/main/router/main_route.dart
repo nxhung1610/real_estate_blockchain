@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
+import 'package:real_estate_blockchain/modules/discover/module.dart';
 import 'package:real_estate_blockchain/modules/home/module.dart';
 import 'package:real_estate_blockchain/modules/message/module.dart';
 import 'package:real_estate_blockchain/modules/my_home/module.dart';
@@ -18,11 +19,13 @@ class MainRoute extends BaseRoute {
   late final MyHomeRoute _myHomeRoute;
   late final MessageRoute _messageRoute;
   late final ProfileRoute _profileRoute;
+  late final DiscoverRoute _discoverRoute;
   // Path
   String get home => _homeRoute.root;
   String get myHome => _myHomeRoute.root;
   String get message => _messageRoute.root;
   String get profile => _profileRoute.root;
+  String get discover => _discoverRoute.root;
 
   @override
   List<RouteBase> get routes => [
@@ -42,6 +45,7 @@ class MainRoute extends BaseRoute {
             ..._myHomeRoute.routes,
             ..._messageRoute.routes,
             ..._profileRoute.routes,
+            ..._discoverRoute.routes,
           ],
         ),
       ];
@@ -52,5 +56,6 @@ class MainRoute extends BaseRoute {
     _myHomeRoute = MyHomeRoute(generatePath('/myhome'));
     _messageRoute = MessageRoute(generatePath('/message'));
     _profileRoute = ProfileRoute(generatePath('/profile'));
+    _discoverRoute = DiscoverRoute(generatePath('/discover'));
   }
 }

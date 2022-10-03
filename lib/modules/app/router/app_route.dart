@@ -22,6 +22,7 @@ class AppRoute extends BaseRoute {
   String get mainMyHome => _mainRoute.myHome;
   String get mainMessage => _mainRoute.message;
   String get mainProfile => _mainRoute.profile;
+  String get mainDiscover => _mainRoute.discover;
 
   @override
   List<RouteBase> get routes => [
