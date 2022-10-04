@@ -178,6 +178,9 @@ class $AssetsIconsGen {
   SvgGenImage get icSettingLight =>
       const SvgGenImage('assets/icons/ic_setting_light.svg');
 
+  /// File path: assets/icons/ic_sort.svg
+  SvgGenImage get icSort => const SvgGenImage('assets/icons/ic_sort.svg');
+
   /// File path: assets/icons/ic_square.svg
   SvgGenImage get icSquare => const SvgGenImage('assets/icons/ic_square.svg');
 

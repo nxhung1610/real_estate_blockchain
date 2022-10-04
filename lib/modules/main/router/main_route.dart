@@ -26,6 +26,7 @@ class MainRoute extends BaseRoute {
   String get message => _messageRoute.root;
   String get profile => _profileRoute.root;
   String get discover => _discoverRoute.root;
+  String get discoverSearch => _discoverRoute.search;
 
   @override
   List<RouteBase> get routes => [
@@ -48,6 +49,16 @@ class MainRoute extends BaseRoute {
             ..._discoverRoute.routes,
           ],
         ),
+      ];
+
+  @override
+  // TODO: implement globalRoutes
+  List<RouteBase> get globalRoutes => [
+        ..._homeRoute.globalRoutes,
+        ..._myHomeRoute.globalRoutes,
+        ..._messageRoute.globalRoutes,
+        ..._profileRoute.globalRoutes,
+        ..._discoverRoute.globalRoutes,
       ];
 
   @override

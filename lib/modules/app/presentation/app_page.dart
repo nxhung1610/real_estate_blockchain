@@ -78,7 +78,10 @@ class _AppCommonState extends State<_AppCommon> {
   void setupRouter() {
     appRoute = GoRouter(
       // routes: $appRoutes,
-      routes: $appRoute.routes,
+      routes: [
+        ...$appRoute.routes,
+        ...$appRoute.globalRoutes,
+      ],
       errorBuilder: (context, state) {
         return const ErrorPage();
       },

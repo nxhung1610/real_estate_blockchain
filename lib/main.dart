@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';

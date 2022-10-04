@@ -23,12 +23,20 @@ class AppRoute extends BaseRoute {
   String get mainMessage => _mainRoute.message;
   String get mainProfile => _mainRoute.profile;
   String get mainDiscover => _mainRoute.discover;
+  String get mainDiscoverSearch => _mainRoute.discoverSearch;
 
   @override
   List<RouteBase> get routes => [
         ..._onboardingRoute.routes,
         ..._mainRoute.routes,
         ..._authRoute.routes,
+      ];
+
+  @override
+  List<RouteBase> get globalRoutes => [
+        ..._onboardingRoute.globalRoutes,
+        ..._mainRoute.globalRoutes,
+        ..._authRoute.globalRoutes,
       ];
 
   @override

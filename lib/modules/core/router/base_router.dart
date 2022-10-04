@@ -10,6 +10,7 @@ abstract class BaseRoute {
         return _root ?? '/';
       })();
   List<RouteBase> get routes;
+  List<RouteBase> get globalRoutes => [];
 
   String generatePath(String path) {
     var genPath = root;
