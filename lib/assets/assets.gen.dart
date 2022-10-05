@@ -83,6 +83,10 @@ class $AssetsIconsGen {
   SvgGenImage get icCategoryLight =>
       const SvgGenImage('assets/icons/ic_category_light.svg');
 
+  /// File path: assets/icons/ic_direct_up.svg
+  SvgGenImage get icDirectUp =>
+      const SvgGenImage('assets/icons/ic_direct_up.svg');
+
   /// File path: assets/icons/ic_document_bold.svg
   SvgGenImage get icDocumentBold =>
       const SvgGenImage('assets/icons/ic_document_bold.svg');

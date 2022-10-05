@@ -21,24 +21,15 @@ class SearchLocationPage extends StatefulWidget {
 }
 
 class _SearchLocationPageState extends State<SearchLocationPage> {
-  late final FocusNode focusNode = FocusNode();
+  late final TextEditingController textEditingController;
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(
-      (timeStamp) async {
-        focusNode.requestFocus();
-        // await Future.delayed(Duration.zero).then((value) {
-        //   log('Requét Focús');
-
-        // });
-      },
-    );
+    textEditingController = TextEditingController();
   }
 
   @override
   void dispose() {
-    focusNode.dispose();
     super.dispose();
   }
 
@@ -78,7 +69,8 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
                           borderRadius: BorderRadius.circular(50.r),
                         ),
                         child: TextField(
-                          focusNode: focusNode,
+                          controller: textEditingController,
+                          autofocus: true,
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.textTheme.displayLarge?.color,
                             overflow: TextOverflow.ellipsis,
@@ -87,6 +79,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
                             contentPadding: EdgeInsets.only(
                               left: AppSize.extraWidthDimens,
                               top: AppSize.largeHeightDimens,
+                              right: -AppSize.extraWidthDimens,
                               bottom: AppSize.largeHeightDimens,
                             ),
                             prefixIcon: Padding(
@@ -101,6 +94,26 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
                                     context.watch<AppBloc>().state.mode),
                                 width: AppSize.mediumIcon,
                                 height: AppSize.mediumIcon,
+                              ),
+                            ),
+                            suffixIcon: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: AppSize.smallWidthDimens,
+                              ),
+                              child: Material(
+                                borderRadius: BorderRadius.circular(
+                                  AppSize.extraRadius,
+                                ),
+                                color: Colors.transparent,
+                                child: IconButton(
+                                  splashRadius: AppSize.extraRadius,
+                                  icon: const Icon(
+                                    Icons.close_rounded,
+                                  ),
+                                  onPressed: () {
+                                    textEditingController.clear();
+                                  },
+                                ),
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
