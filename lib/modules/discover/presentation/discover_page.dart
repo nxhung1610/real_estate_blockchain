@@ -40,10 +40,6 @@ class _DiscoverPageState extends State<DiscoverPage>
     mapController = MapControllerImpl();
     focusNode.addListener(listen);
     super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await setupPointer();
-    });
   }
 
   @override
@@ -70,6 +66,9 @@ class _DiscoverPageState extends State<DiscoverPage>
               center: LatLng(10.765608, 106.681186),
               zoom: 15,
               maxZoom: 20,
+              onMapReady: () {
+                setupPointer();
+              },
             ),
             children: [
               TileLayer(
@@ -241,7 +240,11 @@ class _DiscoverPageState extends State<DiscoverPage>
   void moveToCurrentPosition() async {
     final location = await AppLocation.instance.determinePosition();
     await Future.delayed(Duration.zero);
-    mapController.move(LatLng(location.latitude, location.longitude), 18);
+    mapController.moveAndRotate(
+      LatLng(location.latitude, location.longitude),
+      18,
+      0,
+    );
   }
 
   Future<void> setupPointer() async {
