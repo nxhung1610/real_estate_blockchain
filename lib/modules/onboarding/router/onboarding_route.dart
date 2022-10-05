@@ -6,11 +6,11 @@ import 'package:real_estate_blockchain/modules/onboarding/module.dart';
 import 'package:go_router/go_router.dart';
 
 class OnboardingRoute extends BaseRoute {
-  OnboardingRoute(super.root);
+  OnboardingRoute(super.root, super.path);
   @override
   List<RouteBase> get routes => [
         GoRoute(
-          path: root,
+          path: url,
           builder: (context, state) {
             return BlocProvider(
               create: (context) => getIt.call<OnboardingBloc>(),

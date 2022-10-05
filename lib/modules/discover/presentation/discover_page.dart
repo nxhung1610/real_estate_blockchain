@@ -22,21 +22,24 @@ class DiscoverPage extends StatefulWidget {
 
 class _DiscoverPageState extends State<DiscoverPage>
     with AutomaticKeepAliveClientMixin {
-  late final FocusNode focusNode;
+  late final FocusScopeNode focusNode;
   @override
   void initState() {
-    focusNode = FocusNode();
+    focusNode = FocusScopeNode();
+    focusNode.addListener(listen);
     super.initState();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    focusNode.addListener(() {
-      if (focusNode.hasFocus) {
-        context.push($appRoute.mainDiscoverSearch);
-      }
-    });
+  }
+
+  void listen() {
+    if (focusNode.hasFocus) {
+      FocusScope.of(context).requestFocus(FocusNode());
+      context.push($appRoute.mainDiscoverSearch);
+    }
   }
 
   @override

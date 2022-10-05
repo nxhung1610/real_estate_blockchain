@@ -7,12 +7,12 @@ import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:real_estate_blockchain/modules/profile/module.dart';
 
 class ProfileRoute extends BaseRoute {
-  ProfileRoute(super.root);
+  ProfileRoute(super.root, super.path);
 
   @override
   List<RouteBase> get routes => [
         GoRoute(
-          path: root,
+          path: url,
           pageBuilder: (context, state) {
             return NoTransitionPage(
               child: BlocProvider(

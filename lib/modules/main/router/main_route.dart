@@ -13,7 +13,7 @@ import '../module.dart';
 part 'main_route_params.dart';
 
 class MainRoute extends BaseRoute {
-  MainRoute(super.root);
+  MainRoute(super.root, super.path);
   // Route Child
   late final HomeRoute _homeRoute;
   late final MyHomeRoute _myHomeRoute;
@@ -21,11 +21,11 @@ class MainRoute extends BaseRoute {
   late final ProfileRoute _profileRoute;
   late final DiscoverRoute _discoverRoute;
   // Path
-  String get home => _homeRoute.root;
-  String get myHome => _myHomeRoute.root;
-  String get message => _messageRoute.root;
-  String get profile => _profileRoute.root;
-  String get discover => _discoverRoute.root;
+  String get home => _homeRoute.url;
+  String get myHome => _myHomeRoute.url;
+  String get message => _messageRoute.url;
+  String get profile => _profileRoute.url;
+  String get discover => _discoverRoute.url;
   String get discoverSearch => _discoverRoute.search;
 
   @override
@@ -52,7 +52,6 @@ class MainRoute extends BaseRoute {
       ];
 
   @override
-  // TODO: implement globalRoutes
   List<RouteBase> get globalRoutes => [
         ..._homeRoute.globalRoutes,
         ..._myHomeRoute.globalRoutes,
@@ -63,10 +62,10 @@ class MainRoute extends BaseRoute {
 
   @override
   void setupRoutes() {
-    _homeRoute = HomeRoute(generatePath('/home'));
-    _myHomeRoute = MyHomeRoute(generatePath('/myhome'));
-    _messageRoute = MessageRoute(generatePath('/message'));
-    _profileRoute = ProfileRoute(generatePath('/profile'));
-    _discoverRoute = DiscoverRoute(generatePath('/discover'));
+    _homeRoute = HomeRoute(url, '/home');
+    _myHomeRoute = MyHomeRoute(url, '/myhome');
+    _messageRoute = MessageRoute(url, '/message');
+    _profileRoute = ProfileRoute(url, '/profile');
+    _discoverRoute = DiscoverRoute(url, '/discover');
   }
 }

@@ -7,15 +7,15 @@ import 'package:real_estate_blockchain/modules/core/module.dart';
 import '../module.dart';
 
 class DiscoverRoute extends BaseRoute {
-  DiscoverRoute(super.root);
+  DiscoverRoute(super.root, super.path);
 
   // Path
-  String get search => generatePath('/search');
+  String get search => ('$path/search');
 
   @override
   List<RouteBase> get routes => [
         GoRoute(
-          path: root,
+          path: url,
           pageBuilder: (context, state) {
             return NoTransitionPage(
                 child: BlocProvider<DiscoverBloc>(

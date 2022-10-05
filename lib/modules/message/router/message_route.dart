@@ -8,12 +8,12 @@ import 'package:real_estate_blockchain/modules/core/module.dart';
 import '../module.dart';
 
 class MessageRoute extends BaseRoute {
-  MessageRoute(super.root);
+  MessageRoute(super.root, super.path);
 
   @override
   List<RouteBase> get routes => [
         GoRoute(
-          path: root,
+          path: url,
           pageBuilder: (context, state) {
             return NoTransitionPage(
               child: BlocProvider(

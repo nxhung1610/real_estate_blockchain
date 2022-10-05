@@ -6,7 +6,7 @@ import 'package:real_estate_blockchain/modules/auth/module.dart';
 import 'package:real_estate_blockchain/modules/core/module.dart';
 
 class AuthRoute extends BaseRoute {
-  AuthRoute(super.root);
+  AuthRoute(super.root, super.path);
   // Path
   String get login => generatePath('/login');
   String get register => generatePath('/register');
