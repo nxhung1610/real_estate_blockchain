@@ -117,7 +117,7 @@ class _AppCommonState extends State<_AppCommon> {
             // Or redirect to [Main]
             if (isLoggedIn) {
               if (unAuthentcationRoutes.contains(state.location)) {
-                return $appRoute.mainHome;
+                return $appRoute.main;
               } else {
                 return null;
               }

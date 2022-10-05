@@ -21,33 +21,22 @@ class MainRoute extends BaseRoute {
   late final ProfileRoute _profileRoute;
   late final DiscoverRoute _discoverRoute;
   // Path
-  String get home => _homeRoute.url;
-  String get myHome => _myHomeRoute.url;
-  String get message => _messageRoute.url;
-  String get profile => _profileRoute.url;
-  String get discover => _discoverRoute.url;
   String get discoverSearch => _discoverRoute.search;
 
   @override
   List<RouteBase> get routes => [
-        ShellRoute(
-          builder: (context, state, child) {
-            final params = state.extra as MainRouteParams?;
-            return BlocProvider(
-              create: (context) => getIt.call<MainCubit>(),
-              child: MainPage(
-                params: params,
-                child: child,
+        GoRoute(
+          path: url,
+          pageBuilder: (context, state) {
+            return NoTransitionPage(
+              child: BlocProvider(
+                create: (context) => getIt.call<MainCubit>(),
+                child: MainPage(
+                  params: MainRouteParams.fromStateRoute(state),
+                ),
               ),
             );
           },
-          routes: [
-            ..._homeRoute.routes,
-            ..._myHomeRoute.routes,
-            ..._messageRoute.routes,
-            ..._profileRoute.routes,
-            ..._discoverRoute.routes,
-          ],
         ),
       ];
 
@@ -62,10 +51,10 @@ class MainRoute extends BaseRoute {
 
   @override
   void setupRoutes() {
-    _homeRoute = HomeRoute(url, '/home');
-    _myHomeRoute = MyHomeRoute(url, '/myhome');
-    _messageRoute = MessageRoute(url, '/message');
-    _profileRoute = ProfileRoute(url, '/profile');
-    _discoverRoute = DiscoverRoute(url, '/discover');
+    _homeRoute = HomeRoute(root, '/home');
+    _myHomeRoute = MyHomeRoute(root, '/myhome');
+    _messageRoute = MessageRoute(root, '/message');
+    _profileRoute = ProfileRoute(root, '/profile');
+    _discoverRoute = DiscoverRoute(root, '/discover');
   }
 }

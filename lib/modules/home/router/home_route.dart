@@ -11,19 +11,7 @@ class HomeRoute extends BaseRoute {
   HomeRoute(super.root, super.path);
 
   @override
-  List<RouteBase> get routes => [
-        GoRoute(
-          path: url,
-          pageBuilder: (context, state) {
-            return NoTransitionPage(
-              child: BlocProvider(
-                create: (context) => getIt.call<HomeBloc>(),
-                child: const HomePage(),
-              ),
-            );
-          },
-        ),
-      ];
+  List<RouteBase> get routes => [];
 
   @override
   void setupRoutes() {}

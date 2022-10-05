@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +8,7 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
+import 'package:real_estate_blockchain/modules/auth/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import 'discover_page.dart';
@@ -18,19 +21,25 @@ class SearchLocationPage extends StatefulWidget {
 }
 
 class _SearchLocationPageState extends State<SearchLocationPage> {
-  late final FocusNode focusNode;
+  late final FocusNode focusNode = FocusNode();
   @override
   void initState() {
     super.initState();
-    focusNode = FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) async {
+        focusNode.requestFocus();
+        // await Future.delayed(Duration.zero).then((value) {
+        //   log('Requét Focús');
+
+        // });
+      },
+    );
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      FocusScope.of(context).requestFocus(focusNode);
-    });
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
   }
 
   @override

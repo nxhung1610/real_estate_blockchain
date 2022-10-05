@@ -18,11 +18,7 @@ class AppRoute extends BaseRoute {
   String get onboarding => _onboardingRoute.url;
   String get authRegister => _authRoute.register;
   String get authLogin => _authRoute.login;
-  String get mainHome => _mainRoute.home;
-  String get mainMyHome => _mainRoute.myHome;
-  String get mainMessage => _mainRoute.message;
-  String get mainProfile => _mainRoute.profile;
-  String get mainDiscover => _mainRoute.discover;
+  String get main => _mainRoute.url;
   String get mainDiscoverSearch => _mainRoute.discoverSearch;
 
   @override

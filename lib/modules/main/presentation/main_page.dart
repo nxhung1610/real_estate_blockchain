@@ -1,28 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/modules/app/module.dart';
+import 'package:real_estate_blockchain/modules/core/module.dart';
+import 'package:real_estate_blockchain/modules/discover/module.dart';
+import 'package:real_estate_blockchain/modules/home/module.dart';
 import 'package:real_estate_blockchain/modules/main/module.dart';
+import 'package:real_estate_blockchain/modules/message/module.dart';
+import 'package:real_estate_blockchain/modules/my_home/module.dart';
+import 'package:real_estate_blockchain/modules/profile/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatefulWidget with GetItStatefulWidgetMixin {
   final MainRouteParams? params;
-  final Widget child;
-  const MainPage({super.key, this.params, required this.child});
+  MainPage({super.key, this.params});
 
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
+class _MainPageState extends State<MainPage>
+    with SingleTickerProviderStateMixin, GetItStateMixin {
   late final MainCubit cubit;
+
+  // Tabs
+  late final TabController tabController = TabController(
+    length: 5,
+    vsync: this,
+    initialIndex: cubit.state.sub.index,
+  );
+
   @override
   void initState() {
     super.initState();
     cubit = context.read<MainCubit>();
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -31,26 +53,34 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
     final iconColor = context.theme.iconTheme.color;
     return BlocListener<MainCubit, MainState>(
       listener: (context, state) {
-        switch (state.sub) {
-          case MainSub.home:
-            context.go($appRoute.mainHome);
-            break;
-          case MainSub.message:
-            context.go($appRoute.mainMessage);
-            break;
-          case MainSub.discover:
-            context.go($appRoute.mainDiscover);
-            break;
-          case MainSub.myHome:
-            context.go($appRoute.mainMyHome);
-            break;
-          case MainSub.profile:
-            context.go($appRoute.mainProfile);
-            break;
-        }
+        tabController.index = (state.sub.index);
       },
       child: Scaffold(
-        body: widget.child,
+        body: LazyIndexedStack(
+          index: tabController.index,
+          children: [
+            BlocProvider(
+              create: (context) => getIt.call<HomeBloc>(),
+              child: const HomePage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<MessageBloc>(),
+              child: const MessagePage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<DiscoverBloc>(),
+              child: const DiscoverPage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<MyHomeBloc>(),
+              child: const MyHomePage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<ProfileBloc>(),
+              child: const ProfilePage(),
+            ),
+          ],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: context.watch<MainCubit>().state.sub.index,
           onTap: (value) {

@@ -4,7 +4,7 @@ enum MainSub {
   home,
   message,
   discover,
-  myHome,
+  myhome,
   profile,
 }
 

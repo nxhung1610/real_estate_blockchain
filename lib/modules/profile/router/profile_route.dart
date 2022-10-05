@@ -10,19 +10,7 @@ class ProfileRoute extends BaseRoute {
   ProfileRoute(super.root, super.path);
 
   @override
-  List<RouteBase> get routes => [
-        GoRoute(
-          path: url,
-          pageBuilder: (context, state) {
-            return NoTransitionPage(
-              child: BlocProvider(
-                create: (context) => getIt.call<ProfileBloc>(),
-                child: const ProfilePage(),
-              ),
-            );
-          },
-        )
-      ];
+  List<RouteBase> get routes => [];
 
   @override
   void setupRoutes() {}

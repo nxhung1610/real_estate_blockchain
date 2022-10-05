@@ -10,21 +10,10 @@ class DiscoverRoute extends BaseRoute {
   DiscoverRoute(super.root, super.path);
 
   // Path
-  String get search => ('$path/search');
+  String get search => generatePath('/search');
 
   @override
-  List<RouteBase> get routes => [
-        GoRoute(
-          path: url,
-          pageBuilder: (context, state) {
-            return NoTransitionPage(
-                child: BlocProvider<DiscoverBloc>(
-              create: (context) => getIt.call<DiscoverBloc>(),
-              child: const DiscoverPage(),
-            ));
-          },
-        )
-      ];
+  List<RouteBase> get routes => [];
   @override
   List<RouteBase> get globalRoutes => [
         GoRoute(
