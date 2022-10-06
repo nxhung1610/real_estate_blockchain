@@ -258,7 +258,10 @@ class __NewFeedState extends State<_NewFeed> {
             ),
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return const HouseNewsFeed();
+              return HouseNewsFeed(
+                value: true,
+                onPressed: (value) {},
+              );
             },
             separatorBuilder: (context, index) {
               return AppSize.extraHeightDimens.verticalSpace;

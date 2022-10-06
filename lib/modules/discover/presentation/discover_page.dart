@@ -249,9 +249,8 @@ class _DiscoverPageState extends State<DiscoverPage>
 
   Future<void> setupPointer() async {
     final location = await AppLocation.instance.determinePosition();
-
     setState(() {
-      markers.add(
+      markers.addAll([
         Marker(
           point: LatLng(location.latitude, location.longitude),
           builder: (context) => Assets.icons.icLocationBold.svg(
@@ -261,7 +260,7 @@ class _DiscoverPageState extends State<DiscoverPage>
           ),
           rotate: true,
         ),
-      );
+      ]);
     });
   }
 
