@@ -3,8 +3,8 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
-import 'package:real_estate_blockchain/modules/core/module.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
 class AppDialog {
