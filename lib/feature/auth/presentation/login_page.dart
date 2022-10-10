@@ -50,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
           failure: (value) {
             context.appSnackBar.show((value as AuthFailures).mapOrNull(
               emailAddressInvalid: (value) => 'Email not valid',
+              phoneNumberInvalid: (value) => 'Phone number not valid',
               passwordInvalid: (value) => 'Password not valid',
               unknow: (value) => 'Unknow',
             ));
@@ -168,35 +169,37 @@ class __LoginFormState extends State<_LoginForm> {
             mainAxisSize: MainAxisSize.min,
             children: [
               InputPrimaryForm(
-                keyboardType: TextInputType.emailAddress,
-                hint: s.email,
+                keyboardType: TextInputType.phone,
+                hint: s.phoneNumber,
                 onChanged: (value) {
-                  bloc.emailChanged(value);
+                  bloc.phoneNumberChanged(value);
                 },
               ),
               AppSize.largeHeightDimens.verticalSpace,
-              InputPrimaryForm(
-                obscureText: state.passwordVisible,
-                hint: s.password,
-                keyboardType: TextInputType.visiblePassword,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    bloc.passwordVisibleChanged(!state.passwordVisible);
+              ...[
+                InputPrimaryForm(
+                  obscureText: !state.passwordVisible,
+                  hint: s.password,
+                  keyboardType: TextInputType.visiblePassword,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      bloc.passwordVisibleChanged(!state.passwordVisible);
+                    },
+                    icon: state.passwordVisible
+                        ? Assets.icons.icEyeHide.svg(
+                            width: AppSize.extraLargeElevation,
+                            height: AppSize.extraLargeElevation,
+                          )
+                        : Assets.icons.icEyeShow.svg(
+                            width: AppSize.extraLargeElevation,
+                            height: AppSize.extraLargeElevation,
+                          ),
+                  ),
+                  onChanged: (value) {
+                    bloc.passwordChanged(value);
                   },
-                  icon: state.passwordVisible
-                      ? Assets.icons.icEyeHide.svg(
-                          width: AppSize.extraLargeElevation,
-                          height: AppSize.extraLargeElevation,
-                        )
-                      : Assets.icons.icEyeShow.svg(
-                          width: AppSize.extraLargeElevation,
-                          height: AppSize.extraLargeElevation,
-                        ),
                 ),
-                onChanged: (value) {
-                  bloc.passwordChanged(value);
-                },
-              ),
+              ],
               AppSize.extraHeightDimens.verticalSpace,
               ButtonApp(
                 type: ButtonType.primary,

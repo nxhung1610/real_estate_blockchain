@@ -9,4 +9,6 @@ class ValueFailures<T> with _$ValueFailures<T> {
   const factory ValueFailures.invalidPassword({
     required T failedValue,
   }) = ValueFailuresInvalidPassword<T>;
+  const factory ValueFailures.invalidPhoneNumber({required T failedValue}) =
+      ValueFailuresInvalidPhoneNumber<T>;
 }

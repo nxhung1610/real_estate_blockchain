@@ -21,11 +21,21 @@ Either<ValueFailures<String>, String> validatePassword(String input) {
 }
 
 Either<ValueFailures<String>, String> validateFullName(String input) {
-  const emailRegex =
-      r"(?i)([0-9A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ']+\\s?\\b){2,}";
-  if (RegExp(emailRegex).hasMatch(input)) {
+  const fullNameRegex =
+      r"^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$";
+  if (RegExp(fullNameRegex).hasMatch(input)) {
     return right(input);
   } else {
     return left(ValueFailures.invalidEmail(failedValue: input));
+  }
+}
+
+Either<ValueFailures<String>, String> validatePhoneNumber(String input) {
+  const phoneNumberRegex = r'(84|0[3|5|7|8|9])+([0-9]{8})\b';
+  final regex = RegExp(phoneNumberRegex).hasMatch(input);
+  if (regex) {
+    return right(input);
+  } else {
+    return left(ValueFailures.invalidPhoneNumber(failedValue: input));
   }
 }

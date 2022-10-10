@@ -15,9 +15,10 @@ class AppSnackBar {
     if (content == null) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        margin: EdgeInsets.all(
-          AppSize.extraWidthDimens,
-        ),
+        behavior: SnackBarBehavior.floating,
+        // margin: EdgeInsets.all(
+        //   AppSize.extraWidthDimens,
+        // ),
         content: Text(
           content,
           style: context.textTheme.bodySmall?.copyWith(

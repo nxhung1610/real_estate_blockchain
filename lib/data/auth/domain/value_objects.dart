@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/feature/auth/module.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 
 class EmailAddressAuth extends ValueObjects<String> {
   @override
@@ -28,5 +26,15 @@ class FullNameAuth extends ValueObjects<String> {
   final Either<ValueFailures<String>, String> value;
   factory FullNameAuth(String input) {
     return FullNameAuth._(validateFullName(input));
+  }
+}
+
+class PhoneNumberAuth extends ValueObjects<String> {
+  const PhoneNumberAuth._(this.value);
+
+  @override
+  final Either<ValueFailures<String>, String> value;
+  factory PhoneNumberAuth(String input) {
+    return PhoneNumberAuth._(validatePhoneNumber(input));
   }
 }

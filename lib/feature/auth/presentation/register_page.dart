@@ -1,10 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/config/app_snackbar.dart';
+import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -19,11 +23,40 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  late final AuthBloc authBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    authBloc = context.read<AuthBloc>();
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocListener<RegisterBloc, RegisterState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.status.when(
+          success: (value) {
+            authBloc.login();
+          },
+          failure: (value) {
+            context.appSnackBar.show((value as AuthFailures).mapOrNull(
+              fullNameInvalid: (value) => 'Full name not valid',
+              emailAddressInvalid: (value) => 'Email address not valid',
+              passwordInvalid: (value) => 'Password not valid',
+              phoneNumberInvalid: (value) => 'Phone number not valid',
+              unknow: (value) => 'Unknow',
+            ));
+          },
+          loading: () {
+            context.appDialog.showLoading();
+          },
+          idle: () {
+            context.appDialog.dismissDialog();
+          },
+        );
+      },
       child: Scaffold(
         extendBody: true,
         body: SafeArea(
@@ -151,35 +184,47 @@ class _RegisterForm extends StatelessWidget {
               ),
               AppSize.largeHeightDimens.verticalSpace,
               InputPrimaryForm(
-                keyboardType: TextInputType.emailAddress,
-                hint: s.email,
+                keyboardType: TextInputType.phone,
+                hint: s.phoneNumber,
                 onChanged: (value) {
-                  bloc.emailChanged(value);
+                  bloc.phoneNumberChanged(value);
                 },
               ),
               AppSize.largeHeightDimens.verticalSpace,
-              InputPrimaryForm(
-                obscureText: state.passwordVisible,
-                hint: s.password,
-                keyboardType: TextInputType.visiblePassword,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    bloc.passwordVisibleChanged(!state.passwordVisible);
+              ...[
+                InputPrimaryForm(
+                  obscureText: !state.passwordVisible,
+                  hint: s.password,
+                  keyboardType: TextInputType.visiblePassword,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      bloc.passwordVisibleChanged(!state.passwordVisible);
+                    },
+                    icon: state.passwordVisible
+                        ? Assets.icons.icEyeHide.svg(
+                            width: AppSize.extraLargeElevation,
+                            height: AppSize.extraLargeElevation,
+                          )
+                        : Assets.icons.icEyeShow.svg(
+                            width: AppSize.extraLargeElevation,
+                            height: AppSize.extraLargeElevation,
+                          ),
+                  ),
+                  onChanged: (value) {
+                    bloc.passwordChanged(value);
                   },
-                  icon: state.passwordVisible
-                      ? Assets.icons.icEyeHide.svg(
-                          width: AppSize.extraLargeElevation,
-                          height: AppSize.extraLargeElevation,
-                        )
-                      : Assets.icons.icEyeShow.svg(
-                          width: AppSize.extraLargeElevation,
-                          height: AppSize.extraLargeElevation,
-                        ),
                 ),
-                onChanged: (value) {
-                  bloc.passwordChanged(value);
-                },
-              ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSize.mediumWidthDimens,
+                  ),
+                  child: Text(
+                    s.passwordValidDesc,
+                    style: context.textTheme.bodySmall?.copyWith(),
+                  ),
+                )
+              ],
               AppSize.extraHeightDimens.verticalSpace,
               ButtonApp(
                 type: ButtonType.primary,

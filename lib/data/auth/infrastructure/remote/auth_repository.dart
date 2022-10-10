@@ -11,25 +11,69 @@ class AuthRepository extends IAuthRepository {
   AuthRepository(this._apiRemote);
   @override
   Future<Either<AuthFailures, Unit>> login(
-      EmailAddressAuth emailAddress, PasswordAuth password) async {
-    final emailStr = emailAddress.value.getOrElse(() => 'INVALID_EMAIL');
-    final passwordStr = password.value.getOrElse(() => 'INVALID_PASSWORD');
+      PhoneNumberAuth phoneNumber, PasswordAuth password) async {
+    final phoneNumberStr =
+        phoneNumber.value.getOrElse(() => AuthError.phoneNumberInvalid);
+    final passwordStr =
+        password.value.getOrElse(() => AuthError.passwordInvalid);
     try {
       // TODO : logic login here
+      if (phoneNumberStr == AuthError.phoneNumberInvalid) {
+        throw FormatException(phoneNumberStr);
+      }
+      if (passwordStr == AuthError.passwordInvalid) {
+        throw FormatException(passwordStr);
+      }
+
       return right(unit);
+    } on FormatException catch (e) {
+      switch (e.message) {
+        case AuthError.phoneNumberInvalid:
+          return left(const AuthFailures.phoneNumberInvalid());
+        case AuthError.passwordInvalid:
+          return left(const AuthFailures.passwordInvalid());
+        default:
+          rethrow;
+      }
     } catch (e) {
       return left(const AuthFailures.unknow());
     }
   }
 
   @override
-  Future<Either<AuthFailures, Unit>> register(
-      EmailAddressAuth emailAddressAuth, PasswordAuth passwordAuth) async {
-    final emailStr = emailAddressAuth.value.getOrElse(() => 'INVALID_EMAIL');
-    final passwordStr = passwordAuth.value.getOrElse(() => 'INVALID_PASSWORD');
+  Future<Either<AuthFailures, Unit>> register(FullNameAuth fullName,
+      PhoneNumberAuth phoneNumber, PasswordAuth password) async {
+    final fullNameStr =
+        fullName.value.getOrElse(() => AuthError.fullNameInvalid);
+    final phoneNumberStr =
+        phoneNumber.value.getOrElse(() => AuthError.phoneNumberInvalid);
+    final passwordStr =
+        password.value.getOrElse(() => AuthError.passwordInvalid);
     try {
-      // TODO : register login here
+      if (fullNameStr == AuthError.fullNameInvalid) {
+        throw FormatException(fullNameStr);
+      }
+      if (phoneNumberStr == AuthError.phoneNumberInvalid) {
+        throw FormatException(phoneNumberStr);
+      }
+      if (passwordStr == AuthError.passwordInvalid) {
+        throw FormatException(passwordStr);
+      }
+
+      // TODO : register api here
+
       return right(unit);
+    } on FormatException catch (e) {
+      switch (e.message) {
+        case AuthError.phoneNumberInvalid:
+          return left(const AuthFailures.phoneNumberInvalid());
+        case AuthError.passwordInvalid:
+          return left(const AuthFailures.passwordInvalid());
+        case AuthError.fullNameInvalid:
+          return left(const AuthFailures.fullNameInvalid());
+        default:
+          rethrow;
+      }
     } catch (e) {
       return left(const AuthFailures.unknow());
     }

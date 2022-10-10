@@ -13,8 +13,8 @@ part 'login_bloc.freezed.dart';
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final IAuthRepository authRepository;
   LoginBloc(this.authRepository) : super(LoginState.initial()) {
-    on<LoginEventEmailChanged>((event, emit) {
-      emit(state.copyWith(emailAddress: EmailAddressAuth(event.emailAddress)));
+    on<LoginEventPhoneNumberChanged>((event, emit) {
+      emit(state.copyWith(phoneNumber: PhoneNumberAuth(event.phoneNumber)));
     });
     on<LoginEventPasswordChanged>((event, emit) {
       emit(state.copyWith(password: PasswordAuth(event.password)));
@@ -27,7 +27,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginEventLoginPressed>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
       // Valid input
-      final isEmailValid = state.emailAddress.isValid();
+      final isPhoneNumberValid = state.phoneNumber.isValid();
       final isPasswordValid = state.password.isValid();
 
       // Process logic login
@@ -38,7 +38,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       await Future.delayed(const Duration(milliseconds: 500));
 
       final result =
-          await authRepository.login(state.emailAddress, state.password);
+          await authRepository.login(state.phoneNumber, state.password);
       result.fold(
         (l) => emit(
           state.copyWith(
@@ -54,8 +54,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     });
   }
 
-  void emailChanged(String input) {
-    add(LoginEvent.emailChanged(input));
+  void phoneNumberChanged(String input) {
+    add(LoginEvent.phoneNumberChanged(input));
   }
 
   void passwordChanged(String input) {

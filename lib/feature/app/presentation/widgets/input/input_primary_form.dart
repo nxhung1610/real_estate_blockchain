@@ -7,6 +7,8 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 class InputPrimaryForm extends StatefulWidget {
   final String? lable;
   final String? hint;
+  final String? errorText;
+  final TextStyle? errorStyle;
   final String? initialValue;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -31,6 +33,8 @@ class InputPrimaryForm extends StatefulWidget {
     this.focusNode,
     this.suffixIcon,
     this.prefixIcon,
+    this.errorText,
+    this.errorStyle,
   });
 
   @override
@@ -94,6 +98,9 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
                     )
                   : null,
               hintText: widget.hint,
+              errorText: widget.errorText,
+              errorStyle: widget.errorStyle,
+              errorMaxLines: 3,
               contentPadding: contentPadding,
             ).applyDefaults(
               context.theme.inputDecorationTheme,

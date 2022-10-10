@@ -75,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Tìm nhà"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Tạo một"),

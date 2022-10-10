@@ -8,5 +8,7 @@ class AuthFailures with _$AuthFailures {
       AuthFailuresEmailAddressInvalid;
   const factory AuthFailures.passwordInvalid() = AuthFailuresPasswordInvalid;
   const factory AuthFailures.fullNameInvalid() = AuthFailureFullNameInvalid;
+  const factory AuthFailures.phoneNumberInvalid() =
+      AuthFailurePhoneNumberInvalid;
   const factory AuthFailures.unknow() = AuthFailuresUnknow;
 }

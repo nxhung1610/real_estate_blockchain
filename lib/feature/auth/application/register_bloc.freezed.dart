@@ -19,7 +19,7 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
@@ -28,7 +28,7 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -37,7 +37,7 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -47,7 +47,8 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -59,7 +60,7 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -69,7 +70,7 @@ mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -165,7 +166,7 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
@@ -177,7 +178,7 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -189,7 +190,7 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -205,7 +206,8 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -220,7 +222,7 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -233,7 +235,7 @@ class _$RegisterEventNameChanged implements RegisterEventNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -258,34 +260,35 @@ abstract class RegisterEventNameChanged implements RegisterEvent {
 }
 
 /// @nodoc
-abstract class _$$RegisterEventEmailChangedCopyWith<$Res> {
-  factory _$$RegisterEventEmailChangedCopyWith(
-          _$RegisterEventEmailChanged value,
-          $Res Function(_$RegisterEventEmailChanged) then) =
-      __$$RegisterEventEmailChangedCopyWithImpl<$Res>;
-  $Res call({String emailAddress});
+abstract class _$$RegisterEventPhoneNumberChangedCopyWith<$Res> {
+  factory _$$RegisterEventPhoneNumberChangedCopyWith(
+          _$RegisterEventPhoneNumberChanged value,
+          $Res Function(_$RegisterEventPhoneNumberChanged) then) =
+      __$$RegisterEventPhoneNumberChangedCopyWithImpl<$Res>;
+  $Res call({String phoneNumber});
 }
 
 /// @nodoc
-class __$$RegisterEventEmailChangedCopyWithImpl<$Res>
+class __$$RegisterEventPhoneNumberChangedCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$$RegisterEventEmailChangedCopyWith<$Res> {
-  __$$RegisterEventEmailChangedCopyWithImpl(_$RegisterEventEmailChanged _value,
-      $Res Function(_$RegisterEventEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventEmailChanged));
+    implements _$$RegisterEventPhoneNumberChangedCopyWith<$Res> {
+  __$$RegisterEventPhoneNumberChangedCopyWithImpl(
+      _$RegisterEventPhoneNumberChanged _value,
+      $Res Function(_$RegisterEventPhoneNumberChanged) _then)
+      : super(_value, (v) => _then(v as _$RegisterEventPhoneNumberChanged));
 
   @override
-  _$RegisterEventEmailChanged get _value =>
-      super._value as _$RegisterEventEmailChanged;
+  _$RegisterEventPhoneNumberChanged get _value =>
+      super._value as _$RegisterEventPhoneNumberChanged;
 
   @override
   $Res call({
-    Object? emailAddress = freezed,
+    Object? phoneNumber = freezed,
   }) {
-    return _then(_$RegisterEventEmailChanged(
-      emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
+    return _then(_$RegisterEventPhoneNumberChanged(
+      phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -293,72 +296,73 @@ class __$$RegisterEventEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterEventEmailChanged implements RegisterEventEmailChanged {
-  const _$RegisterEventEmailChanged(this.emailAddress);
+class _$RegisterEventPhoneNumberChanged
+    implements RegisterEventPhoneNumberChanged {
+  const _$RegisterEventPhoneNumberChanged(this.phoneNumber);
 
   @override
-  final String emailAddress;
+  final String phoneNumber;
 
   @override
   String toString() {
-    return 'RegisterEvent.emailChanged(emailAddress: $emailAddress)';
+    return 'RegisterEvent.phoneNumberChanged(phoneNumber: $phoneNumber)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegisterEventEmailChanged &&
+            other is _$RegisterEventPhoneNumberChanged &&
             const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress));
+                .equals(other.phoneNumber, phoneNumber));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(emailAddress));
+      runtimeType, const DeepCollectionEquality().hash(phoneNumber));
 
   @JsonKey(ignore: true)
   @override
-  _$$RegisterEventEmailChangedCopyWith<_$RegisterEventEmailChanged>
-      get copyWith => __$$RegisterEventEmailChangedCopyWithImpl<
-          _$RegisterEventEmailChanged>(this, _$identity);
+  _$$RegisterEventPhoneNumberChangedCopyWith<_$RegisterEventPhoneNumberChanged>
+      get copyWith => __$$RegisterEventPhoneNumberChangedCopyWithImpl<
+          _$RegisterEventPhoneNumberChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
   }) {
-    return emailChanged(emailAddress);
+    return phoneNumberChanged(phoneNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
   }) {
-    return emailChanged?.call(emailAddress);
+    return phoneNumberChanged?.call(phoneNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
     required TResult orElse(),
   }) {
-    if (emailChanged != null) {
-      return emailChanged(emailAddress);
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(phoneNumber);
     }
     return orElse();
   }
@@ -367,7 +371,8 @@ class _$RegisterEventEmailChanged implements RegisterEventEmailChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -375,47 +380,47 @@ class _$RegisterEventEmailChanged implements RegisterEventEmailChanged {
     required TResult Function(RegisterEventReggisterPressed value)
         registerPressed,
   }) {
-    return emailChanged(this);
+    return phoneNumberChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
     TResult Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
-    return emailChanged?.call(this);
+    return phoneNumberChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
     TResult Function(RegisterEventReggisterPressed value)? registerPressed,
     required TResult orElse(),
   }) {
-    if (emailChanged != null) {
-      return emailChanged(this);
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class RegisterEventEmailChanged implements RegisterEvent {
-  const factory RegisterEventEmailChanged(final String emailAddress) =
-      _$RegisterEventEmailChanged;
+abstract class RegisterEventPhoneNumberChanged implements RegisterEvent {
+  const factory RegisterEventPhoneNumberChanged(final String phoneNumber) =
+      _$RegisterEventPhoneNumberChanged;
 
-  String get emailAddress;
+  String get phoneNumber;
   @JsonKey(ignore: true)
-  _$$RegisterEventEmailChangedCopyWith<_$RegisterEventEmailChanged>
+  _$$RegisterEventPhoneNumberChangedCopyWith<_$RegisterEventPhoneNumberChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -489,7 +494,7 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
@@ -501,7 +506,7 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -513,7 +518,7 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -529,7 +534,8 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -544,7 +550,7 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -557,7 +563,7 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -653,7 +659,7 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
@@ -665,7 +671,7 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -677,7 +683,7 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -693,7 +699,8 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -708,7 +715,7 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -721,7 +728,7 @@ class _$RegisterEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -792,7 +799,7 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) nameChanged,
-    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() registerPressed,
@@ -804,7 +811,7 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -816,7 +823,7 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
-    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? registerPressed,
@@ -832,7 +839,8 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RegisterEventNameChanged value) nameChanged,
-    required TResult Function(RegisterEventEmailChanged value) emailChanged,
+    required TResult Function(RegisterEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(RegisterEventPasswordChanged value)
         passwordChanged,
     required TResult Function(RegisterEventPasswordVisibleChanged value)
@@ -847,7 +855,7 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -860,7 +868,7 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RegisterEventNameChanged value)? nameChanged,
-    TResult Function(RegisterEventEmailChanged value)? emailChanged,
+    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
     TResult Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -881,8 +889,9 @@ abstract class RegisterEventReggisterPressed implements RegisterEvent {
 
 /// @nodoc
 mixin _$RegisterState {
-  EmailAddressAuth get emailAddress => throw _privateConstructorUsedError;
+  PhoneNumberAuth get phoneNumber => throw _privateConstructorUsedError;
   PasswordAuth get password => throw _privateConstructorUsedError;
+  FullNameAuth get fullName => throw _privateConstructorUsedError;
   bool get passwordVisible => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
@@ -897,8 +906,9 @@ abstract class $RegisterStateCopyWith<$Res> {
           RegisterState value, $Res Function(RegisterState) then) =
       _$RegisterStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddressAuth emailAddress,
+      {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
+      FullNameAuth fullName,
       bool passwordVisible,
       Status status});
 
@@ -916,20 +926,25 @@ class _$RegisterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? emailAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? password = freezed,
+    Object? fullName = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as EmailAddressAuth,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as FullNameAuth,
       passwordVisible: passwordVisible == freezed
           ? _value.passwordVisible
           : passwordVisible // ignore: cast_nullable_to_non_nullable
@@ -957,8 +972,9 @@ abstract class _$$_RegisterStateCopyWith<$Res>
       __$$_RegisterStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddressAuth emailAddress,
+      {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
+      FullNameAuth fullName,
       bool passwordVisible,
       Status status});
 
@@ -979,20 +995,25 @@ class __$$_RegisterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? emailAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? password = freezed,
+    Object? fullName = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
     return _then(_$_RegisterState(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as EmailAddressAuth,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as FullNameAuth,
       passwordVisible: passwordVisible == freezed
           ? _value.passwordVisible
           : passwordVisible // ignore: cast_nullable_to_non_nullable
@@ -1009,15 +1030,18 @@ class __$$_RegisterStateCopyWithImpl<$Res>
 
 class _$_RegisterState implements _RegisterState {
   const _$_RegisterState(
-      {required this.emailAddress,
+      {required this.phoneNumber,
       required this.password,
+      required this.fullName,
       this.passwordVisible = false,
       this.status = const Status.idle()});
 
   @override
-  final EmailAddressAuth emailAddress;
+  final PhoneNumberAuth phoneNumber;
   @override
   final PasswordAuth password;
+  @override
+  final FullNameAuth fullName;
   @override
   @JsonKey()
   final bool passwordVisible;
@@ -1027,7 +1051,7 @@ class _$_RegisterState implements _RegisterState {
 
   @override
   String toString() {
-    return 'RegisterState(emailAddress: $emailAddress, password: $password, passwordVisible: $passwordVisible, status: $status)';
+    return 'RegisterState(phoneNumber: $phoneNumber, password: $password, fullName: $fullName, passwordVisible: $passwordVisible, status: $status)';
   }
 
   @override
@@ -1036,8 +1060,9 @@ class _$_RegisterState implements _RegisterState {
         (other.runtimeType == runtimeType &&
             other is _$_RegisterState &&
             const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
+                .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality().equals(other.fullName, fullName) &&
             const DeepCollectionEquality()
                 .equals(other.passwordVisible, passwordVisible) &&
             const DeepCollectionEquality().equals(other.status, status));
@@ -1046,8 +1071,9 @@ class _$_RegisterState implements _RegisterState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(fullName),
       const DeepCollectionEquality().hash(passwordVisible),
       const DeepCollectionEquality().hash(status));
 
@@ -1059,15 +1085,18 @@ class _$_RegisterState implements _RegisterState {
 
 abstract class _RegisterState implements RegisterState {
   const factory _RegisterState(
-      {required final EmailAddressAuth emailAddress,
+      {required final PhoneNumberAuth phoneNumber,
       required final PasswordAuth password,
+      required final FullNameAuth fullName,
       final bool passwordVisible,
       final Status status}) = _$_RegisterState;
 
   @override
-  EmailAddressAuth get emailAddress;
+  PhoneNumberAuth get phoneNumber;
   @override
   PasswordAuth get password;
+  @override
+  FullNameAuth get fullName;
   @override
   bool get passwordVisible;
   @override

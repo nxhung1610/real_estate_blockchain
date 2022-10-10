@@ -19,6 +19,7 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() loginPressed,
@@ -27,6 +28,7 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -35,6 +37,7 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -44,6 +47,8 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(LoginEventPasswordChanged value) passwordChanged,
     required TResult Function(LoginEventPasswordVisibleChanged value)
         passwordVisibleChanged,
@@ -53,6 +58,7 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -62,6 +68,7 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -156,6 +163,7 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() loginPressed,
@@ -167,6 +175,7 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -178,6 +187,7 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -193,6 +203,8 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(LoginEventPasswordChanged value) passwordChanged,
     required TResult Function(LoginEventPasswordVisibleChanged value)
         passwordVisibleChanged,
@@ -205,6 +217,7 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -217,6 +230,7 @@ class _$LoginEventEmailChanged implements LoginEventEmailChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -238,6 +252,168 @@ abstract class LoginEventEmailChanged implements LoginEvent {
   @JsonKey(ignore: true)
   _$$LoginEventEmailChangedCopyWith<_$LoginEventEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginEventPhoneNumberChangedCopyWith<$Res> {
+  factory _$$LoginEventPhoneNumberChangedCopyWith(
+          _$LoginEventPhoneNumberChanged value,
+          $Res Function(_$LoginEventPhoneNumberChanged) then) =
+      __$$LoginEventPhoneNumberChangedCopyWithImpl<$Res>;
+  $Res call({String phoneNumber});
+}
+
+/// @nodoc
+class __$$LoginEventPhoneNumberChangedCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res>
+    implements _$$LoginEventPhoneNumberChangedCopyWith<$Res> {
+  __$$LoginEventPhoneNumberChangedCopyWithImpl(
+      _$LoginEventPhoneNumberChanged _value,
+      $Res Function(_$LoginEventPhoneNumberChanged) _then)
+      : super(_value, (v) => _then(v as _$LoginEventPhoneNumberChanged));
+
+  @override
+  _$LoginEventPhoneNumberChanged get _value =>
+      super._value as _$LoginEventPhoneNumberChanged;
+
+  @override
+  $Res call({
+    Object? phoneNumber = freezed,
+  }) {
+    return _then(_$LoginEventPhoneNumberChanged(
+      phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginEventPhoneNumberChanged implements LoginEventPhoneNumberChanged {
+  const _$LoginEventPhoneNumberChanged(this.phoneNumber);
+
+  @override
+  final String phoneNumber;
+
+  @override
+  String toString() {
+    return 'LoginEvent.phoneNumberChanged(phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginEventPhoneNumberChanged &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(phoneNumber));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$LoginEventPhoneNumberChangedCopyWith<_$LoginEventPhoneNumberChanged>
+      get copyWith => __$$LoginEventPhoneNumberChangedCopyWithImpl<
+          _$LoginEventPhoneNumberChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(bool visible) passwordVisibleChanged,
+    required TResult Function() loginPressed,
+  }) {
+    return phoneNumberChanged(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(bool visible)? passwordVisibleChanged,
+    TResult Function()? loginPressed,
+  }) {
+    return phoneNumberChanged?.call(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(bool visible)? passwordVisibleChanged,
+    TResult Function()? loginPressed,
+    required TResult orElse(),
+  }) {
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(phoneNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
+    required TResult Function(LoginEventPasswordChanged value) passwordChanged,
+    required TResult Function(LoginEventPasswordVisibleChanged value)
+        passwordVisibleChanged,
+    required TResult Function(LoginEventLoginPressed value) loginPressed,
+  }) {
+    return phoneNumberChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(LoginEventPasswordChanged value)? passwordChanged,
+    TResult Function(LoginEventPasswordVisibleChanged value)?
+        passwordVisibleChanged,
+    TResult Function(LoginEventLoginPressed value)? loginPressed,
+  }) {
+    return phoneNumberChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(LoginEventPasswordChanged value)? passwordChanged,
+    TResult Function(LoginEventPasswordVisibleChanged value)?
+        passwordVisibleChanged,
+    TResult Function(LoginEventLoginPressed value)? loginPressed,
+    required TResult orElse(),
+  }) {
+    if (phoneNumberChanged != null) {
+      return phoneNumberChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginEventPhoneNumberChanged implements LoginEvent {
+  const factory LoginEventPhoneNumberChanged(final String phoneNumber) =
+      _$LoginEventPhoneNumberChanged;
+
+  String get phoneNumber;
+  @JsonKey(ignore: true)
+  _$$LoginEventPhoneNumberChangedCopyWith<_$LoginEventPhoneNumberChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -309,6 +485,7 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() loginPressed,
@@ -320,6 +497,7 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -331,6 +509,7 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -346,6 +525,8 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(LoginEventPasswordChanged value) passwordChanged,
     required TResult Function(LoginEventPasswordVisibleChanged value)
         passwordVisibleChanged,
@@ -358,6 +539,7 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -370,6 +552,7 @@ class _$LoginEventPasswordChanged implements LoginEventPasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -465,6 +648,7 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() loginPressed,
@@ -476,6 +660,7 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -487,6 +672,7 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -502,6 +688,8 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(LoginEventPasswordChanged value) passwordChanged,
     required TResult Function(LoginEventPasswordVisibleChanged value)
         passwordVisibleChanged,
@@ -514,6 +702,7 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -526,6 +715,7 @@ class _$LoginEventPasswordVisibleChanged
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -593,6 +783,7 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailAddress) emailChanged,
+    required TResult Function(String phoneNumber) phoneNumberChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(bool visible) passwordVisibleChanged,
     required TResult Function() loginPressed,
@@ -604,6 +795,7 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -615,6 +807,7 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailAddress)? emailChanged,
+    TResult Function(String phoneNumber)? phoneNumberChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(bool visible)? passwordVisibleChanged,
     TResult Function()? loginPressed,
@@ -630,6 +823,8 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEventEmailChanged value) emailChanged,
+    required TResult Function(LoginEventPhoneNumberChanged value)
+        phoneNumberChanged,
     required TResult Function(LoginEventPasswordChanged value) passwordChanged,
     required TResult Function(LoginEventPasswordVisibleChanged value)
         passwordVisibleChanged,
@@ -642,6 +837,7 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -654,6 +850,7 @@ class _$LoginEventLoginPressed implements LoginEventLoginPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEventEmailChanged value)? emailChanged,
+    TResult Function(LoginEventPhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(LoginEventPasswordChanged value)? passwordChanged,
     TResult Function(LoginEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
@@ -673,7 +870,7 @@ abstract class LoginEventLoginPressed implements LoginEvent {
 
 /// @nodoc
 mixin _$LoginState {
-  EmailAddressAuth get emailAddress => throw _privateConstructorUsedError;
+  PhoneNumberAuth get phoneNumber => throw _privateConstructorUsedError;
   PasswordAuth get password => throw _privateConstructorUsedError;
   bool get passwordVisible => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
@@ -689,7 +886,7 @@ abstract class $LoginStateCopyWith<$Res> {
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddressAuth emailAddress,
+      {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
       bool passwordVisible,
       Status status});
@@ -707,16 +904,16 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? emailAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? password = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as EmailAddressAuth,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -748,7 +945,7 @@ abstract class _$$_LoginStateCopyWith<$Res>
       __$$_LoginStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddressAuth emailAddress,
+      {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
       bool passwordVisible,
       Status status});
@@ -769,16 +966,16 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? emailAddress = freezed,
+    Object? phoneNumber = freezed,
     Object? password = freezed,
     Object? passwordVisible = freezed,
     Object? status = freezed,
   }) {
     return _then(_$_LoginState(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as EmailAddressAuth,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -799,13 +996,13 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 
 class _$_LoginState implements _LoginState {
   const _$_LoginState(
-      {required this.emailAddress,
+      {required this.phoneNumber,
       required this.password,
       this.passwordVisible = false,
       this.status = const Status.idle()});
 
   @override
-  final EmailAddressAuth emailAddress;
+  final PhoneNumberAuth phoneNumber;
   @override
   final PasswordAuth password;
   @override
@@ -817,7 +1014,7 @@ class _$_LoginState implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(emailAddress: $emailAddress, password: $password, passwordVisible: $passwordVisible, status: $status)';
+    return 'LoginState(phoneNumber: $phoneNumber, password: $password, passwordVisible: $passwordVisible, status: $status)';
   }
 
   @override
@@ -826,7 +1023,7 @@ class _$_LoginState implements _LoginState {
         (other.runtimeType == runtimeType &&
             other is _$_LoginState &&
             const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
+                .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality()
                 .equals(other.passwordVisible, passwordVisible) &&
@@ -836,7 +1033,7 @@ class _$_LoginState implements _LoginState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(passwordVisible),
       const DeepCollectionEquality().hash(status));
@@ -849,13 +1046,13 @@ class _$_LoginState implements _LoginState {
 
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
-      {required final EmailAddressAuth emailAddress,
+      {required final PhoneNumberAuth phoneNumber,
       required final PasswordAuth password,
       final bool passwordVisible,
       final Status status}) = _$_LoginState;
 
   @override
-  EmailAddressAuth get emailAddress;
+  PhoneNumberAuth get phoneNumber;
   @override
   PasswordAuth get password;
   @override

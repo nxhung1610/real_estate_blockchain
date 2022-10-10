@@ -76,6 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Home search"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
+            "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Create a"),

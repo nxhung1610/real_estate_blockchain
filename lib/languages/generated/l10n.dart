@@ -240,11 +240,31 @@ class S {
     );
   }
 
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password`
   String get password {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number`
+  String get passwordValidDesc {
+    return Intl.message(
+      'Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+      name: 'passwordValidDesc',
       desc: '',
       args: [],
     );

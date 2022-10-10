@@ -4,8 +4,8 @@ part of 'register_bloc.dart';
 class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.nameChanged(String name) =
       RegisterEventNameChanged;
-  const factory RegisterEvent.emailChanged(String emailAddress) =
-      RegisterEventEmailChanged;
+  const factory RegisterEvent.phoneNumberChanged(String phoneNumber) =
+      RegisterEventPhoneNumberChanged;
   const factory RegisterEvent.passwordChanged(String password) =
       RegisterEventPasswordChanged;
   const factory RegisterEvent.passwordVisibleChanged(bool visible) =
