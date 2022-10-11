@@ -10,5 +10,7 @@ class AuthFailures with _$AuthFailures {
   const factory AuthFailures.fullNameInvalid() = AuthFailureFullNameInvalid;
   const factory AuthFailures.phoneNumberInvalid() =
       AuthFailurePhoneNumberInvalid;
+  const factory AuthFailures.combinePhoneNumberOrPasswordInvalid() =
+      AuthFailureCombinePhoneOrPasswordInvlaid;
   const factory AuthFailures.unknow() = AuthFailuresUnknow;
 }

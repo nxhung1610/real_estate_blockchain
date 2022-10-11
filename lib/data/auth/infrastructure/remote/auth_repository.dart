@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 
@@ -17,7 +18,6 @@ class AuthRepository extends IAuthRepository {
     final passwordStr =
         password.value.getOrElse(() => AuthError.passwordInvalid);
     try {
-      // TODO : logic login here
       if (phoneNumberStr == AuthError.phoneNumberInvalid) {
         throw FormatException(phoneNumberStr);
       }
@@ -32,6 +32,13 @@ class AuthRepository extends IAuthRepository {
           return left(const AuthFailures.phoneNumberInvalid());
         case AuthError.passwordInvalid:
           return left(const AuthFailures.passwordInvalid());
+        default:
+          rethrow;
+      }
+    } on DioError catch (e) {
+      switch (e.response?.data['error_key']) {
+        case AuthError.errLoginFailed:
+          return left(const AuthFailures.combinePhoneNumberOrPasswordInvalid());
         default:
           rethrow;
       }

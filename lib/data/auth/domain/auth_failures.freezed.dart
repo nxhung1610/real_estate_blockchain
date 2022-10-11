@@ -22,6 +22,7 @@ mixin _$AuthFailures {
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$AuthFailures {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ mixin _$AuthFailures {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) =>
@@ -53,6 +56,8 @@ mixin _$AuthFailures {
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +68,8 @@ mixin _$AuthFailures {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +80,8 @@ mixin _$AuthFailures {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) =>
@@ -145,6 +154,7 @@ class _$AuthFailuresEmailAddressInvalid
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) {
     return emailAddressInvalid();
@@ -157,6 +167,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) {
     return emailAddressInvalid?.call();
@@ -169,6 +180,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -188,6 +200,8 @@ class _$AuthFailuresEmailAddressInvalid
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return emailAddressInvalid(this);
@@ -201,6 +215,8 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return emailAddressInvalid?.call(this);
@@ -214,6 +230,8 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -278,6 +296,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) {
     return passwordInvalid();
@@ -290,6 +309,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) {
     return passwordInvalid?.call();
@@ -302,6 +322,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -321,6 +342,8 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return passwordInvalid(this);
@@ -334,6 +357,8 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return passwordInvalid?.call(this);
@@ -347,6 +372,8 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -410,6 +437,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) {
     return fullNameInvalid();
@@ -422,6 +450,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) {
     return fullNameInvalid?.call();
@@ -434,6 +463,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -453,6 +483,8 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return fullNameInvalid(this);
@@ -466,6 +498,8 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return fullNameInvalid?.call(this);
@@ -479,6 +513,8 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -542,6 +578,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) {
     return phoneNumberInvalid();
@@ -554,6 +591,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) {
     return phoneNumberInvalid?.call();
@@ -566,6 +604,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -585,6 +624,8 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return phoneNumberInvalid(this);
@@ -598,6 +639,8 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return phoneNumberInvalid?.call(this);
@@ -611,6 +654,8 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
@@ -624,6 +669,151 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
 abstract class AuthFailurePhoneNumberInvalid implements AuthFailures {
   const factory AuthFailurePhoneNumberInvalid() =
       _$AuthFailurePhoneNumberInvalid;
+}
+
+/// @nodoc
+abstract class _$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWith<$Res> {
+  factory _$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWith(
+          _$AuthFailureCombinePhoneOrPasswordInvlaid value,
+          $Res Function(_$AuthFailureCombinePhoneOrPasswordInvlaid) then) =
+      __$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res>
+    implements _$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWith<$Res> {
+  __$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWithImpl(
+      _$AuthFailureCombinePhoneOrPasswordInvlaid _value,
+      $Res Function(_$AuthFailureCombinePhoneOrPasswordInvlaid) _then)
+      : super(_value,
+            (v) => _then(v as _$AuthFailureCombinePhoneOrPasswordInvlaid));
+
+  @override
+  _$AuthFailureCombinePhoneOrPasswordInvlaid get _value =>
+      super._value as _$AuthFailureCombinePhoneOrPasswordInvlaid;
+}
+
+/// @nodoc
+
+class _$AuthFailureCombinePhoneOrPasswordInvlaid
+    implements AuthFailureCombinePhoneOrPasswordInvlaid {
+  const _$AuthFailureCombinePhoneOrPasswordInvlaid();
+
+  @override
+  String toString() {
+    return 'AuthFailures.combinePhoneNumberOrPasswordInvalid()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthFailureCombinePhoneOrPasswordInvlaid);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() emailAddressInvalid,
+    required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
+    required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
+    required TResult Function() unknow,
+  }) {
+    return combinePhoneNumberOrPasswordInvalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? emailAddressInvalid,
+    TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
+    TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult Function()? unknow,
+  }) {
+    return combinePhoneNumberOrPasswordInvalid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? emailAddressInvalid,
+    TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
+    TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult Function()? unknow,
+    required TResult orElse(),
+  }) {
+    if (combinePhoneNumberOrPasswordInvalid != null) {
+      return combinePhoneNumberOrPasswordInvalid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthFailuresEmailAddressInvalid value)
+        emailAddressInvalid,
+    required TResult Function(AuthFailuresPasswordInvalid value)
+        passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
+    required TResult Function(AuthFailurePhoneNumberInvalid value)
+        phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
+    required TResult Function(AuthFailuresUnknow value) unknow,
+  }) {
+    return combinePhoneNumberOrPasswordInvalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
+    TResult Function(AuthFailuresUnknow value)? unknow,
+  }) {
+    return combinePhoneNumberOrPasswordInvalid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
+    TResult Function(AuthFailuresUnknow value)? unknow,
+    required TResult orElse(),
+  }) {
+    if (combinePhoneNumberOrPasswordInvalid != null) {
+      return combinePhoneNumberOrPasswordInvalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthFailureCombinePhoneOrPasswordInvlaid
+    implements AuthFailures {
+  const factory AuthFailureCombinePhoneOrPasswordInvlaid() =
+      _$AuthFailureCombinePhoneOrPasswordInvlaid;
 }
 
 /// @nodoc
@@ -671,6 +861,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     required TResult Function() passwordInvalid,
     required TResult Function() fullNameInvalid,
     required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
     required TResult Function() unknow,
   }) {
     return unknow();
@@ -683,6 +874,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
   }) {
     return unknow?.call();
@@ -695,6 +887,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function()? passwordInvalid,
     TResult Function()? fullNameInvalid,
     TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
     TResult Function()? unknow,
     required TResult orElse(),
   }) {
@@ -714,6 +907,8 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
     required TResult Function(AuthFailurePhoneNumberInvalid value)
         phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
     required TResult Function(AuthFailuresUnknow value) unknow,
   }) {
     return unknow(this);
@@ -727,6 +922,8 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
   }) {
     return unknow?.call(this);
@@ -740,6 +937,8 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
     TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
     TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
     TResult Function(AuthFailuresUnknow value)? unknow,
     required TResult orElse(),
   }) {
