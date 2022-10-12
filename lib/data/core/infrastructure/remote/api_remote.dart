@@ -12,6 +12,12 @@ import 'jwt_interceptor.dart';
 
 @singleton
 class ApiRemote {
+  VoidCallback? _onExpireToken;
+
+  init({required VoidCallback onExpireToken}) {
+    _onExpireToken = onExpireToken;
+  }
+
   Dio get _dio => _initDio();
 
   Dio _initDio() {
@@ -36,7 +42,7 @@ class ApiRemote {
         responseHeader: false,
         error: true,
       ))
-      ..interceptors.add(JWTInterceptor());
+      ..interceptors.add(JWTInterceptor(_onExpireToken));
 
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {

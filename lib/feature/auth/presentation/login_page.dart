@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
             ));
           },
           success: (value) {
-            authBloc.login();
+            authBloc.login(value);
           },
         );
       },

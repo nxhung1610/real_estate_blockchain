@@ -4,5 +4,7 @@ part 'auth_local_failures.freezed.dart';
 
 @freezed
 class AuthLocalFailures with _$AuthLocalFailures {
-  factory AuthLocalFailures.tokenNotExist() = _AuthLocalFailuresTokenNotExist;
+  const factory AuthLocalFailures.tokenNotExist() =
+      _AuthLocalFailuresTokenNotExist;
+  const factory AuthLocalFailures.unknow() = _AuthLocalFailuresUnknow;
 }

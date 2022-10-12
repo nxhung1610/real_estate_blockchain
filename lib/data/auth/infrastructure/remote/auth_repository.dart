@@ -9,7 +9,7 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import '../../data.dart';
 
 @LazySingleton(as: IAuthRepository)
-class AuthRepository extends IAuthRepository {
+class AuthRepository implements IAuthRepository {
   final ApiRemote _apiRemote;
   final LoginMapper _loginMapper;
   AuthRepository(this._apiRemote, this._loginMapper);
@@ -30,7 +30,7 @@ class AuthRepository extends IAuthRepository {
       }
 
       final res = await _apiRemote.post<LoginResponseDto>(
-        AuthConstants.login,
+        AuthConstants.remote.login,
         parse: (data) {
           return LoginResponseDto.fromJson(data);
         },
@@ -88,7 +88,7 @@ class AuthRepository extends IAuthRepository {
         throw const FormatException(AuthError.passwordInvalid);
       }
       final res = await _apiRemote.post(
-        AuthConstants.register,
+        AuthConstants.remote.register,
         data: RegisterRequestDto(
           firstName: firstNameStr,
           lastName: lastNameStr,

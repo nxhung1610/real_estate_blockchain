@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
+import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
@@ -54,19 +55,29 @@ class _AppCommonState extends State<_AppCommon> {
 
   // Value manage process
   late final Completer processIntital;
+  late final Completer processAuthen;
 
   @override
   void initState() {
     super.initState();
-
+    appBloc = context.read<AppBloc>();
+    authBloc = context.read<AuthBloc>();
     processIntital = Completer();
+    processAuthen = Completer();
+    // Execute function when expire token
+    getIt.call<ApiRemote>().init(
+      onExpireToken: () {
+        //  TODO : navigator to auth
+        authBloc.logout();
+      },
+    );
+    authBloc.initial();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    appBloc = context.read<AppBloc>();
-    authBloc = context.read<AuthBloc>();
+
     setupRouter();
     intitial();
   }
@@ -100,6 +111,7 @@ class _AppCommonState extends State<_AppCommon> {
               $appRoute.onboarding,
               $appRoute.authLogin,
               $appRoute.authRegister,
+              $appRoute.url,
             ];
             // Wokring with authentication
             // Check if authentication or not
@@ -116,7 +128,7 @@ class _AppCommonState extends State<_AppCommon> {
             // route location not match [Login,Register] will not redirect
             // Or redirect to [Main]
             if (isLoggedIn) {
-              if (unAuthentcationRoutes.contains(state.location)) {
+              if (!unAuthentcationRoutes.contains(state.location)) {
                 return $appRoute.main;
               } else {
                 return null;
@@ -138,13 +150,20 @@ class _AppCommonState extends State<_AppCommon> {
   Widget build(BuildContext context) {
     // Initial Route App
 
-    return BlocListener<AppBloc, AppState>(
-      listener: (context, state) {
-        log(state.toString());
-        if (state.isFisrtLaunch != null && !processIntital.isCompleted) {
-          processIntital.complete();
-        }
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<AppBloc, AppState>(listener: (context, state) {
+          log(state.toString());
+          if (state.isFisrtLaunch != null && !processIntital.isCompleted) {
+            processIntital.complete();
+          }
+        }),
+        BlocListener<AuthBloc, AuthState>(listener: (context, state) {
+          log(state.toString());
+          if (state is AuthStateUnknow || processAuthen.isCompleted) return;
+          processAuthen.complete();
+        })
+      ],
       child: GlobalLoaderOverlay(
         child: ScreenUtilInit(
           designSize: AppSize.designSize,
@@ -175,7 +194,10 @@ class _AppCommonState extends State<_AppCommon> {
                   return SplashPage(
                     child: child ?? Container(),
                     onLoaded: () async {
-                      await processIntital.future;
+                      await Future.wait([
+                        processIntital.future,
+                        processAuthen.future,
+                      ]);
                     },
                   );
                 },
