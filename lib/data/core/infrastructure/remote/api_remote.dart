@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -22,7 +23,11 @@ class ApiRemote {
       ..options.baseUrl = config.baseUrl
       ..options.connectTimeout = config.connectionTimeout
       ..options.receiveTimeout = config.receiveTimeout
-      ..options.headers = {'Content-Type': 'application/json; charset=utf-8'}
+      // ..options.followRedirects = false
+      ..options.headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        "Accept": "application/json",
+      }
       ..interceptors.add(PrettyDioLogger(
         request: true,
         requestBody: true,

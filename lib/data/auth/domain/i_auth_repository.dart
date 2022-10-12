@@ -5,6 +5,6 @@ import 'auth_failures.dart';
 abstract class IAuthRepository {
   Future<Either<AuthFailures, AuthToken>> login(
       PhoneNumberAuth phoneNumber, PasswordAuth password);
-  Future<Either<AuthFailures, Unit>> register(FullNameAuth fullName,
-      PhoneNumberAuth phoneNumber, PasswordAuth password);
+  Future<Either<AuthFailures, Unit>> register(NameAuth firstName,
+      NameAuth lastName, PhoneNumberAuth phoneNumber, PasswordAuth password);
 }

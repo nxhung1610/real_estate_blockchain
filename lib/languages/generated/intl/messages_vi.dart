@@ -36,10 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),

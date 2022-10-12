@@ -26,22 +26,28 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         state.copyWith(passwordVisible: event.visible),
       ),
     );
-    on<RegisterEventNameChanged>(
-      (event, emit) => emit(state.copyWith(fullName: FullNameAuth(event.name))),
+    on<RegisterEventFirstNameChanged>(
+      (event, emit) => emit(
+        state.copyWith(
+          firstName: NameAuth(event.name),
+        ),
+      ),
+    );
+    on<RegisterEventLastNameChanged>(
+      (event, emit) => emit(
+        state.copyWith(
+          lastName: NameAuth(event.name),
+        ),
+      ),
     );
     on<RegisterEventReggisterPressed>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
-      // Valid input
-      final isPhoneNumberValid = state.phoneNumber.isValid();
-      final isPasswordValid = state.password.isValid();
-      final isFullNameValid = state.fullName.isValid();
-
       //Process logic login
       try {
         await Future.delayed(const Duration(milliseconds: 500));
 
         final result = await authRepository.register(
-            state.fullName, state.phoneNumber, state.password);
+            state.firstName, state.lastName, state.phoneNumber, state.password);
         result.fold(
           (l) => emit(
             state.copyWith(
@@ -59,8 +65,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     });
   }
 
-  void nameChanged(String name) {
-    add(RegisterEvent.nameChanged(name));
+  void firstNameChanged(String name) {
+    add(RegisterEvent.firstNameChanged(name));
+  }
+
+  void lastNameChanged(String name) {
+    add(RegisterEvent.lastNameChanged(name));
   }
 
   void phoneNumberChanged(String input) {

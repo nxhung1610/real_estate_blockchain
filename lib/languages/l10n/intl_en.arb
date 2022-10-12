@@ -22,6 +22,8 @@
   "password": "Password",
   "passwordValidDesc" : "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number",
   "fullName" : "Full Name",
+  "firstName" :"First Name",
+  "lastName" : "Last Name",
   "loginSignIn": "Sign In",
   "loginForgotPassword": "Forgot Password?",
   "loginDontHaveAnAccount": "Dont't have an account?",

@@ -280,6 +280,26 @@ class S {
     );
   }
 
+  /// `First Name`
+  String get firstName {
+    return Intl.message(
+      'First Name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message(
+      'Last Name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign In`
   String get loginSignIn {
     return Intl.message(

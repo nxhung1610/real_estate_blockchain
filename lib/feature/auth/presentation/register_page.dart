@@ -38,14 +38,17 @@ class _RegisterPageState extends State<RegisterPage> {
       listener: (context, state) {
         state.status.when(
           success: (value) {
-            authBloc.login();
+            context.go($appRoute.authLogin);
+            context.appSnackBar.show('Please login your account to continue.');
           },
           failure: (value) {
             context.appSnackBar.show((value as AuthFailures).mapOrNull(
               fullNameInvalid: (value) => 'Full name not valid',
+              nameInvalid: (value) => 'Name not valid',
               emailAddressInvalid: (value) => 'Email address not valid',
               passwordInvalid: (value) => 'Password not valid',
               phoneNumberInvalid: (value) => 'Phone number not valid',
+              userAlreadyExist: (value) => 'Phone number already used',
               unknow: (value) => 'Unknow',
             ));
           },
@@ -177,9 +180,17 @@ class _RegisterForm extends StatelessWidget {
             children: [
               InputPrimaryForm(
                 keyboardType: TextInputType.name,
-                hint: s.fullName,
+                hint: s.firstName,
                 onChanged: (value) {
-                  bloc.nameChanged(value);
+                  bloc.firstNameChanged(value);
+                },
+              ),
+              AppSize.largeHeightDimens.verticalSpace,
+              InputPrimaryForm(
+                keyboardType: TextInputType.name,
+                hint: s.lastName,
+                onChanged: (value) {
+                  bloc.lastNameChanged(value);
                 },
               ),
               AppSize.largeHeightDimens.verticalSpace,

@@ -39,3 +39,14 @@ Either<ValueFailures<String>, String> validatePhoneNumber(String input) {
     return left(ValueFailures.invalidPhoneNumber(failedValue: input));
   }
 }
+
+Either<ValueFailures<String>, String> validateName(String input) {
+  const nameRegex =
+      r"^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêếìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\ ]+$";
+  final regex = RegExp(nameRegex).hasMatch(input);
+  if (regex) {
+    return right(input);
+  } else {
+    return left(ValueFailures.invalidName(failedValue: input));
+  }
+}

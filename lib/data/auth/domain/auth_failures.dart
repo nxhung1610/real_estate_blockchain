@@ -8,9 +8,11 @@ class AuthFailures with _$AuthFailures {
       AuthFailuresEmailAddressInvalid;
   const factory AuthFailures.passwordInvalid() = AuthFailuresPasswordInvalid;
   const factory AuthFailures.fullNameInvalid() = AuthFailureFullNameInvalid;
+  const factory AuthFailures.nameInvalid() = AuthFailureNameInvalid;
   const factory AuthFailures.phoneNumberInvalid() =
       AuthFailurePhoneNumberInvalid;
   const factory AuthFailures.combinePhoneNumberOrPasswordInvalid() =
       AuthFailureCombinePhoneOrPasswordInvlaid;
+  const factory AuthFailures.userAlreadyExist() = AuthFailureUserAlreadyExist;
   const factory AuthFailures.unknow() = AuthFailuresUnknow;
 }

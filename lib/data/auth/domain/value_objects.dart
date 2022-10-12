@@ -38,3 +38,13 @@ class PhoneNumberAuth extends ValueObjects<String> {
     return PhoneNumberAuth._(validatePhoneNumber(input));
   }
 }
+
+class NameAuth extends ValueObjects<String> {
+  const NameAuth._(this.value);
+
+  @override
+  final Either<ValueFailures<String>, String> value;
+  factory NameAuth(String input) {
+    return NameAuth._(validateName(input));
+  }
+}

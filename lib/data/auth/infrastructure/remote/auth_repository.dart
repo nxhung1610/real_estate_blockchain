@@ -37,7 +37,7 @@ class AuthRepository extends IAuthRepository {
         data: LoginRequestDto(
           phone: phoneNumberStr,
           password: passwordStr,
-        ),
+        ).toJson(),
       );
       if (!res.success) {
         throw res.errorKey.toString();
@@ -65,27 +65,40 @@ class AuthRepository extends IAuthRepository {
   }
 
   @override
-  Future<Either<AuthFailures, Unit>> register(FullNameAuth fullName,
-      PhoneNumberAuth phoneNumber, PasswordAuth password) async {
-    final fullNameStr =
-        fullName.value.getOrElse(() => AuthError.fullNameInvalid);
+  Future<Either<AuthFailures, Unit>> register(
+      NameAuth firstName,
+      NameAuth lastName,
+      PhoneNumberAuth phoneNumber,
+      PasswordAuth password) async {
+    final firstNameStr = firstName.value.getOrElse(() => AuthError.nameInvalid);
+    final lastNameStr = lastName.value.getOrElse(() => AuthError.nameInvalid);
     final phoneNumberStr =
         phoneNumber.value.getOrElse(() => AuthError.phoneNumberInvalid);
     final passwordStr =
         password.value.getOrElse(() => AuthError.passwordInvalid);
     try {
-      if (fullNameStr == AuthError.fullNameInvalid) {
-        throw FormatException(fullNameStr);
+      if (firstNameStr == AuthError.nameInvalid ||
+          lastNameStr == AuthError.nameInvalid) {
+        throw const FormatException(AuthError.nameInvalid);
       }
       if (phoneNumberStr == AuthError.phoneNumberInvalid) {
-        throw FormatException(phoneNumberStr);
+        throw const FormatException(AuthError.phoneNumberInvalid);
       }
       if (passwordStr == AuthError.passwordInvalid) {
-        throw FormatException(passwordStr);
+        throw const FormatException(AuthError.passwordInvalid);
       }
-
-      // TODO : register api here
-
+      final res = await _apiRemote.post(
+        AuthConstants.register,
+        data: RegisterRequestDto(
+          firstName: firstNameStr,
+          lastName: lastNameStr,
+          phone: phoneNumberStr,
+          password: passwordStr,
+        ).toJson(),
+      );
+      if (!res.success) {
+        throw res.errorKey.toString();
+      }
       return right(unit);
     } on FormatException catch (e) {
       switch (e.message) {
@@ -93,8 +106,15 @@ class AuthRepository extends IAuthRepository {
           return left(const AuthFailures.phoneNumberInvalid());
         case AuthError.passwordInvalid:
           return left(const AuthFailures.passwordInvalid());
-        case AuthError.fullNameInvalid:
-          return left(const AuthFailures.fullNameInvalid());
+        case AuthError.nameInvalid:
+          return left(const AuthFailures.nameInvalid());
+        default:
+          rethrow;
+      }
+    } on String catch (e) {
+      switch (e) {
+        case AuthError.errUsersAlreadyExists:
+          return left(const AuthFailures.userAlreadyExist());
         default:
           rethrow;
       }
