@@ -1,0 +1,21 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'auth_token.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+AuthToken _$AuthTokenFromJson(Map<String, dynamic> json) => AuthToken(
+      token: json['token'] as String?,
+      created: json['created'] == null
+          ? null
+          : DateTime.parse(json['created'] as String),
+      expiry: json['expiry'] as int?,
+    );
+
+Map<String, dynamic> _$AuthTokenToJson(AuthToken instance) => <String, dynamic>{
+      'token': instance.token,
+      'created': instance.created?.toIso8601String(),
+      'expiry': instance.expiry,
+    };

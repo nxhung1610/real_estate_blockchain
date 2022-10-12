@@ -45,30 +45,37 @@ class ApiRemote {
     return dio;
   }
 
-  Future<Response<T>> get<T>(
+  Future<BaseResponse<T>> get<T>(
     String endpoint, {
+    Function(Map<String, dynamic> data)? parse,
     Map<String, dynamic>? query,
     Options? options,
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgres,
   }) async {
     try {
-      final response = await _dio.get<T>(
-        AppConfig.instance.baseUrl + endpoint,
+      final response = await _dio.get(
+        endpoint,
         queryParameters: query,
         options: options,
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgres,
       );
 
-      return response;
-    } on Exception {
-      rethrow;
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(
+        e.response?.data,
+      );
     }
   }
 
-  Future<Response<T>> post<T>(
+  Future<BaseResponse<T>> post<T>(
     String endpoint, {
+    Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,
@@ -77,8 +84,8 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.post<T>(
-        AppConfig.instance.baseUrl + endpoint,
+      final response = await _dio.post(
+        endpoint,
         data: data,
         queryParameters: queryParameters,
         cancelToken: cancelToken,
@@ -87,14 +94,20 @@ class ApiRemote {
         options: options,
       );
 
-      return response;
-    } on Exception {
-      rethrow;
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(
+        e.response?.data,
+      );
     }
   }
 
-  Future<Response<T>> put<T>(
+  Future<BaseResponse<T>> put<T>(
     String endpoint, {
+    Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,
@@ -103,8 +116,8 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.put<T>(
-        AppConfig.instance.baseUrl + endpoint,
+      final response = await _dio.put(
+        endpoint,
         data: data,
         queryParameters: queryParameters,
         cancelToken: cancelToken,
@@ -113,14 +126,20 @@ class ApiRemote {
         options: options,
       );
 
-      return response;
-    } on Exception {
-      rethrow;
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(
+        e.response?.data,
+      );
     }
   }
 
-  Future<Response<T>> patch<T>(
+  Future<BaseResponse<T>> patch<T>(
     String endpoint, {
+    Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,
@@ -129,8 +148,8 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.patch<T>(
-        AppConfig.instance.baseUrl + endpoint,
+      final response = await _dio.patch(
+        endpoint,
         data: data,
         queryParameters: queryParameters,
         cancelToken: cancelToken,
@@ -139,9 +158,14 @@ class ApiRemote {
         options: options,
       );
 
-      return response;
-    } on Exception {
-      rethrow;
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(
+        e.response?.data,
+      );
     }
   }
 }

@@ -14,7 +14,7 @@ part 'app_state.dart';
 
 @injectable
 class AppBloc extends Bloc<AppEvent, AppState> {
-  final IAppConfigRepository _appConfigRepository;
+  final IAppConfigLocalRepository _appConfigRepository;
   AppBloc(this._appConfigRepository) : super(AppState.initial()) {
     on<AppEventStarted>((event, emit) async {
       final isFirstLaunch = await _appConfigRepository.isFirstLaunch();

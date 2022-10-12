@@ -4,11 +4,11 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:dartz/dartz.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
-@Singleton(as: IAppConfigRepository)
-class AppConfigRepository implements IAppConfigRepository {
+@Singleton(as: IAppConfigLocalRepository)
+class AppConfigLocalRepository implements IAppConfigLocalRepository {
   final ApiLocalHive _apiLocalHive;
 
-  AppConfigRepository(this._apiLocalHive);
+  AppConfigLocalRepository(this._apiLocalHive);
 
   @override
   Future<Either<AppConfigFailure, bool>> isFirstLaunch() async {

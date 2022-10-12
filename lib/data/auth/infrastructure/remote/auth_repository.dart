@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 
@@ -8,16 +11,17 @@ import '../../data.dart';
 @LazySingleton(as: IAuthRepository)
 class AuthRepository extends IAuthRepository {
   final ApiRemote _apiRemote;
-
-  AuthRepository(this._apiRemote);
+  final LoginMapper _loginMapper;
+  AuthRepository(this._apiRemote, this._loginMapper);
   @override
-  Future<Either<AuthFailures, Unit>> login(
+  Future<Either<AuthFailures, AuthToken>> login(
       PhoneNumberAuth phoneNumber, PasswordAuth password) async {
     final phoneNumberStr =
         phoneNumber.value.getOrElse(() => AuthError.phoneNumberInvalid);
     final passwordStr =
         password.value.getOrElse(() => AuthError.passwordInvalid);
     try {
+      // Check validate form input before fetch
       if (phoneNumberStr == AuthError.phoneNumberInvalid) {
         throw FormatException(phoneNumberStr);
       }
@@ -25,7 +29,20 @@ class AuthRepository extends IAuthRepository {
         throw FormatException(passwordStr);
       }
 
-      return right(unit);
+      final res = await _apiRemote.post<LoginResponseDto>(
+        AuthConstants.login,
+        parse: (data) {
+          return LoginResponseDto.fromJson(data);
+        },
+        data: LoginRequestDto(
+          phone: phoneNumberStr,
+          password: passwordStr,
+        ),
+      );
+      if (!res.success) {
+        throw res.errorKey.toString();
+      }
+      return right(_loginMapper.toEntity(res.data!));
     } on FormatException catch (e) {
       switch (e.message) {
         case AuthError.phoneNumberInvalid:
@@ -35,8 +52,8 @@ class AuthRepository extends IAuthRepository {
         default:
           rethrow;
       }
-    } on DioError catch (e) {
-      switch (e.response?.data['error_key']) {
+    } on String catch (e) {
+      switch (e) {
         case AuthError.errLoginFailed:
           return left(const AuthFailures.combinePhoneNumberOrPasswordInvalid());
         default:

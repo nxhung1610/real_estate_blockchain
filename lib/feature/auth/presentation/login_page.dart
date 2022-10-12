@@ -53,6 +53,8 @@ class _LoginPageState extends State<LoginPage> {
               phoneNumberInvalid: (value) => 'Phone number not valid',
               passwordInvalid: (value) => 'Password not valid',
               unknow: (value) => 'Unknow',
+              combinePhoneNumberOrPasswordInvalid: (value) =>
+                  'Phone number or Password not correct',
             ));
           },
           success: (value) {

@@ -63,7 +63,6 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   # Map 
-  # mapbox_gl:
   flutter_map: 
   latlong2:
   geolocator: ^9.0.2

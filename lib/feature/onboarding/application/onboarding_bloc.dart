@@ -11,7 +11,7 @@ part 'onboarding_bloc.freezed.dart';
 
 @injectable
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  final IAppConfigRepository _appConfigRepository;
+  final IAppConfigLocalRepository _appConfigRepository;
   OnboardingBloc(this._appConfigRepository) : super(OnboardingState.initial()) {
     on<OnboardingEventStarted>((event, emit) {});
     on<OnboardingEventChangeSlide>((event, emit) {
