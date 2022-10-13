@@ -26,14 +26,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
     on<LoginEventLoginPressed>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
-      // Valid input
-      final isPhoneNumberValid = state.phoneNumber.isValid();
-      final isPasswordValid = state.password.isValid();
-
-      // Process logic login
-      // if (isEmailValid && isPasswordValid) {
-
-      // }
 
       await Future.delayed(const Duration(milliseconds: 500));
 

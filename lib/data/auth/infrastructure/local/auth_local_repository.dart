@@ -13,25 +13,26 @@ class AuthLocalRepository implements IAuthLocalRepository {
 
   AuthLocalRepository(this._apiLocalHive);
   @override
-  Future<Either<AuthLocalFailures, AuthToken>> getToken() async {
+  Future<Either<AuthLocalFailures, AuthSession>> getToken() async {
     try {
       final data = jsonDecode(await _apiLocalHive.get(
           AuthConstants.local.key, AuthConstants.local.tokenAuth));
       log(data.toString());
-      final tokenAuth = AuthToken.fromJson(data);
-      return right(tokenAuth);
+      final tokenSession = AuthSession.fromJson(data);
+      return right(tokenSession);
     } catch (e) {
       return left(const AuthLocalFailures.tokenNotExist());
     }
   }
 
   @override
-  Future<Either<AuthLocalFailures, Unit>> saveToken(AuthToken authToken) async {
+  Future<Either<AuthLocalFailures, Unit>> saveToken(
+      AuthSession? authSession) async {
     try {
       await _apiLocalHive.put(
         AuthConstants.local.key,
         AuthConstants.local.tokenAuth,
-        jsonEncode(authToken.toJson()),
+        jsonEncode(authSession?.toJson()),
       );
       return right(unit);
     } catch (e) {

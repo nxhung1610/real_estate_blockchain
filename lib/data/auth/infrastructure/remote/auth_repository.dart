@@ -14,7 +14,7 @@ class AuthRepository implements IAuthRepository {
   final LoginMapper _loginMapper;
   AuthRepository(this._apiRemote, this._loginMapper);
   @override
-  Future<Either<AuthFailures, AuthToken>> login(
+  Future<Either<AuthFailures, AuthSession>> login(
       PhoneNumberAuth phoneNumber, PasswordAuth password) async {
     final phoneNumberStr =
         phoneNumber.value.getOrElse(() => AuthError.phoneNumberInvalid);

@@ -17,21 +17,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       result.fold((l) => logout(), (r) => login(r));
     });
     on<AuthEventLogin>((event, emit) async {
-      final result = await _authLocalRepository.saveToken(event.authToken);
-      result.fold(
-        (l) => logout(),
-        (r) => emit(
-          AuthState.authenticated(event.authToken),
-        ),
-      );
+      final result = await _authLocalRepository.saveToken(event.authSession);
+      try {
+        result.fold(
+          (l) => logout(),
+          (r) => emit(
+            AuthState.authenticated(event.authSession.token!),
+          ),
+        );
+      } catch (e) {
+        logout();
+      }
     });
-    on<AuthEventLogout>((event, emit) {
+    on<AuthEventLogout>((event, emit) async {
+      // Clear token when logout account
+      await _authLocalRepository.saveToken(null);
       emit(const AuthState.unAuthenticated());
     });
   }
 
-  void login(AuthToken authToken) {
-    add(AuthEvent.login(authToken));
+  void login(AuthSession authSession) {
+    add(AuthEvent.login(authSession));
   }
 
   void logout() {

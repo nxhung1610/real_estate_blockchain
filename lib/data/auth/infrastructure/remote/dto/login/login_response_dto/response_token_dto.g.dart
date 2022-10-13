@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response_dto.dart';
+part of 'response_token_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponseDto _$LoginResponseDtoFromJson(Map<String, dynamic> json) =>
-    LoginResponseDto(
+ResponseTokenDto _$ResponseTokenDtoFromJson(Map<String, dynamic> json) =>
+    ResponseTokenDto(
       token: json['token'] as String?,
       created: json['created'] == null
           ? null
@@ -15,7 +15,7 @@ LoginResponseDto _$LoginResponseDtoFromJson(Map<String, dynamic> json) =>
       expiry: json['expiry'] as int?,
     );
 
-Map<String, dynamic> _$LoginResponseDtoToJson(LoginResponseDto instance) =>
+Map<String, dynamic> _$ResponseTokenDtoToJson(ResponseTokenDto instance) =>
     <String, dynamic>{
       'token': instance.token,
       'created': instance.created?.toIso8601String(),

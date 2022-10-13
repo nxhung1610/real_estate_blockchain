@@ -1,15 +1,17 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'response_token_dto.dart';
+
 part 'login_response_dto.g.dart';
 
 @JsonSerializable()
 class LoginResponseDto extends Equatable {
-  final String? token;
-  final DateTime? created;
-  final int? expiry;
+  @JsonKey(name: 'refresh_token')
+  final ResponseTokenDto? refreshToken;
+  final ResponseTokenDto? token;
 
-  const LoginResponseDto({this.token, this.created, this.expiry});
+  const LoginResponseDto({this.refreshToken, this.token});
 
   factory LoginResponseDto.fromJson(Map<String, dynamic> json) {
     return _$LoginResponseDtoFromJson(json);
@@ -21,5 +23,5 @@ class LoginResponseDto extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [token, created, expiry];
+  List<Object?> get props => [refreshToken, token];
 }

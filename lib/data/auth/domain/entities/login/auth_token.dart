@@ -17,6 +17,18 @@ class AuthToken extends Equatable {
 
   Map<String, dynamic> toJson() => _$AuthTokenToJson(this);
 
+  AuthToken copyWith({
+    String? token,
+    DateTime? created,
+    int? expiry,
+  }) {
+    return AuthToken(
+      token: token ?? this.token,
+      created: created ?? this.created,
+      expiry: expiry ?? this.expiry,
+    );
+  }
+
   @override
   bool get stringify => true;
 

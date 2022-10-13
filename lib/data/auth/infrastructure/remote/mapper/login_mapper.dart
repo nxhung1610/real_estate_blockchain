@@ -3,11 +3,7 @@ import 'package:real_estate_blockchain/data/auth/data.dart';
 
 @lazySingleton
 class LoginMapper {
-  AuthToken toEntity(LoginResponseDto dto) {
-    return AuthToken(
-      token: dto.token,
-      created: dto.created,
-      expiry: dto.expiry,
-    );
+  AuthSession toEntity(LoginResponseDto dto) {
+    return AuthSession.fromJson(dto.toJson());
   }
 }
