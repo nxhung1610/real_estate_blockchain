@@ -15,4 +15,5 @@ class AuthFailures with _$AuthFailures {
       AuthFailureCombinePhoneOrPasswordInvlaid;
   const factory AuthFailures.userAlreadyExist() = AuthFailureUserAlreadyExist;
   const factory AuthFailures.unknow() = AuthFailuresUnknow;
+  const factory AuthFailures.unAuthoiation() = AuthFailuresUnAuthorization;
 }

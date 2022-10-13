@@ -11,8 +11,13 @@ import '../../data.dart';
 @LazySingleton(as: IAuthRepository)
 class AuthRepository implements IAuthRepository {
   final ApiRemote _apiRemote;
+  final IAuthLocalRepository _authLocalRepository;
   final LoginMapper _loginMapper;
-  AuthRepository(this._apiRemote, this._loginMapper);
+  AuthRepository(
+    this._apiRemote,
+    this._loginMapper,
+    this._authLocalRepository,
+  );
   @override
   Future<Either<AuthFailures, AuthSession>> login(
       PhoneNumberAuth phoneNumber, PasswordAuth password) async {
@@ -115,6 +120,44 @@ class AuthRepository implements IAuthRepository {
       switch (e) {
         case AuthError.errUsersAlreadyExists:
           return left(const AuthFailures.userAlreadyExist());
+        default:
+          rethrow;
+      }
+    } catch (e) {
+      return left(const AuthFailures.unknow());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailures, Unit>> refreshToken() async {
+    try {
+      final authSession = await _authLocalRepository.getToken();
+      final res = await _apiRemote.post<AuthSession>(
+        AuthConstants.remote.refreshToken,
+        data: RefreshTokenRequestDto(
+          refreshToken: authSession
+              .getOrElse(
+                () => throw AuthError.errUnauthorized,
+              )
+              .refreshToken
+              ?.token,
+        ).toJson(),
+        parse: (data) {
+          return AuthSession.fromJson(data);
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+
+      final saveResult = await _authLocalRepository.saveToken(res.data!);
+      return saveResult.fold((l) => throw l, (r) {
+        return right(unit);
+      });
+    } on String catch (e) {
+      switch (e) {
+        case AuthError.errUnauthorized:
+          return left(const AuthFailures.unknow());
         default:
           rethrow;
       }

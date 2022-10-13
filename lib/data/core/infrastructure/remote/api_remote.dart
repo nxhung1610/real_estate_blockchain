@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
 import '../base_response.dart';
 import 'jwt_interceptor.dart';
@@ -13,13 +15,17 @@ import 'jwt_interceptor.dart';
 @singleton
 class ApiRemote {
   VoidCallback? _onExpireToken;
-
-  init({required VoidCallback onExpireToken}) {
+  Future<Either<dynamic, dynamic>> Function()? _refreshToken;
+  init({
+    required VoidCallback onExpireToken,
+    Future<Either<dynamic, dynamic>> Function()? refreshToken,
+  }) {
     _onExpireToken = onExpireToken;
+    _refreshToken = refreshToken;
   }
 
-  Dio get _dio => _initDio();
-
+  late final Dio _dio = _initDio();
+  late final Dio _dioToken = _intiDioToken();
   Dio _initDio() {
     final Dio dio = Dio();
 
@@ -42,8 +48,8 @@ class ApiRemote {
         responseHeader: false,
         error: true,
       ))
-      ..interceptors.add(JWTInterceptor(_onExpireToken));
-
+      ..interceptors
+          .add(JWTInterceptor(_onExpireToken, _refreshToken, _dioToken));
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
@@ -53,6 +59,40 @@ class ApiRemote {
       return client;
     };
 
+    return dio;
+  }
+
+  Dio _intiDioToken() {
+    final Dio dio = Dio();
+
+    final config = AppConfig.instance;
+
+    dio
+      ..options.baseUrl = config.baseUrl
+      ..options.connectTimeout = config.connectionTimeout
+      ..options.receiveTimeout = config.receiveTimeout
+      // ..options.followRedirects = false
+      ..options.headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        "Accept": "application/json",
+      }
+      ..interceptors.add(PrettyDioLogger(
+        request: true,
+        requestBody: true,
+        responseBody: true,
+        requestHeader: true,
+        responseHeader: false,
+        error: true,
+      ))
+      ..interceptors.add(QueuedInterceptorsWrapper());
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (client) {
+      // You can verify the certificate here
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+
+      return client;
+    };
     return dio;
   }
 
@@ -76,11 +116,10 @@ class ApiRemote {
       return BaseResponse.fromJson(
         response.data,
         parse: (data) => parse?.call(data),
+        response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(
-        e.response?.data,
-      );
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
     }
   }
 
@@ -108,11 +147,10 @@ class ApiRemote {
       return BaseResponse.fromJson(
         response.data,
         parse: (data) => parse?.call(data),
+        response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(
-        e.response?.data,
-      );
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
     }
   }
 
@@ -140,11 +178,10 @@ class ApiRemote {
       return BaseResponse.fromJson(
         response.data,
         parse: (data) => parse?.call(data),
+        response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(
-        e.response?.data,
-      );
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
     }
   }
 
@@ -172,11 +209,10 @@ class ApiRemote {
       return BaseResponse.fromJson(
         response.data,
         parse: (data) => parse?.call(data),
+        response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(
-        e.response?.data,
-      );
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
     }
   }
 }

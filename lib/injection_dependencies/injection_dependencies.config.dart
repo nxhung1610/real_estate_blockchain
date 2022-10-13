@@ -45,8 +45,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       _i8.AppConfigLocalRepository(get<_i9.ApiLocalHive>()));
   gh.lazySingleton<_i10.IAuthLocalRepository>(
       () => _i11.AuthLocalRepository(get<_i9.ApiLocalHive>()));
-  gh.lazySingleton<_i10.IAuthRepository>(
-      () => _i12.AuthRepository(get<_i9.ApiRemote>(), get<_i10.LoginMapper>()));
+  gh.lazySingleton<_i10.IAuthRepository>(() => _i12.AuthRepository(
+      get<_i9.ApiRemote>(),
+      get<_i10.LoginMapper>(),
+      get<_i10.IAuthLocalRepository>()));
   gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(get<_i10.IAuthRepository>()));
   gh.lazySingleton<_i14.LoginMapper>(() => _i14.LoginMapper());
   gh.factory<_i15.MainCubit>(() => _i15.MainCubit());
@@ -60,7 +62,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i21.RegisterBloc(get<_i10.IAuthRepository>()));
   gh.factory<_i22.AppBloc>(
       () => _i22.AppBloc(get<_i7.IAppConfigLocalRepository>()));
-  gh.factory<_i23.AuthBloc>(
-      () => _i23.AuthBloc(get<_i10.IAuthLocalRepository>()));
+  gh.factory<_i23.AuthBloc>(() => _i23.AuthBloc(
+      get<_i10.IAuthLocalRepository>(),
+      get<_i10.IAuthRepository>(),
+      get<_i9.ApiRemote>()));
   return get;
 }

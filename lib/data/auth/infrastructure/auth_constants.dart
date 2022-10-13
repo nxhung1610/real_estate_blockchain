@@ -8,6 +8,7 @@ class $AuthRemote {
   const $AuthRemote._();
   final String login = '/users/login';
   final String register = '/users';
+  final String refreshToken = '/users/refresh_token';
 }
 
 class $AuthLocal {

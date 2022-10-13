@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
+import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -64,13 +65,6 @@ class _AppCommonState extends State<_AppCommon> {
     authBloc = context.read<AuthBloc>();
     processIntital = Completer();
     processAuthen = Completer();
-    // Execute function when expire token
-    getIt.call<ApiRemote>().init(
-      onExpireToken: () {
-        //  TODO : navigator to auth
-        authBloc.logout();
-      },
-    );
     authBloc.initial();
   }
 

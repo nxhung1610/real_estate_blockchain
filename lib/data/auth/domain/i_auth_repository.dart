@@ -7,4 +7,5 @@ abstract class IAuthRepository {
       PhoneNumberAuth phoneNumber, PasswordAuth password);
   Future<Either<AuthFailures, Unit>> register(NameAuth firstName,
       NameAuth lastName, PhoneNumberAuth phoneNumber, PasswordAuth password);
+  Future<Either<AuthFailures, Unit>> refreshToken();
 }
