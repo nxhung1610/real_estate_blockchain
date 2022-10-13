@@ -16,12 +16,15 @@ import 'jwt_interceptor.dart';
 class ApiRemote {
   VoidCallback? _onExpireToken;
   Future<Either<dynamic, dynamic>> Function()? _refreshToken;
+  Future<String> Function()? _token;
   init({
     required VoidCallback onExpireToken,
     Future<Either<dynamic, dynamic>> Function()? refreshToken,
+    Future<String> Function()? token,
   }) {
     _onExpireToken = onExpireToken;
     _refreshToken = refreshToken;
+    _token = token;
   }
 
   late final Dio _dio = _initDio();
@@ -48,8 +51,8 @@ class ApiRemote {
         responseHeader: false,
         error: true,
       ))
-      ..interceptors
-          .add(JWTInterceptor(_onExpireToken, _refreshToken, _dioToken));
+      ..interceptors.add(
+          JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token));
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here

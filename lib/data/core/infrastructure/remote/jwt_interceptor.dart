@@ -8,8 +8,28 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 class JWTInterceptor extends InterceptorsWrapper {
   final VoidCallback? onExpireToken;
   final Future<Either<dynamic, dynamic>> Function()? refreshToken;
+  final Future<String> Function()? token;
   final Dio dioToken;
-  JWTInterceptor(this.onExpireToken, this.refreshToken, this.dioToken);
+  JWTInterceptor(
+      this.onExpireToken, this.refreshToken, this.dioToken, this.token);
+
+  @override
+  void onRequest(
+      RequestOptions options, RequestInterceptorHandler handler) async {
+    try {
+      final tokenResult = await token?.call();
+      options.headers['authorization'] = "Bearer $tokenResult";
+      super.onRequest(options, handler);
+    } catch (e) {
+      handler.reject(
+        DioError(
+          requestOptions: options,
+          error: e,
+        ),
+      );
+    }
+  }
+
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) async {
     if ([403, 401].contains(err.response?.statusCode)) {

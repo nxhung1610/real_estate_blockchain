@@ -25,6 +25,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           final res = await _authRepository.refreshToken();
           return res;
         },
+        token: () async {
+          final token = await _authLocalRepository.getToken();
+          return token.foldRight(
+              '', (r, previous) => r.token?.token ?? previous);
+        },
       );
       final result = await _authLocalRepository.getToken();
       result.fold((l) => logout(), (r) => login(r));
