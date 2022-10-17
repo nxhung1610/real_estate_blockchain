@@ -40,7 +40,9 @@ class __DefaultPageState extends State<_DefaultPage> {
               ButtonShade(
                 label: s.myHomeEmptyBtnAdd2,
                 icon: Assets.icons.icBtnPlus.svg(),
-                onPressed: () {},
+                onPressed: () {
+                  context.push($appRoute.myHomeAddNewProperty);
+                },
               ),
               AppSize.extraHeightDimens.verticalSpace,
             ],

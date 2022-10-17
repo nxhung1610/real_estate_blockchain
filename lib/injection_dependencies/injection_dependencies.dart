@@ -12,4 +12,5 @@ final getIt = GetIt.instance;
 )
 Future<void> configureDependencies() async {
   $initGetIt(getIt);
+  
 }

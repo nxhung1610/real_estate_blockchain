@@ -22,6 +22,7 @@ class MainRoute extends BaseRoute {
   late final DiscoverRoute _discoverRoute;
   // Path
   String get discoverSearch => _discoverRoute.search;
+  String get myHomeAddNewProperty => _myHomeRoute.addNewProperty;
   String get messageChat => _messageRoute.chat;
 
   @override

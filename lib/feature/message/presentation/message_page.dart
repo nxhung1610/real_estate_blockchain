@@ -37,7 +37,7 @@ class _MessagePageState extends State<MessagePage>
           itemBuilder: (context, index) {
             return MessagePersonItem(
               onPressed: () {
-                context.push($appRoute.mainMessageChat);
+                context.push($appRoute.messageChat);
               },
             );
           },

@@ -19,43 +19,28 @@ class _MessageChatPageState extends State<MessageChatPage> {
     return Scaffold(
       appBar: CustomAppbar(
         context,
-        titleSpacing: 0,
-        title: Container(
-          padding: EdgeInsets.all(
-            AppSize.extraWidthDimens,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              BackButtonApp(
-                onPressed: () {},
-              ),
-              AppSize.largeWidthDimens.horizontalSpace,
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Russia',
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: context.textTheme.displayLarge?.color,
-                      ),
-                    ),
-                    Text(
-                      'Online',
-                      style: context.textTheme.bodySmall?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: AppColor.kPrimary4,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        leading: const BackButtonApp(),
         centerTitle: false,
+        title: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Russia',
+              style: context.textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: context.textTheme.displayLarge?.color,
+              ),
+            ),
+            Text(
+              'Online',
+              style: context.textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.w500,
+                color: AppColor.kPrimary4,
+              ),
+            )
+          ],
+        ),
       ),
       body: Container(),
     );

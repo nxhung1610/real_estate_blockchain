@@ -8,9 +8,9 @@ class CustomAppbar extends AppBar {
   CustomAppbar(
     this.context, {
     super.key,
-    super.leading,
+    Widget? leading,
     super.automaticallyImplyLeading = false,
-    super.title,
+    Widget? title,
     super.actions,
     super.flexibleSpace,
     super.bottom,
@@ -25,9 +25,10 @@ class CustomAppbar extends AppBar {
     super.iconTheme,
     super.actionsIconTheme,
     super.primary = true,
-    super.centerTitle = true,
+    bool? centerTitle = true,
     super.excludeHeaderSemantics = false,
-    super.titleSpacing,
+    double? titleSpacing,
+    double? appbarSpacing,
     super.toolbarOpacity = 1.0,
     super.bottomOpacity = 1.0,
     super.toolbarHeight,
@@ -43,5 +44,28 @@ class CustomAppbar extends AppBar {
               ),
           leadingWidth: leadingWidth,
           elevation: elevation ?? 0,
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              if (leading != null) leading,
+              if (title != null)
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: titleSpacing ?? AppSize.mediumWidthDimens,
+                    ),
+                    child: Align(
+                      alignment: centerTitle == true
+                          ? Alignment.center
+                          : Alignment.centerLeft,
+                      child: title,
+                    ),
+                  ),
+                )
+            ],
+          ),
+          titleSpacing: appbarSpacing,
+          leading: null,
+          centerTitle: true,
         );
 }

@@ -14,5 +14,10 @@ class HomeRoute extends BaseRoute {
   List<RouteBase> get routes => [];
 
   @override
+  List<RouteBase> get globalRoutes => [
+       
+      ];
+
+  @override
   void setupRoutes() {}
 }

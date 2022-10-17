@@ -50,7 +50,7 @@ class _DiscoverPageState extends State<DiscoverPage>
   void listen() {
     if (focusNode.hasFocus) {
       FocusScope.of(context).requestFocus(FocusNode());
-      context.push($appRoute.mainDiscoverSearch);
+      context.push($appRoute.discoverSearch);
     }
   }
 

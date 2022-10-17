@@ -19,8 +19,9 @@ class AppRoute extends BaseRoute {
   String get authRegister => _authRoute.register;
   String get authLogin => _authRoute.login;
   String get main => _mainRoute.url;
-  String get mainDiscoverSearch => _mainRoute.discoverSearch;
-  String get mainMessageChat => _mainRoute.messageChat;
+  String get myHomeAddNewProperty => _mainRoute.myHomeAddNewProperty;
+  String get discoverSearch => _mainRoute.discoverSearch;
+  String get messageChat => _mainRoute.messageChat;
 
   @override
   List<RouteBase> get routes => [
