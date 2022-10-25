@@ -25,6 +25,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewPropertyAddress":
+            MessageLookupByLibrary.simpleMessage("Địa chỉ"),
+        "addNewPropertyMedia":
+            MessageLookupByLibrary.simpleMessage("Hình ảnh & Video"),
+        "addNewPropertyPostInfo":
+            MessageLookupByLibrary.simpleMessage("Thông tin bài viết"),
+        "addNewPropertyPostSetup":
+            MessageLookupByLibrary.simpleMessage("Thiết lập bài đăng"),
+        "addNewPropertyRealEstateInfo":
+            MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
@@ -34,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
+        "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
@@ -61,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),
+        "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
@@ -81,6 +93,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
+        "propertyAddress":
+            MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
+        "province": MessageLookupByLibrary.simpleMessage("Tỉnh, Thành phố"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Tạo một"),
         "registerCreateANameAccount2":
@@ -95,9 +110,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Hiển thị thông báo"),
+        "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "Để tiếp tục, bạn cần bật các quyền ở trên"),
+        "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "Bạn cần cấp quyền để hiển thị thông báo")

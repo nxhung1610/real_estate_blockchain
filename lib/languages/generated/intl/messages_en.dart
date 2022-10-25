@@ -25,6 +25,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewPropertyAddress":
+            MessageLookupByLibrary.simpleMessage("Address"),
+        "addNewPropertyMedia":
+            MessageLookupByLibrary.simpleMessage("Videos & Photo"),
+        "addNewPropertyPostInfo":
+            MessageLookupByLibrary.simpleMessage("Post Info"),
+        "addNewPropertyPostSetup":
+            MessageLookupByLibrary.simpleMessage("Post Setup"),
+        "addNewPropertyRealEstateInfo":
+            MessageLookupByLibrary.simpleMessage("Real Estate Info"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
@@ -34,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
+        "district": MessageLookupByLibrary.simpleMessage("District"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
@@ -61,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
@@ -82,6 +94,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "propertyAddress":
+            MessageLookupByLibrary.simpleMessage("Property Address"),
+        "province": MessageLookupByLibrary.simpleMessage("Province, City"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Create a"),
         "registerCreateANameAccount2":
@@ -96,9 +111,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),
+        "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "To proceede, you need to enable the permissions above"),
+        "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "You need permission to display notifications")

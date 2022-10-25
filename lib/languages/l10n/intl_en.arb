@@ -54,7 +54,17 @@
       "name" : {}
     }
   },
-  "myHomeEmptyBtnAdd" : "Add property",
-  "myHomeEmptyBtnAdd2" : "Add new property"
-
+  "myHomeEmptyBtnAdd" : "Add property", 
+  "myHomeEmptyBtnAdd2" : "Add new property",
+  "addNewPropertyAddress" : "Address",
+  "addNewPropertyRealEstateInfo" : "Real Estate Info",
+  "addNewPropertyPostInfo" : "Post Info",
+  "addNewPropertyMedia" : "Videos & Photo",
+  "addNewPropertyPostSetup" : "Post Setup",
+  "next" : "Next",
+  "propertyAddress" : "Property Address",
+  "streetAddress"  : "Street Address",
+  "province" : "Province, City",
+  "district" : "District" ,
+  "wards" : "Wards"
 }

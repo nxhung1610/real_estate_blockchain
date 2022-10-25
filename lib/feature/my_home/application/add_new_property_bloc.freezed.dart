@@ -167,37 +167,11 @@ abstract class _Started implements AddNewPropertyEvent {
 
 /// @nodoc
 mixin _$AddNewPropertyState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  ProcessAdd get state => throw _privateConstructorUsedError;
+  AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddNewPropertyStateCopyWith<AddNewPropertyState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -206,6 +180,7 @@ abstract class $AddNewPropertyStateCopyWith<$Res> {
   factory $AddNewPropertyStateCopyWith(
           AddNewPropertyState value, $Res Function(AddNewPropertyState) then) =
       _$AddNewPropertyStateCopyWithImpl<$Res>;
+  $Res call({ProcessAdd state, AddressChoosen? addressChoosen});
 }
 
 /// @nodoc
@@ -216,102 +191,115 @@ class _$AddNewPropertyStateCopyWithImpl<$Res>
   final AddNewPropertyState _value;
   // ignore: unused_field
   final $Res Function(AddNewPropertyState) _then;
-}
-
-/// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$AddNewPropertyStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _$_Initial get _value => super._value as _$_Initial;
+  $Res call({
+    Object? state = freezed,
+    Object? addressChoosen = freezed,
+  }) {
+    return _then(_value.copyWith(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ProcessAdd,
+      addressChoosen: addressChoosen == freezed
+          ? _value.addressChoosen
+          : addressChoosen // ignore: cast_nullable_to_non_nullable
+              as AddressChoosen?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_AddNewPropertyStateCopyWith<$Res>
+    implements $AddNewPropertyStateCopyWith<$Res> {
+  factory _$$_AddNewPropertyStateCopyWith(_$_AddNewPropertyState value,
+          $Res Function(_$_AddNewPropertyState) then) =
+      __$$_AddNewPropertyStateCopyWithImpl<$Res>;
+  @override
+  $Res call({ProcessAdd state, AddressChoosen? addressChoosen});
+}
+
+/// @nodoc
+class __$$_AddNewPropertyStateCopyWithImpl<$Res>
+    extends _$AddNewPropertyStateCopyWithImpl<$Res>
+    implements _$$_AddNewPropertyStateCopyWith<$Res> {
+  __$$_AddNewPropertyStateCopyWithImpl(_$_AddNewPropertyState _value,
+      $Res Function(_$_AddNewPropertyState) _then)
+      : super(_value, (v) => _then(v as _$_AddNewPropertyState));
+
+  @override
+  _$_AddNewPropertyState get _value => super._value as _$_AddNewPropertyState;
+
+  @override
+  $Res call({
+    Object? state = freezed,
+    Object? addressChoosen = freezed,
+  }) {
+    return _then(_$_AddNewPropertyState(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ProcessAdd,
+      addressChoosen: addressChoosen == freezed
+          ? _value.addressChoosen
+          : addressChoosen // ignore: cast_nullable_to_non_nullable
+              as AddressChoosen?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_AddNewPropertyState implements _AddNewPropertyState {
+  const _$_AddNewPropertyState(
+      {this.state = ProcessAdd.address, this.addressChoosen});
+
+  @override
+  @JsonKey()
+  final ProcessAdd state;
+  @override
+  final AddressChoosen? addressChoosen;
 
   @override
   String toString() {
-    return 'AddNewPropertyState.initial()';
+    return 'AddNewPropertyState(state: $state, addressChoosen: $addressChoosen)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_AddNewPropertyState &&
+            const DeepCollectionEquality().equals(other.state, state) &&
+            const DeepCollectionEquality()
+                .equals(other.addressChoosen, addressChoosen));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(state),
+      const DeepCollectionEquality().hash(addressChoosen));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$$_AddNewPropertyStateCopyWith<_$_AddNewPropertyState> get copyWith =>
+      __$$_AddNewPropertyStateCopyWithImpl<_$_AddNewPropertyState>(
+          this, _$identity);
 }
 
-abstract class _Initial implements AddNewPropertyState {
-  const factory _Initial() = _$_Initial;
+abstract class _AddNewPropertyState implements AddNewPropertyState {
+  const factory _AddNewPropertyState(
+      {final ProcessAdd state,
+      final AddressChoosen? addressChoosen}) = _$_AddNewPropertyState;
+
+  @override
+  ProcessAdd get state;
+  @override
+  AddressChoosen? get addressChoosen;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AddNewPropertyStateCopyWith<_$_AddNewPropertyState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

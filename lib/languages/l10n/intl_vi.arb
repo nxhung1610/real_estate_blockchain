@@ -55,5 +55,16 @@
     }
   },
   "myHomeEmptyBtnAdd" : "Thêm tài sản",
-  "myHomeEmptyBtnAdd2" : "Thêm tài sản mới"
+  "myHomeEmptyBtnAdd2" : "Thêm tài sản mới",
+  "addNewPropertyAddress" : "Địa chỉ",
+  "addNewPropertyRealEstateInfo" : "Thông tin bất động sản",
+  "addNewPropertyPostInfo" : "Thông tin bài viết",
+  "addNewPropertyMedia" : "Hình ảnh & Video",
+  "addNewPropertyPostSetup" : "Thiết lập bài đăng",
+  "next" : "Tiếp tục",
+  "propertyAddress" : "Thông tin địa chỉ",
+  "streetAddress"  : "Đường phố",
+  "province" : "Tỉnh, Thành phố",
+  "district" : "Quận Huyện" ,
+  "wards" : "Phường xã"
 }

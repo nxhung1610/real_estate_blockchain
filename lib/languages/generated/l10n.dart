@@ -569,6 +569,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Address`
+  String get addNewPropertyAddress {
+    return Intl.message(
+      'Address',
+      name: 'addNewPropertyAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real Estate Info`
+  String get addNewPropertyRealEstateInfo {
+    return Intl.message(
+      'Real Estate Info',
+      name: 'addNewPropertyRealEstateInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post Info`
+  String get addNewPropertyPostInfo {
+    return Intl.message(
+      'Post Info',
+      name: 'addNewPropertyPostInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Videos & Photo`
+  String get addNewPropertyMedia {
+    return Intl.message(
+      'Videos & Photo',
+      name: 'addNewPropertyMedia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post Setup`
+  String get addNewPropertyPostSetup {
+    return Intl.message(
+      'Post Setup',
+      name: 'addNewPropertyPostSetup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property Address`
+  String get propertyAddress {
+    return Intl.message(
+      'Property Address',
+      name: 'propertyAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street Address`
+  String get streetAddress {
+    return Intl.message(
+      'Street Address',
+      name: 'streetAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Province, City`
+  String get province {
+    return Intl.message(
+      'Province, City',
+      name: 'province',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `District`
+  String get district {
+    return Intl.message(
+      'District',
+      name: 'district',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wards`
+  String get wards {
+    return Intl.message(
+      'Wards',
+      name: 'wards',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
