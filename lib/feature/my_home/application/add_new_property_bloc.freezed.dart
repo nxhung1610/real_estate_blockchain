@@ -19,32 +19,38 @@ mixin _$AddNewPropertyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? nextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(AddNewPropertyEventStart value) started,
+    required TResult Function(AddNewPropertyEventNextPage value) nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,27 +74,29 @@ class _$AddNewPropertyEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$AddNewPropertyEventStartCopyWith<$Res> {
+  factory _$$AddNewPropertyEventStartCopyWith(_$AddNewPropertyEventStart value,
+          $Res Function(_$AddNewPropertyEventStart) then) =
+      __$$AddNewPropertyEventStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
+class __$$AddNewPropertyEventStartCopyWithImpl<$Res>
     extends _$AddNewPropertyEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+    implements _$$AddNewPropertyEventStartCopyWith<$Res> {
+  __$$AddNewPropertyEventStartCopyWithImpl(_$AddNewPropertyEventStart _value,
+      $Res Function(_$AddNewPropertyEventStart) _then)
+      : super(_value, (v) => _then(v as _$AddNewPropertyEventStart));
 
   @override
-  _$_Started get _value => super._value as _$_Started;
+  _$AddNewPropertyEventStart get _value =>
+      super._value as _$AddNewPropertyEventStart;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$AddNewPropertyEventStart implements AddNewPropertyEventStart {
+  const _$AddNewPropertyEventStart();
 
   @override
   String toString() {
@@ -98,7 +106,8 @@ class _$_Started implements _Started {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewPropertyEventStart);
   }
 
   @override
@@ -108,6 +117,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() nextPage,
   }) {
     return started();
   }
@@ -116,6 +126,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? nextPage,
   }) {
     return started?.call();
   }
@@ -124,6 +135,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? nextPage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -135,7 +147,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(AddNewPropertyEventStart value) started,
+    required TResult Function(AddNewPropertyEventNextPage value) nextPage,
   }) {
     return started(this);
   }
@@ -143,7 +156,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
   }) {
     return started?.call(this);
   }
@@ -151,7 +165,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,8 +176,117 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements AddNewPropertyEvent {
-  const factory _Started() = _$_Started;
+abstract class AddNewPropertyEventStart implements AddNewPropertyEvent {
+  const factory AddNewPropertyEventStart() = _$AddNewPropertyEventStart;
+}
+
+/// @nodoc
+abstract class _$$AddNewPropertyEventNextPageCopyWith<$Res> {
+  factory _$$AddNewPropertyEventNextPageCopyWith(
+          _$AddNewPropertyEventNextPage value,
+          $Res Function(_$AddNewPropertyEventNextPage) then) =
+      __$$AddNewPropertyEventNextPageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddNewPropertyEventNextPageCopyWithImpl<$Res>
+    extends _$AddNewPropertyEventCopyWithImpl<$Res>
+    implements _$$AddNewPropertyEventNextPageCopyWith<$Res> {
+  __$$AddNewPropertyEventNextPageCopyWithImpl(
+      _$AddNewPropertyEventNextPage _value,
+      $Res Function(_$AddNewPropertyEventNextPage) _then)
+      : super(_value, (v) => _then(v as _$AddNewPropertyEventNextPage));
+
+  @override
+  _$AddNewPropertyEventNextPage get _value =>
+      super._value as _$AddNewPropertyEventNextPage;
+}
+
+/// @nodoc
+
+class _$AddNewPropertyEventNextPage implements AddNewPropertyEventNextPage {
+  const _$AddNewPropertyEventNextPage();
+
+  @override
+  String toString() {
+    return 'AddNewPropertyEvent.nextPage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewPropertyEventNextPage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() nextPage,
+  }) {
+    return nextPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? nextPage,
+  }) {
+    return nextPage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? nextPage,
+    required TResult orElse(),
+  }) {
+    if (nextPage != null) {
+      return nextPage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddNewPropertyEventStart value) started,
+    required TResult Function(AddNewPropertyEventNextPage value) nextPage,
+  }) {
+    return nextPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
+  }) {
+    return nextPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddNewPropertyEventStart value)? started,
+    TResult Function(AddNewPropertyEventNextPage value)? nextPage,
+    required TResult orElse(),
+  }) {
+    if (nextPage != null) {
+      return nextPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewPropertyEventNextPage implements AddNewPropertyEvent {
+  const factory AddNewPropertyEventNextPage() = _$AddNewPropertyEventNextPage;
 }
 
 /// @nodoc

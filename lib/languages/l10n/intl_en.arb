@@ -66,5 +66,8 @@
   "streetAddress"  : "Street Address",
   "province" : "Province, City",
   "district" : "District" ,
-  "wards" : "Wards"
+  "wards" : "Wards",
+  "area" : "Area",
+  "price" : "Price",
+  "unit" :"Unit"
 }

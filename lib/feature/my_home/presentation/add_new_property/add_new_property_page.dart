@@ -39,112 +39,155 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
         title: Text(s.myHomeEmptyBtnAdd2),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(
-              AppSize.extraWidthDimens,
-            ),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      s.addNewPropertyAddress,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: context.textTheme.displayLarge?.color,
+      body: BlocListener<AddNewPropertyBloc, AddNewPropertyState>(
+        listener: (context, state) {
+          controller.jumpToPage(state.state.index);
+        },
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(
+                AppSize.extraWidthDimens,
+              ),
+              child: BlocBuilder<AddNewPropertyBloc, AddNewPropertyState>(
+                builder: (context, state) {
+                  return Column(
+                    children: [
+                      BlocBuilder<AddNewPropertyBloc, AddNewPropertyState>(
+                        builder: (context, state) {
+                          String title;
+                          switch (state.state) {
+                            case ProcessAdd.address:
+                              title = s.addNewPropertyAddress;
+                              break;
+                            case ProcessAdd.realeStateInfo:
+                              title = s.addNewPropertyRealEstateInfo;
+                              break;
+                            case ProcessAdd.postInfo:
+                              title = s.addNewPropertyPostInfo;
+                              break;
+                            case ProcessAdd.postMedia:
+                              title = s.addNewPropertyMedia;
+                              break;
+                            case ProcessAdd.schedule:
+                              title = s.addNewPropertyPostSetup;
+                              break;
+                          }
+                          return Row(
+                            children: [
+                              Text(
+                                title,
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: context.textTheme.displayLarge?.color,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: AppSize.smallHeightDimens,
+                                  horizontal: AppSize.largeWidthDimens,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: AppColor.kNeutrals.shade800,
+                                  borderRadius: BorderRadius.circular(100.r),
+                                ),
+                                child: Text(
+                                  "${(state.state.index + 1)}/${ProcessAdd.values.length}",
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    color: AppColor.kNeutrals.shade50,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              )
+                            ],
+                          );
+                        },
                       ),
-                    ),
-                    const Spacer(),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: AppSize.smallHeightDimens,
-                        horizontal: AppSize.largeWidthDimens,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColor.kNeutrals.shade800,
-                        borderRadius: BorderRadius.circular(100.r),
-                      ),
-                      child: Text(
-                        "${(bloc.state.state.index + 1)}/${ProcessAdd.values.length}",
-                        style: context.textTheme.bodyMedium?.copyWith(
-                          color: AppColor.kNeutrals.shade50,
-                          fontWeight: FontWeight.w600,
+                      AppSize.largeHeightDimens.verticalSpace,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                          AppSize.extraLargeRadius,
+                        ),
+                        child: TweenAnimationBuilder<double>(
+                          duration: const Duration(seconds: 1),
+                          tween: Tween<double>(
+                            begin: 0,
+                            end: (state.state.index + 1) /
+                                ProcessAdd.values.length,
+                          ),
+                          builder: (context, value, child) {
+                            return LinearProgressIndicator(
+                              value: value,
+                              backgroundColor: AppColor.kNeutrals.shade500,
+                              minHeight: AppSize.mediumHeightDimens,
+                              color: AppColor.kPrimary1,
+                            );
+                          },
                         ),
                       ),
-                    )
-                  ],
-                ),
-                AppSize.largeHeightDimens.verticalSpace,
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                    AppSize.extraLargeRadius,
-                  ),
-                  child: LinearProgressIndicator(
-                    value:
-                        bloc.state.state.index + 1 / ProcessAdd.values.length,
-                    backgroundColor: AppColor.kNeutrals.shade500,
-                    minHeight: AppSize.mediumHeightDimens,
-                    color: AppColor.kPrimary1,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppSize.extraWidthDimens,
-              ),
-              child: PageView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: controller,
-                itemBuilder: (context, index) {
-                  final state = ProcessAdd.values[index];
-                  IProcessPage? result;
-                  switch (state) {
-                    case ProcessAdd.address:
-                      result = const ChooseAdressPage();
-                      break;
-                    case ProcessAdd.realeStateInfo:
-                      break;
-                    case ProcessAdd.postInfo:
-                      break;
-                    case ProcessAdd.postMedia:
-                      break;
-                    case ProcessAdd.schedule:
-                      break;
-                  }
-                  return SingleChildScrollView(
-                    child: result as Widget? ?? Container(),
+                    ],
                   );
                 },
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSize.extraLargeWidthDimens,
-              vertical: AppSize.largeHeightDimens,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSize.extraWidthDimens,
+                ),
+                child: PageView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: controller,
+                  itemBuilder: (context, index) {
+                    final state = ProcessAdd.values[index];
+                    Widget? result;
+                    switch (state) {
+                      case ProcessAdd.address:
+                        result = const ChooseAdressPage();
+                        break;
+                      case ProcessAdd.realeStateInfo:
+                        result = const RealEstateInfoPafe();
+                        break;
+                      case ProcessAdd.postInfo:
+                        break;
+                      case ProcessAdd.postMedia:
+                        break;
+                      default:
+                        break;
+                    }
+                    return SingleChildScrollView(
+                      child: result ?? Container(),
+                    );
+                  },
+                ),
+              ),
             ),
-            decoration: BoxDecoration(
-              color: context.theme.backgroundColor,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: AppSize.extraRadius,
-                  offset: const Offset(0, -8),
-                  color: AppColor.kNeutrals.shade700.withOpacity(0.1),
-                )
-              ],
-            ),
-            child: ButtonApp(
-              label: s.next,
-              onPressed: () {},
-              type: ButtonType.primary,
-            ),
-          )
-        ],
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSize.extraLargeWidthDimens,
+                vertical: AppSize.largeHeightDimens,
+              ),
+              decoration: BoxDecoration(
+                color: context.theme.backgroundColor,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: AppSize.extraRadius,
+                    offset: const Offset(0, -8),
+                    color: AppColor.kNeutrals.shade700.withOpacity(0.1),
+                  )
+                ],
+              ),
+              child: ButtonApp(
+                label: s.next,
+                onPressed: () {
+                  bloc.nextPage();
+                },
+                type: ButtonType.primary,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -12,6 +12,17 @@ part 'add_new_property_bloc.freezed.dart';
 class AddNewPropertyBloc
     extends Bloc<AddNewPropertyEvent, AddNewPropertyState> {
   AddNewPropertyBloc() : super(const AddNewPropertyState()) {
-    on<AddNewPropertyEvent>((event, emit) {});
+    on<AddNewPropertyEventStart>((event, emit) {});
+    on<AddNewPropertyEventNextPage>((event, emit) {
+      try {
+        emit(state.copyWith(state: ProcessAdd.values[state.state.index + 1]));
+      } catch (e) {
+        emit(state.copyWith(state: ProcessAdd.address));
+      }
+    });
+  }
+
+  void nextPage() {
+    add(const AddNewPropertyEvent.nextPage());
   }
 }

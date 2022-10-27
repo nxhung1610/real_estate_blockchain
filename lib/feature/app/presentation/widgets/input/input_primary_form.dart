@@ -12,6 +12,8 @@ class InputPrimaryForm extends StatefulWidget {
   final String? initialValue;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final Widget? suffix;
+  final Widget? prefix;
   final TextInputType? keyboardType;
   final void Function(String value)? onChanged;
   final void Function(String value)? onFieldSubmitted;
@@ -35,6 +37,8 @@ class InputPrimaryForm extends StatefulWidget {
     this.prefixIcon,
     this.errorText,
     this.errorStyle,
+    this.suffix,
+    this.prefix,
   });
 
   @override
@@ -97,6 +101,8 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
                       ),
                     )
                   : null,
+              suffix: widget.suffix,
+              prefix: widget.prefix,
               hintText: widget.hint,
               errorText: widget.errorText,
               errorStyle: widget.errorStyle,

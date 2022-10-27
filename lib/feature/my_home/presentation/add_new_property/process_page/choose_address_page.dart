@@ -7,18 +7,14 @@ import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-class ChooseAdressPage extends StatefulWidget implements IProcessPage {
+class ChooseAdressPage extends StatefulWidget {
   const ChooseAdressPage({super.key});
 
   @override
   State<ChooseAdressPage> createState() => _ChooseAdressPageState();
-
-  @override
-  void nextPage() {}
 }
 
-class _ChooseAdressPageState extends State<ChooseAdressPage>
-    implements IProcessPage {
+class _ChooseAdressPageState extends State<ChooseAdressPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -142,7 +138,4 @@ class _ChooseAdressPageState extends State<ChooseAdressPage>
       ],
     );
   }
-
-  @override
-  void nextPage() {}
 }

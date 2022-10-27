@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "area": MessageLookupByLibrary.simpleMessage("Area"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
@@ -93,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
@@ -115,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "To proceede, you need to enable the permissions above"),
+        "unit": MessageLookupByLibrary.simpleMessage("Unit"),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

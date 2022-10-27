@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 class DropdownApp extends StatelessWidget {
   final List<DropdownMenuItem> items;
   final void Function(dynamic value)? onChanged;
+  final double? paddingHorizontal;
   final Widget? hint;
   final List<Widget> Function(BuildContext context)? selectedItemBuilder;
   const DropdownApp({
@@ -17,10 +18,12 @@ class DropdownApp extends StatelessWidget {
     this.onChanged,
     this.hint,
     this.selectedItemBuilder,
+    this.paddingHorizontal,
   });
 
   @override
   Widget build(BuildContext context) {
+    final horizontalSpace = paddingHorizontal ?? 20.w;
     return ButtonTheme(
       alignedDropdown: true,
       padding: EdgeInsets.zero,
@@ -32,10 +35,10 @@ class DropdownApp extends StatelessWidget {
           child: Material(
             child: DropdownButtonFormField2(
               itemPadding: EdgeInsets.symmetric(
-                horizontal: 20.w,
+                horizontal: horizontalSpace,
               ),
               buttonPadding: EdgeInsets.symmetric(
-                horizontal: 20.w,
+                horizontal: horizontalSpace,
               ),
               buttonHeight: 50.h,
               itemHeight: 50.h,

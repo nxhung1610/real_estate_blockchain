@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
@@ -92,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
@@ -114,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "Để tiếp tục, bạn cần bật các quyền ở trên"),
+        "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
