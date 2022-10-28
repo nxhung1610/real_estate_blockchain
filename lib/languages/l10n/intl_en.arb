@@ -69,5 +69,6 @@
   "wards" : "Wards",
   "area" : "Area",
   "price" : "Price",
-  "unit" :"Unit"
+  "unit" :"Unit",
+  "legalDocuments"  : "Legal Documents"
 }

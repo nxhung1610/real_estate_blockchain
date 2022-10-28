@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
+        "legalDocuments":
+            MessageLookupByLibrary.simpleMessage("Giấy tờ pháp lý"),
         "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),

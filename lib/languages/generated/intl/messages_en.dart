@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "legalDocuments":
+            MessageLookupByLibrary.simpleMessage("Legal Documents"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),

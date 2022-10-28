@@ -69,5 +69,6 @@
   "wards" : "Phường xã",
   "area" : "Diện tích",
   "price" : "Mức giá",
-  "unit" :"Đơn vị"
+  "unit" :"Đơn vị",
+  "legalDocuments"  : "Giấy tờ pháp lý"
 }

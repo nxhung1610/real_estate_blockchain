@@ -709,6 +709,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Legal Documents`
+  String get legalDocuments {
+    return Intl.message(
+      'Legal Documents',
+      name: 'legalDocuments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
