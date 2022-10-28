@@ -150,6 +150,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                         result = const RealEstateInfoPafe();
                         break;
                       case ProcessAdd.postInfo:
+                        result = const PostInfoPage();
                         break;
                       case ProcessAdd.postMedia:
                         break;

@@ -44,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
+        "descriptionHint": MessageLookupByLibrary.simpleMessage(
+            "Nhập mô tả chung về bất động sản của bạn"),
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Hiển thị thông báo"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
+        "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
+        "titleHint":
+            MessageLookupByLibrary.simpleMessage("Bán nhà riêng tại Cầu Giấy"),
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "Để tiếp tục, bạn cần bật các quyền ở trên"),

@@ -70,5 +70,9 @@
   "area" : "Diện tích",
   "price" : "Mức giá",
   "unit" :"Đơn vị",
-  "legalDocuments"  : "Giấy tờ pháp lý"
+  "legalDocuments"  : "Giấy tờ pháp lý",
+  "title" : "Tiêu đề",
+  "titleHint" : "Bán nhà riêng tại Cầu Giấy",
+  "description" : "Mô tả",
+  "descriptionHint" : "Nhập mô tả chung về bất động sản của bạn"
 }

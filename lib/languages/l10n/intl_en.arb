@@ -70,5 +70,9 @@
   "area" : "Area",
   "price" : "Price",
   "unit" :"Unit",
-  "legalDocuments"  : "Legal Documents"
+  "legalDocuments"  : "Legal Documents",
+  "title" : "Title",
+  "titleHint" : "Sale private house at Cau Giay",
+  "description" : "Description",
+  "descriptionHint" : "Enter a general description of your property"
 }

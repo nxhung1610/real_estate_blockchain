@@ -719,6 +719,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sale private house at Cau Giay`
+  String get titleHint {
+    return Intl.message(
+      'Sale private house at Cau Giay',
+      name: 'titleHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a general description of your property`
+  String get descriptionHint {
+    return Intl.message(
+      'Enter a general description of your property',
+      name: 'descriptionHint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

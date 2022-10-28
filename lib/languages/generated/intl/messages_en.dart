@@ -44,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "descriptionHint": MessageLookupByLibrary.simpleMessage(
+            "Enter a general description of your property"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "titleHint": MessageLookupByLibrary.simpleMessage(
+            "Sale private house at Cau Giay"),
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "To proceede, you need to enable the permissions above"),

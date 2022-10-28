@@ -21,6 +21,7 @@ class InputPrimaryForm extends StatefulWidget {
   final FocusNode? focusNode;
   final bool obscureText;
   final String? Function(String? value)? validator;
+  final int? maxLines;
   const InputPrimaryForm({
     super.key,
     this.lable,
@@ -39,6 +40,7 @@ class InputPrimaryForm extends StatefulWidget {
     this.errorStyle,
     this.suffix,
     this.prefix,
+    this.maxLines,
   });
 
   @override
@@ -75,6 +77,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
         SizedBox(
           width: double.infinity,
           child: TextFormField(
+            maxLines: widget.maxLines,
             focusNode: widget.focusNode,
             onFieldSubmitted: widget.onFieldSubmitted,
             initialValue: widget.initialValue,
