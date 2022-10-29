@@ -212,11 +212,19 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/onboarding2.png');
 }
 
+class $AssetsLottiesGen {
+  const $AssetsLottiesGen();
+
+  /// File path: assets/lotties/lotties_upload_file.json
+  String get lottiesUploadFile => 'assets/lotties/lotties_upload_file.json';
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $EnvsGen envs = $EnvsGen();
   static const $FontsGen fonts = $FontsGen();
 }

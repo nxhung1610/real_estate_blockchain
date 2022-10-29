@@ -74,5 +74,6 @@
   "title" : "Title",
   "titleHint" : "Sale private house at Cau Giay",
   "description" : "Description",
-  "descriptionHint" : "Enter a general description of your property"
+  "descriptionHint" : "Enter a general description of your property",
+  "videoPhotoDescription" : "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."
 }

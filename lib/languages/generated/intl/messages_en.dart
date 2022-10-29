@@ -126,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "To proceede, you need to enable the permissions above"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),
+        "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
+            "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

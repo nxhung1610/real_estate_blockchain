@@ -153,6 +153,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                         result = const PostInfoPage();
                         break;
                       case ProcessAdd.postMedia:
+                        result = const VideoPhotoPage();
                         break;
                       default:
                         break;

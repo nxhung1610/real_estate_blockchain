@@ -759,6 +759,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB.`
+  String get videoPhotoDescription {
+    return Intl.message(
+      'Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB.',
+      name: 'videoPhotoDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
