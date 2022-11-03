@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
@@ -51,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),
+        "filter": MessageLookupByLibrary.simpleMessage("Lọc"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
@@ -99,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
+        "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
@@ -112,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),

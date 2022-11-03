@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "full_name": "Thành phố trực thuộc trung ương",
+    "full_name_en": "Municipality",
+    "short_name": "Thành phố",
+    "short_name_en": "City",
+    "code_name": "thanh_pho_truc_thuoc_trung_uong",
+    "code_name_en": "municipality"
+  },
+  {
+    "id": 2,
+    "full_name": "Tỉnh",
+    "full_name_en": "Province",
+    "short_name": "Tỉnh",
+    "short_name_en": "Province",
+    "code_name": "tinh",
+    "code_name_en": "province"
+  },
+  {
+    "id": 3,
+    "full_name": "Thành phố thuộc thành phố trực thuộc trung ương",
+    "full_name_en": "Municipal city",
+    "short_name": "Thành phố",
+    "short_name_en": "City",
+    "code_name": "thanh_pho_thuoc_thanh_pho_truc_thuoc_trung_uong",
+    "code_name_en": "municipal_city"
+  },
+  {
+    "id": 4,
+    "full_name": "Thành phố thuộc tỉnh",
+    "full_name_en": "Provincial city",
+    "short_name": "Thành phố",
+    "short_name_en": "City",
+    "code_name": "thanh_pho_thuoc_tinh",
+    "code_name_en": "provincial_city"
+  },
+  {
+    "id": 5,
+    "full_name": "Quận",
+    "full_name_en": "Urban district",
+    "short_name": "Quận",
+    "short_name_en": "District",
+    "code_name": "quan",
+    "code_name_en": "urban_district"
+  },
+  {
+    "id": 6,
+    "full_name": "Thị xã",
+    "full_name_en": "District-level town",
+    "short_name": "Thị xã",
+    "short_name_en": "Town",
+    "code_name": "thi_xa",
+    "code_name_en": "district_level_town"
+  },
+  {
+    "id": 7,
+    "full_name": "Huyện",
+    "full_name_en": "District",
+    "short_name": "Huyện",
+    "short_name_en": "District",
+    "code_name": "huyen",
+    "code_name_en": "district"
+  },
+  {
+    "id": 8,
+    "full_name": "Phường",
+    "full_name_en": "Ward",
+    "short_name": "Phường",
+    "short_name_en": "Ward",
+    "code_name": "phuong",
+    "code_name_en": "ward"
+  },
+  {
+    "id": 9,
+    "full_name": "Thị trấn",
+    "full_name_en": "Commune-level town",
+    "short_name": "Thị trấn",
+    "short_name_en": "Township",
+    "code_name": "thi_tran",
+    "code_name_en": "commune_level_town"
+  },
+  {
+    "id": 10,
+    "full_name": "Xã",
+    "full_name_en": "Commune",
+    "short_name": "Xã",
+    "short_name_en": "Commune",
+    "code_name": "xa",
+    "code_name_en": "commune"
+  }
+]

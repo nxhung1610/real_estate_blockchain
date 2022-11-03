@@ -9,8 +9,8 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/presentation/presentation.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-part '_empty_page.dart';
-part '_default_page.dart';
+part './_empty_page.dart';
+part './_default_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});

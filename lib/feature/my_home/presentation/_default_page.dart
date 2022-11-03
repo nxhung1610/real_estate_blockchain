@@ -1,4 +1,4 @@
-part of 'my_home_page.dart';
+part of './my_home_page.dart';
 
 class _DefaultPage extends StatefulWidget {
   const _DefaultPage({super.key});

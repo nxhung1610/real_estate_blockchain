@@ -6,11 +6,12 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-class DropdownApp extends StatelessWidget {
-  final List<DropdownMenuItem> items;
-  final void Function(dynamic value)? onChanged;
+class DropdownApp<T> extends StatelessWidget {
+  final List<DropdownMenuItem<T>> items;
+  final void Function(T? value)? onChanged;
   final double? paddingHorizontal;
   final Widget? hint;
+  final T? value;
   final List<Widget> Function(BuildContext context)? selectedItemBuilder;
   const DropdownApp({
     super.key,
@@ -19,6 +20,7 @@ class DropdownApp extends StatelessWidget {
     this.hint,
     this.selectedItemBuilder,
     this.paddingHorizontal,
+    this.value,
   });
 
   @override
@@ -33,7 +35,9 @@ class DropdownApp extends StatelessWidget {
             AppSize.largeRadius,
           ),
           child: Material(
-            child: DropdownButtonFormField2(
+            child: DropdownButtonFormField2<T>(
+              value: value,
+              dropdownMaxHeight: 0.5.sh,
               itemPadding: EdgeInsets.symmetric(
                 horizontal: horizontalSpace,
               ),

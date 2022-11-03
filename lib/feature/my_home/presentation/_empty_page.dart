@@ -1,4 +1,4 @@
-part of 'my_home_page.dart';
+part of './my_home_page.dart';
 
 class _EmptyPage extends StatelessWidget {
   const _EmptyPage({super.key});

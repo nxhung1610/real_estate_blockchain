@@ -74,7 +74,7 @@ class _RealEstateInfoPafeState extends State<RealEstateInfoPafe> {
                     ),
                   ),
                   AppSize.mediumHeightDimens.verticalSpace,
-                  DropdownApp(
+                  DropdownApp<dynamic>(
                     paddingHorizontal: AppSize.largeWidthDimens,
                     selectedItemBuilder: (context) {
                       return ["VND"]

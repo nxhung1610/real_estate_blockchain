@@ -170,6 +170,9 @@ class $AssetsIconsGen {
   SvgGenImage get icProfileLight =>
       const SvgGenImage('assets/icons/ic_profile_light.svg');
 
+  /// File path: assets/icons/ic_remove.svg
+  SvgGenImage get icRemove => const SvgGenImage('assets/icons/ic_remove.svg');
+
   /// File path: assets/icons/ic_search_light.svg
   SvgGenImage get icSearchLight =>
       const SvgGenImage('assets/icons/ic_search_light.svg');
@@ -212,6 +215,27 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/onboarding2.png');
 }
 
+class $AssetsLocationsGen {
+  const $AssetsLocationsGen();
+
+  /// File path: assets/locations/administrative_regions.json
+  String get administrativeRegions =>
+      'assets/locations/administrative_regions.json';
+
+  /// File path: assets/locations/administrative_units.json
+  String get administrativeUnits =>
+      'assets/locations/administrative_units.json';
+
+  /// File path: assets/locations/districts.json
+  String get districts => 'assets/locations/districts.json';
+
+  /// File path: assets/locations/provinces.json
+  String get provinces => 'assets/locations/provinces.json';
+
+  /// File path: assets/locations/wards.json
+  String get wards => 'assets/locations/wards.json';
+}
+
 class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
@@ -224,6 +248,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLocationsGen locations = $AssetsLocationsGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $EnvsGen envs = $EnvsGen();
   static const $FontsGen fonts = $FontsGen();

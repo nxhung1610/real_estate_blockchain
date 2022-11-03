@@ -5,3 +5,6 @@ export 'bar/custom_app_bar.dart';
 export 'button/button_shade.dart';
 export 'button/back_button_app.dart';
 export 'dropdown/dropdown_app.dart';
+export 'button/remove_button_app.dart';
+export 'other/custom_slider_thumb_shape.dart';
+export 'other/custom_range_slider_thumb_shape.dart';

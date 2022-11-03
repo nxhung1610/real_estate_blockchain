@@ -26,6 +26,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
   void initState() {
     super.initState();
     bloc = context.read<AddNewPropertyBloc>();
+    bloc.start();
     controller = PageController(initialPage: 0);
   }
 

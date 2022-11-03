@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
@@ -51,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("District"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "features": MessageLookupByLibrary.simpleMessage("Features"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
@@ -100,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
+        "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
@@ -114,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
+        "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":

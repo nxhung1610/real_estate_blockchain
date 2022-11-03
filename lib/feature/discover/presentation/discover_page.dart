@@ -15,6 +15,7 @@ import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_location.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/house_filter/presentation/house_filter_page.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
 
@@ -150,7 +151,13 @@ class _DiscoverPageState extends State<DiscoverPage>
                         borderRadius: BorderRadius.circular(48.h),
                         child: Material(
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              showModalBottomSheet(
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (context) => const HouseFilterPage(),
+                              );
+                            },
                             child: Padding(
                               padding: EdgeInsets.all(
                                 AppSize.largeWidthDimens,

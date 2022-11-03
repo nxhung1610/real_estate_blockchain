@@ -430,6 +430,16 @@ class S {
     );
   }
 
+  /// `Filter`
+  String get filter {
+    return Intl.message(
+      'Filter',
+      name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Home search`
   String get optionTitleHomeSearch {
     return Intl.message(
@@ -765,6 +775,46 @@ class S {
     return Intl.message(
       'Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB.',
       name: 'videoPhotoDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price range`
+  String get priceRange {
+    return Intl.message(
+      'Price range',
+      name: 'priceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Features`
+  String get features {
+    return Intl.message(
+      'Features',
+      name: 'features',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply`
+  String get apply {
+    return Intl.message(
+      'Apply',
+      name: 'apply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
       desc: '',
       args: [],
     );
