@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/province/data.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/presentation/add_new_property/entites/address_choosen.dart';
 import 'package:real_estate_blockchain/feature/my_home/presentation/add_new_property/entites/enums.dart';
 
@@ -29,9 +30,15 @@ class AddNewPropertyBloc
     });
     on<AddNewPropertyEventNextPage>((event, emit) {
       try {
-        emit(state.copyWith(state: ProcessAdd.values[state.state.index + 1]));
+        if (state.state == ProcessState.values.last) {
+          // TODO : done process
+        }
+        if (_validStateProcess(state.state)) {
+          emit(state.copyWith(
+              state: ProcessState.values[state.state.index + 1]));
+        }
       } catch (e) {
-        emit(state.copyWith(state: ProcessAdd.address));
+        emit(state.copyWith(state: ProcessState.address));
       }
     });
     on<AddNewPropertyEventOnProvinceChange>((event, emit) async {
@@ -107,5 +114,27 @@ class AddNewPropertyBloc
 
   void onStreetAddressChanged(String? address) {
     add(AddNewPropertyEvent.onStreetAddressChanged(address));
+  }
+
+  bool _validStateProcess(ProcessState process) {
+    switch (process) {
+      case ProcessState.address:
+        return _validAddress(state.addressChoosen);
+      case ProcessState.realeStateInfo:
+        break;
+      case ProcessState.postInfo:
+        break;
+      case ProcessState.postMedia:
+        break;
+      case ProcessState.schedule:
+        break;
+    }
+    return false;
+  }
+
+  bool _validAddress(AddressChoosen address) {
+    final isAllNull = address.props.any((element) => element == null);
+    if (isAllNull) return false;
+    return address.address!.isNotEmpty;
   }
 }

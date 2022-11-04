@@ -1,4 +1,4 @@
-enum ProcessAdd {
+enum ProcessState {
   address,
   realeStateInfo,
   postInfo,

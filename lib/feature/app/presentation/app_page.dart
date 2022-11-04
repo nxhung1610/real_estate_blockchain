@@ -107,7 +107,6 @@ class _AppCommonState extends State<_AppCommon> {
               $appRoute.authLogin,
               $appRoute.authRegister,
               $appRoute.url,
-              "",
             ];
             // Wokring with authentication
             // Check if authentication or not
@@ -124,7 +123,7 @@ class _AppCommonState extends State<_AppCommon> {
             // route location not match [Login,Register] will not redirect
             // Or redirect to [Main]
             if (isLoggedIn) {
-              if (unAuthentcationRoutes.contains(state.location)) {
+              if ([...unAuthentcationRoutes, ""].contains(state.location)) {
                 return $appRoute.main;
               } else {
                 return null;

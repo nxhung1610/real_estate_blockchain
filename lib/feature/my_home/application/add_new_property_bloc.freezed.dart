@@ -1098,11 +1098,12 @@ abstract class AddNewPropertyEventOnAddressChange
 
 /// @nodoc
 mixin _$AddNewPropertyState {
-  ProcessAdd get state => throw _privateConstructorUsedError;
+  ProcessState get state => throw _privateConstructorUsedError;
   AddressChoosen get addressChoosen => throw _privateConstructorUsedError;
   List<Province> get provinces => throw _privateConstructorUsedError;
   List<District> get districts => throw _privateConstructorUsedError;
   List<Ward> get wards => throw _privateConstructorUsedError;
+  Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddNewPropertyStateCopyWith<AddNewPropertyState> get copyWith =>
@@ -1115,11 +1116,14 @@ abstract class $AddNewPropertyStateCopyWith<$Res> {
           AddNewPropertyState value, $Res Function(AddNewPropertyState) then) =
       _$AddNewPropertyStateCopyWithImpl<$Res>;
   $Res call(
-      {ProcessAdd state,
+      {ProcessState state,
       AddressChoosen addressChoosen,
       List<Province> provinces,
       List<District> districts,
-      List<Ward> wards});
+      List<Ward> wards,
+      Status status});
+
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -1138,12 +1142,13 @@ class _$AddNewPropertyStateCopyWithImpl<$Res>
     Object? provinces = freezed,
     Object? districts = freezed,
     Object? wards = freezed,
+    Object? status = freezed,
   }) {
     return _then(_value.copyWith(
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ProcessAdd,
+              as ProcessState,
       addressChoosen: addressChoosen == freezed
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
@@ -1160,7 +1165,18 @@ class _$AddNewPropertyStateCopyWithImpl<$Res>
           ? _value.wards
           : wards // ignore: cast_nullable_to_non_nullable
               as List<Ward>,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
     ));
+  }
+
+  @override
+  $StatusCopyWith<$Res> get status {
+    return $StatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
   }
 }
 
@@ -1172,11 +1188,15 @@ abstract class _$$_AddNewPropertyStateCopyWith<$Res>
       __$$_AddNewPropertyStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProcessAdd state,
+      {ProcessState state,
       AddressChoosen addressChoosen,
       List<Province> provinces,
       List<District> districts,
-      List<Ward> wards});
+      List<Ward> wards,
+      Status status});
+
+  @override
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -1197,12 +1217,13 @@ class __$$_AddNewPropertyStateCopyWithImpl<$Res>
     Object? provinces = freezed,
     Object? districts = freezed,
     Object? wards = freezed,
+    Object? status = freezed,
   }) {
     return _then(_$_AddNewPropertyState(
       state: state == freezed
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as ProcessAdd,
+              as ProcessState,
       addressChoosen: addressChoosen == freezed
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
@@ -1219,6 +1240,10 @@ class __$$_AddNewPropertyStateCopyWithImpl<$Res>
           ? _value._wards
           : wards // ignore: cast_nullable_to_non_nullable
               as List<Ward>,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
     ));
   }
 }
@@ -1227,18 +1252,19 @@ class __$$_AddNewPropertyStateCopyWithImpl<$Res>
 
 class _$_AddNewPropertyState implements _AddNewPropertyState {
   const _$_AddNewPropertyState(
-      {this.state = ProcessAdd.address,
+      {this.state = ProcessState.address,
       this.addressChoosen = const AddressChoosen(),
       final List<Province> provinces = const [],
       final List<District> districts = const [],
-      final List<Ward> wards = const []})
+      final List<Ward> wards = const [],
+      this.status = const Status.idle()})
       : _provinces = provinces,
         _districts = districts,
         _wards = wards;
 
   @override
   @JsonKey()
-  final ProcessAdd state;
+  final ProcessState state;
   @override
   @JsonKey()
   final AddressChoosen addressChoosen;
@@ -1267,8 +1293,12 @@ class _$_AddNewPropertyState implements _AddNewPropertyState {
   }
 
   @override
+  @JsonKey()
+  final Status status;
+
+  @override
   String toString() {
-    return 'AddNewPropertyState(state: $state, addressChoosen: $addressChoosen, provinces: $provinces, districts: $districts, wards: $wards)';
+    return 'AddNewPropertyState(state: $state, addressChoosen: $addressChoosen, provinces: $provinces, districts: $districts, wards: $wards, status: $status)';
   }
 
   @override
@@ -1283,7 +1313,8 @@ class _$_AddNewPropertyState implements _AddNewPropertyState {
                 .equals(other._provinces, _provinces) &&
             const DeepCollectionEquality()
                 .equals(other._districts, _districts) &&
-            const DeepCollectionEquality().equals(other._wards, _wards));
+            const DeepCollectionEquality().equals(other._wards, _wards) &&
+            const DeepCollectionEquality().equals(other.status, status));
   }
 
   @override
@@ -1293,7 +1324,8 @@ class _$_AddNewPropertyState implements _AddNewPropertyState {
       const DeepCollectionEquality().hash(addressChoosen),
       const DeepCollectionEquality().hash(_provinces),
       const DeepCollectionEquality().hash(_districts),
-      const DeepCollectionEquality().hash(_wards));
+      const DeepCollectionEquality().hash(_wards),
+      const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
   @override
@@ -1304,14 +1336,15 @@ class _$_AddNewPropertyState implements _AddNewPropertyState {
 
 abstract class _AddNewPropertyState implements AddNewPropertyState {
   const factory _AddNewPropertyState(
-      {final ProcessAdd state,
+      {final ProcessState state,
       final AddressChoosen addressChoosen,
       final List<Province> provinces,
       final List<District> districts,
-      final List<Ward> wards}) = _$_AddNewPropertyState;
+      final List<Ward> wards,
+      final Status status}) = _$_AddNewPropertyState;
 
   @override
-  ProcessAdd get state;
+  ProcessState get state;
   @override
   AddressChoosen get addressChoosen;
   @override
@@ -1320,6 +1353,8 @@ abstract class _AddNewPropertyState implements AddNewPropertyState {
   List<District> get districts;
   @override
   List<Ward> get wards;
+  @override
+  Status get status;
   @override
   @JsonKey(ignore: true)
   _$$_AddNewPropertyStateCopyWith<_$_AddNewPropertyState> get copyWith =>

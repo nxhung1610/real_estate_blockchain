@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter a general description of your property"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "features": MessageLookupByLibrary.simpleMessage("Features"),

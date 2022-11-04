@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nhập mô tả chung về bất động sản của bạn"),
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
+        "done": MessageLookupByLibrary.simpleMessage("Hoàn tất"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),

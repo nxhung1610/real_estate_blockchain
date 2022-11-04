@@ -80,5 +80,6 @@
   "priceRange"  : "Price range",
   "features" : "Features",
   "apply"  : "Apply",
-  "reset" : "Reset"
+  "reset" : "Reset",
+  "done" : "Done"
 }

@@ -80,5 +80,6 @@
   "priceRange": "Vùng giá",
   "features": "Đặc điểm",
   "apply": "Áp dụng",
-  "reset": "Khôi phục"
+  "reset": "Khôi phục",
+  "done" : "Hoàn tất"
 }

@@ -40,7 +40,7 @@ class InputPrimaryForm extends StatefulWidget {
     this.errorStyle,
     this.suffix,
     this.prefix,
-    this.maxLines,
+    this.maxLines = 1,
   });
 
   @override

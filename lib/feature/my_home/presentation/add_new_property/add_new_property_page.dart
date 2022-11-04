@@ -58,19 +58,19 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                         builder: (context, state) {
                           String title;
                           switch (state.state) {
-                            case ProcessAdd.address:
+                            case ProcessState.address:
                               title = s.addNewPropertyAddress;
                               break;
-                            case ProcessAdd.realeStateInfo:
+                            case ProcessState.realeStateInfo:
                               title = s.addNewPropertyRealEstateInfo;
                               break;
-                            case ProcessAdd.postInfo:
+                            case ProcessState.postInfo:
                               title = s.addNewPropertyPostInfo;
                               break;
-                            case ProcessAdd.postMedia:
+                            case ProcessState.postMedia:
                               title = s.addNewPropertyMedia;
                               break;
-                            case ProcessAdd.schedule:
+                            case ProcessState.schedule:
                               title = s.addNewPropertyPostSetup;
                               break;
                           }
@@ -94,7 +94,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                                   borderRadius: BorderRadius.circular(100.r),
                                 ),
                                 child: Text(
-                                  "${(state.state.index + 1)}/${ProcessAdd.values.length}",
+                                  "${(state.state.index + 1)}/${ProcessState.values.length}",
                                   style: context.textTheme.bodyMedium?.copyWith(
                                     color: AppColor.kNeutrals.shade50,
                                     fontWeight: FontWeight.w600,
@@ -115,7 +115,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                           tween: Tween<double>(
                             begin: 0,
                             end: (state.state.index + 1) /
-                                ProcessAdd.values.length,
+                                ProcessState.values.length,
                           ),
                           builder: (context, value, child) {
                             return LinearProgressIndicator(
@@ -141,19 +141,19 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   itemBuilder: (context, index) {
-                    final state = ProcessAdd.values[index];
+                    final state = ProcessState.values[index];
                     Widget? result;
                     switch (state) {
-                      case ProcessAdd.address:
+                      case ProcessState.address:
                         result = const ChooseAdressPage();
                         break;
-                      case ProcessAdd.realeStateInfo:
+                      case ProcessState.realeStateInfo:
                         result = const RealEstateInfoPafe();
                         break;
-                      case ProcessAdd.postInfo:
+                      case ProcessState.postInfo:
                         result = const PostInfoPage();
                         break;
-                      case ProcessAdd.postMedia:
+                      case ProcessState.postMedia:
                         result = const VideoPhotoPage();
                         break;
                       default:
@@ -182,7 +182,10 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                 ],
               ),
               child: ButtonApp(
-                label: s.next,
+                label: context.watch<AddNewPropertyBloc>().state.state ==
+                        ProcessState.values.last
+                    ? s.done
+                    : s.next,
                 onPressed: () {
                   bloc.nextPage();
                 },
