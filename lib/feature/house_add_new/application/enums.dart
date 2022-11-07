@@ -5,3 +5,5 @@ enum ProcessState {
   postMedia,
   schedule,
 }
+
+enum RealEstateSell { sell, rent }

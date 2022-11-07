@@ -81,5 +81,6 @@
   "features": "Đặc điểm",
   "apply": "Áp dụng",
   "reset": "Khôi phục",
-  "done" : "Hoàn tất"
+  "done" : "Hoàn tất",
+  "addDocument" : "Thêm tài liệu"
 }

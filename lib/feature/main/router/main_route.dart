@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_new_route.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/discover/module.dart';
@@ -22,7 +23,6 @@ class MainRoute extends BaseRoute {
   late final DiscoverRoute _discoverRoute;
   // Path
   String get discoverSearch => _discoverRoute.search;
-  String get myHomeAddNewProperty => _myHomeRoute.addNewProperty;
   String get messageChat => _messageRoute.chat;
 
   @override

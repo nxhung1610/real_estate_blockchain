@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/province/data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -21,10 +23,12 @@ class ChooseAdressPage extends StatefulWidget {
 
 class _ChooseAdressPageState extends State<ChooseAdressPage> {
   late TextEditingController addressController;
+
   @override
   void initState() {
     super.initState();
     addressController = TextEditingController();
+    context.read<HouseProcessAddressBloc>().start();
   }
 
   @override
@@ -52,7 +56,7 @@ class _ChooseAdressPageState extends State<ChooseAdressPage> {
           selector: (state) {
             return dartz.Tuple2(
               state.provinces,
-              state.addressChoosen?.province,
+              state.addressChoosen.province,
             );
           },
           hint: s.province,
@@ -62,29 +66,28 @@ class _ChooseAdressPageState extends State<ChooseAdressPage> {
                 : value.fullName ?? '';
           },
           onChanged: (value) {
-            context.read<AddNewPropertyBloc>().onProviceChanged(value);
+            context.read<HouseProcessAddressBloc>().onProviceChanged(value);
           },
         ),
         AppSize.largeHeightDimens.verticalSpace,
         _DropDownAddress<District>(
           selector: (state) {
-            return dartz.Tuple2(
-                state.districts, state.addressChoosen?.district);
+            return dartz.Tuple2(state.districts, state.addressChoosen.district);
           },
-          hint: s.wards,
+          hint: s.district,
           onLabel: (value) {
             return context.read<AppBloc>().state.locale == const Locale('en')
                 ? value.fullNameEn ?? ''
                 : value.fullName ?? '';
           },
           onChanged: (value) {
-            context.read<AddNewPropertyBloc>().onDistrictChanged(value);
+            context.read<HouseProcessAddressBloc>().onDistrictChanged(value);
           },
         ),
         AppSize.largeHeightDimens.verticalSpace,
         _DropDownAddress<Ward>(
           selector: (state) {
-            return dartz.Tuple2(state.wards, state.addressChoosen?.ward);
+            return dartz.Tuple2(state.wards, state.addressChoosen.ward);
           },
           hint: s.wards,
           onLabel: (value) {
@@ -93,7 +96,7 @@ class _ChooseAdressPageState extends State<ChooseAdressPage> {
                 : value.fullName ?? '';
           },
           onChanged: (value) {
-            context.read<AddNewPropertyBloc>().onWardChanged(value);
+            context.read<HouseProcessAddressBloc>().onWardChanged(value);
           },
         ),
         AppSize.largeHeightDimens.verticalSpace,
@@ -101,7 +104,9 @@ class _ChooseAdressPageState extends State<ChooseAdressPage> {
           hint: s.streetAddress,
           controller: addressController,
           onChanged: (value) {
-            context.read<AddNewPropertyBloc>().onStreetAddressChanged(value);
+            context
+                .read<HouseProcessAddressBloc>()
+                .onStreetAddressChanged(value);
           },
         ),
       ],
@@ -110,7 +115,8 @@ class _ChooseAdressPageState extends State<ChooseAdressPage> {
 }
 
 class _DropDownAddress<T> extends StatelessWidget {
-  final dartz.Tuple2<List<T>, T?> Function(AddNewPropertyState state) selector;
+  final dartz.Tuple2<List<T>, T?> Function(HouseProcessAddressState state)
+      selector;
   final String hint;
   final String Function(T value) onLabel;
   final void Function(T? value)? onChanged;
@@ -124,7 +130,7 @@ class _DropDownAddress<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<AddNewPropertyBloc, AddNewPropertyState,
+    return BlocSelector<HouseProcessAddressBloc, HouseProcessAddressState,
         dartz.Tuple2<List<T>, T?>>(
       selector: (state) {
         return selector.call(state);

@@ -829,6 +829,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Document`
+  String get addDocument {
+    return Intl.message(
+      'Add Document',
+      name: 'addDocument',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -6,28 +6,50 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
-import 'package:real_estate_blockchain/feature/my_home/presentation/add_new_property/entites/enums.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-class AddNewPropertyPage extends StatefulWidget {
-  const AddNewPropertyPage({super.key});
+import '../application/enums.dart';
+import 'process_page/process_page.dart';
+
+class HouseAddNewPage extends StatefulWidget {
+  const HouseAddNewPage({super.key});
 
   @override
-  State<AddNewPropertyPage> createState() => _AddNewPropertyPageState();
+  State<HouseAddNewPage> createState() => _HouseAddNewPageState();
 }
 
-class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
-  late final AddNewPropertyBloc bloc;
+class _HouseAddNewPageState extends State<HouseAddNewPage> {
+  late final HouseAddNewBloc bloc;
   late final PageController controller;
+  final ValidateSubcriber validateSubcriber = ValidateSubcriber();
+  late final Map<ProcessState, Widget> pages;
 
   @override
   void initState() {
     super.initState();
-    bloc = context.read<AddNewPropertyBloc>();
-    bloc.start();
-    controller = PageController(initialPage: 0);
+    bloc = context.read<HouseAddNewBloc>();
+    pages = {
+      ProcessState.address: BlocProvider<HouseProcessAddressBloc>(
+        create: (context) =>
+            getIt.call<HouseProcessAddressBloc>(param1: validateSubcriber),
+        child: const ChooseAdressPage(),
+      ),
+      ProcessState.realeStateInfo: BlocProvider(
+        create: (context) => getIt.call<HouseProcessRealInfoBloc>(),
+        child: const RealEstateInfoPafe(),
+      ),
+      ProcessState.postInfo: const PostInfoPage(),
+      ProcessState.postMedia: const VideoPhotoPage(),
+      ProcessState.schedule: Container(),
+    };
+    controller = PageController(initialPage: 0, keepPage: true);
+    bloc.setup(validateSubcriber);
   }
 
   @override
@@ -40,7 +62,7 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
         title: Text(s.myHomeEmptyBtnAdd2),
         centerTitle: true,
       ),
-      body: BlocListener<AddNewPropertyBloc, AddNewPropertyState>(
+      body: BlocListener<HouseAddNewBloc, HouseAddNewState>(
         listener: (context, state) {
           controller.jumpToPage(state.state.index);
         },
@@ -50,13 +72,13 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
               padding: EdgeInsets.all(
                 AppSize.extraWidthDimens,
               ),
-              child: BlocBuilder<AddNewPropertyBloc, AddNewPropertyState>(
+              child: BlocBuilder<HouseAddNewBloc, HouseAddNewState>(
                 builder: (context, state) {
                   return Column(
                     children: [
-                      BlocBuilder<AddNewPropertyBloc, AddNewPropertyState>(
+                      BlocBuilder<HouseAddNewBloc, HouseAddNewState>(
                         builder: (context, state) {
-                          String title;
+                          String title = '';
                           switch (state.state) {
                             case ProcessState.address:
                               title = s.addNewPropertyAddress;
@@ -142,25 +164,8 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                   controller: controller,
                   itemBuilder: (context, index) {
                     final state = ProcessState.values[index];
-                    Widget? result;
-                    switch (state) {
-                      case ProcessState.address:
-                        result = const ChooseAdressPage();
-                        break;
-                      case ProcessState.realeStateInfo:
-                        result = const RealEstateInfoPafe();
-                        break;
-                      case ProcessState.postInfo:
-                        result = const PostInfoPage();
-                        break;
-                      case ProcessState.postMedia:
-                        result = const VideoPhotoPage();
-                        break;
-                      default:
-                        break;
-                    }
                     return SingleChildScrollView(
-                      child: result ?? Container(),
+                      child: pages[state] ?? Container(),
                     );
                   },
                 ),
@@ -182,12 +187,12 @@ class _AddNewPropertyPageState extends State<AddNewPropertyPage> {
                 ],
               ),
               child: ButtonApp(
-                label: context.watch<AddNewPropertyBloc>().state.state ==
+                label: context.watch<HouseAddNewBloc>().state.state ==
                         ProcessState.values.last
                     ? s.done
                     : s.next,
                 onPressed: () {
-                  bloc.nextPage();
+                  bloc.processNextPage();
                 },
                 type: ButtonType.primary,
               ),

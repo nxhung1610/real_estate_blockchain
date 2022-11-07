@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addDocument": MessageLookupByLibrary.simpleMessage("Add Document"),
         "addNewPropertyAddress":
             MessageLookupByLibrary.simpleMessage("Address"),
         "addNewPropertyMedia":
