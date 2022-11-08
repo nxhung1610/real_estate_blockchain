@@ -8,6 +8,7 @@
   "cancel": "Cancel",
   "info": "Info",
   "error": "Error",
+  "anErrorOccurred" : "An error occurred",
   "confirm": "Confirm",
   "allow": "Allow",
   "toProceedeYouNeedToEnableThePermissionsAbove": "To proceede, you need to enable the permissions above",
@@ -82,5 +83,12 @@
   "apply"  : "Apply",
   "reset" : "Reset",
   "done" : "Done",
-  "addDocument" : "Add Document"
+  "addDocument" : "Add Document",
+  "noBedRoom" : "Number of bedroom",
+  "noBathRoom" : "Number of bathroom",
+  "noFloor" : "Number of floor",
+  "rent" : "Rent",
+  "sell" : "Sell",
+  "realEstateType" : "Real estate type",
+  "realEstateDescription" : "Private house"
 }

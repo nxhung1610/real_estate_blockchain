@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
@@ -15,9 +16,22 @@ part 'house_add_new_bloc.freezed.dart';
 class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     implements IValidData {
   ValidateSubcriber? validateSubcriber;
-  HouseAddNewBloc() : super(const HouseAddNewState()) {
-    on<_SetupSubcriber>((event, emit) {
+  final IRealEstateRepository _restateRepository;
+  HouseAddNewBloc(this._restateRepository) : super(const HouseAddNewState()) {
+    on<_Setup>((event, emit) async {
       validateSubcriber = event.subcriber;
+      emit(state.copyWith(status: const Status.loading()));
+      final config = await _restateRepository.configData();
+      config.fold(
+        (l) => emit(state.copyWith(status: const Status.failure())),
+        (r) => emit(
+          state.copyWith(
+            status: const Status.success(),
+            config: r,
+          ),
+        ),
+      );
+      emit(state.copyWith(status: const Status.idle()));
     });
     on<_NextPage>((event, emit) {
       try {
@@ -35,10 +49,13 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
         state.copyWith(addressChoosen: event.addressChoosen),
       );
     });
+    on<_OnRealEstateInfo>((event, emit) {
+      emit(state.copyWith(realEstateInfo: event.realEstateInfo));
+    });
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
-    add(_SetupSubcriber(validateSubcriber));
+    add(_Setup(validateSubcriber));
   }
 
   void processNextPage() {
@@ -58,6 +75,11 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
           }
           break;
         case ProcessState.realeStateInfo:
+          if (data is RealEstateInfo) {
+            add(_OnRealEstateInfo(data));
+          } else {
+            return;
+          }
           break;
         case ProcessState.postInfo:
           break;

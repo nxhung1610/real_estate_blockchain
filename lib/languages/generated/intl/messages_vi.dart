@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
+        "anErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
@@ -84,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
+        "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
+        "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
+        "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
@@ -109,6 +114,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
         "province": MessageLookupByLibrary.simpleMessage("Tỉnh, Thành phố"),
+        "realEstateDescription":
+            MessageLookupByLibrary.simpleMessage("Nhà riêng"),
+        "realEstateType":
+            MessageLookupByLibrary.simpleMessage("Loại bất động sản"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Tạo một"),
         "registerCreateANameAccount2":
@@ -118,8 +127,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
+        "sell": MessageLookupByLibrary.simpleMessage("Bán"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":

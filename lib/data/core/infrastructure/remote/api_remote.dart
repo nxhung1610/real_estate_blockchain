@@ -27,7 +27,7 @@ class ApiRemote {
     _token = token;
   }
 
-  late final Dio _dio = _initDio();
+  Dio get _dio => _initDio();
   late final Dio _dioToken = _intiDioToken();
   Dio _initDio() {
     final Dio dio = Dio();
@@ -93,7 +93,6 @@ class ApiRemote {
       // You can verify the certificate here
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
-
       return client;
     };
     return dio;
@@ -101,6 +100,7 @@ class ApiRemote {
 
   Future<BaseResponse<T>> get<T>(
     String endpoint, {
+    String? url,
     Function(Map<String, dynamic> data)? parse,
     Map<String, dynamic>? query,
     Options? options,
@@ -108,7 +108,9 @@ class ApiRemote {
     ProgressCallback? onReceiveProgres,
   }) async {
     try {
-      final response = await _dio.get(
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.get(
         endpoint,
         queryParameters: query,
         options: options,
@@ -128,6 +130,7 @@ class ApiRemote {
 
   Future<BaseResponse<T>> post<T>(
     String endpoint, {
+    String? url,
     Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
@@ -137,7 +140,9 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.post(
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.post(
         endpoint,
         data: data,
         queryParameters: queryParameters,
@@ -159,6 +164,7 @@ class ApiRemote {
 
   Future<BaseResponse<T>> put<T>(
     String endpoint, {
+    String? url,
     Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
@@ -168,7 +174,9 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.put(
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.put(
         endpoint,
         data: data,
         queryParameters: queryParameters,
@@ -190,6 +198,7 @@ class ApiRemote {
 
   Future<BaseResponse<T>> patch<T>(
     String endpoint, {
+    String? url,
     Function(Map<String, dynamic> data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
@@ -199,7 +208,9 @@ class ApiRemote {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.patch(
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.patch(
         endpoint,
         data: data,
         queryParameters: queryParameters,

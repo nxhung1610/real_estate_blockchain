@@ -18,45 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HouseAddNewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ValidateSubcriber subcriber) setupSubcriber,
+    required TResult Function(ValidateSubcriber subcriber) setup,
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SetupSubcriber value) setupSubcriber,
+    required TResult Function(_Setup value) setup,
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,29 +86,26 @@ class _$HouseAddNewEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_SetupSubcriberCopyWith<$Res> {
-  factory _$$_SetupSubcriberCopyWith(
-          _$_SetupSubcriber value, $Res Function(_$_SetupSubcriber) then) =
-      __$$_SetupSubcriberCopyWithImpl<$Res>;
+abstract class _$$_SetupCopyWith<$Res> {
+  factory _$$_SetupCopyWith(_$_Setup value, $Res Function(_$_Setup) then) =
+      __$$_SetupCopyWithImpl<$Res>;
   $Res call({ValidateSubcriber subcriber});
 }
 
 /// @nodoc
-class __$$_SetupSubcriberCopyWithImpl<$Res>
-    extends _$HouseAddNewEventCopyWithImpl<$Res>
-    implements _$$_SetupSubcriberCopyWith<$Res> {
-  __$$_SetupSubcriberCopyWithImpl(
-      _$_SetupSubcriber _value, $Res Function(_$_SetupSubcriber) _then)
-      : super(_value, (v) => _then(v as _$_SetupSubcriber));
+class __$$_SetupCopyWithImpl<$Res> extends _$HouseAddNewEventCopyWithImpl<$Res>
+    implements _$$_SetupCopyWith<$Res> {
+  __$$_SetupCopyWithImpl(_$_Setup _value, $Res Function(_$_Setup) _then)
+      : super(_value, (v) => _then(v as _$_Setup));
 
   @override
-  _$_SetupSubcriber get _value => super._value as _$_SetupSubcriber;
+  _$_Setup get _value => super._value as _$_Setup;
 
   @override
   $Res call({
     Object? subcriber = freezed,
   }) {
-    return _then(_$_SetupSubcriber(
+    return _then(_$_Setup(
       subcriber == freezed
           ? _value.subcriber
           : subcriber // ignore: cast_nullable_to_non_nullable
@@ -113,22 +116,22 @@ class __$$_SetupSubcriberCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SetupSubcriber implements _SetupSubcriber {
-  const _$_SetupSubcriber(this.subcriber);
+class _$_Setup implements _Setup {
+  const _$_Setup(this.subcriber);
 
   @override
   final ValidateSubcriber subcriber;
 
   @override
   String toString() {
-    return 'HouseAddNewEvent.setupSubcriber(subcriber: $subcriber)';
+    return 'HouseAddNewEvent.setup(subcriber: $subcriber)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SetupSubcriber &&
+            other is _$_Setup &&
             const DeepCollectionEquality().equals(other.subcriber, subcriber));
   }
 
@@ -138,39 +141,42 @@ class _$_SetupSubcriber implements _SetupSubcriber {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SetupSubcriberCopyWith<_$_SetupSubcriber> get copyWith =>
-      __$$_SetupSubcriberCopyWithImpl<_$_SetupSubcriber>(this, _$identity);
+  _$$_SetupCopyWith<_$_Setup> get copyWith =>
+      __$$_SetupCopyWithImpl<_$_Setup>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ValidateSubcriber subcriber) setupSubcriber,
+    required TResult Function(ValidateSubcriber subcriber) setup,
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
   }) {
-    return setupSubcriber(subcriber);
+    return setup(subcriber);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
   }) {
-    return setupSubcriber?.call(subcriber);
+    return setup?.call(subcriber);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     required TResult orElse(),
   }) {
-    if (setupSubcriber != null) {
-      return setupSubcriber(subcriber);
+    if (setup != null) {
+      return setup(subcriber);
     }
     return orElse();
   }
@@ -178,45 +184,47 @@ class _$_SetupSubcriber implements _SetupSubcriber {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SetupSubcriber value) setupSubcriber,
+    required TResult Function(_Setup value) setup,
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
   }) {
-    return setupSubcriber(this);
+    return setup(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
   }) {
-    return setupSubcriber?.call(this);
+    return setup?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     required TResult orElse(),
   }) {
-    if (setupSubcriber != null) {
-      return setupSubcriber(this);
+    if (setup != null) {
+      return setup(this);
     }
     return orElse();
   }
 }
 
-abstract class _SetupSubcriber implements HouseAddNewEvent {
-  const factory _SetupSubcriber(final ValidateSubcriber subcriber) =
-      _$_SetupSubcriber;
+abstract class _Setup implements HouseAddNewEvent {
+  const factory _Setup(final ValidateSubcriber subcriber) = _$_Setup;
 
   ValidateSubcriber get subcriber;
   @JsonKey(ignore: true)
-  _$$_SetupSubcriberCopyWith<_$_SetupSubcriber> get copyWith =>
+  _$$_SetupCopyWith<_$_Setup> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -261,9 +269,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ValidateSubcriber subcriber) setupSubcriber,
+    required TResult Function(ValidateSubcriber subcriber) setup,
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
   }) {
     return nextPage();
   }
@@ -271,9 +280,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
   }) {
     return nextPage?.call();
   }
@@ -281,9 +291,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -295,9 +306,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SetupSubcriber value) setupSubcriber,
+    required TResult Function(_Setup value) setup,
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
   }) {
     return nextPage(this);
   }
@@ -305,9 +317,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
   }) {
     return nextPage?.call(this);
   }
@@ -315,9 +328,10 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -397,9 +411,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ValidateSubcriber subcriber) setupSubcriber,
+    required TResult Function(ValidateSubcriber subcriber) setup,
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
   }) {
     return onAddressChosen(addressChoosen);
   }
@@ -407,9 +422,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
   }) {
     return onAddressChosen?.call(addressChoosen);
   }
@@ -417,9 +433,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setupSubcriber,
+    TResult Function(ValidateSubcriber subcriber)? setup,
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -431,9 +448,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SetupSubcriber value) setupSubcriber,
+    required TResult Function(_Setup value) setup,
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
   }) {
     return onAddressChosen(this);
   }
@@ -441,9 +459,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
   }) {
     return onAddressChosen?.call(this);
   }
@@ -451,9 +470,10 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetupSubcriber value)? setupSubcriber,
+    TResult Function(_Setup value)? setup,
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -474,9 +494,159 @@ abstract class _OnAddressChosen implements HouseAddNewEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnRealEstateInfoCopyWith<$Res> {
+  factory _$$_OnRealEstateInfoCopyWith(
+          _$_OnRealEstateInfo value, $Res Function(_$_OnRealEstateInfo) then) =
+      __$$_OnRealEstateInfoCopyWithImpl<$Res>;
+  $Res call({RealEstateInfo realEstateInfo});
+}
+
+/// @nodoc
+class __$$_OnRealEstateInfoCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    implements _$$_OnRealEstateInfoCopyWith<$Res> {
+  __$$_OnRealEstateInfoCopyWithImpl(
+      _$_OnRealEstateInfo _value, $Res Function(_$_OnRealEstateInfo) _then)
+      : super(_value, (v) => _then(v as _$_OnRealEstateInfo));
+
+  @override
+  _$_OnRealEstateInfo get _value => super._value as _$_OnRealEstateInfo;
+
+  @override
+  $Res call({
+    Object? realEstateInfo = freezed,
+  }) {
+    return _then(_$_OnRealEstateInfo(
+      realEstateInfo == freezed
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnRealEstateInfo implements _OnRealEstateInfo {
+  const _$_OnRealEstateInfo(this.realEstateInfo);
+
+  @override
+  final RealEstateInfo realEstateInfo;
+
+  @override
+  String toString() {
+    return 'HouseAddNewEvent.onRealEstateInfo(realEstateInfo: $realEstateInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnRealEstateInfo &&
+            const DeepCollectionEquality()
+                .equals(other.realEstateInfo, realEstateInfo));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(realEstateInfo));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_OnRealEstateInfoCopyWith<_$_OnRealEstateInfo> get copyWith =>
+      __$$_OnRealEstateInfoCopyWithImpl<_$_OnRealEstateInfo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ValidateSubcriber subcriber) setup,
+    required TResult Function() nextPage,
+    required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+  }) {
+    return onRealEstateInfo(realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+  }) {
+    return onRealEstateInfo?.call(realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    required TResult orElse(),
+  }) {
+    if (onRealEstateInfo != null) {
+      return onRealEstateInfo(realEstateInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_NextPage value) nextPage,
+    required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+  }) {
+    return onRealEstateInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+  }) {
+    return onRealEstateInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    required TResult orElse(),
+  }) {
+    if (onRealEstateInfo != null) {
+      return onRealEstateInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnRealEstateInfo implements HouseAddNewEvent {
+  const factory _OnRealEstateInfo(final RealEstateInfo realEstateInfo) =
+      _$_OnRealEstateInfo;
+
+  RealEstateInfo get realEstateInfo;
+  @JsonKey(ignore: true)
+  _$$_OnRealEstateInfoCopyWith<_$_OnRealEstateInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HouseAddNewState {
   ProcessState get state => throw _privateConstructorUsedError;
+  RealEstateConfig? get config => throw _privateConstructorUsedError;
   AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
+  RealEstateInfo? get realEstateInfo => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -490,7 +660,11 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
           HouseAddNewState value, $Res Function(HouseAddNewState) then) =
       _$HouseAddNewStateCopyWithImpl<$Res>;
   $Res call(
-      {ProcessState state, AddressChoosen? addressChoosen, Status status});
+      {ProcessState state,
+      RealEstateConfig? config,
+      AddressChoosen? addressChoosen,
+      RealEstateInfo? realEstateInfo,
+      Status status});
 
   $StatusCopyWith<$Res> get status;
 }
@@ -507,7 +681,9 @@ class _$HouseAddNewStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? state = freezed,
+    Object? config = freezed,
     Object? addressChoosen = freezed,
+    Object? realEstateInfo = freezed,
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
@@ -515,10 +691,18 @@ class _$HouseAddNewStateCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as RealEstateConfig?,
       addressChoosen: addressChoosen == freezed
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen?,
+      realEstateInfo: realEstateInfo == freezed
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -542,7 +726,11 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
       __$$_HouseAddNewStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProcessState state, AddressChoosen? addressChoosen, Status status});
+      {ProcessState state,
+      RealEstateConfig? config,
+      AddressChoosen? addressChoosen,
+      RealEstateInfo? realEstateInfo,
+      Status status});
 
   @override
   $StatusCopyWith<$Res> get status;
@@ -562,7 +750,9 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? state = freezed,
+    Object? config = freezed,
     Object? addressChoosen = freezed,
+    Object? realEstateInfo = freezed,
     Object? status = freezed,
   }) {
     return _then(_$_HouseAddNewState(
@@ -570,10 +760,18 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
+      config: config == freezed
+          ? _value.config
+          : config // ignore: cast_nullable_to_non_nullable
+              as RealEstateConfig?,
       addressChoosen: addressChoosen == freezed
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen?,
+      realEstateInfo: realEstateInfo == freezed
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -587,21 +785,27 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
 class _$_HouseAddNewState implements _HouseAddNewState {
   const _$_HouseAddNewState(
       {this.state = ProcessState.address,
+      this.config,
       this.addressChoosen,
+      this.realEstateInfo,
       this.status = const Status.idle()});
 
   @override
   @JsonKey()
   final ProcessState state;
   @override
+  final RealEstateConfig? config;
+  @override
   final AddressChoosen? addressChoosen;
+  @override
+  final RealEstateInfo? realEstateInfo;
   @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'HouseAddNewState(state: $state, addressChoosen: $addressChoosen, status: $status)';
+    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, status: $status)';
   }
 
   @override
@@ -610,8 +814,11 @@ class _$_HouseAddNewState implements _HouseAddNewState {
         (other.runtimeType == runtimeType &&
             other is _$_HouseAddNewState &&
             const DeepCollectionEquality().equals(other.state, state) &&
+            const DeepCollectionEquality().equals(other.config, config) &&
             const DeepCollectionEquality()
                 .equals(other.addressChoosen, addressChoosen) &&
+            const DeepCollectionEquality()
+                .equals(other.realEstateInfo, realEstateInfo) &&
             const DeepCollectionEquality().equals(other.status, status));
   }
 
@@ -619,7 +826,9 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(state),
+      const DeepCollectionEquality().hash(config),
       const DeepCollectionEquality().hash(addressChoosen),
+      const DeepCollectionEquality().hash(realEstateInfo),
       const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
@@ -631,13 +840,19 @@ class _$_HouseAddNewState implements _HouseAddNewState {
 abstract class _HouseAddNewState implements HouseAddNewState {
   const factory _HouseAddNewState(
       {final ProcessState state,
+      final RealEstateConfig? config,
       final AddressChoosen? addressChoosen,
+      final RealEstateInfo? realEstateInfo,
       final Status status}) = _$_HouseAddNewState;
 
   @override
   ProcessState get state;
   @override
+  RealEstateConfig? get config;
+  @override
   AddressChoosen? get addressChoosen;
+  @override
+  RealEstateInfo? get realEstateInfo;
   @override
   Status get status;
   @override

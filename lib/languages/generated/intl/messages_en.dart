@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
+        "anErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("An error occurred"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
@@ -84,6 +86,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "noBathRoom":
+            MessageLookupByLibrary.simpleMessage("Number of bathroom"),
+        "noBedRoom": MessageLookupByLibrary.simpleMessage("Number of bedroom"),
+        "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
@@ -110,6 +116,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
         "province": MessageLookupByLibrary.simpleMessage("Province, City"),
+        "realEstateDescription":
+            MessageLookupByLibrary.simpleMessage("Private house"),
+        "realEstateType":
+            MessageLookupByLibrary.simpleMessage("Real estate type"),
         "registerCreateANameAccount1":
             MessageLookupByLibrary.simpleMessage("Create a"),
         "registerCreateANameAccount2":
@@ -120,8 +130,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
+        "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "sell": MessageLookupByLibrary.simpleMessage("Sell"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),

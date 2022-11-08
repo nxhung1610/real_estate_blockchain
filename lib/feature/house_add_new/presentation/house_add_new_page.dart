@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
@@ -41,8 +43,9 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
         child: const ChooseAdressPage(),
       ),
       ProcessState.realeStateInfo: BlocProvider(
-        create: (context) => getIt.call<HouseProcessRealInfoBloc>(),
-        child: const RealEstateInfoPafe(),
+        create: (context) =>
+            getIt.call<HouseProcessRealInfoBloc>(param1: validateSubcriber),
+        child: const RealEstateInfoPage(),
       ),
       ProcessState.postInfo: const PostInfoPage(),
       ProcessState.postMedia: const VideoPhotoPage(),
@@ -64,6 +67,23 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
       ),
       body: BlocListener<HouseAddNewBloc, HouseAddNewState>(
         listener: (context, state) {
+          state.status.mapOrNull(
+            loading: (value) {
+              context.appDialog.showLoading();
+            },
+            idle: (value) {
+              context.appDialog.dismissDialog();
+            },
+            failure: (value) {
+              context.appDialog.showAppDialog(
+                type: AppDialogType.error,
+                message: s.anErrorOccurred,
+                onPositive: () {
+                  context.pop();
+                },
+              );
+            },
+          );
           controller.jumpToPage(state.state.index);
         },
         child: Column(

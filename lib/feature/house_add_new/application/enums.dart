@@ -7,3 +7,9 @@ enum ProcessState {
 }
 
 enum RealEstateSell { sell, rent }
+
+enum RealEstateDetail {
+  room,
+  wc,
+  floor,
+}

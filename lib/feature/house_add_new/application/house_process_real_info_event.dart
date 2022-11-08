@@ -3,8 +3,10 @@ part of 'house_process_real_info_bloc.dart';
 @freezed
 class HouseProcessRealInfoEvent with _$HouseProcessRealInfoEvent {
   const factory HouseProcessRealInfoEvent.started() = _Started;
-  const factory HouseProcessRealInfoEvent.changeTypeSell(bool isRent) =
+  const factory HouseProcessRealInfoEvent.changeTypeSell(RealEstateSell sell) =
       _ChangeTypeSell;
+  const factory HouseProcessRealInfoEvent.changeRealEstateType(
+      RealEstateType type) = _ChangeRealEstateType;
   const factory HouseProcessRealInfoEvent.onAreaChanged(double area) =
       _OnAreaChanged;
   const factory HouseProcessRealInfoEvent.onPriceChanged(double price) =
@@ -13,10 +15,10 @@ class HouseProcessRealInfoEvent with _$HouseProcessRealInfoEvent {
       _OnDocumentAdded;
   const factory HouseProcessRealInfoEvent.onDocumentsDeleted(String document) =
       _OnDocumentDeleted;
-  const factory HouseProcessRealInfoEvent.onNumBedRoomChanged(int num) =
+  const factory HouseProcessRealInfoEvent.onNumBedRoomChanged(bool isIncrease) =
       _OnNumBedRoomChanged;
-  const factory HouseProcessRealInfoEvent.onNumWcChanged(int num) =
+  const factory HouseProcessRealInfoEvent.onNumWcChanged(bool isIncrease) =
       _OnNumWcChanged;
-  const factory HouseProcessRealInfoEvent.onNumFloorChanged(int num) =
+  const factory HouseProcessRealInfoEvent.onNumFloorChanged(bool isIncrease) =
       _OnNumFloorChanged;
 }

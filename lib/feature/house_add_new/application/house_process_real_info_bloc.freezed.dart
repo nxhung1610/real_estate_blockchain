@@ -19,40 +19,43 @@ mixin _$HouseProcessRealInfoEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +63,7 @@ mixin _$HouseProcessRealInfoEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -73,6 +77,7 @@ mixin _$HouseProcessRealInfoEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -86,6 +91,7 @@ mixin _$HouseProcessRealInfoEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -156,14 +162,15 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
     return started();
   }
@@ -172,14 +179,15 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
     return started?.call();
   }
@@ -188,14 +196,15 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -209,6 +218,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -225,6 +235,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -241,6 +252,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -266,7 +278,7 @@ abstract class _$$_ChangeTypeSellCopyWith<$Res> {
   factory _$$_ChangeTypeSellCopyWith(
           _$_ChangeTypeSell value, $Res Function(_$_ChangeTypeSell) then) =
       __$$_ChangeTypeSellCopyWithImpl<$Res>;
-  $Res call({bool isRent});
+  $Res call({RealEstateSell sell});
 }
 
 /// @nodoc
@@ -282,13 +294,13 @@ class __$$_ChangeTypeSellCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isRent = freezed,
+    Object? sell = freezed,
   }) {
     return _then(_$_ChangeTypeSell(
-      isRent == freezed
-          ? _value.isRent
-          : isRent // ignore: cast_nullable_to_non_nullable
-              as bool,
+      sell == freezed
+          ? _value.sell
+          : sell // ignore: cast_nullable_to_non_nullable
+              as RealEstateSell,
     ));
   }
 }
@@ -296,14 +308,14 @@ class __$$_ChangeTypeSellCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ChangeTypeSell implements _ChangeTypeSell {
-  const _$_ChangeTypeSell(this.isRent);
+  const _$_ChangeTypeSell(this.sell);
 
   @override
-  final bool isRent;
+  final RealEstateSell sell;
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoEvent.changeTypeSell(isRent: $isRent)';
+    return 'HouseProcessRealInfoEvent.changeTypeSell(sell: $sell)';
   }
 
   @override
@@ -311,12 +323,12 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChangeTypeSell &&
-            const DeepCollectionEquality().equals(other.isRent, isRent));
+            const DeepCollectionEquality().equals(other.sell, sell));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isRent));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(sell));
 
   @JsonKey(ignore: true)
   @override
@@ -327,50 +339,53 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
-    return changeTypeSell(isRent);
+    return changeTypeSell(sell);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
-    return changeTypeSell?.call(isRent);
+    return changeTypeSell?.call(sell);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (changeTypeSell != null) {
-      return changeTypeSell(isRent);
+      return changeTypeSell(sell);
     }
     return orElse();
   }
@@ -380,6 +395,7 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -396,6 +412,7 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -412,6 +429,7 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -429,11 +447,195 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
 }
 
 abstract class _ChangeTypeSell implements HouseProcessRealInfoEvent {
-  const factory _ChangeTypeSell(final bool isRent) = _$_ChangeTypeSell;
+  const factory _ChangeTypeSell(final RealEstateSell sell) = _$_ChangeTypeSell;
 
-  bool get isRent;
+  RealEstateSell get sell;
   @JsonKey(ignore: true)
   _$$_ChangeTypeSellCopyWith<_$_ChangeTypeSell> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ChangeRealEstateTypeCopyWith<$Res> {
+  factory _$$_ChangeRealEstateTypeCopyWith(_$_ChangeRealEstateType value,
+          $Res Function(_$_ChangeRealEstateType) then) =
+      __$$_ChangeRealEstateTypeCopyWithImpl<$Res>;
+  $Res call({RealEstateType type});
+}
+
+/// @nodoc
+class __$$_ChangeRealEstateTypeCopyWithImpl<$Res>
+    extends _$HouseProcessRealInfoEventCopyWithImpl<$Res>
+    implements _$$_ChangeRealEstateTypeCopyWith<$Res> {
+  __$$_ChangeRealEstateTypeCopyWithImpl(_$_ChangeRealEstateType _value,
+      $Res Function(_$_ChangeRealEstateType) _then)
+      : super(_value, (v) => _then(v as _$_ChangeRealEstateType));
+
+  @override
+  _$_ChangeRealEstateType get _value => super._value as _$_ChangeRealEstateType;
+
+  @override
+  $Res call({
+    Object? type = freezed,
+  }) {
+    return _then(_$_ChangeRealEstateType(
+      type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as RealEstateType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChangeRealEstateType implements _ChangeRealEstateType {
+  const _$_ChangeRealEstateType(this.type);
+
+  @override
+  final RealEstateType type;
+
+  @override
+  String toString() {
+    return 'HouseProcessRealInfoEvent.changeRealEstateType(type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeRealEstateType &&
+            const DeepCollectionEquality().equals(other.type, type));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ChangeRealEstateTypeCopyWith<_$_ChangeRealEstateType> get copyWith =>
+      __$$_ChangeRealEstateTypeCopyWithImpl<_$_ChangeRealEstateType>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
+    required TResult Function(double area) onAreaChanged,
+    required TResult Function(double price) onPriceChanged,
+    required TResult Function(String document) onDocumentsAdded,
+    required TResult Function(String document) onDocumentsDeleted,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
+  }) {
+    return changeRealEstateType(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+  }) {
+    return changeRealEstateType?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+    required TResult orElse(),
+  }) {
+    if (changeRealEstateType != null) {
+      return changeRealEstateType(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
+    required TResult Function(_OnAreaChanged value) onAreaChanged,
+    required TResult Function(_OnPriceChanged value) onPriceChanged,
+    required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
+    required TResult Function(_OnDocumentDeleted value) onDocumentsDeleted,
+    required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
+    required TResult Function(_OnNumWcChanged value) onNumWcChanged,
+    required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+  }) {
+    return changeRealEstateType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+  }) {
+    return changeRealEstateType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    required TResult orElse(),
+  }) {
+    if (changeRealEstateType != null) {
+      return changeRealEstateType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeRealEstateType implements HouseProcessRealInfoEvent {
+  const factory _ChangeRealEstateType(final RealEstateType type) =
+      _$_ChangeRealEstateType;
+
+  RealEstateType get type;
+  @JsonKey(ignore: true)
+  _$$_ChangeRealEstateTypeCopyWith<_$_ChangeRealEstateType> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -503,14 +705,15 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
     return onAreaChanged(area);
   }
@@ -519,14 +722,15 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
     return onAreaChanged?.call(area);
   }
@@ -535,14 +739,15 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onAreaChanged != null) {
@@ -556,6 +761,7 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -572,6 +778,7 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -588,6 +795,7 @@ class _$_OnAreaChanged implements _OnAreaChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -679,14 +887,15 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
     return onPriceChanged(price);
   }
@@ -695,14 +904,15 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
     return onPriceChanged?.call(price);
   }
@@ -711,14 +921,15 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onPriceChanged != null) {
@@ -732,6 +943,7 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -748,6 +960,7 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -764,6 +977,7 @@ class _$_OnPriceChanged implements _OnPriceChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -855,14 +1069,15 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
     return onDocumentsAdded(document);
   }
@@ -871,14 +1086,15 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
     return onDocumentsAdded?.call(document);
   }
@@ -887,14 +1103,15 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsAdded != null) {
@@ -908,6 +1125,7 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -924,6 +1142,7 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -940,6 +1159,7 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1032,14 +1252,15 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
     return onDocumentsDeleted(document);
   }
@@ -1048,14 +1269,15 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
     return onDocumentsDeleted?.call(document);
   }
@@ -1064,14 +1286,15 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsDeleted != null) {
@@ -1085,6 +1308,7 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -1101,6 +1325,7 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1117,6 +1342,7 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1148,7 +1374,7 @@ abstract class _$$_OnNumBedRoomChangedCopyWith<$Res> {
   factory _$$_OnNumBedRoomChangedCopyWith(_$_OnNumBedRoomChanged value,
           $Res Function(_$_OnNumBedRoomChanged) then) =
       __$$_OnNumBedRoomChangedCopyWithImpl<$Res>;
-  $Res call({int num});
+  $Res call({bool isIncrease});
 }
 
 /// @nodoc
@@ -1164,13 +1390,13 @@ class __$$_OnNumBedRoomChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? num = freezed,
+    Object? isIncrease = freezed,
   }) {
     return _then(_$_OnNumBedRoomChanged(
-      num == freezed
-          ? _value.num
-          : num // ignore: cast_nullable_to_non_nullable
-              as int,
+      isIncrease == freezed
+          ? _value.isIncrease
+          : isIncrease // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1178,14 +1404,14 @@ class __$$_OnNumBedRoomChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
-  const _$_OnNumBedRoomChanged(this.num);
+  const _$_OnNumBedRoomChanged(this.isIncrease);
 
   @override
-  final int num;
+  final bool isIncrease;
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoEvent.onNumBedRoomChanged(num: $num)';
+    return 'HouseProcessRealInfoEvent.onNumBedRoomChanged(isIncrease: $isIncrease)';
   }
 
   @override
@@ -1193,12 +1419,13 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnNumBedRoomChanged &&
-            const DeepCollectionEquality().equals(other.num, num));
+            const DeepCollectionEquality()
+                .equals(other.isIncrease, isIncrease));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(num));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isIncrease));
 
   @JsonKey(ignore: true)
   @override
@@ -1210,50 +1437,53 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
-    return onNumBedRoomChanged(num);
+    return onNumBedRoomChanged(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
-    return onNumBedRoomChanged?.call(num);
+    return onNumBedRoomChanged?.call(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onNumBedRoomChanged != null) {
-      return onNumBedRoomChanged(num);
+      return onNumBedRoomChanged(isIncrease);
     }
     return orElse();
   }
@@ -1263,6 +1493,7 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -1279,6 +1510,7 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1295,6 +1527,7 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1312,9 +1545,10 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
 }
 
 abstract class _OnNumBedRoomChanged implements HouseProcessRealInfoEvent {
-  const factory _OnNumBedRoomChanged(final int num) = _$_OnNumBedRoomChanged;
+  const factory _OnNumBedRoomChanged(final bool isIncrease) =
+      _$_OnNumBedRoomChanged;
 
-  int get num;
+  bool get isIncrease;
   @JsonKey(ignore: true)
   _$$_OnNumBedRoomChangedCopyWith<_$_OnNumBedRoomChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1325,7 +1559,7 @@ abstract class _$$_OnNumWcChangedCopyWith<$Res> {
   factory _$$_OnNumWcChangedCopyWith(
           _$_OnNumWcChanged value, $Res Function(_$_OnNumWcChanged) then) =
       __$$_OnNumWcChangedCopyWithImpl<$Res>;
-  $Res call({int num});
+  $Res call({bool isIncrease});
 }
 
 /// @nodoc
@@ -1341,13 +1575,13 @@ class __$$_OnNumWcChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? num = freezed,
+    Object? isIncrease = freezed,
   }) {
     return _then(_$_OnNumWcChanged(
-      num == freezed
-          ? _value.num
-          : num // ignore: cast_nullable_to_non_nullable
-              as int,
+      isIncrease == freezed
+          ? _value.isIncrease
+          : isIncrease // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1355,14 +1589,14 @@ class __$$_OnNumWcChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnNumWcChanged implements _OnNumWcChanged {
-  const _$_OnNumWcChanged(this.num);
+  const _$_OnNumWcChanged(this.isIncrease);
 
   @override
-  final int num;
+  final bool isIncrease;
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoEvent.onNumWcChanged(num: $num)';
+    return 'HouseProcessRealInfoEvent.onNumWcChanged(isIncrease: $isIncrease)';
   }
 
   @override
@@ -1370,12 +1604,13 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnNumWcChanged &&
-            const DeepCollectionEquality().equals(other.num, num));
+            const DeepCollectionEquality()
+                .equals(other.isIncrease, isIncrease));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(num));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isIncrease));
 
   @JsonKey(ignore: true)
   @override
@@ -1386,50 +1621,53 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
-    return onNumWcChanged(num);
+    return onNumWcChanged(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
-    return onNumWcChanged?.call(num);
+    return onNumWcChanged?.call(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onNumWcChanged != null) {
-      return onNumWcChanged(num);
+      return onNumWcChanged(isIncrease);
     }
     return orElse();
   }
@@ -1439,6 +1677,7 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -1455,6 +1694,7 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1471,6 +1711,7 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1488,9 +1729,9 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
 }
 
 abstract class _OnNumWcChanged implements HouseProcessRealInfoEvent {
-  const factory _OnNumWcChanged(final int num) = _$_OnNumWcChanged;
+  const factory _OnNumWcChanged(final bool isIncrease) = _$_OnNumWcChanged;
 
-  int get num;
+  bool get isIncrease;
   @JsonKey(ignore: true)
   _$$_OnNumWcChangedCopyWith<_$_OnNumWcChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1501,7 +1742,7 @@ abstract class _$$_OnNumFloorChangedCopyWith<$Res> {
   factory _$$_OnNumFloorChangedCopyWith(_$_OnNumFloorChanged value,
           $Res Function(_$_OnNumFloorChanged) then) =
       __$$_OnNumFloorChangedCopyWithImpl<$Res>;
-  $Res call({int num});
+  $Res call({bool isIncrease});
 }
 
 /// @nodoc
@@ -1517,13 +1758,13 @@ class __$$_OnNumFloorChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? num = freezed,
+    Object? isIncrease = freezed,
   }) {
     return _then(_$_OnNumFloorChanged(
-      num == freezed
-          ? _value.num
-          : num // ignore: cast_nullable_to_non_nullable
-              as int,
+      isIncrease == freezed
+          ? _value.isIncrease
+          : isIncrease // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1531,14 +1772,14 @@ class __$$_OnNumFloorChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnNumFloorChanged implements _OnNumFloorChanged {
-  const _$_OnNumFloorChanged(this.num);
+  const _$_OnNumFloorChanged(this.isIncrease);
 
   @override
-  final int num;
+  final bool isIncrease;
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoEvent.onNumFloorChanged(num: $num)';
+    return 'HouseProcessRealInfoEvent.onNumFloorChanged(isIncrease: $isIncrease)';
   }
 
   @override
@@ -1546,12 +1787,13 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnNumFloorChanged &&
-            const DeepCollectionEquality().equals(other.num, num));
+            const DeepCollectionEquality()
+                .equals(other.isIncrease, isIncrease));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(num));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isIncrease));
 
   @JsonKey(ignore: true)
   @override
@@ -1563,50 +1805,53 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isRent) changeTypeSell,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
     required TResult Function(double area) onAreaChanged,
     required TResult Function(double price) onPriceChanged,
     required TResult Function(String document) onDocumentsAdded,
     required TResult Function(String document) onDocumentsDeleted,
-    required TResult Function(int num) onNumBedRoomChanged,
-    required TResult Function(int num) onNumWcChanged,
-    required TResult Function(int num) onNumFloorChanged,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
   }) {
-    return onNumFloorChanged(num);
+    return onNumFloorChanged(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
   }) {
-    return onNumFloorChanged?.call(num);
+    return onNumFloorChanged?.call(isIncrease);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isRent)? changeTypeSell,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
     TResult Function(double area)? onAreaChanged,
     TResult Function(double price)? onPriceChanged,
     TResult Function(String document)? onDocumentsAdded,
     TResult Function(String document)? onDocumentsDeleted,
-    TResult Function(int num)? onNumBedRoomChanged,
-    TResult Function(int num)? onNumWcChanged,
-    TResult Function(int num)? onNumFloorChanged,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
     required TResult orElse(),
   }) {
     if (onNumFloorChanged != null) {
-      return onNumFloorChanged(num);
+      return onNumFloorChanged(isIncrease);
     }
     return orElse();
   }
@@ -1616,6 +1861,7 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
     required TResult Function(_OnAreaChanged value) onAreaChanged,
     required TResult Function(_OnPriceChanged value) onPriceChanged,
     required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
@@ -1632,6 +1878,7 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1648,6 +1895,7 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
     TResult Function(_OnAreaChanged value)? onAreaChanged,
     TResult Function(_OnPriceChanged value)? onPriceChanged,
     TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
@@ -1665,9 +1913,10 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
 }
 
 abstract class _OnNumFloorChanged implements HouseProcessRealInfoEvent {
-  const factory _OnNumFloorChanged(final int num) = _$_OnNumFloorChanged;
+  const factory _OnNumFloorChanged(final bool isIncrease) =
+      _$_OnNumFloorChanged;
 
-  int get num;
+  bool get isIncrease;
   @JsonKey(ignore: true)
   _$$_OnNumFloorChangedCopyWith<_$_OnNumFloorChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1675,10 +1924,14 @@ abstract class _OnNumFloorChanged implements HouseProcessRealInfoEvent {
 
 /// @nodoc
 mixin _$HouseProcessRealInfoState {
-  bool? get isRent => throw _privateConstructorUsedError;
+  RealEstateSell get sell => throw _privateConstructorUsedError;
   double? get area => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   List<String> get documents => throw _privateConstructorUsedError;
+  int? get reTypeId => throw _privateConstructorUsedError;
+  int get noBedroom => throw _privateConstructorUsedError;
+  int get noWc => throw _privateConstructorUsedError;
+  int get floors => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HouseProcessRealInfoStateCopyWith<HouseProcessRealInfoState> get copyWith =>
@@ -1691,7 +1944,14 @@ abstract class $HouseProcessRealInfoStateCopyWith<$Res> {
           $Res Function(HouseProcessRealInfoState) then) =
       _$HouseProcessRealInfoStateCopyWithImpl<$Res>;
   $Res call(
-      {bool? isRent, double? area, double? price, List<String> documents});
+      {RealEstateSell sell,
+      double? area,
+      double? price,
+      List<String> documents,
+      int? reTypeId,
+      int noBedroom,
+      int noWc,
+      int floors});
 }
 
 /// @nodoc
@@ -1705,16 +1965,20 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isRent = freezed,
+    Object? sell = freezed,
     Object? area = freezed,
     Object? price = freezed,
     Object? documents = freezed,
+    Object? reTypeId = freezed,
+    Object? noBedroom = freezed,
+    Object? noWc = freezed,
+    Object? floors = freezed,
   }) {
     return _then(_value.copyWith(
-      isRent: isRent == freezed
-          ? _value.isRent
-          : isRent // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      sell: sell == freezed
+          ? _value.sell
+          : sell // ignore: cast_nullable_to_non_nullable
+              as RealEstateSell,
       area: area == freezed
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
@@ -1727,6 +1991,22 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res>
           ? _value.documents
           : documents // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      reTypeId: reTypeId == freezed
+          ? _value.reTypeId
+          : reTypeId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noBedroom: noBedroom == freezed
+          ? _value.noBedroom
+          : noBedroom // ignore: cast_nullable_to_non_nullable
+              as int,
+      noWc: noWc == freezed
+          ? _value.noWc
+          : noWc // ignore: cast_nullable_to_non_nullable
+              as int,
+      floors: floors == freezed
+          ? _value.floors
+          : floors // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1740,7 +2020,14 @@ abstract class _$$_HouseProcessRealInfoStateCopyWith<$Res>
       __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool? isRent, double? area, double? price, List<String> documents});
+      {RealEstateSell sell,
+      double? area,
+      double? price,
+      List<String> documents,
+      int? reTypeId,
+      int noBedroom,
+      int noWc,
+      int floors});
 }
 
 /// @nodoc
@@ -1758,16 +2045,20 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isRent = freezed,
+    Object? sell = freezed,
     Object? area = freezed,
     Object? price = freezed,
     Object? documents = freezed,
+    Object? reTypeId = freezed,
+    Object? noBedroom = freezed,
+    Object? noWc = freezed,
+    Object? floors = freezed,
   }) {
     return _then(_$_HouseProcessRealInfoState(
-      isRent: isRent == freezed
-          ? _value.isRent
-          : isRent // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      sell: sell == freezed
+          ? _value.sell
+          : sell // ignore: cast_nullable_to_non_nullable
+              as RealEstateSell,
       area: area == freezed
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
@@ -1780,6 +2071,22 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
           ? _value._documents
           : documents // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      reTypeId: reTypeId == freezed
+          ? _value.reTypeId
+          : reTypeId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noBedroom: noBedroom == freezed
+          ? _value.noBedroom
+          : noBedroom // ignore: cast_nullable_to_non_nullable
+              as int,
+      noWc: noWc == freezed
+          ? _value.noWc
+          : noWc // ignore: cast_nullable_to_non_nullable
+              as int,
+      floors: floors == freezed
+          ? _value.floors
+          : floors // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1788,14 +2095,19 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
 
 class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
   const _$_HouseProcessRealInfoState(
-      {this.isRent,
+      {this.sell = RealEstateSell.sell,
       this.area,
       this.price,
-      final List<String> documents = const []})
+      final List<String> documents = const [],
+      this.reTypeId,
+      this.noBedroom = 0,
+      this.noWc = 0,
+      this.floors = 0})
       : _documents = documents;
 
   @override
-  final bool? isRent;
+  @JsonKey()
+  final RealEstateSell sell;
   @override
   final double? area;
   @override
@@ -1809,8 +2121,20 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
   }
 
   @override
+  final int? reTypeId;
+  @override
+  @JsonKey()
+  final int noBedroom;
+  @override
+  @JsonKey()
+  final int noWc;
+  @override
+  @JsonKey()
+  final int floors;
+
+  @override
   String toString() {
-    return 'HouseProcessRealInfoState(isRent: $isRent, area: $area, price: $price, documents: $documents)';
+    return 'HouseProcessRealInfoState(sell: $sell, area: $area, price: $price, documents: $documents, reTypeId: $reTypeId, noBedroom: $noBedroom, noWc: $noWc, floors: $floors)';
   }
 
   @override
@@ -1818,20 +2142,28 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HouseProcessRealInfoState &&
-            const DeepCollectionEquality().equals(other.isRent, isRent) &&
+            const DeepCollectionEquality().equals(other.sell, sell) &&
             const DeepCollectionEquality().equals(other.area, area) &&
             const DeepCollectionEquality().equals(other.price, price) &&
             const DeepCollectionEquality()
-                .equals(other._documents, _documents));
+                .equals(other._documents, _documents) &&
+            const DeepCollectionEquality().equals(other.reTypeId, reTypeId) &&
+            const DeepCollectionEquality().equals(other.noBedroom, noBedroom) &&
+            const DeepCollectionEquality().equals(other.noWc, noWc) &&
+            const DeepCollectionEquality().equals(other.floors, floors));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(isRent),
+      const DeepCollectionEquality().hash(sell),
       const DeepCollectionEquality().hash(area),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(_documents));
+      const DeepCollectionEquality().hash(_documents),
+      const DeepCollectionEquality().hash(reTypeId),
+      const DeepCollectionEquality().hash(noBedroom),
+      const DeepCollectionEquality().hash(noWc),
+      const DeepCollectionEquality().hash(floors));
 
   @JsonKey(ignore: true)
   @override
@@ -1842,19 +2174,31 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
 
 abstract class _HouseProcessRealInfoState implements HouseProcessRealInfoState {
   const factory _HouseProcessRealInfoState(
-      {final bool? isRent,
+      {final RealEstateSell sell,
       final double? area,
       final double? price,
-      final List<String> documents}) = _$_HouseProcessRealInfoState;
+      final List<String> documents,
+      final int? reTypeId,
+      final int noBedroom,
+      final int noWc,
+      final int floors}) = _$_HouseProcessRealInfoState;
 
   @override
-  bool? get isRent;
+  RealEstateSell get sell;
   @override
   double? get area;
   @override
   double? get price;
   @override
   List<String> get documents;
+  @override
+  int? get reTypeId;
+  @override
+  int get noBedroom;
+  @override
+  int get noWc;
+  @override
+  int get floors;
   @override
   @JsonKey(ignore: true)
   _$$_HouseProcessRealInfoStateCopyWith<_$_HouseProcessRealInfoState>

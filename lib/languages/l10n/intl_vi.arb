@@ -8,6 +8,7 @@
   "cancel": "Huỷ",
   "info": "Thông báo",
   "error": "Lỗi",
+  "anErrorOccurred" : "Có lỗi xảy ra",
   "confirm": "Xác nhận",
   "allow": "Cho phép",
   "toProceedeYouNeedToEnableThePermissionsAbove": "Để tiếp tục, bạn cần bật các quyền ở trên",
@@ -82,5 +83,12 @@
   "apply": "Áp dụng",
   "reset": "Khôi phục",
   "done" : "Hoàn tất",
-  "addDocument" : "Thêm tài liệu"
+  "addDocument" : "Thêm tài liệu",
+  "noBedRoom" : "Số phòng ngủ",
+  "noBathRoom" : "Số phòng tắm",
+  "noFloor" : "Số tầng",
+  "rent" : "Cho thuê",
+  "sell" : "Bán",
+  "realEstateType" : "Loại bất động sản",
+  "realEstateDescription" : "Nhà riêng"
 }

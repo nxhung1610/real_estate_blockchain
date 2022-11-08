@@ -140,6 +140,16 @@ class S {
     );
   }
 
+  /// `An error occurred`
+  String get anErrorOccurred {
+    return Intl.message(
+      'An error occurred',
+      name: 'anErrorOccurred',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm`
   String get confirm {
     return Intl.message(
@@ -835,6 +845,76 @@ class S {
     return Intl.message(
       'Add Document',
       name: 'addDocument',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of bedroom`
+  String get noBedRoom {
+    return Intl.message(
+      'Number of bedroom',
+      name: 'noBedRoom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of bathroom`
+  String get noBathRoom {
+    return Intl.message(
+      'Number of bathroom',
+      name: 'noBathRoom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of floor`
+  String get noFloor {
+    return Intl.message(
+      'Number of floor',
+      name: 'noFloor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent`
+  String get rent {
+    return Intl.message(
+      'Rent',
+      name: 'rent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sell`
+  String get sell {
+    return Intl.message(
+      'Sell',
+      name: 'sell',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real estate type`
+  String get realEstateType {
+    return Intl.message(
+      'Real estate type',
+      name: 'realEstateType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Private house`
+  String get realEstateDescription {
+    return Intl.message(
+      'Private house',
+      name: 'realEstateDescription',
       desc: '',
       args: [],
     );
