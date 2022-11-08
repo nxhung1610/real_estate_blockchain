@@ -18,23 +18,22 @@ class HouseProcessRealInfoBloc
   HouseProcessRealInfoBloc(
     @factoryParam this._subcriber,
   ) : super(const HouseProcessRealInfoState()) {
-    on<_Started>((event, emit) {
-      _subcriber.stream.listen((event) {
-        event.onValidWithData(
-          ProcessState.realeStateInfo,
-          isValid(),
-          RealEstateInfo(
-            isRent: state.sell == RealEstateSell.rent,
-            area: state.area,
-            documents: state.documents,
-            floors: state.floors,
-            noBedroom: state.noBedroom,
-            noWc: state.noWc,
-            price: state.price,
-          ),
-        );
-      });
+    _subcriber.stream.listen((event) {
+      event.onValidWithData(
+        ProcessState.realeStateInfo,
+        isValid(),
+        RealEstateInfo(
+          isRent: state.sell == RealEstateSell.rent,
+          area: state.area,
+          documents: state.documents,
+          floors: state.floors,
+          noBedroom: state.noBedroom,
+          noWc: state.noWc,
+          price: state.price,
+        ),
+      );
     });
+    on<_Started>((event, emit) {});
     on<_ChangeTypeSell>((event, emit) {
       emit(state.copyWith(sell: event.sell));
     });

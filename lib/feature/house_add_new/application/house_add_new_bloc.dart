@@ -52,6 +52,9 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_OnRealEstateInfo>((event, emit) {
       emit(state.copyWith(realEstateInfo: event.realEstateInfo));
     });
+    on<_OnAmenity>((event, emit) {
+      emit(state.copyWith(amenities: event.amenities));
+    });
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
@@ -81,9 +84,14 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
             return;
           }
           break;
-        case ProcessState.postInfo:
+        case ProcessState.amenities:
+          if (data is List<RealEstateAmenity>) {
+            add(_OnAmenity(data));
+          } else {
+            return;
+          }
           break;
-        case ProcessState.postMedia:
+        case ProcessState.media:
           break;
         case ProcessState.schedule:
           break;

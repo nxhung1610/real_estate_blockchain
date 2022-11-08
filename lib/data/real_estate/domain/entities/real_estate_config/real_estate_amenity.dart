@@ -1,26 +1,26 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'amenity.g.dart';
+part 'real_estate_amenity.g.dart';
 
 @JsonSerializable()
-class Amenity extends Equatable {
+class RealEstateAmenity extends Equatable {
   final int? id;
   final String? name;
 
-  const Amenity({this.id, this.name});
+  const RealEstateAmenity({this.id, this.name});
 
-  factory Amenity.fromJson(Map<String, dynamic> json) {
-    return _$AmenityFromJson(json);
+  factory RealEstateAmenity.fromJson(Map<String, dynamic> json) {
+    return _$RealEstateAmenityFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$AmenityToJson(this);
+  Map<String, dynamic> toJson() => _$RealEstateAmenityToJson(this);
 
-  Amenity copyWith({
+  RealEstateAmenity copyWith({
     int? id,
     String? name,
   }) {
-    return Amenity(
+    return RealEstateAmenity(
       id: id ?? this.id,
       name: name ?? this.name,
     );

@@ -1,8 +1,8 @@
 enum ProcessState {
   address,
   realeStateInfo,
-  postInfo,
-  postMedia,
+  amenities,
+  media,
   schedule,
 }
 

@@ -8,4 +8,6 @@ class HouseAddNewEvent with _$HouseAddNewEvent {
       AddressChoosen addressChoosen) = _OnAddressChosen;
   const factory HouseAddNewEvent.onRealEstateInfo(
       RealEstateInfo realEstateInfo) = _OnRealEstateInfo;
+  const factory HouseAddNewEvent.onAmenity(List<RealEstateAmenity> amenities) =
+      _OnAmenity;
 }

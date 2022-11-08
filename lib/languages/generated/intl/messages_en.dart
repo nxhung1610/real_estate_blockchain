@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addDocument": MessageLookupByLibrary.simpleMessage("Add Document"),
         "addNewPropertyAddress":
             MessageLookupByLibrary.simpleMessage("Address"),
+        "addNewPropertyAmenities":
+            MessageLookupByLibrary.simpleMessage("Select Amenities"),
         "addNewPropertyMedia":
             MessageLookupByLibrary.simpleMessage("Videos & Photo"),
         "addNewPropertyPostInfo":

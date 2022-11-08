@@ -22,6 +22,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HouseAddNewEvent {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HouseAddNewEvent {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +157,7 @@ class _$_Setup implements _Setup {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
   }) {
     return setup(subcriber);
   }
@@ -162,6 +169,7 @@ class _$_Setup implements _Setup {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
   }) {
     return setup?.call(subcriber);
   }
@@ -173,6 +181,7 @@ class _$_Setup implements _Setup {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -188,6 +197,7 @@ class _$_Setup implements _Setup {
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
   }) {
     return setup(this);
   }
@@ -199,6 +209,7 @@ class _$_Setup implements _Setup {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
   }) {
     return setup?.call(this);
   }
@@ -210,6 +221,7 @@ class _$_Setup implements _Setup {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -273,6 +285,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
   }) {
     return nextPage();
   }
@@ -284,6 +297,7 @@ class _$_NextPage implements _NextPage {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
   }) {
     return nextPage?.call();
   }
@@ -295,6 +309,7 @@ class _$_NextPage implements _NextPage {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -310,6 +325,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
   }) {
     return nextPage(this);
   }
@@ -321,6 +337,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
   }) {
     return nextPage?.call(this);
   }
@@ -332,6 +349,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -415,6 +433,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
   }) {
     return onAddressChosen(addressChoosen);
   }
@@ -426,6 +445,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
   }) {
     return onAddressChosen?.call(addressChoosen);
   }
@@ -437,6 +457,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -452,6 +473,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
   }) {
     return onAddressChosen(this);
   }
@@ -463,6 +485,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
   }) {
     return onAddressChosen?.call(this);
   }
@@ -474,6 +497,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -563,6 +587,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
   }) {
     return onRealEstateInfo(realEstateInfo);
   }
@@ -574,6 +599,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
   }) {
     return onRealEstateInfo?.call(realEstateInfo);
   }
@@ -585,6 +611,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -600,6 +627,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(_NextPage value) nextPage,
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
   }) {
     return onRealEstateInfo(this);
   }
@@ -611,6 +639,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
   }) {
     return onRealEstateInfo?.call(this);
   }
@@ -622,6 +651,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(_NextPage value)? nextPage,
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -642,11 +672,171 @@ abstract class _OnRealEstateInfo implements HouseAddNewEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnAmenityCopyWith<$Res> {
+  factory _$$_OnAmenityCopyWith(
+          _$_OnAmenity value, $Res Function(_$_OnAmenity) then) =
+      __$$_OnAmenityCopyWithImpl<$Res>;
+  $Res call({List<RealEstateAmenity> amenities});
+}
+
+/// @nodoc
+class __$$_OnAmenityCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    implements _$$_OnAmenityCopyWith<$Res> {
+  __$$_OnAmenityCopyWithImpl(
+      _$_OnAmenity _value, $Res Function(_$_OnAmenity) _then)
+      : super(_value, (v) => _then(v as _$_OnAmenity));
+
+  @override
+  _$_OnAmenity get _value => super._value as _$_OnAmenity;
+
+  @override
+  $Res call({
+    Object? amenities = freezed,
+  }) {
+    return _then(_$_OnAmenity(
+      amenities == freezed
+          ? _value._amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<RealEstateAmenity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnAmenity implements _OnAmenity {
+  const _$_OnAmenity(final List<RealEstateAmenity> amenities)
+      : _amenities = amenities;
+
+  final List<RealEstateAmenity> _amenities;
+  @override
+  List<RealEstateAmenity> get amenities {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amenities);
+  }
+
+  @override
+  String toString() {
+    return 'HouseAddNewEvent.onAmenity(amenities: $amenities)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnAmenity &&
+            const DeepCollectionEquality()
+                .equals(other._amenities, _amenities));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_amenities));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_OnAmenityCopyWith<_$_OnAmenity> get copyWith =>
+      __$$_OnAmenityCopyWithImpl<_$_OnAmenity>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ValidateSubcriber subcriber) setup,
+    required TResult Function() nextPage,
+    required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+  }) {
+    return onAmenity(amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+  }) {
+    return onAmenity?.call(amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    required TResult orElse(),
+  }) {
+    if (onAmenity != null) {
+      return onAmenity(amenities);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_NextPage value) nextPage,
+    required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
+  }) {
+    return onAmenity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
+  }) {
+    return onAmenity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
+    required TResult orElse(),
+  }) {
+    if (onAmenity != null) {
+      return onAmenity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnAmenity implements HouseAddNewEvent {
+  const factory _OnAmenity(final List<RealEstateAmenity> amenities) =
+      _$_OnAmenity;
+
+  List<RealEstateAmenity> get amenities;
+  @JsonKey(ignore: true)
+  _$$_OnAmenityCopyWith<_$_OnAmenity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HouseAddNewState {
   ProcessState get state => throw _privateConstructorUsedError;
   RealEstateConfig? get config => throw _privateConstructorUsedError;
   AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
   RealEstateInfo? get realEstateInfo => throw _privateConstructorUsedError;
+  List<RealEstateAmenity>? get amenities => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -664,6 +854,7 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
+      List<RealEstateAmenity>? amenities,
       Status status});
 
   $StatusCopyWith<$Res> get status;
@@ -684,6 +875,7 @@ class _$HouseAddNewStateCopyWithImpl<$Res>
     Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
+    Object? amenities = freezed,
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
@@ -703,6 +895,10 @@ class _$HouseAddNewStateCopyWithImpl<$Res>
           ? _value.realEstateInfo
           : realEstateInfo // ignore: cast_nullable_to_non_nullable
               as RealEstateInfo?,
+      amenities: amenities == freezed
+          ? _value.amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<RealEstateAmenity>?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -730,6 +926,7 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
+      List<RealEstateAmenity>? amenities,
       Status status});
 
   @override
@@ -753,6 +950,7 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
     Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
+    Object? amenities = freezed,
     Object? status = freezed,
   }) {
     return _then(_$_HouseAddNewState(
@@ -772,6 +970,10 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
           ? _value.realEstateInfo
           : realEstateInfo // ignore: cast_nullable_to_non_nullable
               as RealEstateInfo?,
+      amenities: amenities == freezed
+          ? _value._amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<RealEstateAmenity>?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -788,7 +990,9 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       this.config,
       this.addressChoosen,
       this.realEstateInfo,
-      this.status = const Status.idle()});
+      final List<RealEstateAmenity>? amenities,
+      this.status = const Status.idle()})
+      : _amenities = amenities;
 
   @override
   @JsonKey()
@@ -799,13 +1003,22 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   final AddressChoosen? addressChoosen;
   @override
   final RealEstateInfo? realEstateInfo;
+  final List<RealEstateAmenity>? _amenities;
+  @override
+  List<RealEstateAmenity>? get amenities {
+    final value = _amenities;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, status: $status)';
+    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, status: $status)';
   }
 
   @override
@@ -819,6 +1032,8 @@ class _$_HouseAddNewState implements _HouseAddNewState {
                 .equals(other.addressChoosen, addressChoosen) &&
             const DeepCollectionEquality()
                 .equals(other.realEstateInfo, realEstateInfo) &&
+            const DeepCollectionEquality()
+                .equals(other._amenities, _amenities) &&
             const DeepCollectionEquality().equals(other.status, status));
   }
 
@@ -829,6 +1044,7 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       const DeepCollectionEquality().hash(config),
       const DeepCollectionEquality().hash(addressChoosen),
       const DeepCollectionEquality().hash(realEstateInfo),
+      const DeepCollectionEquality().hash(_amenities),
       const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
@@ -843,6 +1059,7 @@ abstract class _HouseAddNewState implements HouseAddNewState {
       final RealEstateConfig? config,
       final AddressChoosen? addressChoosen,
       final RealEstateInfo? realEstateInfo,
+      final List<RealEstateAmenity>? amenities,
       final Status status}) = _$_HouseAddNewState;
 
   @override
@@ -853,6 +1070,8 @@ abstract class _HouseAddNewState implements HouseAddNewState {
   AddressChoosen? get addressChoosen;
   @override
   RealEstateInfo? get realEstateInfo;
+  @override
+  List<RealEstateAmenity>? get amenities;
   @override
   Status get status;
   @override

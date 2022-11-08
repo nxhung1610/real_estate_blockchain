@@ -47,8 +47,12 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
             getIt.call<HouseProcessRealInfoBloc>(param1: validateSubcriber),
         child: const RealEstateInfoPage(),
       ),
-      ProcessState.postInfo: const PostInfoPage(),
-      ProcessState.postMedia: const VideoPhotoPage(),
+      ProcessState.amenities: BlocProvider(
+        create: (context) =>
+            getIt.call<HouseProcessAmentityBloc>(param1: validateSubcriber),
+        child: const AmenityPage(),
+      ),
+      ProcessState.media: const VideoPhotoPage(),
       ProcessState.schedule: Container(),
     };
     controller = PageController(initialPage: 0, keepPage: true);
@@ -106,14 +110,14 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                             case ProcessState.realeStateInfo:
                               title = s.addNewPropertyRealEstateInfo;
                               break;
-                            case ProcessState.postInfo:
-                              title = s.addNewPropertyPostInfo;
-                              break;
-                            case ProcessState.postMedia:
+                            case ProcessState.media:
                               title = s.addNewPropertyMedia;
                               break;
                             case ProcessState.schedule:
                               title = s.addNewPropertyPostSetup;
+                              break;
+                            case ProcessState.amenities:
+                              title = s.addNewPropertyAmenities;
                               break;
                           }
                           return Row(

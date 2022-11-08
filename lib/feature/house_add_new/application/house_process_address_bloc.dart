@@ -18,11 +18,11 @@ class HouseProcessAddressBloc
   final ValidateSubcriber _subcriber;
   HouseProcessAddressBloc(this._repository, @factoryParam this._subcriber)
       : super(const HouseProcessAddressState()) {
+    _subcriber.stream.listen((event) {
+      event.onValidWithData(
+          ProcessState.address, isValid(), state.addressChoosen);
+    });
     on<_Started>((event, emit) async {
-      _subcriber.stream.listen((event) {
-        event.onValidWithData(
-            ProcessState.address, isValid(), state.addressChoosen);
-      });
       final provinceData = await _repository.provinces();
       emit(
         state.copyWith(

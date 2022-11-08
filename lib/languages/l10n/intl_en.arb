@@ -62,6 +62,7 @@
   "addNewPropertyRealEstateInfo" : "Real Estate Info",
   "addNewPropertyPostInfo" : "Post Info",
   "addNewPropertyMedia" : "Videos & Photo",
+  "addNewPropertyAmenities" :"Select Amenities",
   "addNewPropertyPostSetup" : "Post Setup",
   "next" : "Next",
   "propertyAddress" : "Property Address",

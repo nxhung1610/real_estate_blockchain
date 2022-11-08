@@ -9,7 +9,7 @@ part of 'real_estate_config.dart';
 RealEstateConfig _$RealEstateConfigFromJson(Map<String, dynamic> json) =>
     RealEstateConfig(
       amenities: (json['amenities'] as List<dynamic>?)
-          ?.map((e) => Amenity.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => RealEstateAmenity.fromJson(e as Map<String, dynamic>))
           .toList(),
       realEstateTypes: (json['real_estate_types'] as List<dynamic>?)
           ?.map((e) => RealEstateType.fromJson(e as Map<String, dynamic>))

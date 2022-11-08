@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'amenity.dart';
+import 'real_estate_amenity.dart';
 import 'real_estate_post_type.dart';
 import 'real_estate_type.dart';
 
@@ -9,7 +9,7 @@ part 'real_estate_config.g.dart';
 
 @JsonSerializable()
 class RealEstateConfig extends Equatable {
-  final List<Amenity>? amenities;
+  final List<RealEstateAmenity>? amenities;
   @JsonKey(name: 'real_estate_types')
   final List<RealEstateType>? realEstateTypes;
   @JsonKey(name: 'real_estate_post_types')
@@ -28,7 +28,7 @@ class RealEstateConfig extends Equatable {
   Map<String, dynamic> toJson() => _$RealEstateConfigToJson(this);
 
   RealEstateConfig copyWith({
-    List<Amenity>? amenities,
+    List<RealEstateAmenity>? amenities,
     List<RealEstateType>? realEstateTypes,
     List<RealEstatePostType>? realEstatePostTypes,
   }) {

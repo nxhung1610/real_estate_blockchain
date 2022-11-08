@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addDocument": MessageLookupByLibrary.simpleMessage("Thêm tài liệu"),
         "addNewPropertyAddress":
             MessageLookupByLibrary.simpleMessage("Địa chỉ"),
+        "addNewPropertyAmenities":
+            MessageLookupByLibrary.simpleMessage("Tiện nghi"),
         "addNewPropertyMedia":
             MessageLookupByLibrary.simpleMessage("Hình ảnh & Video"),
         "addNewPropertyPostInfo":

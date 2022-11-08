@@ -630,6 +630,16 @@ class S {
     );
   }
 
+  /// `Select Amenities`
+  String get addNewPropertyAmenities {
+    return Intl.message(
+      'Select Amenities',
+      name: 'addNewPropertyAmenities',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Post Setup`
   String get addNewPropertyPostSetup {
     return Intl.message(

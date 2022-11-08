@@ -7,6 +7,7 @@ class HouseAddNewState with _$HouseAddNewState {
     RealEstateConfig? config,
     AddressChoosen? addressChoosen,
     RealEstateInfo? realEstateInfo,
+    List<RealEstateAmenity>? amenities,
     @Default(Status.idle()) Status status,
   }) = _HouseAddNewState;
 }
