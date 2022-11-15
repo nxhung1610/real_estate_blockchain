@@ -28,12 +28,12 @@ mixin _$RegisterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,13 +65,14 @@ mixin _$RegisterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,17 +93,18 @@ mixin _$RegisterEvent {
 abstract class $RegisterEventCopyWith<$Res> {
   factory $RegisterEventCopyWith(
           RegisterEvent value, $Res Function(RegisterEvent) then) =
-      _$RegisterEventCopyWithImpl<$Res>;
+      _$RegisterEventCopyWithImpl<$Res, RegisterEvent>;
 }
 
 /// @nodoc
-class _$RegisterEventCopyWithImpl<$Res>
+class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
     implements $RegisterEventCopyWith<$Res> {
   _$RegisterEventCopyWithImpl(this._value, this._then);
 
-  final RegisterEvent _value;
   // ignore: unused_field
-  final $Res Function(RegisterEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -111,28 +113,26 @@ abstract class _$$RegisterEventFirstNameChangedCopyWith<$Res> {
           _$RegisterEventFirstNameChanged value,
           $Res Function(_$RegisterEventFirstNameChanged) then) =
       __$$RegisterEventFirstNameChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String name});
 }
 
 /// @nodoc
 class __$$RegisterEventFirstNameChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterEventFirstNameChanged>
     implements _$$RegisterEventFirstNameChangedCopyWith<$Res> {
   __$$RegisterEventFirstNameChangedCopyWithImpl(
       _$RegisterEventFirstNameChanged _value,
       $Res Function(_$RegisterEventFirstNameChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventFirstNameChanged));
+      : super(_value, _then);
 
-  @override
-  _$RegisterEventFirstNameChanged get _value =>
-      super._value as _$RegisterEventFirstNameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
   }) {
     return _then(_$RegisterEventFirstNameChanged(
-      name == freezed
+      null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -158,15 +158,15 @@ class _$RegisterEventFirstNameChanged implements RegisterEventFirstNameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventFirstNameChanged &&
-            const DeepCollectionEquality().equals(other.name, name));
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RegisterEventFirstNameChangedCopyWith<_$RegisterEventFirstNameChanged>
       get copyWith => __$$RegisterEventFirstNameChangedCopyWithImpl<
           _$RegisterEventFirstNameChanged>(this, _$identity);
@@ -187,12 +187,12 @@ class _$RegisterEventFirstNameChanged implements RegisterEventFirstNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return firstNameChanged?.call(name);
   }
@@ -236,13 +236,14 @@ class _$RegisterEventFirstNameChanged implements RegisterEventFirstNameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return firstNameChanged?.call(this);
   }
@@ -282,28 +283,26 @@ abstract class _$$RegisterEventLastNameChangedCopyWith<$Res> {
           _$RegisterEventLastNameChanged value,
           $Res Function(_$RegisterEventLastNameChanged) then) =
       __$$RegisterEventLastNameChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String name});
 }
 
 /// @nodoc
 class __$$RegisterEventLastNameChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterEventLastNameChanged>
     implements _$$RegisterEventLastNameChangedCopyWith<$Res> {
   __$$RegisterEventLastNameChangedCopyWithImpl(
       _$RegisterEventLastNameChanged _value,
       $Res Function(_$RegisterEventLastNameChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventLastNameChanged));
+      : super(_value, _then);
 
-  @override
-  _$RegisterEventLastNameChanged get _value =>
-      super._value as _$RegisterEventLastNameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
   }) {
     return _then(_$RegisterEventLastNameChanged(
-      name == freezed
+      null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -329,15 +328,15 @@ class _$RegisterEventLastNameChanged implements RegisterEventLastNameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventLastNameChanged &&
-            const DeepCollectionEquality().equals(other.name, name));
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RegisterEventLastNameChangedCopyWith<_$RegisterEventLastNameChanged>
       get copyWith => __$$RegisterEventLastNameChangedCopyWithImpl<
           _$RegisterEventLastNameChanged>(this, _$identity);
@@ -358,12 +357,12 @@ class _$RegisterEventLastNameChanged implements RegisterEventLastNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return lastNameChanged?.call(name);
   }
@@ -407,13 +406,14 @@ class _$RegisterEventLastNameChanged implements RegisterEventLastNameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return lastNameChanged?.call(this);
   }
@@ -453,28 +453,26 @@ abstract class _$$RegisterEventPhoneNumberChangedCopyWith<$Res> {
           _$RegisterEventPhoneNumberChanged value,
           $Res Function(_$RegisterEventPhoneNumberChanged) then) =
       __$$RegisterEventPhoneNumberChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String phoneNumber});
 }
 
 /// @nodoc
 class __$$RegisterEventPhoneNumberChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterEventPhoneNumberChanged>
     implements _$$RegisterEventPhoneNumberChangedCopyWith<$Res> {
   __$$RegisterEventPhoneNumberChangedCopyWithImpl(
       _$RegisterEventPhoneNumberChanged _value,
       $Res Function(_$RegisterEventPhoneNumberChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventPhoneNumberChanged));
+      : super(_value, _then);
 
-  @override
-  _$RegisterEventPhoneNumberChanged get _value =>
-      super._value as _$RegisterEventPhoneNumberChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phoneNumber = freezed,
+    Object? phoneNumber = null,
   }) {
     return _then(_$RegisterEventPhoneNumberChanged(
-      phoneNumber == freezed
+      null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
@@ -501,16 +499,16 @@ class _$RegisterEventPhoneNumberChanged
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventPhoneNumberChanged &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber));
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(phoneNumber));
+  int get hashCode => Object.hash(runtimeType, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RegisterEventPhoneNumberChangedCopyWith<_$RegisterEventPhoneNumberChanged>
       get copyWith => __$$RegisterEventPhoneNumberChangedCopyWithImpl<
           _$RegisterEventPhoneNumberChanged>(this, _$identity);
@@ -531,12 +529,12 @@ class _$RegisterEventPhoneNumberChanged
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return phoneNumberChanged?.call(phoneNumber);
   }
@@ -580,13 +578,14 @@ class _$RegisterEventPhoneNumberChanged
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return phoneNumberChanged?.call(this);
   }
@@ -626,28 +625,26 @@ abstract class _$$RegisterEventPasswordChangedCopyWith<$Res> {
           _$RegisterEventPasswordChanged value,
           $Res Function(_$RegisterEventPasswordChanged) then) =
       __$$RegisterEventPasswordChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
 class __$$RegisterEventPasswordChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterEventPasswordChanged>
     implements _$$RegisterEventPasswordChangedCopyWith<$Res> {
   __$$RegisterEventPasswordChangedCopyWithImpl(
       _$RegisterEventPasswordChanged _value,
       $Res Function(_$RegisterEventPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventPasswordChanged));
+      : super(_value, _then);
 
-  @override
-  _$RegisterEventPasswordChanged get _value =>
-      super._value as _$RegisterEventPasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
     return _then(_$RegisterEventPasswordChanged(
-      password == freezed
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -673,15 +670,16 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventPasswordChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RegisterEventPasswordChangedCopyWith<_$RegisterEventPasswordChanged>
       get copyWith => __$$RegisterEventPasswordChangedCopyWithImpl<
           _$RegisterEventPasswordChanged>(this, _$identity);
@@ -702,12 +700,12 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return passwordChanged?.call(password);
   }
@@ -751,13 +749,14 @@ class _$RegisterEventPasswordChanged implements RegisterEventPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return passwordChanged?.call(this);
   }
@@ -797,28 +796,27 @@ abstract class _$$RegisterEventPasswordVisibleChangedCopyWith<$Res> {
           _$RegisterEventPasswordVisibleChanged value,
           $Res Function(_$RegisterEventPasswordVisibleChanged) then) =
       __$$RegisterEventPasswordVisibleChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool visible});
 }
 
 /// @nodoc
 class __$$RegisterEventPasswordVisibleChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res,
+        _$RegisterEventPasswordVisibleChanged>
     implements _$$RegisterEventPasswordVisibleChangedCopyWith<$Res> {
   __$$RegisterEventPasswordVisibleChangedCopyWithImpl(
       _$RegisterEventPasswordVisibleChanged _value,
       $Res Function(_$RegisterEventPasswordVisibleChanged) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventPasswordVisibleChanged));
+      : super(_value, _then);
 
-  @override
-  _$RegisterEventPasswordVisibleChanged get _value =>
-      super._value as _$RegisterEventPasswordVisibleChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? visible = freezed,
+    Object? visible = null,
   }) {
     return _then(_$RegisterEventPasswordVisibleChanged(
-      visible == freezed
+      null == visible
           ? _value.visible
           : visible // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -845,15 +843,15 @@ class _$RegisterEventPasswordVisibleChanged
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventPasswordVisibleChanged &&
-            const DeepCollectionEquality().equals(other.visible, visible));
+            (identical(other.visible, visible) || other.visible == visible));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(visible));
+  int get hashCode => Object.hash(runtimeType, visible);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$RegisterEventPasswordVisibleChangedCopyWith<
           _$RegisterEventPasswordVisibleChanged>
       get copyWith => __$$RegisterEventPasswordVisibleChangedCopyWithImpl<
@@ -875,12 +873,12 @@ class _$RegisterEventPasswordVisibleChanged
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return passwordVisibleChanged?.call(visible);
   }
@@ -924,13 +922,14 @@ class _$RegisterEventPasswordVisibleChanged
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return passwordVisibleChanged?.call(this);
   }
@@ -975,16 +974,12 @@ abstract class _$$RegisterEventReggisterPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$RegisterEventReggisterPressedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterEventReggisterPressed>
     implements _$$RegisterEventReggisterPressedCopyWith<$Res> {
   __$$RegisterEventReggisterPressedCopyWithImpl(
       _$RegisterEventReggisterPressed _value,
       $Res Function(_$RegisterEventReggisterPressed) _then)
-      : super(_value, (v) => _then(v as _$RegisterEventReggisterPressed));
-
-  @override
-  _$RegisterEventReggisterPressed get _value =>
-      super._value as _$RegisterEventReggisterPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1023,12 +1018,12 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? firstNameChanged,
-    TResult Function(String name)? lastNameChanged,
-    TResult Function(String phoneNumber)? phoneNumberChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(bool visible)? passwordVisibleChanged,
-    TResult Function()? registerPressed,
+    TResult? Function(String name)? firstNameChanged,
+    TResult? Function(String name)? lastNameChanged,
+    TResult? Function(String phoneNumber)? phoneNumberChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(bool visible)? passwordVisibleChanged,
+    TResult? Function()? registerPressed,
   }) {
     return registerPressed?.call();
   }
@@ -1072,13 +1067,14 @@ class _$RegisterEventReggisterPressed implements RegisterEventReggisterPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RegisterEventFirstNameChanged value)? firstNameChanged,
-    TResult Function(RegisterEventLastNameChanged value)? lastNameChanged,
-    TResult Function(RegisterEventPhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(RegisterEventPasswordChanged value)? passwordChanged,
-    TResult Function(RegisterEventPasswordVisibleChanged value)?
+    TResult? Function(RegisterEventFirstNameChanged value)? firstNameChanged,
+    TResult? Function(RegisterEventLastNameChanged value)? lastNameChanged,
+    TResult? Function(RegisterEventPhoneNumberChanged value)?
+        phoneNumberChanged,
+    TResult? Function(RegisterEventPasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterEventPasswordVisibleChanged value)?
         passwordVisibleChanged,
-    TResult Function(RegisterEventReggisterPressed value)? registerPressed,
+    TResult? Function(RegisterEventReggisterPressed value)? registerPressed,
   }) {
     return registerPressed?.call(this);
   }
@@ -1125,7 +1121,8 @@ mixin _$RegisterState {
 abstract class $RegisterStateCopyWith<$Res> {
   factory $RegisterStateCopyWith(
           RegisterState value, $Res Function(RegisterState) then) =
-      _$RegisterStateCopyWithImpl<$Res>;
+      _$RegisterStateCopyWithImpl<$Res, RegisterState>;
+  @useResult
   $Res call(
       {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
@@ -1138,55 +1135,58 @@ abstract class $RegisterStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res>
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
     implements $RegisterStateCopyWith<$Res> {
   _$RegisterStateCopyWithImpl(this._value, this._then);
 
-  final RegisterState _value;
   // ignore: unused_field
-  final $Res Function(RegisterState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phoneNumber = freezed,
-    Object? password = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? passwordVisible = freezed,
-    Object? status = freezed,
+    Object? phoneNumber = null,
+    Object? password = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? passwordVisible = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumberAuth,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
-      firstName: firstName == freezed
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as NameAuth,
-      lastName: lastName == freezed
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as NameAuth,
-      passwordVisible: passwordVisible == freezed
+      passwordVisible: null == passwordVisible
           ? _value.passwordVisible
           : passwordVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res> get status {
     return $StatusCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value));
+      return _then(_value.copyWith(status: value) as $Val);
     });
   }
 }
@@ -1198,6 +1198,7 @@ abstract class _$$_RegisterStateCopyWith<$Res>
           _$_RegisterState value, $Res Function(_$_RegisterState) then) =
       __$$_RegisterStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {PhoneNumberAuth phoneNumber,
       PasswordAuth password,
@@ -1212,46 +1213,44 @@ abstract class _$$_RegisterStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_RegisterStateCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$_RegisterState>
     implements _$$_RegisterStateCopyWith<$Res> {
   __$$_RegisterStateCopyWithImpl(
       _$_RegisterState _value, $Res Function(_$_RegisterState) _then)
-      : super(_value, (v) => _then(v as _$_RegisterState));
+      : super(_value, _then);
 
-  @override
-  _$_RegisterState get _value => super._value as _$_RegisterState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phoneNumber = freezed,
-    Object? password = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? passwordVisible = freezed,
-    Object? status = freezed,
+    Object? phoneNumber = null,
+    Object? password = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? passwordVisible = null,
+    Object? status = null,
   }) {
     return _then(_$_RegisterState(
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumberAuth,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as PasswordAuth,
-      firstName: firstName == freezed
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as NameAuth,
-      lastName: lastName == freezed
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as NameAuth,
-      passwordVisible: passwordVisible == freezed
+      passwordVisible: null == passwordVisible
           ? _value.passwordVisible
           : passwordVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
@@ -1295,28 +1294,26 @@ class _$_RegisterState implements _RegisterState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RegisterState &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other.firstName, firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordVisible, passwordVisible) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.passwordVisible, passwordVisible) ||
+                other.passwordVisible == passwordVisible) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(phoneNumber),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(firstName),
-      const DeepCollectionEquality().hash(lastName),
-      const DeepCollectionEquality().hash(passwordVisible),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, phoneNumber, password, firstName,
+      lastName, passwordVisible, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RegisterStateCopyWith<_$_RegisterState> get copyWith =>
       __$$_RegisterStateCopyWithImpl<_$_RegisterState>(this, _$identity);
 }

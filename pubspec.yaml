@@ -41,6 +41,8 @@ dependencies:
   dartz: ^0.10.1
   equatable: ^2.0.3
   json_annotation: ^4.6.0
+  file_picker: ^5.2.2
+  image_picker: ^0.8.6
   # UI
   go_router: ^5.0.5
   loader_overlay: ^2.0.7
@@ -84,8 +86,7 @@ dev_dependencies:
   change_app_package_name:
   # Builder
   injectable_generator:  
-  build_runner:  
-  go_router_builder:
+  build_runner: ^2.3.2
   flutter_gen_runner:
   hive_generator:
 

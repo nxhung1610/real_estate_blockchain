@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,6 +22,9 @@ class $EnvsGen {
 
   /// File path: envs/staging.env
   String get staging => 'envs/staging.env';
+
+  /// List of all assets
+  List<String> get values => [dev, prod, staging];
 }
 
 class $FontsGen {
@@ -47,6 +50,17 @@ class $FontsGen {
 
   /// File path: fonts/Manrope-SemiBold.ttf
   String get manropeSemiBold => 'fonts/Manrope-SemiBold.ttf';
+
+  /// List of all assets
+  List<String> get values => [
+        manropeBold,
+        manropeExtraBold,
+        manropeExtraLight,
+        manropeLight,
+        manropeMedium,
+        manropeRegular,
+        manropeSemiBold
+      ];
 }
 
 class $AssetsIconsGen {
@@ -197,6 +211,48 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        icArrowDown,
+        icArrowLeft,
+        icArrowRight,
+        icArrowUp,
+        icBathroom,
+        icBed,
+        icBtnPlus,
+        icCategoryLight,
+        icDirectUp,
+        icDocumentBold,
+        icDocumentLight,
+        icEditBold,
+        icEditLight,
+        icEyeHide,
+        icEyeShow,
+        icFilterLight,
+        icHeartBold,
+        icHeartLight,
+        icHome2,
+        icHomeBold,
+        icHomeLight,
+        icLocationBold,
+        icLocationLight,
+        icMessageBold,
+        icMessageLight,
+        icMyhomeBold,
+        icMyhomeLight,
+        icNotificationLight,
+        icProfileBold,
+        icProfileLight,
+        icRemove,
+        icSearchLight,
+        icSettingBold,
+        icSettingLight,
+        icSort,
+        icSquare,
+        icVideoTime,
+        logo
+      ];
 }
 
 class $AssetsImagesGen {
@@ -213,6 +269,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/onboarding2.png
   AssetGenImage get onboarding2 =>
       const AssetGenImage('assets/images/onboarding2.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [myHomeBackground, onboarding1, onboarding2];
 }
 
 class $AssetsLocationsGen {
@@ -234,6 +294,10 @@ class $AssetsLocationsGen {
 
   /// File path: assets/locations/wards.json
   String get wards => 'assets/locations/wards.json';
+
+  /// List of all assets
+  List<String> get values =>
+      [administrativeRegions, administrativeUnits, districts, provinces, wards];
 }
 
 class $AssetsLottiesGen {
@@ -241,6 +305,9 @@ class $AssetsLottiesGen {
 
   /// File path: assets/lotties/lotties_upload_file.json
   String get lottiesUploadFile => 'assets/lotties/lotties_upload_file.json';
+
+  /// List of all assets
+  List<String> get values => [lottiesUploadFile];
 }
 
 class Assets {
@@ -312,6 +379,8 @@ class AssetGenImage {
     );
   }
 
+  ImageProvider provider() => AssetImage(_assetName);
+
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -364,4 +433,6 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }

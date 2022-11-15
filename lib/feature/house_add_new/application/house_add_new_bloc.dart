@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -55,6 +56,9 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_OnAmenity>((event, emit) {
       emit(state.copyWith(amenities: event.amenities));
     });
+    on<_OnMedia>((event, emit) {
+      emit(state.copyWith(media: event.media));
+    });
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
@@ -92,6 +96,11 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
           }
           break;
         case ProcessState.media:
+          if (data is List<XFile>) {
+            add(_OnMedia(data));
+          } else {
+            return;
+          }
           break;
         case ProcessState.schedule:
           break;

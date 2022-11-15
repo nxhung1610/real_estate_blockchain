@@ -26,10 +26,10 @@ mixin _$Status {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$Status {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusIdle value)? idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,16 +71,18 @@ mixin _$Status {
 /// @nodoc
 abstract class $StatusCopyWith<$Res> {
   factory $StatusCopyWith(Status value, $Res Function(Status) then) =
-      _$StatusCopyWithImpl<$Res>;
+      _$StatusCopyWithImpl<$Res, Status>;
 }
 
 /// @nodoc
-class _$StatusCopyWithImpl<$Res> implements $StatusCopyWith<$Res> {
+class _$StatusCopyWithImpl<$Res, $Val extends Status>
+    implements $StatusCopyWith<$Res> {
   _$StatusCopyWithImpl(this._value, this._then);
 
-  final Status _value;
   // ignore: unused_field
-  final $Res Function(Status) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -88,25 +90,25 @@ abstract class _$$StatusSuccessCopyWith<$Res> {
   factory _$$StatusSuccessCopyWith(
           _$StatusSuccess value, $Res Function(_$StatusSuccess) then) =
       __$$StatusSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic value});
 }
 
 /// @nodoc
-class __$$StatusSuccessCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
+class __$$StatusSuccessCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusSuccess>
     implements _$$StatusSuccessCopyWith<$Res> {
   __$$StatusSuccessCopyWithImpl(
       _$StatusSuccess _value, $Res Function(_$StatusSuccess) _then)
-      : super(_value, (v) => _then(v as _$StatusSuccess));
+      : super(_value, _then);
 
-  @override
-  _$StatusSuccess get _value => super._value as _$StatusSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$StatusSuccess(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -141,6 +143,7 @@ class _$StatusSuccess implements StatusSuccess {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StatusSuccessCopyWith<_$StatusSuccess> get copyWith =>
       __$$StatusSuccessCopyWithImpl<_$StatusSuccess>(this, _$identity);
 
@@ -158,10 +161,10 @@ class _$StatusSuccess implements StatusSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? idle,
   }) {
     return success?.call(value);
   }
@@ -195,10 +198,10 @@ class _$StatusSuccess implements StatusSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusIdle value)? idle,
   }) {
     return success?.call(this);
   }
@@ -233,25 +236,25 @@ abstract class _$$StatusFailureCopyWith<$Res> {
   factory _$$StatusFailureCopyWith(
           _$StatusFailure value, $Res Function(_$StatusFailure) then) =
       __$$StatusFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic value});
 }
 
 /// @nodoc
-class __$$StatusFailureCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
+class __$$StatusFailureCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusFailure>
     implements _$$StatusFailureCopyWith<$Res> {
   __$$StatusFailureCopyWithImpl(
       _$StatusFailure _value, $Res Function(_$StatusFailure) _then)
-      : super(_value, (v) => _then(v as _$StatusFailure));
+      : super(_value, _then);
 
-  @override
-  _$StatusFailure get _value => super._value as _$StatusFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$StatusFailure(
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -286,6 +289,7 @@ class _$StatusFailure implements StatusFailure {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$StatusFailureCopyWith<_$StatusFailure> get copyWith =>
       __$$StatusFailureCopyWithImpl<_$StatusFailure>(this, _$identity);
 
@@ -303,10 +307,10 @@ class _$StatusFailure implements StatusFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? idle,
   }) {
     return failure?.call(value);
   }
@@ -340,10 +344,10 @@ class _$StatusFailure implements StatusFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusIdle value)? idle,
   }) {
     return failure?.call(this);
   }
@@ -381,14 +385,12 @@ abstract class _$$StatusLoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$StatusLoadingCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
+class __$$StatusLoadingCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusLoading>
     implements _$$StatusLoadingCopyWith<$Res> {
   __$$StatusLoadingCopyWithImpl(
       _$StatusLoading _value, $Res Function(_$StatusLoading) _then)
-      : super(_value, (v) => _then(v as _$StatusLoading));
-
-  @override
-  _$StatusLoading get _value => super._value as _$StatusLoading;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -424,10 +426,10 @@ class _$StatusLoading implements StatusLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? idle,
   }) {
     return loading?.call();
   }
@@ -461,10 +463,10 @@ class _$StatusLoading implements StatusLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusIdle value)? idle,
   }) {
     return loading?.call(this);
   }
@@ -497,14 +499,12 @@ abstract class _$$StatusIdleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$StatusIdleCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
+class __$$StatusIdleCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusIdle>
     implements _$$StatusIdleCopyWith<$Res> {
   __$$StatusIdleCopyWithImpl(
       _$StatusIdle _value, $Res Function(_$StatusIdle) _then)
-      : super(_value, (v) => _then(v as _$StatusIdle));
-
-  @override
-  _$StatusIdle get _value => super._value as _$StatusIdle;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -540,10 +540,10 @@ class _$StatusIdle implements StatusIdle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(dynamic value)? success,
-    TResult Function(dynamic value)? failure,
-    TResult Function()? loading,
-    TResult Function()? idle,
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? idle,
   }) {
     return idle?.call();
   }
@@ -577,10 +577,10 @@ class _$StatusIdle implements StatusIdle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StatusSuccess value)? success,
-    TResult Function(StatusFailure value)? failure,
-    TResult Function(StatusLoading value)? loading,
-    TResult Function(StatusIdle value)? idle,
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusIdle value)? idle,
   }) {
     return idle?.call(this);
   }

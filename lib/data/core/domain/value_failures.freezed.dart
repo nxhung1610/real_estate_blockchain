@@ -28,11 +28,11 @@ mixin _$ValueFailures<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,12 +59,12 @@ mixin _$ValueFailures<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,29 +88,32 @@ mixin _$ValueFailures<T> {
 abstract class $ValueFailuresCopyWith<T, $Res> {
   factory $ValueFailuresCopyWith(
           ValueFailures<T> value, $Res Function(ValueFailures<T>) then) =
-      _$ValueFailuresCopyWithImpl<T, $Res>;
+      _$ValueFailuresCopyWithImpl<T, $Res, ValueFailures<T>>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$ValueFailuresCopyWithImpl<T, $Res>
+class _$ValueFailuresCopyWithImpl<T, $Res, $Val extends ValueFailures<T>>
     implements $ValueFailuresCopyWith<T, $Res> {
   _$ValueFailuresCopyWithImpl(this._value, this._then);
 
-  final ValueFailures<T> _value;
   // ignore: unused_field
-  final $Res Function(ValueFailures<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_value.copyWith(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-    ));
+    ) as $Val);
   }
 }
 
@@ -122,28 +125,26 @@ abstract class _$$ValueFailuresInvalidEmailCopyWith<T, $Res>
           $Res Function(_$ValueFailuresInvalidEmail<T>) then) =
       __$$ValueFailuresInvalidEmailCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$ValueFailuresInvalidEmailCopyWithImpl<T, $Res>
-    extends _$ValueFailuresCopyWithImpl<T, $Res>
+    extends _$ValueFailuresCopyWithImpl<T, $Res, _$ValueFailuresInvalidEmail<T>>
     implements _$$ValueFailuresInvalidEmailCopyWith<T, $Res> {
   __$$ValueFailuresInvalidEmailCopyWithImpl(
       _$ValueFailuresInvalidEmail<T> _value,
       $Res Function(_$ValueFailuresInvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailuresInvalidEmail<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailuresInvalidEmail<T> get _value =>
-      super._value as _$ValueFailuresInvalidEmail<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$ValueFailuresInvalidEmail<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -179,6 +180,7 @@ class _$ValueFailuresInvalidEmail<T> implements ValueFailuresInvalidEmail<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailuresInvalidEmailCopyWith<T, _$ValueFailuresInvalidEmail<T>>
       get copyWith => __$$ValueFailuresInvalidEmailCopyWithImpl<T,
           _$ValueFailuresInvalidEmail<T>>(this, _$identity);
@@ -198,11 +200,11 @@ class _$ValueFailuresInvalidEmail<T> implements ValueFailuresInvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -241,12 +243,12 @@ class _$ValueFailuresInvalidEmail<T> implements ValueFailuresInvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) {
     return invalidEmail?.call(this);
   }
@@ -289,28 +291,27 @@ abstract class _$$ValueFailuresInvalidPasswordCopyWith<T, $Res>
           $Res Function(_$ValueFailuresInvalidPassword<T>) then) =
       __$$ValueFailuresInvalidPasswordCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$ValueFailuresInvalidPasswordCopyWithImpl<T, $Res>
-    extends _$ValueFailuresCopyWithImpl<T, $Res>
+    extends _$ValueFailuresCopyWithImpl<T, $Res,
+        _$ValueFailuresInvalidPassword<T>>
     implements _$$ValueFailuresInvalidPasswordCopyWith<T, $Res> {
   __$$ValueFailuresInvalidPasswordCopyWithImpl(
       _$ValueFailuresInvalidPassword<T> _value,
       $Res Function(_$ValueFailuresInvalidPassword<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailuresInvalidPassword<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailuresInvalidPassword<T> get _value =>
-      super._value as _$ValueFailuresInvalidPassword<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$ValueFailuresInvalidPassword<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -347,6 +348,7 @@ class _$ValueFailuresInvalidPassword<T>
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailuresInvalidPasswordCopyWith<T, _$ValueFailuresInvalidPassword<T>>
       get copyWith => __$$ValueFailuresInvalidPasswordCopyWithImpl<T,
           _$ValueFailuresInvalidPassword<T>>(this, _$identity);
@@ -366,11 +368,11 @@ class _$ValueFailuresInvalidPassword<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) {
     return invalidPassword?.call(failedValue);
   }
@@ -409,12 +411,12 @@ class _$ValueFailuresInvalidPassword<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) {
     return invalidPassword?.call(this);
   }
@@ -457,28 +459,27 @@ abstract class _$$ValueFailuresInvalidPhoneNumberCopyWith<T, $Res>
           $Res Function(_$ValueFailuresInvalidPhoneNumber<T>) then) =
       __$$ValueFailuresInvalidPhoneNumberCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$ValueFailuresInvalidPhoneNumberCopyWithImpl<T, $Res>
-    extends _$ValueFailuresCopyWithImpl<T, $Res>
+    extends _$ValueFailuresCopyWithImpl<T, $Res,
+        _$ValueFailuresInvalidPhoneNumber<T>>
     implements _$$ValueFailuresInvalidPhoneNumberCopyWith<T, $Res> {
   __$$ValueFailuresInvalidPhoneNumberCopyWithImpl(
       _$ValueFailuresInvalidPhoneNumber<T> _value,
       $Res Function(_$ValueFailuresInvalidPhoneNumber<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailuresInvalidPhoneNumber<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailuresInvalidPhoneNumber<T> get _value =>
-      super._value as _$ValueFailuresInvalidPhoneNumber<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$ValueFailuresInvalidPhoneNumber<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -515,6 +516,7 @@ class _$ValueFailuresInvalidPhoneNumber<T>
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailuresInvalidPhoneNumberCopyWith<T,
           _$ValueFailuresInvalidPhoneNumber<T>>
       get copyWith => __$$ValueFailuresInvalidPhoneNumberCopyWithImpl<T,
@@ -535,11 +537,11 @@ class _$ValueFailuresInvalidPhoneNumber<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) {
     return invalidPhoneNumber?.call(failedValue);
   }
@@ -578,12 +580,12 @@ class _$ValueFailuresInvalidPhoneNumber<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) {
     return invalidPhoneNumber?.call(this);
   }
@@ -627,28 +629,27 @@ abstract class _$$ValueFailuresInvalidFullNameCopyWith<T, $Res>
           $Res Function(_$ValueFailuresInvalidFullName<T>) then) =
       __$$ValueFailuresInvalidFullNameCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$ValueFailuresInvalidFullNameCopyWithImpl<T, $Res>
-    extends _$ValueFailuresCopyWithImpl<T, $Res>
+    extends _$ValueFailuresCopyWithImpl<T, $Res,
+        _$ValueFailuresInvalidFullName<T>>
     implements _$$ValueFailuresInvalidFullNameCopyWith<T, $Res> {
   __$$ValueFailuresInvalidFullNameCopyWithImpl(
       _$ValueFailuresInvalidFullName<T> _value,
       $Res Function(_$ValueFailuresInvalidFullName<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailuresInvalidFullName<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailuresInvalidFullName<T> get _value =>
-      super._value as _$ValueFailuresInvalidFullName<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$ValueFailuresInvalidFullName<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -685,6 +686,7 @@ class _$ValueFailuresInvalidFullName<T>
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailuresInvalidFullNameCopyWith<T, _$ValueFailuresInvalidFullName<T>>
       get copyWith => __$$ValueFailuresInvalidFullNameCopyWithImpl<T,
           _$ValueFailuresInvalidFullName<T>>(this, _$identity);
@@ -704,11 +706,11 @@ class _$ValueFailuresInvalidFullName<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) {
     return invalidFullName?.call(failedValue);
   }
@@ -747,12 +749,12 @@ class _$ValueFailuresInvalidFullName<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) {
     return invalidFullName?.call(this);
   }
@@ -795,27 +797,25 @@ abstract class _$$ValueFailuresInvalidNameCopyWith<T, $Res>
           $Res Function(_$ValueFailuresInvalidName<T>) then) =
       __$$ValueFailuresInvalidNameCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$ValueFailuresInvalidNameCopyWithImpl<T, $Res>
-    extends _$ValueFailuresCopyWithImpl<T, $Res>
+    extends _$ValueFailuresCopyWithImpl<T, $Res, _$ValueFailuresInvalidName<T>>
     implements _$$ValueFailuresInvalidNameCopyWith<T, $Res> {
   __$$ValueFailuresInvalidNameCopyWithImpl(_$ValueFailuresInvalidName<T> _value,
       $Res Function(_$ValueFailuresInvalidName<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailuresInvalidName<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailuresInvalidName<T> get _value =>
-      super._value as _$ValueFailuresInvalidName<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$ValueFailuresInvalidName<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -851,6 +851,7 @@ class _$ValueFailuresInvalidName<T> implements ValueFailuresInvalidName<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailuresInvalidNameCopyWith<T, _$ValueFailuresInvalidName<T>>
       get copyWith => __$$ValueFailuresInvalidNameCopyWithImpl<T,
           _$ValueFailuresInvalidName<T>>(this, _$identity);
@@ -870,11 +871,11 @@ class _$ValueFailuresInvalidName<T> implements ValueFailuresInvalidName<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? invalidFullName,
-    TResult Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidFullName,
+    TResult? Function(T failedValue)? invalidName,
   }) {
     return invalidName?.call(failedValue);
   }
@@ -913,12 +914,12 @@ class _$ValueFailuresInvalidName<T> implements ValueFailuresInvalidName<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailuresInvalidPhoneNumber<T> value)?
+    TResult? Function(ValueFailuresInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailuresInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailuresInvalidPhoneNumber<T> value)?
         invalidPhoneNumber,
-    TResult Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
-    TResult Function(ValueFailuresInvalidName<T> value)? invalidName,
+    TResult? Function(ValueFailuresInvalidFullName<T> value)? invalidFullName,
+    TResult? Function(ValueFailuresInvalidName<T> value)? invalidName,
   }) {
     return invalidName?.call(this);
   }

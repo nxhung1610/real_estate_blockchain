@@ -23,7 +23,7 @@ mixin _$MessageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult? Function()? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$MessageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult? Function(_Started value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,16 +54,18 @@ mixin _$MessageEvent {
 abstract class $MessageEventCopyWith<$Res> {
   factory $MessageEventCopyWith(
           MessageEvent value, $Res Function(MessageEvent) then) =
-      _$MessageEventCopyWithImpl<$Res>;
+      _$MessageEventCopyWithImpl<$Res, MessageEvent>;
 }
 
 /// @nodoc
-class _$MessageEventCopyWithImpl<$Res> implements $MessageEventCopyWith<$Res> {
+class _$MessageEventCopyWithImpl<$Res, $Val extends MessageEvent>
+    implements $MessageEventCopyWith<$Res> {
   _$MessageEventCopyWithImpl(this._value, this._then);
 
-  final MessageEvent _value;
   // ignore: unused_field
-  final $Res Function(MessageEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -74,13 +76,11 @@ abstract class _$$_StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$MessageEventCopyWithImpl<$Res>
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$MessageEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
-
-  @override
-  _$_Started get _value => super._value as _$_Started;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -113,7 +113,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult? Function()? started,
   }) {
     return started?.call();
   }
@@ -141,7 +141,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult? Function(_Started value)? started,
   }) {
     return started?.call(this);
   }
@@ -172,7 +172,7 @@ mixin _$MessageState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult? Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,7 +188,7 @@ mixin _$MessageState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Initial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -203,16 +203,18 @@ mixin _$MessageState {
 abstract class $MessageStateCopyWith<$Res> {
   factory $MessageStateCopyWith(
           MessageState value, $Res Function(MessageState) then) =
-      _$MessageStateCopyWithImpl<$Res>;
+      _$MessageStateCopyWithImpl<$Res, MessageState>;
 }
 
 /// @nodoc
-class _$MessageStateCopyWithImpl<$Res> implements $MessageStateCopyWith<$Res> {
+class _$MessageStateCopyWithImpl<$Res, $Val extends MessageState>
+    implements $MessageStateCopyWith<$Res> {
   _$MessageStateCopyWithImpl(this._value, this._then);
 
-  final MessageState _value;
   // ignore: unused_field
-  final $Res Function(MessageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -223,13 +225,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$MessageStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$MessageStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -262,7 +262,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult? Function()? initial,
   }) {
     return initial?.call();
   }
@@ -290,7 +290,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Initial value)? initial,
   }) {
     return initial?.call(this);
   }

@@ -26,10 +26,10 @@ mixin _$AppEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Locale locale)? changedLanguage,
-    TResult Function(ThemeMode mode)? changedThemeMode,
-    TResult Function(bool status)? changeFirstLaunchStatus,
+    TResult? Function()? started,
+    TResult? Function(Locale locale)? changedLanguage,
+    TResult? Function(ThemeMode mode)? changedThemeMode,
+    TResult? Function(bool status)? changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,10 +52,10 @@ mixin _$AppEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppEventStarted value)? started,
-    TResult Function(AppEventChangedLanguage value)? changedLanguage,
-    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
-    TResult Function(AppEventChangedFirstLaunchStatus value)?
+    TResult? Function(AppEventStarted value)? started,
+    TResult? Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult? Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult? Function(AppEventChangedFirstLaunchStatus value)?
         changeFirstLaunchStatus,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,16 +74,18 @@ mixin _$AppEvent {
 /// @nodoc
 abstract class $AppEventCopyWith<$Res> {
   factory $AppEventCopyWith(AppEvent value, $Res Function(AppEvent) then) =
-      _$AppEventCopyWithImpl<$Res>;
+      _$AppEventCopyWithImpl<$Res, AppEvent>;
 }
 
 /// @nodoc
-class _$AppEventCopyWithImpl<$Res> implements $AppEventCopyWith<$Res> {
+class _$AppEventCopyWithImpl<$Res, $Val extends AppEvent>
+    implements $AppEventCopyWith<$Res> {
   _$AppEventCopyWithImpl(this._value, this._then);
 
-  final AppEvent _value;
   // ignore: unused_field
-  final $Res Function(AppEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,14 +96,12 @@ abstract class _$$AppEventStartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppEventStartedCopyWithImpl<$Res> extends _$AppEventCopyWithImpl<$Res>
+class __$$AppEventStartedCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventStarted>
     implements _$$AppEventStartedCopyWith<$Res> {
   __$$AppEventStartedCopyWithImpl(
       _$AppEventStarted _value, $Res Function(_$AppEventStarted) _then)
-      : super(_value, (v) => _then(v as _$AppEventStarted));
-
-  @override
-  _$AppEventStarted get _value => super._value as _$AppEventStarted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -137,10 +137,10 @@ class _$AppEventStarted implements AppEventStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Locale locale)? changedLanguage,
-    TResult Function(ThemeMode mode)? changedThemeMode,
-    TResult Function(bool status)? changeFirstLaunchStatus,
+    TResult? Function()? started,
+    TResult? Function(Locale locale)? changedLanguage,
+    TResult? Function(ThemeMode mode)? changedThemeMode,
+    TResult? Function(bool status)? changeFirstLaunchStatus,
   }) {
     return started?.call();
   }
@@ -175,10 +175,10 @@ class _$AppEventStarted implements AppEventStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppEventStarted value)? started,
-    TResult Function(AppEventChangedLanguage value)? changedLanguage,
-    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
-    TResult Function(AppEventChangedFirstLaunchStatus value)?
+    TResult? Function(AppEventStarted value)? started,
+    TResult? Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult? Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult? Function(AppEventChangedFirstLaunchStatus value)?
         changeFirstLaunchStatus,
   }) {
     return started?.call(this);
@@ -210,27 +210,25 @@ abstract class _$$AppEventChangedLanguageCopyWith<$Res> {
   factory _$$AppEventChangedLanguageCopyWith(_$AppEventChangedLanguage value,
           $Res Function(_$AppEventChangedLanguage) then) =
       __$$AppEventChangedLanguageCopyWithImpl<$Res>;
+  @useResult
   $Res call({Locale locale});
 }
 
 /// @nodoc
 class __$$AppEventChangedLanguageCopyWithImpl<$Res>
-    extends _$AppEventCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventChangedLanguage>
     implements _$$AppEventChangedLanguageCopyWith<$Res> {
   __$$AppEventChangedLanguageCopyWithImpl(_$AppEventChangedLanguage _value,
       $Res Function(_$AppEventChangedLanguage) _then)
-      : super(_value, (v) => _then(v as _$AppEventChangedLanguage));
+      : super(_value, _then);
 
-  @override
-  _$AppEventChangedLanguage get _value =>
-      super._value as _$AppEventChangedLanguage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locale = freezed,
+    Object? locale = null,
   }) {
     return _then(_$AppEventChangedLanguage(
-      locale == freezed
+      null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as Locale,
@@ -256,15 +254,15 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppEventChangedLanguage &&
-            const DeepCollectionEquality().equals(other.locale, locale));
+            (identical(other.locale, locale) || other.locale == locale));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
+  int get hashCode => Object.hash(runtimeType, locale);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$AppEventChangedLanguageCopyWith<_$AppEventChangedLanguage> get copyWith =>
       __$$AppEventChangedLanguageCopyWithImpl<_$AppEventChangedLanguage>(
           this, _$identity);
@@ -283,10 +281,10 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Locale locale)? changedLanguage,
-    TResult Function(ThemeMode mode)? changedThemeMode,
-    TResult Function(bool status)? changeFirstLaunchStatus,
+    TResult? Function()? started,
+    TResult? Function(Locale locale)? changedLanguage,
+    TResult? Function(ThemeMode mode)? changedThemeMode,
+    TResult? Function(bool status)? changeFirstLaunchStatus,
   }) {
     return changedLanguage?.call(locale);
   }
@@ -321,10 +319,10 @@ class _$AppEventChangedLanguage implements AppEventChangedLanguage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppEventStarted value)? started,
-    TResult Function(AppEventChangedLanguage value)? changedLanguage,
-    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
-    TResult Function(AppEventChangedFirstLaunchStatus value)?
+    TResult? Function(AppEventStarted value)? started,
+    TResult? Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult? Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult? Function(AppEventChangedFirstLaunchStatus value)?
         changeFirstLaunchStatus,
   }) {
     return changedLanguage?.call(this);
@@ -362,27 +360,25 @@ abstract class _$$AppEventChangedThemeModeCopyWith<$Res> {
   factory _$$AppEventChangedThemeModeCopyWith(_$AppEventChangedThemeMode value,
           $Res Function(_$AppEventChangedThemeMode) then) =
       __$$AppEventChangedThemeModeCopyWithImpl<$Res>;
+  @useResult
   $Res call({ThemeMode mode});
 }
 
 /// @nodoc
 class __$$AppEventChangedThemeModeCopyWithImpl<$Res>
-    extends _$AppEventCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventChangedThemeMode>
     implements _$$AppEventChangedThemeModeCopyWith<$Res> {
   __$$AppEventChangedThemeModeCopyWithImpl(_$AppEventChangedThemeMode _value,
       $Res Function(_$AppEventChangedThemeMode) _then)
-      : super(_value, (v) => _then(v as _$AppEventChangedThemeMode));
+      : super(_value, _then);
 
-  @override
-  _$AppEventChangedThemeMode get _value =>
-      super._value as _$AppEventChangedThemeMode;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mode = freezed,
+    Object? mode = null,
   }) {
     return _then(_$AppEventChangedThemeMode(
-      mode == freezed
+      null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
@@ -408,15 +404,15 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppEventChangedThemeMode &&
-            const DeepCollectionEquality().equals(other.mode, mode));
+            (identical(other.mode, mode) || other.mode == mode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mode));
+  int get hashCode => Object.hash(runtimeType, mode);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$AppEventChangedThemeModeCopyWith<_$AppEventChangedThemeMode>
       get copyWith =>
           __$$AppEventChangedThemeModeCopyWithImpl<_$AppEventChangedThemeMode>(
@@ -436,10 +432,10 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Locale locale)? changedLanguage,
-    TResult Function(ThemeMode mode)? changedThemeMode,
-    TResult Function(bool status)? changeFirstLaunchStatus,
+    TResult? Function()? started,
+    TResult? Function(Locale locale)? changedLanguage,
+    TResult? Function(ThemeMode mode)? changedThemeMode,
+    TResult? Function(bool status)? changeFirstLaunchStatus,
   }) {
     return changedThemeMode?.call(mode);
   }
@@ -474,10 +470,10 @@ class _$AppEventChangedThemeMode implements AppEventChangedThemeMode {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppEventStarted value)? started,
-    TResult Function(AppEventChangedLanguage value)? changedLanguage,
-    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
-    TResult Function(AppEventChangedFirstLaunchStatus value)?
+    TResult? Function(AppEventStarted value)? started,
+    TResult? Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult? Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult? Function(AppEventChangedFirstLaunchStatus value)?
         changeFirstLaunchStatus,
   }) {
     return changedThemeMode?.call(this);
@@ -516,28 +512,26 @@ abstract class _$$AppEventChangedFirstLaunchStatusCopyWith<$Res> {
           _$AppEventChangedFirstLaunchStatus value,
           $Res Function(_$AppEventChangedFirstLaunchStatus) then) =
       __$$AppEventChangedFirstLaunchStatusCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool status});
 }
 
 /// @nodoc
 class __$$AppEventChangedFirstLaunchStatusCopyWithImpl<$Res>
-    extends _$AppEventCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventChangedFirstLaunchStatus>
     implements _$$AppEventChangedFirstLaunchStatusCopyWith<$Res> {
   __$$AppEventChangedFirstLaunchStatusCopyWithImpl(
       _$AppEventChangedFirstLaunchStatus _value,
       $Res Function(_$AppEventChangedFirstLaunchStatus) _then)
-      : super(_value, (v) => _then(v as _$AppEventChangedFirstLaunchStatus));
+      : super(_value, _then);
 
-  @override
-  _$AppEventChangedFirstLaunchStatus get _value =>
-      super._value as _$AppEventChangedFirstLaunchStatus;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_$AppEventChangedFirstLaunchStatus(
-      status == freezed
+      null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -564,15 +558,15 @@ class _$AppEventChangedFirstLaunchStatus
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppEventChangedFirstLaunchStatus &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$AppEventChangedFirstLaunchStatusCopyWith<
           _$AppEventChangedFirstLaunchStatus>
       get copyWith => __$$AppEventChangedFirstLaunchStatusCopyWithImpl<
@@ -592,10 +586,10 @@ class _$AppEventChangedFirstLaunchStatus
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Locale locale)? changedLanguage,
-    TResult Function(ThemeMode mode)? changedThemeMode,
-    TResult Function(bool status)? changeFirstLaunchStatus,
+    TResult? Function()? started,
+    TResult? Function(Locale locale)? changedLanguage,
+    TResult? Function(ThemeMode mode)? changedThemeMode,
+    TResult? Function(bool status)? changeFirstLaunchStatus,
   }) {
     return changeFirstLaunchStatus?.call(status);
   }
@@ -630,10 +624,10 @@ class _$AppEventChangedFirstLaunchStatus
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppEventStarted value)? started,
-    TResult Function(AppEventChangedLanguage value)? changedLanguage,
-    TResult Function(AppEventChangedThemeMode value)? changedThemeMode,
-    TResult Function(AppEventChangedFirstLaunchStatus value)?
+    TResult? Function(AppEventStarted value)? started,
+    TResult? Function(AppEventChangedLanguage value)? changedLanguage,
+    TResult? Function(AppEventChangedThemeMode value)? changedThemeMode,
+    TResult? Function(AppEventChangedFirstLaunchStatus value)?
         changeFirstLaunchStatus,
   }) {
     return changeFirstLaunchStatus?.call(this);
@@ -681,38 +675,42 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
+      _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
   $Res call({Locale locale, ThemeMode mode, bool? isFisrtLaunch});
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
-  final AppState _value;
   // ignore: unused_field
-  final $Res Function(AppState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locale = freezed,
-    Object? mode = freezed,
+    Object? locale = null,
+    Object? mode = null,
     Object? isFisrtLaunch = freezed,
   }) {
     return _then(_value.copyWith(
-      locale: locale == freezed
+      locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as Locale,
-      mode: mode == freezed
+      mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      isFisrtLaunch: isFisrtLaunch == freezed
+      isFisrtLaunch: freezed == isFisrtLaunch
           ? _value.isFisrtLaunch
           : isFisrtLaunch // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -722,35 +720,35 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Locale locale, ThemeMode mode, bool? isFisrtLaunch});
 }
 
 /// @nodoc
-class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
+class __$$_AppStateCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
     implements _$$_AppStateCopyWith<$Res> {
   __$$_AppStateCopyWithImpl(
       _$_AppState _value, $Res Function(_$_AppState) _then)
-      : super(_value, (v) => _then(v as _$_AppState));
+      : super(_value, _then);
 
-  @override
-  _$_AppState get _value => super._value as _$_AppState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locale = freezed,
-    Object? mode = freezed,
+    Object? locale = null,
+    Object? mode = null,
     Object? isFisrtLaunch = freezed,
   }) {
     return _then(_$_AppState(
-      locale: locale == freezed
+      locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as Locale,
-      mode: mode == freezed
+      mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      isFisrtLaunch: isFisrtLaunch == freezed
+      isFisrtLaunch: freezed == isFisrtLaunch
           ? _value.isFisrtLaunch
           : isFisrtLaunch // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -786,21 +784,18 @@ class _$_AppState implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality().equals(other.locale, locale) &&
-            const DeepCollectionEquality().equals(other.mode, mode) &&
-            const DeepCollectionEquality()
-                .equals(other.isFisrtLaunch, isFisrtLaunch));
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.isFisrtLaunch, isFisrtLaunch) ||
+                other.isFisrtLaunch == isFisrtLaunch));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(locale),
-      const DeepCollectionEquality().hash(mode),
-      const DeepCollectionEquality().hash(isFisrtLaunch));
+  int get hashCode => Object.hash(runtimeType, locale, mode, isFisrtLaunch);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
 }

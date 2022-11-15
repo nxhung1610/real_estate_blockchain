@@ -24,8 +24,8 @@ mixin _$AuthLocalFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tokenNotExist,
-    TResult Function()? unknow,
+    TResult? Function()? tokenNotExist,
+    TResult? Function()? unknow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$AuthLocalFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
-    TResult Function(_AuthLocalFailuresUnknow value)? unknow,
+    TResult? Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
+    TResult? Function(_AuthLocalFailuresUnknow value)? unknow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,17 +61,18 @@ mixin _$AuthLocalFailures {
 abstract class $AuthLocalFailuresCopyWith<$Res> {
   factory $AuthLocalFailuresCopyWith(
           AuthLocalFailures value, $Res Function(AuthLocalFailures) then) =
-      _$AuthLocalFailuresCopyWithImpl<$Res>;
+      _$AuthLocalFailuresCopyWithImpl<$Res, AuthLocalFailures>;
 }
 
 /// @nodoc
-class _$AuthLocalFailuresCopyWithImpl<$Res>
+class _$AuthLocalFailuresCopyWithImpl<$Res, $Val extends AuthLocalFailures>
     implements $AuthLocalFailuresCopyWith<$Res> {
   _$AuthLocalFailuresCopyWithImpl(this._value, this._then);
 
-  final AuthLocalFailures _value;
   // ignore: unused_field
-  final $Res Function(AuthLocalFailures) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,16 +85,13 @@ abstract class _$$_AuthLocalFailuresTokenNotExistCopyWith<$Res> {
 
 /// @nodoc
 class __$$_AuthLocalFailuresTokenNotExistCopyWithImpl<$Res>
-    extends _$AuthLocalFailuresCopyWithImpl<$Res>
+    extends _$AuthLocalFailuresCopyWithImpl<$Res,
+        _$_AuthLocalFailuresTokenNotExist>
     implements _$$_AuthLocalFailuresTokenNotExistCopyWith<$Res> {
   __$$_AuthLocalFailuresTokenNotExistCopyWithImpl(
       _$_AuthLocalFailuresTokenNotExist _value,
       $Res Function(_$_AuthLocalFailuresTokenNotExist) _then)
-      : super(_value, (v) => _then(v as _$_AuthLocalFailuresTokenNotExist));
-
-  @override
-  _$_AuthLocalFailuresTokenNotExist get _value =>
-      super._value as _$_AuthLocalFailuresTokenNotExist;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -129,8 +127,8 @@ class _$_AuthLocalFailuresTokenNotExist
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tokenNotExist,
-    TResult Function()? unknow,
+    TResult? Function()? tokenNotExist,
+    TResult? Function()? unknow,
   }) {
     return tokenNotExist?.call();
   }
@@ -161,8 +159,8 @@ class _$_AuthLocalFailuresTokenNotExist
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
-    TResult Function(_AuthLocalFailuresUnknow value)? unknow,
+    TResult? Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
+    TResult? Function(_AuthLocalFailuresUnknow value)? unknow,
   }) {
     return tokenNotExist?.call(this);
   }
@@ -195,15 +193,11 @@ abstract class _$$_AuthLocalFailuresUnknowCopyWith<$Res> {
 
 /// @nodoc
 class __$$_AuthLocalFailuresUnknowCopyWithImpl<$Res>
-    extends _$AuthLocalFailuresCopyWithImpl<$Res>
+    extends _$AuthLocalFailuresCopyWithImpl<$Res, _$_AuthLocalFailuresUnknow>
     implements _$$_AuthLocalFailuresUnknowCopyWith<$Res> {
   __$$_AuthLocalFailuresUnknowCopyWithImpl(_$_AuthLocalFailuresUnknow _value,
       $Res Function(_$_AuthLocalFailuresUnknow) _then)
-      : super(_value, (v) => _then(v as _$_AuthLocalFailuresUnknow));
-
-  @override
-  _$_AuthLocalFailuresUnknow get _value =>
-      super._value as _$_AuthLocalFailuresUnknow;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -238,8 +232,8 @@ class _$_AuthLocalFailuresUnknow implements _AuthLocalFailuresUnknow {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tokenNotExist,
-    TResult Function()? unknow,
+    TResult? Function()? tokenNotExist,
+    TResult? Function()? unknow,
   }) {
     return unknow?.call();
   }
@@ -270,8 +264,8 @@ class _$_AuthLocalFailuresUnknow implements _AuthLocalFailuresUnknow {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
-    TResult Function(_AuthLocalFailuresUnknow value)? unknow,
+    TResult? Function(_AuthLocalFailuresTokenNotExist value)? tokenNotExist,
+    TResult? Function(_AuthLocalFailuresUnknow value)? unknow,
   }) {
     return unknow?.call(this);
   }

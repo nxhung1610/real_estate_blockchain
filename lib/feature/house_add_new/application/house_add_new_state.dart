@@ -8,6 +8,7 @@ class HouseAddNewState with _$HouseAddNewState {
     AddressChoosen? addressChoosen,
     RealEstateInfo? realEstateInfo,
     List<RealEstateAmenity>? amenities,
+    List<XFile>? media,
     @Default(Status.idle()) Status status,
   }) = _HouseAddNewState;
 }

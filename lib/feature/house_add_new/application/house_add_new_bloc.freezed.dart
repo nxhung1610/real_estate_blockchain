@@ -23,15 +23,17 @@ mixin _$HouseAddNewEvent {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,15 +54,17 @@ mixin _$HouseAddNewEvent {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,41 +84,42 @@ mixin _$HouseAddNewEvent {
 abstract class $HouseAddNewEventCopyWith<$Res> {
   factory $HouseAddNewEventCopyWith(
           HouseAddNewEvent value, $Res Function(HouseAddNewEvent) then) =
-      _$HouseAddNewEventCopyWithImpl<$Res>;
+      _$HouseAddNewEventCopyWithImpl<$Res, HouseAddNewEvent>;
 }
 
 /// @nodoc
-class _$HouseAddNewEventCopyWithImpl<$Res>
+class _$HouseAddNewEventCopyWithImpl<$Res, $Val extends HouseAddNewEvent>
     implements $HouseAddNewEventCopyWith<$Res> {
   _$HouseAddNewEventCopyWithImpl(this._value, this._then);
 
-  final HouseAddNewEvent _value;
   // ignore: unused_field
-  final $Res Function(HouseAddNewEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
 abstract class _$$_SetupCopyWith<$Res> {
   factory _$$_SetupCopyWith(_$_Setup value, $Res Function(_$_Setup) then) =
       __$$_SetupCopyWithImpl<$Res>;
+  @useResult
   $Res call({ValidateSubcriber subcriber});
 }
 
 /// @nodoc
-class __$$_SetupCopyWithImpl<$Res> extends _$HouseAddNewEventCopyWithImpl<$Res>
+class __$$_SetupCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_Setup>
     implements _$$_SetupCopyWith<$Res> {
   __$$_SetupCopyWithImpl(_$_Setup _value, $Res Function(_$_Setup) _then)
-      : super(_value, (v) => _then(v as _$_Setup));
+      : super(_value, _then);
 
-  @override
-  _$_Setup get _value => super._value as _$_Setup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subcriber = freezed,
+    Object? subcriber = null,
   }) {
     return _then(_$_Setup(
-      subcriber == freezed
+      null == subcriber
           ? _value.subcriber
           : subcriber // ignore: cast_nullable_to_non_nullable
               as ValidateSubcriber,
@@ -138,15 +145,16 @@ class _$_Setup implements _Setup {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Setup &&
-            const DeepCollectionEquality().equals(other.subcriber, subcriber));
+            (identical(other.subcriber, subcriber) ||
+                other.subcriber == subcriber));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(subcriber));
+  int get hashCode => Object.hash(runtimeType, subcriber);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SetupCopyWith<_$_Setup> get copyWith =>
       __$$_SetupCopyWithImpl<_$_Setup>(this, _$identity);
 
@@ -158,6 +166,7 @@ class _$_Setup implements _Setup {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) {
     return setup(subcriber);
   }
@@ -165,11 +174,12 @@ class _$_Setup implements _Setup {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) {
     return setup?.call(subcriber);
   }
@@ -182,6 +192,7 @@ class _$_Setup implements _Setup {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -198,6 +209,7 @@ class _$_Setup implements _Setup {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) {
     return setup(this);
   }
@@ -205,11 +217,12 @@ class _$_Setup implements _Setup {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) {
     return setup?.call(this);
   }
@@ -222,6 +235,7 @@ class _$_Setup implements _Setup {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -249,14 +263,11 @@ abstract class _$$_NextPageCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NextPageCopyWithImpl<$Res>
-    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_NextPage>
     implements _$$_NextPageCopyWith<$Res> {
   __$$_NextPageCopyWithImpl(
       _$_NextPage _value, $Res Function(_$_NextPage) _then)
-      : super(_value, (v) => _then(v as _$_NextPage));
-
-  @override
-  _$_NextPage get _value => super._value as _$_NextPage;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -286,6 +297,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) {
     return nextPage();
   }
@@ -293,11 +305,12 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) {
     return nextPage?.call();
   }
@@ -310,6 +323,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -326,6 +340,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) {
     return nextPage(this);
   }
@@ -333,11 +348,12 @@ class _$_NextPage implements _NextPage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) {
     return nextPage?.call(this);
   }
@@ -350,6 +366,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -368,26 +385,25 @@ abstract class _$$_OnAddressChosenCopyWith<$Res> {
   factory _$$_OnAddressChosenCopyWith(
           _$_OnAddressChosen value, $Res Function(_$_OnAddressChosen) then) =
       __$$_OnAddressChosenCopyWithImpl<$Res>;
+  @useResult
   $Res call({AddressChoosen addressChoosen});
 }
 
 /// @nodoc
 class __$$_OnAddressChosenCopyWithImpl<$Res>
-    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_OnAddressChosen>
     implements _$$_OnAddressChosenCopyWith<$Res> {
   __$$_OnAddressChosenCopyWithImpl(
       _$_OnAddressChosen _value, $Res Function(_$_OnAddressChosen) _then)
-      : super(_value, (v) => _then(v as _$_OnAddressChosen));
+      : super(_value, _then);
 
-  @override
-  _$_OnAddressChosen get _value => super._value as _$_OnAddressChosen;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? addressChoosen = freezed,
+    Object? addressChoosen = null,
   }) {
     return _then(_$_OnAddressChosen(
-      addressChoosen == freezed
+      null == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen,
@@ -413,16 +429,16 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnAddressChosen &&
-            const DeepCollectionEquality()
-                .equals(other.addressChoosen, addressChoosen));
+            (identical(other.addressChoosen, addressChoosen) ||
+                other.addressChoosen == addressChoosen));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(addressChoosen));
+  int get hashCode => Object.hash(runtimeType, addressChoosen);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnAddressChosenCopyWith<_$_OnAddressChosen> get copyWith =>
       __$$_OnAddressChosenCopyWithImpl<_$_OnAddressChosen>(this, _$identity);
 
@@ -434,6 +450,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) {
     return onAddressChosen(addressChoosen);
   }
@@ -441,11 +458,12 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) {
     return onAddressChosen?.call(addressChoosen);
   }
@@ -458,6 +476,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -474,6 +493,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) {
     return onAddressChosen(this);
   }
@@ -481,11 +501,12 @@ class _$_OnAddressChosen implements _OnAddressChosen {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) {
     return onAddressChosen?.call(this);
   }
@@ -498,6 +519,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -522,26 +544,25 @@ abstract class _$$_OnRealEstateInfoCopyWith<$Res> {
   factory _$$_OnRealEstateInfoCopyWith(
           _$_OnRealEstateInfo value, $Res Function(_$_OnRealEstateInfo) then) =
       __$$_OnRealEstateInfoCopyWithImpl<$Res>;
+  @useResult
   $Res call({RealEstateInfo realEstateInfo});
 }
 
 /// @nodoc
 class __$$_OnRealEstateInfoCopyWithImpl<$Res>
-    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_OnRealEstateInfo>
     implements _$$_OnRealEstateInfoCopyWith<$Res> {
   __$$_OnRealEstateInfoCopyWithImpl(
       _$_OnRealEstateInfo _value, $Res Function(_$_OnRealEstateInfo) _then)
-      : super(_value, (v) => _then(v as _$_OnRealEstateInfo));
+      : super(_value, _then);
 
-  @override
-  _$_OnRealEstateInfo get _value => super._value as _$_OnRealEstateInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? realEstateInfo = freezed,
+    Object? realEstateInfo = null,
   }) {
     return _then(_$_OnRealEstateInfo(
-      realEstateInfo == freezed
+      null == realEstateInfo
           ? _value.realEstateInfo
           : realEstateInfo // ignore: cast_nullable_to_non_nullable
               as RealEstateInfo,
@@ -567,16 +588,16 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnRealEstateInfo &&
-            const DeepCollectionEquality()
-                .equals(other.realEstateInfo, realEstateInfo));
+            (identical(other.realEstateInfo, realEstateInfo) ||
+                other.realEstateInfo == realEstateInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(realEstateInfo));
+  int get hashCode => Object.hash(runtimeType, realEstateInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnRealEstateInfoCopyWith<_$_OnRealEstateInfo> get copyWith =>
       __$$_OnRealEstateInfoCopyWithImpl<_$_OnRealEstateInfo>(this, _$identity);
 
@@ -588,6 +609,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) {
     return onRealEstateInfo(realEstateInfo);
   }
@@ -595,11 +617,12 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) {
     return onRealEstateInfo?.call(realEstateInfo);
   }
@@ -612,6 +635,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -628,6 +652,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) {
     return onRealEstateInfo(this);
   }
@@ -635,11 +660,12 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) {
     return onRealEstateInfo?.call(this);
   }
@@ -652,6 +678,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -676,26 +703,25 @@ abstract class _$$_OnAmenityCopyWith<$Res> {
   factory _$$_OnAmenityCopyWith(
           _$_OnAmenity value, $Res Function(_$_OnAmenity) then) =
       __$$_OnAmenityCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<RealEstateAmenity> amenities});
 }
 
 /// @nodoc
 class __$$_OnAmenityCopyWithImpl<$Res>
-    extends _$HouseAddNewEventCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_OnAmenity>
     implements _$$_OnAmenityCopyWith<$Res> {
   __$$_OnAmenityCopyWithImpl(
       _$_OnAmenity _value, $Res Function(_$_OnAmenity) _then)
-      : super(_value, (v) => _then(v as _$_OnAmenity));
+      : super(_value, _then);
 
-  @override
-  _$_OnAmenity get _value => super._value as _$_OnAmenity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amenities = freezed,
+    Object? amenities = null,
   }) {
     return _then(_$_OnAmenity(
-      amenities == freezed
+      null == amenities
           ? _value._amenities
           : amenities // ignore: cast_nullable_to_non_nullable
               as List<RealEstateAmenity>,
@@ -736,6 +762,7 @@ class _$_OnAmenity implements _OnAmenity {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnAmenityCopyWith<_$_OnAmenity> get copyWith =>
       __$$_OnAmenityCopyWithImpl<_$_OnAmenity>(this, _$identity);
 
@@ -747,6 +774,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
   }) {
     return onAmenity(amenities);
   }
@@ -754,11 +782,12 @@ class _$_OnAmenity implements _OnAmenity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ValidateSubcriber subcriber)? setup,
-    TResult Function()? nextPage,
-    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
-    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
   }) {
     return onAmenity?.call(amenities);
   }
@@ -771,6 +800,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
     required TResult orElse(),
   }) {
     if (onAmenity != null) {
@@ -787,6 +817,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(_OnAddressChosen value) onAddressChosen,
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
   }) {
     return onAmenity(this);
   }
@@ -794,11 +825,12 @@ class _$_OnAmenity implements _OnAmenity {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Setup value)? setup,
-    TResult Function(_NextPage value)? nextPage,
-    TResult Function(_OnAddressChosen value)? onAddressChosen,
-    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
-    TResult Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
   }) {
     return onAmenity?.call(this);
   }
@@ -811,6 +843,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(_OnAddressChosen value)? onAddressChosen,
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
     required TResult orElse(),
   }) {
     if (onAmenity != null) {
@@ -831,12 +864,174 @@ abstract class _OnAmenity implements HouseAddNewEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnMediaCopyWith<$Res> {
+  factory _$$_OnMediaCopyWith(
+          _$_OnMedia value, $Res Function(_$_OnMedia) then) =
+      __$$_OnMediaCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<XFile> media});
+}
+
+/// @nodoc
+class __$$_OnMediaCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_OnMedia>
+    implements _$$_OnMediaCopyWith<$Res> {
+  __$$_OnMediaCopyWithImpl(_$_OnMedia _value, $Res Function(_$_OnMedia) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? media = null,
+  }) {
+    return _then(_$_OnMedia(
+      null == media
+          ? _value._media
+          : media // ignore: cast_nullable_to_non_nullable
+              as List<XFile>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnMedia implements _OnMedia {
+  const _$_OnMedia(final List<XFile> media) : _media = media;
+
+  final List<XFile> _media;
+  @override
+  List<XFile> get media {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_media);
+  }
+
+  @override
+  String toString() {
+    return 'HouseAddNewEvent.onMedia(media: $media)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMedia &&
+            const DeepCollectionEquality().equals(other._media, _media));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_media));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnMediaCopyWith<_$_OnMedia> get copyWith =>
+      __$$_OnMediaCopyWithImpl<_$_OnMedia>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ValidateSubcriber subcriber) setup,
+    required TResult Function() nextPage,
+    required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
+  }) {
+    return onMedia(media);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
+  }) {
+    return onMedia?.call(media);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
+    required TResult orElse(),
+  }) {
+    if (onMedia != null) {
+      return onMedia(media);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_NextPage value) nextPage,
+    required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
+  }) {
+    return onMedia(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
+  }) {
+    return onMedia?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
+    required TResult orElse(),
+  }) {
+    if (onMedia != null) {
+      return onMedia(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMedia implements HouseAddNewEvent {
+  const factory _OnMedia(final List<XFile> media) = _$_OnMedia;
+
+  List<XFile> get media;
+  @JsonKey(ignore: true)
+  _$$_OnMediaCopyWith<_$_OnMedia> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HouseAddNewState {
   ProcessState get state => throw _privateConstructorUsedError;
   RealEstateConfig? get config => throw _privateConstructorUsedError;
   AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
   RealEstateInfo? get realEstateInfo => throw _privateConstructorUsedError;
   List<RealEstateAmenity>? get amenities => throw _privateConstructorUsedError;
+  List<XFile>? get media => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -848,68 +1043,78 @@ mixin _$HouseAddNewState {
 abstract class $HouseAddNewStateCopyWith<$Res> {
   factory $HouseAddNewStateCopyWith(
           HouseAddNewState value, $Res Function(HouseAddNewState) then) =
-      _$HouseAddNewStateCopyWithImpl<$Res>;
+      _$HouseAddNewStateCopyWithImpl<$Res, HouseAddNewState>;
+  @useResult
   $Res call(
       {ProcessState state,
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
       List<RealEstateAmenity>? amenities,
+      List<XFile>? media,
       Status status});
 
   $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
-class _$HouseAddNewStateCopyWithImpl<$Res>
+class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
     implements $HouseAddNewStateCopyWith<$Res> {
   _$HouseAddNewStateCopyWithImpl(this._value, this._then);
 
-  final HouseAddNewState _value;
   // ignore: unused_field
-  final $Res Function(HouseAddNewState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
+    Object? state = null,
     Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
     Object? amenities = freezed,
-    Object? status = freezed,
+    Object? media = freezed,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
-      config: config == freezed
+      config: freezed == config
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as RealEstateConfig?,
-      addressChoosen: addressChoosen == freezed
+      addressChoosen: freezed == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen?,
-      realEstateInfo: realEstateInfo == freezed
+      realEstateInfo: freezed == realEstateInfo
           ? _value.realEstateInfo
           : realEstateInfo // ignore: cast_nullable_to_non_nullable
               as RealEstateInfo?,
-      amenities: amenities == freezed
+      amenities: freezed == amenities
           ? _value.amenities
           : amenities // ignore: cast_nullable_to_non_nullable
               as List<RealEstateAmenity>?,
-      status: status == freezed
+      media: freezed == media
+          ? _value.media
+          : media // ignore: cast_nullable_to_non_nullable
+              as List<XFile>?,
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res> get status {
     return $StatusCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value));
+      return _then(_value.copyWith(status: value) as $Val);
     });
   }
 }
@@ -921,12 +1126,14 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
           _$_HouseAddNewState value, $Res Function(_$_HouseAddNewState) then) =
       __$$_HouseAddNewStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ProcessState state,
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
       List<RealEstateAmenity>? amenities,
+      List<XFile>? media,
       Status status});
 
   @override
@@ -935,46 +1142,49 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_HouseAddNewStateCopyWithImpl<$Res>
-    extends _$HouseAddNewStateCopyWithImpl<$Res>
+    extends _$HouseAddNewStateCopyWithImpl<$Res, _$_HouseAddNewState>
     implements _$$_HouseAddNewStateCopyWith<$Res> {
   __$$_HouseAddNewStateCopyWithImpl(
       _$_HouseAddNewState _value, $Res Function(_$_HouseAddNewState) _then)
-      : super(_value, (v) => _then(v as _$_HouseAddNewState));
+      : super(_value, _then);
 
-  @override
-  _$_HouseAddNewState get _value => super._value as _$_HouseAddNewState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
+    Object? state = null,
     Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
     Object? amenities = freezed,
-    Object? status = freezed,
+    Object? media = freezed,
+    Object? status = null,
   }) {
     return _then(_$_HouseAddNewState(
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
-      config: config == freezed
+      config: freezed == config
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as RealEstateConfig?,
-      addressChoosen: addressChoosen == freezed
+      addressChoosen: freezed == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen?,
-      realEstateInfo: realEstateInfo == freezed
+      realEstateInfo: freezed == realEstateInfo
           ? _value.realEstateInfo
           : realEstateInfo // ignore: cast_nullable_to_non_nullable
               as RealEstateInfo?,
-      amenities: amenities == freezed
+      amenities: freezed == amenities
           ? _value._amenities
           : amenities // ignore: cast_nullable_to_non_nullable
               as List<RealEstateAmenity>?,
-      status: status == freezed
+      media: freezed == media
+          ? _value._media
+          : media // ignore: cast_nullable_to_non_nullable
+              as List<XFile>?,
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
@@ -991,8 +1201,10 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       this.addressChoosen,
       this.realEstateInfo,
       final List<RealEstateAmenity>? amenities,
+      final List<XFile>? media,
       this.status = const Status.idle()})
-      : _amenities = amenities;
+      : _amenities = amenities,
+        _media = media;
 
   @override
   @JsonKey()
@@ -1012,13 +1224,22 @@ class _$_HouseAddNewState implements _HouseAddNewState {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<XFile>? _media;
+  @override
+  List<XFile>? get media {
+    final value = _media;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, status: $status)';
+    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, status: $status)';
   }
 
   @override
@@ -1026,29 +1247,32 @@ class _$_HouseAddNewState implements _HouseAddNewState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HouseAddNewState &&
-            const DeepCollectionEquality().equals(other.state, state) &&
-            const DeepCollectionEquality().equals(other.config, config) &&
-            const DeepCollectionEquality()
-                .equals(other.addressChoosen, addressChoosen) &&
-            const DeepCollectionEquality()
-                .equals(other.realEstateInfo, realEstateInfo) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.config, config) || other.config == config) &&
+            (identical(other.addressChoosen, addressChoosen) ||
+                other.addressChoosen == addressChoosen) &&
+            (identical(other.realEstateInfo, realEstateInfo) ||
+                other.realEstateInfo == realEstateInfo) &&
             const DeepCollectionEquality()
                 .equals(other._amenities, _amenities) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other._media, _media) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(state),
-      const DeepCollectionEquality().hash(config),
-      const DeepCollectionEquality().hash(addressChoosen),
-      const DeepCollectionEquality().hash(realEstateInfo),
+      state,
+      config,
+      addressChoosen,
+      realEstateInfo,
       const DeepCollectionEquality().hash(_amenities),
-      const DeepCollectionEquality().hash(status));
+      const DeepCollectionEquality().hash(_media),
+      status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_HouseAddNewStateCopyWith<_$_HouseAddNewState> get copyWith =>
       __$$_HouseAddNewStateCopyWithImpl<_$_HouseAddNewState>(this, _$identity);
 }
@@ -1060,6 +1284,7 @@ abstract class _HouseAddNewState implements HouseAddNewState {
       final AddressChoosen? addressChoosen,
       final RealEstateInfo? realEstateInfo,
       final List<RealEstateAmenity>? amenities,
+      final List<XFile>? media,
       final Status status}) = _$_HouseAddNewState;
 
   @override
@@ -1072,6 +1297,8 @@ abstract class _HouseAddNewState implements HouseAddNewState {
   RealEstateInfo? get realEstateInfo;
   @override
   List<RealEstateAmenity>? get amenities;
+  @override
+  List<XFile>? get media;
   @override
   Status get status;
   @override

@@ -23,7 +23,7 @@ mixin _$AppConfigFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$AppConfigFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppConfigFailureUnexpected value)? unexpected,
+    TResult? Function(AppConfigFailureUnexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,17 +54,18 @@ mixin _$AppConfigFailure {
 abstract class $AppConfigFailureCopyWith<$Res> {
   factory $AppConfigFailureCopyWith(
           AppConfigFailure value, $Res Function(AppConfigFailure) then) =
-      _$AppConfigFailureCopyWithImpl<$Res>;
+      _$AppConfigFailureCopyWithImpl<$Res, AppConfigFailure>;
 }
 
 /// @nodoc
-class _$AppConfigFailureCopyWithImpl<$Res>
+class _$AppConfigFailureCopyWithImpl<$Res, $Val extends AppConfigFailure>
     implements $AppConfigFailureCopyWith<$Res> {
   _$AppConfigFailureCopyWithImpl(this._value, this._then);
 
-  final AppConfigFailure _value;
   // ignore: unused_field
-  final $Res Function(AppConfigFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -77,16 +78,12 @@ abstract class _$$AppConfigFailureUnexpectedCopyWith<$Res> {
 
 /// @nodoc
 class __$$AppConfigFailureUnexpectedCopyWithImpl<$Res>
-    extends _$AppConfigFailureCopyWithImpl<$Res>
+    extends _$AppConfigFailureCopyWithImpl<$Res, _$AppConfigFailureUnexpected>
     implements _$$AppConfigFailureUnexpectedCopyWith<$Res> {
   __$$AppConfigFailureUnexpectedCopyWithImpl(
       _$AppConfigFailureUnexpected _value,
       $Res Function(_$AppConfigFailureUnexpected) _then)
-      : super(_value, (v) => _then(v as _$AppConfigFailureUnexpected));
-
-  @override
-  _$AppConfigFailureUnexpected get _value =>
-      super._value as _$AppConfigFailureUnexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -120,7 +117,7 @@ class _$AppConfigFailureUnexpected implements AppConfigFailureUnexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -148,7 +145,7 @@ class _$AppConfigFailureUnexpected implements AppConfigFailureUnexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppConfigFailureUnexpected value)? unexpected,
+    TResult? Function(AppConfigFailureUnexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }

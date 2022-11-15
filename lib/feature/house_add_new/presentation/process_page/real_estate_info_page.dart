@@ -148,6 +148,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   AppSize.mediumHeightDimens.verticalSpace,
                   InputPrimaryForm(
                     hint: '1200000',
+                    keyboardType: TextInputType.number,
                     onChanged: (value) {
                       bloc.onPriceChanged(double.tryParse(value) ?? 0);
                     },

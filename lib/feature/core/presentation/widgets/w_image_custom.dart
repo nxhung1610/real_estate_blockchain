@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 
@@ -51,6 +53,31 @@ class ImageCustom extends Image {
     super.cacheWidth,
     super.cacheHeight,
   }) : super.network();
+
+  ImageCustom.file(
+    File file, {
+    super.key,
+    super.scale,
+    super.frameBuilder,
+    super.errorBuilder,
+    super.semanticLabel,
+    super.excludeFromSemantics = false,
+    super.width,
+    super.height,
+    super.color,
+    super.opacity,
+    super.colorBlendMode,
+    super.fit,
+    super.alignment = Alignment.center,
+    super.repeat = ImageRepeat.noRepeat,
+    super.centerSlice,
+    super.matchTextDirection = false,
+    super.gaplessPlayback = false,
+    super.isAntiAlias = false,
+    super.filterQuality = FilterQuality.low,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) : super.file(file);
 
   @override
   ImageErrorWidgetBuilder? get errorBuilder => (context, error, stackTrace) {

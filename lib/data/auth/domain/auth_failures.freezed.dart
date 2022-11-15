@@ -31,15 +31,15 @@ mixin _$AuthFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,17 +76,17 @@ mixin _$AuthFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -111,16 +111,18 @@ mixin _$AuthFailures {
 abstract class $AuthFailuresCopyWith<$Res> {
   factory $AuthFailuresCopyWith(
           AuthFailures value, $Res Function(AuthFailures) then) =
-      _$AuthFailuresCopyWithImpl<$Res>;
+      _$AuthFailuresCopyWithImpl<$Res, AuthFailures>;
 }
 
 /// @nodoc
-class _$AuthFailuresCopyWithImpl<$Res> implements $AuthFailuresCopyWith<$Res> {
+class _$AuthFailuresCopyWithImpl<$Res, $Val extends AuthFailures>
+    implements $AuthFailuresCopyWith<$Res> {
   _$AuthFailuresCopyWithImpl(this._value, this._then);
 
-  final AuthFailures _value;
   // ignore: unused_field
-  final $Res Function(AuthFailures) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -133,16 +135,12 @@ abstract class _$$AuthFailuresEmailAddressInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailuresEmailAddressInvalidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailuresEmailAddressInvalid>
     implements _$$AuthFailuresEmailAddressInvalidCopyWith<$Res> {
   __$$AuthFailuresEmailAddressInvalidCopyWithImpl(
       _$AuthFailuresEmailAddressInvalid _value,
       $Res Function(_$AuthFailuresEmailAddressInvalid) _then)
-      : super(_value, (v) => _then(v as _$AuthFailuresEmailAddressInvalid));
-
-  @override
-  _$AuthFailuresEmailAddressInvalid get _value =>
-      super._value as _$AuthFailuresEmailAddressInvalid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -185,15 +183,15 @@ class _$AuthFailuresEmailAddressInvalid
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return emailAddressInvalid?.call();
   }
@@ -242,17 +240,17 @@ class _$AuthFailuresEmailAddressInvalid
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return emailAddressInvalid?.call(this);
   }
@@ -295,16 +293,12 @@ abstract class _$$AuthFailuresPasswordInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailuresPasswordInvalidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailuresPasswordInvalid>
     implements _$$AuthFailuresPasswordInvalidCopyWith<$Res> {
   __$$AuthFailuresPasswordInvalidCopyWithImpl(
       _$AuthFailuresPasswordInvalid _value,
       $Res Function(_$AuthFailuresPasswordInvalid) _then)
-      : super(_value, (v) => _then(v as _$AuthFailuresPasswordInvalid));
-
-  @override
-  _$AuthFailuresPasswordInvalid get _value =>
-      super._value as _$AuthFailuresPasswordInvalid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -346,15 +340,15 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return passwordInvalid?.call();
   }
@@ -403,17 +397,17 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return passwordInvalid?.call(this);
   }
@@ -455,16 +449,12 @@ abstract class _$$AuthFailureFullNameInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailureFullNameInvalidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailureFullNameInvalid>
     implements _$$AuthFailureFullNameInvalidCopyWith<$Res> {
   __$$AuthFailureFullNameInvalidCopyWithImpl(
       _$AuthFailureFullNameInvalid _value,
       $Res Function(_$AuthFailureFullNameInvalid) _then)
-      : super(_value, (v) => _then(v as _$AuthFailureFullNameInvalid));
-
-  @override
-  _$AuthFailureFullNameInvalid get _value =>
-      super._value as _$AuthFailureFullNameInvalid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -506,15 +496,15 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return fullNameInvalid?.call();
   }
@@ -563,17 +553,17 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return fullNameInvalid?.call(this);
   }
@@ -614,15 +604,11 @@ abstract class _$$AuthFailureNameInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailureNameInvalidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailureNameInvalid>
     implements _$$AuthFailureNameInvalidCopyWith<$Res> {
   __$$AuthFailureNameInvalidCopyWithImpl(_$AuthFailureNameInvalid _value,
       $Res Function(_$AuthFailureNameInvalid) _then)
-      : super(_value, (v) => _then(v as _$AuthFailureNameInvalid));
-
-  @override
-  _$AuthFailureNameInvalid get _value =>
-      super._value as _$AuthFailureNameInvalid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -663,15 +649,15 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return nameInvalid?.call();
   }
@@ -720,17 +706,17 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return nameInvalid?.call(this);
   }
@@ -772,16 +758,12 @@ abstract class _$$AuthFailurePhoneNumberInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailurePhoneNumberInvalidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailurePhoneNumberInvalid>
     implements _$$AuthFailurePhoneNumberInvalidCopyWith<$Res> {
   __$$AuthFailurePhoneNumberInvalidCopyWithImpl(
       _$AuthFailurePhoneNumberInvalid _value,
       $Res Function(_$AuthFailurePhoneNumberInvalid) _then)
-      : super(_value, (v) => _then(v as _$AuthFailurePhoneNumberInvalid));
-
-  @override
-  _$AuthFailurePhoneNumberInvalid get _value =>
-      super._value as _$AuthFailurePhoneNumberInvalid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -823,15 +805,15 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return phoneNumberInvalid?.call();
   }
@@ -880,17 +862,17 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return phoneNumberInvalid?.call(this);
   }
@@ -933,17 +915,13 @@ abstract class _$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res,
+        _$AuthFailureCombinePhoneOrPasswordInvlaid>
     implements _$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWith<$Res> {
   __$$AuthFailureCombinePhoneOrPasswordInvlaidCopyWithImpl(
       _$AuthFailureCombinePhoneOrPasswordInvlaid _value,
       $Res Function(_$AuthFailureCombinePhoneOrPasswordInvlaid) _then)
-      : super(_value,
-            (v) => _then(v as _$AuthFailureCombinePhoneOrPasswordInvlaid));
-
-  @override
-  _$AuthFailureCombinePhoneOrPasswordInvlaid get _value =>
-      super._value as _$AuthFailureCombinePhoneOrPasswordInvlaid;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -986,15 +964,15 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return combinePhoneNumberOrPasswordInvalid?.call();
   }
@@ -1043,17 +1021,17 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return combinePhoneNumberOrPasswordInvalid?.call(this);
   }
@@ -1097,16 +1075,12 @@ abstract class _$$AuthFailureUserAlreadyExistCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailureUserAlreadyExistCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailureUserAlreadyExist>
     implements _$$AuthFailureUserAlreadyExistCopyWith<$Res> {
   __$$AuthFailureUserAlreadyExistCopyWithImpl(
       _$AuthFailureUserAlreadyExist _value,
       $Res Function(_$AuthFailureUserAlreadyExist) _then)
-      : super(_value, (v) => _then(v as _$AuthFailureUserAlreadyExist));
-
-  @override
-  _$AuthFailureUserAlreadyExist get _value =>
-      super._value as _$AuthFailureUserAlreadyExist;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1148,15 +1122,15 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return userAlreadyExist?.call();
   }
@@ -1205,17 +1179,17 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return userAlreadyExist?.call(this);
   }
@@ -1256,14 +1230,11 @@ abstract class _$$AuthFailuresUnknowCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailuresUnknowCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailuresUnknow>
     implements _$$AuthFailuresUnknowCopyWith<$Res> {
   __$$AuthFailuresUnknowCopyWithImpl(
       _$AuthFailuresUnknow _value, $Res Function(_$AuthFailuresUnknow) _then)
-      : super(_value, (v) => _then(v as _$AuthFailuresUnknow));
-
-  @override
-  _$AuthFailuresUnknow get _value => super._value as _$AuthFailuresUnknow;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1304,15 +1275,15 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return unknow?.call();
   }
@@ -1361,17 +1332,17 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return unknow?.call(this);
   }
@@ -1413,16 +1384,12 @@ abstract class _$$AuthFailuresUnAuthorizationCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthFailuresUnAuthorizationCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailuresUnAuthorization>
     implements _$$AuthFailuresUnAuthorizationCopyWith<$Res> {
   __$$AuthFailuresUnAuthorizationCopyWithImpl(
       _$AuthFailuresUnAuthorization _value,
       $Res Function(_$AuthFailuresUnAuthorization) _then)
-      : super(_value, (v) => _then(v as _$AuthFailuresUnAuthorization));
-
-  @override
-  _$AuthFailuresUnAuthorization get _value =>
-      super._value as _$AuthFailuresUnAuthorization;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1464,15 +1431,15 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAddressInvalid,
-    TResult Function()? passwordInvalid,
-    TResult Function()? fullNameInvalid,
-    TResult Function()? nameInvalid,
-    TResult Function()? phoneNumberInvalid,
-    TResult Function()? combinePhoneNumberOrPasswordInvalid,
-    TResult Function()? userAlreadyExist,
-    TResult Function()? unknow,
-    TResult Function()? unAuthoiation,
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
   }) {
     return unAuthoiation?.call();
   }
@@ -1521,17 +1488,17 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthFailuresEmailAddressInvalid value)?
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
         emailAddressInvalid,
-    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
-    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
-    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
-    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
-    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
         combinePhoneNumberOrPasswordInvalid,
-    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
-    TResult Function(AuthFailuresUnknow value)? unknow,
-    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
   }) {
     return unAuthoiation?.call(this);
   }

@@ -10,4 +10,5 @@ class HouseAddNewEvent with _$HouseAddNewEvent {
       RealEstateInfo realEstateInfo) = _OnRealEstateInfo;
   const factory HouseAddNewEvent.onAmenity(List<RealEstateAmenity> amenities) =
       _OnAmenity;
+  const factory HouseAddNewEvent.onMedia(List<XFile> media) = _OnMedia;
 }

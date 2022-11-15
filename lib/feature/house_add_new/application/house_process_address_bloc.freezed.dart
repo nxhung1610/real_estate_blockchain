@@ -27,11 +27,11 @@ mixin _$HouseProcessAddressEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,11 +56,11 @@ mixin _$HouseProcessAddressEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,17 +79,19 @@ mixin _$HouseProcessAddressEvent {
 abstract class $HouseProcessAddressEventCopyWith<$Res> {
   factory $HouseProcessAddressEventCopyWith(HouseProcessAddressEvent value,
           $Res Function(HouseProcessAddressEvent) then) =
-      _$HouseProcessAddressEventCopyWithImpl<$Res>;
+      _$HouseProcessAddressEventCopyWithImpl<$Res, HouseProcessAddressEvent>;
 }
 
 /// @nodoc
-class _$HouseProcessAddressEventCopyWithImpl<$Res>
+class _$HouseProcessAddressEventCopyWithImpl<$Res,
+        $Val extends HouseProcessAddressEvent>
     implements $HouseProcessAddressEventCopyWith<$Res> {
   _$HouseProcessAddressEventCopyWithImpl(this._value, this._then);
 
-  final HouseProcessAddressEvent _value;
   // ignore: unused_field
-  final $Res Function(HouseProcessAddressEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -101,13 +103,10 @@ abstract class _$$_StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$HouseProcessAddressEventCopyWithImpl<$Res>
+    extends _$HouseProcessAddressEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
-
-  @override
-  _$_Started get _value => super._value as _$_Started;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -144,11 +143,11 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) {
     return init?.call();
   }
@@ -185,11 +184,11 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) {
     return init?.call(this);
   }
@@ -220,26 +219,25 @@ abstract class _$$_OnProviceChangedCopyWith<$Res> {
   factory _$$_OnProviceChangedCopyWith(
           _$_OnProviceChanged value, $Res Function(_$_OnProviceChanged) then) =
       __$$_OnProviceChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Province? province});
 }
 
 /// @nodoc
 class __$$_OnProviceChangedCopyWithImpl<$Res>
-    extends _$HouseProcessAddressEventCopyWithImpl<$Res>
+    extends _$HouseProcessAddressEventCopyWithImpl<$Res, _$_OnProviceChanged>
     implements _$$_OnProviceChangedCopyWith<$Res> {
   __$$_OnProviceChangedCopyWithImpl(
       _$_OnProviceChanged _value, $Res Function(_$_OnProviceChanged) _then)
-      : super(_value, (v) => _then(v as _$_OnProviceChanged));
+      : super(_value, _then);
 
-  @override
-  _$_OnProviceChanged get _value => super._value as _$_OnProviceChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? province = freezed,
   }) {
     return _then(_$_OnProviceChanged(
-      province == freezed
+      freezed == province
           ? _value.province
           : province // ignore: cast_nullable_to_non_nullable
               as Province?,
@@ -265,15 +263,16 @@ class _$_OnProviceChanged implements _OnProviceChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnProviceChanged &&
-            const DeepCollectionEquality().equals(other.province, province));
+            (identical(other.province, province) ||
+                other.province == province));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(province));
+  int get hashCode => Object.hash(runtimeType, province);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnProviceChangedCopyWith<_$_OnProviceChanged> get copyWith =>
       __$$_OnProviceChangedCopyWithImpl<_$_OnProviceChanged>(this, _$identity);
 
@@ -292,11 +291,11 @@ class _$_OnProviceChanged implements _OnProviceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) {
     return onProviceChanged?.call(province);
   }
@@ -333,11 +332,11 @@ class _$_OnProviceChanged implements _OnProviceChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) {
     return onProviceChanged?.call(this);
   }
@@ -374,26 +373,25 @@ abstract class _$$_OnDistrictChangedCopyWith<$Res> {
   factory _$$_OnDistrictChangedCopyWith(_$_OnDistrictChanged value,
           $Res Function(_$_OnDistrictChanged) then) =
       __$$_OnDistrictChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({District? district});
 }
 
 /// @nodoc
 class __$$_OnDistrictChangedCopyWithImpl<$Res>
-    extends _$HouseProcessAddressEventCopyWithImpl<$Res>
+    extends _$HouseProcessAddressEventCopyWithImpl<$Res, _$_OnDistrictChanged>
     implements _$$_OnDistrictChangedCopyWith<$Res> {
   __$$_OnDistrictChangedCopyWithImpl(
       _$_OnDistrictChanged _value, $Res Function(_$_OnDistrictChanged) _then)
-      : super(_value, (v) => _then(v as _$_OnDistrictChanged));
+      : super(_value, _then);
 
-  @override
-  _$_OnDistrictChanged get _value => super._value as _$_OnDistrictChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? district = freezed,
   }) {
     return _then(_$_OnDistrictChanged(
-      district == freezed
+      freezed == district
           ? _value.district
           : district // ignore: cast_nullable_to_non_nullable
               as District?,
@@ -419,15 +417,16 @@ class _$_OnDistrictChanged implements _OnDistrictChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnDistrictChanged &&
-            const DeepCollectionEquality().equals(other.district, district));
+            (identical(other.district, district) ||
+                other.district == district));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(district));
+  int get hashCode => Object.hash(runtimeType, district);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnDistrictChangedCopyWith<_$_OnDistrictChanged> get copyWith =>
       __$$_OnDistrictChangedCopyWithImpl<_$_OnDistrictChanged>(
           this, _$identity);
@@ -447,11 +446,11 @@ class _$_OnDistrictChanged implements _OnDistrictChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) {
     return onDistrictChanged?.call(district);
   }
@@ -488,11 +487,11 @@ class _$_OnDistrictChanged implements _OnDistrictChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) {
     return onDistrictChanged?.call(this);
   }
@@ -529,26 +528,25 @@ abstract class _$$_OnWardChangedCopyWith<$Res> {
   factory _$$_OnWardChangedCopyWith(
           _$_OnWardChanged value, $Res Function(_$_OnWardChanged) then) =
       __$$_OnWardChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Ward? ward});
 }
 
 /// @nodoc
 class __$$_OnWardChangedCopyWithImpl<$Res>
-    extends _$HouseProcessAddressEventCopyWithImpl<$Res>
+    extends _$HouseProcessAddressEventCopyWithImpl<$Res, _$_OnWardChanged>
     implements _$$_OnWardChangedCopyWith<$Res> {
   __$$_OnWardChangedCopyWithImpl(
       _$_OnWardChanged _value, $Res Function(_$_OnWardChanged) _then)
-      : super(_value, (v) => _then(v as _$_OnWardChanged));
+      : super(_value, _then);
 
-  @override
-  _$_OnWardChanged get _value => super._value as _$_OnWardChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ward = freezed,
   }) {
     return _then(_$_OnWardChanged(
-      ward == freezed
+      freezed == ward
           ? _value.ward
           : ward // ignore: cast_nullable_to_non_nullable
               as Ward?,
@@ -574,15 +572,15 @@ class _$_OnWardChanged implements _OnWardChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnWardChanged &&
-            const DeepCollectionEquality().equals(other.ward, ward));
+            (identical(other.ward, ward) || other.ward == ward));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(ward));
+  int get hashCode => Object.hash(runtimeType, ward);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnWardChangedCopyWith<_$_OnWardChanged> get copyWith =>
       __$$_OnWardChangedCopyWithImpl<_$_OnWardChanged>(this, _$identity);
 
@@ -601,11 +599,11 @@ class _$_OnWardChanged implements _OnWardChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) {
     return onWardChanged?.call(ward);
   }
@@ -642,11 +640,11 @@ class _$_OnWardChanged implements _OnWardChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) {
     return onWardChanged?.call(this);
   }
@@ -682,27 +680,26 @@ abstract class _$$_OnStreetAddressChangedCopyWith<$Res> {
   factory _$$_OnStreetAddressChangedCopyWith(_$_OnStreetAddressChanged value,
           $Res Function(_$_OnStreetAddressChanged) then) =
       __$$_OnStreetAddressChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String? address});
 }
 
 /// @nodoc
 class __$$_OnStreetAddressChangedCopyWithImpl<$Res>
-    extends _$HouseProcessAddressEventCopyWithImpl<$Res>
+    extends _$HouseProcessAddressEventCopyWithImpl<$Res,
+        _$_OnStreetAddressChanged>
     implements _$$_OnStreetAddressChangedCopyWith<$Res> {
   __$$_OnStreetAddressChangedCopyWithImpl(_$_OnStreetAddressChanged _value,
       $Res Function(_$_OnStreetAddressChanged) _then)
-      : super(_value, (v) => _then(v as _$_OnStreetAddressChanged));
+      : super(_value, _then);
 
-  @override
-  _$_OnStreetAddressChanged get _value =>
-      super._value as _$_OnStreetAddressChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? address = freezed,
   }) {
     return _then(_$_OnStreetAddressChanged(
-      address == freezed
+      freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -728,15 +725,15 @@ class _$_OnStreetAddressChanged implements _OnStreetAddressChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnStreetAddressChanged &&
-            const DeepCollectionEquality().equals(other.address, address));
+            (identical(other.address, address) || other.address == address));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(address));
+  int get hashCode => Object.hash(runtimeType, address);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnStreetAddressChangedCopyWith<_$_OnStreetAddressChanged> get copyWith =>
       __$$_OnStreetAddressChangedCopyWithImpl<_$_OnStreetAddressChanged>(
           this, _$identity);
@@ -756,11 +753,11 @@ class _$_OnStreetAddressChanged implements _OnStreetAddressChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(Province? province)? onProviceChanged,
-    TResult Function(District? district)? onDistrictChanged,
-    TResult Function(Ward? ward)? onWardChanged,
-    TResult Function(String? address)? onStreetAddressChanged,
+    TResult? Function()? init,
+    TResult? Function(Province? province)? onProviceChanged,
+    TResult? Function(District? district)? onDistrictChanged,
+    TResult? Function(Ward? ward)? onWardChanged,
+    TResult? Function(String? address)? onStreetAddressChanged,
   }) {
     return onStreetAddressChanged?.call(address);
   }
@@ -797,11 +794,11 @@ class _$_OnStreetAddressChanged implements _OnStreetAddressChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? init,
-    TResult Function(_OnProviceChanged value)? onProviceChanged,
-    TResult Function(_OnDistrictChanged value)? onDistrictChanged,
-    TResult Function(_OnWardChanged value)? onWardChanged,
-    TResult Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
+    TResult? Function(_Started value)? init,
+    TResult? Function(_OnProviceChanged value)? onProviceChanged,
+    TResult? Function(_OnDistrictChanged value)? onDistrictChanged,
+    TResult? Function(_OnWardChanged value)? onWardChanged,
+    TResult? Function(_OnStreetAddressChanged value)? onStreetAddressChanged,
   }) {
     return onStreetAddressChanged?.call(this);
   }
@@ -849,7 +846,8 @@ mixin _$HouseProcessAddressState {
 abstract class $HouseProcessAddressStateCopyWith<$Res> {
   factory $HouseProcessAddressStateCopyWith(HouseProcessAddressState value,
           $Res Function(HouseProcessAddressState) then) =
-      _$HouseProcessAddressStateCopyWithImpl<$Res>;
+      _$HouseProcessAddressStateCopyWithImpl<$Res, HouseProcessAddressState>;
+  @useResult
   $Res call(
       {AddressChoosen addressChoosen,
       List<Province> provinces,
@@ -858,39 +856,42 @@ abstract class $HouseProcessAddressStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HouseProcessAddressStateCopyWithImpl<$Res>
+class _$HouseProcessAddressStateCopyWithImpl<$Res,
+        $Val extends HouseProcessAddressState>
     implements $HouseProcessAddressStateCopyWith<$Res> {
   _$HouseProcessAddressStateCopyWithImpl(this._value, this._then);
 
-  final HouseProcessAddressState _value;
   // ignore: unused_field
-  final $Res Function(HouseProcessAddressState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? addressChoosen = freezed,
-    Object? provinces = freezed,
-    Object? districts = freezed,
-    Object? wards = freezed,
+    Object? addressChoosen = null,
+    Object? provinces = null,
+    Object? districts = null,
+    Object? wards = null,
   }) {
     return _then(_value.copyWith(
-      addressChoosen: addressChoosen == freezed
+      addressChoosen: null == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen,
-      provinces: provinces == freezed
+      provinces: null == provinces
           ? _value.provinces
           : provinces // ignore: cast_nullable_to_non_nullable
               as List<Province>,
-      districts: districts == freezed
+      districts: null == districts
           ? _value.districts
           : districts // ignore: cast_nullable_to_non_nullable
               as List<District>,
-      wards: wards == freezed
+      wards: null == wards
           ? _value.wards
           : wards // ignore: cast_nullable_to_non_nullable
               as List<Ward>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -902,6 +903,7 @@ abstract class _$$_HouseProcessAddressStateCopyWith<$Res>
           $Res Function(_$_HouseProcessAddressState) then) =
       __$$_HouseProcessAddressStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {AddressChoosen addressChoosen,
       List<Province> provinces,
@@ -911,37 +913,35 @@ abstract class _$$_HouseProcessAddressStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_HouseProcessAddressStateCopyWithImpl<$Res>
-    extends _$HouseProcessAddressStateCopyWithImpl<$Res>
+    extends _$HouseProcessAddressStateCopyWithImpl<$Res,
+        _$_HouseProcessAddressState>
     implements _$$_HouseProcessAddressStateCopyWith<$Res> {
   __$$_HouseProcessAddressStateCopyWithImpl(_$_HouseProcessAddressState _value,
       $Res Function(_$_HouseProcessAddressState) _then)
-      : super(_value, (v) => _then(v as _$_HouseProcessAddressState));
+      : super(_value, _then);
 
-  @override
-  _$_HouseProcessAddressState get _value =>
-      super._value as _$_HouseProcessAddressState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? addressChoosen = freezed,
-    Object? provinces = freezed,
-    Object? districts = freezed,
-    Object? wards = freezed,
+    Object? addressChoosen = null,
+    Object? provinces = null,
+    Object? districts = null,
+    Object? wards = null,
   }) {
     return _then(_$_HouseProcessAddressState(
-      addressChoosen: addressChoosen == freezed
+      addressChoosen: null == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
               as AddressChoosen,
-      provinces: provinces == freezed
+      provinces: null == provinces
           ? _value._provinces
           : provinces // ignore: cast_nullable_to_non_nullable
               as List<Province>,
-      districts: districts == freezed
+      districts: null == districts
           ? _value._districts
           : districts // ignore: cast_nullable_to_non_nullable
               as List<District>,
-      wards: wards == freezed
+      wards: null == wards
           ? _value._wards
           : wards // ignore: cast_nullable_to_non_nullable
               as List<Ward>,
@@ -998,8 +998,8 @@ class _$_HouseProcessAddressState implements _HouseProcessAddressState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HouseProcessAddressState &&
-            const DeepCollectionEquality()
-                .equals(other.addressChoosen, addressChoosen) &&
+            (identical(other.addressChoosen, addressChoosen) ||
+                other.addressChoosen == addressChoosen) &&
             const DeepCollectionEquality()
                 .equals(other._provinces, _provinces) &&
             const DeepCollectionEquality()
@@ -1010,13 +1010,14 @@ class _$_HouseProcessAddressState implements _HouseProcessAddressState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(addressChoosen),
+      addressChoosen,
       const DeepCollectionEquality().hash(_provinces),
       const DeepCollectionEquality().hash(_districts),
       const DeepCollectionEquality().hash(_wards));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_HouseProcessAddressStateCopyWith<_$_HouseProcessAddressState>
       get copyWith => __$$_HouseProcessAddressStateCopyWithImpl<
           _$_HouseProcessAddressState>(this, _$identity);

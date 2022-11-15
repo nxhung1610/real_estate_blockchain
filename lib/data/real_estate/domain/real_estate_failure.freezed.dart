@@ -23,7 +23,7 @@ mixin _$RealEstateFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unknown,
+    TResult? Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$RealEstateFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RealEstateFailureUnknown value)? unknown,
+    TResult? Function(RealEstateFailureUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,17 +54,18 @@ mixin _$RealEstateFailure {
 abstract class $RealEstateFailureCopyWith<$Res> {
   factory $RealEstateFailureCopyWith(
           RealEstateFailure value, $Res Function(RealEstateFailure) then) =
-      _$RealEstateFailureCopyWithImpl<$Res>;
+      _$RealEstateFailureCopyWithImpl<$Res, RealEstateFailure>;
 }
 
 /// @nodoc
-class _$RealEstateFailureCopyWithImpl<$Res>
+class _$RealEstateFailureCopyWithImpl<$Res, $Val extends RealEstateFailure>
     implements $RealEstateFailureCopyWith<$Res> {
   _$RealEstateFailureCopyWithImpl(this._value, this._then);
 
-  final RealEstateFailure _value;
   // ignore: unused_field
-  final $Res Function(RealEstateFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -76,15 +77,11 @@ abstract class _$$RealEstateFailureUnknownCopyWith<$Res> {
 
 /// @nodoc
 class __$$RealEstateFailureUnknownCopyWithImpl<$Res>
-    extends _$RealEstateFailureCopyWithImpl<$Res>
+    extends _$RealEstateFailureCopyWithImpl<$Res, _$RealEstateFailureUnknown>
     implements _$$RealEstateFailureUnknownCopyWith<$Res> {
   __$$RealEstateFailureUnknownCopyWithImpl(_$RealEstateFailureUnknown _value,
       $Res Function(_$RealEstateFailureUnknown) _then)
-      : super(_value, (v) => _then(v as _$RealEstateFailureUnknown));
-
-  @override
-  _$RealEstateFailureUnknown get _value =>
-      super._value as _$RealEstateFailureUnknown;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -118,7 +115,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unknown,
+    TResult? Function()? unknown,
   }) {
     return unknown?.call();
   }
@@ -146,7 +143,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(RealEstateFailureUnknown value)? unknown,
+    TResult? Function(RealEstateFailureUnknown value)? unknown,
   }) {
     return unknown?.call(this);
   }

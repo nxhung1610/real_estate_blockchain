@@ -23,7 +23,7 @@ mixin _$ProvinceFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unknown,
+    TResult? Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$ProvinceFailures {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProvinceFailuresUnknown value)? unknown,
+    TResult? Function(ProvinceFailuresUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,17 +54,18 @@ mixin _$ProvinceFailures {
 abstract class $ProvinceFailuresCopyWith<$Res> {
   factory $ProvinceFailuresCopyWith(
           ProvinceFailures value, $Res Function(ProvinceFailures) then) =
-      _$ProvinceFailuresCopyWithImpl<$Res>;
+      _$ProvinceFailuresCopyWithImpl<$Res, ProvinceFailures>;
 }
 
 /// @nodoc
-class _$ProvinceFailuresCopyWithImpl<$Res>
+class _$ProvinceFailuresCopyWithImpl<$Res, $Val extends ProvinceFailures>
     implements $ProvinceFailuresCopyWith<$Res> {
   _$ProvinceFailuresCopyWithImpl(this._value, this._then);
 
-  final ProvinceFailures _value;
   // ignore: unused_field
-  final $Res Function(ProvinceFailures) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -76,25 +77,29 @@ abstract class _$$ProvinceFailuresUnknownCopyWith<$Res> {
 
 /// @nodoc
 class __$$ProvinceFailuresUnknownCopyWithImpl<$Res>
-    extends _$ProvinceFailuresCopyWithImpl<$Res>
+    extends _$ProvinceFailuresCopyWithImpl<$Res, _$ProvinceFailuresUnknown>
     implements _$$ProvinceFailuresUnknownCopyWith<$Res> {
   __$$ProvinceFailuresUnknownCopyWithImpl(_$ProvinceFailuresUnknown _value,
       $Res Function(_$ProvinceFailuresUnknown) _then)
-      : super(_value, (v) => _then(v as _$ProvinceFailuresUnknown));
-
-  @override
-  _$ProvinceFailuresUnknown get _value =>
-      super._value as _$ProvinceFailuresUnknown;
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ProvinceFailuresUnknown implements ProvinceFailuresUnknown {
+class _$ProvinceFailuresUnknown
+    with DiagnosticableTreeMixin
+    implements ProvinceFailuresUnknown {
   const _$ProvinceFailuresUnknown();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProvinceFailures.unknown()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ProvinceFailures.unknown'));
   }
 
   @override
@@ -118,7 +123,7 @@ class _$ProvinceFailuresUnknown implements ProvinceFailuresUnknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unknown,
+    TResult? Function()? unknown,
   }) {
     return unknown?.call();
   }
@@ -146,7 +151,7 @@ class _$ProvinceFailuresUnknown implements ProvinceFailuresUnknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProvinceFailuresUnknown value)? unknown,
+    TResult? Function(ProvinceFailuresUnknown value)? unknown,
   }) {
     return unknown?.call(this);
   }

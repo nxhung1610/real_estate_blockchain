@@ -8,6 +8,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_media_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
@@ -52,7 +53,11 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
             getIt.call<HouseProcessAmentityBloc>(param1: validateSubcriber),
         child: const AmenityPage(),
       ),
-      ProcessState.media: const VideoPhotoPage(),
+      ProcessState.media: BlocProvider(
+        create: (context) =>
+            getIt.call<HouseProcessMediaBloc>(param1: validateSubcriber),
+        child: const VideoPhotoPage(),
+      ),
       ProcessState.schedule: Container(),
     };
     controller = PageController(initialPage: 0, keepPage: true);

@@ -25,8 +25,8 @@ mixin _$HouseProcessAmentityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<RealEstateAmenity> list)? started,
-    TResult Function(RealEstateAmenity amenity, bool isSelected)?
+    TResult? Function(List<RealEstateAmenity> list)? started,
+    TResult? Function(RealEstateAmenity amenity, bool isSelected)?
         onSelectAmenity,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,8 +46,8 @@ mixin _$HouseProcessAmentityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_OnSelectAmenity value)? onSelectAmenity,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnSelectAmenity value)? onSelectAmenity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,17 +63,19 @@ mixin _$HouseProcessAmentityEvent {
 abstract class $HouseProcessAmentityEventCopyWith<$Res> {
   factory $HouseProcessAmentityEventCopyWith(HouseProcessAmentityEvent value,
           $Res Function(HouseProcessAmentityEvent) then) =
-      _$HouseProcessAmentityEventCopyWithImpl<$Res>;
+      _$HouseProcessAmentityEventCopyWithImpl<$Res, HouseProcessAmentityEvent>;
 }
 
 /// @nodoc
-class _$HouseProcessAmentityEventCopyWithImpl<$Res>
+class _$HouseProcessAmentityEventCopyWithImpl<$Res,
+        $Val extends HouseProcessAmentityEvent>
     implements $HouseProcessAmentityEventCopyWith<$Res> {
   _$HouseProcessAmentityEventCopyWithImpl(this._value, this._then);
 
-  final HouseProcessAmentityEvent _value;
   // ignore: unused_field
-  final $Res Function(HouseProcessAmentityEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -81,25 +83,24 @@ abstract class _$$_StartedCopyWith<$Res> {
   factory _$$_StartedCopyWith(
           _$_Started value, $Res Function(_$_Started) then) =
       __$$_StartedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<RealEstateAmenity> list});
 }
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$HouseProcessAmentityEventCopyWithImpl<$Res>
+    extends _$HouseProcessAmentityEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+      : super(_value, _then);
 
-  @override
-  _$_Started get _value => super._value as _$_Started;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
     return _then(_$_Started(
-      list == freezed
+      null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
               as List<RealEstateAmenity>,
@@ -138,6 +139,7 @@ class _$_Started implements _Started {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_StartedCopyWith<_$_Started> get copyWith =>
       __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
 
@@ -154,8 +156,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<RealEstateAmenity> list)? started,
-    TResult Function(RealEstateAmenity amenity, bool isSelected)?
+    TResult? Function(List<RealEstateAmenity> list)? started,
+    TResult? Function(RealEstateAmenity amenity, bool isSelected)?
         onSelectAmenity,
   }) {
     return started?.call(list);
@@ -187,8 +189,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_OnSelectAmenity value)? onSelectAmenity,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnSelectAmenity value)? onSelectAmenity,
   }) {
     return started?.call(this);
   }
@@ -221,31 +223,30 @@ abstract class _$$_OnSelectAmenityCopyWith<$Res> {
   factory _$$_OnSelectAmenityCopyWith(
           _$_OnSelectAmenity value, $Res Function(_$_OnSelectAmenity) then) =
       __$$_OnSelectAmenityCopyWithImpl<$Res>;
+  @useResult
   $Res call({RealEstateAmenity amenity, bool isSelected});
 }
 
 /// @nodoc
 class __$$_OnSelectAmenityCopyWithImpl<$Res>
-    extends _$HouseProcessAmentityEventCopyWithImpl<$Res>
+    extends _$HouseProcessAmentityEventCopyWithImpl<$Res, _$_OnSelectAmenity>
     implements _$$_OnSelectAmenityCopyWith<$Res> {
   __$$_OnSelectAmenityCopyWithImpl(
       _$_OnSelectAmenity _value, $Res Function(_$_OnSelectAmenity) _then)
-      : super(_value, (v) => _then(v as _$_OnSelectAmenity));
+      : super(_value, _then);
 
-  @override
-  _$_OnSelectAmenity get _value => super._value as _$_OnSelectAmenity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amenity = freezed,
-    Object? isSelected = freezed,
+    Object? amenity = null,
+    Object? isSelected = null,
   }) {
     return _then(_$_OnSelectAmenity(
-      amenity == freezed
+      null == amenity
           ? _value.amenity
           : amenity // ignore: cast_nullable_to_non_nullable
               as RealEstateAmenity,
-      isSelected == freezed
+      null == isSelected
           ? _value.isSelected
           : isSelected // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -273,19 +274,17 @@ class _$_OnSelectAmenity implements _OnSelectAmenity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnSelectAmenity &&
-            const DeepCollectionEquality().equals(other.amenity, amenity) &&
-            const DeepCollectionEquality()
-                .equals(other.isSelected, isSelected));
+            (identical(other.amenity, amenity) || other.amenity == amenity) &&
+            (identical(other.isSelected, isSelected) ||
+                other.isSelected == isSelected));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(amenity),
-      const DeepCollectionEquality().hash(isSelected));
+  int get hashCode => Object.hash(runtimeType, amenity, isSelected);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnSelectAmenityCopyWith<_$_OnSelectAmenity> get copyWith =>
       __$$_OnSelectAmenityCopyWithImpl<_$_OnSelectAmenity>(this, _$identity);
 
@@ -302,8 +301,8 @@ class _$_OnSelectAmenity implements _OnSelectAmenity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<RealEstateAmenity> list)? started,
-    TResult Function(RealEstateAmenity amenity, bool isSelected)?
+    TResult? Function(List<RealEstateAmenity> list)? started,
+    TResult? Function(RealEstateAmenity amenity, bool isSelected)?
         onSelectAmenity,
   }) {
     return onSelectAmenity?.call(amenity, isSelected);
@@ -335,8 +334,8 @@ class _$_OnSelectAmenity implements _OnSelectAmenity {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_OnSelectAmenity value)? onSelectAmenity,
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnSelectAmenity value)? onSelectAmenity,
   }) {
     return onSelectAmenity?.call(this);
   }
@@ -381,29 +380,33 @@ mixin _$HouseProcessAmentityState {
 abstract class $HouseProcessAmentityStateCopyWith<$Res> {
   factory $HouseProcessAmentityStateCopyWith(HouseProcessAmentityState value,
           $Res Function(HouseProcessAmentityState) then) =
-      _$HouseProcessAmentityStateCopyWithImpl<$Res>;
+      _$HouseProcessAmentityStateCopyWithImpl<$Res, HouseProcessAmentityState>;
+  @useResult
   $Res call({List<Tuple2<RealEstateAmenity, bool>> amentities});
 }
 
 /// @nodoc
-class _$HouseProcessAmentityStateCopyWithImpl<$Res>
+class _$HouseProcessAmentityStateCopyWithImpl<$Res,
+        $Val extends HouseProcessAmentityState>
     implements $HouseProcessAmentityStateCopyWith<$Res> {
   _$HouseProcessAmentityStateCopyWithImpl(this._value, this._then);
 
-  final HouseProcessAmentityState _value;
   // ignore: unused_field
-  final $Res Function(HouseProcessAmentityState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amentities = freezed,
+    Object? amentities = null,
   }) {
     return _then(_value.copyWith(
-      amentities: amentities == freezed
+      amentities: null == amentities
           ? _value.amentities
           : amentities // ignore: cast_nullable_to_non_nullable
               as List<Tuple2<RealEstateAmenity, bool>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -415,28 +418,27 @@ abstract class _$$_HouseProcessAmentityStateCopyWith<$Res>
           $Res Function(_$_HouseProcessAmentityState) then) =
       __$$_HouseProcessAmentityStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Tuple2<RealEstateAmenity, bool>> amentities});
 }
 
 /// @nodoc
 class __$$_HouseProcessAmentityStateCopyWithImpl<$Res>
-    extends _$HouseProcessAmentityStateCopyWithImpl<$Res>
+    extends _$HouseProcessAmentityStateCopyWithImpl<$Res,
+        _$_HouseProcessAmentityState>
     implements _$$_HouseProcessAmentityStateCopyWith<$Res> {
   __$$_HouseProcessAmentityStateCopyWithImpl(
       _$_HouseProcessAmentityState _value,
       $Res Function(_$_HouseProcessAmentityState) _then)
-      : super(_value, (v) => _then(v as _$_HouseProcessAmentityState));
+      : super(_value, _then);
 
-  @override
-  _$_HouseProcessAmentityState get _value =>
-      super._value as _$_HouseProcessAmentityState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amentities = freezed,
+    Object? amentities = null,
   }) {
     return _then(_$_HouseProcessAmentityState(
-      amentities: amentities == freezed
+      amentities: null == amentities
           ? _value._amentities
           : amentities // ignore: cast_nullable_to_non_nullable
               as List<Tuple2<RealEstateAmenity, bool>>,
@@ -479,6 +481,7 @@ class _$_HouseProcessAmentityState implements _HouseProcessAmentityState {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_HouseProcessAmentityStateCopyWith<_$_HouseProcessAmentityState>
       get copyWith => __$$_HouseProcessAmentityStateCopyWithImpl<
           _$_HouseProcessAmentityState>(this, _$identity);

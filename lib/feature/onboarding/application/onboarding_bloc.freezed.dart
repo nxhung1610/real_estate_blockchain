@@ -25,9 +25,9 @@ mixin _$OnboardingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<OnboardingData> datas)? initial,
-    TResult Function()? started,
-    TResult Function(int index)? onChangeSlide,
+    TResult? Function(List<OnboardingData> datas)? initial,
+    TResult? Function()? started,
+    TResult? Function(int index)? onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$OnboardingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingEventInitial value)? initial,
-    TResult Function(OnboardingEventStarted value)? started,
-    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+    TResult? Function(OnboardingEventInitial value)? initial,
+    TResult? Function(OnboardingEventStarted value)? started,
+    TResult? Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,17 +66,18 @@ mixin _$OnboardingEvent {
 abstract class $OnboardingEventCopyWith<$Res> {
   factory $OnboardingEventCopyWith(
           OnboardingEvent value, $Res Function(OnboardingEvent) then) =
-      _$OnboardingEventCopyWithImpl<$Res>;
+      _$OnboardingEventCopyWithImpl<$Res, OnboardingEvent>;
 }
 
 /// @nodoc
-class _$OnboardingEventCopyWithImpl<$Res>
+class _$OnboardingEventCopyWithImpl<$Res, $Val extends OnboardingEvent>
     implements $OnboardingEventCopyWith<$Res> {
   _$OnboardingEventCopyWithImpl(this._value, this._then);
 
-  final OnboardingEvent _value;
   // ignore: unused_field
-  final $Res Function(OnboardingEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,27 +85,25 @@ abstract class _$$OnboardingEventInitialCopyWith<$Res> {
   factory _$$OnboardingEventInitialCopyWith(_$OnboardingEventInitial value,
           $Res Function(_$OnboardingEventInitial) then) =
       __$$OnboardingEventInitialCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<OnboardingData> datas});
 }
 
 /// @nodoc
 class __$$OnboardingEventInitialCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnboardingEventInitial>
     implements _$$OnboardingEventInitialCopyWith<$Res> {
   __$$OnboardingEventInitialCopyWithImpl(_$OnboardingEventInitial _value,
       $Res Function(_$OnboardingEventInitial) _then)
-      : super(_value, (v) => _then(v as _$OnboardingEventInitial));
+      : super(_value, _then);
 
-  @override
-  _$OnboardingEventInitial get _value =>
-      super._value as _$OnboardingEventInitial;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? datas = freezed,
+    Object? datas = null,
   }) {
     return _then(_$OnboardingEventInitial(
-      datas == freezed
+      null == datas
           ? _value._datas
           : datas // ignore: cast_nullable_to_non_nullable
               as List<OnboardingData>,
@@ -144,6 +143,7 @@ class _$OnboardingEventInitial implements OnboardingEventInitial {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$OnboardingEventInitialCopyWith<_$OnboardingEventInitial> get copyWith =>
       __$$OnboardingEventInitialCopyWithImpl<_$OnboardingEventInitial>(
           this, _$identity);
@@ -161,9 +161,9 @@ class _$OnboardingEventInitial implements OnboardingEventInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<OnboardingData> datas)? initial,
-    TResult Function()? started,
-    TResult Function(int index)? onChangeSlide,
+    TResult? Function(List<OnboardingData> datas)? initial,
+    TResult? Function()? started,
+    TResult? Function(int index)? onChangeSlide,
   }) {
     return initial?.call(datas);
   }
@@ -195,9 +195,9 @@ class _$OnboardingEventInitial implements OnboardingEventInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingEventInitial value)? initial,
-    TResult Function(OnboardingEventStarted value)? started,
-    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+    TResult? Function(OnboardingEventInitial value)? initial,
+    TResult? Function(OnboardingEventStarted value)? started,
+    TResult? Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) {
     return initial?.call(this);
   }
@@ -236,15 +236,11 @@ abstract class _$$OnboardingEventStartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$OnboardingEventStartedCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnboardingEventStarted>
     implements _$$OnboardingEventStartedCopyWith<$Res> {
   __$$OnboardingEventStartedCopyWithImpl(_$OnboardingEventStarted _value,
       $Res Function(_$OnboardingEventStarted) _then)
-      : super(_value, (v) => _then(v as _$OnboardingEventStarted));
-
-  @override
-  _$OnboardingEventStarted get _value =>
-      super._value as _$OnboardingEventStarted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -279,9 +275,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<OnboardingData> datas)? initial,
-    TResult Function()? started,
-    TResult Function(int index)? onChangeSlide,
+    TResult? Function(List<OnboardingData> datas)? initial,
+    TResult? Function()? started,
+    TResult? Function(int index)? onChangeSlide,
   }) {
     return started?.call();
   }
@@ -313,9 +309,9 @@ class _$OnboardingEventStarted implements OnboardingEventStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingEventInitial value)? initial,
-    TResult Function(OnboardingEventStarted value)? started,
-    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+    TResult? Function(OnboardingEventInitial value)? initial,
+    TResult? Function(OnboardingEventStarted value)? started,
+    TResult? Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) {
     return started?.call(this);
   }
@@ -345,28 +341,26 @@ abstract class _$$OnboardingEventChangeSlideCopyWith<$Res> {
           _$OnboardingEventChangeSlide value,
           $Res Function(_$OnboardingEventChangeSlide) then) =
       __$$OnboardingEventChangeSlideCopyWithImpl<$Res>;
+  @useResult
   $Res call({int index});
 }
 
 /// @nodoc
 class __$$OnboardingEventChangeSlideCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$OnboardingEventChangeSlide>
     implements _$$OnboardingEventChangeSlideCopyWith<$Res> {
   __$$OnboardingEventChangeSlideCopyWithImpl(
       _$OnboardingEventChangeSlide _value,
       $Res Function(_$OnboardingEventChangeSlide) _then)
-      : super(_value, (v) => _then(v as _$OnboardingEventChangeSlide));
+      : super(_value, _then);
 
-  @override
-  _$OnboardingEventChangeSlide get _value =>
-      super._value as _$OnboardingEventChangeSlide;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = freezed,
+    Object? index = null,
   }) {
     return _then(_$OnboardingEventChangeSlide(
-      index == freezed
+      null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -392,15 +386,15 @@ class _$OnboardingEventChangeSlide implements OnboardingEventChangeSlide {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnboardingEventChangeSlide &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$OnboardingEventChangeSlideCopyWith<_$OnboardingEventChangeSlide>
       get copyWith => __$$OnboardingEventChangeSlideCopyWithImpl<
           _$OnboardingEventChangeSlide>(this, _$identity);
@@ -418,9 +412,9 @@ class _$OnboardingEventChangeSlide implements OnboardingEventChangeSlide {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<OnboardingData> datas)? initial,
-    TResult Function()? started,
-    TResult Function(int index)? onChangeSlide,
+    TResult? Function(List<OnboardingData> datas)? initial,
+    TResult? Function()? started,
+    TResult? Function(int index)? onChangeSlide,
   }) {
     return onChangeSlide?.call(index);
   }
@@ -452,9 +446,9 @@ class _$OnboardingEventChangeSlide implements OnboardingEventChangeSlide {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(OnboardingEventInitial value)? initial,
-    TResult Function(OnboardingEventStarted value)? started,
-    TResult Function(OnboardingEventChangeSlide value)? onChangeSlide,
+    TResult? Function(OnboardingEventInitial value)? initial,
+    TResult? Function(OnboardingEventStarted value)? started,
+    TResult? Function(OnboardingEventChangeSlide value)? onChangeSlide,
   }) {
     return onChangeSlide?.call(this);
   }
@@ -498,34 +492,37 @@ mixin _$OnboardingState {
 abstract class $OnboardingStateCopyWith<$Res> {
   factory $OnboardingStateCopyWith(
           OnboardingState value, $Res Function(OnboardingState) then) =
-      _$OnboardingStateCopyWithImpl<$Res>;
+      _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
+  @useResult
   $Res call({List<OnboardingData> datas, int index});
 }
 
 /// @nodoc
-class _$OnboardingStateCopyWithImpl<$Res>
+class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
     implements $OnboardingStateCopyWith<$Res> {
   _$OnboardingStateCopyWithImpl(this._value, this._then);
 
-  final OnboardingState _value;
   // ignore: unused_field
-  final $Res Function(OnboardingState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? datas = freezed,
-    Object? index = freezed,
+    Object? datas = null,
+    Object? index = null,
   }) {
     return _then(_value.copyWith(
-      datas: datas == freezed
+      datas: null == datas
           ? _value.datas
           : datas // ignore: cast_nullable_to_non_nullable
               as List<OnboardingData>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -536,31 +533,30 @@ abstract class _$$_OnboardingStateCopyWith<$Res>
           _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
       __$$_OnboardingStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<OnboardingData> datas, int index});
 }
 
 /// @nodoc
 class __$$_OnboardingStateCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingState>
     implements _$$_OnboardingStateCopyWith<$Res> {
   __$$_OnboardingStateCopyWithImpl(
       _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
-      : super(_value, (v) => _then(v as _$_OnboardingState));
+      : super(_value, _then);
 
-  @override
-  _$_OnboardingState get _value => super._value as _$_OnboardingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? datas = freezed,
-    Object? index = freezed,
+    Object? datas = null,
+    Object? index = null,
   }) {
     return _then(_$_OnboardingState(
-      datas: datas == freezed
+      datas: null == datas
           ? _value._datas
           : datas // ignore: cast_nullable_to_non_nullable
               as List<OnboardingData>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -598,17 +594,16 @@ class _$_OnboardingState implements _OnboardingState {
         (other.runtimeType == runtimeType &&
             other is _$_OnboardingState &&
             const DeepCollectionEquality().equals(other._datas, _datas) &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_datas),
-      const DeepCollectionEquality().hash(index));
+      runtimeType, const DeepCollectionEquality().hash(_datas), index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
       __$$_OnboardingStateCopyWithImpl<_$_OnboardingState>(this, _$identity);
 }
