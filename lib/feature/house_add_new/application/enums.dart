@@ -3,7 +3,7 @@ enum ProcessState {
   realeStateInfo,
   amenities,
   media,
-  schedule,
+  map,
 }
 
 enum RealEstateSell { sell, rent }

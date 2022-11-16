@@ -640,11 +640,11 @@ class S {
     );
   }
 
-  /// `Post Setup`
-  String get addNewPropertyPostSetup {
+  /// `Map Position`
+  String get addNewPropertyMap {
     return Intl.message(
-      'Post Setup',
-      name: 'addNewPropertyPostSetup',
+      'Map Position',
+      name: 'addNewPropertyMap',
       desc: '',
       args: [],
     );

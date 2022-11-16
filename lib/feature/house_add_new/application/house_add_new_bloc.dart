@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
@@ -59,6 +60,9 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_OnMedia>((event, emit) {
       emit(state.copyWith(media: event.media));
     });
+    on<_OnMap>((event, emit) {
+      emit(state.copyWith(position: event.point));
+    });
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
@@ -102,7 +106,12 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
             return;
           }
           break;
-        case ProcessState.schedule:
+        case ProcessState.map:
+          if (data is LatLng) {
+            add(_OnMap(data));
+          } else {
+            return;
+          }
           break;
       }
       add(const _NextPage());

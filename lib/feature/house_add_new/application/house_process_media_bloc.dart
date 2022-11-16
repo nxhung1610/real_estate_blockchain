@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
@@ -19,9 +21,10 @@ part 'house_process_media_bloc.freezed.dart';
 class HouseProcessMediaBloc
     extends Bloc<HouseProcessMediaEvent, HouseProcessMediaState> {
   final ValidateSubcriber _subcriber;
+  late final StreamSubscription _subscription;
   HouseProcessMediaBloc(@factoryParam this._subcriber)
       : super(const HouseProcessMediaState()) {
-    _subcriber.stream.listen((event) {
+    _subscription = _subcriber.stream.listen((event) {
       event.onValidWithData(
         ProcessState.media,
         isValid(),
@@ -32,13 +35,25 @@ class HouseProcessMediaBloc
     });
     on<_OnChooseFile>((event, emit) async {
       try {
+        emit(state.copyWith(status: const Status.loading()));
         final ImagePicker picker = ImagePicker();
-        List<XFile>? result =
-            await picker.pickMultiImage(requestFullMetadata: true);
-        emit(state.copyWith(
-            media: [...state.media.reversed, ...result].reversed.toList()));
+        List<XFile>? result = await picker.pickMultiImage(
+            imageQuality: 70,
+            maxHeight: 1100,
+            maxWidth: 1100,
+            requestFullMetadata: false);
+        log('Get image success');
+        emit(
+          state.copyWith(
+            media: [...state.media.reversed, ...result].reversed.toList(),
+            status: const Status.success(),
+          ),
+        );
       } catch (e) {
+        emit(state.copyWith(status: const Status.failure()));
         print(e.toString());
+      } finally {
+        emit(state.copyWith(status: const Status.idle()));
       }
     });
   }
@@ -46,5 +61,9 @@ class HouseProcessMediaBloc
   void onChooseFile() => add(const HouseProcessMediaEvent.onChooseFile());
   bool isValid() {
     return state.media.isNotEmpty;
+  }
+
+  void disposed() {
+    _subscription.cancel();
   }
 }

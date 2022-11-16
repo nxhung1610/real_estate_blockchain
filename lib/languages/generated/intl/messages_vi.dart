@@ -30,12 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Địa chỉ"),
         "addNewPropertyAmenities":
             MessageLookupByLibrary.simpleMessage("Tiện nghi"),
+        "addNewPropertyMap":
+            MessageLookupByLibrary.simpleMessage("Vị trí bản đồ"),
         "addNewPropertyMedia":
             MessageLookupByLibrary.simpleMessage("Hình ảnh & Video"),
         "addNewPropertyPostInfo":
             MessageLookupByLibrary.simpleMessage("Thông tin bài viết"),
-        "addNewPropertyPostSetup":
-            MessageLookupByLibrary.simpleMessage("Thiết lập bài đăng"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),

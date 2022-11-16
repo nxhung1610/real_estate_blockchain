@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -14,18 +16,21 @@ part 'house_process_amentity_bloc.freezed.dart';
 class HouseProcessAmentityBloc
     extends Bloc<HouseProcessAmentityEvent, HouseProcessAmentityState> {
   final ValidateSubcriber _subcriber;
+  late final StreamSubscription _subscription;
   HouseProcessAmentityBloc(@factoryParam this._subcriber)
       : super(const HouseProcessAmentityState()) {
-    _subcriber.stream.listen((event) {
-      event.onValidWithData(
-        ProcessState.amenities,
-        isValid(),
-        [
-          ...state.amentities
-              .where((element) => element.value2)
-              .map((e) => e.value1),
-        ],
-      );
+    _subscription = _subcriber.stream.listen((event) {
+      if (isValid()) {
+        event.onValidWithData(
+          ProcessState.amenities,
+          isValid(),
+          [
+            ...state.amentities
+                .where((element) => element.value2)
+                .map((e) => e.value1),
+          ],
+        );
+      }
     });
     on<_Started>((event, emit) {
       emit(
@@ -58,5 +63,9 @@ class HouseProcessAmentityBloc
     final isNotNull =
         state.amentities.where((element) => element.value2).isNotEmpty;
     return isNotNull;
+  }
+
+  void disposed() {
+    _subscription.cancel();
   }
 }

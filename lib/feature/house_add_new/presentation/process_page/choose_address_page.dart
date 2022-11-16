@@ -23,17 +23,20 @@ class ChooseAdressPage extends StatefulWidget {
 
 class _ChooseAdressPageState extends State<ChooseAdressPage> {
   late TextEditingController addressController;
+  late final HouseProcessAddressBloc bloc;
 
   @override
   void initState() {
     super.initState();
     addressController = TextEditingController();
-    context.read<HouseProcessAddressBloc>().start();
+    bloc = context.read<HouseProcessAddressBloc>();
+    bloc.start();
   }
 
   @override
   void dispose() {
     addressController.dispose();
+    bloc.disposed();
     super.dispose();
   }
 

@@ -30,12 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Address"),
         "addNewPropertyAmenities":
             MessageLookupByLibrary.simpleMessage("Select Amenities"),
+        "addNewPropertyMap":
+            MessageLookupByLibrary.simpleMessage("Map Position"),
         "addNewPropertyMedia":
             MessageLookupByLibrary.simpleMessage("Videos & Photo"),
         "addNewPropertyPostInfo":
             MessageLookupByLibrary.simpleMessage("Post Info"),
-        "addNewPropertyPostSetup":
-            MessageLookupByLibrary.simpleMessage("Post Setup"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),

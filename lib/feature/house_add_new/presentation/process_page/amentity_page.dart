@@ -89,4 +89,10 @@ class _AmenityPageState extends State<AmenityPage> {
       },
     );
   }
+
+  @override
+  void dispose() {
+    bloc.disposed();
+    super.dispose();
+  }
 }

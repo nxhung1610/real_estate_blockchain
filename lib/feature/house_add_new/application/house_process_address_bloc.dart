@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -16,9 +18,10 @@ class HouseProcessAddressBloc
     extends Bloc<HouseProcessAddressEvent, HouseProcessAddressState> {
   final IProvincesRepository _repository;
   final ValidateSubcriber _subcriber;
+  late final StreamSubscription _subscription;
   HouseProcessAddressBloc(this._repository, @factoryParam this._subcriber)
       : super(const HouseProcessAddressState()) {
-    _subcriber.stream.listen((event) {
+    _subscription = _subcriber.stream.listen((event) {
       event.onValidWithData(
           ProcessState.address, isValid(), state.addressChoosen);
     });
@@ -92,5 +95,9 @@ class HouseProcessAddressBloc
     final isNotNull =
         state.addressChoosen.props.every((element) => element != null);
     return isNotNull && state.addressChoosen.address!.isNotEmpty;
+  }
+
+  void disposed() {
+    _subscription.cancel();
   }
 }

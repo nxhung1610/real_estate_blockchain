@@ -30,6 +30,12 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
   }
 
   @override
+  void dispose() {
+    bloc.disposed();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Column(

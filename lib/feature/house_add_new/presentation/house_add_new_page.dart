@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
@@ -31,37 +32,49 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
   late final HouseAddNewBloc bloc;
   late final PageController controller;
   final ValidateSubcriber validateSubcriber = ValidateSubcriber();
-  late final Map<ProcessState, Widget> pages;
 
   @override
   void initState() {
     super.initState();
     bloc = context.read<HouseAddNewBloc>();
-    pages = {
-      ProcessState.address: BlocProvider<HouseProcessAddressBloc>(
-        create: (context) =>
-            getIt.call<HouseProcessAddressBloc>(param1: validateSubcriber),
-        child: const ChooseAdressPage(),
-      ),
-      ProcessState.realeStateInfo: BlocProvider(
-        create: (context) =>
-            getIt.call<HouseProcessRealInfoBloc>(param1: validateSubcriber),
-        child: const RealEstateInfoPage(),
-      ),
-      ProcessState.amenities: BlocProvider(
-        create: (context) =>
-            getIt.call<HouseProcessAmentityBloc>(param1: validateSubcriber),
-        child: const AmenityPage(),
-      ),
-      ProcessState.media: BlocProvider(
-        create: (context) =>
-            getIt.call<HouseProcessMediaBloc>(param1: validateSubcriber),
-        child: const VideoPhotoPage(),
-      ),
-      ProcessState.schedule: Container(),
-    };
     controller = PageController(initialPage: 0, keepPage: true);
     bloc.setup(validateSubcriber);
+  }
+
+  Widget generatePage(ProcessState state) {
+    switch (state) {
+      case ProcessState.address:
+        return BlocProvider<HouseProcessAddressBloc>(
+          create: (context) =>
+              getIt.call<HouseProcessAddressBloc>(param1: validateSubcriber),
+          child: const ChooseAdressPage(),
+        );
+      case ProcessState.realeStateInfo:
+        return BlocProvider(
+          create: (context) =>
+              getIt.call<HouseProcessRealInfoBloc>(param1: validateSubcriber),
+          child: const RealEstateInfoPage(),
+        );
+      case ProcessState.amenities:
+        return BlocProvider(
+          create: (context) =>
+              getIt.call<HouseProcessAmentityBloc>(param1: validateSubcriber),
+          child: const AmenityPage(),
+        );
+      case ProcessState.media:
+        return BlocProvider(
+          create: (context) =>
+              getIt.call<HouseProcessMediaBloc>(param1: validateSubcriber),
+          child: const VideoPhotoPage(),
+        );
+      case ProcessState.map:
+        return BlocProvider(
+          create: (context) => getIt.call<HouseProcessMapPositionBloc>(
+              param1: validateSubcriber),
+          child: const MapPositionPage(),
+        );
+    }
+    return Container();
   }
 
   @override
@@ -118,8 +131,8 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                             case ProcessState.media:
                               title = s.addNewPropertyMedia;
                               break;
-                            case ProcessState.schedule:
-                              title = s.addNewPropertyPostSetup;
+                            case ProcessState.map:
+                              title = s.addNewPropertyMap;
                               break;
                             case ProcessState.amenities:
                               title = s.addNewPropertyAmenities;
@@ -194,7 +207,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                   itemBuilder: (context, index) {
                     final state = ProcessState.values[index];
                     return SingleChildScrollView(
-                      child: pages[state] ?? Container(),
+                      child: generatePage(state),
                     );
                   },
                 ),

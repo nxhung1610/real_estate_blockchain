@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,10 +17,11 @@ part 'house_process_real_info_bloc.freezed.dart';
 class HouseProcessRealInfoBloc
     extends Bloc<HouseProcessRealInfoEvent, HouseProcessRealInfoState> {
   final ValidateSubcriber _subcriber;
+  late final StreamSubscription _subscription;
   HouseProcessRealInfoBloc(
     @factoryParam this._subcriber,
   ) : super(const HouseProcessRealInfoState()) {
-    _subcriber.stream.listen((event) {
+    _subscription = _subcriber.stream.listen((event) {
       event.onValidWithData(
         ProcessState.realeStateInfo,
         isValid(),
@@ -123,5 +126,9 @@ class HouseProcessRealInfoBloc
         (state.price ?? 0) > 0 &&
         state.reTypeId != null;
     return isNotNull;
+  }
+
+  void disposed() {
+    _subscription.cancel();
   }
 }
