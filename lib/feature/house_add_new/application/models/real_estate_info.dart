@@ -14,6 +14,12 @@ class RealEstateInfo extends Equatable {
   @JsonKey(name: 'no_wc')
   final int? noWc;
   final int? floors;
+  @JsonKey(name: 'built_at')
+  final int? builtAt;
+  @JsonKey(name: 'house_facing')
+  final String? houseFacing;
+  @JsonKey(name: 'balcony_facing')
+  final String? balconyFacing;
 
   const RealEstateInfo({
     this.isRent,
@@ -24,6 +30,9 @@ class RealEstateInfo extends Equatable {
     this.noBedroom,
     this.noWc,
     this.floors,
+    this.builtAt,
+    this.houseFacing,
+    this.balconyFacing,
   });
 
   RealEstateInfo copyWith({
@@ -35,6 +44,9 @@ class RealEstateInfo extends Equatable {
     int? noBedroom,
     int? noWc,
     int? floors,
+    int? builtAt,
+    String? houseFacing,
+    String? balconyFacing,
   }) {
     return RealEstateInfo(
       isRent: isRent ?? this.isRent,
@@ -45,6 +57,9 @@ class RealEstateInfo extends Equatable {
       noBedroom: noBedroom ?? this.noBedroom,
       noWc: noWc ?? this.noWc,
       floors: floors ?? this.floors,
+      builtAt: builtAt ?? this.builtAt,
+      houseFacing: houseFacing ?? this.houseFacing,
+      balconyFacing: balconyFacing ?? this.balconyFacing,
     );
   }
 
@@ -59,6 +74,9 @@ class RealEstateInfo extends Equatable {
       noBedroom,
       noWc,
       floors,
+      builtAt,
+      houseFacing,
+      balconyFacing,
     ];
   }
 }

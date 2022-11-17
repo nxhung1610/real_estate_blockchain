@@ -73,6 +73,7 @@
   "area" : "Area",
   "price" : "Price",
   "unit" :"Unit",
+  "builtAt" : "Built At",
   "legalDocuments"  : "Legal Documents",
   "title" : "Title",
   "titleHint" : "Sale private house at Cau Giay",
@@ -91,5 +92,9 @@
   "rent" : "Rent",
   "sell" : "Sell",
   "realEstateType" : "Real estate type",
-  "realEstateDescription" : "Private house"
+  "realEstateDescription" : "Private house",
+  "houseFacing" : "House Facing",
+  "balconyFacing" : "Balcony Facing",
+  "additionalDescription" : "Additional Description",
+  "furniture" : "Furniture"
 }

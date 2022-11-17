@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 class DropdownApp<T> extends StatelessWidget {
   final List<DropdownMenuItem<T>> items;
   final void Function(T? value)? onChanged;
+  final bool? isExpanded;
   final double? paddingHorizontal;
   final Widget? hint;
   final T? value;
@@ -21,6 +22,7 @@ class DropdownApp<T> extends StatelessWidget {
     this.selectedItemBuilder,
     this.paddingHorizontal,
     this.value,
+    this.isExpanded,
   });
 
   @override
@@ -36,6 +38,7 @@ class DropdownApp<T> extends StatelessWidget {
           ),
           child: Material(
             child: DropdownButtonFormField2<T>(
+              isExpanded: isExpanded ?? false,
               value: value,
               dropdownMaxHeight: 0.5.sh,
               itemPadding: EdgeInsets.symmetric(

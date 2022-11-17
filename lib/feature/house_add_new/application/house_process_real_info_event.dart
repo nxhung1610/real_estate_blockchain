@@ -21,4 +21,12 @@ class HouseProcessRealInfoEvent with _$HouseProcessRealInfoEvent {
       _OnNumWcChanged;
   const factory HouseProcessRealInfoEvent.onNumFloorChanged(bool isIncrease) =
       _OnNumFloorChanged;
+  const factory HouseProcessRealInfoEvent.onBuiltAtChanged(int year) =
+      _OnBuiltAtChanged;
+  const factory HouseProcessRealInfoEvent.onHouseDirectionChanged(
+      RealEstateDirection direction) = _OnHouseDirectionChanged;
+  const factory HouseProcessRealInfoEvent.onBalconyDirectionChanged(
+      RealEstateDirection direction) = _OnBalconyDirectionChanged;
+  const factory HouseProcessRealInfoEvent.onFurnitureChanged(String note) =
+      _OnFurnitureChanged;
 }

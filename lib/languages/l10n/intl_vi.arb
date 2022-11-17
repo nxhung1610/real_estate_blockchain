@@ -73,6 +73,7 @@
   "area": "Diện tích",
   "price": "Mức giá",
   "unit": "Đơn vị",
+  "builtAt" : "Được xây dựng",
   "legalDocuments": "Giấy tờ pháp lý",
   "title": "Tiêu đề",
   "titleHint": "Bán nhà riêng tại Cầu Giấy",
@@ -91,5 +92,9 @@
   "rent" : "Cho thuê",
   "sell" : "Bán",
   "realEstateType" : "Loại bất động sản",
-  "realEstateDescription" : "Nhà riêng"
+  "realEstateDescription" : "Nhà riêng",
+  "houseFacing" : "Hướng nhà",
+  "balconyFacing" : "Hướng ban công",
+  "additionalDescription" : "Mô tả bổ sung",
+  "furniture" : "Nội thất"
 }

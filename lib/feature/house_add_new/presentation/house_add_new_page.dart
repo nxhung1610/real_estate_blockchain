@@ -12,7 +12,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
-import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position_page.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';

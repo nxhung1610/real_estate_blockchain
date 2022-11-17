@@ -12,4 +12,5 @@ class HouseAddNewEvent with _$HouseAddNewEvent {
       _OnAmenity;
   const factory HouseAddNewEvent.onMedia(List<XFile> media) = _OnMedia;
   const factory HouseAddNewEvent.onMap(LatLng point) = _OnMap;
+  const factory HouseAddNewEvent.createRealEstate() = _CreateRealEstate;
 }

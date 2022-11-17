@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thông tin bài viết"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
+        "additionalDescription":
+            MessageLookupByLibrary.simpleMessage("Mô tả bổ sung"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra"),
@@ -46,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
+        "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
+        "builtAt": MessageLookupByLibrary.simpleMessage("Được xây dựng"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
@@ -62,8 +66,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "filter": MessageLookupByLibrary.simpleMessage("Lọc"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
+        "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "legalDocuments":

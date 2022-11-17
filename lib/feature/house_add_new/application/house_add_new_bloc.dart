@@ -63,6 +63,7 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_OnMap>((event, emit) {
       emit(state.copyWith(position: event.point));
     });
+    on<_CreateRealEstate>((event, emit) async {});
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
@@ -114,7 +115,18 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
           }
           break;
       }
-      add(const _NextPage());
+      if (isValidForFinish()) {
+      } else {
+        add(const _NextPage());
+      }
     }
+  }
+
+  bool isValidForFinish() {
+    return state.addressChoosen != null &&
+        state.amenities != null &&
+        state.media != null &&
+        state.position != null &&
+        state.realEstateInfo != null;
   }
 }

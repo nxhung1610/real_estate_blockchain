@@ -25,6 +25,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +37,7 @@ mixin _$HouseAddNewEvent {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +49,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +62,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +74,7 @@ mixin _$HouseAddNewEvent {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +86,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,6 +180,7 @@ class _$_Setup implements _Setup {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return setup(subcriber);
   }
@@ -188,6 +195,7 @@ class _$_Setup implements _Setup {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return setup?.call(subcriber);
   }
@@ -202,6 +210,7 @@ class _$_Setup implements _Setup {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -220,6 +229,7 @@ class _$_Setup implements _Setup {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return setup(this);
   }
@@ -234,6 +244,7 @@ class _$_Setup implements _Setup {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return setup?.call(this);
   }
@@ -248,6 +259,7 @@ class _$_Setup implements _Setup {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (setup != null) {
@@ -311,6 +323,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return nextPage();
   }
@@ -325,6 +338,7 @@ class _$_NextPage implements _NextPage {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return nextPage?.call();
   }
@@ -339,6 +353,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -357,6 +372,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return nextPage(this);
   }
@@ -371,6 +387,7 @@ class _$_NextPage implements _NextPage {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return nextPage?.call(this);
   }
@@ -385,6 +402,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (nextPage != null) {
@@ -470,6 +488,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return onAddressChosen(addressChoosen);
   }
@@ -484,6 +503,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return onAddressChosen?.call(addressChoosen);
   }
@@ -498,6 +518,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -516,6 +537,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return onAddressChosen(this);
   }
@@ -530,6 +552,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return onAddressChosen?.call(this);
   }
@@ -544,6 +567,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (onAddressChosen != null) {
@@ -635,6 +659,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return onRealEstateInfo(realEstateInfo);
   }
@@ -649,6 +674,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return onRealEstateInfo?.call(realEstateInfo);
   }
@@ -663,6 +689,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -681,6 +708,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return onRealEstateInfo(this);
   }
@@ -695,6 +723,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return onRealEstateInfo?.call(this);
   }
@@ -709,6 +738,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (onRealEstateInfo != null) {
@@ -806,6 +836,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return onAmenity(amenities);
   }
@@ -820,6 +851,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return onAmenity?.call(amenities);
   }
@@ -834,6 +866,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (onAmenity != null) {
@@ -852,6 +885,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return onAmenity(this);
   }
@@ -866,6 +900,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return onAmenity?.call(this);
   }
@@ -880,6 +915,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (onAmenity != null) {
@@ -974,6 +1010,7 @@ class _$_OnMedia implements _OnMedia {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return onMedia(media);
   }
@@ -988,6 +1025,7 @@ class _$_OnMedia implements _OnMedia {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return onMedia?.call(media);
   }
@@ -1002,6 +1040,7 @@ class _$_OnMedia implements _OnMedia {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (onMedia != null) {
@@ -1020,6 +1059,7 @@ class _$_OnMedia implements _OnMedia {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return onMedia(this);
   }
@@ -1034,6 +1074,7 @@ class _$_OnMedia implements _OnMedia {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return onMedia?.call(this);
   }
@@ -1048,6 +1089,7 @@ class _$_OnMedia implements _OnMedia {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (onMedia != null) {
@@ -1135,6 +1177,7 @@ class _$_OnMap implements _OnMap {
     required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
   }) {
     return onMap(point);
   }
@@ -1149,6 +1192,7 @@ class _$_OnMap implements _OnMap {
     TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
   }) {
     return onMap?.call(point);
   }
@@ -1163,6 +1207,7 @@ class _$_OnMap implements _OnMap {
     TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
     required TResult orElse(),
   }) {
     if (onMap != null) {
@@ -1181,6 +1226,7 @@ class _$_OnMap implements _OnMap {
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
     required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
     return onMap(this);
   }
@@ -1195,6 +1241,7 @@ class _$_OnMap implements _OnMap {
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
     TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
     return onMap?.call(this);
   }
@@ -1209,6 +1256,7 @@ class _$_OnMap implements _OnMap {
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
     TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
   }) {
     if (onMap != null) {
@@ -1225,6 +1273,144 @@ abstract class _OnMap implements HouseAddNewEvent {
   @JsonKey(ignore: true)
   _$$_OnMapCopyWith<_$_OnMap> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CreateRealEstateCopyWith<$Res> {
+  factory _$$_CreateRealEstateCopyWith(
+          _$_CreateRealEstate value, $Res Function(_$_CreateRealEstate) then) =
+      __$$_CreateRealEstateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_CreateRealEstateCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$_CreateRealEstate>
+    implements _$$_CreateRealEstateCopyWith<$Res> {
+  __$$_CreateRealEstateCopyWithImpl(
+      _$_CreateRealEstate _value, $Res Function(_$_CreateRealEstate) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_CreateRealEstate implements _CreateRealEstate {
+  const _$_CreateRealEstate();
+
+  @override
+  String toString() {
+    return 'HouseAddNewEvent.createRealEstate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_CreateRealEstate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ValidateSubcriber subcriber) setup,
+    required TResult Function() nextPage,
+    required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
+  }) {
+    return createRealEstate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
+  }) {
+    return createRealEstate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
+    TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
+    required TResult orElse(),
+  }) {
+    if (createRealEstate != null) {
+      return createRealEstate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_NextPage value) nextPage,
+    required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
+  }) {
+    return createRealEstate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
+  }) {
+    return createRealEstate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
+    TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
+    required TResult orElse(),
+  }) {
+    if (createRealEstate != null) {
+      return createRealEstate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateRealEstate implements HouseAddNewEvent {
+  const factory _CreateRealEstate() = _$_CreateRealEstate;
 }
 
 /// @nodoc

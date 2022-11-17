@@ -740,6 +740,16 @@ class S {
     );
   }
 
+  /// `Built At`
+  String get builtAt {
+    return Intl.message(
+      'Built At',
+      name: 'builtAt',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Legal Documents`
   String get legalDocuments {
     return Intl.message(
@@ -925,6 +935,46 @@ class S {
     return Intl.message(
       'Private house',
       name: 'realEstateDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `House Facing`
+  String get houseFacing {
+    return Intl.message(
+      'House Facing',
+      name: 'houseFacing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balcony Facing`
+  String get balconyFacing {
+    return Intl.message(
+      'Balcony Facing',
+      name: 'balconyFacing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional Description`
+  String get additionalDescription {
+    return Intl.message(
+      'Additional Description',
+      name: 'additionalDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Furniture`
+  String get furniture {
+    return Intl.message(
+      'Furniture',
+      name: 'furniture',
       desc: '',
       args: [],
     );

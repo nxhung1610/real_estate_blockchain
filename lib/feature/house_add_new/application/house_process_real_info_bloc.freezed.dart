@@ -28,6 +28,12 @@ mixin _$HouseProcessRealInfoEvent {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +48,10 @@ mixin _$HouseProcessRealInfoEvent {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +66,10 @@ mixin _$HouseProcessRealInfoEvent {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +85,12 @@ mixin _$HouseProcessRealInfoEvent {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +105,11 @@ mixin _$HouseProcessRealInfoEvent {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +124,11 @@ mixin _$HouseProcessRealInfoEvent {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,6 +200,12 @@ class _$_Started implements _Started {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return started();
   }
@@ -187,6 +223,10 @@ class _$_Started implements _Started {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return started?.call();
   }
@@ -204,6 +244,10 @@ class _$_Started implements _Started {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -225,6 +269,12 @@ class _$_Started implements _Started {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return started(this);
   }
@@ -242,6 +292,11 @@ class _$_Started implements _Started {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return started?.call(this);
   }
@@ -259,6 +314,11 @@ class _$_Started implements _Started {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -346,6 +406,12 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return changeTypeSell(sell);
   }
@@ -363,6 +429,10 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return changeTypeSell?.call(sell);
   }
@@ -380,6 +450,10 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (changeTypeSell != null) {
@@ -401,6 +475,12 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return changeTypeSell(this);
   }
@@ -418,6 +498,11 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return changeTypeSell?.call(this);
   }
@@ -435,6 +520,11 @@ class _$_ChangeTypeSell implements _ChangeTypeSell {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (changeTypeSell != null) {
@@ -529,6 +619,12 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return changeRealEstateType(type);
   }
@@ -546,6 +642,10 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return changeRealEstateType?.call(type);
   }
@@ -563,6 +663,10 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (changeRealEstateType != null) {
@@ -584,6 +688,12 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return changeRealEstateType(this);
   }
@@ -601,6 +711,11 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return changeRealEstateType?.call(this);
   }
@@ -618,6 +733,11 @@ class _$_ChangeRealEstateType implements _ChangeRealEstateType {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (changeRealEstateType != null) {
@@ -711,6 +831,12 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onAreaChanged(area);
   }
@@ -728,6 +854,10 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onAreaChanged?.call(area);
   }
@@ -745,6 +875,10 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onAreaChanged != null) {
@@ -766,6 +900,12 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onAreaChanged(this);
   }
@@ -783,6 +923,11 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onAreaChanged?.call(this);
   }
@@ -800,6 +945,11 @@ class _$_OnAreaChanged implements _OnAreaChanged {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onAreaChanged != null) {
@@ -892,6 +1042,12 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onPriceChanged(price);
   }
@@ -909,6 +1065,10 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onPriceChanged?.call(price);
   }
@@ -926,6 +1086,10 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onPriceChanged != null) {
@@ -947,6 +1111,12 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onPriceChanged(this);
   }
@@ -964,6 +1134,11 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onPriceChanged?.call(this);
   }
@@ -981,6 +1156,11 @@ class _$_OnPriceChanged implements _OnPriceChanged {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onPriceChanged != null) {
@@ -1074,6 +1254,12 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onDocumentsAdded(document);
   }
@@ -1091,6 +1277,10 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onDocumentsAdded?.call(document);
   }
@@ -1108,6 +1298,10 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsAdded != null) {
@@ -1129,6 +1323,12 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onDocumentsAdded(this);
   }
@@ -1146,6 +1346,11 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onDocumentsAdded?.call(this);
   }
@@ -1163,6 +1368,11 @@ class _$_OnDocumentAdded implements _OnDocumentAdded {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsAdded != null) {
@@ -1257,6 +1467,12 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onDocumentsDeleted(document);
   }
@@ -1274,6 +1490,10 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onDocumentsDeleted?.call(document);
   }
@@ -1291,6 +1511,10 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsDeleted != null) {
@@ -1312,6 +1536,12 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onDocumentsDeleted(this);
   }
@@ -1329,6 +1559,11 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onDocumentsDeleted?.call(this);
   }
@@ -1346,6 +1581,11 @@ class _$_OnDocumentDeleted implements _OnDocumentDeleted {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onDocumentsDeleted != null) {
@@ -1442,6 +1682,12 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onNumBedRoomChanged(isIncrease);
   }
@@ -1459,6 +1705,10 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onNumBedRoomChanged?.call(isIncrease);
   }
@@ -1476,6 +1726,10 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumBedRoomChanged != null) {
@@ -1497,6 +1751,12 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onNumBedRoomChanged(this);
   }
@@ -1514,6 +1774,11 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onNumBedRoomChanged?.call(this);
   }
@@ -1531,6 +1796,11 @@ class _$_OnNumBedRoomChanged implements _OnNumBedRoomChanged {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumBedRoomChanged != null) {
@@ -1625,6 +1895,12 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onNumWcChanged(isIncrease);
   }
@@ -1642,6 +1918,10 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onNumWcChanged?.call(isIncrease);
   }
@@ -1659,6 +1939,10 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumWcChanged != null) {
@@ -1680,6 +1964,12 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onNumWcChanged(this);
   }
@@ -1697,6 +1987,11 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onNumWcChanged?.call(this);
   }
@@ -1714,6 +2009,11 @@ class _$_OnNumWcChanged implements _OnNumWcChanged {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumWcChanged != null) {
@@ -1808,6 +2108,12 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     required TResult Function(bool isIncrease) onNumBedRoomChanged,
     required TResult Function(bool isIncrease) onNumWcChanged,
     required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
   }) {
     return onNumFloorChanged(isIncrease);
   }
@@ -1825,6 +2131,10 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     TResult? Function(bool isIncrease)? onNumBedRoomChanged,
     TResult? Function(bool isIncrease)? onNumWcChanged,
     TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
   }) {
     return onNumFloorChanged?.call(isIncrease);
   }
@@ -1842,6 +2152,10 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     TResult Function(bool isIncrease)? onNumBedRoomChanged,
     TResult Function(bool isIncrease)? onNumWcChanged,
     TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumFloorChanged != null) {
@@ -1863,6 +2177,12 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
     required TResult Function(_OnNumWcChanged value) onNumWcChanged,
     required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
   }) {
     return onNumFloorChanged(this);
   }
@@ -1880,6 +2200,11 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
   }) {
     return onNumFloorChanged?.call(this);
   }
@@ -1897,6 +2222,11 @@ class _$_OnNumFloorChanged implements _OnNumFloorChanged {
     TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
     TResult Function(_OnNumWcChanged value)? onNumWcChanged,
     TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
     required TResult orElse(),
   }) {
     if (onNumFloorChanged != null) {
@@ -1917,6 +2247,862 @@ abstract class _OnNumFloorChanged implements HouseProcessRealInfoEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnBuiltAtChangedCopyWith<$Res> {
+  factory _$$_OnBuiltAtChangedCopyWith(
+          _$_OnBuiltAtChanged value, $Res Function(_$_OnBuiltAtChanged) then) =
+      __$$_OnBuiltAtChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int year});
+}
+
+/// @nodoc
+class __$$_OnBuiltAtChangedCopyWithImpl<$Res>
+    extends _$HouseProcessRealInfoEventCopyWithImpl<$Res, _$_OnBuiltAtChanged>
+    implements _$$_OnBuiltAtChangedCopyWith<$Res> {
+  __$$_OnBuiltAtChangedCopyWithImpl(
+      _$_OnBuiltAtChanged _value, $Res Function(_$_OnBuiltAtChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? year = null,
+  }) {
+    return _then(_$_OnBuiltAtChanged(
+      null == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnBuiltAtChanged implements _OnBuiltAtChanged {
+  const _$_OnBuiltAtChanged(this.year);
+
+  @override
+  final int year;
+
+  @override
+  String toString() {
+    return 'HouseProcessRealInfoEvent.onBuiltAtChanged(year: $year)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnBuiltAtChanged &&
+            (identical(other.year, year) || other.year == year));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, year);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnBuiltAtChangedCopyWith<_$_OnBuiltAtChanged> get copyWith =>
+      __$$_OnBuiltAtChangedCopyWithImpl<_$_OnBuiltAtChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
+    required TResult Function(double area) onAreaChanged,
+    required TResult Function(double price) onPriceChanged,
+    required TResult Function(String document) onDocumentsAdded,
+    required TResult Function(String document) onDocumentsDeleted,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
+  }) {
+    return onBuiltAtChanged(year);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(RealEstateSell sell)? changeTypeSell,
+    TResult? Function(RealEstateType type)? changeRealEstateType,
+    TResult? Function(double area)? onAreaChanged,
+    TResult? Function(double price)? onPriceChanged,
+    TResult? Function(String document)? onDocumentsAdded,
+    TResult? Function(String document)? onDocumentsDeleted,
+    TResult? Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult? Function(bool isIncrease)? onNumWcChanged,
+    TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
+  }) {
+    return onBuiltAtChanged?.call(year);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onBuiltAtChanged != null) {
+      return onBuiltAtChanged(year);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
+    required TResult Function(_OnAreaChanged value) onAreaChanged,
+    required TResult Function(_OnPriceChanged value) onPriceChanged,
+    required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
+    required TResult Function(_OnDocumentDeleted value) onDocumentsDeleted,
+    required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
+    required TResult Function(_OnNumWcChanged value) onNumWcChanged,
+    required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
+  }) {
+    return onBuiltAtChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult? Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult? Function(_OnAreaChanged value)? onAreaChanged,
+    TResult? Function(_OnPriceChanged value)? onPriceChanged,
+    TResult? Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult? Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
+  }) {
+    return onBuiltAtChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onBuiltAtChanged != null) {
+      return onBuiltAtChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnBuiltAtChanged implements HouseProcessRealInfoEvent {
+  const factory _OnBuiltAtChanged(final int year) = _$_OnBuiltAtChanged;
+
+  int get year;
+  @JsonKey(ignore: true)
+  _$$_OnBuiltAtChangedCopyWith<_$_OnBuiltAtChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnHouseDirectionChangedCopyWith<$Res> {
+  factory _$$_OnHouseDirectionChangedCopyWith(_$_OnHouseDirectionChanged value,
+          $Res Function(_$_OnHouseDirectionChanged) then) =
+      __$$_OnHouseDirectionChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RealEstateDirection direction});
+}
+
+/// @nodoc
+class __$$_OnHouseDirectionChangedCopyWithImpl<$Res>
+    extends _$HouseProcessRealInfoEventCopyWithImpl<$Res,
+        _$_OnHouseDirectionChanged>
+    implements _$$_OnHouseDirectionChangedCopyWith<$Res> {
+  __$$_OnHouseDirectionChangedCopyWithImpl(_$_OnHouseDirectionChanged _value,
+      $Res Function(_$_OnHouseDirectionChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? direction = null,
+  }) {
+    return _then(_$_OnHouseDirectionChanged(
+      null == direction
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnHouseDirectionChanged implements _OnHouseDirectionChanged {
+  const _$_OnHouseDirectionChanged(this.direction);
+
+  @override
+  final RealEstateDirection direction;
+
+  @override
+  String toString() {
+    return 'HouseProcessRealInfoEvent.onHouseDirectionChanged(direction: $direction)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnHouseDirectionChanged &&
+            (identical(other.direction, direction) ||
+                other.direction == direction));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, direction);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnHouseDirectionChangedCopyWith<_$_OnHouseDirectionChanged>
+      get copyWith =>
+          __$$_OnHouseDirectionChangedCopyWithImpl<_$_OnHouseDirectionChanged>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
+    required TResult Function(double area) onAreaChanged,
+    required TResult Function(double price) onPriceChanged,
+    required TResult Function(String document) onDocumentsAdded,
+    required TResult Function(String document) onDocumentsDeleted,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
+  }) {
+    return onHouseDirectionChanged(direction);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(RealEstateSell sell)? changeTypeSell,
+    TResult? Function(RealEstateType type)? changeRealEstateType,
+    TResult? Function(double area)? onAreaChanged,
+    TResult? Function(double price)? onPriceChanged,
+    TResult? Function(String document)? onDocumentsAdded,
+    TResult? Function(String document)? onDocumentsDeleted,
+    TResult? Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult? Function(bool isIncrease)? onNumWcChanged,
+    TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
+  }) {
+    return onHouseDirectionChanged?.call(direction);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onHouseDirectionChanged != null) {
+      return onHouseDirectionChanged(direction);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
+    required TResult Function(_OnAreaChanged value) onAreaChanged,
+    required TResult Function(_OnPriceChanged value) onPriceChanged,
+    required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
+    required TResult Function(_OnDocumentDeleted value) onDocumentsDeleted,
+    required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
+    required TResult Function(_OnNumWcChanged value) onNumWcChanged,
+    required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
+  }) {
+    return onHouseDirectionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult? Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult? Function(_OnAreaChanged value)? onAreaChanged,
+    TResult? Function(_OnPriceChanged value)? onPriceChanged,
+    TResult? Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult? Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
+  }) {
+    return onHouseDirectionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onHouseDirectionChanged != null) {
+      return onHouseDirectionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnHouseDirectionChanged implements HouseProcessRealInfoEvent {
+  const factory _OnHouseDirectionChanged(final RealEstateDirection direction) =
+      _$_OnHouseDirectionChanged;
+
+  RealEstateDirection get direction;
+  @JsonKey(ignore: true)
+  _$$_OnHouseDirectionChangedCopyWith<_$_OnHouseDirectionChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnBalconyDirectionChangedCopyWith<$Res> {
+  factory _$$_OnBalconyDirectionChangedCopyWith(
+          _$_OnBalconyDirectionChanged value,
+          $Res Function(_$_OnBalconyDirectionChanged) then) =
+      __$$_OnBalconyDirectionChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RealEstateDirection direction});
+}
+
+/// @nodoc
+class __$$_OnBalconyDirectionChangedCopyWithImpl<$Res>
+    extends _$HouseProcessRealInfoEventCopyWithImpl<$Res,
+        _$_OnBalconyDirectionChanged>
+    implements _$$_OnBalconyDirectionChangedCopyWith<$Res> {
+  __$$_OnBalconyDirectionChangedCopyWithImpl(
+      _$_OnBalconyDirectionChanged _value,
+      $Res Function(_$_OnBalconyDirectionChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? direction = null,
+  }) {
+    return _then(_$_OnBalconyDirectionChanged(
+      null == direction
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnBalconyDirectionChanged implements _OnBalconyDirectionChanged {
+  const _$_OnBalconyDirectionChanged(this.direction);
+
+  @override
+  final RealEstateDirection direction;
+
+  @override
+  String toString() {
+    return 'HouseProcessRealInfoEvent.onBalconyDirectionChanged(direction: $direction)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnBalconyDirectionChanged &&
+            (identical(other.direction, direction) ||
+                other.direction == direction));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, direction);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnBalconyDirectionChangedCopyWith<_$_OnBalconyDirectionChanged>
+      get copyWith => __$$_OnBalconyDirectionChangedCopyWithImpl<
+          _$_OnBalconyDirectionChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
+    required TResult Function(double area) onAreaChanged,
+    required TResult Function(double price) onPriceChanged,
+    required TResult Function(String document) onDocumentsAdded,
+    required TResult Function(String document) onDocumentsDeleted,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
+  }) {
+    return onBalconyDirectionChanged(direction);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(RealEstateSell sell)? changeTypeSell,
+    TResult? Function(RealEstateType type)? changeRealEstateType,
+    TResult? Function(double area)? onAreaChanged,
+    TResult? Function(double price)? onPriceChanged,
+    TResult? Function(String document)? onDocumentsAdded,
+    TResult? Function(String document)? onDocumentsDeleted,
+    TResult? Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult? Function(bool isIncrease)? onNumWcChanged,
+    TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
+  }) {
+    return onBalconyDirectionChanged?.call(direction);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onBalconyDirectionChanged != null) {
+      return onBalconyDirectionChanged(direction);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
+    required TResult Function(_OnAreaChanged value) onAreaChanged,
+    required TResult Function(_OnPriceChanged value) onPriceChanged,
+    required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
+    required TResult Function(_OnDocumentDeleted value) onDocumentsDeleted,
+    required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
+    required TResult Function(_OnNumWcChanged value) onNumWcChanged,
+    required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
+  }) {
+    return onBalconyDirectionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult? Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult? Function(_OnAreaChanged value)? onAreaChanged,
+    TResult? Function(_OnPriceChanged value)? onPriceChanged,
+    TResult? Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult? Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
+  }) {
+    return onBalconyDirectionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onBalconyDirectionChanged != null) {
+      return onBalconyDirectionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnBalconyDirectionChanged implements HouseProcessRealInfoEvent {
+  const factory _OnBalconyDirectionChanged(
+      final RealEstateDirection direction) = _$_OnBalconyDirectionChanged;
+
+  RealEstateDirection get direction;
+  @JsonKey(ignore: true)
+  _$$_OnBalconyDirectionChangedCopyWith<_$_OnBalconyDirectionChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnFurnitureChangedCopyWith<$Res> {
+  factory _$$_OnFurnitureChangedCopyWith(_$_OnFurnitureChanged value,
+          $Res Function(_$_OnFurnitureChanged) then) =
+      __$$_OnFurnitureChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String note});
+}
+
+/// @nodoc
+class __$$_OnFurnitureChangedCopyWithImpl<$Res>
+    extends _$HouseProcessRealInfoEventCopyWithImpl<$Res, _$_OnFurnitureChanged>
+    implements _$$_OnFurnitureChangedCopyWith<$Res> {
+  __$$_OnFurnitureChangedCopyWithImpl(
+      _$_OnFurnitureChanged _value, $Res Function(_$_OnFurnitureChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_$_OnFurnitureChanged(
+      null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnFurnitureChanged implements _OnFurnitureChanged {
+  const _$_OnFurnitureChanged(this.note);
+
+  @override
+  final String note;
+
+  @override
+  String toString() {
+    return 'HouseProcessRealInfoEvent.onFurnitureChanged(note: $note)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnFurnitureChanged &&
+            (identical(other.note, note) || other.note == note));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, note);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnFurnitureChangedCopyWith<_$_OnFurnitureChanged> get copyWith =>
+      __$$_OnFurnitureChangedCopyWithImpl<_$_OnFurnitureChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(RealEstateSell sell) changeTypeSell,
+    required TResult Function(RealEstateType type) changeRealEstateType,
+    required TResult Function(double area) onAreaChanged,
+    required TResult Function(double price) onPriceChanged,
+    required TResult Function(String document) onDocumentsAdded,
+    required TResult Function(String document) onDocumentsDeleted,
+    required TResult Function(bool isIncrease) onNumBedRoomChanged,
+    required TResult Function(bool isIncrease) onNumWcChanged,
+    required TResult Function(bool isIncrease) onNumFloorChanged,
+    required TResult Function(int year) onBuiltAtChanged,
+    required TResult Function(RealEstateDirection direction)
+        onHouseDirectionChanged,
+    required TResult Function(RealEstateDirection direction)
+        onBalconyDirectionChanged,
+    required TResult Function(String note) onFurnitureChanged,
+  }) {
+    return onFurnitureChanged(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(RealEstateSell sell)? changeTypeSell,
+    TResult? Function(RealEstateType type)? changeRealEstateType,
+    TResult? Function(double area)? onAreaChanged,
+    TResult? Function(double price)? onPriceChanged,
+    TResult? Function(String document)? onDocumentsAdded,
+    TResult? Function(String document)? onDocumentsDeleted,
+    TResult? Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult? Function(bool isIncrease)? onNumWcChanged,
+    TResult? Function(bool isIncrease)? onNumFloorChanged,
+    TResult? Function(int year)? onBuiltAtChanged,
+    TResult? Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult? Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult? Function(String note)? onFurnitureChanged,
+  }) {
+    return onFurnitureChanged?.call(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(RealEstateSell sell)? changeTypeSell,
+    TResult Function(RealEstateType type)? changeRealEstateType,
+    TResult Function(double area)? onAreaChanged,
+    TResult Function(double price)? onPriceChanged,
+    TResult Function(String document)? onDocumentsAdded,
+    TResult Function(String document)? onDocumentsDeleted,
+    TResult Function(bool isIncrease)? onNumBedRoomChanged,
+    TResult Function(bool isIncrease)? onNumWcChanged,
+    TResult Function(bool isIncrease)? onNumFloorChanged,
+    TResult Function(int year)? onBuiltAtChanged,
+    TResult Function(RealEstateDirection direction)? onHouseDirectionChanged,
+    TResult Function(RealEstateDirection direction)? onBalconyDirectionChanged,
+    TResult Function(String note)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onFurnitureChanged != null) {
+      return onFurnitureChanged(note);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ChangeTypeSell value) changeTypeSell,
+    required TResult Function(_ChangeRealEstateType value) changeRealEstateType,
+    required TResult Function(_OnAreaChanged value) onAreaChanged,
+    required TResult Function(_OnPriceChanged value) onPriceChanged,
+    required TResult Function(_OnDocumentAdded value) onDocumentsAdded,
+    required TResult Function(_OnDocumentDeleted value) onDocumentsDeleted,
+    required TResult Function(_OnNumBedRoomChanged value) onNumBedRoomChanged,
+    required TResult Function(_OnNumWcChanged value) onNumWcChanged,
+    required TResult Function(_OnNumFloorChanged value) onNumFloorChanged,
+    required TResult Function(_OnBuiltAtChanged value) onBuiltAtChanged,
+    required TResult Function(_OnHouseDirectionChanged value)
+        onHouseDirectionChanged,
+    required TResult Function(_OnBalconyDirectionChanged value)
+        onBalconyDirectionChanged,
+    required TResult Function(_OnFurnitureChanged value) onFurnitureChanged,
+  }) {
+    return onFurnitureChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult? Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult? Function(_OnAreaChanged value)? onAreaChanged,
+    TResult? Function(_OnPriceChanged value)? onPriceChanged,
+    TResult? Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult? Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult? Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult? Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult? Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult? Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult? Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult? Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult? Function(_OnFurnitureChanged value)? onFurnitureChanged,
+  }) {
+    return onFurnitureChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ChangeTypeSell value)? changeTypeSell,
+    TResult Function(_ChangeRealEstateType value)? changeRealEstateType,
+    TResult Function(_OnAreaChanged value)? onAreaChanged,
+    TResult Function(_OnPriceChanged value)? onPriceChanged,
+    TResult Function(_OnDocumentAdded value)? onDocumentsAdded,
+    TResult Function(_OnDocumentDeleted value)? onDocumentsDeleted,
+    TResult Function(_OnNumBedRoomChanged value)? onNumBedRoomChanged,
+    TResult Function(_OnNumWcChanged value)? onNumWcChanged,
+    TResult Function(_OnNumFloorChanged value)? onNumFloorChanged,
+    TResult Function(_OnBuiltAtChanged value)? onBuiltAtChanged,
+    TResult Function(_OnHouseDirectionChanged value)? onHouseDirectionChanged,
+    TResult Function(_OnBalconyDirectionChanged value)?
+        onBalconyDirectionChanged,
+    TResult Function(_OnFurnitureChanged value)? onFurnitureChanged,
+    required TResult orElse(),
+  }) {
+    if (onFurnitureChanged != null) {
+      return onFurnitureChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnFurnitureChanged implements HouseProcessRealInfoEvent {
+  const factory _OnFurnitureChanged(final String note) = _$_OnFurnitureChanged;
+
+  String get note;
+  @JsonKey(ignore: true)
+  _$$_OnFurnitureChangedCopyWith<_$_OnFurnitureChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HouseProcessRealInfoState {
   RealEstateSell get sell => throw _privateConstructorUsedError;
   double? get area => throw _privateConstructorUsedError;
@@ -1926,6 +3112,10 @@ mixin _$HouseProcessRealInfoState {
   int get noBedroom => throw _privateConstructorUsedError;
   int get noWc => throw _privateConstructorUsedError;
   int get floors => throw _privateConstructorUsedError;
+  int get builtAt => throw _privateConstructorUsedError;
+  RealEstateDirection? get houseFacing => throw _privateConstructorUsedError;
+  RealEstateDirection? get balcony => throw _privateConstructorUsedError;
+  String? get furniture => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HouseProcessRealInfoStateCopyWith<HouseProcessRealInfoState> get copyWith =>
@@ -1946,7 +3136,11 @@ abstract class $HouseProcessRealInfoStateCopyWith<$Res> {
       int? reTypeId,
       int noBedroom,
       int noWc,
-      int floors});
+      int floors,
+      int builtAt,
+      RealEstateDirection? houseFacing,
+      RealEstateDirection? balcony,
+      String? furniture});
 }
 
 /// @nodoc
@@ -1971,6 +3165,10 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res,
     Object? noBedroom = null,
     Object? noWc = null,
     Object? floors = null,
+    Object? builtAt = null,
+    Object? houseFacing = freezed,
+    Object? balcony = freezed,
+    Object? furniture = freezed,
   }) {
     return _then(_value.copyWith(
       sell: null == sell
@@ -2005,6 +3203,22 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res,
           ? _value.floors
           : floors // ignore: cast_nullable_to_non_nullable
               as int,
+      builtAt: null == builtAt
+          ? _value.builtAt
+          : builtAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      houseFacing: freezed == houseFacing
+          ? _value.houseFacing
+          : houseFacing // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection?,
+      balcony: freezed == balcony
+          ? _value.balcony
+          : balcony // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection?,
+      furniture: freezed == furniture
+          ? _value.furniture
+          : furniture // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -2026,7 +3240,11 @@ abstract class _$$_HouseProcessRealInfoStateCopyWith<$Res>
       int? reTypeId,
       int noBedroom,
       int noWc,
-      int floors});
+      int floors,
+      int builtAt,
+      RealEstateDirection? houseFacing,
+      RealEstateDirection? balcony,
+      String? furniture});
 }
 
 /// @nodoc
@@ -2050,6 +3268,10 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
     Object? noBedroom = null,
     Object? noWc = null,
     Object? floors = null,
+    Object? builtAt = null,
+    Object? houseFacing = freezed,
+    Object? balcony = freezed,
+    Object? furniture = freezed,
   }) {
     return _then(_$_HouseProcessRealInfoState(
       sell: null == sell
@@ -2084,6 +3306,22 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
           ? _value.floors
           : floors // ignore: cast_nullable_to_non_nullable
               as int,
+      builtAt: null == builtAt
+          ? _value.builtAt
+          : builtAt // ignore: cast_nullable_to_non_nullable
+              as int,
+      houseFacing: freezed == houseFacing
+          ? _value.houseFacing
+          : houseFacing // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection?,
+      balcony: freezed == balcony
+          ? _value.balcony
+          : balcony // ignore: cast_nullable_to_non_nullable
+              as RealEstateDirection?,
+      furniture: freezed == furniture
+          ? _value.furniture
+          : furniture // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2099,7 +3337,11 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
       this.reTypeId,
       this.noBedroom = 0,
       this.noWc = 0,
-      this.floors = 0})
+      this.floors = 0,
+      this.builtAt = 0,
+      this.houseFacing,
+      this.balcony,
+      this.furniture})
       : _documents = documents;
 
   @override
@@ -2128,10 +3370,19 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
   @override
   @JsonKey()
   final int floors;
+  @override
+  @JsonKey()
+  final int builtAt;
+  @override
+  final RealEstateDirection? houseFacing;
+  @override
+  final RealEstateDirection? balcony;
+  @override
+  final String? furniture;
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoState(sell: $sell, area: $area, price: $price, documents: $documents, reTypeId: $reTypeId, noBedroom: $noBedroom, noWc: $noWc, floors: $floors)';
+    return 'HouseProcessRealInfoState(sell: $sell, area: $area, price: $price, documents: $documents, reTypeId: $reTypeId, noBedroom: $noBedroom, noWc: $noWc, floors: $floors, builtAt: $builtAt, houseFacing: $houseFacing, balcony: $balcony, furniture: $furniture)';
   }
 
   @override
@@ -2149,7 +3400,13 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
             (identical(other.noBedroom, noBedroom) ||
                 other.noBedroom == noBedroom) &&
             (identical(other.noWc, noWc) || other.noWc == noWc) &&
-            (identical(other.floors, floors) || other.floors == floors));
+            (identical(other.floors, floors) || other.floors == floors) &&
+            (identical(other.builtAt, builtAt) || other.builtAt == builtAt) &&
+            (identical(other.houseFacing, houseFacing) ||
+                other.houseFacing == houseFacing) &&
+            (identical(other.balcony, balcony) || other.balcony == balcony) &&
+            (identical(other.furniture, furniture) ||
+                other.furniture == furniture));
   }
 
   @override
@@ -2162,7 +3419,11 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
       reTypeId,
       noBedroom,
       noWc,
-      floors);
+      floors,
+      builtAt,
+      houseFacing,
+      balcony,
+      furniture);
 
   @JsonKey(ignore: true)
   @override
@@ -2181,7 +3442,11 @@ abstract class _HouseProcessRealInfoState implements HouseProcessRealInfoState {
       final int? reTypeId,
       final int noBedroom,
       final int noWc,
-      final int floors}) = _$_HouseProcessRealInfoState;
+      final int floors,
+      final int builtAt,
+      final RealEstateDirection? houseFacing,
+      final RealEstateDirection? balcony,
+      final String? furniture}) = _$_HouseProcessRealInfoState;
 
   @override
   RealEstateSell get sell;
@@ -2199,6 +3464,14 @@ abstract class _HouseProcessRealInfoState implements HouseProcessRealInfoState {
   int get noWc;
   @override
   int get floors;
+  @override
+  int get builtAt;
+  @override
+  RealEstateDirection? get houseFacing;
+  @override
+  RealEstateDirection? get balcony;
+  @override
+  String? get furniture;
   @override
   @JsonKey(ignore: true)
   _$$_HouseProcessRealInfoStateCopyWith<_$_HouseProcessRealInfoState>

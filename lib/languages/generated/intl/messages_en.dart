@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Post Info"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
+        "additionalDescription":
+            MessageLookupByLibrary.simpleMessage("Additional Description"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An error occurred"),
@@ -46,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
+        "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
+        "builtAt": MessageLookupByLibrary.simpleMessage("Built At"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
@@ -62,8 +66,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "legalDocuments":

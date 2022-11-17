@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/utils/enums.dart';
 
 import 'enums.dart';
 import 'validate_subcriber.dart';
@@ -98,6 +99,24 @@ class HouseProcessRealInfoBloc
         ),
       );
     });
+    on<_OnBuiltAtChanged>((event, emit) {
+      emit(state.copyWith(
+        builtAt: event.year,
+      ));
+    });
+    on<_OnHouseDirectionChanged>((event, emit) {
+      emit(state.copyWith(
+        houseFacing: event.direction,
+      ));
+    });
+    on<_OnBalconyDirectionChanged>((event, emit) {
+      emit(state.copyWith(
+        balcony: event.direction,
+      ));
+    });
+    on<_OnFurnitureChanged>((event, emit) {
+      emit(state.copyWith(furniture: event.note));
+    });
   }
   void started() => add(const HouseProcessRealInfoEvent.started());
   void onChangedTypeSell(RealEstateSell sell) =>
@@ -120,11 +139,20 @@ class HouseProcessRealInfoBloc
       add(HouseProcessRealInfoEvent.onNumWcChanged(isIncrease));
   void onNumberOfFloorChanged(bool isIncrease) =>
       add(HouseProcessRealInfoEvent.onNumFloorChanged(isIncrease));
+  void onBuiltAtChanged(int year) =>
+      add(HouseProcessRealInfoEvent.onBuiltAtChanged(year));
+  void onHouseFacingChanged(RealEstateDirection direction) =>
+      add(HouseProcessRealInfoEvent.onHouseDirectionChanged(direction));
+  void onBalconyFacingChanged(RealEstateDirection direction) =>
+      add(HouseProcessRealInfoEvent.onBalconyDirectionChanged(direction));
+  void onFurnitureChanged(String note) =>
+      add(HouseProcessRealInfoEvent.onFurnitureChanged(note));
 
   bool isValid() {
     final isNotNull = (state.area ?? 0) > 0 &&
         (state.price ?? 0) > 0 &&
-        state.reTypeId != null;
+        state.reTypeId != null &&
+        state.houseFacing != null;
     return isNotNull;
   }
 

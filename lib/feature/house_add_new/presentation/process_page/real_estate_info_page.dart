@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/process_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class RealEstateInfoPage extends StatefulWidget {
@@ -106,39 +107,45 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
             },
           )
         ],
-        AppSize.largeHeightDimens.verticalSpace,
-        ...[
-          Text(
-            s.area,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
-            ),
-          ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          InputPrimaryForm(
-            hint: '1230000',
-            keyboardType: TextInputType.number,
-            suffixIcon: IntrinsicWidth(
-              child: Center(
-                child: Text(
-                  'm2',
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.textTheme.displayLarge?.color,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-            onChanged: (value) {
-              bloc.onAreaChanged(double.tryParse(value) ?? 0);
-            },
-          )
-        ],
         AppSize.mediumHeightDimens.verticalSpace,
         Row(
           children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    s.area,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.textTheme.displayLarge?.color,
+                    ),
+                  ),
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  InputPrimaryForm(
+                    hint: '1230000',
+                    keyboardType: TextInputType.number,
+                    suffixIcon: IntrinsicWidth(
+                      child: Center(
+                        child: Text(
+                          'm2',
+                          style: context.textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: context.textTheme.displayLarge?.color,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                    onChanged: (value) {
+                      bloc.onAreaChanged(double.tryParse(value) ?? 0);
+                    },
+                  )
+                ],
+              ),
+            ),
+            AppSize.largeWidthDimens.horizontalSpace,
             Expanded(
               flex: 2,
               child: Column(
@@ -162,52 +169,26 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 ],
               ),
             ),
-            // AppSize.largeWidthDimens.horizontalSpace,
-            // Expanded(
-            //   flex: 1,
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //       Text(
-            //         s.unit,
-            //         style: context.textTheme.bodyMedium?.copyWith(
-            //           fontWeight: FontWeight.bold,
-            //           color: context.textTheme.displayLarge?.color,
-            //         ),
-            //       ),
-            //       AppSize.mediumHeightDimens.verticalSpace,
-            //       DropdownApp<dynamic>(
-            //         paddingHorizontal: AppSize.largeWidthDimens,
-            //         selectedItemBuilder: (context) {
-            //           return ["VND"]
-            //               .map(
-            //                 (e) => Text(
-            //                   e.toString(),
-            //                   style: context.textTheme.bodyMedium?.copyWith(
-            //                     color: context.textTheme.displayLarge?.color,
-            //                     fontWeight: FontWeight.w500,
-            //                   ),
-            //                 ),
-            //               )
-            //               .toList();
-            //         },
-            //         items: ["VND"]
-            //             .map(
-            //               (e) => DropdownMenuItem(
-            //                 child: Text(
-            //                   e.toString(),
-            //                   style: context.textTheme.bodyMedium?.copyWith(),
-            //                 ),
-            //               ),
-            //             )
-            //             .toList(),
-            //         onChanged: (value) {},
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ],
         ),
+        AppSize.mediumHeightDimens.verticalSpace,
+        ...[
+          Text(
+            s.builtAt,
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: context.textTheme.displayLarge?.color,
+            ),
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          InputPrimaryForm(
+            hint: '2000',
+            keyboardType: TextInputType.number,
+            onChanged: (value) {
+              bloc.onAreaChanged(double.tryParse(value) ?? 0);
+            },
+          )
+        ],
         AppSize.mediumHeightDimens.verticalSpace,
         Text(
           s.legalDocuments,
@@ -273,7 +254,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            vertical: AppSize.mediumHeightDimens,
+            vertical: AppSize.largeHeightDimens,
           ),
           child: const Divider(height: 0),
         ),
@@ -281,7 +262,9 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
           builder: (context, state) {
             const values = RealEstateDetail.values;
             return ListView.separated(
+              padding: EdgeInsets.zero,
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return _SelectNumberOption(
                   lable: labelByName(values[index]),
@@ -314,12 +297,160 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   },
                 );
               },
-              separatorBuilder: (context, index) =>
-                  AppSize.mediumHeightDimens.verticalSpace,
+              separatorBuilder: (context, index) {
+                return AppSize.mediumHeightDimens.verticalSpace;
+              },
               itemCount: values.length,
             );
           },
-        )
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: AppSize.largeHeightDimens,
+          ),
+          child: Row(
+            children: [
+              Text(
+                s.additionalDescription,
+                style: context.textTheme.bodySmall?.copyWith(
+                  color: AppColor.kNeutrals.shade600,
+                ),
+              ),
+              AppSize.mediumWidthDimens.horizontalSpace,
+              const Expanded(child: Divider(height: 0)),
+            ],
+          ),
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    s.houseFacing,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.textTheme.displayLarge?.color,
+                    ),
+                  ),
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  (() {
+                    final list = RealEstateDirection.values.map((e) => e.name);
+                    return DropdownApp<String>(
+                      isExpanded: true,
+                      items: list
+                          .map(
+                            (e) => DropdownMenuItem(
+                              value: e,
+                              child: Text(
+                                e.toString(),
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (value) {
+                        if (value != null) {
+                          bloc.onHouseFacingChanged(RealEstateDirection.values
+                              .firstWhere((element) => element.name == value));
+                        }
+                      },
+                      selectedItemBuilder: (context) {
+                        return list
+                            .map((e) => Text(
+                                  e.toString(),
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color:
+                                        context.textTheme.displayLarge?.color,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ))
+                            .toList();
+                      },
+                    );
+                  })()
+                ],
+              ),
+            ),
+            AppSize.mediumWidthDimens.horizontalSpace,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    s.balconyFacing,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.textTheme.displayLarge?.color,
+                    ),
+                  ),
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  (() {
+                    final list = RealEstateDirection.values.map((e) => e.name);
+                    return DropdownApp<String>(
+                      isExpanded: true,
+                      items: list
+                          .map(
+                            (e) => DropdownMenuItem(
+                              value: e,
+                              child: Text(
+                                e.toString(),
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (value) {
+                        if (value != null) {
+                          bloc.onBalconyFacingChanged(RealEstateDirection.values
+                              .firstWhere((element) => element.name == value));
+                        }
+                      },
+                      selectedItemBuilder: (context) {
+                        return list
+                            .map((e) => Text(
+                                  e.toString(),
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color:
+                                        context.textTheme.displayLarge?.color,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ))
+                            .toList();
+                      },
+                    );
+                  })()
+                ],
+              ),
+            ),
+          ],
+        ),
+        AppSize.mediumHeightDimens.verticalSpace,
+        ...[
+          Text(
+            s.furniture,
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: context.textTheme.displayLarge?.color,
+            ),
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          InputPrimaryForm(
+            onChanged: (value) {
+              bloc.onFurnitureChanged(value);
+            },
+          )
+        ],
+        AppSize.mediumHeightDimens.verticalSpace,
       ],
     );
   }
