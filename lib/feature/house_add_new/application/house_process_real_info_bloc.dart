@@ -34,6 +34,10 @@ class HouseProcessRealInfoBloc
           noBedroom: state.noBedroom,
           noWc: state.noWc,
           price: state.price,
+          builtAt: state.builtAt,
+          balconyFacing: state.balcony?.name,
+          houseFacing: state.houseFacing?.name,
+          interiors: state.furniture,
         ),
       );
     });

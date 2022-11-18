@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "createRealEstateSuccess":
+            MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),

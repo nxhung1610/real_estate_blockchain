@@ -3,8 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:real_estate_blockchain/data/file/data.dart';
+import 'package:real_estate_blockchain/data/file/domain/model/upload_data/upload_data.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/models/real_estate_mapper.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 
@@ -19,16 +23,20 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     implements IValidData {
   ValidateSubcriber? validateSubcriber;
   final IRealEstateRepository _restateRepository;
-  HouseAddNewBloc(this._restateRepository) : super(const HouseAddNewState()) {
+  final IFileRepository _fileRepository;
+  HouseAddNewBloc(this._restateRepository, this._fileRepository)
+      : super(const HouseAddNewState()) {
     on<_Setup>((event, emit) async {
       validateSubcriber = event.subcriber;
       emit(state.copyWith(status: const Status.loading()));
       final config = await _restateRepository.configData();
       config.fold(
-        (l) => emit(state.copyWith(status: const Status.failure())),
+        (l) => emit(state.copyWith(
+            status: const Status.failure(
+                value: RealEstateFailure.loadConfigFail()))),
         (r) => emit(
           state.copyWith(
-            status: const Status.success(),
+            // status: const Status.success(),
             config: r,
           ),
         ),
@@ -62,8 +70,37 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     });
     on<_OnMap>((event, emit) {
       emit(state.copyWith(position: event.point));
+      add(const _CreateRealEstate());
+      // if (isValidForFinish()) {
+
+      // } else {
+
+      // }
     });
-    on<_CreateRealEstate>((event, emit) async {});
+    on<_CreateRealEstate>((event, emit) async {
+      emit(state.copyWith(status: const Status.loading()));
+      try {
+        List<UploadData> datas = [];
+        for (XFile i in state.media ?? []) {
+          final data = await _fileRepository.upload(i);
+          datas.add(data.fold((l) => throw l, (r) => r));
+        }
+        final createData = await _restateRepository.createHouseData(
+          RealEstateMapper.toData(
+              state.addressChoosen,
+              state.realEstateInfo,
+              state.amenities,
+              datas.map((e) => Image(id: e.id)).toList(),
+              state.position),
+        );
+        createData.getOrElse(() => throw Exception('Create real estate error'));
+        emit(state.copyWith(status: const Status.success()));
+      } catch (e) {
+        emit(state.copyWith(status: Status.failure(value: e)));
+      } finally {
+        emit(state.copyWith(status: const Status.idle()));
+      }
+    });
   }
 
   void setup(ValidateSubcriber validateSubcriber) {
@@ -115,10 +152,7 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
           }
           break;
       }
-      if (isValidForFinish()) {
-      } else {
-        add(const _NextPage());
-      }
+      add(const _NextPage());
     }
   }
 

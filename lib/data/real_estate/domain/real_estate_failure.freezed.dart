@@ -18,32 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RealEstateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadConfigFail,
     required TResult Function() unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadConfigFail,
     TResult? Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadConfigFail,
     TResult Function()? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(RealEstateFailureLoadConfigFail value)
+        loadConfigFail,
     required TResult Function(RealEstateFailureUnknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
     TResult? Function(RealEstateFailureUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
     TResult Function(RealEstateFailureUnknown value)? unknown,
     required TResult orElse(),
   }) =>
@@ -66,6 +73,115 @@ class _$RealEstateFailureCopyWithImpl<$Res, $Val extends RealEstateFailure>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$RealEstateFailureLoadConfigFailCopyWith<$Res> {
+  factory _$$RealEstateFailureLoadConfigFailCopyWith(
+          _$RealEstateFailureLoadConfigFail value,
+          $Res Function(_$RealEstateFailureLoadConfigFail) then) =
+      __$$RealEstateFailureLoadConfigFailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RealEstateFailureLoadConfigFailCopyWithImpl<$Res>
+    extends _$RealEstateFailureCopyWithImpl<$Res,
+        _$RealEstateFailureLoadConfigFail>
+    implements _$$RealEstateFailureLoadConfigFailCopyWith<$Res> {
+  __$$RealEstateFailureLoadConfigFailCopyWithImpl(
+      _$RealEstateFailureLoadConfigFail _value,
+      $Res Function(_$RealEstateFailureLoadConfigFail) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RealEstateFailureLoadConfigFail
+    implements RealEstateFailureLoadConfigFail {
+  const _$RealEstateFailureLoadConfigFail();
+
+  @override
+  String toString() {
+    return 'RealEstateFailure.loadConfigFail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RealEstateFailureLoadConfigFail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadConfigFail,
+    required TResult Function() unknown,
+  }) {
+    return loadConfigFail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadConfigFail,
+    TResult? Function()? unknown,
+  }) {
+    return loadConfigFail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadConfigFail,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (loadConfigFail != null) {
+      return loadConfigFail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RealEstateFailureLoadConfigFail value)
+        loadConfigFail,
+    required TResult Function(RealEstateFailureUnknown value) unknown,
+  }) {
+    return loadConfigFail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
+    TResult? Function(RealEstateFailureUnknown value)? unknown,
+  }) {
+    return loadConfigFail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
+    TResult Function(RealEstateFailureUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (loadConfigFail != null) {
+      return loadConfigFail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RealEstateFailureLoadConfigFail implements RealEstateFailure {
+  const factory RealEstateFailureLoadConfigFail() =
+      _$RealEstateFailureLoadConfigFail;
 }
 
 /// @nodoc
@@ -107,6 +223,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadConfigFail,
     required TResult Function() unknown,
   }) {
     return unknown();
@@ -115,6 +232,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadConfigFail,
     TResult? Function()? unknown,
   }) {
     return unknown?.call();
@@ -123,6 +241,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadConfigFail,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -135,6 +254,8 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(RealEstateFailureLoadConfigFail value)
+        loadConfigFail,
     required TResult Function(RealEstateFailureUnknown value) unknown,
   }) {
     return unknown(this);
@@ -143,6 +264,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
     TResult? Function(RealEstateFailureUnknown value)? unknown,
   }) {
     return unknown?.call(this);
@@ -151,6 +273,7 @@ class _$RealEstateFailureUnknown implements RealEstateFailureUnknown {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(RealEstateFailureLoadConfigFail value)? loadConfigFail,
     TResult Function(RealEstateFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_media_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
@@ -97,12 +98,25 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
               context.appDialog.dismissDialog();
             },
             failure: (value) {
+              if (value is RealEstateFailure) {
+                (value as RealEstateFailure).whenOrNull(
+                  loadConfigFail: () {
+                    context.appDialog.showAppDialog(
+                      type: AppDialogType.error,
+                      message: s.anErrorOccurred,
+                      onPositive: () {
+                        context.pop();
+                      },
+                    );
+                  },
+                );
+              }
+            },
+            success: (value) {
+              context.pop();
               context.appDialog.showAppDialog(
-                type: AppDialogType.error,
-                message: s.anErrorOccurred,
-                onPositive: () {
-                  context.pop();
-                },
+                type: AppDialogType.info,
+                message: s.createRealEstateSuccess,
               );
             },
           );

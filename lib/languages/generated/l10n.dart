@@ -979,6 +979,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Create real estate success`
+  String get createRealEstateSuccess {
+    return Intl.message(
+      'Create real estate success',
+      name: 'createRealEstateSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

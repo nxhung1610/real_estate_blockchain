@@ -96,5 +96,6 @@
   "houseFacing" : "Hướng nhà",
   "balconyFacing" : "Hướng ban công",
   "additionalDescription" : "Mô tả bổ sung",
-  "furniture" : "Nội thất"
+  "furniture" : "Nội thất",
+  "createRealEstateSuccess" : "Tạo bất động sản thành công"
 }

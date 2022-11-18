@@ -29,4 +29,21 @@ class RealEstateRepository extends IRealEstateRepository {
       return left(const RealEstateFailure.unknown());
     }
   }
+
+  @override
+  Future<Either<RealEstateFailure, Unit>> createHouseData(
+      RealEstateCreateData data) async {
+    try {
+      final res = await _apiRemote.post(
+        RealEstateConstants.root,
+        data: data.toJson(),
+        url: AppConfig.instance.reUrl,
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(unit);
+    } catch (e) {
+      print(e);
+      return left(const RealEstateFailure.unknown());
+    }
+  }
 }

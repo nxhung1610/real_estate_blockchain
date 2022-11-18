@@ -96,5 +96,6 @@
   "houseFacing" : "House Facing",
   "balconyFacing" : "Balcony Facing",
   "additionalDescription" : "Additional Description",
-  "furniture" : "Furniture"
+  "furniture" : "Furniture",
+  "createRealEstateSuccess" : "Create real estate success"
 }
