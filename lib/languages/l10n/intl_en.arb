@@ -97,5 +97,6 @@
   "balconyFacing" : "Balcony Facing",
   "additionalDescription" : "Additional Description",
   "furniture" : "Furniture",
-  "createRealEstateSuccess" : "Create real estate success"
+  "createRealEstateSuccess" : "Create real estate success",
+  "unableToLoadData" : "Unable to load data"
 }

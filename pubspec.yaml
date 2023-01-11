@@ -55,6 +55,8 @@ dependencies:
   get_it_mixin: ^3.1.4
   dotted_border: ^2.0.0+3
   lottie: ^1.4.3
+  pull_to_refresh: ^2.0.0
+  shimmer: ^2.0.0
 
   # Language
   intl: ^0.17.0

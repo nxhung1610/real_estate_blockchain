@@ -37,7 +37,9 @@ class _EmptyPage extends StatelessWidget {
                 AppSize.extraHeightDimens.verticalSpace,
                 ButtonApp(
                   label: s.myHomeEmptyBtnAdd,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push($appRoute.homeAddNewProperty);
+                  },
                   type: ButtonType.primary,
                   style: ButtonScaleStyle.tight,
                   size: ButtonSize.small,

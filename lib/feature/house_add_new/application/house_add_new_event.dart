@@ -8,7 +8,7 @@ class HouseAddNewEvent with _$HouseAddNewEvent {
       AddressChoosen addressChoosen) = _OnAddressChosen;
   const factory HouseAddNewEvent.onRealEstateInfo(
       RealEstateInfo realEstateInfo) = _OnRealEstateInfo;
-  const factory HouseAddNewEvent.onAmenity(List<RealEstateAmenity> amenities) =
+  const factory HouseAddNewEvent.onAmenity(List<Amenity> amenities) =
       _OnAmenity;
   const factory HouseAddNewEvent.onMedia(List<XFile> media) = _OnMedia;
   const factory HouseAddNewEvent.onMap(LatLng point) = _OnMap;

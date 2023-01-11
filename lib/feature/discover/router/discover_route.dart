@@ -9,29 +9,10 @@ import '../module.dart';
 class DiscoverRoute extends BaseRoute {
   DiscoverRoute(super.root, super.path);
 
-  // Path
-  String get search => generatePath('/search');
-
   @override
   List<RouteBase> get routes => [];
   @override
-  List<RouteBase> get globalRoutes => [
-        GoRoute(
-          path: search,
-          pageBuilder: (context, state) {
-            return CustomTransitionPage(
-              child: const SearchLocationPage(),
-              transitionsBuilder:
-                  (context, animation, secondaryAnimation, child) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: child,
-                );
-              },
-            );
-          },
-        )
-      ];
+  List<RouteBase> get globalRoutes => [];
   @override
   void setupRoutes() {}
 }

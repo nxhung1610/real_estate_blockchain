@@ -989,6 +989,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Unable to load data`
+  String get unableToLoadData {
+    return Intl.message(
+      'Unable to load data',
+      name: 'unableToLoadData',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

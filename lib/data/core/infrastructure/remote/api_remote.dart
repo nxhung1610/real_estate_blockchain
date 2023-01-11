@@ -43,6 +43,8 @@ class ApiRemote {
         'Content-Type': 'application/json; charset=utf-8',
         "Accept": "application/json",
       }
+      ..interceptors
+          .add(JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token))
       ..interceptors.add(PrettyDioLogger(
         request: true,
         requestBody: true,
@@ -50,9 +52,7 @@ class ApiRemote {
         requestHeader: true,
         responseHeader: false,
         error: true,
-      ))
-      ..interceptors.add(
-          JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token));
+      ));
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
@@ -79,6 +79,7 @@ class ApiRemote {
         'Content-Type': 'application/json; charset=utf-8',
         "Accept": "application/json",
       }
+      ..interceptors.add(QueuedInterceptorsWrapper())
       ..interceptors.add(PrettyDioLogger(
         request: true,
         requestBody: true,
@@ -86,8 +87,7 @@ class ApiRemote {
         requestHeader: true,
         responseHeader: false,
         error: true,
-      ))
-      ..interceptors.add(QueuedInterceptorsWrapper());
+      ));
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
@@ -101,7 +101,7 @@ class ApiRemote {
   Future<BaseResponse<T>> get<T>(
     String endpoint, {
     String? url,
-    Function(Map<String, dynamic> data)? parse,
+    Function(dynamic data)? parse,
     Map<String, dynamic>? query,
     Options? options,
     CancelToken? cancelToken,
@@ -131,7 +131,7 @@ class ApiRemote {
   Future<BaseResponse<T>> post<T>(
     String endpoint, {
     String? url,
-    Function(Map<String, dynamic> data)? parse,
+    Function(dynamic data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,
@@ -165,7 +165,7 @@ class ApiRemote {
   Future<BaseResponse<T>> put<T>(
     String endpoint, {
     String? url,
-    Function(Map<String, dynamic> data)? parse,
+    Function(dynamic data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,
@@ -199,7 +199,7 @@ class ApiRemote {
   Future<BaseResponse<T>> patch<T>(
     String endpoint, {
     String? url,
-    Function(Map<String, dynamic> data)? parse,
+    Function(dynamic data)? parse,
     data,
     Map<String, dynamic>? queryParameters,
     Options? options,

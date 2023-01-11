@@ -12,7 +12,7 @@ class BaseResponse<T> {
 
   factory BaseResponse.fromJson(
     Map<String, dynamic> json, {
-    T Function(Map<String, dynamic> data)? parse,
+    T Function(dynamic data)? parse,
     Response? response,
   }) {
     return BaseResponse._(

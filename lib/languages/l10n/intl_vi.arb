@@ -97,5 +97,7 @@
   "balconyFacing" : "Hướng ban công",
   "additionalDescription" : "Mô tả bổ sung",
   "furniture" : "Nội thất",
-  "createRealEstateSuccess" : "Tạo bất động sản thành công"
+  "createRealEstateSuccess" : "Tạo bất động sản thành công",
+  "unableToLoadData" : "Không tải được dữ liệu"
+  
 }

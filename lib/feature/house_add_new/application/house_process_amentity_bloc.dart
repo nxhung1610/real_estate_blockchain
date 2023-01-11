@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
 import 'enums.dart';
 import 'validate_subcriber.dart';
 
@@ -51,11 +52,11 @@ class HouseProcessAmentityBloc
     });
   }
 
-  void onStart(List<RealEstateAmenity> items) {
+  void onStart(List<Amenity> items) {
     add(HouseProcessAmentityEvent.started(items));
   }
 
-  void onSelectAmenity(RealEstateAmenity amenity, bool isSelected) {
+  void onSelectAmenity(Amenity amenity, bool isSelected) {
     add(HouseProcessAmentityEvent.onSelectAmenity(amenity, isSelected));
   }
 

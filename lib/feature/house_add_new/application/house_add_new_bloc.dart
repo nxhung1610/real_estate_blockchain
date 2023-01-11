@@ -4,8 +4,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/data/file/data.dart';
-import 'package:real_estate_blockchain/data/file/domain/model/upload_data/upload_data.dart';
+import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_config.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/models/real_estate_mapper.dart';
@@ -80,17 +82,17 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_CreateRealEstate>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
       try {
-        List<UploadData> datas = [];
+        List<AppImage> datas = [];
         for (XFile i in state.media ?? []) {
-          final data = await _fileRepository.upload(i);
+          final data = await _fileRepository.upload(i.path);
           datas.add(data.fold((l) => throw l, (r) => r));
         }
-        final createData = await _restateRepository.createHouseData(
+        final createData = await _restateRepository.createRealEstate(
           RealEstateMapper.toData(
               state.addressChoosen,
               state.realEstateInfo,
               state.amenities,
-              datas.map((e) => Image(id: e.id)).toList(),
+              datas.map((e) => AppImage(id: e.id)).toList(),
               state.position),
         );
         createData.getOrElse(() => throw Exception('Create real estate error'));
@@ -131,7 +133,7 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
           }
           break;
         case ProcessState.amenities:
-          if (data is List<RealEstateAmenity>) {
+          if (data is List<Amenity>) {
             add(_OnAmenity(data));
           } else {
             return;

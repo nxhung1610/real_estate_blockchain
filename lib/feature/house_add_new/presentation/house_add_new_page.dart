@@ -84,7 +84,8 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
     return Scaffold(
       appBar: CustomAppbar(
         context,
-        leading: const BackButtonApp(),
+        leading: const UnconstrainedBox(child: BackButtonApp()),
+        leadingWidth: AppSize.mediumIcon + 64.w,
         title: Text(s.myHomeEmptyBtnAdd2),
         centerTitle: true,
       ),
@@ -112,8 +113,9 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                 );
               }
             },
-            success: (value) {
+            success: (value) async {
               context.pop();
+              await Future.delayed(const Duration(milliseconds: 500));
               context.appDialog.showAppDialog(
                 type: AppDialogType.info,
                 message: s.createRealEstateSuccess,

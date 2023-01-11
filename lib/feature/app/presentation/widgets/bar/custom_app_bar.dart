@@ -44,28 +44,29 @@ class CustomAppbar extends AppBar {
               ),
           leadingWidth: leadingWidth,
           elevation: elevation ?? 0,
-          title: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              if (leading != null) leading,
-              if (title != null)
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: titleSpacing ?? AppSize.mediumWidthDimens,
-                    ),
-                    child: Align(
-                      alignment: centerTitle == true
-                          ? Alignment.center
-                          : Alignment.centerLeft,
-                      child: title,
-                    ),
-                  ),
-                )
-            ],
-          ),
+          title: title,
+          //  Row(
+          //   mainAxisSize: MainAxisSize.max,
+          //   children: [
+          //     if (leading != null) leading,
+          //     if (title != null)
+          //       Expanded(
+          //         child: Padding(
+          //           padding: EdgeInsets.symmetric(
+          //             horizontal: titleSpacing ?? AppSize.mediumWidthDimens,
+          //           ),
+          //           child: Align(
+          //             alignment: centerTitle == true
+          //                 ? Alignment.center
+          //                 : Alignment.centerLeft,
+          //             child: title,
+          //           ),
+          //         ),
+          //       )
+          //   ],
+          // ),
           titleSpacing: appbarSpacing,
-          leading: null,
-          centerTitle: true,
+          leading: leading,
+          centerTitle: centerTitle,
         );
 }

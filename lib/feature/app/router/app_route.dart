@@ -6,6 +6,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_n
 import 'package:real_estate_blockchain/feature/main/module.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
 import 'package:go_router/go_router.dart';
+import 'package:real_estate_blockchain/feature/search/router/router.dart';
 
 final $appRoute = AppRoute('/', null);
 
@@ -16,14 +17,15 @@ class AppRoute extends BaseRoute {
   late final MainRoute _mainRoute;
   late final AuthRoute _authRoute;
   late final HouseAddNewRoute _houseAddNewRoute;
+  late final SearchRoute _searchRoute;
   // Path
   String get onboarding => _onboardingRoute.url;
   String get authRegister => _authRoute.register;
   String get authLogin => _authRoute.login;
   String get main => _mainRoute.url;
   String get homeAddNewProperty => _houseAddNewRoute.url;
-  String get discoverSearch => _mainRoute.discoverSearch;
   String get messageChat => _mainRoute.messageChat;
+  String get search => _searchRoute.url;
 
   @override
   List<RouteBase> get routes => [
@@ -31,6 +33,7 @@ class AppRoute extends BaseRoute {
         ..._mainRoute.routes,
         ..._authRoute.routes,
         ..._houseAddNewRoute.routes,
+        ..._searchRoute.routes,
       ];
 
   @override
@@ -47,5 +50,6 @@ class AppRoute extends BaseRoute {
     _authRoute = AuthRoute(url, '/');
     _onboardingRoute = OnboardingRoute(url, '/onboarding');
     _houseAddNewRoute = HouseAddNewRoute(url, '/house/add-new');
+    _searchRoute = SearchRoute(url, '/search');
   }
 }

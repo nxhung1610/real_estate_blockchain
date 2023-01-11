@@ -22,7 +22,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -34,7 +34,7 @@ mixin _$HouseAddNewEvent {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -46,7 +46,7 @@ mixin _$HouseAddNewEvent {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -177,7 +177,7 @@ class _$_Setup implements _Setup {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -192,7 +192,7 @@ class _$_Setup implements _Setup {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -207,7 +207,7 @@ class _$_Setup implements _Setup {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -320,7 +320,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -335,7 +335,7 @@ class _$_NextPage implements _NextPage {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -350,7 +350,7 @@ class _$_NextPage implements _NextPage {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -485,7 +485,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -500,7 +500,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -515,7 +515,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -656,7 +656,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -671,7 +671,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -686,7 +686,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -764,7 +764,7 @@ abstract class _$$_OnAmenityCopyWith<$Res> {
           _$_OnAmenity value, $Res Function(_$_OnAmenity) then) =
       __$$_OnAmenityCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<RealEstateAmenity> amenities});
+  $Res call({List<Amenity> amenities});
 }
 
 /// @nodoc
@@ -784,7 +784,7 @@ class __$$_OnAmenityCopyWithImpl<$Res>
       null == amenities
           ? _value._amenities
           : amenities // ignore: cast_nullable_to_non_nullable
-              as List<RealEstateAmenity>,
+              as List<Amenity>,
     ));
   }
 }
@@ -792,12 +792,11 @@ class __$$_OnAmenityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnAmenity implements _OnAmenity {
-  const _$_OnAmenity(final List<RealEstateAmenity> amenities)
-      : _amenities = amenities;
+  const _$_OnAmenity(final List<Amenity> amenities) : _amenities = amenities;
 
-  final List<RealEstateAmenity> _amenities;
+  final List<Amenity> _amenities;
   @override
-  List<RealEstateAmenity> get amenities {
+  List<Amenity> get amenities {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_amenities);
   }
@@ -833,7 +832,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -848,7 +847,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -863,7 +862,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -926,10 +925,9 @@ class _$_OnAmenity implements _OnAmenity {
 }
 
 abstract class _OnAmenity implements HouseAddNewEvent {
-  const factory _OnAmenity(final List<RealEstateAmenity> amenities) =
-      _$_OnAmenity;
+  const factory _OnAmenity(final List<Amenity> amenities) = _$_OnAmenity;
 
-  List<RealEstateAmenity> get amenities;
+  List<Amenity> get amenities;
   @JsonKey(ignore: true)
   _$$_OnAmenityCopyWith<_$_OnAmenity> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1007,7 +1005,7 @@ class _$_OnMedia implements _OnMedia {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -1022,7 +1020,7 @@ class _$_OnMedia implements _OnMedia {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -1037,7 +1035,7 @@ class _$_OnMedia implements _OnMedia {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -1174,7 +1172,7 @@ class _$_OnMap implements _OnMap {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -1189,7 +1187,7 @@ class _$_OnMap implements _OnMap {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -1204,7 +1202,7 @@ class _$_OnMap implements _OnMap {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -1317,7 +1315,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     required TResult Function() nextPage,
     required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
-    required TResult Function(List<RealEstateAmenity> amenities) onAmenity,
+    required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
@@ -1332,7 +1330,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult? Function()? nextPage,
     TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult? Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
@@ -1347,7 +1345,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult Function()? nextPage,
     TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
-    TResult Function(List<RealEstateAmenity> amenities)? onAmenity,
+    TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
@@ -1419,7 +1417,7 @@ mixin _$HouseAddNewState {
   RealEstateConfig? get config => throw _privateConstructorUsedError;
   AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
   RealEstateInfo? get realEstateInfo => throw _privateConstructorUsedError;
-  List<RealEstateAmenity>? get amenities => throw _privateConstructorUsedError;
+  List<Amenity>? get amenities => throw _privateConstructorUsedError;
   List<XFile>? get media => throw _privateConstructorUsedError;
   LatLng? get position => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
@@ -1440,11 +1438,12 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
-      List<RealEstateAmenity>? amenities,
+      List<Amenity>? amenities,
       List<XFile>? media,
       LatLng? position,
       Status status});
 
+  $RealEstateConfigCopyWith<$Res>? get config;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -1490,7 +1489,7 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
       amenities: freezed == amenities
           ? _value.amenities
           : amenities // ignore: cast_nullable_to_non_nullable
-              as List<RealEstateAmenity>?,
+              as List<Amenity>?,
       media: freezed == media
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
@@ -1504,6 +1503,18 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateConfigCopyWith<$Res>? get config {
+    if (_value.config == null) {
+      return null;
+    }
+
+    return $RealEstateConfigCopyWith<$Res>(_value.config!, (value) {
+      return _then(_value.copyWith(config: value) as $Val);
+    });
   }
 
   @override
@@ -1528,11 +1539,13 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
       RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
-      List<RealEstateAmenity>? amenities,
+      List<Amenity>? amenities,
       List<XFile>? media,
       LatLng? position,
       Status status});
 
+  @override
+  $RealEstateConfigCopyWith<$Res>? get config;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -1577,7 +1590,7 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
       amenities: freezed == amenities
           ? _value._amenities
           : amenities // ignore: cast_nullable_to_non_nullable
-              as List<RealEstateAmenity>?,
+              as List<Amenity>?,
       media: freezed == media
           ? _value._media
           : media // ignore: cast_nullable_to_non_nullable
@@ -1602,7 +1615,7 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       this.config,
       this.addressChoosen,
       this.realEstateInfo,
-      final List<RealEstateAmenity>? amenities,
+      final List<Amenity>? amenities,
       final List<XFile>? media,
       this.position,
       this.status = const Status.idle()})
@@ -1618,9 +1631,9 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   final AddressChoosen? addressChoosen;
   @override
   final RealEstateInfo? realEstateInfo;
-  final List<RealEstateAmenity>? _amenities;
+  final List<Amenity>? _amenities;
   @override
-  List<RealEstateAmenity>? get amenities {
+  List<Amenity>? get amenities {
     final value = _amenities;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -1691,7 +1704,7 @@ abstract class _HouseAddNewState implements HouseAddNewState {
       final RealEstateConfig? config,
       final AddressChoosen? addressChoosen,
       final RealEstateInfo? realEstateInfo,
-      final List<RealEstateAmenity>? amenities,
+      final List<Amenity>? amenities,
       final List<XFile>? media,
       final LatLng? position,
       final Status status}) = _$_HouseAddNewState;
@@ -1705,7 +1718,7 @@ abstract class _HouseAddNewState implements HouseAddNewState {
   @override
   RealEstateInfo? get realEstateInfo;
   @override
-  List<RealEstateAmenity>? get amenities;
+  List<Amenity>? get amenities;
   @override
   List<XFile>? get media;
   @override

@@ -7,8 +7,10 @@ import 'package:real_estate_blockchain/data/file/domain/file_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:real_estate_blockchain/data/file/domain/i_file_repository.dart';
 import 'package:real_estate_blockchain/data/file/infrastructure/constant.dart';
+import 'package:real_estate_blockchain/data/file/infrastructure/dto/image/image_dto_mapper.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/image_response.dart';
 
-import '../domain/model/upload_data/upload_data.dart';
+import '../domain/model/app_image.dart';
 
 @LazySingleton(as: IFileRepository)
 class FileRepository implements IFileRepository {
@@ -17,17 +19,16 @@ class FileRepository implements IFileRepository {
   FileRepository(this._apiRemote);
 
   @override
-  Future<Either<FileFailure, UploadData>> upload(XFile data) async {
+  Future<Either<FileFailure, AppImage>> upload(String path) async {
     try {
       final file = await MultipartFile.fromFile(
-        data.path,
-        filename: data.name,
+        path,
       );
 
       final fromData = FormData.fromMap({
         'file': file,
       });
-      final res = await _apiRemote.post(
+      final res = await _apiRemote.post<ImageResponse>(
         FileConstant.upload,
         data: fromData,
         url: AppConfig.instance.reUrl,
@@ -36,13 +37,12 @@ class FileRepository implements IFileRepository {
           "Accept": "multipart/form-data",
         }),
         parse: (data) {
-          return UploadData.fromJson(data);
+          return ImageResponse.fromJson(data);
         },
       );
       if (!res.success) throw res.errorKey ?? res.message ?? '';
-      return right(res.data);
+      return right(ImageDtoMapper.fromResponse(res.data!));
     } catch (e) {
-      print(e);
       return left(const FileFailure.unknown());
     }
   }

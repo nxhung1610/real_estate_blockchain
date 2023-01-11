@@ -18,7 +18,10 @@ class JWTInterceptor extends InterceptorsWrapper {
       RequestOptions options, RequestInterceptorHandler handler) async {
     try {
       final tokenResult = await token?.call();
-      options.headers['authorization'] = "Bearer $tokenResult";
+      if (tokenResult?.isEmpty == false) {
+        options.headers['authorization'] = "Bearer $tokenResult";
+      }
+
       super.onRequest(options, handler);
     } catch (e) {
       handler.reject(

@@ -39,7 +39,8 @@ class _HouseFilterPageState extends State<HouseFilterPage> {
       child: Scaffold(
         appBar: CustomAppbar(
           context,
-          leading: const RemoveButtonApp(),
+          leading: const UnconstrainedBox(child: RemoveButtonApp()),
+          leadingWidth: AppSize.mediumIcon + 64.w,
           title: Text(s.filter),
         ),
         body: Column(
