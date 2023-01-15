@@ -6,6 +6,7 @@ class _LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
       padding: EdgeInsets.symmetric(
         horizontal: AppSize.extraWidthDimens,
       ),

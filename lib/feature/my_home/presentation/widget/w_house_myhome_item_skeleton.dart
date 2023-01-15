@@ -23,13 +23,13 @@ class HouseMyHomeItemSkeletonWidget extends StatelessWidget {
               SizedBox(
                 height: 16.h,
                 width: double.infinity,
-                child: SkeletonWidget(),
+                child: const SkeletonWidget(),
               ),
               AppSize.largeHeightDimens.verticalSpace,
               SizedBox(
                 height: 16.h,
                 width: double.infinity,
-                child: SkeletonWidget(),
+                child: const SkeletonWidget(),
               ),
             ],
           ),

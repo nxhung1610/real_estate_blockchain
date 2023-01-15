@@ -1,7 +1,9 @@
 part of './my_home_page.dart';
 
 class _DefaultPage extends StatefulWidget {
-  const _DefaultPage({super.key});
+  const _DefaultPage({
+    super.key,
+  });
 
   @override
   State<_DefaultPage> createState() => __DefaultPageState();
@@ -10,8 +12,8 @@ class _DefaultPage extends StatefulWidget {
 class __DefaultPageState extends State<_DefaultPage> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
+    return MultiSliver(
+      children: [
         BlocSelector<MyHomeBloc, MyHomeState, List<RealEstate>>(
           selector: (state) {
             return state.realEstates;
