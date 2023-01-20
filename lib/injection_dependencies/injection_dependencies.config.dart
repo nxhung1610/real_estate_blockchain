@@ -18,23 +18,24 @@ import '../data/auth/infrastructure/remote/mapper/login_mapper.dart' as _i25;
 import '../data/core/data.dart' as _i14;
 import '../data/core/infrastructure/local/api_local_hive.dart' as _i3;
 import '../data/core/infrastructure/remote/api_remote.dart' as _i4;
-import '../data/file/data.dart' as _i37;
+import '../data/file/data.dart' as _i38;
 import '../data/file/domain/i_file_repository.dart' as _i18;
 import '../data/file/infrastructure/file_repository.dart' as _i19;
+import '../data/message/infrastructure/message_repository.dart' as _i29;
 import '../data/province/data.dart' as _i20;
 import '../data/province/infrastructure/local/provinces_repository.dart'
     as _i21;
 import '../data/real_estate/data.dart' as _i22;
 import '../data/real_estate/infrastructure/real_estate_repository.dart' as _i23;
-import '../feature/app/application/app_bloc.dart' as _i34;
-import '../feature/auth/application/auth_bloc.dart' as _i35;
+import '../feature/app/application/app_bloc.dart' as _i35;
+import '../feature/auth/application/auth_bloc.dart' as _i36;
 import '../feature/auth/application/login_bloc.dart' as _i24;
-import '../feature/auth/application/register_bloc.dart' as _i32;
+import '../feature/auth/application/register_bloc.dart' as _i33;
 import '../feature/discover/application/discover_bloc.dart' as _i5;
 import '../feature/home/application/home_bloc.dart' as _i6;
-import '../feature/house_add_new/application/house_add_new_bloc.dart' as _i36;
+import '../feature/house_add_new/application/house_add_new_bloc.dart' as _i37;
 import '../feature/house_add_new/application/house_process_address_bloc.dart'
-    as _i38;
+    as _i39;
 import '../feature/house_add_new/application/house_process_amentity_bloc.dart'
     as _i7;
 import '../feature/house_add_new/application/house_process_map_position_bloc.dart'
@@ -47,11 +48,11 @@ import '../feature/house_add_new/application/validate_subcriber.dart' as _i8;
 import '../feature/main/application/main_cubit.dart' as _i26;
 import '../feature/message/application/message_bloc.dart' as _i27;
 import '../feature/message/application/message_chat_bloc.dart' as _i28;
-import '../feature/my_home/application/my_home_bloc.dart' as _i29;
-import '../feature/onboarding/application/onboarding_bloc.dart' as _i30;
-import '../feature/profile/application/profile_bloc.dart' as _i31;
+import '../feature/my_home/application/my_home_bloc.dart' as _i30;
+import '../feature/onboarding/application/onboarding_bloc.dart' as _i31;
+import '../feature/profile/application/profile_bloc.dart' as _i32;
 import '../feature/search/application/search_bloc.dart'
-    as _i33; // ignore_for_file: unnecessary_lambdas
+    as _i34; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -103,7 +104,7 @@ _i1.GetIt $initGetIt(
       ));
   gh.lazySingleton<_i18.IFileRepository>(
       () => _i19.FileRepository(get<_i14.ApiRemote>()));
-  gh.lazySingleton<_i20.IProvincesRepository>(() => _i21.ProvicesRepository());
+  gh.lazySingleton<_i20.IProvincesRepository>(() => _i21.ProvincesRepository());
   gh.lazySingleton<_i22.IRealEstateRepository>(
       () => _i23.RealEstateRepository(get<_i14.ApiRemote>()));
   gh.factory<_i24.LoginBloc>(() => _i24.LoginBloc(get<_i15.IAuthRepository>()));
@@ -111,31 +112,33 @@ _i1.GetIt $initGetIt(
   gh.factory<_i26.MainCubit>(() => _i26.MainCubit());
   gh.factory<_i27.MessageBloc>(() => _i27.MessageBloc());
   gh.factory<_i28.MessageChatBloc>(() => _i28.MessageChatBloc());
-  gh.factory<_i29.MyHomeBloc>(
-      () => _i29.MyHomeBloc(get<_i22.IRealEstateRepository>()));
-  gh.factory<_i30.OnboardingBloc>(
-      () => _i30.OnboardingBloc(get<_i12.IAppConfigLocalRepository>()));
-  gh.factory<_i31.ProfileBloc>(() => _i31.ProfileBloc());
-  gh.factory<_i32.RegisterBloc>(
-      () => _i32.RegisterBloc(get<_i15.IAuthRepository>()));
-  gh.factory<_i33.SearchBloc>(() => _i33.SearchBloc());
-  gh.factory<_i34.AppBloc>(
-      () => _i34.AppBloc(get<_i12.IAppConfigLocalRepository>()));
-  gh.factory<_i35.AuthBloc>(() => _i35.AuthBloc(
+  gh.lazySingleton<_i29.MessageRepository>(
+      () => _i29.MessageRepository(get<_i14.ApiRemote>()));
+  gh.factory<_i30.MyHomeBloc>(
+      () => _i30.MyHomeBloc(get<_i22.IRealEstateRepository>()));
+  gh.factory<_i31.OnboardingBloc>(
+      () => _i31.OnboardingBloc(get<_i12.IAppConfigLocalRepository>()));
+  gh.factory<_i32.ProfileBloc>(() => _i32.ProfileBloc());
+  gh.factory<_i33.RegisterBloc>(
+      () => _i33.RegisterBloc(get<_i15.IAuthRepository>()));
+  gh.factory<_i34.SearchBloc>(() => _i34.SearchBloc());
+  gh.factory<_i35.AppBloc>(
+      () => _i35.AppBloc(get<_i12.IAppConfigLocalRepository>()));
+  gh.factory<_i36.AuthBloc>(() => _i36.AuthBloc(
         get<_i15.IAuthLocalRepository>(),
         get<_i15.IAuthRepository>(),
         get<_i14.ApiRemote>(),
       ));
-  gh.factory<_i36.HouseAddNewBloc>(() => _i36.HouseAddNewBloc(
+  gh.factory<_i37.HouseAddNewBloc>(() => _i37.HouseAddNewBloc(
         get<_i22.IRealEstateRepository>(),
-        get<_i37.IFileRepository>(),
+        get<_i38.IFileRepository>(),
       ));
-  gh.factoryParam<_i38.HouseProcessAddressBloc, _i8.ValidateSubcriber, dynamic>(
+  gh.factoryParam<_i39.HouseProcessAddressBloc, _i8.ValidateSubcriber, dynamic>(
       (
     _subcriber,
     _,
   ) =>
-          _i38.HouseProcessAddressBloc(
+          _i39.HouseProcessAddressBloc(
             get<_i20.IProvincesRepository>(),
             _subcriber,
           ));

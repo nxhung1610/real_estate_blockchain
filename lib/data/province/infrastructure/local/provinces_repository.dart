@@ -8,7 +8,7 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import '../../data.dart';
 
 @LazySingleton(as: IProvincesRepository)
-class ProvicesRepository implements IProvincesRepository {
+class ProvincesRepository implements IProvincesRepository {
   @override
   Future<Either<ProvinceFailures, List<District>>> districtFromProvince(
       Province province) async {
