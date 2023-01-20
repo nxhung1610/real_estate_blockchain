@@ -1,5 +1,7 @@
+import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 Future<Uint8List> svgToPng(String svgString,
@@ -11,3 +13,6 @@ Future<Uint8List> svgToPng(String svgString,
 
   return bytes!.buffer.asUint8List();
 }
+
+Color get randColor =>
+    Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
