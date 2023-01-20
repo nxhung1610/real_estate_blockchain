@@ -78,48 +78,42 @@ class _MyHomePageState extends State<MyHomePage> {
             // context.read<MyHomeBloc>().add(const MyHomeEvent.onLoadedData());
             return Future.delayed(const Duration(seconds: 5));
           },
-          child: CustomScrollView(
-            // physics: const AlwaysScrollableScrollPhysics(
-            //   parent: BouncingScrollPhysics(),
-            // ),
-            slivers: [
-              BlocBuilder<MyHomeBloc, MyHomeState>(
-                builder: (context, state) {
-                  final isLoading =
-                      state.status is StatusLoading && state.isFirstLoad;
-                  final isFailure = state.isLoadDataFailed;
-                  if (isFailure) {
-                    return SliverToBoxAdapter(
-                      child: Center(
-                        child: Text(
-                          s.unableToLoadData,
-                          style: context.textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+          children: [
+            BlocBuilder<MyHomeBloc, MyHomeState>(
+              builder: (context, state) {
+                final isLoading =
+                    state.status is StatusLoading && state.isFirstLoad;
+                final isFailure = state.isLoadDataFailed;
+                if (isFailure) {
+                  return SliverFillRemaining(
+                    child: Center(
+                      child: Text(
+                        s.unableToLoadData,
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    );
-                  }
-                  if (isLoading) {
-                    return const SliverToBoxAdapter(child: _LoadingPage());
-                  }
-                  return BlocSelector<MyHomeBloc, MyHomeState,
-                      List<RealEstate>>(
-                    selector: (state) {
-                      return state.realEstates;
-                    },
-                    builder: (context, estates) {
-                      if (estates.isEmpty) {
-                        return const SliverToBoxAdapter(child: _EmptyPage());
-                      } else {
-                        return const _DefaultPage();
-                      }
-                    },
+                    ),
                   );
-                },
-              )
-            ],
-          ),
+                }
+                if (isLoading) {
+                  return const SliverToBoxAdapter(child: _LoadingPage());
+                }
+                return BlocSelector<MyHomeBloc, MyHomeState, List<RealEstate>>(
+                  selector: (state) {
+                    return state.realEstates;
+                  },
+                  builder: (context, estates) {
+                    if (estates.isEmpty) {
+                      return const SliverToBoxAdapter(child: _EmptyPage());
+                    } else {
+                      return const _DefaultPage();
+                    }
+                  },
+                );
+              },
+            )
+          ],
         ),
       ),
     );
