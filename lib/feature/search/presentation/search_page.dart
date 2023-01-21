@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/feature/search/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../../app/application/app_bloc.dart';
@@ -21,6 +24,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   late final TextEditingController textEditingController;
+  Timer? _debounce;
 
   @override
   void initState() {
@@ -32,6 +36,13 @@ class _SearchPageState extends State<SearchPage> {
   void dispose() {
     textEditingController.dispose();
     super.dispose();
+  }
+
+  _onSearchChanged(String query) {
+    if (_debounce?.isActive ?? false) _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 500), () {
+      context.read<SearchBloc>().add(SearchEvent.onKeyChanged(value: query));
+    });
   }
 
   @override
@@ -70,6 +81,7 @@ class _SearchPageState extends State<SearchPage> {
                           borderRadius: BorderRadius.circular(50.r),
                         ),
                         child: TextField(
+                          onChanged: _onSearchChanged,
                           controller: textEditingController,
                           autofocus: true,
                           style: context.textTheme.bodyMedium?.copyWith(

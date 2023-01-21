@@ -46,9 +46,12 @@ class MyHomeBloc extends Bloc<MyHomeEvent, MyHomeState> {
         isLoadDataFailed: true,
       ));
     } finally {
-      emit(state.copyWith(
-        isFirstLoad: false,
-      ));
+      emit(
+        state.copyWith(
+          isFirstLoad: false,
+          status: const Status.idle(),
+        ),
+      );
     }
   }
 }

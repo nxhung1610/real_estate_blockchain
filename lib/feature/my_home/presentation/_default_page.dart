@@ -12,6 +12,7 @@ class _DefaultPage extends StatefulWidget {
 class __DefaultPageState extends State<_DefaultPage> {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return MultiSliver(
       children: [
         BlocSelector<MyHomeBloc, MyHomeState, List<RealEstate>>(
@@ -46,26 +47,23 @@ class __DefaultPageState extends State<_DefaultPage> {
             );
           },
         ),
-        // Padding(
-        //   padding: EdgeInsets.symmetric(
-        //     horizontal: AppSize.extraWidthDimens,
-        //   ),
-        //   child: Column(
-        //     mainAxisSize: MainAxisSize.min,
-        //     children: [
-        //       AppSize.extraHeightDimens.verticalSpace,
-        //       AppSize.extraLargeHeightDimens.verticalSpace,
-        //       ButtonShade(
-        //         label: s.myHomeEmptyBtnAdd2,
-        //         icon: Assets.icons.icBtnPlus.svg(),
-        //         onPressed: () {
-        //           context.push($appRoute.homeAddNewProperty);
-        //         },
-        //       ),
-        //       AppSize.extraHeightDimens.verticalSpace,
-        //     ],
-        //   ),
-        // )
+        SliverPadding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSize.extraWidthDimens,
+            vertical: AppSize.mediumHeightDimens,
+          ),
+          sliver: SliverToBoxAdapter(
+            child: ButtonApp(
+              label: s.myHomeEmptyBtnAdd,
+              onPressed: () {
+                context.push($appRoute.homeAddNewProperty);
+              },
+              type: ButtonType.primary,
+              style: ButtonScaleStyle.tight,
+              size: ButtonSize.small,
+            ),
+          ),
+        )
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late final MyHomeBloc bloc;
   late final ScrollController scrollController;
   late final IndicatorController indicatorController;
+  Completer? reload;
 
   @override
   void dispose() {
@@ -46,11 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    super.initState();
-    indicatorController = IndicatorController(refreshEnabled: true);
-    scrollController = ScrollController();
     bloc = context.read<MyHomeBloc>();
     bloc.add(const MyHomeEvent.started());
+    super.initState();
+
+    indicatorController = IndicatorController(refreshEnabled: true);
+    scrollController = ScrollController();
   }
 
   @override
@@ -66,6 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
           state.status.whenOrNull(
             idle: () {
               indicatorController.disableRefresh();
+              if (!(reload?.isCompleted ?? true)) {
+                reload?.complete();
+              }
             },
             failure: (value) {
               indicatorController.disableRefresh();
@@ -75,8 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: WCustomRefreshScrollView(
           // controller: indicatorController,
           onRefresh: () async {
-            // context.read<MyHomeBloc>().add(const MyHomeEvent.onLoadedData());
-            return Future.delayed(const Duration(seconds: 5));
+            reload = Completer();
+            context.read<MyHomeBloc>().add(const MyHomeEvent.onLoadedData());
+            await reload?.future;
           },
           children: [
             BlocBuilder<MyHomeBloc, MyHomeState>(

@@ -12,9 +12,9 @@
       "program": "lib/main.dart",
       "args": [
         "--dart-define",
-        "CONFIG_PATH=envs/dev.env",
+        "CONFIG_PATH=envs",
         "--dart-define",
-        "BUILD_OPTION=dev"
+        "BUILD_OPTION=prod"
       ]
     },
     {
