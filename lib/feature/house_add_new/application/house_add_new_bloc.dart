@@ -33,9 +33,13 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
       emit(state.copyWith(status: const Status.loading()));
       final config = await _restateRepository.configData();
       config.fold(
-        (l) => emit(state.copyWith(
+        (l) => emit(
+          state.copyWith(
             status: const Status.failure(
-                value: RealEstateFailure.loadConfigFail()))),
+              value: RealEstateFailure.loadConfigFail(),
+            ),
+          ),
+        ),
         (r) => emit(
           state.copyWith(
             // status: const Status.success(),

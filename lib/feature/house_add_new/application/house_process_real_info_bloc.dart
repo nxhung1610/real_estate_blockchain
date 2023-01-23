@@ -39,6 +39,8 @@ class HouseProcessRealInfoBloc
           balconyFacing: state.balcony?.name,
           houseFacing: state.houseFacing?.name,
           interiors: state.furniture,
+          name: state.name,
+          reTypeId: state.reTypeId,
         ),
       );
     });
@@ -122,6 +124,9 @@ class HouseProcessRealInfoBloc
     on<_OnFurnitureChanged>((event, emit) {
       emit(state.copyWith(furniture: event.note));
     });
+    on<_OnRealEstateNameChanged>(
+      (event, emit) => emit(state.copyWith(name: event.name)),
+    );
   }
   void started() => add(const HouseProcessRealInfoEvent.started());
   void onChangedTypeSell(RealEstateSell sell) =>
@@ -152,12 +157,15 @@ class HouseProcessRealInfoBloc
       add(HouseProcessRealInfoEvent.onBalconyDirectionChanged(direction));
   void onFurnitureChanged(String note) =>
       add(HouseProcessRealInfoEvent.onFurnitureChanged(note));
+  void onRealEstateNameChanged(String name) =>
+      add(HouseProcessRealInfoEvent.onRealEstateNameChanged(name));
 
   bool isValid() {
     final isNotNull = (state.area ?? 0) > 0 &&
         (state.price ?? 0) > 0 &&
         state.reTypeId != null &&
-        state.houseFacing != null;
+        state.houseFacing != null &&
+        state.name?.isNotEmpty == true;
     return isNotNull;
   }
 

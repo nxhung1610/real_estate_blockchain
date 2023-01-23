@@ -6,6 +6,7 @@ class RealEstateInfo extends Equatable {
   final bool? isRent;
   final double? area;
   final double? price;
+  final String? name;
   final List<String>? documents;
   @JsonKey(name: 're_type_id')
   final int? reTypeId;
@@ -23,6 +24,7 @@ class RealEstateInfo extends Equatable {
   final String? interiors;
 
   const RealEstateInfo({
+    this.name,
     this.isRent,
     this.area,
     this.price,
@@ -38,6 +40,7 @@ class RealEstateInfo extends Equatable {
   });
 
   RealEstateInfo copyWith({
+    String? name,
     bool? isRent,
     double? area,
     double? price,
@@ -64,6 +67,7 @@ class RealEstateInfo extends Equatable {
       houseFacing: houseFacing ?? this.houseFacing,
       balconyFacing: balconyFacing ?? this.balconyFacing,
       interiors: interiors ?? this.interiors,
+      name: name ?? this.name,
     );
   }
 
@@ -82,6 +86,7 @@ class RealEstateInfo extends Equatable {
       houseFacing,
       balconyFacing,
       interiors,
+      name,
     ];
   }
 }

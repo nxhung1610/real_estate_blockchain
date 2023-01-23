@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
@@ -23,7 +26,7 @@ class RealEstateRepository extends IRealEstateRepository {
   @override
   Future<Either<RealEstateFailure, RealEstateConfig>> configData() async {
     try {
-      final res = await _apiRemote.get<RealEstateConfig>(
+      final res = await _apiRemote.get<RealEstateConfigResponse>(
         RealEstateConstants.config,
         url: AppConfig.instance.reUrl,
         parse: (data) {
@@ -31,10 +34,11 @@ class RealEstateRepository extends IRealEstateRepository {
         },
       );
       if (res.success) {
-        return right(res.data!);
+        return right(res.data!.toModel());
       }
       throw Exception();
-    } catch (e) {
+    } catch (e, strace) {
+      inspect(strace);
       return left(const RealEstateFailure.unknown());
     }
   }
@@ -50,7 +54,9 @@ class RealEstateRepository extends IRealEstateRepository {
       );
       if (!res.success) throw res.errorKey!;
       return right(unit);
-    } catch (e) {
+    } catch (e, strace) {
+      print(strace);
+      // inspect(strace);
       return left(const RealEstateFailure.unknown());
     }
   }

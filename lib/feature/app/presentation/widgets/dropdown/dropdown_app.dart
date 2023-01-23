@@ -27,7 +27,7 @@ class DropdownApp<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final horizontalSpace = paddingHorizontal ?? 20.w;
+    final horizontalSpace = paddingHorizontal ?? 16.w;
     return ButtonTheme(
       alignedDropdown: true,
       padding: EdgeInsets.zero,
@@ -38,12 +38,13 @@ class DropdownApp<T> extends StatelessWidget {
           ),
           child: Material(
             child: DropdownButtonFormField2<T>(
+              isDense: true,
               isExpanded: isExpanded ?? false,
               value: value,
               dropdownMaxHeight: 0.5.sh,
               itemPadding: EdgeInsets.symmetric(
-                horizontal: horizontalSpace,
-              ),
+                  // horizontal: horizontalSpace,
+                  ),
               buttonPadding: EdgeInsets.symmetric(
                 horizontal: horizontalSpace,
               ),

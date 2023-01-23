@@ -7,6 +7,6 @@ class RealEstatePostType with _$RealEstatePostType {
   const factory RealEstatePostType({
     int? id,
     String? name,
-    int? pricePerDay,
+    num? pricePerDay,
   }) = _RealEstatePostType;
 }

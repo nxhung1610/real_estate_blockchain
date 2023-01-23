@@ -3,6 +3,8 @@ part of 'house_process_real_info_bloc.dart';
 @freezed
 class HouseProcessRealInfoEvent with _$HouseProcessRealInfoEvent {
   const factory HouseProcessRealInfoEvent.started() = _Started;
+  const factory HouseProcessRealInfoEvent.onRealEstateNameChanged(String name) =
+      _OnRealEstateNameChanged;
   const factory HouseProcessRealInfoEvent.changeTypeSell(RealEstateSell sell) =
       _ChangeTypeSell;
   const factory HouseProcessRealInfoEvent.changeRealEstateType(

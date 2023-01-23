@@ -61,6 +61,23 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
         AppSize.largeHeightDimens.verticalSpace,
         ...[
           Text(
+            s.realEstateName,
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: context.textTheme.displayLarge?.color,
+            ),
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          InputPrimaryForm(
+            keyboardType: TextInputType.text,
+            onChanged: (value) {
+              bloc.onRealEstateNameChanged(value);
+            },
+          )
+        ],
+        AppSize.largeHeightDimens.verticalSpace,
+        ...[
+          Text(
             s.realEstateType,
             style: context.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.bold,
@@ -77,10 +94,13 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                     .map(
                       (e) => DropdownMenuItem(
                         value: e,
-                        child: Text(
-                          e.toString(),
-                          style: context.textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.w500,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          child: Text(
+                            e.name?.toString() ?? '',
+                            style: context.textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
@@ -96,7 +116,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 selectedItemBuilder: (context) {
                   return list
                       .map((e) => Text(
-                            e.toString(),
+                            e.name?.toString() ?? '',
                             style: context.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: context.textTheme.displayLarge?.color,
@@ -212,6 +232,9 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 ...list
                     .map(
                       (e) => InputChip(
+                        padding: EdgeInsets.all(
+                          8.w,
+                        ),
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         elevation: 0,
                         shadowColor: Colors.transparent,
@@ -227,6 +250,9 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                     )
                     .toList(),
                 ActionChip(
+                  padding: EdgeInsets.all(
+                    8.w,
+                  ),
                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   elevation: 0,
                   shadowColor: Colors.transparent,
@@ -344,12 +370,17 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                           .map(
                             (e) => DropdownMenuItem(
                               value: e,
-                              child: Text(
-                                e.toString(),
-                                style: context.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.w500,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
                                 ),
-                                overflow: TextOverflow.ellipsis,
+                                child: Text(
+                                  e.toString(),
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                             ),
                           )
@@ -399,12 +430,17 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                           .map(
                             (e) => DropdownMenuItem(
                               value: e,
-                              child: Text(
-                                e.toString(),
-                                style: context.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.w500,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
                                 ),
-                                overflow: TextOverflow.ellipsis,
+                                child: Text(
+                                  e.toString(),
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                             ),
                           )

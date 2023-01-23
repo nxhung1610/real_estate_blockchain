@@ -999,6 +999,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Real estate name`
+  String get realEstateName {
+    return Intl.message(
+      'Real estate name',
+      name: 'realEstateName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -98,5 +98,6 @@
   "additionalDescription" : "Additional Description",
   "furniture" : "Furniture",
   "createRealEstateSuccess" : "Create real estate success",
-  "unableToLoadData" : "Unable to load data"
+  "unableToLoadData" : "Unable to load data",
+  "realEstateName" : "Real estate name"
 }

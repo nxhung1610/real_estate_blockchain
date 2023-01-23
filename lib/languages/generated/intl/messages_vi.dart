@@ -126,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "province": MessageLookupByLibrary.simpleMessage("Tỉnh, Thành phố"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Nhà riêng"),
+        "realEstateName":
+            MessageLookupByLibrary.simpleMessage("Tên bất động sản"),
         "realEstateType":
             MessageLookupByLibrary.simpleMessage("Loại bất động sản"),
         "registerCreateANameAccount1":

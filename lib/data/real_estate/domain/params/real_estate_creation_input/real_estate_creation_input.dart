@@ -14,6 +14,7 @@ class RealEstateCreationInput with _$RealEstateCreationInput {
     String? address,
     double? latitude,
     double? longitude,
+    String? name,
     int? price,
     int? ownerId,
     int? floors,

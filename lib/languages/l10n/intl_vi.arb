@@ -98,6 +98,7 @@
   "additionalDescription" : "Mô tả bổ sung",
   "furniture" : "Nội thất",
   "createRealEstateSuccess" : "Tạo bất động sản thành công",
-  "unableToLoadData" : "Không tải được dữ liệu"
+  "unableToLoadData" : "Không tải được dữ liệu",
+  "realEstateName" : "Tên bất động sản"
   
 }

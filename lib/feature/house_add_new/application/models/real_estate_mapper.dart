@@ -14,6 +14,7 @@ class RealEstateMapper {
       List<AppImage>? pictures,
       LatLng? position) {
     return RealEstateCreationInput(
+      name: realEstateInfo?.name,
       provinceId:
           int.tryParse(addressChoosen?.province?.code ?? '')?.toString(),
       districtId:

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'house_add_new_bloc.dart';
 
@@ -797,6 +797,7 @@ class _$_OnAmenity implements _OnAmenity {
   final List<Amenity> _amenities;
   @override
   List<Amenity> get amenities {
+    if (_amenities is EqualUnmodifiableListView) return _amenities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_amenities);
   }
@@ -971,6 +972,7 @@ class _$_OnMedia implements _OnMedia {
   final List<XFile> _media;
   @override
   List<XFile> get media {
+    if (_media is EqualUnmodifiableListView) return _media;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_media);
   }
@@ -1636,6 +1638,7 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   List<Amenity>? get amenities {
     final value = _amenities;
     if (value == null) return null;
+    if (_amenities is EqualUnmodifiableListView) return _amenities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1645,6 +1648,7 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   List<XFile>? get media {
     final value = _media;
     if (value == null) return null;
+    if (_media is EqualUnmodifiableListView) return _media;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
