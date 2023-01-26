@@ -206,7 +206,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
             hint: '2000',
             keyboardType: TextInputType.number,
             onChanged: (value) {
-              bloc.onAreaChanged(double.tryParse(value) ?? 0);
+              bloc.onBuiltAtChanged(int.tryParse(value) ?? 0);
             },
           )
         ],

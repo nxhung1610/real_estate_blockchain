@@ -50,19 +50,48 @@ class __DefaultPageState extends State<_DefaultPage> {
         SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: AppSize.extraWidthDimens,
-            vertical: AppSize.mediumHeightDimens,
+            vertical: AppSize.largeHeightDimens,
           ),
           sliver: SliverToBoxAdapter(
-            child: ButtonApp(
-              label: s.myHomeEmptyBtnAdd,
-              onPressed: () {
-                context.push($appRoute.homeAddNewProperty);
-              },
-              type: ButtonType.primary,
-              style: ButtonScaleStyle.tight,
-              size: ButtonSize.small,
+              child: ElevatedButton(
+            style: context.theme.elevatedButtonTheme.style?.copyWith(
+              backgroundColor:
+                  const MaterialStatePropertyAll(Color(0xffF1F2F4)),
+              padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
+                vertical: AppSize.largeHeightDimens,
+              )),
             ),
-          ),
+            onPressed: () {
+              context.push($appRoute.homeAddNewProperty);
+            },
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Assets.icons.icBtnPlus.svg(
+                  width: AppSize.extraWidthDimens,
+                  height: AppSize.extraHeightDimens,
+                ),
+                AppSize.mediumWidthDimens.horizontalSpace,
+                Text(
+                  s.myHomeEmptyBtnAdd2,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.kNeutrals,
+                  ),
+                )
+              ],
+            ),
+          )
+              // child: ButtonApp(
+              //   label: s.myHomeEmptyBtnAdd,
+              //   onPressed: () {
+              //     context.push($appRoute.homeAddNewProperty);
+              //   },
+              //   type: ButtonType.secondary,
+              //   style: ButtonScaleStyle.tight,
+              //   size: ButtonSize.small,
+              // ),
+              ),
         )
       ],
     );

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -167,74 +169,88 @@ class _NewFeed extends StatefulWidget {
 class __NewFeedState extends State<_NewFeed> {
   late final AppBloc appBloc;
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     appBloc = context.read<AppBloc>();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
   Widget searchWidget() {
-    return Stack(
-      children: [
-        Container(
-          padding: EdgeInsets.all(
-            AppSize.largeWidthDimens,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppSize.extraRadius),
-            border: Border.all(
-              width: 1.r,
-              color: context.watch<AppBloc>().state.mode == ThemeMode.dark
-                  ? AppColor.kNeutrals.shade900
-                  : AppColor.kNeutrals.shade500,
-            ),
-          ),
-          child: Row(
-            children: [
-              Assets.icons.icSearchLight.svg(
-                width: context.theme.iconTheme.size,
-                height: context.theme.iconTheme.size,
-                color: context.theme.iconTheme.color,
+    return GestureDetector(
+      onTap: () {
+        context.push($appRoute.search);
+      },
+      child: Hero(
+        tag: searchTag,
+        child: Stack(
+          children: [
+            Container(
+              padding: EdgeInsets.all(
+                AppSize.largeWidthDimens,
               ),
-              AppSize.mediumWidthDimens.horizontalSpace,
-              Text(
-                '${S.of(context).search}...',
-                style: context.textTheme.bodyLarge?.copyWith(),
-              ),
-            ],
-          ),
-        ),
-        Positioned.fill(
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: EdgeInsets.all(AppSize.mediumWidthDimens),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-                  color: AppColor.kBackgroundButton,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(AppSize.extraRadius),
+                border: Border.all(
+                  width: 1.r,
+                  color: context.watch<AppBloc>().state.mode == ThemeMode.dark
+                      ? AppColor.kNeutrals.shade900
+                      : AppColor.kNeutrals.shade500,
                 ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    onTap: () {},
-                    borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-                    child: Padding(
-                      padding: EdgeInsets.all(
-                        AppSize.mediumWidthDimens,
-                      ),
-                      child: Assets.icons.icFilterLight.svg(
-                        width: context.theme.iconTheme.size,
-                        height: context.theme.iconTheme.size,
-                        color: AppColor.kNeutrals.shade50,
+              ),
+              child: Row(
+                children: [
+                  Assets.icons.icSearchLight.svg(
+                    width: context.theme.iconTheme.size,
+                    height: context.theme.iconTheme.size,
+                    color: context.theme.iconTheme.color,
+                  ),
+                  AppSize.mediumWidthDimens.horizontalSpace,
+                  Text(
+                    '${S.of(context).search}...',
+                    style: context.textTheme.bodyLarge?.copyWith(),
+                  ),
+                ],
+              ),
+            ),
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.all(AppSize.mediumWidthDimens),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+                      color: AppColor.kBackgroundButton,
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {},
+                        borderRadius:
+                            BorderRadius.circular(AppSize.mediumRadius),
+                        child: Padding(
+                          padding: EdgeInsets.all(
+                            AppSize.mediumWidthDimens,
+                          ),
+                          child: Assets.icons.icFilterLight.svg(
+                            width: context.theme.iconTheme.size,
+                            height: context.theme.iconTheme.size,
+                            color: AppColor.kNeutrals.shade50,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 

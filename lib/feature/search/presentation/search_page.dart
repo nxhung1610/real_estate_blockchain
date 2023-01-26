@@ -8,10 +8,14 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/search/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../../app/application/app_bloc.dart';
+part 'widgets/_real_estate_search.dart';
 
 const String searchTag = 'SEARCH_TAG';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -45,7 +46,7 @@ class HouseMyHomeItem extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: ImageCustom.network(
-                    'https://${item.images?.firstOrNull?.url ?? ''}',
+                    item.images?.firstOrNull?.url ?? '',
                     height: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -62,7 +63,7 @@ class HouseMyHomeItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Primary Apartment',
+                          item.name,
                           style: context.textTheme.bodyLarge?.copyWith(
                             color: context.textTheme.displayLarge?.color,
                             fontWeight: FontWeight.bold,
@@ -81,7 +82,7 @@ class HouseMyHomeItem extends StatelessWidget {
                             ),
                             AppSize.smallWidthDimens.horizontalSpace,
                             Text(
-                              '3',
+                              item.noWc?.toString() ?? '0',
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
@@ -98,7 +99,7 @@ class HouseMyHomeItem extends StatelessWidget {
                             ),
                             AppSize.smallWidthDimens.horizontalSpace,
                             Text(
-                              '3',
+                              item.noBedrooms?.toString() ?? '0',
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
@@ -140,7 +141,9 @@ class HouseMyHomeItem extends StatelessWidget {
                         ),
                         AppSize.mediumHeightDimens.verticalSpace,
                         Text(
-                          r'$1,600 - $1,800',
+                          NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
+                              .format(item.price * (item.area ?? 0))
+                              .toString(),
                           style: context.textTheme.bodyLarge?.copyWith(
                             color: AppColor.kPrimary1,
                             fontWeight: FontWeight.w800,

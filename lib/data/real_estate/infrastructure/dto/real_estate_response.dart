@@ -14,8 +14,9 @@ part 'real_estate_response.g.dart';
 @freezedResponse
 class RealEstateResponse with _$RealEstateResponse {
   factory RealEstateResponse({
-    int? id,
+    required int id,
     int? status,
+    required String name,
     @JsonKey(name: 'created_at') @DateTimeOrNull() DateTime? createdAt,
     @JsonKey(name: 'updated_at') @DateTimeOrNull() DateTime? updatedAt,
     @JsonKey(name: 'real_estate_type') RealEstateTypeResponse? realEstateType,
@@ -25,7 +26,7 @@ class RealEstateResponse with _$RealEstateResponse {
     String? address,
     double? latitude,
     double? longitude,
-    num? price,
+    @Default(0) num price,
     @JsonKey(name: 'owner_id') int? ownerId,
     int? floors,
     double? area,
@@ -73,6 +74,7 @@ extension RealEstateResponseMapper on RealEstateResponse {
       status: status,
       updatedAt: updatedAt,
       wardId: wardId,
+      name: name,
     );
   }
 }

@@ -9,7 +9,7 @@ part 'real_estate.freezed.dart';
 @freezed
 class RealEstate with _$RealEstate {
   factory RealEstate({
-    int? id,
+    required int id,
     int? status,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -20,7 +20,7 @@ class RealEstate with _$RealEstate {
     String? address,
     double? latitude,
     double? longitude,
-    num? price,
+    required num price,
     int? ownerId,
     int? floors,
     double? area,
@@ -34,5 +34,6 @@ class RealEstate with _$RealEstate {
     String? interiors,
     List<Amenity>? amenities,
     List<AppImage>? images,
+    required String name,
   }) = _RealEstate;
 }
