@@ -85,16 +85,15 @@ class RealEstateRepository extends IRealEstateRepository {
   Future<Either<RealEstateFailure, List<RealEstate>>> search(
       RealEstateSearchInput data) async {
     try {
-      final res = await _apiRemote.get<List<RealEstateResponse>>(
-        RealEstateConstants.search,
-        url: AppConfig.instance.reUrl,
-        query: SearchRequest.fromModel(data).toJson(),
-        parse: (data) {
-          return (data as List<dynamic>)
-              .map((e) => RealEstateResponse.fromJson(e))
-              .toList();
-        },
-      );
+      final res = await _apiRemote.post<List<RealEstateResponse>>(
+          RealEstateConstants.search,
+          url: AppConfig.instance.reUrl,
+          queryParameters: SearchRequest.fromModel(data).toJson(),
+          parse: (data) {
+        return (data as List<dynamic>)
+            .map((e) => RealEstateResponse.fromJson(e))
+            .toList();
+      }, data: {});
       if (!res.success) throw res.errorKey!;
       return right(res.data?.map((e) => e.toModel()).toList() ?? []);
     } catch (e) {
