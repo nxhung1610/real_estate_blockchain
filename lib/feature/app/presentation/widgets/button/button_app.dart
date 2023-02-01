@@ -50,12 +50,12 @@ class ButtonApp extends StatelessWidget {
     switch (type) {
       case ButtonType.primary:
         textStyle = textStyle?.copyWith(
-          color: AppColor.kNeutrals.shade50,
+          color: AppColor.kNeutrals_.shade50,
         );
         break;
       case ButtonType.secondary:
         textStyle = textStyle?.copyWith(
-          color: AppColor.kNeutrals.shade900,
+          color: AppColor.kNeutrals_.shade900,
         );
         break;
     }

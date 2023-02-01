@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_type.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/enums.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
-import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/process_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -238,7 +236,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         elevation: 0,
                         shadowColor: Colors.transparent,
-                        backgroundColor: AppColor.kNeutrals.shade500,
+                        backgroundColor: AppColor.kNeutrals_.shade500,
                         label: Text(
                           e,
                           style: context.textTheme.bodyMedium?.copyWith(),
@@ -256,7 +254,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   elevation: 0,
                   shadowColor: Colors.transparent,
-                  backgroundColor: AppColor.kNeutrals.shade500,
+                  backgroundColor: AppColor.kNeutrals_.shade500,
                   label: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -340,7 +338,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
               Text(
                 s.additionalDescription,
                 style: context.textTheme.bodySmall?.copyWith(
-                  color: AppColor.kNeutrals.shade600,
+                  color: AppColor.kNeutrals_.shade600,
                 ),
               ),
               AppSize.mediumWidthDimens.horizontalSpace,
@@ -590,13 +588,13 @@ class _OptionTypeRealEstateState<T> extends State<_OptionTypeRealEstate<T>>
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSize.largeRadius),
-        color: AppColor.kNeutrals.shade500,
+        color: AppColor.kNeutrals_.shade500,
       ),
       child: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
         padding: EdgeInsets.all(AppSize.smallWidthDimens),
         indicator: BoxDecoration(
-          color: AppColor.kNeutrals.shade50,
+          color: AppColor.kNeutrals_.shade50,
           borderRadius: BorderRadius.circular(AppSize.largeRadius),
         ),
         labelStyle: context.textTheme.bodyMedium?.copyWith(
@@ -652,15 +650,15 @@ class _SelectNumberOption extends StatelessWidget {
                 elevation: 0,
                 borderRadius: BorderRadius.circular(AppSize.smallRadius),
                 color: value <= 0
-                    ? AppColor.kNeutrals.shade600
-                    : AppColor.kNeutrals.shade800,
+                    ? AppColor.kNeutrals_.shade600
+                    : AppColor.kNeutrals_.shade800,
                 child: IconButton(
                   padding: EdgeInsets.zero,
                   iconSize: AppSize.smallIcon,
                   onPressed: onDecrease,
                   icon: Icon(
                     Icons.remove,
-                    color: AppColor.kNeutrals.shade50,
+                    color: AppColor.kNeutrals_.shade50,
                   ),
                 ),
               ),
@@ -675,14 +673,14 @@ class _SelectNumberOption extends StatelessWidget {
               child: Material(
                 elevation: 0,
                 borderRadius: BorderRadius.circular(AppSize.smallRadius),
-                color: AppColor.kNeutrals.shade800,
+                color: AppColor.kNeutrals_.shade800,
                 child: IconButton(
                   padding: EdgeInsets.zero,
                   iconSize: AppSize.smallIcon,
                   onPressed: onIncrease,
                   icon: Icon(
                     Icons.add,
-                    color: AppColor.kNeutrals.shade50,
+                    color: AppColor.kNeutrals_.shade50,
                   ),
                 ),
               ),

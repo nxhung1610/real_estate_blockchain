@@ -13,7 +13,7 @@ class AppTheme {
     splashFactory: InkRipple.splashFactory,
     backgroundColor: AppColor.kBackgroundLight,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: AppColor.kNeutrals.shade300,
+      backgroundColor: AppColor.kNeutrals_.shade300,
     ),
     scaffoldBackgroundColor: AppColor.kBackgroundLight,
     iconTheme: IconThemeData(
@@ -37,7 +37,7 @@ class AppTheme {
         elevation: 0,
         shadowColor: Colors.transparent,
         splashFactory: InkRipple.splashFactory,
-        foregroundColor: AppColor.kNeutrals.shade50,
+        foregroundColor: AppColor.kNeutrals_.shade50,
         backgroundColor: AppColor.kBackgroundButton,
       ),
     ),
@@ -46,7 +46,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.extraRadius),
         ),
-        textStyle: TextStyle(color: AppColor.kNeutrals.shade50),
+        textStyle: TextStyle(color: AppColor.kNeutrals_.shade50),
         elevation: 0,
         shadowColor: Colors.transparent,
         splashFactory: InkRipple.splashFactory,
@@ -66,8 +66,8 @@ class AppTheme {
       ),
     ),
     textTheme: textTheme.apply(
-      bodyColor: AppColor.kNeutrals.shade700,
-      displayColor: AppColor.kNeutrals.shade900,
+      bodyColor: AppColor.kNeutrals_.shade700,
+      displayColor: AppColor.kNeutrals_.shade900,
     ),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
@@ -86,17 +86,17 @@ class AppTheme {
       ),
       hintStyle: textTheme.bodyMedium?.copyWith(
         fontWeight: FontWeight.w500,
-        color: AppColor.kNeutrals.shade600,
+        color: AppColor.kNeutrals_.shade600,
       ),
       filled: true,
-      fillColor: AppColor.kNeutrals.shade400,
+      fillColor: AppColor.kNeutrals_.shade400,
       contentPadding: EdgeInsets.symmetric(
         vertical: 14.h,
         horizontal: 20.w,
       ),
       labelStyle: textTheme.bodyMedium?.copyWith(
         fontWeight: FontWeight.w500,
-        color: AppColor.kNeutrals.shade700,
+        color: AppColor.kNeutrals_.shade700,
       ),
     ),
   );

@@ -15,7 +15,7 @@ class ChatMessageRequest with _$ChatMessageRequest {
     required String content,
     required int senderId,
     required int receiverId,
-    required ChatMessageType messageType,
+    @Default(ChatMessageType.text) ChatMessageType messageType,
   }) = ChatTextMessageRequest;
 
   factory ChatMessageRequest.fromJson(Map<String, dynamic> json) =>

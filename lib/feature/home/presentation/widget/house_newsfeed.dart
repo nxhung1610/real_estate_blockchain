@@ -71,7 +71,7 @@ class HouseNewsFeed<T> extends StatelessWidget {
                 AppSize.largeIcon,
               ),
               child: Material(
-                color: AppColor.kNeutrals.shade800.withOpacity(0.6),
+                color: AppColor.kNeutrals_.shade800.withOpacity(0.6),
                 child: IconButton(
                   onPressed: () {
                     onFavorite?.call(true);
@@ -79,7 +79,7 @@ class HouseNewsFeed<T> extends StatelessWidget {
                   icon: Assets.icons.icHeartLight.svg(
                     width: AppSize.mediumIcon,
                     height: AppSize.mediumIcon,
-                    color: AppColor.kNeutrals.shade50,
+                    color: AppColor.kNeutrals_.shade50,
                   ),
                 ),
               ),
@@ -121,7 +121,7 @@ class HouseNewsFeed<T> extends StatelessWidget {
                           Text(
                             'Jakarta, Indonesia',
                             style: context.textTheme.bodySmall?.copyWith(
-                              color: AppColor.kNeutrals.shade800,
+                              color: AppColor.kNeutrals_.shade800,
                             ),
                           )
                         ],
@@ -143,7 +143,7 @@ class HouseNewsFeed<T> extends StatelessWidget {
                     Text(
                       'per month',
                       style: context.textTheme.bodySmall?.copyWith(
-                        color: AppColor.kNeutrals.shade600,
+                        color: AppColor.kNeutrals_.shade600,
                       ),
                     )
                   ],

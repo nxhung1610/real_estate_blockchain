@@ -32,7 +32,7 @@ class ButtonShade extends StatelessWidget {
     switch (mode) {
       case ThemeMode.dark:
         textStyle = context.textTheme.bodyMedium?.copyWith(
-          color: AppColor.kNeutrals.shade50,
+          color: AppColor.kNeutrals_.shade50,
           fontWeight: FontWeight.bold,
         );
         break;
@@ -47,10 +47,10 @@ class ButtonShade extends StatelessWidget {
     Color? backgroundColor;
     switch (mode) {
       case ThemeMode.dark:
-        backgroundColor = AppColor.kNeutrals.shade50.withOpacity(0.1);
+        backgroundColor = AppColor.kNeutrals_.shade50.withOpacity(0.1);
         break;
       default:
-        backgroundColor = AppColor.kNeutrals.shade500.withOpacity(0.5);
+        backgroundColor = AppColor.kNeutrals_.shade500.withOpacity(0.5);
     }
 
     child = Padding(

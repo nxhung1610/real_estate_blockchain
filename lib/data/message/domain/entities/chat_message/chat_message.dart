@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/utils/utils.dart';
 
 part 'chat_message.freezed.dart';
 part 'chat_message.g.dart';
@@ -14,8 +15,7 @@ class ChatMessage with _$ChatMessage {
     required int senderId,
     required int receiverId,
     required int id,
-    @JsonKey(fromJson: DateTime.fromMillisecondsSinceEpoch)
-        required DateTime createdAt,
+    @JsonKey(fromJson: fromApiDate) required DateTime createdAt,
   }) = ChatTextMessage;
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) =>

@@ -54,15 +54,15 @@ class _AmenityPageState extends State<AmenityPage> {
                         (e) => FilterChip(
                           materialTapTargetSize:
                               MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: AppColor.kNeutrals.shade50,
-                          selectedColor: AppColor.kNeutrals.shade50,
+                          backgroundColor: AppColor.kNeutrals_.shade50,
+                          selectedColor: AppColor.kNeutrals_.shade50,
                           shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.circular(AppSize.extraRadius),
                             side: BorderSide(
                               color: !e.value2
-                                  ? AppColor.kNeutrals.shade400
-                                  : AppColor.kNeutrals,
+                                  ? AppColor.kNeutrals_.shade400
+                                  : AppColor.kNeutrals_,
                               width: 1.r,
                             ),
                           ),

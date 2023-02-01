@@ -99,6 +99,8 @@
   "furniture" : "Nội thất",
   "createRealEstateSuccess" : "Tạo bất động sản thành công",
   "unableToLoadData" : "Không tải được dữ liệu",
+  "writeAReply": "Nhập tin nhắn...",
+
   "realEstateName" : "Tên bất động sản"
-  
+
 }

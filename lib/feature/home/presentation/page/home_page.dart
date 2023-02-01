@@ -7,12 +7,11 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
+import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
+import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class HomePage extends StatefulWidget {
@@ -197,8 +196,8 @@ class __NewFeedState extends State<_NewFeed> {
                 border: Border.all(
                   width: 1.r,
                   color: context.watch<AppBloc>().state.mode == ThemeMode.dark
-                      ? AppColor.kNeutrals.shade900
-                      : AppColor.kNeutrals.shade500,
+                      ? AppColor.kNeutrals_.shade900
+                      : AppColor.kNeutrals_.shade500,
                 ),
               ),
               child: Row(
@@ -239,7 +238,7 @@ class __NewFeedState extends State<_NewFeed> {
                           child: Assets.icons.icFilterLight.svg(
                             width: context.theme.iconTheme.size,
                             height: context.theme.iconTheme.size,
-                            color: AppColor.kNeutrals.shade50,
+                            color: AppColor.kNeutrals_.shade50,
                           ),
                         ),
                       ),

@@ -160,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
+        "writeAReply": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "Bạn cần cấp quyền để hiển thị thông báo")

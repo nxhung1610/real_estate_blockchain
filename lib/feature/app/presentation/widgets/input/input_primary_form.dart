@@ -83,7 +83,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
             initialValue: widget.initialValue,
             style: context.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w500,
-              color: AppColor.kNeutrals.shade800,
+              color: AppColor.kNeutrals_.shade800,
             ),
             decoration: InputDecoration(
               suffixIcon: widget.suffixIcon != null

@@ -95,7 +95,7 @@ class ImageCustom extends Image {
       (context, child, frame, wasSynchronouslyLoaded) {
         if (frame != null) return child;
         return Container(
-          color: AppColor.kNeutrals.shade500,
+          color: AppColor.kNeutrals_.shade500,
         );
       };
 }
@@ -106,7 +106,7 @@ class _ErrorWidgget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColor.kNeutrals.shade500,
+      color: AppColor.kNeutrals_.shade500,
     );
   }
 }
@@ -117,7 +117,7 @@ class _LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColor.kNeutrals.shade500,
+      color: AppColor.kNeutrals_.shade500,
     );
   }
 }

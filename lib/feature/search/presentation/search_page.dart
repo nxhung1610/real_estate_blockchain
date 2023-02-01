@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,14 +7,14 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_image_custom.dart';
 import 'package:real_estate_blockchain/feature/search/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../../app/application/app_bloc.dart';
-part 'widgets/_real_estate_search.dart';
+
+part './widgets/_real_estate_search.dart';
 
 const String searchTag = 'SEARCH_TAG';
 
@@ -156,7 +155,7 @@ class _SearchPageState extends State<SearchPage> {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(48.h),
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 1.r,
@@ -186,7 +185,7 @@ class _SearchPageState extends State<SearchPage> {
                               child: Assets.icons.icSort.svg(
                                 width: AppSize.mediumIcon,
                                 height: AppSize.mediumIcon,
-                                color: AppColor.kNeutrals.shade800,
+                                color: AppColor.kNeutrals_.shade800,
                               ),
                             ),
                           ),

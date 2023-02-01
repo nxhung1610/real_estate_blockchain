@@ -66,6 +66,9 @@ class $FontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_add.svg
+  SvgGenImage get icAdd => const SvgGenImage('assets/icons/ic_add.svg');
+
   /// File path: assets/icons/ic_arrow_down.svg
   SvgGenImage get icArrowDown =>
       const SvgGenImage('assets/icons/ic_arrow_down.svg');
@@ -92,6 +95,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_btn_plus.svg
   SvgGenImage get icBtnPlus =>
       const SvgGenImage('assets/icons/ic_btn_plus.svg');
+
+  /// File path: assets/icons/ic_camera.svg
+  SvgGenImage get icCamera => const SvgGenImage('assets/icons/ic_camera.svg');
 
   /// File path: assets/icons/ic_category_light.svg
   SvgGenImage get icCategoryLight =>
@@ -191,6 +197,9 @@ class $AssetsIconsGen {
   SvgGenImage get icSearchLight =>
       const SvgGenImage('assets/icons/ic_search_light.svg');
 
+  /// File path: assets/icons/ic_send.svg
+  SvgGenImage get icSend => const SvgGenImage('assets/icons/ic_send.svg');
+
   /// File path: assets/icons/ic_setting_bold.svg
   SvgGenImage get icSettingBold =>
       const SvgGenImage('assets/icons/ic_setting_bold.svg');
@@ -212,8 +221,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 
+  /// File path: assets/icons/realust.png
+  AssetGenImage get realust => const AssetGenImage('assets/icons/realust.png');
+
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
+        icAdd,
         icArrowDown,
         icArrowLeft,
         icArrowRight,
@@ -221,6 +234,7 @@ class $AssetsIconsGen {
         icBathroom,
         icBed,
         icBtnPlus,
+        icCamera,
         icCategoryLight,
         icDirectUp,
         icDocumentBold,
@@ -246,12 +260,14 @@ class $AssetsIconsGen {
         icProfileLight,
         icRemove,
         icSearchLight,
+        icSend,
         icSettingBold,
         icSettingLight,
         icSort,
         icSquare,
         icVideoTime,
-        logo
+        logo,
+        realust
       ];
 }
 

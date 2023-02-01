@@ -141,6 +141,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  cli_util:
+    dependency: transitive
+    description:
+      name: cli_util
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
   clock:
     dependency: transitive
     description:
@@ -335,6 +342,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0+1"
+  flutter_launcher_icons:
+    dependency: "direct dev"
+    description:
+      name: flutter_launcher_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -342,6 +356,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  flutter_list_view:
+    dependency: "direct main"
+    description:
+      name: flutter_list_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.21"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -360,7 +381,7 @@ packages:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.17"
+    version: "2.2.16"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -552,7 +573,7 @@ packages:
       name: image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.10"
+    version: "3.3.0"
   image_picker:
     dependency: "direct main"
     description:

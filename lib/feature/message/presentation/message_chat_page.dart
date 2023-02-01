@@ -1,88 +1,37 @@
-import 'dart:convert';
-import 'dart:math';
-
+import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_list_view/flutter_list_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
-import 'package:real_estate_blockchain/data/auth/data.dart';
-import 'package:real_estate_blockchain/data/message/infrastructure/dto/chat_message_request.dart';
-import 'package:real_estate_blockchain/data/message/infrastructure/dto/chat_message_type.dart';
+import 'package:real_estate_blockchain/data/message/domain/entities/chat_message/chat_message.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/feature/core/application/application.dart';
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc.dart';
+import 'package:real_estate_blockchain/feature/message/presentation/widget/message_item.dart';
+import 'package:real_estate_blockchain/feature/message/presentation/widget/message_text_field.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
-import 'package:stomp_dart_client/stomp.dart';
-import 'package:stomp_dart_client/stomp_config.dart';
-import 'package:stomp_dart_client/stomp_frame.dart';
 
 class MessageChatPage extends StatefulWidget {
   const MessageChatPage({super.key});
+
   @override
   State<MessageChatPage> createState() => _MessageChatPageState();
 }
 
 class _MessageChatPageState extends State<MessageChatPage> {
-  late final StompClient client;
-  List<String> messages = [];
-  void onConnectCallback(StompFrame connectFrame) {
-    client.subscribe(
-      destination: "/topic/room/1",
-      callback: (frame) {
-        print(frame.body);
-        if (frame.body != null) {
-          messages.add(frame.body!);
-          setState(() {});
-        }
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    client.deactivate();
-    super.dispose();
-  }
+  late final ChatRoomBloc bloc;
 
   @override
   void initState() {
     super.initState();
-    () async {
-      Random r = Random();
-
-      String key = base64.encode(List<int>.generate(8, (_) => r.nextInt(256)));
-      final token = (await getIt.get<IAuthLocalRepository>().getToken())
-          .foldRight("", (r, previous) => r.token?.token ?? previous)
-          .toString();
-      client = StompClient(
-        config: StompConfig.SockJS(
-            url: 'http://192.168.1.9:9234/ws',
-            onConnect: onConnectCallback,
-            webSocketConnectHeaders: {
-              'Connection': 'Upgrade',
-              'Upgrade': 'websocket',
-              'Host': '192.168.1.9:9234',
-              'Authorization': token,
-              'sec-websocket-version': '13',
-              'sec-websocket-key': key,
-            },
-            stompConnectHeaders: {
-              'Authorization': token,
-            },
-            onDebugMessage: (message) {
-              print("DEBUG $message");
-            },
-            onStompError: (frame) {
-              print("ERROR $frame");
-            },
-            onWebSocketError: (err) {
-              print("WSERROR $err");
-            }),
-      );
-      client.activate();
-    }();
+    bloc = context.read<ChatRoomBloc>();
   }
 
   @override
   Widget build(BuildContext context) {
+    final room = bloc.state.room;
     return Scaffold(
       appBar: CustomAppbar(
         context,
@@ -93,7 +42,7 @@ class _MessageChatPageState extends State<MessageChatPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Russia',
+              room.receiverInfo.fullName,
               style: context.textTheme.bodyLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: context.textTheme.displayLarge?.color,
@@ -113,33 +62,42 @@ class _MessageChatPageState extends State<MessageChatPage> {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) => SizedBox(
-                  height: 100,
-                  width: 300,
-                  child: ColoredBox(
-                    color: randColor,
-                    child: Text(messages[index]),
-                  ),
-                ),
-                itemCount: messages.length,
+              child: BlocSelector<ChatRoomBloc, ChatRoomState,
+                  z.Tuple2<List<ChatMessage>, Status>>(
+                selector: (state) {
+                  return z.Tuple2(state.messages, state.status);
+                },
+                builder: (context, tuple2) {
+                  final messages = tuple2.value1;
+                  final status = tuple2.value2;
+
+                  return status.maybeWhen(orElse: () {
+                    return kEmpty;
+                  }, idle: () {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: FlutterListView(
+                        reverse: true,
+                        delegate: FlutterListViewDelegate(
+                          (context, index) {
+                            return MessageItem(
+                              message: messages[index],
+                              isMe: true,
+                            );
+                          },
+                          childCount: messages.length,
+                          onItemKey: (index) => messages[index].id.toString(),
+                          initOffset: 0,
+                          initOffsetBasedOnBottom: true,
+                          firstItemAlign: FirstItemAlign.end,
+                        ),
+                      ),
+                    );
+                  });
+                },
               ),
             ),
-            TextFormField(
-              onFieldSubmitted: (v) {
-                client.send(
-                  destination: '/app/room/1',
-                  body: jsonEncode(
-                    ChatTextMessageRequest(
-                      content: v,
-                      senderId: 1,
-                      receiverId: 2,
-                      messageType: ChatMessageType.text,
-                    ).toJson(),
-                  ),
-                );
-              },
-            ),
+            const MessageTextField(),
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map/plugin_api.dart';
@@ -63,7 +62,7 @@ class _MapPositionPageState extends State<MapPositionPage>
               additionalOptions: {
                 "access_token": AppConfig.instance.accessTokenMap,
               },
-              backgroundColor: AppColor.kNeutrals.withOpacity(0.7),
+              backgroundColor: AppColor.kNeutrals_.withOpacity(0.7),
               tileProvider: NetworkTileProvider(),
               maxNativeZoom: 18,
             ),

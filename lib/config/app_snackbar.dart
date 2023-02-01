@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
-import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class AppSnackBar {
@@ -22,10 +21,10 @@ class AppSnackBar {
         content: Text(
           content,
           style: context.textTheme.bodySmall?.copyWith(
-            color: AppColor.kNeutrals.shade50,
+            color: AppColor.kNeutrals_.shade50,
           ),
         ),
-        backgroundColor: AppColor.kNeutrals.shade900,
+        backgroundColor: AppColor.kNeutrals_.shade900,
         duration: const Duration(milliseconds: 2000),
       ),
     );
