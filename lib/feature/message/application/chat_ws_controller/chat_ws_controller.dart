@@ -45,14 +45,15 @@ class ChatWSController {
       config: StompConfig.SockJS(
           url: chatWSUrl,
           onConnect: onConnected,
-          webSocketConnectHeaders: {
-            'Connection': 'Upgrade',
-            'Upgrade': 'websocket',
-            'Host': '192.168.1.9:9234',
-            'Authorization': token,
-            'sec-websocket-version': '13',
-            'sec-websocket-key': key,
-          },
+          // webSocketConnectHeaders: {
+          //   'Connection': 'Upgrade',
+          //   'Upgrade': 'websocket',
+          //   'Host':
+          //       'https://66f4-2402-800-63f9-62ba-c049-3a3d-1189-f318.ap.ngrok.io',
+          //   'Authorization': token,
+          //   'sec-websocket-version': '13',
+          //   'sec-websocket-key': key,
+          // },
           stompConnectHeaders: {
             'Authorization': token!,
           },

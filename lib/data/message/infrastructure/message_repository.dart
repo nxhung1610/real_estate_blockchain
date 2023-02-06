@@ -20,7 +20,7 @@ class MessageRepository {
     try {
       final res = await _apiRemote.get<List<ChatMessage>>(
         MessageConstants.kGetMessages,
-        url: "http://192.168.1.9:9234",
+        // url: "http://192.168.1.9:9234",
         query: request.toJson(),
         parse: (data) {
           return (data as List).map((e) => ChatMessage.fromJson(e)).toList();
@@ -42,7 +42,7 @@ class MessageRepository {
     try {
       final res = await _apiRemote.get<List<ChatRoom>>(
         "${MessageConstants.kGetChatRooms}/$senderId",
-        url: "http://192.168.1.9:9234",
+        // url: "http://192.168.1.9:9234",
         parse: (data) {
           return (data as List).map((e) => ChatRoom.fromJson(e)).toList();
         },

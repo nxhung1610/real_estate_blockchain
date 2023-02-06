@@ -4,7 +4,8 @@ import 'package:injectable/injectable.dart';
 abstract class AppModule {
   @singleton
   @Named(AppModuleKeys.chatWSUrl)
-  String get chatWSUrl => "http://192.168.1.9:9234/chat/ws";
+  String get chatWSUrl =>
+      "https://66f4-2402-800-63f9-62ba-c049-3a3d-1189-f318.ap.ngrok.io/chat/ws";
 }
 
 class AppModuleKeys {
