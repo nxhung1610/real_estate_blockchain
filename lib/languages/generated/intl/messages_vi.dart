@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Mô tả bổ sung"),
+        "air_conditioning": MessageLookupByLibrary.simpleMessage("Máy lạnh"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
+        "amenities": MessageLookupByLibrary.simpleMessage("Tiện nghi"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra"),
         "appDescription":
@@ -49,6 +51,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
+        "bar": MessageLookupByLibrary.simpleMessage("Bar"),
+        "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
+        "bedRoom": MessageLookupByLibrary.simpleMessage("Phòng ngủ"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Được xây dựng"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
@@ -59,16 +64,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
+        "direction": MessageLookupByLibrary.simpleMessage("Hướng"),
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "done": MessageLookupByLibrary.simpleMessage("Hoàn tất"),
+        "east": MessageLookupByLibrary.simpleMessage("Đông"),
+        "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),
         "filter": MessageLookupByLibrary.simpleMessage("Lọc"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
+        "floors": MessageLookupByLibrary.simpleMessage("Tầng"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
+        "garage": MessageLookupByLibrary.simpleMessage("Nhà để xe"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
@@ -99,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
+        "north": MessageLookupByLibrary.simpleMessage("Bắc"),
+        "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),
+        "northWest": MessageLookupByLibrary.simpleMessage("Tây Bắc"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
@@ -118,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
@@ -141,13 +155,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
         "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
+        "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
+        "scheduleTour": MessageLookupByLibrary.simpleMessage("Tham quan"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "sell": MessageLookupByLibrary.simpleMessage("Bán"),
         "showLoading":
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Hiển thị thông báo"),
+        "south": MessageLookupByLibrary.simpleMessage("Nam"),
+        "southEast": MessageLookupByLibrary.simpleMessage("Đông Nam"),
+        "southWest": MessageLookupByLibrary.simpleMessage("Tây Nam"),
+        "spa": MessageLookupByLibrary.simpleMessage("Spa"),
+        "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
+        "structure": MessageLookupByLibrary.simpleMessage("Cấu trúc"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "titleHint":
             MessageLookupByLibrary.simpleMessage("Bán nhà riêng tại Cầu Giấy"),
@@ -159,7 +181,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
+        "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
+        "west": MessageLookupByLibrary.simpleMessage("Tây"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "Bạn cần cấp quyền để hiển thị thông báo")

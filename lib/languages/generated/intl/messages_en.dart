@@ -40,7 +40,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Additional Description"),
+        "air_conditioning":
+            MessageLookupByLibrary.simpleMessage("Air conditioning"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
+        "amenities": MessageLookupByLibrary.simpleMessage("Amenities"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An error occurred"),
         "appDescription":
@@ -49,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
+        "bar": MessageLookupByLibrary.simpleMessage("Bar"),
+        "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
+        "bedRoom": MessageLookupByLibrary.simpleMessage("Bed Room"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Built At"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
@@ -59,16 +65,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
+        "direction": MessageLookupByLibrary.simpleMessage("Direction"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "east": MessageLookupByLibrary.simpleMessage("East"),
+        "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "features": MessageLookupByLibrary.simpleMessage("Features"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
+        "floors": MessageLookupByLibrary.simpleMessage("Floors"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
+        "garage": MessageLookupByLibrary.simpleMessage("Garage"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
@@ -100,6 +111,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Number of bedroom"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
+        "north": MessageLookupByLibrary.simpleMessage("North"),
+        "northEast": MessageLookupByLibrary.simpleMessage("North East"),
+        "northWest": MessageLookupByLibrary.simpleMessage("North West"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
@@ -120,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "pool": MessageLookupByLibrary.simpleMessage("Pool"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
@@ -144,12 +159,20 @@ class MessageLookup extends MessageLookupByLibrary {
             "You already have an account?"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
+        "scheduleTour": MessageLookupByLibrary.simpleMessage("Schedule Tour"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sell": MessageLookupByLibrary.simpleMessage("Sell"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),
+        "south": MessageLookupByLibrary.simpleMessage("South"),
+        "southEast": MessageLookupByLibrary.simpleMessage("South East"),
+        "southWest": MessageLookupByLibrary.simpleMessage("South West"),
+        "spa": MessageLookupByLibrary.simpleMessage("Spa"),
+        "square": MessageLookupByLibrary.simpleMessage("Square"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
+        "structure": MessageLookupByLibrary.simpleMessage("Structure"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "titleHint": MessageLookupByLibrary.simpleMessage(
             "Sale private house at Cau Giay"),
@@ -161,7 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
+        "view": MessageLookupByLibrary.simpleMessage("View"),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
+        "west": MessageLookupByLibrary.simpleMessage("West"),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "You need permission to display notifications")

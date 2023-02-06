@@ -25,4 +25,17 @@
         <service android:name="me.carda.awesome_notifications.services.ForegroundService" android:enabled="true" android:exported="false" android:stopWithTask="true" android:foregroundServiceType="camera|connectedDevice|dataSync|location|mediaPlayback|mediaProjection|microphone|phoneCall">
         </service>
     </application>
+    <!-- Provide required visibility configuration for API level 30 and above -->
+    <queries>
+    <!-- If your app checks for SMS support -->
+    <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="sms" />
+  </intent>
+  <!-- If your app checks for call support -->
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="tel" />
+  </intent>
+</queries>
 </manifest>

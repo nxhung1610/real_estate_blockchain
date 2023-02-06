@@ -4,6 +4,7 @@ import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -51,10 +52,23 @@ class _MainPageState extends State<MainPage>
   Widget build(BuildContext context) {
     final s = S.of(context);
     final iconColor = context.theme.iconTheme.color;
-    return BlocListener<MainCubit, MainState>(
-      listener: (context, state) {
-        tabController.index = (state.sub.index);
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<MainCubit, MainState>(
+          listener: (context, state) {
+            tabController.index = (state.sub.index);
+          },
+        ),
+        BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              authenticated: (authToken, user) {
+                if (user == null) {}
+              },
+            );
+          },
+        ),
+      ],
       child: Scaffold(
         body: LazyIndexedStack(
           index: tabController.index,

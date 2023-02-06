@@ -82,6 +82,9 @@ class $AssetsIconsGen {
   SvgGenImage get icArrowUp =>
       const SvgGenImage('assets/icons/ic_arrow_up.svg');
 
+  /// File path: assets/icons/ic_bar.svg
+  SvgGenImage get icBar => const SvgGenImage('assets/icons/ic_bar.svg');
+
   /// File path: assets/icons/ic_bathroom.svg
   SvgGenImage get icBathroom =>
       const SvgGenImage('assets/icons/ic_bathroom.svg');
@@ -117,6 +120,10 @@ class $AssetsIconsGen {
   SvgGenImage get icEditLight =>
       const SvgGenImage('assets/icons/ic_edit_light.svg');
 
+  /// File path: assets/icons/ic_elevator.svg
+  SvgGenImage get icElevator =>
+      const SvgGenImage('assets/icons/ic_elevator.svg');
+
   /// File path: assets/icons/ic_eye_hide.svg
   SvgGenImage get icEyeHide =>
       const SvgGenImage('assets/icons/ic_eye_hide.svg');
@@ -128,6 +135,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_filter_light.svg
   SvgGenImage get icFilterLight =>
       const SvgGenImage('assets/icons/ic_filter_light.svg');
+
+  /// File path: assets/icons/ic_garage.svg
+  SvgGenImage get icGarage => const SvgGenImage('assets/icons/ic_garage.svg');
 
   /// File path: assets/icons/ic_heart_bold.svg
   SvgGenImage get icHeartBold =>
@@ -176,6 +186,9 @@ class $AssetsIconsGen {
   SvgGenImage get icNotificationLight =>
       const SvgGenImage('assets/icons/ic_notification_light.svg');
 
+  /// File path: assets/icons/ic_pool.svg
+  SvgGenImage get icPool => const SvgGenImage('assets/icons/ic_pool.svg');
+
   /// File path: assets/icons/ic_profile_bold.svg
   SvgGenImage get icProfileBold =>
       const SvgGenImage('assets/icons/ic_profile_bold.svg');
@@ -186,6 +199,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_remove.svg
   SvgGenImage get icRemove => const SvgGenImage('assets/icons/ic_remove.svg');
+
+  /// File path: assets/icons/ic_scenery.svg
+  SvgGenImage get icScenery => const SvgGenImage('assets/icons/ic_scenery.svg');
 
   /// File path: assets/icons/ic_search_light.svg
   SvgGenImage get icSearchLight =>
@@ -202,12 +218,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_sort.svg
   SvgGenImage get icSort => const SvgGenImage('assets/icons/ic_sort.svg');
 
+  /// File path: assets/icons/ic_spa.svg
+  SvgGenImage get icSpa => const SvgGenImage('assets/icons/ic_spa.svg');
+
   /// File path: assets/icons/ic_square.svg
   SvgGenImage get icSquare => const SvgGenImage('assets/icons/ic_square.svg');
 
   /// File path: assets/icons/ic_video_time.svg
   SvgGenImage get icVideoTime =>
       const SvgGenImage('assets/icons/ic_video_time.svg');
+
+  /// File path: assets/icons/ic_windy.svg
+  SvgGenImage get icWindy => const SvgGenImage('assets/icons/ic_windy.svg');
 
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
@@ -218,6 +240,7 @@ class $AssetsIconsGen {
         icArrowLeft,
         icArrowRight,
         icArrowUp,
+        icBar,
         icBathroom,
         icBed,
         icBtnPlus,
@@ -227,9 +250,11 @@ class $AssetsIconsGen {
         icDocumentLight,
         icEditBold,
         icEditLight,
+        icElevator,
         icEyeHide,
         icEyeShow,
         icFilterLight,
+        icGarage,
         icHeartBold,
         icHeartLight,
         icHome2,
@@ -242,21 +267,29 @@ class $AssetsIconsGen {
         icMyhomeBold,
         icMyhomeLight,
         icNotificationLight,
+        icPool,
         icProfileBold,
         icProfileLight,
         icRemove,
+        icScenery,
         icSearchLight,
         icSettingBold,
         icSettingLight,
         icSort,
+        icSpa,
         icSquare,
         icVideoTime,
+        icWindy,
         logo
       ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/image_house.png
+  AssetGenImage get imageHouse =>
+      const AssetGenImage('assets/images/image_house.png');
 
   /// File path: assets/images/my_home_background.png
   AssetGenImage get myHomeBackground =>
@@ -272,7 +305,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [myHomeBackground, onboarding1, onboarding2];
+      [imageHouse, myHomeBackground, onboarding1, onboarding2];
 }
 
 class $AssetsLocationsGen {
@@ -303,11 +336,14 @@ class $AssetsLocationsGen {
 class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
+  /// File path: assets/lotties/lottie_house.json
+  String get lottieHouse => 'assets/lotties/lottie_house.json';
+
   /// File path: assets/lotties/lotties_upload_file.json
   String get lottiesUploadFile => 'assets/lotties/lotties_upload_file.json';
 
   /// List of all assets
-  List<String> get values => [lottiesUploadFile];
+  List<String> get values => [lottieHouse, lottiesUploadFile];
 }
 
 class Assets {
@@ -433,6 +469,4 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
-
-  String get keyName => _assetName;
 }

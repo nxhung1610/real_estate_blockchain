@@ -4,6 +4,8 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
+import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 
 import '../../data.dart';
@@ -154,6 +156,31 @@ class AuthRepository implements IAuthRepository {
       return saveResult.fold((l) => throw l, (r) {
         return right(unit);
       });
+    } on String catch (e) {
+      switch (e) {
+        case AuthError.errUnauthorized:
+          return left(const AuthFailures.unknow());
+        default:
+          rethrow;
+      }
+    } catch (e) {
+      return left(const AuthFailures.unknow());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailures, User>> userInfo() async {
+    try {
+      final res = await _apiRemote.get<UserDto>(
+        AuthConstants.remote.userInfo,
+        parse: (data) {
+          return UserDto.fromJson(data);
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(res.data!.toModel());
     } on String catch (e) {
       switch (e) {
         case AuthError.errUnauthorized:

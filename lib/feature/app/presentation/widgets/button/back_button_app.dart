@@ -8,19 +8,22 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 class BackButtonApp extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color? color;
+  final Color? borderColor;
   const BackButtonApp({
     super.key,
     this.onPressed,
     this.color,
+    this.borderColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: color,
         borderRadius: BorderRadius.circular(AppSize.largeRadius),
         border: Border.all(
-          color: AppColor.kNeutrals.shade500,
+          color: borderColor ?? AppColor.kNeutrals.shade500,
         ),
       ),
       child: ClipRRect(

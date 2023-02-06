@@ -363,8 +363,8 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   ),
                   AppSize.mediumHeightDimens.verticalSpace,
                   (() {
-                    final list = RealEstateDirection.values.map((e) => e.name);
-                    return DropdownApp<String>(
+                    final list = RealEstateDirection.values.toList();
+                    return DropdownApp<RealEstateDirection>(
                       isExpanded: true,
                       items: list
                           .map(
@@ -375,7 +375,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                                   horizontal: 16.w,
                                 ),
                                 child: Text(
-                                  e.toString(),
+                                  e.title(context),
                                   style: context.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -387,14 +387,17 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                           .toList(),
                       onChanged: (value) {
                         if (value != null) {
-                          bloc.onHouseFacingChanged(RealEstateDirection.values
-                              .firstWhere((element) => element.name == value));
+                          bloc.onHouseFacingChanged(
+                            RealEstateDirection.values.firstWhere(
+                              (element) => element == value,
+                            ),
+                          );
                         }
                       },
                       selectedItemBuilder: (context) {
                         return list
                             .map((e) => Text(
-                                  e.toString(),
+                                  e.title(context),
                                   style: context.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                     color:
@@ -423,8 +426,8 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   ),
                   AppSize.mediumHeightDimens.verticalSpace,
                   (() {
-                    final list = RealEstateDirection.values.map((e) => e.name);
-                    return DropdownApp<String>(
+                    final list = RealEstateDirection.values.map((e) => e);
+                    return DropdownApp<RealEstateDirection>(
                       isExpanded: true,
                       items: list
                           .map(
@@ -435,7 +438,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                                   horizontal: 16.w,
                                 ),
                                 child: Text(
-                                  e.toString(),
+                                  e.title(context),
                                   style: context.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -448,13 +451,13 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                       onChanged: (value) {
                         if (value != null) {
                           bloc.onBalconyFacingChanged(RealEstateDirection.values
-                              .firstWhere((element) => element.name == value));
+                              .firstWhere((element) => element == value));
                         }
                       },
                       selectedItemBuilder: (context) {
                         return list
                             .map((e) => Text(
-                                  e.toString(),
+                                  e.title(context),
                                   style: context.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                     color:

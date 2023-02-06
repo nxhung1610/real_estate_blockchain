@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
@@ -8,6 +9,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:collection/collection.dart';
 
@@ -18,146 +20,156 @@ class HouseMyHomeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final border = AppSize.largeRadius;
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                border,
-              ),
-              border: Border.all(
-                color:
-                    AppColor.kBorderColor(context.watch<AppBloc>().state.mode),
-                // color: Colors.red,
-                width: 1.r,
-              ),
-            ),
-            // color: Colors.red,
+    return GestureDetector(
+      onTap: () {
+        context.push(
+          $appRoute.realEstateDetail,
+          extra: RealEstateDetailPageParams(
+            estate: item,
           ),
-        ),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(border),
-          child: SizedBox(
-            width: double.infinity,
-            height: 109.h,
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: ImageCustom.network(
-                    item.images?.firstOrNull?.url ?? '',
-                    height: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+        );
+      },
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  border,
                 ),
-                Expanded(
-                  flex: 4,
-                  child: Container(
-                    margin: EdgeInsets.symmetric(
-                      horizontal: AppSize.largeWidthDimens,
+                border: Border.all(
+                  color: AppColor.kBorderColor(
+                      context.watch<AppBloc>().state.mode),
+                  // color: Colors.red,
+                  width: 1.r,
+                ),
+              ),
+              // color: Colors.red,
+            ),
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(border),
+            child: SizedBox(
+              width: double.infinity,
+              height: 109.h,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: ImageCustom.network(
+                      item.images?.firstOrNull?.url ?? '',
+                      height: double.infinity,
+                      fit: BoxFit.cover,
                     ),
-                    color: Colors.transparent,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          item.name,
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            color: context.textTheme.displayLarge?.color,
-                            fontWeight: FontWeight.bold,
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: AppSize.largeWidthDimens,
+                      ),
+                      color: Colors.transparent,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            item.name,
+                            style: context.textTheme.bodyLarge?.copyWith(
+                              color: context.textTheme.displayLarge?.color,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        AppSize.mediumHeightDimens.verticalSpace,
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Assets.icons.icBathroom.svg(
-                              color: AppColor.kIconColorSecondary(
-                                context.watch<AppBloc>().state.mode,
-                              ),
-                              width: AppSize.smallIcon,
-                              height: AppSize.smallIcon,
-                            ),
-                            AppSize.smallWidthDimens.horizontalSpace,
-                            Text(
-                              item.noWc?.toString() ?? '0',
-                              style: context.textTheme.bodyMedium?.copyWith(
+                          AppSize.mediumHeightDimens.verticalSpace,
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Assets.icons.icBathroom.svg(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
                                 ),
+                                width: AppSize.smallIcon,
+                                height: AppSize.smallIcon,
                               ),
-                            ),
-                            12.w.horizontalSpace,
-                            Assets.icons.icBed.svg(
-                              color: AppColor.kIconColorSecondary(
-                                context.watch<AppBloc>().state.mode,
+                              AppSize.smallWidthDimens.horizontalSpace,
+                              Text(
+                                item.noWc?.toString() ?? '0',
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  color: AppColor.kIconColorSecondary(
+                                    context.watch<AppBloc>().state.mode,
+                                  ),
+                                ),
                               ),
-                              width: AppSize.smallIcon,
-                              height: AppSize.smallIcon,
-                            ),
-                            AppSize.smallWidthDimens.horizontalSpace,
-                            Text(
-                              item.noBedrooms?.toString() ?? '0',
-                              style: context.textTheme.bodyMedium?.copyWith(
+                              12.w.horizontalSpace,
+                              Assets.icons.icBed.svg(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
                                 ),
+                                width: AppSize.smallIcon,
+                                height: AppSize.smallIcon,
                               ),
-                            ),
-                            12.w.horizontalSpace,
-                            Assets.icons.icSquare.svg(
-                              color: AppColor.kIconColorSecondary(
-                                context.watch<AppBloc>().state.mode,
+                              AppSize.smallWidthDimens.horizontalSpace,
+                              Text(
+                                item.noBedrooms?.toString() ?? '0',
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  color: AppColor.kIconColorSecondary(
+                                    context.watch<AppBloc>().state.mode,
+                                  ),
+                                ),
                               ),
-                              width: AppSize.smallIcon,
-                              height: AppSize.smallIcon,
-                            ),
-                            AppSize.smallWidthDimens.horizontalSpace,
-                            Text.rich(
-                              TextSpan(
-                                text: '1,800',
-                                children: [
-                                  const TextSpan(text: ' '),
-                                  TextSpan(
-                                    text: 'Ft',
-                                    style:
-                                        context.textTheme.bodySmall?.copyWith(
-                                      color: AppColor.kIconColorSecondary(
-                                        context.watch<AppBloc>().state.mode,
+                              12.w.horizontalSpace,
+                              Assets.icons.icSquare.svg(
+                                color: AppColor.kIconColorSecondary(
+                                  context.watch<AppBloc>().state.mode,
+                                ),
+                                width: AppSize.smallIcon,
+                                height: AppSize.smallIcon,
+                              ),
+                              AppSize.smallWidthDimens.horizontalSpace,
+                              Text.rich(
+                                TextSpan(
+                                  text: '1,800',
+                                  children: [
+                                    const TextSpan(text: ' '),
+                                    TextSpan(
+                                      text: 'Ft',
+                                      style:
+                                          context.textTheme.bodySmall?.copyWith(
+                                        color: AppColor.kIconColorSecondary(
+                                          context.watch<AppBloc>().state.mode,
+                                        ),
                                       ),
                                     ),
+                                  ],
+                                ),
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  color: AppColor.kIconColorSecondary(
+                                    context.watch<AppBloc>().state.mode,
                                   ),
-                                ],
-                              ),
-                              style: context.textTheme.bodyMedium?.copyWith(
-                                color: AppColor.kIconColorSecondary(
-                                  context.watch<AppBloc>().state.mode,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        AppSize.mediumHeightDimens.verticalSpace,
-                        Text(
-                          NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                              .format(item.price * (item.area ?? 0))
-                              .toString(),
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            color: AppColor.kPrimary1,
-                            fontWeight: FontWeight.w800,
+                            ],
                           ),
-                        )
-                      ],
+                          AppSize.mediumHeightDimens.verticalSpace,
+                          Text(
+                            NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
+                                .format(item.price * (item.area ?? 0))
+                                .toString(),
+                            style: context.textTheme.bodyLarge?.copyWith(
+                              color: AppColor.kPrimary1,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

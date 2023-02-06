@@ -44,6 +44,8 @@ dependencies:
   file_picker: ^5.2.2
   image_picker: ^0.8.6
   logger: ^1.1.0
+  recase: ^4.1.0
+  url_launcher: ^6.1.8
 
   # UI
   go_router: ^5.0.5
@@ -96,7 +98,7 @@ dev_dependencies:
   # Builder
   injectable_generator:  
   build_runner: ^2.3.2
-  flutter_gen_runner:
+  flutter_gen_runner: 5.0.3
   hive_generator:
 
   # The "flutter_lints" package below contains a set of recommended lints to

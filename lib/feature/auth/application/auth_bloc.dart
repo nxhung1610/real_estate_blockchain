@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
+import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
@@ -36,12 +37,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
     on<AuthEventLogin>((event, emit) async {
       final result = await _authLocalRepository.saveToken(event.authSession);
+      add(const AuthEvent.loadUser());
       try {
         result.fold(
           (l) => logout(),
-          (r) => emit(
-            AuthState.authenticated(event.authSession.token!),
-          ),
+          (r) {
+            emit(
+              AuthState.authenticated(
+                event.authSession.token!,
+              ),
+            );
+          },
         );
       } catch (e) {
         logout();
@@ -51,6 +57,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // Clear token when logout account
       await _authLocalRepository.saveToken(null);
       emit(const AuthState.unAuthenticated());
+    });
+    on<AuthEventLoadUser>((event, emit) async {
+      final result = await _authRepository.userInfo();
+      result.fold((l) => null, (r) {
+        state.whenOrNull(
+          authenticated: (authToken, user) {
+            emit(
+              (state as AuthStateAuthenticated).copyWith(
+                user: r,
+              ),
+            );
+          },
+        );
+      });
     });
   }
 

@@ -75,7 +75,6 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
           child: const MapPositionPage(),
         );
     }
-    return Container();
   }
 
   @override
@@ -115,7 +114,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
             },
             success: (value) async {
               context.pop();
-              await Future.delayed(const Duration(milliseconds: 500));
+              await Future.delayed(const Duration(milliseconds: 100));
               context.appDialog.showAppDialog(
                 type: AppDialogType.info,
                 message: s.createRealEstateSuccess,

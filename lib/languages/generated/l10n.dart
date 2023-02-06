@@ -1009,6 +1009,246 @@ class S {
       args: [],
     );
   }
+
+  /// `Bed Room`
+  String get bedRoom {
+    return Intl.message(
+      'Bed Room',
+      name: 'bedRoom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rooms`
+  String get rooms {
+    return Intl.message(
+      'Rooms',
+      name: 'rooms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bath Room`
+  String get bathRoom {
+    return Intl.message(
+      'Bath Room',
+      name: 'bathRoom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Square`
+  String get square {
+    return Intl.message(
+      'Square',
+      name: 'square',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Floors`
+  String get floors {
+    return Intl.message(
+      'Floors',
+      name: 'floors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Structure`
+  String get structure {
+    return Intl.message(
+      'Structure',
+      name: 'structure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amenities`
+  String get amenities {
+    return Intl.message(
+      'Amenities',
+      name: 'amenities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pool`
+  String get pool {
+    return Intl.message(
+      'Pool',
+      name: 'pool',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spa`
+  String get spa {
+    return Intl.message(
+      'Spa',
+      name: 'spa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bar`
+  String get bar {
+    return Intl.message(
+      'Bar',
+      name: 'bar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View`
+  String get view {
+    return Intl.message(
+      'View',
+      name: 'view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elevator`
+  String get elevator {
+    return Intl.message(
+      'Elevator',
+      name: 'elevator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Garage`
+  String get garage {
+    return Intl.message(
+      'Garage',
+      name: 'garage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Air conditioning`
+  String get air_conditioning {
+    return Intl.message(
+      'Air conditioning',
+      name: 'air_conditioning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Direction`
+  String get direction {
+    return Intl.message(
+      'Direction',
+      name: 'direction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `North`
+  String get north {
+    return Intl.message(
+      'North',
+      name: 'north',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `North East`
+  String get northEast {
+    return Intl.message(
+      'North East',
+      name: 'northEast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `North West`
+  String get northWest {
+    return Intl.message(
+      'North West',
+      name: 'northWest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `West`
+  String get west {
+    return Intl.message(
+      'West',
+      name: 'west',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `South West`
+  String get southWest {
+    return Intl.message(
+      'South West',
+      name: 'southWest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `South`
+  String get south {
+    return Intl.message(
+      'South',
+      name: 'south',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `South East`
+  String get southEast {
+    return Intl.message(
+      'South East',
+      name: 'southEast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `East`
+  String get east {
+    return Intl.message(
+      'East',
+      name: 'east',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Schedule Tour`
+  String get scheduleTour {
+    return Intl.message(
+      'Schedule Tour',
+      name: 'scheduleTour',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -11,8 +11,10 @@ class WCustomRefreshScrollView extends StatefulWidget {
       {super.key,
       required this.onRefresh,
       this.controller,
-      required this.children});
+      required this.children,
+      this.headers = const <Widget>[]});
   final List<Widget> children;
+  final List<Widget> headers;
   final Future<void> Function() onRefresh;
   final IndicatorController? controller;
 
@@ -37,80 +39,12 @@ class _WCustomRefreshScrollViewState extends State<WCustomRefreshScrollView>
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
+        ...widget.headers,
         CupertinoSliverRefreshControl(
           onRefresh: widget.onRefresh,
         ),
         ...widget.children,
       ],
     );
-
-    // return NestedScrollView(
-    //   headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-    //     return [
-    //       SliverOverlapAbsorber(
-    //         sliver: MultiSliver(
-    //           children: [
-    //             SliverToBoxAdapter(
-    //               child: SizeTransition(
-    //                 sizeFactor: sizeAnimation,
-    //                 child: SizedBox(
-    //                   width: double.infinity,
-    //                   height: _indicatorSize,
-    //                   child: Center(
-    //                     child: SizedBox(
-    //                       height: 30,
-    //                       width: 30,
-    //                       child: CupertinoActivityIndicator(
-    //                         radius: AppSize.largeRadius,
-    //                       ),
-    //                     ),
-    //                   ),
-    //                 ),
-    //               ),
-    //             )
-    //           ],
-    //         ),
-    //         handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-    //       ),
-    //     ];
-    //   },
-    //   body: Builder(
-    //     builder: (context) {
-    //       return CustomRefreshIndicator(
-    //         controller: widget.controller,
-    //         offsetToArmed: _indicatorSize,
-    //         completeStateDuration: const Duration(seconds: 2),
-    //         onRefresh: widget.onRefresh,
-    //         builder: (context, child, controller) {
-    //           sizeAnimationController.animateTo(
-    //             controller.value,
-    //           );
-    //           if (controller.scrollingDirection == ScrollDirection.reverse &&
-    //               prevScrollDirection == ScrollDirection.forward) {
-    //             try {
-    //               controller.stopDrag();
-    //               // ignore: empty_catches
-    //             } catch (e) {}
-    //           }
-
-    //           prevScrollDirection = controller.scrollingDirection;
-    //           return child;
-    //         },
-    //         child: CustomScrollView(
-    //           slivers: [
-    //             SliverOverlapInjector(
-    //               handle:
-    //                   NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-    //             ),
-    //             CupertinoSliverRefreshControl(
-    //               onRefresh: widget.onRefresh,
-    //             ),
-    //             ...widget.children,
-    //           ],
-    //         ),
-    //       );
-    //     },
-    //   ),
-    // );
   }
 }
