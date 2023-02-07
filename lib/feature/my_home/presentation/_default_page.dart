@@ -76,7 +76,7 @@ class __DefaultPageState extends State<_DefaultPage> {
                   s.myHomeEmptyBtnAdd2,
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: AppColor.kNeutrals,
+                    color: AppColor.kNeutrals_,
                   ),
                 )
               ],

@@ -8,15 +8,16 @@ part 'user_dto.g.dart';
 @freezed
 class UserDto with _$UserDto {
   factory UserDto({
-    int? id,
+    required int id,
     int? status,
     @JsonKey(name: 'created_at') @DateTimeOrNull() DateTime? createdAt,
     @JsonKey(name: 'updated_at') @DateTimeOrNull() DateTime? updatedAt,
-    String? phone,
+    required String phone,
     @JsonKey(name: 'last_name') String? lastName,
     @JsonKey(name: 'first_name') String? firstName,
     String? role,
     @JsonKey(name: 'identity_number') String? identityNumber,
+    @JsonKey(name: 'avatar_url') String? avatarUrl,
   }) = _UserDto;
 
   factory UserDto.fromJson(Map<String, dynamic> json) =>
@@ -35,6 +36,7 @@ extension UserDtoMapper on UserDto {
       role: role,
       status: status,
       updatedAt: updatedAt,
+      avatarUrl: avatarUrl,
     );
   }
 }

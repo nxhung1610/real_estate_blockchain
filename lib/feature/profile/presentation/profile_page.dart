@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/profile/module.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -71,18 +71,18 @@ class _AccountInfo extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.fromBorderSide(
                         BorderSide(
-                          color: AppColor.kNeutrals.shade50,
+                          color: AppColor.kNeutrals_.shade50,
                           width: 1.r,
                         ),
                       ),
                       borderRadius:
                           BorderRadius.circular(AppSize.mediumIcon / 2),
-                      color: AppColor.kNeutrals.shade900,
+                      color: AppColor.kNeutrals_.shade900,
                     ),
                     width: AppSize.mediumIcon,
                     height: AppSize.mediumIcon,
                     child: Assets.icons.icEditBold.svg(
-                      color: AppColor.kNeutrals.shade50,
+                      color: AppColor.kNeutrals_.shade50,
                     ),
                   ),
                 ),

@@ -9,8 +9,8 @@ import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../module.dart';
@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 text: s.registerCreateANameAccount1,
                                 style:
                                     context.textTheme.headlineSmall?.copyWith(
-                                  color: AppColor.kNeutrals.shade800,
+                                  color: AppColor.kNeutrals_.shade800,
                                 ),
                               ),
                               const TextSpan(text: ' '),
@@ -103,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 text: s.registerCreateANameAccount2,
                                 style:
                                     context.textTheme.headlineSmall?.copyWith(
-                                  color: AppColor.kNeutrals.shade800,
+                                  color: AppColor.kNeutrals_.shade800,
                                 ),
                               )
                             ],
@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         Text(
                           s.registerCreateAnAccountToContinue,
                           style: context.textTheme.bodyLarge?.copyWith(
-                            color: AppColor.kNeutrals.shade600,
+                            color: AppColor.kNeutrals_.shade600,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
@@ -126,7 +126,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             TextSpan(
                                 text: s.registerYouAlreadyHaveAnAccount,
                                 style: context.textTheme.bodyLarge?.copyWith(
-                                  color: AppColor.kNeutrals.shade700,
+                                  color: AppColor.kNeutrals_.shade700,
                                 ),
                                 children: [
                                   WidgetSpan(
@@ -251,7 +251,7 @@ class _RegisterForm extends StatelessWidget {
                   s.loginForgotPassword,
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppColor.kNeutrals.shade700,
+                    color: AppColor.kNeutrals_.shade700,
                   ),
                 ),
               )

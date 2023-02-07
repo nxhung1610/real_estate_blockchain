@@ -162,7 +162,7 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                   state.estate.name,
                                   style:
                                       context.textTheme.headlineSmall?.copyWith(
-                                    color: AppColor.kNeutrals.shade400,
+                                    color: AppColor.kNeutrals_.shade400,
                                   ),
                                 ),
                               ),
@@ -193,7 +193,7 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                         ', ${isVi ? addressState.provice?.fullName ?? '' : addressState.provice?.fullNameEn ?? ''}',
                                         style: context.textTheme.bodyMedium
                                             ?.copyWith(
-                                          color: AppColor.kNeutrals.shade400,
+                                          color: AppColor.kNeutrals_.shade400,
                                         ),
                                       );
                                     },
@@ -227,7 +227,7 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                               end: Alignment.bottomCenter,
                               colors: [
                                 Colors.transparent,
-                                AppColor.kNeutrals.withOpacity(0.5),
+                                AppColor.kNeutrals_.withOpacity(0.5),
                               ],
                             ),
                           ),

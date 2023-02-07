@@ -14,7 +14,6 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class VideoPhotoPage extends StatefulWidget {
   const VideoPhotoPage({super.key});
@@ -75,7 +74,7 @@ class _VideoPhotoPageState extends State<VideoPhotoPage> {
                   AppSize.mediumWidthDimens,
                 ],
                 strokeCap: StrokeCap.round,
-                color: AppColor.kNeutrals.shade600,
+                color: AppColor.kNeutrals_.shade600,
                 strokeWidth: 3,
                 radius: Radius.circular(AppSize.largeRadius),
                 child: Center(
@@ -124,14 +123,14 @@ class _VideoPhotoPageState extends State<VideoPhotoPage> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(
                                         AppSize.largeRadius),
-                                    color: AppColor.kNeutrals.withOpacity(0.4),
+                                    color: AppColor.kNeutrals_.withOpacity(0.4),
                                   ),
                                   child: Center(
                                     child: Text(
                                       '${media.length - 3}+',
                                       style: context.textTheme.titleLarge
                                           ?.copyWith(
-                                        color: AppColor.kNeutrals.shade50,
+                                        color: AppColor.kNeutrals_.shade50,
                                       ),
                                     ),
                                   ),

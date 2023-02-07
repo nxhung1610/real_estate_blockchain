@@ -1,19 +1,17 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 part 'onboarding_data.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -112,7 +110,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           child: Text(
                             s.onboardingGetStatred,
                             style: context.textTheme.bodyLarge?.copyWith(
-                              color: AppColor.kNeutrals.shade50,
+                              color: AppColor.kNeutrals_.shade50,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -155,7 +153,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    AppColor.kNeutrals,
+                    AppColor.kNeutrals_,
                     Colors.transparent,
                   ],
                   begin: Alignment.bottomCenter,
@@ -188,14 +186,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   Text(
                     data.title,
                     style: context.textTheme.headlineSmall?.copyWith(
-                      color: AppColor.kNeutrals.shade50,
+                      color: AppColor.kNeutrals_.shade50,
                     ),
                   ),
                   AppSize.largeHeightDimens.verticalSpace,
                   Text(
                     data.description,
                     style: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColor.kNeutrals.shade50,
+                      color: AppColor.kNeutrals_.shade50,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -211,8 +209,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
           controller: pageController,
           count: 2,
           effect: ExpandingDotsEffect(
-            activeDotColor: AppColor.kNeutrals.shade50,
-            dotColor: AppColor.kNeutrals.shade700,
+            activeDotColor: AppColor.kNeutrals_.shade50,
+            dotColor: AppColor.kNeutrals_.shade700,
             radius: AppSize.mediumRadius,
             expansionFactor: 6,
             dotWidth: 6.r,

@@ -7,12 +7,11 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
+import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
+import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class HomePage extends StatefulWidget {
@@ -184,63 +183,59 @@ class __NewFeedState extends State<_NewFeed> {
       onTap: () {
         context.push($appRoute.search);
       },
-      child: Hero(
-        tag: searchTag,
-        child: Stack(
-          children: [
-            Container(
-              padding: EdgeInsets.all(
-                AppSize.largeWidthDimens,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppSize.extraRadius),
-                border: Border.all(
-                  width: 1.r,
-                  color: context.watch<AppBloc>().state.mode == ThemeMode.dark
-                      ? AppColor.kNeutrals.shade900
-                      : AppColor.kNeutrals.shade500,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Assets.icons.icSearchLight.svg(
-                    width: context.theme.iconTheme.size,
-                    height: context.theme.iconTheme.size,
-                    color: context.theme.iconTheme.color,
-                  ),
-                  AppSize.mediumWidthDimens.horizontalSpace,
-                  Text(
-                    '${S.of(context).search}...',
-                    style: context.textTheme.bodyLarge?.copyWith(),
-                  ),
-                ],
+      child: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.all(
+              AppSize.largeWidthDimens,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppSize.extraRadius),
+              border: Border.all(
+                width: 1.r,
+                color: context.watch<AppBloc>().state.mode == ThemeMode.dark
+                    ? AppColor.kNeutrals_.shade900
+                    : AppColor.kNeutrals_.shade500,
               ),
             ),
-            Positioned.fill(
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: EdgeInsets.all(AppSize.mediumWidthDimens),
-                  child: Container(
-                    decoration: BoxDecoration(
+            child: Row(
+              children: [
+                Assets.icons.icSearchLight.svg(
+                  width: context.theme.iconTheme.size,
+                  height: context.theme.iconTheme.size,
+                  color: context.theme.iconTheme.color,
+                ),
+                AppSize.mediumWidthDimens.horizontalSpace,
+                Text(
+                  '${S.of(context).search}...',
+                  style: context.textTheme.bodyLarge?.copyWith(),
+                ),
+              ],
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.all(AppSize.mediumWidthDimens),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+                    color: AppColor.kBackgroundButton,
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {},
                       borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-                      color: AppColor.kBackgroundButton,
-                    ),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {},
-                        borderRadius:
-                            BorderRadius.circular(AppSize.mediumRadius),
-                        child: Padding(
-                          padding: EdgeInsets.all(
-                            AppSize.mediumWidthDimens,
-                          ),
-                          child: Assets.icons.icFilterLight.svg(
-                            width: context.theme.iconTheme.size,
-                            height: context.theme.iconTheme.size,
-                            color: AppColor.kNeutrals.shade50,
-                          ),
+                      child: Padding(
+                        padding: EdgeInsets.all(
+                          AppSize.mediumWidthDimens,
+                        ),
+                        child: Assets.icons.icFilterLight.svg(
+                          width: context.theme.iconTheme.size,
+                          height: context.theme.iconTheme.size,
+                          color: AppColor.kNeutrals_.shade50,
                         ),
                       ),
                     ),
@@ -248,8 +243,8 @@ class __NewFeedState extends State<_NewFeed> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -99,6 +99,8 @@
   "furniture" : "Furniture",
   "createRealEstateSuccess" : "Create real estate success",
   "unableToLoadData" : "Unable to load data",
+  "writeAReply": "Write a reply...",
+  "realEstateName" : "Real estate name"
   "realEstateName" : "Real estate name",
   "bedRoom" : "Bed Room",
   "rooms" : "Rooms",

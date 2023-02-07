@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatefulWidget {
   final Widget child;
@@ -100,14 +100,14 @@ class _SplashPageState extends State<SplashPage> {
                     Text(
                       s.appName,
                       style: context.textTheme.headlineLarge?.copyWith(
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                       ),
                     ),
                     12.h.verticalSpace,
                     Text(
                       s.appDescription,
                       style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                       ),
                     )
                   ]
@@ -148,6 +148,12 @@ class __IconAnimationState extends State<_IconAnimation>
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       controller.forward();
     });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

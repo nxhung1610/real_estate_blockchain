@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,9 +9,9 @@ import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
-import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/widgets/button/button_enums.dart';
+import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../module.dart';
@@ -85,14 +83,14 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           s.loginWelcomeBack,
                           style: context.textTheme.headlineSmall?.copyWith(
-                            color: AppColor.kNeutrals.shade800,
+                            color: AppColor.kNeutrals_.shade800,
                           ),
                         ),
                         8.h.verticalSpace,
                         Text(
                           s.loginSigninToYourAccount,
                           style: context.textTheme.bodyLarge?.copyWith(
-                            color: AppColor.kNeutrals.shade600,
+                            color: AppColor.kNeutrals_.shade600,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
@@ -105,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                             TextSpan(
                                 text: s.loginDontHaveAnAccount,
                                 style: context.textTheme.bodyLarge?.copyWith(
-                                  color: AppColor.kNeutrals.shade700,
+                                  color: AppColor.kNeutrals_.shade700,
                                 ),
                                 children: [
                                   WidgetSpan(
@@ -217,7 +215,7 @@ class __LoginFormState extends State<_LoginForm> {
                   s.loginForgotPassword,
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppColor.kNeutrals.shade700,
+                    color: AppColor.kNeutrals_.shade700,
                   ),
                 ),
               )

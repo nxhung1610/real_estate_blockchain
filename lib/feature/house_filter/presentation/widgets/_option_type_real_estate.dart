@@ -30,13 +30,13 @@ class _OptionTypeRealEstateState extends State<_OptionTypeRealEstate>
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSize.largeRadius),
-        color: AppColor.kNeutrals.shade500,
+        color: AppColor.kNeutrals_.shade500,
       ),
       child: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
         padding: EdgeInsets.all(AppSize.smallWidthDimens),
         indicator: BoxDecoration(
-          color: AppColor.kNeutrals.shade50,
+          color: AppColor.kNeutrals_.shade50,
           borderRadius: BorderRadius.circular(AppSize.largeRadius),
         ),
         labelStyle: context.textTheme.bodyMedium?.copyWith(

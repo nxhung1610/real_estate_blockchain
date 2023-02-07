@@ -16,7 +16,7 @@ class _WAmenities extends StatelessWidget {
           Text(
             s.amenities,
             style: context.textTheme.bodyLarge?.copyWith(
-              color: AppColor.kNeutrals,
+              color: AppColor.kNeutrals1,
               fontWeight: FontWeight.w900,
             ),
           ),

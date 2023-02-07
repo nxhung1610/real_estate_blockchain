@@ -4,17 +4,17 @@ import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
+part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
-part 'auth_bloc.freezed.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthLocalRepository _authLocalRepository;
   final IAuthRepository _authRepository;
   final ApiRemote _apiRemote;
+  bool isFetchUser = false;
   AuthBloc(this._authLocalRepository, this._authRepository, this._apiRemote)
       : super(const AuthState.unKnow()) {
     on<AuthEventStarted>((event, emit) async {
@@ -24,6 +24,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         },
         refreshToken: () async {
           final res = await _authRepository.refreshToken();
+          if (res.isRight()) {
+            add(const AuthEvent.loadUser());
+          }
           return res;
         },
         token: () async {
@@ -36,21 +39,29 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       result.fold((l) => logout(), (r) => login(r));
     });
     on<AuthEventLogin>((event, emit) async {
-      final result = await _authLocalRepository.saveToken(event.authSession);
-      add(const AuthEvent.loadUser());
       try {
+        isFetchUser = true;
+        final result = await _authLocalRepository.saveToken(event.authSession);
+        final user = await _authRepository.userInfo();
+        add(const AuthEvent.loadUser());
+
         result.fold(
           (l) => logout(),
           (r) {
-            emit(
-              AuthState.authenticated(
-                event.authSession.token!,
-              ),
-            );
+            user.fold((l) => logout(), (r) {
+              emit(
+                AuthState.authenticated(
+                  event.authSession.token!,
+                  r,
+                ),
+              );
+            });
           },
         );
       } catch (e) {
         logout();
+      } finally {
+        isFetchUser = false;
       }
     });
     on<AuthEventLogout>((event, emit) async {
@@ -59,18 +70,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(const AuthState.unAuthenticated());
     });
     on<AuthEventLoadUser>((event, emit) async {
-      final result = await _authRepository.userInfo();
-      result.fold((l) => null, (r) {
-        state.whenOrNull(
-          authenticated: (authToken, user) {
-            emit(
-              (state as AuthStateAuthenticated).copyWith(
-                user: r,
-              ),
-            );
-          },
-        );
-      });
+      try {
+        isFetchUser = true;
+        final result = await _authRepository.userInfo();
+        result.fold((l) => null, (r) {
+          state.whenOrNull(
+            authenticated: (authToken, user) {
+              emit(
+                (state as AuthStateAuthenticated).copyWith(
+                  user: r,
+                ),
+              );
+            },
+          );
+        });
+      } finally {
+        isFetchUser = false;
+      }
     });
   }
 

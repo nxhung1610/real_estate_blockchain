@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 
 class AppDialog {
   final BuildContext _buildContext;
@@ -37,7 +36,7 @@ class AppDialog {
     if (_buildContext.loaderOverlay.visible) {
       return;
     }
-    _buildContext.loaderOverlay.show(widget: const WlLoading());
+    _buildContext.loaderOverlay.show(widget: const WLoading());
     _finishProcess();
   }
 

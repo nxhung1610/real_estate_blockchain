@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
-import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
@@ -15,6 +14,8 @@ import 'package:real_estate_blockchain/feature/main/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/feature/profile/module.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class MainPage extends StatefulWidget with GetItStatefulWidgetMixin {
@@ -78,7 +79,9 @@ class _MainPageState extends State<MainPage>
               child: const HomePage(),
             ),
             BlocProvider(
-              create: (context) => getIt.call<MessageBloc>(),
+              create: (context) =>
+                  getIt.call<MessageBloc>(param1: context.read<AuthBloc>())
+                    ..add(const MessageStarted()),
               child: const MessagePage(),
             ),
             BlocProvider(

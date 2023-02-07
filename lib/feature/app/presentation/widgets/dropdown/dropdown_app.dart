@@ -57,12 +57,12 @@ class DropdownApp<T> extends StatelessWidget {
               icon: Assets.icons.icArrowDown.svg(
                 height: AppSize.extraWidthDimens,
                 width: AppSize.extraWidthDimens,
-                color: AppColor.kNeutrals.shade600,
+                color: AppColor.kNeutrals_.shade600,
               ),
               offset: Offset(0.0, -AppSize.smallHeightDimens),
               onChanged: onChanged,
               dropdownDecoration: BoxDecoration(
-                color: AppColor.kNeutrals.shade400,
+                color: AppColor.kNeutrals_.shade400,
                 borderRadius: BorderRadius.circular(
                   AppSize.extraRadius,
                 ),

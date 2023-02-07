@@ -23,7 +23,7 @@ class _WDirection extends StatelessWidget {
               Text(
                 s.direction,
                 style: context.textTheme.bodyLarge?.copyWith(
-                  color: AppColor.kNeutrals,
+                  color: AppColor.kNeutrals_,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -38,14 +38,14 @@ class _WDirection extends StatelessWidget {
                     Text(
                       '${s.houseFacing} : ${RealEstateDirection.fromString(state.houseFacing ?? '')?.title(context)}',
                       style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColor.kNeutrals,
+                        color: AppColor.kNeutrals_,
                       ),
                     ),
                     AppSize.mediumHeightDimens.verticalSpace,
                     Text(
                       '${s.balconyFacing} : ${RealEstateDirection.fromString(state.balconyFacing ?? '')?.title(context)}',
                       style: context.textTheme.bodyLarge?.copyWith(
-                        color: AppColor.kNeutrals,
+                        color: AppColor.kNeutrals_,
                       ),
                     ),
                   ],

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +12,6 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position_page.dart';
-import 'package:real_estate_blockchain/feature/my_home/module.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -169,13 +166,13 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                                   horizontal: AppSize.largeWidthDimens,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: AppColor.kNeutrals.shade800,
+                                  color: AppColor.kNeutrals_.shade800,
                                   borderRadius: BorderRadius.circular(100.r),
                                 ),
                                 child: Text(
                                   "${(state.state.index + 1)}/${ProcessState.values.length}",
                                   style: context.textTheme.bodyMedium?.copyWith(
-                                    color: AppColor.kNeutrals.shade50,
+                                    color: AppColor.kNeutrals_.shade50,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -199,7 +196,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                           builder: (context, value, child) {
                             return LinearProgressIndicator(
                               value: value,
-                              backgroundColor: AppColor.kNeutrals.shade500,
+                              backgroundColor: AppColor.kNeutrals_.shade500,
                               minHeight: AppSize.mediumHeightDimens,
                               color: AppColor.kPrimary1,
                             );
@@ -239,7 +236,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                   BoxShadow(
                     blurRadius: AppSize.extraRadius,
                     offset: const Offset(0, -8),
-                    color: AppColor.kNeutrals.shade700.withOpacity(0.1),
+                    color: AppColor.kNeutrals_.shade700.withOpacity(0.1),
                   )
                 ],
               ),

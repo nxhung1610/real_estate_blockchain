@@ -29,7 +29,7 @@ class _WLocationState extends State<_WLocation> {
               Text(
                 s.location,
                 style: context.textTheme.bodyLarge?.copyWith(
-                  color: AppColor.kNeutrals,
+                  color: AppColor.kNeutrals_,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -72,7 +72,7 @@ class _WLocationState extends State<_WLocation> {
                                       AppConfig.instance.accessTokenMap,
                                 },
                                 backgroundColor:
-                                    AppColor.kNeutrals.withOpacity(0.7),
+                                    AppColor.kNeutrals_.withOpacity(0.7),
                                 tileProvider: NetworkTileProvider(),
                                 maxNativeZoom: 18,
                               ),
@@ -102,7 +102,7 @@ class _WLocationState extends State<_WLocation> {
                                             color: AppColor.kBackgroundLight,
                                             border: Border.fromBorderSide(
                                               BorderSide(
-                                                color: AppColor.kNeutrals,
+                                                color: AppColor.kNeutrals_,
                                                 width: 7.r,
                                               ),
                                             ),

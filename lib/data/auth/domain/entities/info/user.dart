@@ -4,15 +4,18 @@ part 'user.freezed.dart';
 
 @freezed
 class User with _$User {
+  User._();
   factory User({
-    int? id,
+    required int id,
     int? status,
     DateTime? createdAt,
     DateTime? updatedAt,
-    String? phone,
+    required String phone,
     String? lastName,
     String? firstName,
     String? role,
     String? identityNumber,
+    String? avatarUrl,
   }) = _User;
+  String get fullName => '$firstName $lastName';
 }

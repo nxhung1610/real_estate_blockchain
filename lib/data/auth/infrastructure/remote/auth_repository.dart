@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/core/infrastructure/remote/api_remote.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';

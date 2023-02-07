@@ -31,8 +31,8 @@ class _PriceFilterRange extends StatelessWidget {
           AppSize.mediumHeightDimens.verticalSpace,
           SliderTheme(
             data: SliderThemeData(
-              thumbColor: AppColor.kNeutrals,
-              activeTrackColor: AppColor.kNeutrals,
+              thumbColor: AppColor.kNeutrals_,
+              activeTrackColor: AppColor.kNeutrals_,
               rangeThumbShape: CustomRangeSliderThumbShape(
                 thumbHeight: AppSize.extraHeightDimens,
                 thumbRadius: AppSize.mediumRadius,

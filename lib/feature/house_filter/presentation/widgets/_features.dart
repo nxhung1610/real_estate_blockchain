@@ -39,7 +39,7 @@ class _Features extends StatelessWidget {
                 Text(
                   item.label,
                   style: context.textTheme.bodyLarge?.copyWith(
-                    color: AppColor.kNeutrals.shade900,
+                    color: AppColor.kNeutrals_.shade900,
                   ),
                 ),
                 const Spacer(),
@@ -47,8 +47,8 @@ class _Features extends StatelessWidget {
                   borderRadius: BorderRadius.circular(AppSize.extraRadius),
                   child: Material(
                     color: item.quantity > 0
-                        ? AppColor.kNeutrals
-                        : AppColor.kNeutrals.shade500,
+                        ? AppColor.kNeutrals_
+                        : AppColor.kNeutrals_.shade500,
                     borderRadius: BorderRadius.circular(AppSize.extraRadius),
                     child: InkWell(
                       onTap: () {
@@ -59,7 +59,7 @@ class _Features extends StatelessWidget {
                       },
                       child: Icon(
                         Icons.remove,
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                       ),
                     ),
                   ),
@@ -77,7 +77,7 @@ class _Features extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(AppSize.extraRadius),
                   child: Material(
-                    color: AppColor.kNeutrals,
+                    color: AppColor.kNeutrals_,
                     borderRadius: BorderRadius.circular(AppSize.extraRadius),
                     child: InkWell(
                       onTap: () {
@@ -88,7 +88,7 @@ class _Features extends StatelessWidget {
                       },
                       child: Icon(
                         Icons.add,
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                       ),
                     ),
                   ),

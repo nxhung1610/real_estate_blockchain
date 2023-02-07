@@ -56,8 +56,8 @@ class ProfileOptionGroup extends StatelessWidget {
               style: context.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: context.watch<AppBloc>().state.mode != ThemeMode.dark
-                    ? AppColor.kNeutrals.shade800
-                    : AppColor.kNeutrals.shade50,
+                    ? AppColor.kNeutrals_.shade800
+                    : AppColor.kNeutrals_.shade50,
               ),
             ),
           ),
@@ -65,7 +65,7 @@ class ProfileOptionGroup extends StatelessWidget {
         Assets.icons.icArrowRight.svg(
           width: AppSize.smallIcon,
           height: AppSize.smallIcon,
-          color: AppColor.kNeutrals.shade600,
+          color: AppColor.kNeutrals_.shade600,
         )
       ],
     );

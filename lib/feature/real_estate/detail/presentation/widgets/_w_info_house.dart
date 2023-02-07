@@ -16,7 +16,7 @@ class _WInfoHouse extends StatelessWidget {
           Text(
             s.description,
             style: context.textTheme.bodyLarge?.copyWith(
-              color: AppColor.kNeutrals,
+              color: AppColor.kNeutrals_,
               fontWeight: FontWeight.w900,
             ),
           ),
@@ -36,7 +36,7 @@ class _WInfoHouse extends StatelessWidget {
                         child: itemBuild(
                           context,
                           icon: Assets.icons.icBed
-                              .svg(color: AppColor.kNeutrals.shade50),
+                              .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bedRoom,
                           sub: '${item.noBedrooms} ${s.rooms}',
                         ),
@@ -46,7 +46,7 @@ class _WInfoHouse extends StatelessWidget {
                         child: itemBuild(
                           context,
                           icon: Assets.icons.icBathroom
-                              .svg(color: AppColor.kNeutrals.shade50),
+                              .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bathRoom,
                           sub: '${item.noWc} ${s.rooms}',
                         ),
@@ -62,7 +62,7 @@ class _WInfoHouse extends StatelessWidget {
                         child: itemBuild(
                           context,
                           icon: Assets.icons.icHome2
-                              .svg(color: AppColor.kNeutrals.shade50),
+                              .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.structure,
                           sub: '${item.floors ?? 0} ${s.floors}',
                         ),
@@ -72,7 +72,7 @@ class _WInfoHouse extends StatelessWidget {
                         child: itemBuild(
                           context,
                           icon: Assets.icons.icSquare
-                              .svg(color: AppColor.kNeutrals.shade50),
+                              .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.square,
                           sub: '${(item.area?.toInt() ?? 0)} m2',
                         ),
@@ -101,7 +101,7 @@ class _WInfoHouse extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               AppSize.mediumRadius,
             ),
-            color: AppColor.kNeutrals.shade800,
+            color: AppColor.kNeutrals_.shade800,
           ),
           padding: EdgeInsets.all(
             AppSize.mediumWidthDimens,
@@ -119,13 +119,13 @@ class _WInfoHouse extends StatelessWidget {
             Text(
               title,
               style: context.textTheme.bodySmall?.copyWith(
-                color: AppColor.kNeutrals.shade600,
+                color: AppColor.kNeutrals_.shade600,
               ),
             ),
             Text(
               sub,
               style: context.textTheme.bodySmall?.copyWith(
-                color: AppColor.kNeutrals,
+                color: AppColor.kNeutrals_,
                 fontWeight: FontWeight.bold,
               ),
             )

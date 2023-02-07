@@ -1,12 +1,8 @@
-import 'dart:convert';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
@@ -17,7 +13,6 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_filter/presentation/house_filter_page.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:real_estate_blockchain/utils/utils.dart';
 
 const discoverSearchTag = 'search_tag';
 
@@ -78,7 +73,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                 additionalOptions: {
                   "access_token": AppConfig.instance.accessTokenMap,
                 },
-                backgroundColor: AppColor.kNeutrals.withOpacity(0.7),
+                backgroundColor: AppColor.kNeutrals_.withOpacity(0.7),
                 tileProvider: NetworkTileProvider(),
                 maxNativeZoom: 18,
               ),
@@ -145,7 +140,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(48.h),
-                        color: AppColor.kNeutrals.shade50,
+                        color: AppColor.kNeutrals_.shade50,
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(48.h),
@@ -165,7 +160,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                               child: Assets.icons.icSort.svg(
                                 width: AppSize.mediumIcon,
                                 height: AppSize.mediumIcon,
-                                color: AppColor.kNeutrals.shade800,
+                                color: AppColor.kNeutrals_.shade800,
                               ),
                             ),
                           ),
@@ -210,7 +205,7 @@ class _DiscoverPageState extends State<DiscoverPage>
   Widget _btnAction(Widget icon, String label, VoidCallback callback) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColor.kNeutrals.shade50,
+        color: AppColor.kNeutrals_.shade50,
         borderRadius: BorderRadius.circular(AppSize.extraLargeRadius),
       ),
       child: ClipRRect(

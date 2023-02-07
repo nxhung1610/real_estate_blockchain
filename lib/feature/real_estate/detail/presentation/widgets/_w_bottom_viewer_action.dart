@@ -15,7 +15,7 @@ class _WBottomViewerAction extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: AppColor.kNeutrals.withOpacity(0.07),
+            color: AppColor.kNeutrals_.withOpacity(0.07),
             blurRadius: 30,
             spreadRadius: 0,
             offset: const Offset(0, -2),
@@ -31,7 +31,7 @@ class _WBottomViewerAction extends StatelessWidget {
               Text(
                 '${s.price}:',
                 style: context.textTheme.titleMedium?.copyWith(
-                  color: AppColor.kNeutrals.shade800,
+                  color: AppColor.kNeutrals_.shade800,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -77,7 +77,7 @@ class _WBottomViewerAction extends StatelessWidget {
                         ),
                         border: Border.fromBorderSide(
                           BorderSide(
-                            color: AppColor.kNeutrals.shade600,
+                            color: AppColor.kNeutrals_.shade600,
                           ),
                         ),
                       ),

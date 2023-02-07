@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/widgets/button/remove_button_app.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+
+part 'widgets/_features.dart';
 part 'widgets/_option_type_real_estate.dart';
 part 'widgets/_price_filter_range.dart';
-part 'widgets/_features.dart';
 
 class HouseFilterPage extends StatefulWidget {
   const HouseFilterPage({super.key});
@@ -89,7 +89,7 @@ class _HouseFilterPageState extends State<HouseFilterPage> {
                   BoxShadow(
                     offset: const Offset(0, -2),
                     blurRadius: 30.r,
-                    color: AppColor.kNeutrals.withOpacity(0.07),
+                    color: AppColor.kNeutrals_.withOpacity(0.07),
                   )
                 ],
               ),

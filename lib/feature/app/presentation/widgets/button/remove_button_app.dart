@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -15,7 +14,7 @@ class RemoveButtonApp extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSize.largeRadius),
         border: Border.all(
-          color: AppColor.kNeutrals.shade500,
+          color: AppColor.kNeutrals_.shade500,
         ),
       ),
       child: ClipRRect(

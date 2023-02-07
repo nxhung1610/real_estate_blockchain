@@ -1000,6 +1000,16 @@ class S {
     );
   }
 
+  /// `Write a reply...`
+  String get writeAReply {
+    return Intl.message(
+      'Write a reply...',
+      name: 'writeAReply',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Real estate name`
   String get realEstateName {
     return Intl.message(
