@@ -7,6 +7,7 @@ part 'search_page_params.freezed.dart';
 class SearchPageParams with _$SearchPageParams {
   const factory SearchPageParams({
     String? keyword,
+    @Default(true) bool isNeedCallback,
     required void Function(SearchResultData data) onSearchResult,
   }) = _SearchPageParams;
 }

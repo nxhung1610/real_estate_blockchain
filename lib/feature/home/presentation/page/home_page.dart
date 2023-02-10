@@ -10,6 +10,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -184,7 +185,19 @@ class __NewFeedState extends State<_NewFeed> {
         context.push(
           $appRoute.search,
           extra: SearchPageParams(
-            onSearchResult: (data) {},
+            isNeedCallback: false,
+            onSearchResult: (data) {
+              data.whenOrNull(
+                onSelected: (estate) {
+                  context.push(
+                    $appRoute.realEstateDetail,
+                    extra: RealEstateDetailPageParams(
+                      estate: estate,
+                    ),
+                  );
+                },
+              );
+            },
           ),
         );
       },
@@ -218,37 +231,37 @@ class __NewFeedState extends State<_NewFeed> {
               ],
             ),
           ),
-          Positioned.fill(
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: EdgeInsets.all(AppSize.mediumWidthDimens),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-                    color: AppColor.kBackgroundButton,
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {},
-                      borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-                      child: Padding(
-                        padding: EdgeInsets.all(
-                          AppSize.mediumWidthDimens,
-                        ),
-                        child: Assets.icons.icFilterLight.svg(
-                          width: context.theme.iconTheme.size,
-                          height: context.theme.iconTheme.size,
-                          color: AppColor.kNeutrals_.shade50,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: Align(
+          //     alignment: Alignment.centerRight,
+          //     child: Padding(
+          //       padding: EdgeInsets.all(AppSize.mediumWidthDimens),
+          //       child: Container(
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+          //           color: AppColor.kBackgroundButton,
+          //         ),
+          //         child: Material(
+          //           color: Colors.transparent,
+          //           child: InkWell(
+          //             onTap: () {},
+          //             borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+          //             child: Padding(
+          //               padding: EdgeInsets.all(
+          //                 AppSize.mediumWidthDimens,
+          //               ),
+          //               child: Assets.icons.icFilterLight.svg(
+          //                 width: context.theme.iconTheme.size,
+          //                 height: context.theme.iconTheme.size,
+          //                 color: AppColor.kNeutrals_.shade50,
+          //               ),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SearchPageParams {
   String? get keyword => throw _privateConstructorUsedError;
+  bool get isNeedCallback => throw _privateConstructorUsedError;
   void Function(SearchResultData) get onSearchResult =>
       throw _privateConstructorUsedError;
 
@@ -31,7 +32,10 @@ abstract class $SearchPageParamsCopyWith<$Res> {
           SearchPageParams value, $Res Function(SearchPageParams) then) =
       _$SearchPageParamsCopyWithImpl<$Res, SearchPageParams>;
   @useResult
-  $Res call({String? keyword, void Function(SearchResultData) onSearchResult});
+  $Res call(
+      {String? keyword,
+      bool isNeedCallback,
+      void Function(SearchResultData) onSearchResult});
 }
 
 /// @nodoc
@@ -48,6 +52,7 @@ class _$SearchPageParamsCopyWithImpl<$Res, $Val extends SearchPageParams>
   @override
   $Res call({
     Object? keyword = freezed,
+    Object? isNeedCallback = null,
     Object? onSearchResult = null,
   }) {
     return _then(_value.copyWith(
@@ -55,6 +60,10 @@ class _$SearchPageParamsCopyWithImpl<$Res, $Val extends SearchPageParams>
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String?,
+      isNeedCallback: null == isNeedCallback
+          ? _value.isNeedCallback
+          : isNeedCallback // ignore: cast_nullable_to_non_nullable
+              as bool,
       onSearchResult: null == onSearchResult
           ? _value.onSearchResult
           : onSearchResult // ignore: cast_nullable_to_non_nullable
@@ -71,7 +80,10 @@ abstract class _$$_SearchPageParamsCopyWith<$Res>
       __$$_SearchPageParamsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? keyword, void Function(SearchResultData) onSearchResult});
+  $Res call(
+      {String? keyword,
+      bool isNeedCallback,
+      void Function(SearchResultData) onSearchResult});
 }
 
 /// @nodoc
@@ -86,6 +98,7 @@ class __$$_SearchPageParamsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? keyword = freezed,
+    Object? isNeedCallback = null,
     Object? onSearchResult = null,
   }) {
     return _then(_$_SearchPageParams(
@@ -93,6 +106,10 @@ class __$$_SearchPageParamsCopyWithImpl<$Res>
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String?,
+      isNeedCallback: null == isNeedCallback
+          ? _value.isNeedCallback
+          : isNeedCallback // ignore: cast_nullable_to_non_nullable
+              as bool,
       onSearchResult: null == onSearchResult
           ? _value.onSearchResult
           : onSearchResult // ignore: cast_nullable_to_non_nullable
@@ -104,16 +121,20 @@ class __$$_SearchPageParamsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchPageParams implements _SearchPageParams {
-  const _$_SearchPageParams({this.keyword, required this.onSearchResult});
+  const _$_SearchPageParams(
+      {this.keyword, this.isNeedCallback = true, required this.onSearchResult});
 
   @override
   final String? keyword;
+  @override
+  @JsonKey()
+  final bool isNeedCallback;
   @override
   final void Function(SearchResultData) onSearchResult;
 
   @override
   String toString() {
-    return 'SearchPageParams(keyword: $keyword, onSearchResult: $onSearchResult)';
+    return 'SearchPageParams(keyword: $keyword, isNeedCallback: $isNeedCallback, onSearchResult: $onSearchResult)';
   }
 
   @override
@@ -122,12 +143,15 @@ class _$_SearchPageParams implements _SearchPageParams {
         (other.runtimeType == runtimeType &&
             other is _$_SearchPageParams &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            (identical(other.isNeedCallback, isNeedCallback) ||
+                other.isNeedCallback == isNeedCallback) &&
             (identical(other.onSearchResult, onSearchResult) ||
                 other.onSearchResult == onSearchResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, keyword, onSearchResult);
+  int get hashCode =>
+      Object.hash(runtimeType, keyword, isNeedCallback, onSearchResult);
 
   @JsonKey(ignore: true)
   @override
@@ -139,11 +163,14 @@ class _$_SearchPageParams implements _SearchPageParams {
 abstract class _SearchPageParams implements SearchPageParams {
   const factory _SearchPageParams(
           {final String? keyword,
+          final bool isNeedCallback,
           required final void Function(SearchResultData) onSearchResult}) =
       _$_SearchPageParams;
 
   @override
   String? get keyword;
+  @override
+  bool get isNeedCallback;
   @override
   void Function(SearchResultData) get onSearchResult;
   @override

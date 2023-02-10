@@ -90,7 +90,9 @@ class _SearchPageState extends State<SearchPage> {
                         onSubmitted: (value) {
                           widget.params.onSearchResult
                               .call(SearchResultData.onKeyword(value));
-                          context.pop();
+                          if (widget.params.isNeedCallback) {
+                            context.pop();
+                          }
                         },
                         controller: textEditingController,
                         autofocus: true,
@@ -237,9 +239,9 @@ class _SearchPageState extends State<SearchPage> {
                     return _RealEstateSearchWidget(
                       estate: item,
                       onPress: () {
+                        context.pop();
                         widget.params.onSearchResult
                             .call(SearchResultData.onSelected(item));
-                        context.pop();
                       },
                     );
                   },
