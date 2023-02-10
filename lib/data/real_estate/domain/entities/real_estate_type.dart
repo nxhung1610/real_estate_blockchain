@@ -1,38 +1,46 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 
-part 'real_estate_type.g.dart';
+part 'real_estate_type.freezed.dart';
 
-@JsonSerializable()
-class RealEstateType {
-  final int? id;
-  final String? name;
-  @JsonKey(name: 'is_rent')
-  final bool? isRent;
-
-  const RealEstateType({this.id, this.name, this.isRent});
-
-  factory RealEstateType.fromJson(Map<String, dynamic> json) {
-    return _$RealEstateTypeFromJson(json);
-  }
-
-  Map<String, dynamic> toJson() => _$RealEstateTypeToJson(this);
-
-  RealEstateType copyWith({
-    int? id,
-    String? name,
+@freezed
+class RealEstateType with _$RealEstateType {
+  const factory RealEstateType({
+    required int id,
+    required String name,
     bool? isRent,
-  }) {
-    return RealEstateType(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      isRent: isRent ?? this.isRent,
-    );
+  }) = _RealEstateType;
+}
+
+extension RealEstateTypeEx on RealEstateType {
+  String? title(BuildContext context) {
+    final s = S.of(context);
+    switch (name) {
+      case 'apartment':
+        return s.apartment;
+      case 'house':
+        return s.house;
+      case 'villa':
+        return s.villa;
+      case 'townhouse':
+        return s.townhouse;
+      case 'ground':
+        return s.ground;
+      case 'land':
+        return s.land;
+      case 'resort':
+        return s.resort;
+      case 'condotel':
+        return s.condotel;
+      case 'warehouse':
+        return s.warehouse;
+      case 'other':
+        return s.other;
+      default:
+    }
+    return null;
   }
-
-  @override
-  bool get stringify => true;
-
-  @override
-  List<Object?> get props => [id, name, isRent];
 }

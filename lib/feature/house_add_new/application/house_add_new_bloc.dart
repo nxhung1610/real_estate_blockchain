@@ -26,28 +26,10 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
   ValidateSubcriber? validateSubcriber;
   final IRealEstateRepository _restateRepository;
   final IFileRepository _fileRepository;
-  HouseAddNewBloc(this._restateRepository, this._fileRepository)
+  HouseAddNewBloc(this._fileRepository, this._restateRepository)
       : super(const HouseAddNewState()) {
     on<_Setup>((event, emit) async {
       validateSubcriber = event.subcriber;
-      emit(state.copyWith(status: const Status.loading()));
-      final config = await _restateRepository.configData();
-      config.fold(
-        (l) => emit(
-          state.copyWith(
-            status: const Status.failure(
-              value: RealEstateFailure.loadConfigFail(),
-            ),
-          ),
-        ),
-        (r) => emit(
-          state.copyWith(
-            // status: const Status.success(),
-            config: r,
-          ),
-        ),
-      );
-      emit(state.copyWith(status: const Status.idle()));
     });
     on<_NextPage>((event, emit) {
       try {

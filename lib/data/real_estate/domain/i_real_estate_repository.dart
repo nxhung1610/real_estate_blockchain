@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_input/real_estate_creation_input.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 
@@ -14,6 +15,7 @@ abstract class IRealEstateRepository {
   );
   Future<Either<RealEstateFailure, List<RealEstate>>> realEstates();
   Future<Either<RealEstateFailure, List<RealEstate>>> search(
-    RealEstateSearchInput data,
-  );
+    RealEstateSearchInput data, {
+    RealEstateFilterInput? filter,
+  });
 }

@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/enums.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -85,7 +86,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
           AppSize.mediumHeightDimens.verticalSpace,
           BlocBuilder<HouseProcessRealInfoBloc, HouseProcessRealInfoState>(
             builder: (context, state) {
-              final bloc = context.read<HouseAddNewBloc>();
+              final bloc = context.read<RealEstateConfigBloc>();
               final list = bloc.state.config?.realEstateTypes?.toList() ?? [];
               return DropdownApp<RealEstateType>(
                 items: list
@@ -95,7 +96,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.w),
                           child: Text(
-                            e.name?.toString() ?? '',
+                            e.title(context) ?? '',
                             style: context.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                             ),
@@ -114,7 +115,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 selectedItemBuilder: (context) {
                   return list
                       .map((e) => Text(
-                            e.name?.toString() ?? '',
+                            e.title(context) ?? '',
                             style: context.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: context.textTheme.displayLarge?.color,

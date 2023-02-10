@@ -8,8 +8,8 @@ part 'amenity_response.g.dart';
 @freezedResponse
 class AmenityResponse with _$AmenityResponse {
   factory AmenityResponse({
-    int? id,
-    String? name,
+    required int id,
+    required String name,
   }) = _AmenityResponse;
 
   factory AmenityResponse.fromJson(Map<String, dynamic> json) =>

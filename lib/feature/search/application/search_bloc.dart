@@ -23,6 +23,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     SearchEventOnKeyChanged event,
     Emitter<SearchState> emit,
   ) async {
+    emit(state.copyWith(status: const Status.loading()));
     try {
       final estate = await _realEstateRepository
           .search(RealEstateSearchInput(keyword: event.value));

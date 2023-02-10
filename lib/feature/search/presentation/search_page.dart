@@ -9,15 +9,18 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_image_custom.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
 import 'package:real_estate_blockchain/feature/search/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../../app/application/app_bloc.dart';
-
+import 'models/search_page_params.dart';
+part './widgets/_real_estate_search_shimmer.dart';
 part './widgets/_real_estate_search.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
+  const SearchPage({super.key, required this.params});
+  final SearchPageParams params;
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -30,6 +33,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void initState() {
     textEditingController = TextEditingController();
+    textEditingController.text = widget.params.keyword ?? '';
     super.initState();
   }
 
@@ -49,6 +53,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [
@@ -81,6 +86,11 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       child: TextField(
                         onChanged: _onSearchChanged,
+                        onSubmitted: (value) {
+                          widget.params.onSearchResult
+                              .call(SearchResultData.onKeyword(value));
+                          context.pop();
+                        },
                         controller: textEditingController,
                         autofocus: true,
                         style: context.textTheme.bodyMedium?.copyWith(
@@ -191,7 +201,47 @@ class _SearchPageState extends State<SearchPage> {
                 ],
               ),
             ),
-            Expanded(child: Container()),
+            Expanded(
+                child: BlocSelector<SearchBloc, SearchState, List<RealEstate>?>(
+              selector: (state) {
+                return state.status.maybeWhen(
+                  loading: () => null,
+                  orElse: () {
+                    return state.estates;
+                  },
+                );
+              },
+              builder: (context, state) {
+                if (state == null) {
+                  return ListView.separated(
+                    itemBuilder: (context, index) {
+                      return const _RealEstateSearchShimmer();
+                    },
+                    itemCount: 4,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return AppSize.mediumHeightDimens.verticalSpace;
+                    },
+                  );
+                }
+                return ListView.separated(
+                  itemBuilder: (context, index) {
+                    final item = state[index];
+                    return _RealEstateSearchWidget(
+                      estate: item,
+                      onPress: () {
+                        widget.params.onSearchResult
+                            .call(SearchResultData.onSelected(item));
+                        context.pop();
+                      },
+                    );
+                  },
+                  itemCount: state.length,
+                  separatorBuilder: (BuildContext context, int index) {
+                    return AppSize.mediumHeightDimens.verticalSpace;
+                  },
+                );
+              },
+            )),
             IconButton(
               icon: const Icon(
                 Icons.close_rounded,

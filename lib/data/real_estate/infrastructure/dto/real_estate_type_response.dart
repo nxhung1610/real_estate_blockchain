@@ -8,8 +8,8 @@ part 'real_estate_type_response.g.dart';
 @freezedResponse
 class RealEstateTypeResponse with _$RealEstateTypeResponse {
   factory RealEstateTypeResponse({
-    int? id,
-    String? name,
+    required int id,
+    required String name,
     @JsonKey(name: 'is_rent') bool? isRent,
   }) = _RealEstateTypeResponse;
 

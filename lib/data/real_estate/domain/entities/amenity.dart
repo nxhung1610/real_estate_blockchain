@@ -10,8 +10,8 @@ part 'amenity.freezed.dart';
 @freezed
 class Amenity with _$Amenity {
   const factory Amenity({
-    int? id,
-    String? name,
+    required int id,
+    required String name,
   }) = _Amenity;
 }
 

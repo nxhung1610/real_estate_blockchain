@@ -8,11 +8,13 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_input/real_estate_creation_input.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/config/real_estate_config_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/real_filter_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/search_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_estate_constants.dart';
 
@@ -83,17 +85,22 @@ class RealEstateRepository extends IRealEstateRepository {
 
   @override
   Future<Either<RealEstateFailure, List<RealEstate>>> search(
-      RealEstateSearchInput data) async {
+    RealEstateSearchInput data, {
+    RealEstateFilterInput? filter,
+  }) async {
     try {
       final res = await _apiRemote.post<List<RealEstateResponse>>(
-          RealEstateConstants.search,
-          url: AppConfig.instance.reUrl,
-          queryParameters: SearchRequest.fromModel(data).toJson(),
-          parse: (data) {
-        return (data as List<dynamic>)
-            .map((e) => RealEstateResponse.fromJson(e))
-            .toList();
-      }, data: {});
+        RealEstateConstants.search,
+        url: AppConfig.instance.reUrl,
+        queryParameters: SearchRequest.fromModel(data).toJson(),
+        parse: (data) {
+          return (data as List<dynamic>)
+              .map((e) => RealEstateResponse.fromJson(e))
+              .toList();
+        },
+        data:
+            filter != null ? RealFilterRequest.fromModel(filter).toJson() : {},
+      );
       if (!res.success) throw res.errorKey!;
       return right(res.data?.map((e) => e.toModel()).toList() ?? []);
     } catch (e) {

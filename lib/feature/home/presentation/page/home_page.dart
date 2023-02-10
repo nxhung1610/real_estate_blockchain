@@ -10,6 +10,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
+import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -24,10 +25,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   late final HomeBloc _homeBloc;
-
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     _homeBloc = context.read<HomeBloc>();
   }
 
@@ -181,7 +181,12 @@ class __NewFeedState extends State<_NewFeed> {
   Widget searchWidget() {
     return GestureDetector(
       onTap: () {
-        context.push($appRoute.search);
+        context.push(
+          $appRoute.search,
+          extra: SearchPageParams(
+            onSearchResult: (data) {},
+          ),
+        );
       },
       child: Stack(
         children: [

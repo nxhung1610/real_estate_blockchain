@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
@@ -157,52 +158,63 @@ class _AppCommonState extends State<_AppCommon> {
           log(state.toString());
           if (state is AuthStateUnknow || processAuthen.isCompleted) return;
           processAuthen.complete();
-        })
+        }),
       ],
-      child: GlobalLoaderOverlay(
-        child: ScreenUtilInit(
-          designSize: AppSize.designSize,
-          builder: (context, child) {
-            return GestureDetector(
-              onTap: () {
-                // Unfocus when tap out side
-                FocusScopeNode currentNode = FocusScope.of(context);
-                if (!currentNode.hasPrimaryFocus) {
-                  currentNode.unfocus();
-                  currentNode.requestFocus(FocusNode());
-                }
-              },
-              child: MaterialApp.router(
-                theme: AppTheme.light,
-                scrollBehavior: const ScrollBehaviorModified(),
-                debugShowCheckedModeBanner: false,
-                darkTheme: AppTheme.dark,
-                themeMode: appBloc.state.mode,
-                locale: appBloc.state.locale,
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                builder: (context, child) {
-                  return SplashPage(
-                    child: child ?? Container(),
-                    onLoaded: () async {
-                      await Future.wait([
-                        processIntital.future,
-                        processAuthen.future,
-                      ]);
-                    },
-                  );
-                },
-                supportedLocales: S.delegate.supportedLocales,
-                routeInformationParser: appRoute.routeInformationParser,
-                routerDelegate: appRoute.routerDelegate,
-                routeInformationProvider: appRoute.routeInformationProvider,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<RealEstateConfigBloc>()
+              ..add(
+                const RealEstateConfigEvent.onLoadConfig(),
               ),
-            );
-          },
+          ),
+        ],
+        child: GlobalLoaderOverlay(
+          child: ScreenUtilInit(
+            designSize: AppSize.designSize,
+            builder: (context, child) {
+              return GestureDetector(
+                onTap: () {
+                  // Unfocus when tap out side
+                  FocusScopeNode currentNode = FocusScope.of(context);
+                  if (!currentNode.hasPrimaryFocus) {
+                    currentNode.unfocus();
+                    currentNode.requestFocus(FocusNode());
+                  }
+                },
+                child: MaterialApp.router(
+                  theme: AppTheme.light,
+                  scrollBehavior: const ScrollBehaviorModified(),
+                  debugShowCheckedModeBanner: false,
+                  darkTheme: AppTheme.dark,
+                  themeMode: appBloc.state.mode,
+                  locale: appBloc.state.locale,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  builder: (context, child) {
+                    return SplashPage(
+                      child: child ?? Container(),
+                      onLoaded: () async {
+                        await Future.wait([
+                          processIntital.future,
+                          processAuthen.future,
+                        ]);
+                      },
+                    );
+                  },
+                  supportedLocales: S.delegate.supportedLocales,
+                  routeInformationParser: appRoute.routeInformationParser,
+                  routerDelegate: appRoute.routerDelegate,
+                  routeInformationProvider: appRoute.routeInformationProvider,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

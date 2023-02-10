@@ -1416,7 +1416,6 @@ abstract class _CreateRealEstate implements HouseAddNewEvent {
 /// @nodoc
 mixin _$HouseAddNewState {
   ProcessState get state => throw _privateConstructorUsedError;
-  RealEstateConfig? get config => throw _privateConstructorUsedError;
   AddressChoosen? get addressChoosen => throw _privateConstructorUsedError;
   RealEstateInfo? get realEstateInfo => throw _privateConstructorUsedError;
   List<Amenity>? get amenities => throw _privateConstructorUsedError;
@@ -1437,7 +1436,6 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ProcessState state,
-      RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
       List<Amenity>? amenities,
@@ -1445,7 +1443,6 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
       LatLng? position,
       Status status});
 
-  $RealEstateConfigCopyWith<$Res>? get config;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -1463,7 +1460,6 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
   @override
   $Res call({
     Object? state = null,
-    Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
     Object? amenities = freezed,
@@ -1476,10 +1472,6 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
-      config: freezed == config
-          ? _value.config
-          : config // ignore: cast_nullable_to_non_nullable
-              as RealEstateConfig?,
       addressChoosen: freezed == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
@@ -1509,18 +1501,6 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateConfigCopyWith<$Res>? get config {
-    if (_value.config == null) {
-      return null;
-    }
-
-    return $RealEstateConfigCopyWith<$Res>(_value.config!, (value) {
-      return _then(_value.copyWith(config: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res> get status {
     return $StatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
@@ -1538,7 +1518,6 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
   @useResult
   $Res call(
       {ProcessState state,
-      RealEstateConfig? config,
       AddressChoosen? addressChoosen,
       RealEstateInfo? realEstateInfo,
       List<Amenity>? amenities,
@@ -1546,8 +1525,6 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
       LatLng? position,
       Status status});
 
-  @override
-  $RealEstateConfigCopyWith<$Res>? get config;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -1564,7 +1541,6 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? state = null,
-    Object? config = freezed,
     Object? addressChoosen = freezed,
     Object? realEstateInfo = freezed,
     Object? amenities = freezed,
@@ -1577,10 +1553,6 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ProcessState,
-      config: freezed == config
-          ? _value.config
-          : config // ignore: cast_nullable_to_non_nullable
-              as RealEstateConfig?,
       addressChoosen: freezed == addressChoosen
           ? _value.addressChoosen
           : addressChoosen // ignore: cast_nullable_to_non_nullable
@@ -1614,7 +1586,6 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
 class _$_HouseAddNewState implements _HouseAddNewState {
   const _$_HouseAddNewState(
       {this.state = ProcessState.address,
-      this.config,
       this.addressChoosen,
       this.realEstateInfo,
       final List<Amenity>? amenities,
@@ -1627,8 +1598,6 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   @override
   @JsonKey()
   final ProcessState state;
-  @override
-  final RealEstateConfig? config;
   @override
   final AddressChoosen? addressChoosen;
   @override
@@ -1661,7 +1630,7 @@ class _$_HouseAddNewState implements _HouseAddNewState {
 
   @override
   String toString() {
-    return 'HouseAddNewState(state: $state, config: $config, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, position: $position, status: $status)';
+    return 'HouseAddNewState(state: $state, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, position: $position, status: $status)';
   }
 
   @override
@@ -1670,7 +1639,6 @@ class _$_HouseAddNewState implements _HouseAddNewState {
         (other.runtimeType == runtimeType &&
             other is _$_HouseAddNewState &&
             (identical(other.state, state) || other.state == state) &&
-            (identical(other.config, config) || other.config == config) &&
             (identical(other.addressChoosen, addressChoosen) ||
                 other.addressChoosen == addressChoosen) &&
             (identical(other.realEstateInfo, realEstateInfo) ||
@@ -1687,7 +1655,6 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   int get hashCode => Object.hash(
       runtimeType,
       state,
-      config,
       addressChoosen,
       realEstateInfo,
       const DeepCollectionEquality().hash(_amenities),
@@ -1705,7 +1672,6 @@ class _$_HouseAddNewState implements _HouseAddNewState {
 abstract class _HouseAddNewState implements HouseAddNewState {
   const factory _HouseAddNewState(
       {final ProcessState state,
-      final RealEstateConfig? config,
       final AddressChoosen? addressChoosen,
       final RealEstateInfo? realEstateInfo,
       final List<Amenity>? amenities,
@@ -1715,8 +1681,6 @@ abstract class _HouseAddNewState implements HouseAddNewState {
 
   @override
   ProcessState get state;
-  @override
-  RealEstateConfig? get config;
   @override
   AddressChoosen? get addressChoosen;
   @override

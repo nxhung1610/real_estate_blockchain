@@ -125,6 +125,21 @@
   "south" : "Nam",
   "southEast" : "Đông Nam",
   "east" : "Đông",
-  "scheduleTour" :"Tham quan"
+  "scheduleTour" :"Tham quan",
+  "propertyFacts" : "Thông tin tài sản",
+  "min" : "Tối thiểu",
+  "max" : "Tối đa",
+  "propertyType" : "Loại tài sản",
+  "apartment" : "Căn hộ",
+  "house" : "Nhà",
+  "villa" : "Biệt thự",
+  "townhouse" : "Nhà phố",
+  "ground" : "Đất",
+  "land" : "Bất động sản",
+  "resort" : "Resort",
+  "condotel" : "Căn hộ du lịch",
+  "warehouse" :"Kho",
+  "other" :"Khác",
+  "locale" : "Định vị"
 
 }

@@ -30,6 +30,7 @@ class _Features extends StatelessWidget {
         ),
         AppSize.largeHeightDimens.verticalSpace,
         ListView.separated(
+          padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
