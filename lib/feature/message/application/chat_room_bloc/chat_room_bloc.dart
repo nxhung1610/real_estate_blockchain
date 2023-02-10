@@ -3,13 +3,16 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_message/chat_message.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
 import 'package:real_estate_blockchain/data/message/infrastructure/dto/chat_message_request.dart';
 import 'package:real_estate_blockchain/data/message/infrastructure/dto/request/get_message_request/get_message_request.dart';
 import 'package:real_estate_blockchain/data/message/infrastructure/message_repository.dart';
+import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/core/application/application.dart';
 import 'package:real_estate_blockchain/feature/message/application/application.dart';
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 part 'chat_room_bloc.freezed.dart';
@@ -18,13 +21,18 @@ part 'chat_room_state.dart';
 
 @injectable
 class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
-  final MessageBloc messageBloc;
   final MessageRepository messageRepository;
   StreamSubscription? messageSubscription;
+  final ChatRoomBlocParams params;
 
-  ChatRoomBloc(@factoryParam this.messageBloc, @factoryParam ChatRoom room,
-      this.messageRepository)
-      : super(ChatRoomState.initial(room)) {
+  MessageBloc get messageBloc => params.messageBloc;
+  AuthBloc get authBloc => params.authBloc;
+  User get user => (authBloc.state as AuthStateAuthenticated).user;
+
+  ChatRoomBloc(
+    @factoryParam this.params,
+    this.messageRepository,
+  ) : super(ChatRoomState.initial(params.room)) {
     _mapEventToState();
   }
 
@@ -81,12 +89,13 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
 
   FutureOr<void> _chatRoomMessageSentToState(
       ChatRoomMessageSent event, Emitter<ChatRoomState> emit) async {
+    //TODO: fix
     messageBloc.add(
       MessageSent(
         ChatTextMessageRequest(
           content: event.content,
-          senderId: state.room.senderId,
-          receiverId: state.room.receiverId,
+          senderId: user.id,
+          receiverId: state.room.getReceiverId(user.id),
         ),
         state.room,
       ),

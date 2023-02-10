@@ -1259,6 +1259,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Logout`
+  String get logOut {
+    return Intl.message(
+      'Logout',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

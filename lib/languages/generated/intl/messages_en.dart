@@ -88,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Legal Documents"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
         "loginForgotPassword":
@@ -187,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "view": MessageLookupByLibrary.simpleMessage("View"),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "west": MessageLookupByLibrary.simpleMessage("West"),
+        "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "You need permission to display notifications")

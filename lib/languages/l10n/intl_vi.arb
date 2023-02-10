@@ -125,6 +125,7 @@
   "south" : "Nam",
   "southEast" : "Đông Nam",
   "east" : "Đông",
-  "scheduleTour" :"Tham quan"
+  "scheduleTour" :"Tham quan",
+  "logOut": "Đăng xuất"
 
 }

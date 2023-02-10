@@ -21,7 +21,6 @@ class AppConfig {
   }
 
   String get baseUrl => dotenv.get(Constants.kBaseUrl);
-  String get reUrl => dotenv.get(Constants.kReUrl);
   int get connectionTimeout =>
       int.parse(dotenv.get(Constants.kConnectionTimeout));
   int get receiveTimeout => int.parse(dotenv.get(Constants.kReceiveTimeout));

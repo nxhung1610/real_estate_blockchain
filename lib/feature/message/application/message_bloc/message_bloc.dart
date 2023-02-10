@@ -11,7 +11,6 @@ import 'package:real_estate_blockchain/data/message/infrastructure/message_repos
 import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/core/application/status.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_ws_controller/chat_ws_controller.dart';
-import 'package:real_estate_blockchain/injection_dependencies/app_module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
 
@@ -27,10 +26,10 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
   final MessageRepository messageRepository;
   late ChatWSController chatWSController;
   MessageBloc(
-    @Named(AppModuleKeys.chatWSUrl) this.chatWSUrl,
+    @factoryParam this.authBloc,
+    @factoryParam this.chatWSUrl,
     this.authLocalRepository,
     this.messageRepository,
-    @factoryParam this.authBloc,
   ) : super(MessageState.initial()) {
     _mapEventToState();
   }

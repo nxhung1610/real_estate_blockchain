@@ -80,7 +80,7 @@ class MessagePersonItem extends StatelessWidget {
                       Visibility(
                         visible: room.latestMessageCreatedAt != null,
                         child: Text(
-                          room.latestMessageCreatedAt!.hhmm,
+                          room.latestMessageCreatedAt?.hhmm ?? "",
                           style: context.textTheme.bodyMedium,
                         ),
                       )
@@ -90,7 +90,7 @@ class MessagePersonItem extends StatelessWidget {
                   Visibility(
                     visible: room.latestMessage != null,
                     child: Text(
-                      room.latestMessage!,
+                      room.latestMessage ?? "",
                       style: context.textTheme.bodyMedium?.copyWith(
                         color: context.textTheme.displayLarge?.color,
                         fontWeight: FontWeight.w500,

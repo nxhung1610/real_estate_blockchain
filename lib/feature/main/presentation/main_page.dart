@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
@@ -79,9 +80,10 @@ class _MainPageState extends State<MainPage>
               child: const HomePage(),
             ),
             BlocProvider(
-              create: (context) =>
-                  getIt.call<MessageBloc>(param1: context.read<AuthBloc>())
-                    ..add(const MessageStarted()),
+              create: (context) => getIt.call<MessageBloc>(
+                  param1: context.read<AuthBloc>(),
+                  param2: "${AppConfig.instance.baseUrl}/chat/ws")
+                ..add(const MessageStarted()),
               child: const MessagePage(),
             ),
             BlocProvider(

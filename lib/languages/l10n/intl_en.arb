@@ -100,7 +100,6 @@
   "createRealEstateSuccess" : "Create real estate success",
   "unableToLoadData" : "Unable to load data",
   "writeAReply": "Write a reply...",
-  "realEstateName" : "Real estate name"
   "realEstateName" : "Real estate name",
   "bedRoom" : "Bed Room",
   "rooms" : "Rooms",
@@ -125,5 +124,7 @@
   "south" : "South",
   "southEast" : "South East",
   "east" : "East",
-  "scheduleTour" :"Schedule Tour"
+  "scheduleTour" :"Schedule Tour",
+  "logOut": "Logout"
+
 }

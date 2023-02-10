@@ -1,12 +1,8 @@
-import 'package:dio/dio.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/config/app_config.dart';
-import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/data/file/domain/file_failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:real_estate_blockchain/data/file/domain/i_file_repository.dart';
-import 'package:real_estate_blockchain/data/file/infrastructure/constant.dart';
+import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/data/file/data.dart';
 import 'package:real_estate_blockchain/data/file/infrastructure/dto/image/image_dto_mapper.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/image_response.dart';
 
@@ -31,7 +27,6 @@ class FileRepository implements IFileRepository {
       final res = await _apiRemote.post<ImageResponse>(
         FileConstant.upload,
         data: fromData,
-        url: AppConfig.instance.reUrl,
         options: Options(headers: {
           'Content-Type': 'multipart/form-data',
           "Accept": "multipart/form-data",

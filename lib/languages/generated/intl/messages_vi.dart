@@ -87,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Giấy tờ pháp lý"),
         "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "loginForgotPassword":
@@ -184,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),
+        "writeAReply": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(
                 "Bạn cần cấp quyền để hiển thị thông báo")

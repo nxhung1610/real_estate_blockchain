@@ -22,7 +22,7 @@ void printLog(Object parent,
     modifier = parent.runtimeType.toString();
   }
 
-  final mes = "[Reputa][$modifier] $message";
+  final mes = "[Realust][$modifier] $message";
   if (error != null) {
     final String? errorString;
     if (error is DioError) {
