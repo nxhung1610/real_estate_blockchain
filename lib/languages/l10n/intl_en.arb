@@ -140,4 +140,7 @@
   "warehouse" :"Warehouse",
   "other" :"other",
   "locale" : "Location"
+  "scheduleTour" :"Schedule Tour",
+  "logOut": "Logout"
+
 }

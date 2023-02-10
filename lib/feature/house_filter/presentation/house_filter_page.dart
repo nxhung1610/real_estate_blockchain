@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -174,7 +175,11 @@ class _HouseFilterPageState extends State<HouseFilterPage> {
                             child: ButtonApp(
                               label: s.apply,
                               style: ButtonScaleStyle.tight,
-                              onPressed: () {},
+                              onPressed: () {
+                                context
+                                    .read<HouseFilterBloc>()
+                                    .add(const HouseFilterEvent.onApply());
+                              },
                               type: ButtonType.primary,
                             ),
                           ),

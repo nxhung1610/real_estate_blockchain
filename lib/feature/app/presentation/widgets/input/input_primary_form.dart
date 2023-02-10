@@ -52,7 +52,11 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
   Widget build(BuildContext context) {
     /// Setup content padding
     var contentPadding =
-        context.theme.inputDecorationTheme.contentPadding as EdgeInsets;
+        context.theme.inputDecorationTheme.contentPadding as EdgeInsets? ??
+            EdgeInsets.symmetric(
+              vertical: 14.h,
+              horizontal: 20.w,
+            );
     if (widget.suffixIcon != null && widget.prefixIcon != null) {
       contentPadding = contentPadding.copyWith(
         right: -contentPadding.right,

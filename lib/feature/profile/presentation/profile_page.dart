@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/profile/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -156,6 +158,16 @@ class _Options extends StatelessWidget {
             ProfileOptionData(
               icon: Assets.icons.icSettingLight.svg(),
               label: s.optionSettings,
+            ),
+            ProfileOptionData(
+              icon: const Icon(
+                Icons.logout,
+                size: 20,
+              ),
+              label: s.logOut,
+              onPressed: () {
+                context.read<AuthBloc>().add(const AuthEventLogout());
+              },
             ),
           ],
         ),

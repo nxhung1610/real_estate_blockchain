@@ -10,6 +10,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_image_custom.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
+import 'package:real_estate_blockchain/feature/house_filter/module.dart';
 import 'package:real_estate_blockchain/feature/search/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -183,7 +184,14 @@ class _SearchPageState extends State<SearchPage> {
                       borderRadius: BorderRadius.circular(48.h),
                       child: Material(
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () async {
+                            final filter = await HouseFilterPage.show(context);
+                            if (filter != null && mounted) {
+                              context
+                                  .read<SearchBloc>()
+                                  .add(SearchEvent.applyFilter(filter));
+                            }
+                          },
                           child: Padding(
                             padding: EdgeInsets.all(
                               AppSize.largeWidthDimens,

@@ -30,7 +30,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
             ? Border.fromBorderSide(
                 BorderSide(
                   color: AppColor.kPrimary1,
-                  width: AppSize.smallRadius,
+                  width: 2.r,
                 ),
               )
             : null,

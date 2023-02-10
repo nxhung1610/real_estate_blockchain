@@ -86,6 +86,7 @@ class _DiscoverPageState extends State<DiscoverPage>
       context.push(
         $appRoute.search,
         extra: SearchPageParams(
+          keyword: context.read<DiscoverBloc>().state.keyword,
           onSearchResult: (data) {
             data.when(
               onSelected: (estate) {

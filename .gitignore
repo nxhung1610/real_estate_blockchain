@@ -53,5 +53,5 @@ app.*.map.json
 /envs
 
 # gen file
-**/*.freezed.dart
-**/*.g.dart
+#**/*.freezed.dart
+#**/*.g.dart

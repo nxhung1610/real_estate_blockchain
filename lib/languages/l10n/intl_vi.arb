@@ -141,5 +141,6 @@
   "warehouse" :"Kho",
   "other" :"Khác",
   "locale" : "Định vị"
+  "logOut": "Đăng xuất"
 
 }

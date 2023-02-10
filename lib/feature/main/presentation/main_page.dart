@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
@@ -71,100 +72,99 @@ class _MainPageState extends State<MainPage>
           },
         ),
       ],
-      child: Builder(builder: (context) {
-        return Scaffold(
-          body: LazyIndexedStack(
-            index: tabController.index,
-            children: [
-              BlocProvider(
-                create: (context) => getIt.call<HomeBloc>(),
-                child: const HomePage(),
-              ),
-              BlocProvider(
-                create: (context) =>
-                    getIt.call<MessageBloc>(param1: context.read<AuthBloc>())
-                      ..add(const MessageStarted()),
-                child: const MessagePage(),
-              ),
-              BlocProvider(
-                create: (context) => getIt.call<DiscoverBloc>(),
-                child: const DiscoverPage(),
-              ),
-              BlocProvider(
-                create: (context) => getIt.call<MyHomeBloc>(),
-                child: const MyHomePage(),
-              ),
-              BlocProvider(
-                create: (context) => getIt.call<ProfileBloc>(),
-                child: const ProfilePage(),
-              ),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: context.watch<MainCubit>().state.sub.index,
-            onTap: (value) {
-              cubit.onPageChange(value);
-            },
-            selectedItemColor: context.textTheme.displayLarge?.color,
-            selectedLabelStyle: context.textTheme.bodySmall?.copyWith(
-              fontWeight: FontWeight.w500,
+      child: Scaffold(
+        body: LazyIndexedStack(
+          index: tabController.index,
+          children: [
+            BlocProvider(
+              create: (context) => getIt.call<HomeBloc>(),
+              child: const HomePage(),
             ),
-            unselectedLabelStyle: context.textTheme.bodySmall?.copyWith(
-              fontWeight: FontWeight.w500,
+            BlocProvider(
+              create: (context) => getIt.call<MessageBloc>(
+                  param1: context.read<AuthBloc>(),
+                  param2: "${AppConfig.instance.baseUrl}/chat/ws")
+                ..add(const MessageStarted()),
+              child: const MessagePage(),
             ),
-            showUnselectedLabels: true,
-            iconSize: AppSize.extraWidthDimens,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: Assets.icons.icHomeLight.svg(
-                  color: iconColor,
-                ),
-                activeIcon: Assets.icons.icHomeBold.svg(
-                  color: iconColor,
-                ),
-                label: s.home,
-              ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.icMessageLight.svg(
-                  color: iconColor,
-                ),
-                activeIcon: Assets.icons.icMessageBold.svg(
-                  color: iconColor,
-                ),
-                label: s.message,
-              ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.icLocationLight.svg(
-                  color: iconColor,
-                ),
-                activeIcon: Assets.icons.icLocationBold.svg(
-                  color: iconColor,
-                ),
-                label: s.discover,
-              ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.icMyhomeLight.svg(
-                  color: iconColor,
-                ),
-                activeIcon: Assets.icons.icMyhomeBold.svg(
-                  color: iconColor,
-                ),
-                label: s.myHome,
-              ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.icProfileLight.svg(
-                  color: iconColor,
-                ),
-                activeIcon: Assets.icons.icProfileBold.svg(
-                  color: iconColor,
-                ),
-                label: s.profile,
-              ),
-            ],
+            BlocProvider(
+              create: (context) => getIt.call<DiscoverBloc>(),
+              child: const DiscoverPage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<MyHomeBloc>(),
+              child: const MyHomePage(),
+            ),
+            BlocProvider(
+              create: (context) => getIt.call<ProfileBloc>(),
+              child: const ProfilePage(),
+            ),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: context.watch<MainCubit>().state.sub.index,
+          onTap: (value) {
+            cubit.onPageChange(value);
+          },
+          selectedItemColor: context.textTheme.displayLarge?.color,
+          selectedLabelStyle: context.textTheme.bodySmall?.copyWith(
+            fontWeight: FontWeight.w500,
           ),
-        );
-      }),
+          unselectedLabelStyle: context.textTheme.bodySmall?.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
+          showUnselectedLabels: true,
+          iconSize: AppSize.extraWidthDimens,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Assets.icons.icHomeLight.svg(
+                color: iconColor,
+              ),
+              activeIcon: Assets.icons.icHomeBold.svg(
+                color: iconColor,
+              ),
+              label: s.home,
+            ),
+            BottomNavigationBarItem(
+              icon: Assets.icons.icMessageLight.svg(
+                color: iconColor,
+              ),
+              activeIcon: Assets.icons.icMessageBold.svg(
+                color: iconColor,
+              ),
+              label: s.message,
+            ),
+            BottomNavigationBarItem(
+              icon: Assets.icons.icLocationLight.svg(
+                color: iconColor,
+              ),
+              activeIcon: Assets.icons.icLocationBold.svg(
+                color: iconColor,
+              ),
+              label: s.discover,
+            ),
+            BottomNavigationBarItem(
+              icon: Assets.icons.icMyhomeLight.svg(
+                color: iconColor,
+              ),
+              activeIcon: Assets.icons.icMyhomeBold.svg(
+                color: iconColor,
+              ),
+              label: s.myHome,
+            ),
+            BottomNavigationBarItem(
+              icon: Assets.icons.icProfileLight.svg(
+                color: iconColor,
+              ),
+              activeIcon: Assets.icons.icProfileBold.svg(
+                color: iconColor,
+              ),
+              label: s.profile,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

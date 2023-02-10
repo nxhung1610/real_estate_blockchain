@@ -6,11 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_message/chat_message.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/core/application/application.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc.dart';
 import 'package:real_estate_blockchain/feature/message/presentation/widget/message_item.dart';
 import 'package:real_estate_blockchain/feature/message/presentation/widget/message_text_field.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:real_estate_blockchain/utils/extension/widget_extensions.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
 
 class MessageChatPage extends StatefulWidget {
@@ -35,7 +37,12 @@ class _MessageChatPageState extends State<MessageChatPage> {
     return Scaffold(
       appBar: CustomAppbar(
         context,
-        leading: const BackButtonApp(),
+        leading: Center(
+          child: const BackButtonApp().withPadding(
+            const EdgeInsets.only(left: 16),
+          ),
+        ),
+        leadingWidth: 64,
         centerTitle: false,
         title: Column(
           mainAxisSize: MainAxisSize.min,
@@ -70,7 +77,8 @@ class _MessageChatPageState extends State<MessageChatPage> {
                 builder: (context, tuple2) {
                   final messages = tuple2.value1;
                   final status = tuple2.value2;
-
+                  final authState =
+                      context.read<AuthBloc>().state as AuthStateAuthenticated;
                   return status.maybeWhen(orElse: () {
                     return kEmpty;
                   }, idle: () {
@@ -80,9 +88,10 @@ class _MessageChatPageState extends State<MessageChatPage> {
                         reverse: true,
                         delegate: FlutterListViewDelegate(
                           (context, index) {
+                            final item = messages[index];
                             return MessageItem(
-                              message: messages[index],
-                              isMe: true,
+                              message: item,
+                              isMe: authState.user.id == item.senderId,
                             );
                           },
                           childCount: messages.length,

@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
@@ -30,7 +29,6 @@ class RealEstateRepository extends IRealEstateRepository {
     try {
       final res = await _apiRemote.get<RealEstateConfigResponse>(
         RealEstateConstants.config,
-        url: AppConfig.instance.reUrl,
         parse: (data) {
           return RealEstateConfigResponse.fromJson(data);
         },
@@ -52,7 +50,6 @@ class RealEstateRepository extends IRealEstateRepository {
       final res = await _apiRemote.post(
         RealEstateConstants.root,
         data: RealEstateCreationRequest.fromModel(data).toJson(),
-        url: AppConfig.instance.reUrl,
       );
       if (!res.success) throw res.errorKey!;
       return right(unit);
@@ -68,7 +65,6 @@ class RealEstateRepository extends IRealEstateRepository {
     try {
       final res = await _apiRemote.post<List<RealEstateResponse>>(
         RealEstateConstants.list,
-        url: AppConfig.instance.reUrl,
         data: {},
         parse: (data) {
           return (data as List<dynamic>)
@@ -91,7 +87,7 @@ class RealEstateRepository extends IRealEstateRepository {
     try {
       final res = await _apiRemote.post<List<RealEstateResponse>>(
         RealEstateConstants.search,
-        url: AppConfig.instance.reUrl,
+        url: AppConfig.instance.baseUrl,
         queryParameters: SearchRequest.fromModel(data).toJson(),
         parse: (data) {
           return (data as List<dynamic>)

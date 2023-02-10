@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Giấy tờ pháp lý"),
         "locale": MessageLookupByLibrary.simpleMessage("Định vị"),
         "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "loginForgotPassword":

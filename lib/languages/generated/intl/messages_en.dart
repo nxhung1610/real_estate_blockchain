@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Legal Documents"),
         "locale": MessageLookupByLibrary.simpleMessage("Location"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginDontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Dont\'t have an account?"),
         "loginForgotPassword":
