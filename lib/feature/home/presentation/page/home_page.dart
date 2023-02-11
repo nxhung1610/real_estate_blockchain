@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -7,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/province/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -17,8 +19,11 @@ import 'package:real_estate_blockchain/feature/home/presentation/widget/house_ne
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:collection/collection.dart';
+import '../../../real_estate/config/real_estate_config_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,6 +35,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   late final HomeBloc _homeBloc;
+
   @override
   void initState() {
     super.initState();
@@ -55,56 +61,97 @@ class _HomePageState extends State<HomePage>
               ),
               IntrinsicWidth(
                 child: ButtonTheme(
-                  alignedDropdown: true,
-                  padding: EdgeInsets.zero,
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton2<String>(
-                      isDense: true,
-                      itemPadding: EdgeInsets.zero,
-                      buttonPadding: EdgeInsets.zero,
-                      dropdownPadding: EdgeInsets.zero,
-                      dropdownElevation: 0,
-                      offset: Offset(0.0, -AppSize.mediumHeightDimens),
-                      value: '',
-                      selectedItemBuilder: (context) {
-                        return [
-                          Row(
-                            children: [
-                              Assets.icons.icLocationLight.svg(
-                                color: AppColor.kSecondary1,
-                                width: AppSize.largeWidthDimens,
-                                height: AppSize.largeWidthDimens,
-                              ),
-                              AppSize.smallWidthDimens.horizontalSpace,
-                              Text(
-                                'Hanoi, Vietnam',
-                                style: context.textTheme.bodyMedium?.copyWith(
-                                  color: context.textTheme.displayLarge?.color,
-                                  fontWeight: FontWeight.w600,
+                    alignedDropdown: true,
+                    padding: EdgeInsets.zero,
+                    child: BlocBuilder<HomeBloc, HomeState>(
+                      builder: (context, state) {
+                        return DropdownButtonHideUnderline(
+                          child: DropdownButton2<Province>(
+                            isDense: true,
+                            itemPadding: EdgeInsets.zero,
+                            buttonPadding: EdgeInsets.zero,
+                            dropdownPadding: EdgeInsets.zero,
+                            dropdownElevation: 0,
+                            offset: Offset(0.0, -AppSize.mediumHeightDimens),
+                            value: state.provice ?? state.provinces.firstOrNull,
+                            selectedItemBuilder: (context) {
+                              return state.provinces
+                                  .map(
+                                    (e) => Row(
+                                      children: [
+                                        Assets.icons.icLocationLight.svg(
+                                          color: AppColor.kSecondary1,
+                                          width: AppSize.largeWidthDimens,
+                                          height: AppSize.largeWidthDimens,
+                                        ),
+                                        AppSize
+                                            .smallWidthDimens.horizontalSpace,
+                                        Text(
+                                          context.isVi
+                                              ? e.fullName ?? ''
+                                              : e.fullNameEn ?? '',
+                                          style: context.textTheme.bodyMedium
+                                              ?.copyWith(
+                                            color: context
+                                                .textTheme.displayLarge?.color,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                  .toList();
+
+                              // return
+                              //     .map(
+                              //       (e) => DropdownMenuItem(
+                              //         alignment: Alignment.center,
+                              //         value: e,
+                              //         child: Text(
+                              //           context.isVi
+                              //               ? e.fullName ?? ''
+                              //               : e.fullNameEn ?? '',
+                              //           style: context.textTheme.bodyMedium
+                              //               ?.copyWith(
+                              //             color: context
+                              //                 .textTheme.displayLarge?.color,
+                              //             fontWeight: FontWeight.w600,
+                              //           ),
+                              //         ),
+                              //       ),
+                              //     )
+                              //     .toList();
+                            },
+                            items: [
+                              ...state.provinces.map(
+                                (e) => DropdownMenuItem(
+                                  alignment: Alignment.center,
+                                  value: e,
+                                  child: Text(
+                                    context.isVi
+                                        ? e.fullName ?? ''
+                                        : e.fullNameEn ?? '',
+                                    style:
+                                        context.textTheme.bodyMedium?.copyWith(
+                                      color:
+                                          context.textTheme.displayLarge?.color,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
-                          )
-                        ];
-                      },
-                      items: [
-                        DropdownMenuItem(
-                          alignment: Alignment.center,
-                          value: '',
-                          child: Text(
-                            'Hanoi, Vietnam',
-                            style: context.textTheme.bodyMedium?.copyWith(
-                              color: context.textTheme.displayLarge?.color,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            onChanged: (value) {
+                              context.read<HomeBloc>().add(
+                                    HomeEvent.onProviceChange(
+                                      provice: value,
+                                    ),
+                                  );
+                            },
                           ),
-                        ),
-                      ],
-                      onChanged: (value) {},
-                    ),
-                  ),
-                ),
-              )
+                        );
+                      },
+                    )),
+              ),
             ],
           ),
           const Spacer(),

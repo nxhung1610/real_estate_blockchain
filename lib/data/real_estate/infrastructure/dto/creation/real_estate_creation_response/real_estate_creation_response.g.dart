@@ -11,9 +11,3 @@ _$_RealEstateCreationResponse _$$_RealEstateCreationResponseFromJson(
     _$_RealEstateCreationResponse(
       hash: json['hash'] as String?,
     );
-
-Map<String, dynamic> _$$_RealEstateCreationResponseToJson(
-        _$_RealEstateCreationResponse instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-    };

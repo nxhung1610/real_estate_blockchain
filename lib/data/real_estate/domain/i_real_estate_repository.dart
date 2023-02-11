@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:real_estate_blockchain/data/province/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_input/real_estate_creation_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
@@ -19,8 +20,10 @@ abstract class IRealEstateRepository {
     RealEstateSearchInput data, {
     RealEstateFilterInput? filter,
   });
-  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds();
+  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds({
+    Province? provice,
+  });
   Future<Either<RealEstateFailure, List<RealEstate>>> favorites();
-  Future<Either<RealEstateFailure, Unit>> setFavorite(String id);
-  Future<Either<RealEstateFailure, Unit>> removeFavorite(String id);
+  Future<Either<RealEstateFailure, Unit>> setFavorite(int id);
+  Future<Either<RealEstateFailure, Unit>> removeFavorite(int id);
 }

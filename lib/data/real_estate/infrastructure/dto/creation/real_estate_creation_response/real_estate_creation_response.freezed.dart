@@ -23,7 +23,6 @@ RealEstateCreationResponse _$RealEstateCreationResponseFromJson(
 mixin _$RealEstateCreationResponse {
   String? get hash => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RealEstateCreationResponseCopyWith<RealEstateCreationResponse>
       get copyWith => throw _privateConstructorUsedError;
@@ -101,7 +100,7 @@ class __$$_RealEstateCreationResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$_RealEstateCreationResponse implements _RealEstateCreationResponse {
   _$_RealEstateCreationResponse({this.hash});
 
@@ -134,13 +133,6 @@ class _$_RealEstateCreationResponse implements _RealEstateCreationResponse {
   _$$_RealEstateCreationResponseCopyWith<_$_RealEstateCreationResponse>
       get copyWith => __$$_RealEstateCreationResponseCopyWithImpl<
           _$_RealEstateCreationResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_RealEstateCreationResponseToJson(
-      this,
-    );
-  }
 }
 
 abstract class _RealEstateCreationResponse

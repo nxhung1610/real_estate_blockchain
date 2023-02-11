@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -167,6 +168,13 @@ class _AppCommonState extends State<_AppCommon> {
             create: (context) => getIt.call<RealEstateConfigBloc>()
               ..add(
                 const RealEstateConfigEvent.onLoadConfig(),
+              ),
+          ),
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<RealEstateFavoritesBloc>()
+              ..add(
+                const RealEstateFavoritesEvent.started(),
               ),
           ),
         ],

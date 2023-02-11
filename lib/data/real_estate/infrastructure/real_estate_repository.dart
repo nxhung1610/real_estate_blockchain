@@ -18,6 +18,7 @@ import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/searc
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/search_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_estate_constants.dart';
 
+import '../../province/data.dart';
 import '../domain/entities/real_estate_config.dart';
 import '../domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
 
@@ -110,7 +111,9 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds() async {
+  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds({
+    Province? provice,
+  }) async {
     try {
       final res = await _apiRemote.post<List<RealEstateResponse>>(
         RealEstateConstants.newfeeds,
@@ -120,7 +123,11 @@ class RealEstateRepository extends IRealEstateRepository {
               .map((e) => RealEstateResponse.fromJson(e))
               .toList();
         },
-        data: {},
+        data: provice != null
+            ? RealFilterRequest(
+                provinceId: provice.code,
+              )
+            : {},
       );
       if (!res.success) throw res.errorKey!;
       return right(res.data?.map((e) => e.toModel()).toList() ?? []);
@@ -149,10 +156,10 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, Unit>> setFavorite(String id) async {
+  Future<Either<RealEstateFailure, Unit>> setFavorite(int id) async {
     try {
       final res = await _apiRemote.post<List<RealEstateResponse>>(
-        RealEstateConstants.favorites,
+        RealEstateConstants.favorites + '/$id',
         url: AppConfig.instance.baseUrl,
       );
       if (!res.success) throw res.errorKey!;
@@ -163,10 +170,10 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, Unit>> removeFavorite(String id) async {
+  Future<Either<RealEstateFailure, Unit>> removeFavorite(int id) async {
     try {
       final res = await _apiRemote.delete<List<RealEstateResponse>>(
-        RealEstateConstants.favorites,
+        RealEstateConstants.favorites + '/$id',
         url: AppConfig.instance.baseUrl,
       );
       if (!res.success) throw res.errorKey!;

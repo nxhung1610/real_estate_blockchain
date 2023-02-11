@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_est
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:collection/collection.dart';
@@ -95,18 +96,23 @@ class HouseNewsFeed extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 AppSize.largeIcon,
               ),
-              child: Material(
-                color: AppColor.kNeutrals_.shade800.withOpacity(0.6),
-                child: IconButton(
-                  onPressed: () {
-                    onFavorite?.call(true);
-                  },
-                  icon: Assets.icons.icHeartLight.svg(
-                    width: AppSize.mediumIcon,
-                    height: AppSize.mediumIcon,
-                    color: AppColor.kNeutrals_.shade50,
-                  ),
-                ),
+              child: BlocBuilder<RealEstateFavoritesBloc,
+                  RealEstateFavoritesState>(
+                builder: (context, state) {
+                  return Material(
+                    color: AppColor.kNeutrals_.shade800.withOpacity(0.6),
+                    child: IconButton(
+                      onPressed: () {
+                        onFavorite?.call(true);
+                      },
+                      icon: Assets.icons.icHeartLight.svg(
+                        width: AppSize.mediumIcon,
+                        height: AppSize.mediumIcon,
+                        color: AppColor.kNeutrals_.shade50,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ),

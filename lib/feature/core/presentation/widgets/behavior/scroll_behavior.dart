@@ -12,7 +12,7 @@ class ScrollBehaviorModified extends ScrollBehavior {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
-        return const ClampingScrollPhysics();
+        return const BouncingScrollPhysics();
     }
   }
 
