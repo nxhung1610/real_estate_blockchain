@@ -1,10 +1,6 @@
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:real_estate_blockchain/config/app_color.dart';
-import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:sliver_tools/sliver_tools.dart';
 
 class WCustomRefreshScrollView extends StatefulWidget {
   const WCustomRefreshScrollView(

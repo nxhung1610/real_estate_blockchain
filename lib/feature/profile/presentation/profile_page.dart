@@ -47,6 +47,7 @@ class _AccountInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authState = context.read<AuthBloc>().state as AuthStateAuthenticated;
     return Column(
       children: [
         // Avatar
@@ -55,7 +56,8 @@ class _AccountInfo extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(AppSize.avatarExtraLarge / 2),
               child: Image.network(
-                'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
+                authState.user.avatarUrl ??
+                    'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
                 width: AppSize.avatarExtraLarge,
                 height: AppSize.avatarExtraLarge,
                 fit: BoxFit.cover,
@@ -96,14 +98,14 @@ class _AccountInfo extends StatelessWidget {
         11.h.verticalSpace,
         // Info
         Text(
-          'Andrew Person',
+          authState.user.fullName,
           style: context.textTheme.bodyLarge?.copyWith(
             color: context.textTheme.displayLarge?.color,
             fontWeight: FontWeight.w800,
           ),
         ),
         Text(
-          'andrew.hello@gmail.com',
+          "Phone: ${authState.user.phone}",
           style: context.textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w500,
           ),
