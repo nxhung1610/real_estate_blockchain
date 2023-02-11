@@ -8,3 +8,18 @@ class AddressBuilderState with _$AddressBuilderState {
     District? district,
   }) = _AddressBuilderState;
 }
+
+extension AddressBuilderStateMapper on AddressBuilderState {
+  String? buildAddress(BuildContext context) {
+    final isVi = context.read<AppBloc>().state.locale.languageCode == 'vi';
+    return (ward != null
+            ? ', ${isVi ? ward?.fullName ?? '' : ward?.fullNameEn ?? ''}'
+            : '') +
+        (district != null
+            ? ', ${isVi ? district?.fullName ?? '' : district?.fullNameEn ?? ''}'
+            : '') +
+        (provice != null
+            ? ', ${isVi ? provice?.fullName ?? '' : provice?.fullNameEn ?? ''}'
+            : '');
+  }
+}

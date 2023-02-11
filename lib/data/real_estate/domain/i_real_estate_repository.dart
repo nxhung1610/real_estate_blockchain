@@ -18,4 +18,5 @@ abstract class IRealEstateRepository {
     RealEstateSearchInput data, {
     RealEstateFilterInput? filter,
   });
+  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds();
 }

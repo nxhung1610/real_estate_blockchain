@@ -77,7 +77,8 @@ class _MainPageState extends State<MainPage>
           index: tabController.index,
           children: [
             BlocProvider(
-              create: (context) => getIt.call<HomeBloc>(),
+              create: (context) =>
+                  getIt.call<HomeBloc>()..add(const HomeEvent.onStarted()),
               child: const HomePage(),
             ),
             BlocProvider(

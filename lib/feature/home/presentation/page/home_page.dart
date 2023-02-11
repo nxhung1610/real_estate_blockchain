@@ -7,9 +7,13 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
+import 'package:real_estate_blockchain/feature/home/presentation/widget/house_newsfeed_shimmer.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
@@ -269,36 +273,69 @@ class __NewFeedState extends State<_NewFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Padding(
+    return WCustomRefreshScrollView(
+      onRefresh: () async {
+        context.read<HomeBloc>().add(const HomeEvent.onStarted());
+      },
+      children: [
+        SliverToBoxAdapter(
+          child: Padding(
             padding: EdgeInsets.only(
               top: AppSize.extraLargeHeightDimens,
             ),
             child: searchWidget(),
           ),
-          ListView.separated(
-            physics: const NeverScrollableScrollPhysics(
-                parent: BouncingScrollPhysics()),
-            padding: EdgeInsets.symmetric(
-              vertical: AppSize.extraHeightDimens,
-            ),
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return HouseNewsFeed(
-                value: true,
-                onPressed: (value) {},
+        ),
+        SliverToBoxAdapter(
+          child: BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              if (state.status is StatusLoading) {
+                return ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(
+                      parent: BouncingScrollPhysics()),
+                  padding: EdgeInsets.symmetric(
+                    vertical: AppSize.extraHeightDimens,
+                  ),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return const HouseNewFeedsShimmer();
+                  },
+                  separatorBuilder: (context, index) {
+                    return AppSize.extraHeightDimens.verticalSpace;
+                  },
+                  itemCount: 3,
+                );
+              }
+              return ListView.separated(
+                physics: const NeverScrollableScrollPhysics(
+                    parent: BouncingScrollPhysics()),
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSize.extraHeightDimens,
+                ),
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final item = state.estates[index];
+                  return HouseNewsFeed(
+                    value: item,
+                    onPressed: () {
+                      context.push(
+                        $appRoute.realEstateDetail,
+                        extra: RealEstateDetailPageParams(
+                          estate: item,
+                        ),
+                      );
+                    },
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return AppSize.extraHeightDimens.verticalSpace;
+                },
+                itemCount: state.estates.length,
               );
             },
-            separatorBuilder: (context, index) {
-              return AppSize.extraHeightDimens.verticalSpace;
-            },
-            itemCount: 3,
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 }

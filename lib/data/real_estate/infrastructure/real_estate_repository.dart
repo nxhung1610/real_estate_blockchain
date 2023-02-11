@@ -103,4 +103,24 @@ class RealEstateRepository extends IRealEstateRepository {
       return left(const RealEstateFailure.unknown());
     }
   }
+
+  @override
+  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds() async {
+    try {
+      final res = await _apiRemote.post<List<RealEstateResponse>>(
+        RealEstateConstants.newfeeds,
+        url: AppConfig.instance.baseUrl,
+        parse: (data) {
+          return (data as List<dynamic>)
+              .map((e) => RealEstateResponse.fromJson(e))
+              .toList();
+        },
+        data: {},
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(res.data?.map((e) => e.toModel()).toList() ?? []);
+    } catch (e) {
+      return left(const RealEstateFailure.unknown());
+    }
+  }
 }
