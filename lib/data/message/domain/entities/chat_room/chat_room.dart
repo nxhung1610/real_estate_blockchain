@@ -17,7 +17,7 @@ class ChatRoom with _$ChatRoom {
   }) = _ChatRoom;
 
   bool isMessageForThisRoom(ChatMessage message) {
-    return [message.senderId, message.receiverId].contains(senderId) ||
+    return [message.senderId, message.receiverId].contains(senderId) &&
         [message.senderId, message.receiverId].contains(receiverId);
   }
 

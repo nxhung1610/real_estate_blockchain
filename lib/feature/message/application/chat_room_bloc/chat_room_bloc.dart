@@ -64,7 +64,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
       final messageResponse = await messageRepository.getMessages(
         request: GetMessageRequest(
           page: 0,
-          pageSize: 15,
+          pageSize: 200,
           senderId: state.room.senderId,
           receiverId: state.room.receiverId,
         ),
@@ -89,7 +89,6 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
 
   FutureOr<void> _chatRoomMessageSentToState(
       ChatRoomMessageSent event, Emitter<ChatRoomState> emit) async {
-    //TODO: fix
     messageBloc.add(
       MessageSent(
         ChatTextMessageRequest(

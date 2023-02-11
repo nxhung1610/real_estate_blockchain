@@ -75,7 +75,16 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   FutureOr<void> _messageReceivedToState(
       MessageReceived event, Emitter<MessageState> emit) async {
-    emit(state.copyWith(newMessage: event.newMessage));
+    final rooms = [...state.rooms];
+    for (int i = 0; i < rooms.length; i++) {
+      final item = rooms[i];
+      if (item.isMessageForThisRoom(event.newMessage)) {
+        rooms[i] = item.copyWith(
+            latestMessageCreatedAt: event.newMessage.createdAt,
+            latestMessage: event.newMessage.content);
+      }
+    }
+    emit(state.copyWith(newMessage: event.newMessage, rooms: rooms));
     emit(state.copyWith(newMessage: null));
   }
 
