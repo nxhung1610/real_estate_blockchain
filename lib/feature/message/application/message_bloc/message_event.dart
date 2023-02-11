@@ -7,4 +7,6 @@ class MessageEvent with _$MessageEvent {
       ChatMessageRequest message, ChatRoom room) = MessageSent;
   const factory MessageEvent.messageReceived(ChatMessage newMessage) =
       MessageReceived;
+  const factory MessageEvent.onCreateRoom(int senderId, int ownerId) =
+      MessageEventOnCreateRoom;
 }

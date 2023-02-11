@@ -81,13 +81,7 @@ class _MainPageState extends State<MainPage>
                   getIt.call<HomeBloc>()..add(const HomeEvent.onStarted()),
               child: const HomePage(),
             ),
-            BlocProvider(
-              create: (context) => getIt.call<MessageBloc>(
-                  param1: context.read<AuthBloc>(),
-                  param2: "${AppConfig.instance.baseUrl}/chat/ws")
-                ..add(const MessageStarted()),
-              child: const MessagePage(),
-            ),
+            const MessagePage(),
             BlocProvider(
               create: (context) => getIt.call<DiscoverBloc>(),
               child: const DiscoverPage(),

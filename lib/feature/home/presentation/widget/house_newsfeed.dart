@@ -9,7 +9,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_est
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart';
+import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:collection/collection.dart';

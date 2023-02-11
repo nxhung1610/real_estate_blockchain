@@ -8,11 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
@@ -22,7 +24,8 @@ import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
-import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart';
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -32,6 +35,7 @@ import 'package:sliver_tools/sliver_tools.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
 part './widgets/_w_info_house.dart';
 part './widgets/_w_amenities.dart';
@@ -211,7 +215,7 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                       children: [
                         Positioned.fill(
                           child: CarouselSlider.builder(
-                            itemCount: widget.params.estate.images?.length,
+                            itemCount: widget.params.estate.images?.length ?? 0,
                             itemBuilder: (context, index, realIndex) {
                               final image = widget.params.estate.images?[index];
                               return ImageCustom.network(

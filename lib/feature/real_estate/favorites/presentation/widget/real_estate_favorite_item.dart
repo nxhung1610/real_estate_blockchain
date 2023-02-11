@@ -5,20 +5,16 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
-import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
-import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
-import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:collection/collection.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
-class HouseMyHomeItem extends StatelessWidget {
-  const HouseMyHomeItem({super.key, required this.item});
+class RealEstateFavoriteItem extends StatelessWidget {
+  const RealEstateFavoriteItem({super.key, required this.item});
   final RealEstate item;
 
   @override

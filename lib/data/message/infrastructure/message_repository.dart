@@ -57,4 +57,30 @@ class MessageRepository {
       return left(const MessageFailure.loadMessageFailure());
     }
   }
+
+  Future<Either<MessageFailure, ChatRoom>> createRoom({
+    required int senderId,
+    required int ownerId,
+  }) async {
+    try {
+      final res = await _apiRemote.post<ChatRoomDto>(
+        "${MessageConstants.kGetChatRooms}/",
+        // url: "http://192.168.1.9:9234",
+        data: {
+          'sender_id': senderId,
+          'receiver_id': ownerId,
+        },
+        parse: (data) {
+          return ChatRoomDto.fromJson(data);
+        },
+      );
+      if (res.success) {
+        return right(res.data!.toModel());
+      }
+      throw res.errorKey ?? res.response ?? "";
+    } catch (e, trace) {
+      printLog(this, message: "getRooms", error: e, trace: trace);
+      return left(const MessageFailure.loadMessageFailure());
+    }
+  }
 }

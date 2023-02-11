@@ -29,6 +29,7 @@ class AppRoute extends BaseRoute {
   String get messageChat => _mainRoute.messageChat;
   String get search => _searchRoute.url;
   String get realEstateDetail => _realEstateRouter.detail;
+  String get realEstateFavorites => _realEstateRouter.favorites;
 
   @override
   List<RouteBase> get routes => [

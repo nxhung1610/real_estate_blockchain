@@ -81,12 +81,12 @@ import 'package:real_estate_blockchain/feature/onboarding/application/onboarding
     as _i25;
 import 'package:real_estate_blockchain/feature/profile/application/profile_bloc.dart'
     as _i26;
-import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart'
-    as _i30;
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart'
     as _i27;
 import 'package:real_estate_blockchain/feature/real_estate/detail/application/real_estate_detail_bloc.dart'
     as _i28;
+import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
+    as _i30;
 import 'package:real_estate_blockchain/feature/search/application/search_bloc.dart'
     as _i31;
 

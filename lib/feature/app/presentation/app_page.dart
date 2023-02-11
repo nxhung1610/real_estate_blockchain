@@ -7,12 +7,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/feature/real_estate/application/favorites/real_estate_favorites_bloc.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
+import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
@@ -176,6 +178,13 @@ class _AppCommonState extends State<_AppCommon> {
               ..add(
                 const RealEstateFavoritesEvent.started(),
               ),
+          ),
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<MessageBloc>(
+                param1: context.read<AuthBloc>(),
+                param2: "${AppConfig.instance.baseUrl}/chat/ws")
+              ..add(const MessageStarted()),
           ),
         ],
         child: GlobalLoaderOverlay(

@@ -50,7 +50,10 @@ class RealEstateFavoritesBloc
             estates: List.from(
               [
                 ...state.estates,
-                event.estate,
+                if (state.estates
+                    .where((element) => element.id == event.estate.id)
+                    .isEmpty)
+                  event.estate,
               ],
             ),
           ),
@@ -72,7 +75,10 @@ class RealEstateFavoritesBloc
             isProcess: List.from(
               [
                 ...state.isProcess,
-                event.estate,
+                if (state.isProcess
+                    .where((element) => element.id == event.estate.id)
+                    .isEmpty)
+                  event.estate,
               ],
             ),
           ),
