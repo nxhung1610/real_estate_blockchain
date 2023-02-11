@@ -142,6 +142,7 @@
   "other" :"Khác",
   "locale" : "Định vị",
   "logOut": "Đăng xuất",
-  "contact" : "Liên hệ"
+  "contact" : "Liên hệ",
+  "transactionDetail" : "Chi tiết giao dịch"
 
 }

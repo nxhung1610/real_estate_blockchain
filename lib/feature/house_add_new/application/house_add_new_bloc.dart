@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,6 +15,7 @@ import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/models/real_estate_mapper.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import 'enums.dart';
 
@@ -81,9 +84,11 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
               datas.map((e) => AppImage(id: e.id)).toList(),
               state.position),
         );
-        createData.getOrElse(() => throw Exception('Create real estate error'));
-        emit(state.copyWith(status: const Status.success()));
-      } catch (e) {
+        final output = createData
+            .getOrElse(() => throw Exception('Create real estate error'));
+        emit(state.copyWith(status: Status.success(value: output)));
+      } catch (e, trace) {
+        printLog(this, message: e, trace: trace, error: e);
         emit(state.copyWith(status: Status.failure(value: e)));
       } finally {
         emit(state.copyWith(status: const Status.idle()));

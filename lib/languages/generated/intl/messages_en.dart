@@ -194,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "To proceede, you need to enable the permissions above"),
         "townhouse": MessageLookupByLibrary.simpleMessage("Townhouse"),
+        "transactionDetail":
+            MessageLookupByLibrary.simpleMessage("Transaction Detail"),
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Unable to load data"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),

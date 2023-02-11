@@ -141,6 +141,7 @@
   "other" :"other",
   "locale" : "Location",
   "logOut": "Logout",
-  "contact" : "Contact"
+  "contact" : "Contact",
+  "transactionDetail" : "Transaction Detail"
 
 }

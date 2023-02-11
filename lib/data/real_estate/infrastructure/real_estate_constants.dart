@@ -5,4 +5,5 @@ class RealEstateConstants {
   static String list = '$root/list';
   static String search = '$root/search';
   static String newfeeds = '$root/feeds';
+  static String favorites = '$root/favourites';
 }

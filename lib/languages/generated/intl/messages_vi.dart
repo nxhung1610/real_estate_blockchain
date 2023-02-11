@@ -192,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Để tiếp tục, bạn cần bật các quyền ở trên"),
         "townhouse": MessageLookupByLibrary.simpleMessage("Nhà phố"),
+        "transactionDetail":
+            MessageLookupByLibrary.simpleMessage("Chi tiết giao dịch"),
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),

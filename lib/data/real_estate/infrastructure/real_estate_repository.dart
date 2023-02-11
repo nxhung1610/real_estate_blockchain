@@ -12,12 +12,14 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/config/real_estate_config_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_request.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_response/real_estate_creation_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/real_filter_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/search_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_estate_constants.dart';
 
 import '../domain/entities/real_estate_config.dart';
+import '../domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
 
 @LazySingleton(as: IRealEstateRepository)
 class RealEstateRepository extends IRealEstateRepository {
@@ -44,15 +46,18 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, Unit>> createRealEstate(
+  Future<Either<RealEstateFailure, RealEstateCreationOuput>> createRealEstate(
       RealEstateCreationInput data) async {
     try {
-      final res = await _apiRemote.post(
+      final res = await _apiRemote.post<RealEstateCreationResponse>(
         RealEstateConstants.root,
         data: RealEstateCreationRequest.fromModel(data).toJson(),
+        parse: (data) {
+          return RealEstateCreationResponse.fromJson(data);
+        },
       );
       if (!res.success) throw res.errorKey!;
-      return right(unit);
+      return right(res.data!.toModel());
     } catch (e, strace) {
       print(strace);
       // inspect(strace);
@@ -119,6 +124,53 @@ class RealEstateRepository extends IRealEstateRepository {
       );
       if (!res.success) throw res.errorKey!;
       return right(res.data?.map((e) => e.toModel()).toList() ?? []);
+    } catch (e) {
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, List<RealEstate>>> favorites() async {
+    try {
+      final res = await _apiRemote.get<List<RealEstateResponse>>(
+        RealEstateConstants.favorites,
+        url: AppConfig.instance.baseUrl,
+        parse: (data) {
+          return (data as List<dynamic>)
+              .map((e) => RealEstateResponse.fromJson(e))
+              .toList();
+        },
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(res.data?.map((e) => e.toModel()).toList() ?? []);
+    } catch (e) {
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, Unit>> setFavorite(String id) async {
+    try {
+      final res = await _apiRemote.post<List<RealEstateResponse>>(
+        RealEstateConstants.favorites,
+        url: AppConfig.instance.baseUrl,
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(unit);
+    } catch (e) {
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, Unit>> removeFavorite(String id) async {
+    try {
+      final res = await _apiRemote.delete<List<RealEstateResponse>>(
+        RealEstateConstants.favorites,
+        url: AppConfig.instance.baseUrl,
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(unit);
     } catch (e) {
       return left(const RealEstateFailure.unknown());
     }

@@ -229,4 +229,34 @@ class ApiRemote {
       return BaseResponse.fromJson(e.response?.data, response: e.response);
     }
   }
+
+  Future<BaseResponse<T>> delete<T>(
+    String endpoint, {
+    String? url,
+    Function(dynamic data)? parse,
+    data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async {
+    try {
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.delete(
+        endpoint,
+        data: data,
+        queryParameters: queryParameters,
+        cancelToken: cancelToken,
+        options: options,
+      );
+
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+        response: response,
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
+    }
+  }
 }
