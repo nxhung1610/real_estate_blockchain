@@ -10,9 +10,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
 part 'search_bloc.freezed.dart';
-
 part 'search_event.dart';
-
 part 'search_state.dart';
 
 @injectable

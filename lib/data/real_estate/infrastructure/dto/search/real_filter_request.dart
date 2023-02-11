@@ -3,7 +3,6 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 
 part 'real_filter_request.freezed.dart';
-
 part 'real_filter_request.g.dart';
 
 @freezedRequest

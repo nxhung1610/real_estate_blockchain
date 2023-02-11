@@ -18,7 +18,6 @@ import '../../app/application/app_bloc.dart';
 import 'models/search_page_params.dart';
 
 part './widgets/_real_estate_search.dart';
-
 part './widgets/_real_estate_search_shimmer.dart';
 
 class SearchPage extends StatefulWidget {
@@ -75,14 +74,14 @@ class _SearchPageState extends State<SearchPage> {
                             blurRadius: 1.r,
                             offset: const Offset(0, 0),
                             color: AppColor.kIconColorPrimary(
-                                context.watch<AppBloc>().state.mode)
+                                    context.watch<AppBloc>().state.mode)
                                 .withOpacity(0.04),
                           ),
                           BoxShadow(
                             blurRadius: 8.r,
                             offset: const Offset(0, 4),
                             color: AppColor.kIconColorPrimary(
-                                context.watch<AppBloc>().state.mode)
+                                    context.watch<AppBloc>().state.mode)
                                 .withOpacity(0.08),
                           ),
                         ],
@@ -173,14 +172,14 @@ class _SearchPageState extends State<SearchPage> {
                           blurRadius: 1.r,
                           offset: const Offset(0, 0),
                           color: AppColor.kIconColorPrimary(
-                              context.watch<AppBloc>().state.mode)
+                                  context.watch<AppBloc>().state.mode)
                               .withOpacity(0.04),
                         ),
                         BoxShadow(
                           blurRadius: 8.r,
                           offset: const Offset(0, 4),
                           color: AppColor.kIconColorPrimary(
-                              context.watch<AppBloc>().state.mode)
+                                  context.watch<AppBloc>().state.mode)
                               .withOpacity(0.08),
                         ),
                       ],

@@ -21,8 +21,7 @@ class RealEstateRouter extends BaseRoute {
       ];
 
   @override
-  List<RouteBase> get globalRoutes =>
-      [
+  List<RouteBase> get globalRoutes => [
         ..._detail.globalRoutes,
         ..._favorites.globalRoutes,
       ];

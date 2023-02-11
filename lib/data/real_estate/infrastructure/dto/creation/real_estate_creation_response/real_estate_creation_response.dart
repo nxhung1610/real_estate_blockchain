@@ -3,7 +3,6 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
 
 part 'real_estate_creation_response.freezed.dart';
-
 part 'real_estate_creation_response.g.dart';
 
 @freezedResponse

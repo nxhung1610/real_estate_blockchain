@@ -23,9 +23,7 @@ import 'package:sliver_tools/sliver_tools.dart';
 import '../module.dart';
 
 part './_default_page.dart';
-
 part './_empty_page.dart';
-
 part './_loading_page.dart';
 
 class MyHomePage extends StatefulWidget {

@@ -5,9 +5,7 @@ import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 
 part 'real_estate_favorites_bloc.freezed.dart';
-
 part 'real_estate_favorites_event.dart';
-
 part 'real_estate_favorites_state.dart';
 
 @injectable

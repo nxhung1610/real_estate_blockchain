@@ -184,31 +184,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "southEast": MessageLookupByLibrary.simpleMessage("South East"),
         "southWest": MessageLookupByLibrary.simpleMessage("South West"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
-    "square": MessageLookupByLibrary.simpleMessage("Square"),
-    "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
-    "structure": MessageLookupByLibrary.simpleMessage("Structure"),
-    "title": MessageLookupByLibrary.simpleMessage("Title"),
-    "titleHint": MessageLookupByLibrary.simpleMessage(
-        "Sale private house at Cau Giay"),
-    "toProceedeYouNeedToEnableThePermissionsAbove":
-    MessageLookupByLibrary.simpleMessage(
-        "To proceede, you need to enable the permissions above"),
-    "townhouse": MessageLookupByLibrary.simpleMessage("Townhouse"),
-    "transactionDetail":
-    MessageLookupByLibrary.simpleMessage("Transaction Detail"),
-    "unableToLoadData":
-    MessageLookupByLibrary.simpleMessage("Unable to load data"),
-    "unit": MessageLookupByLibrary.simpleMessage("Unit"),
-    "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
-        "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
-    "view": MessageLookupByLibrary.simpleMessage("View"),
-    "villa": MessageLookupByLibrary.simpleMessage("Villa"),
-    "wards": MessageLookupByLibrary.simpleMessage("Wards"),
-    "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
-    "west": MessageLookupByLibrary.simpleMessage("West"),
-    "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
-    "youNeedPermissionToDisplayNotifications":
-    MessageLookupByLibrary.simpleMessage(
-        "You need permission to display notifications")
-  };
+        "square": MessageLookupByLibrary.simpleMessage("Square"),
+        "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
+        "structure": MessageLookupByLibrary.simpleMessage("Structure"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "titleHint": MessageLookupByLibrary.simpleMessage(
+            "Sale private house at Cau Giay"),
+        "toProceedeYouNeedToEnableThePermissionsAbove":
+            MessageLookupByLibrary.simpleMessage(
+                "To proceede, you need to enable the permissions above"),
+        "townhouse": MessageLookupByLibrary.simpleMessage("Townhouse"),
+        "transactionDetail":
+            MessageLookupByLibrary.simpleMessage("Transaction Detail"),
+        "unableToLoadData":
+            MessageLookupByLibrary.simpleMessage("Unable to load data"),
+        "unit": MessageLookupByLibrary.simpleMessage("Unit"),
+        "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
+            "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
+        "view": MessageLookupByLibrary.simpleMessage("View"),
+        "villa": MessageLookupByLibrary.simpleMessage("Villa"),
+        "wards": MessageLookupByLibrary.simpleMessage("Wards"),
+        "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
+        "west": MessageLookupByLibrary.simpleMessage("West"),
+        "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
+        "youNeedPermissionToDisplayNotifications":
+            MessageLookupByLibrary.simpleMessage(
+                "You need permission to display notifications")
+      };
 }

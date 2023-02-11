@@ -9,9 +9,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failu
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
 part 'real_estate_config_bloc.freezed.dart';
-
 part 'real_estate_config_event.dart';
-
 part 'real_estate_config_state.dart';
 
 @injectable

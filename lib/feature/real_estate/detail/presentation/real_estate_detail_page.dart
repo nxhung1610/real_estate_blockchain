@@ -35,13 +35,9 @@ import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
 
 part './widgets/_w_amenities.dart';
-
 part './widgets/_w_bottom_viewer_action.dart';
-
 part './widgets/_w_direction.dart';
-
 part './widgets/_w_info_house.dart';
-
 part './widgets/_w_location.dart';
 
 class RealEstateDetailPage extends StatefulWidget {

@@ -115,7 +115,7 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 selectedItemBuilder: (context) {
                   return list
                       .map((e) => Text(
-                    e.title(context) ?? '',
+                            e.title(context) ?? '',
                             style: context.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: context.textTheme.displayLarge?.color,
