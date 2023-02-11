@@ -33,13 +33,13 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     this.authLocalRepository,
     this.messageRepository,
   ) : super(MessageState.initial()) {
-    authBloc.stream.listen(
-      (authState) {
-        if (authState is AuthStateAuthenticated) {
-          add(const MessageEvent.started());
-        }
-      },
-    );
+    // authBloc.stream.listen(
+    //   (authState) {
+    //     if (authState is AuthStateAuthenticated) {
+    //       add(const MessageEvent.started());
+    //     }
+    //   },
+    // );
     _mapEventToState();
   }
 

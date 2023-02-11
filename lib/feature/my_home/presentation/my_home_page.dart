@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/presentation/model/house_add_new_page_params.dart';
 import 'package:real_estate_blockchain/feature/my_home/presentation/widget/w_house_myhome_item_skeleton.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';

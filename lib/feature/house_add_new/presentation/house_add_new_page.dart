@@ -20,10 +20,12 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../application/enums.dart';
+import 'model/house_add_new_page_params.dart';
 import 'process_page/process_page.dart';
 
 class HouseAddNewPage extends StatefulWidget {
-  const HouseAddNewPage({super.key});
+  final HouseAddNewPageParams params;
+  const HouseAddNewPage({super.key, required this.params});
 
   @override
   State<HouseAddNewPage> createState() => _HouseAddNewPageState();
@@ -125,6 +127,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                   ),
                 );
                 if (mounted) {
+                  widget.params.onSucces();
                   context.pop();
                 }
               }
