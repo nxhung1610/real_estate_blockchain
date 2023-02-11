@@ -25,7 +25,8 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
   final IAuthLocalRepository authLocalRepository;
   final AuthBloc authBloc;
   final MessageRepository messageRepository;
-  late ChatWSController chatWSController;
+  ChatWSController? chatWSController;
+
   MessageBloc(
     @factoryParam this.authBloc,
     @factoryParam this.chatWSUrl,
@@ -52,6 +53,9 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   FutureOr<void> _messageStarToState(
       MessageStarted event, Emitter<MessageState> emit) async {
+    if (chatWSController != null) {
+      chatWSController!.deactivate();
+    }
     try {
       emit(state.copyWith(status: const Status.loading()));
 
@@ -105,13 +109,13 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   FutureOr<void> _messageSentToState(
       MessageSent event, Emitter<MessageState> emit) async {
-    chatWSController.sendMessage(event.message, event.room);
+    chatWSController!.sendMessage(event.message, event.room);
   }
   //#endregion map event to state
 
   @override
   Future<void> close() {
-    chatWSController.deactivate();
+    chatWSController!.deactivate();
     return super.close();
   }
 
