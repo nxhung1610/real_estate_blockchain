@@ -5,9 +5,8 @@ import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 
 import '../base_response.dart';
 import 'jwt_interceptor.dart';
@@ -217,6 +216,36 @@ class ApiRemote {
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
         onSendProgress: onSendProgress,
+        options: options,
+      );
+
+      return BaseResponse.fromJson(
+        response.data,
+        parse: (data) => parse?.call(data),
+        response: response,
+      );
+    } on DioError catch (e) {
+      return BaseResponse.fromJson(e.response?.data, response: e.response);
+    }
+  }
+
+  Future<BaseResponse<T>> delete<T>(
+    String endpoint, {
+    String? url,
+    Function(dynamic data)? parse,
+    data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async {
+    try {
+      var dio = _dio;
+      if (url != null) dio.options.baseUrl = url;
+      final response = await dio.delete(
+        endpoint,
+        data: data,
+        queryParameters: queryParameters,
+        cancelToken: cancelToken,
         options: options,
       );
 

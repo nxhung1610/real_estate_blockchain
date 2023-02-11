@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,10 +12,10 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:collection/collection.dart';
 
 class HouseMyHomeItem extends StatelessWidget {
   const HouseMyHomeItem({super.key, required this.item});
+
   final RealEstate item;
 
   @override
@@ -128,11 +129,11 @@ class HouseMyHomeItem extends StatelessWidget {
                               AppSize.smallWidthDimens.horizontalSpace,
                               Text.rich(
                                 TextSpan(
-                                  text: '1,800',
+                                  text: item.area?.toInt().toString(),
                                   children: [
                                     const TextSpan(text: ' '),
                                     TextSpan(
-                                      text: 'Ft',
+                                      text: 'm2',
                                       style:
                                           context.textTheme.bodySmall?.copyWith(
                                         color: AppColor.kIconColorSecondary(

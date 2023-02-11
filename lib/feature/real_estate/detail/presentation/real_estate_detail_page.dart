@@ -1,18 +1,18 @@
-import 'dart:async';
-import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
@@ -22,24 +22,31 @@ import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:sliver_tools/sliver_tools.dart';
-import 'package:dartz/dartz.dart' as dartz;
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
-part './widgets/_w_info_house.dart';
+
 part './widgets/_w_amenities.dart';
-part './widgets/_w_direction.dart';
+
 part './widgets/_w_bottom_viewer_action.dart';
+
+part './widgets/_w_direction.dart';
+
+part './widgets/_w_info_house.dart';
+
 part './widgets/_w_location.dart';
 
 class RealEstateDetailPage extends StatefulWidget {
   final RealEstateDetailPageParams params;
+
   const RealEstateDetailPage({super.key, required this.params});
 
   @override
@@ -74,7 +81,9 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
         },
         builder: (context, state) {
           if (state != null && widget.params.estate.ownerId != state.id) {
-            return const _WBottomViewerAction();
+            return _WBottomViewerAction(
+              item: widget.params.estate,
+            );
           }
           return SizedBox.fromSize();
         },
@@ -169,14 +178,13 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                               AppSize.smallHeightDimens.verticalSpace,
                               Flexible(
                                 child: BlocProvider(
-                                  create: (context) =>
-                                      getIt.call<AddressBuilderCubit>()
-                                        ..onLoadAdress(
-                                            proviceId:
-                                                state.estate.provinceId ?? '',
-                                            wardId: state.estate.wardId ?? '',
-                                            districtId:
-                                                state.estate.districtId ?? ''),
+                                  create: (context) => getIt
+                                      .call<AddressBuilderCubit>()
+                                    ..onLoadAdress(
+                                      proviceId: state.estate.provinceId ?? '',
+                                      wardId: state.estate.wardId ?? '',
+                                      districtId: state.estate.districtId ?? '',
+                                    ),
                                   child: BlocBuilder<AddressBuilderCubit,
                                       AddressBuilderState>(
                                     builder: (context, addressState) {
@@ -187,10 +195,10 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                               .languageCode ==
                                           'vi';
                                       return Text(
-                                        '${state.estate.address ?? ''}'
-                                        ', ${isVi ? addressState.ward?.fullName ?? '' : addressState.ward?.fullNameEn ?? ''}'
-                                        ', ${isVi ? addressState.district?.fullName ?? '' : addressState.district?.fullNameEn ?? ''}'
-                                        ', ${isVi ? addressState.provice?.fullName ?? '' : addressState.provice?.fullNameEn ?? ''}',
+                                        (state.estate.address ?? '') +
+                                            (addressState
+                                                    .buildAddress(context) ??
+                                                ''),
                                         style: context.textTheme.bodyMedium
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
@@ -208,27 +216,41 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                     background: Stack(
                       children: [
                         Positioned.fill(
-                          child: PageView.builder(
-                            itemCount: widget.params.estate.images?.length,
-                            itemBuilder: (context, index) {
+                          child: CarouselSlider.builder(
+                            itemCount: widget.params.estate.images?.length ?? 0,
+                            itemBuilder: (context, index, realIndex) {
                               final image = widget.params.estate.images?[index];
                               return ImageCustom.network(
                                 image?.url ?? '',
                                 fit: BoxFit.cover,
                               );
                             },
+                            options: CarouselOptions(
+                              initialPage: 0,
+                              viewportFraction: 1,
+                              aspectRatio: 1,
+                              enableInfiniteScroll: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              scrollDirection: Axis.horizontal,
+                            ),
                           ),
                         ),
                         Positioned.fill(
-                            child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.transparent,
-                                AppColor.kNeutrals_.withOpacity(0.5),
-                              ],
+                            child: IgnorePointer(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.transparent,
+                                  AppColor.kNeutrals_.withOpacity(0.5),
+                                ],
+                              ),
                             ),
                           ),
                         ))

@@ -7,11 +7,15 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
+import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -153,53 +157,77 @@ class _AppCommonState extends State<_AppCommon> {
           log(state.toString());
           if (state is AuthStateUnknow || processAuthen.isCompleted) return;
           processAuthen.complete();
-        })
+        }),
       ],
-      child: GlobalLoaderOverlay(
-        child: ScreenUtilInit(
-          designSize: AppSize.designSize,
-          builder: (context, child) {
-            return GestureDetector(
-              onTap: () {
-                // Unfocus when tap out side
-                FocusScopeNode currentNode = FocusScope.of(context);
-                if (!currentNode.hasPrimaryFocus) {
-                  currentNode.unfocus();
-                  currentNode.requestFocus(FocusNode());
-                }
-              },
-              child: MaterialApp.router(
-                theme: AppTheme.light,
-                scrollBehavior: const ScrollBehaviorModified(),
-                debugShowCheckedModeBanner: false,
-                darkTheme: AppTheme.dark,
-                // themeMode: appBloc.state.mode,
-                themeMode: ThemeMode.light,
-                locale: appBloc.state.locale,
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                builder: (context, child) {
-                  return SplashPage(
-                    child: child ?? Container(),
-                    onLoaded: () async {
-                      await Future.wait([
-                        processIntital.future,
-                        processAuthen.future,
-                      ]);
-                    },
-                  );
-                },
-                supportedLocales: S.delegate.supportedLocales,
-                routeInformationParser: appRoute.routeInformationParser,
-                routerDelegate: appRoute.routerDelegate,
-                routeInformationProvider: appRoute.routeInformationProvider,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<RealEstateConfigBloc>()
+              ..add(
+                const RealEstateConfigEvent.onLoadConfig(),
               ),
-            );
-          },
+          ),
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<RealEstateFavoritesBloc>()
+              ..add(
+                const RealEstateFavoritesEvent.started(),
+              ),
+          ),
+          BlocProvider(
+            lazy: false,
+            create: (context) => getIt.call<MessageBloc>(
+                param1: context.read<AuthBloc>(),
+                param2: "${AppConfig.instance.baseUrl}/chat/ws")
+              ..add(const MessageStarted()),
+          ),
+        ],
+        child: GlobalLoaderOverlay(
+          child: ScreenUtilInit(
+            designSize: AppSize.designSize,
+            builder: (context, child) {
+              return GestureDetector(
+                onTap: () {
+                  // Unfocus when tap out side
+                  FocusScopeNode currentNode = FocusScope.of(context);
+                  if (!currentNode.hasPrimaryFocus) {
+                    currentNode.unfocus();
+                    currentNode.requestFocus(FocusNode());
+                  }
+                },
+                child: MaterialApp.router(
+                  theme: AppTheme.light,
+                  scrollBehavior: const ScrollBehaviorModified(),
+                  debugShowCheckedModeBanner: false,
+                  darkTheme: AppTheme.dark,
+                  themeMode: appBloc.state.mode,
+                  locale: appBloc.state.locale,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  builder: (context, child) {
+                    return SplashPage(
+                      child: child ?? Container(),
+                      onLoaded: () async {
+                        await Future.wait([
+                          processIntital.future,
+                          processAuthen.future,
+                        ]);
+                      },
+                    );
+                  },
+                  supportedLocales: S.delegate.supportedLocales,
+                  routeInformationParser: appRoute.routeInformationParser,
+                  routerDelegate: appRoute.routerDelegate,
+                  routeInformationProvider: appRoute.routeInformationProvider,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

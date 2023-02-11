@@ -21,8 +21,10 @@ RealEstateTypeResponse _$RealEstateTypeResponseFromJson(
 
 /// @nodoc
 mixin _$RealEstateTypeResponse {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'is_rent')
   bool? get isRent => throw _privateConstructorUsedError;
 
@@ -36,8 +38,9 @@ abstract class $RealEstateTypeResponseCopyWith<$Res> {
   factory $RealEstateTypeResponseCopyWith(RealEstateTypeResponse value,
           $Res Function(RealEstateTypeResponse) then) =
       _$RealEstateTypeResponseCopyWithImpl<$Res, RealEstateTypeResponse>;
+
   @useResult
-  $Res call({int? id, String? name, @JsonKey(name: 'is_rent') bool? isRent});
+  $Res call({int id, String name, @JsonKey(name: 'is_rent') bool? isRent});
 }
 
 /// @nodoc
@@ -54,19 +57,19 @@ class _$RealEstateTypeResponseCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? isRent = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       isRent: freezed == isRent
           ? _value.isRent
           : isRent // ignore: cast_nullable_to_non_nullable
@@ -81,9 +84,10 @@ abstract class _$$_RealEstateTypeResponseCopyWith<$Res>
   factory _$$_RealEstateTypeResponseCopyWith(_$_RealEstateTypeResponse value,
           $Res Function(_$_RealEstateTypeResponse) then) =
       __$$_RealEstateTypeResponseCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({int? id, String? name, @JsonKey(name: 'is_rent') bool? isRent});
+  $Res call({int id, String name, @JsonKey(name: 'is_rent') bool? isRent});
 }
 
 /// @nodoc
@@ -98,19 +102,19 @@ class __$$_RealEstateTypeResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? isRent = freezed,
   }) {
     return _then(_$_RealEstateTypeResponse(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       isRent: freezed == isRent
           ? _value.isRent
           : isRent // ignore: cast_nullable_to_non_nullable
@@ -123,15 +127,17 @@ class __$$_RealEstateTypeResponseCopyWithImpl<$Res>
 @JsonSerializable(createToJson: false)
 class _$_RealEstateTypeResponse implements _RealEstateTypeResponse {
   _$_RealEstateTypeResponse(
-      {this.id, this.name, @JsonKey(name: 'is_rent') this.isRent});
+      {required this.id,
+      required this.name,
+      @JsonKey(name: 'is_rent') this.isRent});
 
   factory _$_RealEstateTypeResponse.fromJson(Map<String, dynamic> json) =>
       _$$_RealEstateTypeResponseFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'is_rent')
   final bool? isRent;
@@ -165,8 +171,8 @@ class _$_RealEstateTypeResponse implements _RealEstateTypeResponse {
 
 abstract class _RealEstateTypeResponse implements RealEstateTypeResponse {
   factory _RealEstateTypeResponse(
-          {final int? id,
-          final String? name,
+          {required final int id,
+          required final String name,
           @JsonKey(name: 'is_rent') final bool? isRent}) =
       _$_RealEstateTypeResponse;
 
@@ -174,9 +180,11 @@ abstract class _RealEstateTypeResponse implements RealEstateTypeResponse {
       _$_RealEstateTypeResponse.fromJson;
 
   @override
-  int? get id;
+  int get id;
+
   @override
-  String? get name;
+  String get name;
+
   @override
   @JsonKey(name: 'is_rent')
   bool? get isRent;

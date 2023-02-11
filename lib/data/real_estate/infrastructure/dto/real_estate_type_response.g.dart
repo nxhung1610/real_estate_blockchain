@@ -9,7 +9,7 @@ part of 'real_estate_type_response.dart';
 _$_RealEstateTypeResponse _$$_RealEstateTypeResponseFromJson(
         Map<String, dynamic> json) =>
     _$_RealEstateTypeResponse(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
+      id: json['id'] as int,
+      name: json['name'] as String,
       isRent: json['is_rent'] as bool?,
     );

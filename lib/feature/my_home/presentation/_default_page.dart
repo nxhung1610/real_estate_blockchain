@@ -62,7 +62,14 @@ class __DefaultPageState extends State<_DefaultPage> {
               )),
             ),
             onPressed: () {
-              context.push($appRoute.homeAddNewProperty);
+              context.push($appRoute.homeAddNewProperty,
+                  extra: HouseAddNewPageParams(
+                onSucces: () {
+                  context
+                      .read<MyHomeBloc>()
+                      .add(const MyHomeEvent.onLoadedData());
+                },
+              ));
             },
             child: Row(
               mainAxisSize: MainAxisSize.min,

@@ -5,6 +5,8 @@ import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/presentation/house_add_new_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
+import '../presentation/model/house_add_new_page_params.dart';
+
 class HouseAddNewRoute extends BaseRoute {
   HouseAddNewRoute(super.root, super.path);
 
@@ -15,7 +17,9 @@ class HouseAddNewRoute extends BaseRoute {
           builder: (context, state) {
             return BlocProvider(
               create: (context) => getIt.call<HouseAddNewBloc>(),
-              child: const HouseAddNewPage(),
+              child: HouseAddNewPage(
+                params: state.extra! as HouseAddNewPageParams,
+              ),
             );
           },
         )

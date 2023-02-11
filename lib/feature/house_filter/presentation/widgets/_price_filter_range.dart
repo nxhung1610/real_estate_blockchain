@@ -19,12 +19,16 @@ class _PriceFilterRange extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Text(
-                r'$200-$15,000',
-                style: context.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: AppColor.kPrimary1,
-                ),
+              BlocBuilder<HouseFilterBloc, HouseFilterState>(
+                builder: (context, state) {
+                  return Text(
+                    '${NumberFormat.currency(locale: "vi_VN", symbol: 'đ').format(state.priceStart)}-${NumberFormat.currency(locale: "vi_VN", symbol: 'đ').format(state.priceEnd)}',
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.kPrimary1,
+                    ),
+                  );
+                },
               )
             ],
           ),
@@ -39,11 +43,27 @@ class _PriceFilterRange extends StatelessWidget {
                 thumbWidth: AppSize.extraWidthDimens,
               ),
             ),
-            child: RangeSlider(
-              values: const RangeValues(0, 80),
-              min: 0,
-              max: 100,
-              onChanged: (value) {},
+            child: BlocBuilder<HouseFilterBloc, HouseFilterState>(
+              builder: (context, state) {
+                return RangeSlider(
+                  values: RangeValues(
+                      state.priceStart.toDouble(), state.priceEnd.toDouble()),
+                  min: 0,
+                  max: state.priceMax.toDouble(),
+                  onChanged: (value) {
+                    context.read<HouseFilterBloc>().add(
+                          HouseFilterEvent.onPriceRangeStartChanged(
+                            price: value.start,
+                          ),
+                        );
+                    context.read<HouseFilterBloc>().add(
+                          HouseFilterEvent.onPriceRangeEndChanged(
+                            price: value.end,
+                          ),
+                        );
+                  },
+                );
+              },
             ),
           )
         ]

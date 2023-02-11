@@ -38,7 +38,16 @@ class _EmptyPage extends StatelessWidget {
                 ButtonApp(
                   label: s.myHomeEmptyBtnAdd,
                   onPressed: () {
-                    context.push($appRoute.homeAddNewProperty);
+                    context.push(
+                      $appRoute.homeAddNewProperty,
+                      extra: HouseAddNewPageParams(
+                        onSucces: () {
+                          context
+                              .read<MyHomeBloc>()
+                              .add(const MyHomeEvent.onLoadedData());
+                        },
+                      ),
+                    );
                   },
                   type: ButtonType.primary,
                   style: ButtonScaleStyle.tight,

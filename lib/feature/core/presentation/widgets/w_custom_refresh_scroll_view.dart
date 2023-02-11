@@ -34,6 +34,7 @@ class _WCustomRefreshScrollViewState extends State<WCustomRefreshScrollView>
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         ...widget.headers,
         CupertinoSliverRefreshControl(

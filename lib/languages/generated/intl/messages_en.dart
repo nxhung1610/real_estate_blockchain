@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "amenities": MessageLookupByLibrary.simpleMessage("Amenities"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An error occurred"),
+        "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
@@ -59,7 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
+        "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
@@ -81,12 +84,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
         "garage": MessageLookupByLibrary.simpleMessage("Garage"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
+        "ground": MessageLookupByLibrary.simpleMessage("Ground"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Legal Documents"),
+        "locale": MessageLookupByLibrary.simpleMessage("Location"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "loginDontHaveAnAccount":
@@ -98,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign in to your account"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "max": MessageLookupByLibrary.simpleMessage("Max"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "min": MessageLookupByLibrary.simpleMessage("Min"),
         "myHome": MessageLookupByLibrary.simpleMessage("My Home"),
         "myHomeEmptyBtnAdd":
             MessageLookupByLibrary.simpleMessage("Add property"),
@@ -131,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleGeneral": MessageLookupByLibrary.simpleMessage("General"),
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Home search"),
+        "other": MessageLookupByLibrary.simpleMessage("other"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
@@ -141,6 +151,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
+        "propertyFacts": MessageLookupByLibrary.simpleMessage("Property Facts"),
+        "propertyType": MessageLookupByLibrary.simpleMessage("Property Type"),
         "province": MessageLookupByLibrary.simpleMessage("Province, City"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Private house"),
@@ -160,6 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "You already have an account?"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Schedule Tour"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -171,26 +184,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "southEast": MessageLookupByLibrary.simpleMessage("South East"),
         "southWest": MessageLookupByLibrary.simpleMessage("South West"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
-        "square": MessageLookupByLibrary.simpleMessage("Square"),
-        "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
-        "structure": MessageLookupByLibrary.simpleMessage("Structure"),
-        "title": MessageLookupByLibrary.simpleMessage("Title"),
-        "titleHint": MessageLookupByLibrary.simpleMessage(
-            "Sale private house at Cau Giay"),
-        "toProceedeYouNeedToEnableThePermissionsAbove":
-            MessageLookupByLibrary.simpleMessage(
-                "To proceede, you need to enable the permissions above"),
-        "unableToLoadData":
-            MessageLookupByLibrary.simpleMessage("Unable to load data"),
-        "unit": MessageLookupByLibrary.simpleMessage("Unit"),
-        "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
-            "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
-        "view": MessageLookupByLibrary.simpleMessage("View"),
-        "wards": MessageLookupByLibrary.simpleMessage("Wards"),
-        "west": MessageLookupByLibrary.simpleMessage("West"),
-        "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
-        "youNeedPermissionToDisplayNotifications":
-            MessageLookupByLibrary.simpleMessage(
-                "You need permission to display notifications")
-      };
+    "square": MessageLookupByLibrary.simpleMessage("Square"),
+    "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
+    "structure": MessageLookupByLibrary.simpleMessage("Structure"),
+    "title": MessageLookupByLibrary.simpleMessage("Title"),
+    "titleHint": MessageLookupByLibrary.simpleMessage(
+        "Sale private house at Cau Giay"),
+    "toProceedeYouNeedToEnableThePermissionsAbove":
+    MessageLookupByLibrary.simpleMessage(
+        "To proceede, you need to enable the permissions above"),
+    "townhouse": MessageLookupByLibrary.simpleMessage("Townhouse"),
+    "transactionDetail":
+    MessageLookupByLibrary.simpleMessage("Transaction Detail"),
+    "unableToLoadData":
+    MessageLookupByLibrary.simpleMessage("Unable to load data"),
+    "unit": MessageLookupByLibrary.simpleMessage("Unit"),
+    "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
+        "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
+    "view": MessageLookupByLibrary.simpleMessage("View"),
+    "villa": MessageLookupByLibrary.simpleMessage("Villa"),
+    "wards": MessageLookupByLibrary.simpleMessage("Wards"),
+    "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
+    "west": MessageLookupByLibrary.simpleMessage("West"),
+    "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
+    "youNeedPermissionToDisplayNotifications":
+    MessageLookupByLibrary.simpleMessage(
+        "You need permission to display notifications")
+  };
 }

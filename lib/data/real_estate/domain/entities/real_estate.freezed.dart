@@ -81,6 +81,8 @@ abstract class $RealEstateCopyWith<$Res> {
       List<Amenity>? amenities,
       List<AppImage>? images,
       String name});
+
+  $RealEstateTypeCopyWith<$Res>? get realEstateType;
 }
 
 /// @nodoc
@@ -230,6 +232,18 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
               as String,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateTypeCopyWith<$Res>? get realEstateType {
+    if (_value.realEstateType == null) {
+      return null;
+    }
+
+    return $RealEstateTypeCopyWith<$Res>(_value.realEstateType!, (value) {
+      return _then(_value.copyWith(realEstateType: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -267,6 +281,9 @@ abstract class _$$_RealEstateCopyWith<$Res>
       List<Amenity>? amenities,
       List<AppImage>? images,
       String name});
+
+  @override
+  $RealEstateTypeCopyWith<$Res>? get realEstateType;
 }
 
 /// @nodoc

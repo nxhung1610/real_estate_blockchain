@@ -20,6 +20,8 @@ mixin _$SearchState {
   Status get status => throw _privateConstructorUsedError;
   List<RealEstate> get estates => throw _privateConstructorUsedError;
 
+  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $SearchStateCopyWith<SearchState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -30,10 +32,17 @@ abstract class $SearchStateCopyWith<$Res> {
   factory $SearchStateCopyWith(
           SearchState value, $Res Function(SearchState) then) =
       _$SearchStateCopyWithImpl<$Res, SearchState>;
+
   @useResult
-  $Res call({String? keyword, Status status, List<RealEstate> estates});
+  $Res call(
+      {String? keyword,
+      Status status,
+      List<RealEstate> estates,
+      RealEstateFilterInput? filter});
 
   $StatusCopyWith<$Res> get status;
+
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
 }
 
 /// @nodoc
@@ -52,6 +61,7 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
     Object? keyword = freezed,
     Object? status = null,
     Object? estates = null,
+    Object? filter = freezed,
   }) {
     return _then(_value.copyWith(
       keyword: freezed == keyword
@@ -66,6 +76,10 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.estates
           : estates // ignore: cast_nullable_to_non_nullable
               as List<RealEstate>,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
     ) as $Val);
   }
 
@@ -76,6 +90,18 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
       return _then(_value.copyWith(status: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
+
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -84,12 +110,20 @@ abstract class _$$_SearchStateCopyWith<$Res>
   factory _$$_SearchStateCopyWith(
           _$_SearchState value, $Res Function(_$_SearchState) then) =
       __$$_SearchStateCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({String? keyword, Status status, List<RealEstate> estates});
+  $Res call(
+      {String? keyword,
+      Status status,
+      List<RealEstate> estates,
+      RealEstateFilterInput? filter});
 
   @override
   $StatusCopyWith<$Res> get status;
+
+  @override
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
 }
 
 /// @nodoc
@@ -106,6 +140,7 @@ class __$$_SearchStateCopyWithImpl<$Res>
     Object? keyword = freezed,
     Object? status = null,
     Object? estates = null,
+    Object? filter = freezed,
   }) {
     return _then(_$_SearchState(
       keyword: freezed == keyword
@@ -120,6 +155,10 @@ class __$$_SearchStateCopyWithImpl<$Res>
           ? _value._estates
           : estates // ignore: cast_nullable_to_non_nullable
               as List<RealEstate>,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
     ));
   }
 }
@@ -130,7 +169,8 @@ class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {this.keyword,
       this.status = const Status.idle(),
-      final List<RealEstate> estates = const []})
+      final List<RealEstate> estates = const [],
+      this.filter})
       : _estates = estates;
 
   @override
@@ -139,6 +179,7 @@ class _$_SearchState implements _SearchState {
   @JsonKey()
   final Status status;
   final List<RealEstate> _estates;
+
   @override
   @JsonKey()
   List<RealEstate> get estates {
@@ -148,8 +189,11 @@ class _$_SearchState implements _SearchState {
   }
 
   @override
+  final RealEstateFilterInput? filter;
+
+  @override
   String toString() {
-    return 'SearchState(keyword: $keyword, status: $status, estates: $estates)';
+    return 'SearchState(keyword: $keyword, status: $status, estates: $estates, filter: $filter)';
   }
 
   @override
@@ -159,12 +203,13 @@ class _$_SearchState implements _SearchState {
             other is _$_SearchState &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._estates, _estates));
+            const DeepCollectionEquality().equals(other._estates, _estates) &&
+            (identical(other.filter, filter) || other.filter == filter));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, keyword, status,
-      const DeepCollectionEquality().hash(_estates));
+      const DeepCollectionEquality().hash(_estates), filter);
 
   @JsonKey(ignore: true)
   @override
@@ -177,14 +222,21 @@ abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {final String? keyword,
       final Status status,
-      final List<RealEstate> estates}) = _$_SearchState;
+      final List<RealEstate> estates,
+      final RealEstateFilterInput? filter}) = _$_SearchState;
 
   @override
   String? get keyword;
+
   @override
   Status get status;
+
   @override
   List<RealEstate> get estates;
+
+  @override
+  RealEstateFilterInput? get filter;
+
   @override
   @JsonKey(ignore: true)
   _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
@@ -197,18 +249,21 @@ mixin _$SearchEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(String value) onKeyChanged,
+    required TResult Function(RealEstateFilterInput filter) applyFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(String value)? onKeyChanged,
+    TResult? Function(RealEstateFilterInput filter)? applyFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(String value)? onKeyChanged,
+    TResult Function(RealEstateFilterInput filter)? applyFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -216,18 +271,21 @@ mixin _$SearchEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchEventOnStarted value) onStarted,
     required TResult Function(SearchEventOnKeyChanged value) onKeyChanged,
+    required TResult Function(SearchEventApplyFilter value) applyFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SearchEventOnStarted value)? onStarted,
     TResult? Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult? Function(SearchEventApplyFilter value)? applyFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchEventOnStarted value)? onStarted,
     TResult Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult Function(SearchEventApplyFilter value)? applyFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -291,6 +349,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(String value) onKeyChanged,
+    required TResult Function(RealEstateFilterInput filter) applyFilter,
   }) {
     return onStarted();
   }
@@ -300,6 +359,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(String value)? onKeyChanged,
+    TResult? Function(RealEstateFilterInput filter)? applyFilter,
   }) {
     return onStarted?.call();
   }
@@ -309,6 +369,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(String value)? onKeyChanged,
+    TResult Function(RealEstateFilterInput filter)? applyFilter,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -322,6 +383,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchEventOnStarted value) onStarted,
     required TResult Function(SearchEventOnKeyChanged value) onKeyChanged,
+    required TResult Function(SearchEventApplyFilter value) applyFilter,
   }) {
     return onStarted(this);
   }
@@ -331,6 +393,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SearchEventOnStarted value)? onStarted,
     TResult? Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult? Function(SearchEventApplyFilter value)? applyFilter,
   }) {
     return onStarted?.call(this);
   }
@@ -340,6 +403,7 @@ class _$_SearchEventOnStarted implements _SearchEventOnStarted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchEventOnStarted value)? onStarted,
     TResult Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult Function(SearchEventApplyFilter value)? applyFilter,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -420,6 +484,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(String value) onKeyChanged,
+    required TResult Function(RealEstateFilterInput filter) applyFilter,
   }) {
     return onKeyChanged(value);
   }
@@ -429,6 +494,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(String value)? onKeyChanged,
+    TResult? Function(RealEstateFilterInput filter)? applyFilter,
   }) {
     return onKeyChanged?.call(value);
   }
@@ -438,6 +504,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(String value)? onKeyChanged,
+    TResult Function(RealEstateFilterInput filter)? applyFilter,
     required TResult orElse(),
   }) {
     if (onKeyChanged != null) {
@@ -451,6 +518,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchEventOnStarted value) onStarted,
     required TResult Function(SearchEventOnKeyChanged value) onKeyChanged,
+    required TResult Function(SearchEventApplyFilter value) applyFilter,
   }) {
     return onKeyChanged(this);
   }
@@ -460,6 +528,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SearchEventOnStarted value)? onStarted,
     TResult? Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult? Function(SearchEventApplyFilter value)? applyFilter,
   }) {
     return onKeyChanged?.call(this);
   }
@@ -469,6 +538,7 @@ class _$SearchEventOnKeyChanged implements SearchEventOnKeyChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchEventOnStarted value)? onStarted,
     TResult Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult Function(SearchEventApplyFilter value)? applyFilter,
     required TResult orElse(),
   }) {
     if (onKeyChanged != null) {
@@ -483,7 +553,161 @@ abstract class SearchEventOnKeyChanged implements SearchEvent {
       _$SearchEventOnKeyChanged;
 
   String get value;
+
   @JsonKey(ignore: true)
   _$$SearchEventOnKeyChangedCopyWith<_$SearchEventOnKeyChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchEventApplyFilterCopyWith<$Res> {
+  factory _$$SearchEventApplyFilterCopyWith(_$SearchEventApplyFilter value,
+          $Res Function(_$SearchEventApplyFilter) then) =
+      __$$SearchEventApplyFilterCopyWithImpl<$Res>;
+
+  @useResult
+  $Res call({RealEstateFilterInput filter});
+
+  $RealEstateFilterInputCopyWith<$Res> get filter;
+}
+
+/// @nodoc
+class __$$SearchEventApplyFilterCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchEventApplyFilter>
+    implements _$$SearchEventApplyFilterCopyWith<$Res> {
+  __$$SearchEventApplyFilterCopyWithImpl(_$SearchEventApplyFilter _value,
+      $Res Function(_$SearchEventApplyFilter) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filter = null,
+  }) {
+    return _then(_$SearchEventApplyFilter(
+      null == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res> get filter {
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter, (value) {
+      return _then(_value.copyWith(filter: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SearchEventApplyFilter implements SearchEventApplyFilter {
+  const _$SearchEventApplyFilter(this.filter);
+
+  @override
+  final RealEstateFilterInput filter;
+
+  @override
+  String toString() {
+    return 'SearchEvent.applyFilter(filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchEventApplyFilter &&
+            (identical(other.filter, filter) || other.filter == filter));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, filter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchEventApplyFilterCopyWith<_$SearchEventApplyFilter> get copyWith =>
+      __$$SearchEventApplyFilterCopyWithImpl<_$SearchEventApplyFilter>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onStarted,
+    required TResult Function(String value) onKeyChanged,
+    required TResult Function(RealEstateFilterInput filter) applyFilter,
+  }) {
+    return applyFilter(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onStarted,
+    TResult? Function(String value)? onKeyChanged,
+    TResult? Function(RealEstateFilterInput filter)? applyFilter,
+  }) {
+    return applyFilter?.call(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onStarted,
+    TResult Function(String value)? onKeyChanged,
+    TResult Function(RealEstateFilterInput filter)? applyFilter,
+    required TResult orElse(),
+  }) {
+    if (applyFilter != null) {
+      return applyFilter(filter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchEventOnStarted value) onStarted,
+    required TResult Function(SearchEventOnKeyChanged value) onKeyChanged,
+    required TResult Function(SearchEventApplyFilter value) applyFilter,
+  }) {
+    return applyFilter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SearchEventOnStarted value)? onStarted,
+    TResult? Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult? Function(SearchEventApplyFilter value)? applyFilter,
+  }) {
+    return applyFilter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchEventOnStarted value)? onStarted,
+    TResult Function(SearchEventOnKeyChanged value)? onKeyChanged,
+    TResult Function(SearchEventApplyFilter value)? applyFilter,
+    required TResult orElse(),
+  }) {
+    if (applyFilter != null) {
+      return applyFilter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchEventApplyFilter implements SearchEvent {
+  const factory SearchEventApplyFilter(final RealEstateFilterInput filter) =
+      _$SearchEventApplyFilter;
+
+  RealEstateFilterInput get filter;
+
+  @JsonKey(ignore: true)
+  _$$SearchEventApplyFilterCopyWith<_$SearchEventApplyFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }

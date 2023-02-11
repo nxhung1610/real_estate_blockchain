@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "amenities": MessageLookupByLibrary.simpleMessage("Tiện nghi"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra"),
+        "apartment": MessageLookupByLibrary.simpleMessage("Căn hộ"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
         "appName": MessageLookupByLibrary.simpleMessage("Realix"),
@@ -58,7 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
+        "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
@@ -80,12 +83,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
         "garage": MessageLookupByLibrary.simpleMessage("Nhà để xe"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
+        "ground": MessageLookupByLibrary.simpleMessage("Đất"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Giấy tờ pháp lý"),
+        "locale": MessageLookupByLibrary.simpleMessage("Định vị"),
         "location": MessageLookupByLibrary.simpleMessage("Địa điểm"),
         "logOut": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "loginDontHaveAnAccount":
@@ -97,7 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng nhập vào tài khoản"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Mừng trở lại!"),
+        "max": MessageLookupByLibrary.simpleMessage("Tối đa"),
         "message": MessageLookupByLibrary.simpleMessage("Tin nhắn"),
+        "min": MessageLookupByLibrary.simpleMessage("Tối thiểu"),
         "myHome": MessageLookupByLibrary.simpleMessage("Nhà của tôi"),
         "myHomeEmptyBtnAdd":
             MessageLookupByLibrary.simpleMessage("Thêm tài sản"),
@@ -128,6 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleGeneral": MessageLookupByLibrary.simpleMessage("Chung"),
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Tìm nhà"),
+        "other": MessageLookupByLibrary.simpleMessage("Khác"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
@@ -138,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
+        "propertyFacts":
+            MessageLookupByLibrary.simpleMessage("Thông tin tài sản"),
+        "propertyType": MessageLookupByLibrary.simpleMessage("Loại tài sản"),
         "province": MessageLookupByLibrary.simpleMessage("Tỉnh, Thành phố"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Nhà riêng"),
@@ -156,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
         "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
+        "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Tham quan"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
@@ -177,13 +191,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "toProceedeYouNeedToEnableThePermissionsAbove":
             MessageLookupByLibrary.simpleMessage(
                 "Để tiếp tục, bạn cần bật các quyền ở trên"),
+        "townhouse": MessageLookupByLibrary.simpleMessage("Nhà phố"),
+        "transactionDetail":
+            MessageLookupByLibrary.simpleMessage("Chi tiết giao dịch"),
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),
+        "villa": MessageLookupByLibrary.simpleMessage("Biệt thự"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
+        "warehouse": MessageLookupByLibrary.simpleMessage("Kho"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),
         "writeAReply": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
         "youNeedPermissionToDisplayNotifications":

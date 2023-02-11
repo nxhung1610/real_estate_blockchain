@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -1260,11 +1261,181 @@ class S {
     );
   }
 
+  /// `Property Facts`
+  String get propertyFacts {
+    return Intl.message(
+      'Property Facts',
+      name: 'propertyFacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Min`
+  String get min {
+    return Intl.message(
+      'Min',
+      name: 'min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Max`
+  String get max {
+    return Intl.message(
+      'Max',
+      name: 'max',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property Type`
+  String get propertyType {
+    return Intl.message(
+      'Property Type',
+      name: 'propertyType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apartment`
+  String get apartment {
+    return Intl.message(
+      'Apartment',
+      name: 'apartment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `House`
+  String get house {
+    return Intl.message(
+      'House',
+      name: 'house',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Villa`
+  String get villa {
+    return Intl.message(
+      'Villa',
+      name: 'villa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Townhouse`
+  String get townhouse {
+    return Intl.message(
+      'Townhouse',
+      name: 'townhouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ground`
+  String get ground {
+    return Intl.message(
+      'Ground',
+      name: 'ground',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Land`
+  String get land {
+    return Intl.message(
+      'Land',
+      name: 'land',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resort`
+  String get resort {
+    return Intl.message(
+      'Resort',
+      name: 'resort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Condotel`
+  String get condotel {
+    return Intl.message(
+      'Condotel',
+      name: 'condotel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warehouse`
+  String get warehouse {
+    return Intl.message(
+      'Warehouse',
+      name: 'warehouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `other`
+  String get other {
+    return Intl.message(
+      'other',
+      name: 'other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get locale {
+    return Intl.message(
+      'Location',
+      name: 'locale',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Logout`
   String get logOut {
     return Intl.message(
       'Logout',
       name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get contact {
+    return Intl.message(
+      'Contact',
+      name: 'contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transaction Detail`
+  String get transactionDetail {
+    return Intl.message(
+      'Transaction Detail',
+      name: 'transactionDetail',
       desc: '',
       args: [],
     );

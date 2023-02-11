@@ -20,8 +20,9 @@ AmenityResponse _$AmenityResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AmenityResponse {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AmenityResponseCopyWith<AmenityResponse> get copyWith =>
@@ -33,8 +34,9 @@ abstract class $AmenityResponseCopyWith<$Res> {
   factory $AmenityResponseCopyWith(
           AmenityResponse value, $Res Function(AmenityResponse) then) =
       _$AmenityResponseCopyWithImpl<$Res, AmenityResponse>;
+
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -50,18 +52,18 @@ class _$AmenityResponseCopyWithImpl<$Res, $Val extends AmenityResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -72,9 +74,10 @@ abstract class _$$_AmenityResponseCopyWith<$Res>
   factory _$$_AmenityResponseCopyWith(
           _$_AmenityResponse value, $Res Function(_$_AmenityResponse) then) =
       __$$_AmenityResponseCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -88,18 +91,18 @@ class __$$_AmenityResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_$_AmenityResponse(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -107,15 +110,15 @@ class __$$_AmenityResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable(createToJson: false)
 class _$_AmenityResponse implements _AmenityResponse {
-  _$_AmenityResponse({this.id, this.name});
+  _$_AmenityResponse({required this.id, required this.name});
 
   factory _$_AmenityResponse.fromJson(Map<String, dynamic> json) =>
       _$$_AmenityResponseFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString() {
@@ -143,16 +146,18 @@ class _$_AmenityResponse implements _AmenityResponse {
 }
 
 abstract class _AmenityResponse implements AmenityResponse {
-  factory _AmenityResponse({final int? id, final String? name}) =
-      _$_AmenityResponse;
+  factory _AmenityResponse(
+      {required final int id, required final String name}) = _$_AmenityResponse;
 
   factory _AmenityResponse.fromJson(Map<String, dynamic> json) =
       _$_AmenityResponse.fromJson;
 
   @override
-  int? get id;
+  int get id;
+
   @override
-  String? get name;
+  String get name;
+
   @override
   @JsonKey(ignore: true)
   _$$_AmenityResponseCopyWith<_$_AmenityResponse> get copyWith =>

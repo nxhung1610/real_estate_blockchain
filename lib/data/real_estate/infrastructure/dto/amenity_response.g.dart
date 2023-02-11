@@ -8,6 +8,6 @@ part of 'amenity_response.dart';
 
 _$_AmenityResponse _$$_AmenityResponseFromJson(Map<String, dynamic> json) =>
     _$_AmenityResponse(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
+      id: json['id'] as int,
+      name: json['name'] as String,
     );

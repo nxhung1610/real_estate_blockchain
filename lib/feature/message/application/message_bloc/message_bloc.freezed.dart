@@ -22,6 +22,7 @@ mixin _$MessageEvent {
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,6 +30,7 @@ mixin _$MessageEvent {
     TResult? Function()? started,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,7 @@ mixin _$MessageEvent {
     TResult Function()? started,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$MessageEvent {
     required TResult Function(MessageStarted value) started,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +55,7 @@ mixin _$MessageEvent {
     TResult? Function(MessageStarted value)? started,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$MessageEvent {
     TResult Function(MessageStarted value)? started,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +129,7 @@ class _$MessageStarted implements MessageStarted {
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
   }) {
     return started();
   }
@@ -133,6 +140,7 @@ class _$MessageStarted implements MessageStarted {
     TResult? Function()? started,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
   }) {
     return started?.call();
   }
@@ -143,6 +151,7 @@ class _$MessageStarted implements MessageStarted {
     TResult Function()? started,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -157,6 +166,7 @@ class _$MessageStarted implements MessageStarted {
     required TResult Function(MessageStarted value) started,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
   }) {
     return started(this);
   }
@@ -167,6 +177,7 @@ class _$MessageStarted implements MessageStarted {
     TResult? Function(MessageStarted value)? started,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
   }) {
     return started?.call(this);
   }
@@ -177,6 +188,7 @@ class _$MessageStarted implements MessageStarted {
     TResult Function(MessageStarted value)? started,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -285,6 +297,7 @@ class _$MessageSent implements MessageSent {
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
   }) {
     return messageSent(message, room);
   }
@@ -295,6 +308,7 @@ class _$MessageSent implements MessageSent {
     TResult? Function()? started,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
   }) {
     return messageSent?.call(message, room);
   }
@@ -305,6 +319,7 @@ class _$MessageSent implements MessageSent {
     TResult Function()? started,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (messageSent != null) {
@@ -319,6 +334,7 @@ class _$MessageSent implements MessageSent {
     required TResult Function(MessageStarted value) started,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
   }) {
     return messageSent(this);
   }
@@ -329,6 +345,7 @@ class _$MessageSent implements MessageSent {
     TResult? Function(MessageStarted value)? started,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
   }) {
     return messageSent?.call(this);
   }
@@ -339,6 +356,7 @@ class _$MessageSent implements MessageSent {
     TResult Function(MessageStarted value)? started,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (messageSent != null) {
@@ -438,6 +456,7 @@ class _$MessageReceived implements MessageReceived {
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
   }) {
     return messageReceived(newMessage);
   }
@@ -448,6 +467,7 @@ class _$MessageReceived implements MessageReceived {
     TResult? Function()? started,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
   }) {
     return messageReceived?.call(newMessage);
   }
@@ -458,6 +478,7 @@ class _$MessageReceived implements MessageReceived {
     TResult Function()? started,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (messageReceived != null) {
@@ -472,6 +493,7 @@ class _$MessageReceived implements MessageReceived {
     required TResult Function(MessageStarted value) started,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
   }) {
     return messageReceived(this);
   }
@@ -482,6 +504,7 @@ class _$MessageReceived implements MessageReceived {
     TResult? Function(MessageStarted value)? started,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
   }) {
     return messageReceived?.call(this);
   }
@@ -492,6 +515,7 @@ class _$MessageReceived implements MessageReceived {
     TResult Function(MessageStarted value)? started,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
     required TResult orElse(),
   }) {
     if (messageReceived != null) {
@@ -506,15 +530,180 @@ abstract class MessageReceived implements MessageEvent {
       _$MessageReceived;
 
   ChatMessage get newMessage;
+
   @JsonKey(ignore: true)
   _$$MessageReceivedCopyWith<_$MessageReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$MessageEventOnCreateRoomCopyWith<$Res> {
+  factory _$$MessageEventOnCreateRoomCopyWith(_$MessageEventOnCreateRoom value,
+          $Res Function(_$MessageEventOnCreateRoom) then) =
+      __$$MessageEventOnCreateRoomCopyWithImpl<$Res>;
+
+  @useResult
+  $Res call({int senderId, int ownerId});
+}
+
+/// @nodoc
+class __$$MessageEventOnCreateRoomCopyWithImpl<$Res>
+    extends _$MessageEventCopyWithImpl<$Res, _$MessageEventOnCreateRoom>
+    implements _$$MessageEventOnCreateRoomCopyWith<$Res> {
+  __$$MessageEventOnCreateRoomCopyWithImpl(_$MessageEventOnCreateRoom _value,
+      $Res Function(_$MessageEventOnCreateRoom) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? senderId = null,
+    Object? ownerId = null,
+  }) {
+    return _then(_$MessageEventOnCreateRoom(
+      null == senderId
+          ? _value.senderId
+          : senderId // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
+  const _$MessageEventOnCreateRoom(this.senderId, this.ownerId);
+
+  @override
+  final int senderId;
+  @override
+  final int ownerId;
+
+  @override
+  String toString() {
+    return 'MessageEvent.onCreateRoom(senderId: $senderId, ownerId: $ownerId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MessageEventOnCreateRoom &&
+            (identical(other.senderId, senderId) ||
+                other.senderId == senderId) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, senderId, ownerId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MessageEventOnCreateRoomCopyWith<_$MessageEventOnCreateRoom>
+      get copyWith =>
+          __$$MessageEventOnCreateRoomCopyWithImpl<_$MessageEventOnCreateRoom>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(ChatMessageRequest message, ChatRoom room)
+        messageSent,
+    required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
+  }) {
+    return onCreateRoom(senderId, ownerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
+  }) {
+    return onCreateRoom?.call(senderId, ownerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
+    required TResult orElse(),
+  }) {
+    if (onCreateRoom != null) {
+      return onCreateRoom(senderId, ownerId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageSent value) messageSent,
+    required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
+  }) {
+    return onCreateRoom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageSent value)? messageSent,
+    TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
+  }) {
+    return onCreateRoom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MessageStarted value)? started,
+    TResult Function(MessageSent value)? messageSent,
+    TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
+    required TResult orElse(),
+  }) {
+    if (onCreateRoom != null) {
+      return onCreateRoom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MessageEventOnCreateRoom implements MessageEvent {
+  const factory MessageEventOnCreateRoom(
+      final int senderId, final int ownerId) = _$MessageEventOnCreateRoom;
+
+  int get senderId;
+
+  int get ownerId;
+
+  @JsonKey(ignore: true)
+  _$$MessageEventOnCreateRoomCopyWith<_$MessageEventOnCreateRoom>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MessageState {
   List<ChatRoom> get rooms => throw _privateConstructorUsedError;
+
   Status get status => throw _privateConstructorUsedError;
+
   ChatMessage? get newMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

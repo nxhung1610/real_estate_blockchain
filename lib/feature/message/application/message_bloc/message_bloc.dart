@@ -32,6 +32,13 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     this.authLocalRepository,
     this.messageRepository,
   ) : super(MessageState.initial()) {
+    // authBloc.stream.listen(
+    //   (authState) {
+    //     if (authState is AuthStateAuthenticated) {
+    //       add(const MessageEvent.started());
+    //     }
+    //   },
+    // );
     _mapEventToState();
   }
 
@@ -40,6 +47,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     on<MessageStarted>(_messageStarToState);
     on<MessageReceived>(_messageReceivedToState);
     on<MessageSent>(_messageSentToState);
+    on<MessageEventOnCreateRoom>(_onCreateRoom);
   }
 
   FutureOr<void> _messageStarToState(
@@ -74,6 +82,12 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
           status: const Status.idle(),
         ),
       );
+    } finally {
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
     }
   }
 
@@ -96,11 +110,45 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
       MessageSent event, Emitter<MessageState> emit) async {
     chatWSController!.sendMessage(event.message, event.room);
   }
+
   //#endregion map event to state
 
   @override
   Future<void> close() {
     chatWSController!.deactivate();
     return super.close();
+  }
+
+  FutureOr<void> _onCreateRoom(
+    MessageEventOnCreateRoom event,
+    Emitter<MessageState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(status: const Status.loading()));
+
+      final roomResponse = await messageRepository.createRoom(
+          senderId: event.senderId, ownerId: event.ownerId);
+      roomResponse.fold(
+        (l) => throw l,
+        (r) => emit(
+          state.copyWith(
+            status: Status.success(value: r),
+          ),
+        ),
+      );
+    } catch (e, trace) {
+      printLog(this, message: "Error", error: e, trace: trace);
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
+    } finally {
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
+    }
   }
 }

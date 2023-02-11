@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
@@ -48,6 +49,7 @@ class _MapPositionPageState extends State<MapPositionPage>
         child: FlutterMap(
           mapController: mapController,
           options: MapOptions(
+            center: LatLng(10.765608, 106.681186),
             zoom: 15,
             maxZoom: 20,
             onMapReady: () {},

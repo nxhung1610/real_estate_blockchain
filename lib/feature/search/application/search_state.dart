@@ -6,5 +6,6 @@ class SearchState with _$SearchState {
     String? keyword,
     @Default(Status.idle()) Status status,
     @Default([]) List<RealEstate> estates,
+    RealEstateFilterInput? filter,
   }) = _SearchState;
 }

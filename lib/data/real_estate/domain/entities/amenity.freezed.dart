@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Amenity {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AmenityCopyWith<Amenity> get copyWith => throw _privateConstructorUsedError;
@@ -27,8 +28,9 @@ mixin _$Amenity {
 abstract class $AmenityCopyWith<$Res> {
   factory $AmenityCopyWith(Amenity value, $Res Function(Amenity) then) =
       _$AmenityCopyWithImpl<$Res, Amenity>;
+
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -44,18 +46,18 @@ class _$AmenityCopyWithImpl<$Res, $Val extends Amenity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -65,9 +67,10 @@ abstract class _$$_AmenityCopyWith<$Res> implements $AmenityCopyWith<$Res> {
   factory _$$_AmenityCopyWith(
           _$_Amenity value, $Res Function(_$_Amenity) then) =
       __$$_AmenityCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -80,18 +83,18 @@ class __$$_AmenityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_$_Amenity(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -99,12 +102,12 @@ class __$$_AmenityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Amenity implements _Amenity {
-  const _$_Amenity({this.id, this.name});
+  const _$_Amenity({required this.id, required this.name});
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString() {
@@ -131,12 +134,15 @@ class _$_Amenity implements _Amenity {
 }
 
 abstract class _Amenity implements Amenity {
-  const factory _Amenity({final int? id, final String? name}) = _$_Amenity;
+  const factory _Amenity({required final int id, required final String name}) =
+      _$_Amenity;
 
   @override
-  int? get id;
+  int get id;
+
   @override
-  String? get name;
+  String get name;
+
   @override
   @JsonKey(ignore: true)
   _$$_AmenityCopyWith<_$_Amenity> get copyWith =>

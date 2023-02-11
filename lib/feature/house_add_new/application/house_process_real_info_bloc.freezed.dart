@@ -791,8 +791,11 @@ abstract class _$$_ChangeRealEstateTypeCopyWith<$Res> {
   factory _$$_ChangeRealEstateTypeCopyWith(_$_ChangeRealEstateType value,
           $Res Function(_$_ChangeRealEstateType) then) =
       __$$_ChangeRealEstateTypeCopyWithImpl<$Res>;
+
   @useResult
   $Res call({RealEstateType type});
+
+  $RealEstateTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -815,6 +818,14 @@ class __$$_ChangeRealEstateTypeCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as RealEstateType,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateTypeCopyWith<$Res> get type {
+    return $RealEstateTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
   }
 }
 

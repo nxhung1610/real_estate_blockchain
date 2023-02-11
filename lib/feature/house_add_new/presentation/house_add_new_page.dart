@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_media_bloc.dart';
@@ -12,15 +13,19 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/house_p
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position_page.dart';
+import 'package:real_estate_blockchain/feature/webview/presentation/webview_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../application/enums.dart';
+import 'model/house_add_new_page_params.dart';
 import 'process_page/process_page.dart';
 
 class HouseAddNewPage extends StatefulWidget {
-  const HouseAddNewPage({super.key});
+  final HouseAddNewPageParams params;
+
+  const HouseAddNewPage({super.key, required this.params});
 
   @override
   State<HouseAddNewPage> createState() => _HouseAddNewPageState();
@@ -110,12 +115,27 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
               }
             },
             success: (value) async {
-              context.pop();
-              await Future.delayed(const Duration(milliseconds: 100));
-              context.appDialog.showAppDialog(
-                type: AppDialogType.info,
-                message: s.createRealEstateSuccess,
-              );
+              if (mounted && value.value is RealEstateCreationOuput) {
+                await Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WebViewScreen(
+                        url:
+                            'https://mumbai.polygonscan.com/tx/${(value.value as RealEstateCreationOuput).hash}',
+                      );
+                    },
+                  ),
+                );
+                if (mounted) {
+                  widget.params.onSucces();
+                  context.pop();
+                }
+              }
+
+              // context.appDialog.showAppDialog(
+              //   type: AppDialogType.info,
+              //   message: s.createRealEstateSuccess,
+              // );
             },
           );
           controller.jumpToPage(state.state.index);

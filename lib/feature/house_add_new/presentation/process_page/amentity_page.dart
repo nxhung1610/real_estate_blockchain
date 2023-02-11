@@ -5,6 +5,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -26,7 +27,8 @@ class _AmenityPageState extends State<AmenityPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    bloc.onStart(context.read<HouseAddNewBloc>().state.config?.amenities ?? []);
+    bloc.onStart(
+        context.read<RealEstateConfigBloc>().state.config?.amenities ?? []);
   }
 
   @override
