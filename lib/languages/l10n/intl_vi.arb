@@ -140,7 +140,8 @@
   "condotel" : "Căn hộ du lịch",
   "warehouse" :"Kho",
   "other" :"Khác",
-  "locale" : "Định vị"
-  "logOut": "Đăng xuất"
+  "locale" : "Định vị",
+  "logOut": "Đăng xuất",
+  "contact" : "Liên hệ"
 
 }

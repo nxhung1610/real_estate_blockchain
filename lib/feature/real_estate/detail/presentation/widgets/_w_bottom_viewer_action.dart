@@ -92,7 +92,7 @@ class _WBottomViewerAction extends StatelessWidget {
               AppSize.largeWidthDimens.horizontalSpace,
               Expanded(
                 child: ButtonApp(
-                  label: s.scheduleTour,
+                  label: s.contact,
                   onPressed: () {},
                   type: ButtonType.primary,
                   size: ButtonSize.large,

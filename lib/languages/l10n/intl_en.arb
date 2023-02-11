@@ -139,8 +139,8 @@
   "condotel" : "Condotel",
   "warehouse" :"Warehouse",
   "other" :"other",
-  "locale" : "Location"
-  "scheduleTour" :"Schedule Tour",
-  "logOut": "Logout"
+  "locale" : "Location",
+  "logOut": "Logout",
+  "contact" : "Contact"
 
 }

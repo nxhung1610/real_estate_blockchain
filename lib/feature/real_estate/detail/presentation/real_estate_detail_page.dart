@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -169,14 +169,13 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                               AppSize.smallHeightDimens.verticalSpace,
                               Flexible(
                                 child: BlocProvider(
-                                  create: (context) =>
-                                      getIt.call<AddressBuilderCubit>()
-                                        ..onLoadAdress(
-                                            proviceId:
-                                                state.estate.provinceId ?? '',
-                                            wardId: state.estate.wardId ?? '',
-                                            districtId:
-                                                state.estate.districtId ?? ''),
+                                  create: (context) => getIt
+                                      .call<AddressBuilderCubit>()
+                                    ..onLoadAdress(
+                                      proviceId: state.estate.provinceId ?? '',
+                                      wardId: state.estate.wardId ?? '',
+                                      districtId: state.estate.districtId ?? '',
+                                    ),
                                   child: BlocBuilder<AddressBuilderCubit,
                                       AddressBuilderState>(
                                     builder: (context, addressState) {
@@ -187,10 +186,10 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                               .languageCode ==
                                           'vi';
                                       return Text(
-                                        '${state.estate.address ?? ''}'
-                                        ', ${isVi ? addressState.ward?.fullName ?? '' : addressState.ward?.fullNameEn ?? ''}'
-                                        ', ${isVi ? addressState.district?.fullName ?? '' : addressState.district?.fullNameEn ?? ''}'
-                                        ', ${isVi ? addressState.provice?.fullName ?? '' : addressState.provice?.fullNameEn ?? ''}',
+                                        (state.estate.address ?? '') +
+                                            (addressState
+                                                    .buildAddress(context) ??
+                                                ''),
                                         style: context.textTheme.bodyMedium
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
@@ -208,27 +207,41 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                     background: Stack(
                       children: [
                         Positioned.fill(
-                          child: PageView.builder(
+                          child: CarouselSlider.builder(
                             itemCount: widget.params.estate.images?.length,
-                            itemBuilder: (context, index) {
+                            itemBuilder: (context, index, realIndex) {
                               final image = widget.params.estate.images?[index];
                               return ImageCustom.network(
                                 image?.url ?? '',
                                 fit: BoxFit.cover,
                               );
                             },
+                            options: CarouselOptions(
+                              initialPage: 0,
+                              viewportFraction: 1,
+                              aspectRatio: 1,
+                              enableInfiniteScroll: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              scrollDirection: Axis.horizontal,
+                            ),
                           ),
                         ),
                         Positioned.fill(
-                            child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.transparent,
-                                AppColor.kNeutrals_.withOpacity(0.5),
-                              ],
+                            child: IgnorePointer(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.transparent,
+                                  AppColor.kNeutrals_.withOpacity(0.5),
+                                ],
+                              ),
                             ),
                           ),
                         ))

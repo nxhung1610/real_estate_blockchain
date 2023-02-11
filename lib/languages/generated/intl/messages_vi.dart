@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
         "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),

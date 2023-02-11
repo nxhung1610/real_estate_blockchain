@@ -62,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),

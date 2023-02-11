@@ -63,6 +63,7 @@ dependencies:
   sliver_tools: ^0.2.8
   shimmer: ^2.0.0
   flutter_list_view: ^1.1.21
+  carousel_slider: ^4.2.1
 
 
   # Language
