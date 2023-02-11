@@ -158,8 +158,8 @@ class RealEstateRepository extends IRealEstateRepository {
   @override
   Future<Either<RealEstateFailure, Unit>> setFavorite(int id) async {
     try {
-      final res = await _apiRemote.post<List<RealEstateResponse>>(
-        RealEstateConstants.favorites + '/$id',
+      final res = await _apiRemote.post(
+        '${RealEstateConstants.favorites}/$id',
         url: AppConfig.instance.baseUrl,
       );
       if (!res.success) throw res.errorKey!;
@@ -172,8 +172,8 @@ class RealEstateRepository extends IRealEstateRepository {
   @override
   Future<Either<RealEstateFailure, Unit>> removeFavorite(int id) async {
     try {
-      final res = await _apiRemote.delete<List<RealEstateResponse>>(
-        RealEstateConstants.favorites + '/$id',
+      final res = await _apiRemote.delete(
+        '${RealEstateConstants.favorites}/$id',
         url: AppConfig.instance.baseUrl,
       );
       if (!res.success) throw res.errorKey!;

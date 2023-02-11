@@ -99,17 +99,43 @@ class HouseNewsFeed extends StatelessWidget {
               child: BlocBuilder<RealEstateFavoritesBloc,
                   RealEstateFavoritesState>(
                 builder: (context, state) {
+                  final isFavorite = state.estates
+                      .where((element) => element.id == value.id)
+                      .isNotEmpty;
+                  final isProcess = state.isProcess
+                      .where((element) => element.id == value.id)
+                      .isNotEmpty;
+
                   return Material(
                     color: AppColor.kNeutrals_.shade800.withOpacity(0.6),
                     child: IconButton(
                       onPressed: () {
-                        onFavorite?.call(true);
+                        if (isFavorite) {
+                          context.read<RealEstateFavoritesBloc>().add(
+                                RealEstateFavoritesEvent.onRemoveFavorite(
+                                    value),
+                              );
+                        } else {
+                          context.read<RealEstateFavoritesBloc>().add(
+                                RealEstateFavoritesEvent.onFavorite(value),
+                              );
+                        }
+
+                        onFavorite?.call(isFavorite);
                       },
-                      icon: Assets.icons.icHeartLight.svg(
-                        width: AppSize.mediumIcon,
-                        height: AppSize.mediumIcon,
-                        color: AppColor.kNeutrals_.shade50,
-                      ),
+                      icon: isProcess
+                          ? const CircularProgressIndicator()
+                          : (isFavorite
+                              ? Assets.icons.icHeartBold.svg(
+                                  width: AppSize.mediumIcon,
+                                  height: AppSize.mediumIcon,
+                                  color: AppColor.kNeutrals_.shade50,
+                                )
+                              : Assets.icons.icHeartLight.svg(
+                                  width: AppSize.mediumIcon,
+                                  height: AppSize.mediumIcon,
+                                  color: AppColor.kNeutrals_.shade50,
+                                )),
                     ),
                   );
                 },

@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
 
 part 'real_estate_favorites_event.dart';
 part 'real_estate_favorites_state.dart';
@@ -33,41 +34,67 @@ class RealEstateFavoritesBloc
     });
     on<RealEstateFavoritesEventOnFavorite>((event, emit) async {
       try {
+        emit(
+          state.copyWith(
+            isProcess: List.from(
+              [
+                ...state.isProcess,
+                event.estate,
+              ],
+            ),
+          ),
+        );
         final estate = await _realEstateRepository.setFavorite(event.estate.id);
+        emit(
+          state.copyWith(
+            estates: List.from(
+              [
+                ...state.estates,
+                event.estate,
+              ],
+            ),
+          ),
+        );
         estate.fold(
           (l) => null,
-          (r) {
-            emit(
-              state.copyWith(
-                estates: List.from(
-                  [
-                    ...state.estates,
-                    event.estate,
-                  ],
-                ),
-              ),
-            );
-          },
+          (r) {},
         );
-      } catch (e) {}
+      } finally {
+        final list = List<RealEstate>.from(state.isProcess)
+          ..removeWhere((element) => element.id == event.estate.id);
+        emit(state.copyWith(isProcess: list));
+      }
     });
     on<RealEstateFavoritesEventOnRemoveFavorite>((event, emit) async {
       try {
+        emit(
+          state.copyWith(
+            isProcess: List.from(
+              [
+                ...state.isProcess,
+                event.estate,
+              ],
+            ),
+          ),
+        );
         final estate =
             await _realEstateRepository.removeFavorite(event.estate.id);
+        emit(
+          state.copyWith(
+            estates: List.from(
+              state.estates,
+            )..removeWhere((element) => element.id == event.estate.id),
+          ),
+        );
         estate.fold(
           (l) => null,
-          (r) {
-            emit(
-              state.copyWith(
-                estates: List.from(
-                  state.estates,
-                )..removeWhere((element) => element.id == event.estate.id),
-              ),
-            );
-          },
+          (r) {},
         );
-      } catch (e) {}
+      } finally {
+        final list = List<RealEstate>.from(state.isProcess)
+          ..removeWhere((element) => element.id == event.estate.id);
+        emit(state.copyWith(isProcess: list));
+      }
     });
   }
 }

@@ -1,7 +1,8 @@
 part of '../real_estate_detail_page.dart';
 
 class _WBottomViewerAction extends StatelessWidget {
-  const _WBottomViewerAction({super.key});
+  const _WBottomViewerAction({super.key, required this.item});
+  final RealEstate item;
 
   @override
   Widget build(BuildContext context) {
@@ -62,31 +63,60 @@ class _WBottomViewerAction extends StatelessWidget {
           AppSize.mediumHeightDimens.verticalSpace,
           Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(16.r),
-                ),
-                child: Material(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(12.r),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(16.r),
-                        ),
-                        border: Border.fromBorderSide(
-                          BorderSide(
-                            color: AppColor.kNeutrals_.shade600,
-                          ),
-                        ),
-                      ),
-                      child: Assets.icons.icHeartLight.svg(
-                        width: 25.r,
-                        height: 25.r,
-                      ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16.r),
+                  ),
+                  border: Border.fromBorderSide(
+                    BorderSide(
+                      color: AppColor.kNeutrals_.shade600,
                     ),
                   ),
+                ),
+                child: BlocBuilder<RealEstateFavoritesBloc,
+                    RealEstateFavoritesState>(
+                  builder: (context, state) {
+                    final isFavorite = state.estates
+                        .where((element) => element.id == item.id)
+                        .isNotEmpty;
+                    final isProcess = state.isProcess
+                        .where((element) => element.id == item.id)
+                        .isNotEmpty;
+
+                    return ClipRRect(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16.r),
+                      ),
+                      child: Material(
+                        child: IconButton(
+                          onPressed: () {
+                            if (isFavorite) {
+                              context.read<RealEstateFavoritesBloc>().add(
+                                    RealEstateFavoritesEvent.onRemoveFavorite(
+                                        item),
+                                  );
+                            } else {
+                              context.read<RealEstateFavoritesBloc>().add(
+                                    RealEstateFavoritesEvent.onFavorite(item),
+                                  );
+                            }
+                          },
+                          icon: isProcess
+                              ? const CircularProgressIndicator()
+                              : (isFavorite
+                                  ? Assets.icons.icHeartBold.svg(
+                                      width: AppSize.mediumIcon,
+                                      height: AppSize.mediumIcon,
+                                    )
+                                  : Assets.icons.icHeartLight.svg(
+                                      width: AppSize.mediumIcon,
+                                      height: AppSize.mediumIcon,
+                                    )),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
               AppSize.largeWidthDimens.horizontalSpace,
