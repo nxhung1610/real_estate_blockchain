@@ -38,6 +38,9 @@ class _SearchPageState extends State<SearchPage> {
     textEditingController = TextEditingController();
     textEditingController.text = widget.params.keyword ?? '';
     super.initState();
+    context
+        .read<SearchBloc>()
+        .add(SearchEvent.onKeyChanged(value: widget.params.keyword ?? ''));
   }
 
   @override
