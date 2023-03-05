@@ -22,8 +22,9 @@ class AppNotification {
           ledColor: Colors.white)
     ], channelGroups: [
       NotificationChannelGroup(
-          channelGroupkey: 'basic_channel_group',
-          channelGroupName: 'Basic group'),
+        channelGroupName: 'Basic group',
+        channelGroupKey: 'basic_channel_group',
+      ),
     ]);
   }
 

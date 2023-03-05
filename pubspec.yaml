@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
+  sdk: ">=2.19.0-0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,7 +34,7 @@ dependencies:
   injectable:  
   get_it:  
   # Utils
-  flutter_native_splash: ^2.2.9
+  flutter_native_splash: ^2.2.18
   flutter_dotenv: ^5.0.2
   freezed_annotation: ^2.1.0
   flutter_bloc: ^8.1.1
@@ -48,17 +48,17 @@ dependencies:
   url_launcher: ^6.1.8
 
   # UI
-  go_router: ^5.0.5
+  go_router: ^6.2.0
   loader_overlay: ^2.0.7
   flutter_screenutil: ^5.5.3+2
-  awesome_notifications: ^0.6.21
-  flutter_svg:
-  flutter_animate: ^1.0.0
-  dropdown_button2: ^1.8.2
+  awesome_notifications: ^0.7.4+1
+  flutter_svg: ^2.0.2
+  flutter_animate: ^4.1.0
+  dropdown_button2: ^2.0.0
   smooth_page_indicator: ^1.0.0+2
   get_it_mixin: ^3.1.4
   dotted_border: ^2.0.0+3
-  lottie: ^1.4.3
+  lottie: ^2.2.0
   custom_refresh_indicator: ^2.0.1
   sliver_tools: ^0.2.8
   shimmer: ^2.0.0
@@ -69,11 +69,11 @@ dependencies:
 
   # Language
   intl: ^0.17.0
-  intl_utils: ^2.7.0
-  flutter_localizations:
+  intl_utils: ^2.8.2
+  flutter_localizations: 
     sdk: flutter
   # Service
-  dio: ^4.0.6
+  dio: ^5.0.1
   pretty_dio_logger: ^1.1.1
   # Database
   hive: ^2.2.3
@@ -101,10 +101,10 @@ dev_dependencies:
   change_app_package_name:
   # Builder
   injectable_generator:  
-  build_runner: ^2.3.2
-  flutter_gen_runner: 5.0.3
+  build_runner: ^2.3.3
+  flutter_gen_runner: 5.2.0
   hive_generator:
-  flutter_launcher_icons: ^0.11.0
+  flutter_launcher_icons: ^0.12.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

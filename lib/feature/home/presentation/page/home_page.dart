@@ -68,11 +68,11 @@ class _HomePageState extends State<HomePage>
                         return DropdownButtonHideUnderline(
                           child: DropdownButton2<Province>(
                             isDense: true,
-                            itemPadding: EdgeInsets.zero,
-                            buttonPadding: EdgeInsets.zero,
-                            dropdownPadding: EdgeInsets.zero,
-                            dropdownElevation: 0,
-                            offset: Offset(0.0, -AppSize.mediumHeightDimens),
+                            // itemPadding: EdgeInsets.zero,
+                            // buttonPadding: EdgeInsets.zero,
+                            // dropdownPadding: EdgeInsets.zero,
+                            // dropdownElevation: 0,
+                            // offset: Offset(0.0, -AppSize.mediumHeightDimens),
                             value: state.provice ?? state.provinces.firstOrNull,
                             selectedItemBuilder: (context) {
                               return state.provinces

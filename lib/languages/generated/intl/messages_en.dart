@@ -49,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
-        "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "appName": MessageLookupByLibrary.simpleMessage("Realus"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
+        "combinePhoneNumberOrPasswordInvalid":
+            MessageLookupByLibrary.simpleMessage(
+                "Combine phone number or password invalid"),
         "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
@@ -81,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "floors": MessageLookupByLibrary.simpleMessage("Floors"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "fullNameNotValid":
+            MessageLookupByLibrary.simpleMessage("Full name not valid"),
         "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
         "garage": MessageLookupByLibrary.simpleMessage("Garage"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
@@ -116,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
+        "nameNotValid": MessageLookupByLibrary.simpleMessage("Name not valid"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noBathRoom":
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
@@ -142,9 +148,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Home search"),
         "other": MessageLookupByLibrary.simpleMessage("other"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordNotValid":
+            MessageLookupByLibrary.simpleMessage("Password not valid"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phoneNumberAlreadyUsed":
+            MessageLookupByLibrary.simpleMessage("Phone number already used"),
+        "phoneNumberInvalid":
+            MessageLookupByLibrary.simpleMessage("Phone number invalid"),
+        "pleaseLoginYourAccountToContinue":
+            MessageLookupByLibrary.simpleMessage(
+                "Please login your account to continue."),
         "pool": MessageLookupByLibrary.simpleMessage("Pool"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
@@ -199,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Unable to load data"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),
+        "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("View"),

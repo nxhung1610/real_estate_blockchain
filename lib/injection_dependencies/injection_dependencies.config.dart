@@ -90,9 +90,9 @@ import 'package:real_estate_blockchain/feature/real_estate/favorites/application
 import 'package:real_estate_blockchain/feature/search/application/search_bloc.dart'
     as _i31;
 
-/// ignore_for_file: unnecessary_lambdas
-/// ignore_for_file: lines_longer_than_80_chars
-/// initializes the registration of main-scope dependencies inside of [GetIt]
+// ignore_for_file: unnecessary_lambdas
+// ignore_for_file: lines_longer_than_80_chars
+// initializes the registration of main-scope dependencies inside of GetIt
 _i1.GetIt $initGetIt(
   _i1.GetIt getIt, {
   String? environment,

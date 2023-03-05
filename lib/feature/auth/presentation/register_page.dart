@@ -39,17 +39,17 @@ class _RegisterPageState extends State<RegisterPage> {
         state.status.when(
           success: (value) {
             context.go($appRoute.authLogin);
-            context.appSnackBar.show('Please login your account to continue.');
+            context.appSnackBar.show(s.pleaseLoginYourAccountToContinue);
           },
           failure: (value) {
             context.appSnackBar.show((value as AuthFailures).mapOrNull(
-              fullNameInvalid: (value) => 'Full name not valid',
-              nameInvalid: (value) => 'Name not valid',
-              emailAddressInvalid: (value) => 'Email address not valid',
-              passwordInvalid: (value) => 'Password not valid',
-              phoneNumberInvalid: (value) => 'Phone number not valid',
-              userAlreadyExist: (value) => 'Phone number already used',
-              unknow: (value) => 'Unknow',
+              fullNameInvalid: (value) => s.fullNameNotValid,
+              nameInvalid: (value) => s.nameNotValid,
+              emailAddressInvalid: (value) => '',
+              passwordInvalid: (value) => s.passwordNotValid,
+              phoneNumberInvalid: (value) => s.phoneNumberInvalid,
+              userAlreadyExist: (value) => s.phoneNumberAlreadyUsed,
+              unknow: (value) => s.unknown,
             ));
           },
           loading: () {

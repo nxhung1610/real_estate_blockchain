@@ -83,9 +83,9 @@ class HouseFilterBloc extends Bloc<HouseFilterEvent, HouseFilterState> {
             realEstateTypes: List.from(state.realEstateTypes
                 .map((e) => e.copyWith(value2: false))
                 .toList()),
-            noBath: 0,
-            noBedRoom: 0,
-            noFloor: 0,
+            noBath: null,
+            noBedRoom: null,
+            noFloor: null,
             priceEnd: 500000000,
             priceStart: 0,
             isReset: true,

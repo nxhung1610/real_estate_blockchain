@@ -3,10 +3,11 @@ part of '../real_estate_detail_page.dart';
 class _WBottomViewerAction extends StatelessWidget {
   const _WBottomViewerAction({super.key, required this.item});
   final RealEstate item;
-
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final bloc = context.read<MessageBloc>();
+
     return BlocListener<MessageBloc, MessageState>(
       listener: (context, state) {
         state.status.whenOrNull(
@@ -14,9 +15,10 @@ class _WBottomViewerAction extends StatelessWidget {
             context.appDialog.dismissDialog();
           },
           loading: () {
-            context.appDialog.showLoading();
+            // context.appDialog.showLoading();
           },
           success: (value) {
+            context.appDialog.dismissDialog();
             context.pop();
             context.push(
               $appRoute.messageChat,

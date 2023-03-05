@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Căn hộ"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
-        "appName": MessageLookupByLibrary.simpleMessage("Realix"),
+        "appName": MessageLookupByLibrary.simpleMessage("Realus"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
@@ -59,6 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
+        "combinePhoneNumberOrPasswordInvalid":
+            MessageLookupByLibrary.simpleMessage(
+                "Số điện thoại hoặc mật khẩu không hợp lệ"),
         "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
@@ -80,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
         "floors": MessageLookupByLibrary.simpleMessage("Tầng"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
+        "fullNameNotValid":
+            MessageLookupByLibrary.simpleMessage("Tên đầy đủ không hợp lệ"),
         "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
         "garage": MessageLookupByLibrary.simpleMessage("Nhà để xe"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
@@ -115,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),
+        "nameNotValid":
+            MessageLookupByLibrary.simpleMessage("Tên không hợp lệ"),
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
@@ -139,9 +146,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tìm nhà"),
         "other": MessageLookupByLibrary.simpleMessage("Khác"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "passwordNotValid":
+            MessageLookupByLibrary.simpleMessage("Mật khẩu không hợp lệ"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "phoneNumberAlreadyUsed": MessageLookupByLibrary.simpleMessage(
+            "Số điện thoại đã được sử dụng"),
+        "phoneNumberInvalid":
+            MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
+        "pleaseLoginYourAccountToContinue":
+            MessageLookupByLibrary.simpleMessage(
+                "Vui lòng đăng nhập để tiếp tục."),
         "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
@@ -197,6 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
+        "unknown": MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra!"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),

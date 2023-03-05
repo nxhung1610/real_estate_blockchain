@@ -20,9 +20,9 @@ mixin _$HouseFilterState {
   num get priceStart => throw _privateConstructorUsedError;
   num get priceEnd => throw _privateConstructorUsedError;
   num get priceMax => throw _privateConstructorUsedError;
-  int get noBedRoom => throw _privateConstructorUsedError;
-  int get noFloor => throw _privateConstructorUsedError;
-  int get noBath => throw _privateConstructorUsedError;
+  int? get noBedRoom => throw _privateConstructorUsedError;
+  int? get noFloor => throw _privateConstructorUsedError;
+  int? get noBath => throw _privateConstructorUsedError;
   int? get minSquare => throw _privateConstructorUsedError;
   int? get maxSquare => throw _privateConstructorUsedError;
   List<Tuple2<Amenity, bool>> get amentities =>
@@ -48,9 +48,9 @@ abstract class $HouseFilterStateCopyWith<$Res> {
       num priceStart,
       num priceEnd,
       num priceMax,
-      int noBedRoom,
-      int noFloor,
-      int noBath,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
       int? minSquare,
       int? maxSquare,
       List<Tuple2<Amenity, bool>> amentities,
@@ -78,9 +78,9 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
     Object? priceStart = null,
     Object? priceEnd = null,
     Object? priceMax = null,
-    Object? noBedRoom = null,
-    Object? noFloor = null,
-    Object? noBath = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
     Object? minSquare = freezed,
     Object? maxSquare = freezed,
     Object? amentities = null,
@@ -105,18 +105,18 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
           ? _value.priceMax
           : priceMax // ignore: cast_nullable_to_non_nullable
               as num,
-      noBedRoom: null == noBedRoom
+      noBedRoom: freezed == noBedRoom
           ? _value.noBedRoom
           : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int,
-      noFloor: null == noFloor
+              as int?,
+      noFloor: freezed == noFloor
           ? _value.noFloor
           : noFloor // ignore: cast_nullable_to_non_nullable
-              as int,
-      noBath: null == noBath
+              as int?,
+      noBath: freezed == noBath
           ? _value.noBath
           : noBath // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       minSquare: freezed == minSquare
           ? _value.minSquare
           : minSquare // ignore: cast_nullable_to_non_nullable
@@ -170,9 +170,9 @@ abstract class _$$_HouseFilterStateCopyWith<$Res>
       num priceStart,
       num priceEnd,
       num priceMax,
-      int noBedRoom,
-      int noFloor,
-      int noBath,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
       int? minSquare,
       int? maxSquare,
       List<Tuple2<Amenity, bool>> amentities,
@@ -199,9 +199,9 @@ class __$$_HouseFilterStateCopyWithImpl<$Res>
     Object? priceStart = null,
     Object? priceEnd = null,
     Object? priceMax = null,
-    Object? noBedRoom = null,
-    Object? noFloor = null,
-    Object? noBath = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
     Object? minSquare = freezed,
     Object? maxSquare = freezed,
     Object? amentities = null,
@@ -226,18 +226,18 @@ class __$$_HouseFilterStateCopyWithImpl<$Res>
           ? _value.priceMax
           : priceMax // ignore: cast_nullable_to_non_nullable
               as num,
-      noBedRoom: null == noBedRoom
+      noBedRoom: freezed == noBedRoom
           ? _value.noBedRoom
           : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int,
-      noFloor: null == noFloor
+              as int?,
+      noFloor: freezed == noFloor
           ? _value.noFloor
           : noFloor // ignore: cast_nullable_to_non_nullable
-              as int,
-      noBath: null == noBath
+              as int?,
+      noBath: freezed == noBath
           ? _value.noBath
           : noBath // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       minSquare: freezed == minSquare
           ? _value.minSquare
           : minSquare // ignore: cast_nullable_to_non_nullable
@@ -274,9 +274,9 @@ class _$_HouseFilterState implements _HouseFilterState {
       this.priceStart = 0,
       this.priceEnd = 500000000,
       this.priceMax = 1000000000,
-      this.noBedRoom = 0,
-      this.noFloor = 0,
-      this.noBath = 0,
+      this.noBedRoom,
+      this.noFloor,
+      this.noBath,
       this.minSquare,
       this.maxSquare,
       final List<Tuple2<Amenity, bool>> amentities = const [],
@@ -299,14 +299,11 @@ class _$_HouseFilterState implements _HouseFilterState {
   @JsonKey()
   final num priceMax;
   @override
-  @JsonKey()
-  final int noBedRoom;
+  final int? noBedRoom;
   @override
-  @JsonKey()
-  final int noFloor;
+  final int? noFloor;
   @override
-  @JsonKey()
-  final int noBath;
+  final int? noBath;
   @override
   final int? minSquare;
   @override
@@ -398,9 +395,9 @@ abstract class _HouseFilterState implements HouseFilterState {
       final num priceStart,
       final num priceEnd,
       final num priceMax,
-      final int noBedRoom,
-      final int noFloor,
-      final int noBath,
+      final int? noBedRoom,
+      final int? noFloor,
+      final int? noBath,
       final int? minSquare,
       final int? maxSquare,
       final List<Tuple2<Amenity, bool>> amentities,
@@ -417,11 +414,11 @@ abstract class _HouseFilterState implements HouseFilterState {
   @override
   num get priceMax;
   @override
-  int get noBedRoom;
+  int? get noBedRoom;
   @override
-  int get noFloor;
+  int? get noFloor;
   @override
-  int get noBath;
+  int? get noBath;
   @override
   int? get minSquare;
   @override

@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Realix`
+  /// `Realus`
   String get appName {
     return Intl.message(
-      'Realix',
+      'Realus',
       name: 'appName',
       desc: '',
       args: [],
@@ -105,6 +105,86 @@ class S {
     return Intl.message(
       'Ok',
       name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password not valid`
+  String get passwordNotValid {
+    return Intl.message(
+      'Password not valid',
+      name: 'passwordNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number invalid`
+  String get phoneNumberInvalid {
+    return Intl.message(
+      'Phone number invalid',
+      name: 'phoneNumberInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Combine phone number or password invalid`
+  String get combinePhoneNumberOrPasswordInvalid {
+    return Intl.message(
+      'Combine phone number or password invalid',
+      name: 'combinePhoneNumberOrPasswordInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please login your account to continue.`
+  String get pleaseLoginYourAccountToContinue {
+    return Intl.message(
+      'Please login your account to continue.',
+      name: 'pleaseLoginYourAccountToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name not valid`
+  String get fullNameNotValid {
+    return Intl.message(
+      'Full name not valid',
+      name: 'fullNameNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name not valid`
+  String get nameNotValid {
+    return Intl.message(
+      'Name not valid',
+      name: 'nameNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number already used`
+  String get phoneNumberAlreadyUsed {
+    return Intl.message(
+      'Phone number already used',
+      name: 'phoneNumberAlreadyUsed',
       desc: '',
       args: [],
     );

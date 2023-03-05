@@ -105,10 +105,19 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
       ChatRoomMessageReceived event, Emitter<ChatRoomState> emit) async {
     emit(
       state.copyWith(
-        messages: [event.message, ...state.messages],
+        messages: removeDuplicates([event.message, ...state.messages]),
       ),
     );
   }
   //#endregion map event to state
 
+  List<ChatMessage> removeDuplicates(List<ChatMessage> items) {
+    List<ChatMessage> uniqueItems = []; // uniqueList
+    var uniqueIDs =
+        items.map((e) => e.id).toSet(); //list if UniqueID to remove duplicates
+    for (var e in uniqueIDs) {
+      uniqueItems.add(items.firstWhere((i) => i.id == e));
+    } // populate uniqueItems with equivalent original Batch items
+    return uniqueItems; //send back the unique items list
+  }
 }

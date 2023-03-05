@@ -33,13 +33,13 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     this.authLocalRepository,
     this.messageRepository,
   ) : super(MessageState.initial()) {
-    // authBloc.stream.listen(
-    //   (authState) {
-    //     if (authState is AuthStateAuthenticated) {
-    //       add(const MessageEvent.started());
-    //     }
-    //   },
-    // );
+    authBloc.stream.listen(
+      (authState) {
+        if (authState is AuthStateAuthenticated) {
+          add(const MessageEvent.started());
+        }
+      },
+    );
     _mapEventToState();
   }
 
@@ -55,6 +55,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
       MessageStarted event, Emitter<MessageState> emit) async {
     if (chatWSController != null) {
       chatWSController!.deactivate();
+      chatWSController = null;
     }
     try {
       emit(state.copyWith(status: const Status.loading()));
@@ -128,6 +129,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
       final roomResponse = await messageRepository.createRoom(
           senderId: event.senderId, ownerId: event.ownerId);
+      add(const MessageEvent.started());
       roomResponse.fold(
         (l) => throw l,
         (r) => emit(

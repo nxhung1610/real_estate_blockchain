@@ -70,21 +70,21 @@ class _AppCommonState extends State<_AppCommon> {
     processIntital = Completer();
     processAuthen = Completer();
     authBloc.initial();
+
+    setupRouter(context);
+    intitial();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-
-    setupRouter();
-    intitial();
   }
 
   void intitial() {
     appBloc.started();
   }
 
-  void setupRouter() {
+  void setupRouter(BuildContext context) {
     final routes = [
       ...$appRoute.routes,
       ...$appRoute.globalRoutes,
@@ -114,7 +114,10 @@ class _AppCommonState extends State<_AppCommon> {
             ];
             // Wokring with authentication
             // Check if authentication or not
-            final isLoggedIn = authBloc.state is AuthStateAuthenticated;
+            final isLoggedIn = context.read<AuthBloc>().state.mapOrNull(
+                      authenticated: (value) => true,
+                    ) ??
+                false;
 
             // If user is not login and not in Login or Register page
             // Redirect them to Login page
