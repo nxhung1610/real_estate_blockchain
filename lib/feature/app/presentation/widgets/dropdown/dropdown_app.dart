@@ -44,10 +44,35 @@ class DropdownApp<T> extends StatelessWidget {
               dropdownStyleData: DropdownStyleData(
                 elevation: 0,
                 maxHeight: 0.5.sh,
-                padding: const EdgeInsets.symmetric(
-                    // horizontal: horizontalSpace,
-                    ),
+                padding: EdgeInsets.zero,
                 offset: Offset(0.0, -AppSize.smallHeightDimens),
+                decoration: BoxDecoration(
+                  color: AppColor.kNeutrals_.shade400,
+                  borderRadius: BorderRadius.circular(
+                    AppSize.extraRadius,
+                  ),
+                ),
+              ),
+              buttonStyleData: ButtonStyleData(
+                elevation: 0,
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalSpace,
+                ),
+                height: 50.h,
+              ),
+              iconStyleData: IconStyleData(
+                icon: Assets.icons.icArrowDown.svg(
+                  height: AppSize.extraWidthDimens,
+                  width: AppSize.extraWidthDimens,
+                  colorFilter: ColorFilter.mode(
+                    AppColor.kNeutrals_.shade600,
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+              menuItemStyleData: MenuItemStyleData(
+                height: 50.h,
+                padding: EdgeInsets.zero,
               ),
               // dropdownMaxHeight: ,
               // itemPadding:,
