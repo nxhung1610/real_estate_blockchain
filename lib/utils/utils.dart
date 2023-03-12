@@ -8,15 +8,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
-Future<Uint8List> svgToPng(String svgString,
-    {required int width, required int height}) async {
-  DrawableRoot svgDrawableRoot = await svg.fromSvgString(svgString, "key");
-  final picture = svgDrawableRoot.toPicture();
-  final image = await picture.toImage(width, height);
-  ByteData? bytes = await image.toByteData(format: ImageByteFormat.png);
+// Future<Uint8List> svgToPng(String svgString,
+//     {required int width, required int height}) async {
+//   DrawableRoot svgDrawableRoot = await svg.fromSvgString(svgString, "key");
+//   final picture = svgDrawableRoot.toPicture();
+//   final image = await picture.toImage(width, height);
+//   ByteData? bytes = await image.toByteData(format: ImageByteFormat.png);
 
-  return bytes!.buffer.asUint8List();
-}
+//   return bytes!.buffer.asUint8List();
+// }
 
 Color get randColor =>
     Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);

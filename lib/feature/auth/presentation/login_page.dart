@@ -47,12 +47,12 @@ class _LoginPageState extends State<LoginPage> {
           },
           failure: (value) {
             context.appSnackBar.show((value as AuthFailures).mapOrNull(
-              emailAddressInvalid: (value) => 'Email not valid',
-              phoneNumberInvalid: (value) => 'Phone number not valid',
-              passwordInvalid: (value) => 'Password not valid',
-              unknow: (value) => 'Unknow',
+              emailAddressInvalid: (value) => '',
+              phoneNumberInvalid: (value) => s.phoneNumberInvalid,
+              passwordInvalid: (value) => s.passwordNotValid,
+              unknow: (value) => s.unknown,
               combinePhoneNumberOrPasswordInvalid: (value) =>
-                  'Phone number or Password not correct',
+                  s.combinePhoneNumberOrPasswordInvalid,
             ));
           },
           success: (value) {

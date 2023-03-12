@@ -41,32 +41,38 @@ class DropdownApp<T> extends StatelessWidget {
               isDense: true,
               isExpanded: isExpanded ?? false,
               value: value,
-              dropdownMaxHeight: 0.5.sh,
-              itemPadding: EdgeInsets.symmetric(
-                  // horizontal: horizontalSpace,
-                  ),
-              buttonPadding: EdgeInsets.symmetric(
-                horizontal: horizontalSpace,
+              dropdownStyleData: DropdownStyleData(
+                elevation: 0,
+                maxHeight: 0.5.sh,
+                padding: const EdgeInsets.symmetric(
+                    // horizontal: horizontalSpace,
+                    ),
+                offset: Offset(0.0, -AppSize.smallHeightDimens),
               ),
-              buttonHeight: 50.h,
-              itemHeight: 50.h,
-              dropdownPadding: EdgeInsets.zero,
-              dropdownElevation: 0,
+              // dropdownMaxHeight: ,
+              // itemPadding:,
+              // buttonPadding: EdgeInsets.symmetric(
+              //   horizontal: horizontalSpace,
+              // ),
+              // buttonHeight: 50.h,
+              // itemHeight: 50.h,
+              // dropdownPadding: EdgeInsets.zero,
+              // dropdownElevation: 0,
               hint: hint,
               items: items,
-              icon: Assets.icons.icArrowDown.svg(
-                height: AppSize.extraWidthDimens,
-                width: AppSize.extraWidthDimens,
-                color: AppColor.kNeutrals_.shade600,
-              ),
-              offset: Offset(0.0, -AppSize.smallHeightDimens),
+              // icon: Assets.icons.icArrowDown.svg(
+              //   height: AppSize.extraWidthDimens,
+              //   width: AppSize.extraWidthDimens,
+              //   color: AppColor.kNeutrals_.shade600,
+              // ),
+              // offset: Offset(0.0, -AppSize.smallHeightDimens),
               onChanged: onChanged,
-              dropdownDecoration: BoxDecoration(
-                color: AppColor.kNeutrals_.shade400,
-                borderRadius: BorderRadius.circular(
-                  AppSize.extraRadius,
-                ),
-              ),
+              // dropdownDecoration: BoxDecoration(
+              //   color: AppColor.kNeutrals_.shade400,
+              //   borderRadius: BorderRadius.circular(
+              //     AppSize.extraRadius,
+              //   ),
+              // ),
               decoration: const InputDecoration().applyDefaults(
                 context.theme.inputDecorationTheme.copyWith(
                   contentPadding: EdgeInsets.zero,

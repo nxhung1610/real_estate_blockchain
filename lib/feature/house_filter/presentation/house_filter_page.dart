@@ -104,9 +104,12 @@ class _HouseFilterPageState extends State<HouseFilterPage> {
                             AppSize.extraHeightDimens.verticalSpace,
                             _Features(
                               items: [
-                                _FeatureItem(s.bedRoom, state.noBedRoom, null),
-                                _FeatureItem(s.bathRoom, state.noBath, null),
-                                _FeatureItem(s.floors, state.noFloor, null),
+                                _FeatureItem(
+                                    s.bedRoom, state.noBedRoom ?? 0, null),
+                                _FeatureItem(
+                                    s.bathRoom, state.noBath ?? 0, null),
+                                _FeatureItem(
+                                    s.floors, state.noFloor ?? 0, null),
                               ],
                               onChangedQuantity:
                                   (_FeatureItem item, int quantity) {

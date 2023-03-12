@@ -63,11 +63,21 @@ class _HomePageState extends State<HomePage>
                         return DropdownButtonHideUnderline(
                           child: DropdownButton2<Province>(
                             isDense: true,
-                            itemPadding: EdgeInsets.zero,
-                            buttonPadding: EdgeInsets.zero,
-                            dropdownPadding: EdgeInsets.zero,
-                            dropdownElevation: 0,
-                            offset: Offset(0.0, -AppSize.mediumHeightDimens),
+                            // itemPadding: EdgeInsets.zero,
+                            // buttonPadding: EdgeInsets.zero,
+                            // dropdownPadding: EdgeInsets.zero,
+                            // dropdownElevation: 0,
+
+                            buttonStyleData: const ButtonStyleData(
+                              elevation: 0,
+                              width: double.infinity,
+                              padding: EdgeInsets.zero,
+                            ),
+                            dropdownStyleData: DropdownStyleData(
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              offset: Offset(0.0, -AppSize.mediumHeightDimens),
+                            ),
                             value: state.provice ?? state.provinces.firstOrNull,
                             selectedItemBuilder: (context) {
                               return state.provinces
@@ -95,26 +105,6 @@ class _HomePageState extends State<HomePage>
                                     ),
                                   )
                                   .toList();
-
-                              // return
-                              //     .map(
-                              //       (e) => DropdownMenuItem(
-                              //         alignment: Alignment.center,
-                              //         value: e,
-                              //         child: Text(
-                              //           context.isVi
-                              //               ? e.fullName ?? ''
-                              //               : e.fullNameEn ?? '',
-                              //           style: context.textTheme.bodyMedium
-                              //               ?.copyWith(
-                              //             color: context
-                              //                 .textTheme.displayLarge?.color,
-                              //             fontWeight: FontWeight.w600,
-                              //           ),
-                              //         ),
-                              //       ),
-                              //     )
-                              //     .toList();
                             },
                             items: [
                               ...state.provinces.map(

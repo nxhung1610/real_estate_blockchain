@@ -17,31 +17,19 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HouseFilterState {
   bool get isSell => throw _privateConstructorUsedError;
-
   num get priceStart => throw _privateConstructorUsedError;
-
   num get priceEnd => throw _privateConstructorUsedError;
-
   num get priceMax => throw _privateConstructorUsedError;
-
-  int get noBedRoom => throw _privateConstructorUsedError;
-
-  int get noFloor => throw _privateConstructorUsedError;
-
-  int get noBath => throw _privateConstructorUsedError;
-
+  int? get noBedRoom => throw _privateConstructorUsedError;
+  int? get noFloor => throw _privateConstructorUsedError;
+  int? get noBath => throw _privateConstructorUsedError;
   int? get minSquare => throw _privateConstructorUsedError;
-
   int? get maxSquare => throw _privateConstructorUsedError;
-
   List<Tuple2<Amenity, bool>> get amentities =>
       throw _privateConstructorUsedError;
-
   List<Tuple2<RealEstateType, bool>> get realEstateTypes =>
       throw _privateConstructorUsedError;
-
   bool get isReset => throw _privateConstructorUsedError;
-
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -54,16 +42,15 @@ abstract class $HouseFilterStateCopyWith<$Res> {
   factory $HouseFilterStateCopyWith(
           HouseFilterState value, $Res Function(HouseFilterState) then) =
       _$HouseFilterStateCopyWithImpl<$Res, HouseFilterState>;
-
   @useResult
   $Res call(
       {bool isSell,
       num priceStart,
       num priceEnd,
       num priceMax,
-      int noBedRoom,
-      int noFloor,
-      int noBath,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
       int? minSquare,
       int? maxSquare,
       List<Tuple2<Amenity, bool>> amentities,
@@ -81,7 +68,6 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -92,9 +78,9 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
     Object? priceStart = null,
     Object? priceEnd = null,
     Object? priceMax = null,
-    Object? noBedRoom = null,
-    Object? noFloor = null,
-    Object? noBath = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
     Object? minSquare = freezed,
     Object? maxSquare = freezed,
     Object? amentities = null,
@@ -119,18 +105,18 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
           ? _value.priceMax
           : priceMax // ignore: cast_nullable_to_non_nullable
               as num,
-      noBedRoom: null == noBedRoom
+      noBedRoom: freezed == noBedRoom
           ? _value.noBedRoom
           : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int,
-      noFloor: null == noFloor
+              as int?,
+      noFloor: freezed == noFloor
           ? _value.noFloor
           : noFloor // ignore: cast_nullable_to_non_nullable
-              as int,
-      noBath: null == noBath
+              as int?,
+      noBath: freezed == noBath
           ? _value.noBath
           : noBath // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       minSquare: freezed == minSquare
           ? _value.minSquare
           : minSquare // ignore: cast_nullable_to_non_nullable
@@ -177,7 +163,6 @@ abstract class _$$_HouseFilterStateCopyWith<$Res>
   factory _$$_HouseFilterStateCopyWith(
           _$_HouseFilterState value, $Res Function(_$_HouseFilterState) then) =
       __$$_HouseFilterStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -185,9 +170,9 @@ abstract class _$$_HouseFilterStateCopyWith<$Res>
       num priceStart,
       num priceEnd,
       num priceMax,
-      int noBedRoom,
-      int noFloor,
-      int noBath,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
       int? minSquare,
       int? maxSquare,
       List<Tuple2<Amenity, bool>> amentities,
@@ -214,9 +199,9 @@ class __$$_HouseFilterStateCopyWithImpl<$Res>
     Object? priceStart = null,
     Object? priceEnd = null,
     Object? priceMax = null,
-    Object? noBedRoom = null,
-    Object? noFloor = null,
-    Object? noBath = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
     Object? minSquare = freezed,
     Object? maxSquare = freezed,
     Object? amentities = null,
@@ -241,18 +226,18 @@ class __$$_HouseFilterStateCopyWithImpl<$Res>
           ? _value.priceMax
           : priceMax // ignore: cast_nullable_to_non_nullable
               as num,
-      noBedRoom: null == noBedRoom
+      noBedRoom: freezed == noBedRoom
           ? _value.noBedRoom
           : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int,
-      noFloor: null == noFloor
+              as int?,
+      noFloor: freezed == noFloor
           ? _value.noFloor
           : noFloor // ignore: cast_nullable_to_non_nullable
-              as int,
-      noBath: null == noBath
+              as int?,
+      noBath: freezed == noBath
           ? _value.noBath
           : noBath // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       minSquare: freezed == minSquare
           ? _value.minSquare
           : minSquare // ignore: cast_nullable_to_non_nullable
@@ -289,9 +274,9 @@ class _$_HouseFilterState implements _HouseFilterState {
       this.priceStart = 0,
       this.priceEnd = 500000000,
       this.priceMax = 1000000000,
-      this.noBedRoom = 0,
-      this.noFloor = 0,
-      this.noBath = 0,
+      this.noBedRoom,
+      this.noFloor,
+      this.noBath,
       this.minSquare,
       this.maxSquare,
       final List<Tuple2<Amenity, bool>> amentities = const [],
@@ -314,20 +299,16 @@ class _$_HouseFilterState implements _HouseFilterState {
   @JsonKey()
   final num priceMax;
   @override
-  @JsonKey()
-  final int noBedRoom;
+  final int? noBedRoom;
   @override
-  @JsonKey()
-  final int noFloor;
+  final int? noFloor;
   @override
-  @JsonKey()
-  final int noBath;
+  final int? noBath;
   @override
   final int? minSquare;
   @override
   final int? maxSquare;
   final List<Tuple2<Amenity, bool>> _amentities;
-
   @override
   @JsonKey()
   List<Tuple2<Amenity, bool>> get amentities {
@@ -337,7 +318,6 @@ class _$_HouseFilterState implements _HouseFilterState {
   }
 
   final List<Tuple2<RealEstateType, bool>> _realEstateTypes;
-
   @override
   @JsonKey()
   List<Tuple2<RealEstateType, bool>> get realEstateTypes {
@@ -415,9 +395,9 @@ abstract class _HouseFilterState implements HouseFilterState {
       final num priceStart,
       final num priceEnd,
       final num priceMax,
-      final int noBedRoom,
-      final int noFloor,
-      final int noBath,
+      final int? noBedRoom,
+      final int? noFloor,
+      final int? noBath,
       final int? minSquare,
       final int? maxSquare,
       final List<Tuple2<Amenity, bool>> amentities,
@@ -427,43 +407,30 @@ abstract class _HouseFilterState implements HouseFilterState {
 
   @override
   bool get isSell;
-
   @override
   num get priceStart;
-
   @override
   num get priceEnd;
-
   @override
   num get priceMax;
-
   @override
-  int get noBedRoom;
-
+  int? get noBedRoom;
   @override
-  int get noFloor;
-
+  int? get noFloor;
   @override
-  int get noBath;
-
+  int? get noBath;
   @override
   int? get minSquare;
-
   @override
   int? get maxSquare;
-
   @override
   List<Tuple2<Amenity, bool>> get amentities;
-
   @override
   List<Tuple2<RealEstateType, bool>> get realEstateTypes;
-
   @override
   bool get isReset;
-
   @override
   RealEstateFilterInput? get filter;
-
   @override
   @JsonKey(ignore: true)
   _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>
@@ -493,7 +460,6 @@ mixin _$HouseFilterEvent {
     required TResult Function() onApply,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
@@ -535,7 +501,6 @@ mixin _$HouseFilterEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HouseFilterEventOnStarted value) onStarted,
@@ -564,7 +529,6 @@ mixin _$HouseFilterEvent {
     required TResult Function(HouseFilterEventOnApply value) onApply,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HouseFilterEventOnStarted value)? onStarted,
@@ -632,7 +596,6 @@ class _$HouseFilterEventCopyWithImpl<$Res, $Val extends HouseFilterEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -643,7 +606,6 @@ abstract class _$$HouseFilterEventOnStartedCopyWith<$Res> {
           _$HouseFilterEventOnStarted value,
           $Res Function(_$HouseFilterEventOnStarted) then) =
       __$$HouseFilterEventOnStartedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({List<Amenity> amenities, List<RealEstateType> realEstateTypes});
 }
@@ -684,7 +646,6 @@ class _$HouseFilterEventOnStarted implements HouseFilterEventOnStarted {
         _realEstateTypes = realEstateTypes;
 
   final List<Amenity> _amenities;
-
   @override
   List<Amenity> get amenities {
     if (_amenities is EqualUnmodifiableListView) return _amenities;
@@ -693,7 +654,6 @@ class _$HouseFilterEventOnStarted implements HouseFilterEventOnStarted {
   }
 
   final List<RealEstateType> _realEstateTypes;
-
   @override
   List<RealEstateType> get realEstateTypes {
     if (_realEstateTypes is EqualUnmodifiableListView) return _realEstateTypes;
@@ -901,9 +861,7 @@ abstract class HouseFilterEventOnStarted implements HouseFilterEvent {
       final List<RealEstateType> realEstateTypes) = _$HouseFilterEventOnStarted;
 
   List<Amenity> get amenities;
-
   List<RealEstateType> get realEstateTypes;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnStartedCopyWith<_$HouseFilterEventOnStarted>
       get copyWith => throw _privateConstructorUsedError;
@@ -915,7 +873,6 @@ abstract class _$$HouseFilterEventOnPriceRangeStartChangedCopyWith<$Res> {
           _$HouseFilterEventOnPriceRangeStartChanged value,
           $Res Function(_$HouseFilterEventOnPriceRangeStartChanged) then) =
       __$$HouseFilterEventOnPriceRangeStartChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({num price});
 }
@@ -1149,7 +1106,6 @@ abstract class HouseFilterEventOnPriceRangeStartChanged
       {required final num price}) = _$HouseFilterEventOnPriceRangeStartChanged;
 
   num get price;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnPriceRangeStartChangedCopyWith<
           _$HouseFilterEventOnPriceRangeStartChanged>
@@ -1162,7 +1118,6 @@ abstract class _$$HouseFilterEventOnPriceRangeEndChangedCopyWith<$Res> {
           _$HouseFilterEventOnPriceRangeEndChanged value,
           $Res Function(_$HouseFilterEventOnPriceRangeEndChanged) then) =
       __$$HouseFilterEventOnPriceRangeEndChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({num price});
 }
@@ -1396,7 +1351,6 @@ abstract class HouseFilterEventOnPriceRangeEndChanged
       {required final num price}) = _$HouseFilterEventOnPriceRangeEndChanged;
 
   num get price;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnPriceRangeEndChangedCopyWith<
           _$HouseFilterEventOnPriceRangeEndChanged>
@@ -1409,7 +1363,6 @@ abstract class _$$HouseFilterEventOnBedRoomChangedCopyWith<$Res> {
           _$HouseFilterEventOnBedRoomChanged value,
           $Res Function(_$HouseFilterEventOnBedRoomChanged) then) =
       __$$HouseFilterEventOnBedRoomChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int quantity});
 }
@@ -1643,7 +1596,6 @@ abstract class HouseFilterEventOnBedRoomChanged implements HouseFilterEvent {
       _$HouseFilterEventOnBedRoomChanged;
 
   int get quantity;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnBedRoomChangedCopyWith<
           _$HouseFilterEventOnBedRoomChanged>
@@ -1656,7 +1608,6 @@ abstract class _$$HouseFilterEventOnBathRoomChangedCopyWith<$Res> {
           _$HouseFilterEventOnBathRoomChanged value,
           $Res Function(_$HouseFilterEventOnBathRoomChanged) then) =
       __$$HouseFilterEventOnBathRoomChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int quantity});
 }
@@ -1890,7 +1841,6 @@ abstract class HouseFilterEventOnBathRoomChanged implements HouseFilterEvent {
       _$HouseFilterEventOnBathRoomChanged;
 
   int get quantity;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnBathRoomChangedCopyWith<
           _$HouseFilterEventOnBathRoomChanged>
@@ -1903,7 +1853,6 @@ abstract class _$$HouseFilterEventOnFloorsChangedCopyWith<$Res> {
           _$HouseFilterEventOnFloorsChanged value,
           $Res Function(_$HouseFilterEventOnFloorsChanged) then) =
       __$$HouseFilterEventOnFloorsChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int quantity});
 }
@@ -2136,7 +2085,6 @@ abstract class HouseFilterEventOnFloorsChanged implements HouseFilterEvent {
       _$HouseFilterEventOnFloorsChanged;
 
   int get quantity;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnFloorsChangedCopyWith<_$HouseFilterEventOnFloorsChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -2148,7 +2096,6 @@ abstract class _$$HouseFilterEventOnRealEstateTypeChangeCopyWith<$Res> {
           _$HouseFilterEventOnRealEstateTypeChange value,
           $Res Function(_$HouseFilterEventOnRealEstateTypeChange) then) =
       __$$HouseFilterEventOnRealEstateTypeChangeCopyWithImpl<$Res>;
-
   @useResult
   $Res call({bool isSell});
 }
@@ -2382,7 +2329,6 @@ abstract class HouseFilterEventOnRealEstateTypeChange
       _$HouseFilterEventOnRealEstateTypeChange;
 
   bool get isSell;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnRealEstateTypeChangeCopyWith<
           _$HouseFilterEventOnRealEstateTypeChange>
@@ -2395,7 +2341,6 @@ abstract class _$$HouseFilterEventOnMinSquareChangedCopyWith<$Res> {
           _$HouseFilterEventOnMinSquareChanged value,
           $Res Function(_$HouseFilterEventOnMinSquareChanged) then) =
       __$$HouseFilterEventOnMinSquareChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int? value});
 }
@@ -2628,7 +2573,6 @@ abstract class HouseFilterEventOnMinSquareChanged implements HouseFilterEvent {
       _$HouseFilterEventOnMinSquareChanged;
 
   int? get value;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnMinSquareChangedCopyWith<
           _$HouseFilterEventOnMinSquareChanged>
@@ -2641,7 +2585,6 @@ abstract class _$$HouseFilterEventOnMaxSquareChangedCopyWith<$Res> {
           _$HouseFilterEventOnMaxSquareChanged value,
           $Res Function(_$HouseFilterEventOnMaxSquareChanged) then) =
       __$$HouseFilterEventOnMaxSquareChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int? value});
 }
@@ -2874,7 +2817,6 @@ abstract class HouseFilterEventOnMaxSquareChanged implements HouseFilterEvent {
       _$HouseFilterEventOnMaxSquareChanged;
 
   int? get value;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnMaxSquareChangedCopyWith<
           _$HouseFilterEventOnMaxSquareChanged>
@@ -2887,7 +2829,6 @@ abstract class _$$HouseFilterEventOnSelectedAmenityCopyWith<$Res> {
           _$HouseFilterEventOnSelectedAmenity value,
           $Res Function(_$HouseFilterEventOnSelectedAmenity) then) =
       __$$HouseFilterEventOnSelectedAmenityCopyWithImpl<$Res>;
-
   @useResult
   $Res call({Amenity amenity, bool isSelected});
 
@@ -3140,9 +3081,7 @@ abstract class HouseFilterEventOnSelectedAmenity implements HouseFilterEvent {
       _$HouseFilterEventOnSelectedAmenity;
 
   Amenity get amenity;
-
   bool get isSelected;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnSelectedAmenityCopyWith<
           _$HouseFilterEventOnSelectedAmenity>
@@ -3155,7 +3094,6 @@ abstract class _$$HouseFilterEventOnSelectedRealEstateTypeCopyWith<$Res> {
           _$HouseFilterEventOnSelectedRealEstateType value,
           $Res Function(_$HouseFilterEventOnSelectedRealEstateType) then) =
       __$$HouseFilterEventOnSelectedRealEstateTypeCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstateType realEstateType, bool isSelected});
 
@@ -3411,9 +3349,7 @@ abstract class HouseFilterEventOnSelectedRealEstateType
       _$HouseFilterEventOnSelectedRealEstateType;
 
   RealEstateType get realEstateType;
-
   bool get isSelected;
-
   @JsonKey(ignore: true)
   _$$HouseFilterEventOnSelectedRealEstateTypeCopyWith<
           _$HouseFilterEventOnSelectedRealEstateType>

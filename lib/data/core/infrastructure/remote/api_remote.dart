@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -35,8 +35,9 @@ class ApiRemote {
 
     dio
       ..options.baseUrl = config.baseUrl
-      ..options.connectTimeout = config.connectionTimeout
-      ..options.receiveTimeout = config.receiveTimeout
+      ..options.connectTimeout =
+          Duration(milliseconds: config.connectionTimeout)
+      ..options.receiveTimeout = Duration(milliseconds: config.receiveTimeout)
       // ..options.followRedirects = false
       ..options.headers = {
         'Content-Type': 'application/json; charset=utf-8',
@@ -52,7 +53,7 @@ class ApiRemote {
         responseHeader: false,
         error: true,
       ));
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
       client.badCertificateCallback =
@@ -71,8 +72,9 @@ class ApiRemote {
 
     dio
       ..options.baseUrl = config.baseUrl
-      ..options.connectTimeout = config.connectionTimeout
-      ..options.receiveTimeout = config.receiveTimeout
+      ..options.connectTimeout =
+          Duration(milliseconds: config.connectionTimeout)
+      ..options.receiveTimeout = Duration(milliseconds: config.receiveTimeout)
       // ..options.followRedirects = false
       ..options.headers = {
         'Content-Type': 'application/json; charset=utf-8',
@@ -87,7 +89,8 @@ class ApiRemote {
         responseHeader: false,
         error: true,
       ));
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
       client.badCertificateCallback =
