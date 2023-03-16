@@ -112,7 +112,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
         (l) => throw l,
         (r) => emit(
           state.copyWith(
-                status: const Status.idle(),
+            status: const Status.idle(),
             currentPage: state.currentPage + 1,
             isEnd: r.length < kPageSize,
             messages: [
@@ -120,7 +120,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
               ...r,
             ],
           ),
-            ),
+        ),
       );
     } catch (e, trace) {
       printLog(this, message: "Error", error: e, trace: trace);
