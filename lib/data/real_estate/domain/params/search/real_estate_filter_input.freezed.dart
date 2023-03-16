@@ -17,27 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RealEstateFilterInput {
   int? get minPrice => throw _privateConstructorUsedError;
-
   int? get maxPrice => throw _privateConstructorUsedError;
-
   int? get noBedrooms => throw _privateConstructorUsedError;
-
   int? get noWc => throw _privateConstructorUsedError;
-
   int? get minArea => throw _privateConstructorUsedError;
-
   int? get maxArea => throw _privateConstructorUsedError;
-
   int? get floors => throw _privateConstructorUsedError;
-
   List<int>? get realEstateTypeIds => throw _privateConstructorUsedError;
-
   List<int>? get realEstateAmenityTypeIds => throw _privateConstructorUsedError;
-
   String? get provinceId => throw _privateConstructorUsedError;
-
   String? get districtId => throw _privateConstructorUsedError;
-
   String? get wardId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -50,7 +39,6 @@ abstract class $RealEstateFilterInputCopyWith<$Res> {
   factory $RealEstateFilterInputCopyWith(RealEstateFilterInput value,
           $Res Function(RealEstateFilterInput) then) =
       _$RealEstateFilterInputCopyWithImpl<$Res, RealEstateFilterInput>;
-
   @useResult
   $Res call(
       {int? minPrice,
@@ -75,7 +63,6 @@ class _$RealEstateFilterInputCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -154,7 +141,6 @@ abstract class _$$_RealEstateFilterInputCopyWith<$Res>
   factory _$$_RealEstateFilterInputCopyWith(_$_RealEstateFilterInput value,
           $Res Function(_$_RealEstateFilterInput) then) =
       __$$_RealEstateFilterInputCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -283,7 +269,6 @@ class _$_RealEstateFilterInput implements _RealEstateFilterInput {
   @override
   final int? floors;
   final List<int>? _realEstateTypeIds;
-
   @override
   List<int>? get realEstateTypeIds {
     final value = _realEstateTypeIds;
@@ -295,7 +280,6 @@ class _$_RealEstateFilterInput implements _RealEstateFilterInput {
   }
 
   final List<int>? _realEstateAmenityTypeIds;
-
   @override
   List<int>? get realEstateAmenityTypeIds {
     final value = _realEstateAmenityTypeIds;
@@ -385,40 +369,28 @@ abstract class _RealEstateFilterInput implements RealEstateFilterInput {
 
   @override
   int? get minPrice;
-
   @override
   int? get maxPrice;
-
   @override
   int? get noBedrooms;
-
   @override
   int? get noWc;
-
   @override
   int? get minArea;
-
   @override
   int? get maxArea;
-
   @override
   int? get floors;
-
   @override
   List<int>? get realEstateTypeIds;
-
   @override
   List<int>? get realEstateAmenityTypeIds;
-
   @override
   String? get provinceId;
-
   @override
   String? get districtId;
-
   @override
   String? get wardId;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateFilterInputCopyWith<_$_RealEstateFilterInput> get copyWith =>

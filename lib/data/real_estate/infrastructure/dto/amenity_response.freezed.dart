@@ -21,7 +21,6 @@ AmenityResponse _$AmenityResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AmenityResponse {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,7 +33,6 @@ abstract class $AmenityResponseCopyWith<$Res> {
   factory $AmenityResponseCopyWith(
           AmenityResponse value, $Res Function(AmenityResponse) then) =
       _$AmenityResponseCopyWithImpl<$Res, AmenityResponse>;
-
   @useResult
   $Res call({int id, String name});
 }
@@ -74,7 +72,6 @@ abstract class _$$_AmenityResponseCopyWith<$Res>
   factory _$$_AmenityResponseCopyWith(
           _$_AmenityResponse value, $Res Function(_$_AmenityResponse) then) =
       __$$_AmenityResponseCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int id, String name});
@@ -154,10 +151,8 @@ abstract class _AmenityResponse implements AmenityResponse {
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   @JsonKey(ignore: true)
   _$$_AmenityResponseCopyWith<_$_AmenityResponse> get copyWith =>

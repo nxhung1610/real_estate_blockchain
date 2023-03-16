@@ -34,7 +34,6 @@ abstract class $RealEstateCreationResponseCopyWith<$Res> {
           $Res Function(RealEstateCreationResponse) then) =
       _$RealEstateCreationResponseCopyWithImpl<$Res,
           RealEstateCreationResponse>;
-
   @useResult
   $Res call({String? hash});
 }
@@ -47,7 +46,6 @@ class _$RealEstateCreationResponseCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -72,7 +70,6 @@ abstract class _$$_RealEstateCreationResponseCopyWith<$Res>
           _$_RealEstateCreationResponse value,
           $Res Function(_$_RealEstateCreationResponse) then) =
       __$$_RealEstateCreationResponseCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String? hash});
@@ -148,7 +145,6 @@ abstract class _RealEstateCreationResponse
 
   @override
   String? get hash;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateCreationResponseCopyWith<_$_RealEstateCreationResponse>

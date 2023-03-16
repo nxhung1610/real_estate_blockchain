@@ -22,9 +22,7 @@ RealEstateTypeResponse _$RealEstateTypeResponseFromJson(
 /// @nodoc
 mixin _$RealEstateTypeResponse {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'is_rent')
   bool? get isRent => throw _privateConstructorUsedError;
 
@@ -38,7 +36,6 @@ abstract class $RealEstateTypeResponseCopyWith<$Res> {
   factory $RealEstateTypeResponseCopyWith(RealEstateTypeResponse value,
           $Res Function(RealEstateTypeResponse) then) =
       _$RealEstateTypeResponseCopyWithImpl<$Res, RealEstateTypeResponse>;
-
   @useResult
   $Res call({int id, String name, @JsonKey(name: 'is_rent') bool? isRent});
 }
@@ -84,7 +81,6 @@ abstract class _$$_RealEstateTypeResponseCopyWith<$Res>
   factory _$$_RealEstateTypeResponseCopyWith(_$_RealEstateTypeResponse value,
           $Res Function(_$_RealEstateTypeResponse) then) =
       __$$_RealEstateTypeResponseCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int id, String name, @JsonKey(name: 'is_rent') bool? isRent});
@@ -181,10 +177,8 @@ abstract class _RealEstateTypeResponse implements RealEstateTypeResponse {
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   @JsonKey(name: 'is_rent')
   bool? get isRent;

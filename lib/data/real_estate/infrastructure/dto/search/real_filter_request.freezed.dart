@@ -18,41 +18,29 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RealFilterRequest {
   @JsonKey(name: 'min_price')
   int? get minPrice => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'max_price')
   int? get maxPrice => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'no_bedrooms')
   int? get noBedrooms => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'no_wc')
   int? get noWc => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'min_area')
   int? get minArea => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'max_area')
   int? get maxArea => throw _privateConstructorUsedError;
-
   int? get floors => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'real_estate_type_ids')
   List<int>? get realEstateTypeIds => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'real_estate_amenity_type_ids')
   List<int>? get realEstateAmenityTypeIds => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'province_id')
   String? get provinceId => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'district_id')
   String? get districtId => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'ward_id')
   String? get wardId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RealFilterRequestCopyWith<RealFilterRequest> get copyWith =>
       throw _privateConstructorUsedError;
@@ -63,7 +51,6 @@ abstract class $RealFilterRequestCopyWith<$Res> {
   factory $RealFilterRequestCopyWith(
           RealFilterRequest value, $Res Function(RealFilterRequest) then) =
       _$RealFilterRequestCopyWithImpl<$Res, RealFilterRequest>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'min_price')
@@ -98,7 +85,6 @@ class _$RealFilterRequestCopyWithImpl<$Res, $Val extends RealFilterRequest>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -177,7 +163,6 @@ abstract class _$$_RealFilterRequestCopyWith<$Res>
   factory _$$_RealFilterRequestCopyWith(_$_RealFilterRequest value,
           $Res Function(_$_RealFilterRequest) then) =
       __$$_RealFilterRequestCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -334,7 +319,6 @@ class _$_RealFilterRequest implements _RealFilterRequest {
   @override
   final int? floors;
   final List<int>? _realEstateTypeIds;
-
   @override
   @JsonKey(name: 'real_estate_type_ids')
   List<int>? get realEstateTypeIds {
@@ -347,7 +331,6 @@ class _$_RealFilterRequest implements _RealFilterRequest {
   }
 
   final List<int>? _realEstateAmenityTypeIds;
-
   @override
   @JsonKey(name: 'real_estate_amenity_type_ids')
   List<int>? get realEstateAmenityTypeIds {
@@ -461,50 +444,38 @@ abstract class _RealFilterRequest implements RealFilterRequest {
   @override
   @JsonKey(name: 'min_price')
   int? get minPrice;
-
   @override
   @JsonKey(name: 'max_price')
   int? get maxPrice;
-
   @override
   @JsonKey(name: 'no_bedrooms')
   int? get noBedrooms;
-
   @override
   @JsonKey(name: 'no_wc')
   int? get noWc;
-
   @override
   @JsonKey(name: 'min_area')
   int? get minArea;
-
   @override
   @JsonKey(name: 'max_area')
   int? get maxArea;
-
   @override
   int? get floors;
-
   @override
   @JsonKey(name: 'real_estate_type_ids')
   List<int>? get realEstateTypeIds;
-
   @override
   @JsonKey(name: 'real_estate_amenity_type_ids')
   List<int>? get realEstateAmenityTypeIds;
-
   @override
   @JsonKey(name: 'province_id')
   String? get provinceId;
-
   @override
   @JsonKey(name: 'district_id')
   String? get districtId;
-
   @override
   @JsonKey(name: 'ward_id')
   String? get wardId;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealFilterRequestCopyWith<_$_RealFilterRequest> get copyWith =>

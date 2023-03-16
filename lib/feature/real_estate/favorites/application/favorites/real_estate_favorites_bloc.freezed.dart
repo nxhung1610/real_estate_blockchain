@@ -23,7 +23,6 @@ mixin _$RealEstateFavoritesEvent {
     required TResult Function(RealEstate estate) onRemoveFavorite,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -39,7 +38,6 @@ mixin _$RealEstateFavoritesEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
@@ -49,7 +47,6 @@ mixin _$RealEstateFavoritesEvent {
         onRemoveFavorite,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -84,7 +81,6 @@ class _$RealEstateFavoritesEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -206,7 +202,6 @@ abstract class _$$RealEstateFavoritesEventOnFavoriteCopyWith<$Res> {
           _$RealEstateFavoritesEventOnFavorite value,
           $Res Function(_$RealEstateFavoritesEventOnFavorite) then) =
       __$$RealEstateFavoritesEventOnFavoriteCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstate estate});
 
@@ -357,7 +352,6 @@ abstract class RealEstateFavoritesEventOnFavorite
       _$RealEstateFavoritesEventOnFavorite;
 
   RealEstate get estate;
-
   @JsonKey(ignore: true)
   _$$RealEstateFavoritesEventOnFavoriteCopyWith<
           _$RealEstateFavoritesEventOnFavorite>
@@ -370,7 +364,6 @@ abstract class _$$RealEstateFavoritesEventOnRemoveFavoriteCopyWith<$Res> {
           _$RealEstateFavoritesEventOnRemoveFavorite value,
           $Res Function(_$RealEstateFavoritesEventOnRemoveFavorite) then) =
       __$$RealEstateFavoritesEventOnRemoveFavoriteCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstate estate});
 
@@ -521,7 +514,6 @@ abstract class RealEstateFavoritesEventOnRemoveFavorite
       final RealEstate estate) = _$RealEstateFavoritesEventOnRemoveFavorite;
 
   RealEstate get estate;
-
   @JsonKey(ignore: true)
   _$$RealEstateFavoritesEventOnRemoveFavoriteCopyWith<
           _$RealEstateFavoritesEventOnRemoveFavorite>
@@ -531,7 +523,6 @@ abstract class RealEstateFavoritesEventOnRemoveFavorite
 /// @nodoc
 mixin _$RealEstateFavoritesState {
   List<RealEstate> get estates => throw _privateConstructorUsedError;
-
   List<RealEstate> get isProcess => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -544,7 +535,6 @@ abstract class $RealEstateFavoritesStateCopyWith<$Res> {
   factory $RealEstateFavoritesStateCopyWith(RealEstateFavoritesState value,
           $Res Function(RealEstateFavoritesState) then) =
       _$RealEstateFavoritesStateCopyWithImpl<$Res, RealEstateFavoritesState>;
-
   @useResult
   $Res call({List<RealEstate> estates, List<RealEstate> isProcess});
 }
@@ -557,7 +547,6 @@ class _$RealEstateFavoritesStateCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -587,7 +576,6 @@ abstract class _$$_RealEstateFavoritesStateCopyWith<$Res>
           _$_RealEstateFavoritesState value,
           $Res Function(_$_RealEstateFavoritesState) then) =
       __$$_RealEstateFavoritesStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<RealEstate> estates, List<RealEstate> isProcess});
@@ -631,7 +619,6 @@ class _$_RealEstateFavoritesState implements _RealEstateFavoritesState {
         _isProcess = isProcess;
 
   final List<RealEstate> _estates;
-
   @override
   @JsonKey()
   List<RealEstate> get estates {
@@ -641,7 +628,6 @@ class _$_RealEstateFavoritesState implements _RealEstateFavoritesState {
   }
 
   final List<RealEstate> _isProcess;
-
   @override
   @JsonKey()
   List<RealEstate> get isProcess {
@@ -686,10 +672,8 @@ abstract class _RealEstateFavoritesState implements RealEstateFavoritesState {
 
   @override
   List<RealEstate> get estates;
-
   @override
   List<RealEstate> get isProcess;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateFavoritesStateCopyWith<_$_RealEstateFavoritesState>

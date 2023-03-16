@@ -28,7 +28,6 @@ abstract class $RealEstateCreationOuputCopyWith<$Res> {
   factory $RealEstateCreationOuputCopyWith(RealEstateCreationOuput value,
           $Res Function(RealEstateCreationOuput) then) =
       _$RealEstateCreationOuputCopyWithImpl<$Res, RealEstateCreationOuput>;
-
   @useResult
   $Res call({String? hash});
 }
@@ -41,7 +40,6 @@ class _$RealEstateCreationOuputCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -65,7 +63,6 @@ abstract class _$$_RealEstateCreationOuputCopyWith<$Res>
   factory _$$_RealEstateCreationOuputCopyWith(_$_RealEstateCreationOuput value,
           $Res Function(_$_RealEstateCreationOuput) then) =
       __$$_RealEstateCreationOuputCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String? hash});
@@ -133,7 +130,6 @@ abstract class _RealEstateCreationOuput implements RealEstateCreationOuput {
 
   @override
   String? get hash;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateCreationOuputCopyWith<_$_RealEstateCreationOuput>

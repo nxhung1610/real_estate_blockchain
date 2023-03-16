@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Amenity {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -28,7 +27,6 @@ mixin _$Amenity {
 abstract class $AmenityCopyWith<$Res> {
   factory $AmenityCopyWith(Amenity value, $Res Function(Amenity) then) =
       _$AmenityCopyWithImpl<$Res, Amenity>;
-
   @useResult
   $Res call({int id, String name});
 }
@@ -67,7 +65,6 @@ abstract class _$$_AmenityCopyWith<$Res> implements $AmenityCopyWith<$Res> {
   factory _$$_AmenityCopyWith(
           _$_Amenity value, $Res Function(_$_Amenity) then) =
       __$$_AmenityCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int id, String name});
@@ -139,10 +136,8 @@ abstract class _Amenity implements Amenity {
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   @JsonKey(ignore: true)
   _$$_AmenityCopyWith<_$_Amenity> get copyWith =>

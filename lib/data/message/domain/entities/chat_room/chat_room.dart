@@ -8,18 +8,21 @@ part 'chat_room.freezed.dart';
 class ChatRoom with _$ChatRoom {
   const ChatRoom._();
   const factory ChatRoom({
-    required int senderId,
-    required int receiverId,
-    required String roomId,
+    required int groupId,
     String? latestMessage,
     DateTime? latestMessageCreatedAt,
-    required User receiverInfo,
+    required List<User> members,
   }) = _ChatRoom;
 
   bool isMessageForThisRoom(ChatMessage message) {
-    return [message.senderId, message.receiverId].contains(senderId) &&
-        [message.senderId, message.receiverId].contains(receiverId);
+    return message.groupId == groupId;
   }
 
-  int getReceiverId(int senderId) => this.senderId + receiverId - senderId;
+  User getReceiverInfo(int senderId) {
+    if (members[0].id == senderId) {
+      return members[1];
+    } else {
+      return members[0];
+    }
+  }
 }

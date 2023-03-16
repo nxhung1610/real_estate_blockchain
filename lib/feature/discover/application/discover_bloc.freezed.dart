@@ -237,7 +237,6 @@ abstract class _$$DiscoverEventOnFilterApplyCopyWith<$Res> {
           _$DiscoverEventOnFilterApply value,
           $Res Function(_$DiscoverEventOnFilterApply) then) =
       __$$DiscoverEventOnFilterApplyCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstateFilterInput input});
 
@@ -402,7 +401,6 @@ abstract class DiscoverEventOnFilterApply implements DiscoverEvent {
       _$DiscoverEventOnFilterApply;
 
   RealEstateFilterInput get input;
-
   @JsonKey(ignore: true)
   _$$DiscoverEventOnFilterApplyCopyWith<_$DiscoverEventOnFilterApply>
       get copyWith => throw _privateConstructorUsedError;
@@ -414,7 +412,6 @@ abstract class _$$DiscoverEventOnKeywordChangedCopyWith<$Res> {
           _$DiscoverEventOnKeywordChanged value,
           $Res Function(_$DiscoverEventOnKeywordChanged) then) =
       __$$DiscoverEventOnKeywordChangedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({String keyword});
 }
@@ -569,7 +566,6 @@ abstract class DiscoverEventOnKeywordChanged implements DiscoverEvent {
       _$DiscoverEventOnKeywordChanged;
 
   String get keyword;
-
   @JsonKey(ignore: true)
   _$$DiscoverEventOnKeywordChangedCopyWith<_$DiscoverEventOnKeywordChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -711,7 +707,6 @@ abstract class _$$DiscoverEventOnRealEstateSelectedCopyWith<$Res> {
           _$DiscoverEventOnRealEstateSelected value,
           $Res Function(_$DiscoverEventOnRealEstateSelected) then) =
       __$$DiscoverEventOnRealEstateSelectedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstate estate});
 
@@ -879,7 +874,6 @@ abstract class DiscoverEventOnRealEstateSelected implements DiscoverEvent {
       _$DiscoverEventOnRealEstateSelected;
 
   RealEstate get estate;
-
   @JsonKey(ignore: true)
   _$$DiscoverEventOnRealEstateSelectedCopyWith<
           _$DiscoverEventOnRealEstateSelected>
@@ -1020,13 +1014,9 @@ abstract class DiscoverEventUnSelected implements DiscoverEvent {
 /// @nodoc
 mixin _$DiscoverState {
   String? get keyword => throw _privateConstructorUsedError;
-
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
-
   List<RealEstate> get estates => throw _privateConstructorUsedError;
-
   RealEstate? get estateSelected => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1039,7 +1029,6 @@ abstract class $DiscoverStateCopyWith<$Res> {
   factory $DiscoverStateCopyWith(
           DiscoverState value, $Res Function(DiscoverState) then) =
       _$DiscoverStateCopyWithImpl<$Res, DiscoverState>;
-
   @useResult
   $Res call(
       {String? keyword,
@@ -1049,9 +1038,7 @@ abstract class $DiscoverStateCopyWith<$Res> {
       Status status});
 
   $RealEstateFilterInputCopyWith<$Res>? get filter;
-
   $RealEstateCopyWith<$Res>? get estateSelected;
-
   $StatusCopyWith<$Res> get status;
 }
 
@@ -1062,7 +1049,6 @@ class _$DiscoverStateCopyWithImpl<$Res, $Val extends DiscoverState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -1138,7 +1124,6 @@ abstract class _$$_DiscoverStateCopyWith<$Res>
   factory _$$_DiscoverStateCopyWith(
           _$_DiscoverState value, $Res Function(_$_DiscoverState) then) =
       __$$_DiscoverStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -1150,10 +1135,8 @@ abstract class _$$_DiscoverStateCopyWith<$Res>
 
   @override
   $RealEstateFilterInputCopyWith<$Res>? get filter;
-
   @override
   $RealEstateCopyWith<$Res>? get estateSelected;
-
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -1216,7 +1199,6 @@ class _$_DiscoverState implements _DiscoverState {
   @override
   final RealEstateFilterInput? filter;
   final List<RealEstate> _estates;
-
   @override
   @JsonKey()
   List<RealEstate> get estates {
@@ -1270,19 +1252,14 @@ abstract class _DiscoverState implements DiscoverState {
 
   @override
   String? get keyword;
-
   @override
   RealEstateFilterInput? get filter;
-
   @override
   List<RealEstate> get estates;
-
   @override
   RealEstate? get estateSelected;
-
   @override
   Status get status;
-
   @override
   @JsonKey(ignore: true)
   _$$_DiscoverStateCopyWith<_$_DiscoverState> get copyWith =>

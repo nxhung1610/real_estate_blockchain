@@ -28,7 +28,6 @@ abstract class $HouseAddNewPageParamsCopyWith<$Res> {
   factory $HouseAddNewPageParamsCopyWith(HouseAddNewPageParams value,
           $Res Function(HouseAddNewPageParams) then) =
       _$HouseAddNewPageParamsCopyWithImpl<$Res, HouseAddNewPageParams>;
-
   @useResult
   $Res call({VoidCallback onSucces});
 }
@@ -41,7 +40,6 @@ class _$HouseAddNewPageParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -65,7 +63,6 @@ abstract class _$$_HouseAddNewPageParamsCopyWith<$Res>
   factory _$$_HouseAddNewPageParamsCopyWith(_$_HouseAddNewPageParams value,
           $Res Function(_$_HouseAddNewPageParams) then) =
       __$$_HouseAddNewPageParamsCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({VoidCallback onSucces});
@@ -132,7 +129,6 @@ abstract class _HouseAddNewPageParams implements HouseAddNewPageParams {
 
   @override
   VoidCallback get onSucces;
-
   @override
   @JsonKey(ignore: true)
   _$$_HouseAddNewPageParamsCopyWith<_$_HouseAddNewPageParams> get copyWith =>

@@ -11,12 +11,10 @@ class ChatRoomDto with _$ChatRoomDto {
   const ChatRoomDto._();
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory ChatRoomDto({
-    required int senderId,
-    required int receiverId,
-    required String roomId,
+    required int groupId,
     String? latestMessage,
     @JsonKey(fromJson: fromApiDate) DateTime? latestMessageCreatedAt,
-    required UserDto receiverInfo,
+    required List<UserDto> members,
   }) = _ChatRoomDto;
 
   factory ChatRoomDto.fromJson(Map<String, dynamic> json) =>
@@ -26,12 +24,10 @@ class ChatRoomDto with _$ChatRoomDto {
 extension ChatRoomDtoMapper on ChatRoomDto {
   ChatRoom toModel() {
     return ChatRoom(
-      senderId: senderId,
-      receiverId: receiverId,
-      roomId: roomId,
-      receiverInfo: receiverInfo.toModel(),
       latestMessage: latestMessage,
       latestMessageCreatedAt: latestMessageCreatedAt,
+      groupId: groupId,
+      members: members.map((e) => e.toModel()).toList(),
     );
   }
 }

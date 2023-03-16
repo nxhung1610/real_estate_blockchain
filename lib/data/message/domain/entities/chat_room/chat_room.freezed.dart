@@ -16,12 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ChatRoom {
-  int get senderId => throw _privateConstructorUsedError;
-  int get receiverId => throw _privateConstructorUsedError;
-  String get roomId => throw _privateConstructorUsedError;
+  int get groupId => throw _privateConstructorUsedError;
+
   String? get latestMessage => throw _privateConstructorUsedError;
+
   DateTime? get latestMessageCreatedAt => throw _privateConstructorUsedError;
-  User get receiverInfo => throw _privateConstructorUsedError;
+
+  List<User> get members => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatRoomCopyWith<ChatRoom> get copyWith =>
@@ -32,16 +33,13 @@ mixin _$ChatRoom {
 abstract class $ChatRoomCopyWith<$Res> {
   factory $ChatRoomCopyWith(ChatRoom value, $Res Function(ChatRoom) then) =
       _$ChatRoomCopyWithImpl<$Res, ChatRoom>;
+
   @useResult
   $Res call(
-      {int senderId,
-      int receiverId,
-      String roomId,
+      {int groupId,
       String? latestMessage,
       DateTime? latestMessageCreatedAt,
-      User receiverInfo});
-
-  $UserCopyWith<$Res> get receiverInfo;
+      List<User> members});
 }
 
 /// @nodoc
@@ -57,26 +55,16 @@ class _$ChatRoomCopyWithImpl<$Res, $Val extends ChatRoom>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? senderId = null,
-    Object? receiverId = null,
-    Object? roomId = null,
+    Object? groupId = null,
     Object? latestMessage = freezed,
     Object? latestMessageCreatedAt = freezed,
-    Object? receiverInfo = null,
+    Object? members = null,
   }) {
     return _then(_value.copyWith(
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
-              as int,
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
       latestMessage: freezed == latestMessage
           ? _value.latestMessage
           : latestMessage // ignore: cast_nullable_to_non_nullable
@@ -85,19 +73,11 @@ class _$ChatRoomCopyWithImpl<$Res, $Val extends ChatRoom>
           ? _value.latestMessageCreatedAt
           : latestMessageCreatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      receiverInfo: null == receiverInfo
-          ? _value.receiverInfo
-          : receiverInfo // ignore: cast_nullable_to_non_nullable
-              as User,
+      members: null == members
+          ? _value.members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<User>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get receiverInfo {
-    return $UserCopyWith<$Res>(_value.receiverInfo, (value) {
-      return _then(_value.copyWith(receiverInfo: value) as $Val);
-    });
   }
 }
 
@@ -106,18 +86,14 @@ abstract class _$$_ChatRoomCopyWith<$Res> implements $ChatRoomCopyWith<$Res> {
   factory _$$_ChatRoomCopyWith(
           _$_ChatRoom value, $Res Function(_$_ChatRoom) then) =
       __$$_ChatRoomCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {int senderId,
-      int receiverId,
-      String roomId,
+      {int groupId,
       String? latestMessage,
       DateTime? latestMessageCreatedAt,
-      User receiverInfo});
-
-  @override
-  $UserCopyWith<$Res> get receiverInfo;
+      List<User> members});
 }
 
 /// @nodoc
@@ -131,26 +107,16 @@ class __$$_ChatRoomCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? senderId = null,
-    Object? receiverId = null,
-    Object? roomId = null,
+    Object? groupId = null,
     Object? latestMessage = freezed,
     Object? latestMessageCreatedAt = freezed,
-    Object? receiverInfo = null,
+    Object? members = null,
   }) {
     return _then(_$_ChatRoom(
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
-              as int,
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
       latestMessage: freezed == latestMessage
           ? _value.latestMessage
           : latestMessage // ignore: cast_nullable_to_non_nullable
@@ -159,10 +125,10 @@ class __$$_ChatRoomCopyWithImpl<$Res>
           ? _value.latestMessageCreatedAt
           : latestMessageCreatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      receiverInfo: null == receiverInfo
-          ? _value.receiverInfo
-          : receiverInfo // ignore: cast_nullable_to_non_nullable
-              as User,
+      members: null == members
+          ? _value._members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<User>,
     ));
   }
 }
@@ -171,30 +137,31 @@ class __$$_ChatRoomCopyWithImpl<$Res>
 
 class _$_ChatRoom extends _ChatRoom {
   const _$_ChatRoom(
-      {required this.senderId,
-      required this.receiverId,
-      required this.roomId,
+      {required this.groupId,
       this.latestMessage,
       this.latestMessageCreatedAt,
-      required this.receiverInfo})
-      : super._();
+      required final List<User> members})
+      : _members = members,
+        super._();
 
   @override
-  final int senderId;
-  @override
-  final int receiverId;
-  @override
-  final String roomId;
+  final int groupId;
   @override
   final String? latestMessage;
   @override
   final DateTime? latestMessageCreatedAt;
+  final List<User> _members;
+
   @override
-  final User receiverInfo;
+  List<User> get members {
+    if (_members is EqualUnmodifiableListView) return _members;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_members);
+  }
 
   @override
   String toString() {
-    return 'ChatRoom(senderId: $senderId, receiverId: $receiverId, roomId: $roomId, latestMessage: $latestMessage, latestMessageCreatedAt: $latestMessageCreatedAt, receiverInfo: $receiverInfo)';
+    return 'ChatRoom(groupId: $groupId, latestMessage: $latestMessage, latestMessageCreatedAt: $latestMessageCreatedAt, members: $members)';
   }
 
   @override
@@ -202,22 +169,17 @@ class _$_ChatRoom extends _ChatRoom {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChatRoom &&
-            (identical(other.senderId, senderId) ||
-                other.senderId == senderId) &&
-            (identical(other.receiverId, receiverId) ||
-                other.receiverId == receiverId) &&
-            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.latestMessage, latestMessage) ||
                 other.latestMessage == latestMessage) &&
             (identical(other.latestMessageCreatedAt, latestMessageCreatedAt) ||
                 other.latestMessageCreatedAt == latestMessageCreatedAt) &&
-            (identical(other.receiverInfo, receiverInfo) ||
-                other.receiverInfo == receiverInfo));
+            const DeepCollectionEquality().equals(other._members, _members));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, senderId, receiverId, roomId,
-      latestMessage, latestMessageCreatedAt, receiverInfo);
+  int get hashCode => Object.hash(runtimeType, groupId, latestMessage,
+      latestMessageCreatedAt, const DeepCollectionEquality().hash(_members));
 
   @JsonKey(ignore: true)
   @override
@@ -228,26 +190,24 @@ class _$_ChatRoom extends _ChatRoom {
 
 abstract class _ChatRoom extends ChatRoom {
   const factory _ChatRoom(
-      {required final int senderId,
-      required final int receiverId,
-      required final String roomId,
+      {required final int groupId,
       final String? latestMessage,
       final DateTime? latestMessageCreatedAt,
-      required final User receiverInfo}) = _$_ChatRoom;
+      required final List<User> members}) = _$_ChatRoom;
   const _ChatRoom._() : super._();
 
   @override
-  int get senderId;
-  @override
-  int get receiverId;
-  @override
-  String get roomId;
+  int get groupId;
+
   @override
   String? get latestMessage;
+
   @override
   DateTime? get latestMessageCreatedAt;
+
   @override
-  User get receiverInfo;
+  List<User> get members;
+
   @override
   @JsonKey(ignore: true)
   _$$_ChatRoomCopyWith<_$_ChatRoom> get copyWith =>

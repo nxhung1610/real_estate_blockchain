@@ -204,7 +204,8 @@ class _AppCommonState extends State<_AppCommon> {
                   scrollBehavior: const ScrollBehaviorModified(),
                   debugShowCheckedModeBanner: false,
                   darkTheme: AppTheme.dark,
-                  themeMode: appBloc.state.mode,
+                  // themeMode: appBloc.state.mode,
+                  themeMode: ThemeMode.light,
                   locale: appBloc.state.locale,
                   localizationsDelegates: const [
                     S.delegate,

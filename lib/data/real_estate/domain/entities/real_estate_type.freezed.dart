@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RealEstateType {
   int get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   bool? get isRent => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,7 +30,6 @@ abstract class $RealEstateTypeCopyWith<$Res> {
   factory $RealEstateTypeCopyWith(
           RealEstateType value, $Res Function(RealEstateType) then) =
       _$RealEstateTypeCopyWithImpl<$Res, RealEstateType>;
-
   @useResult
   $Res call({int id, String name, bool? isRent});
 }
@@ -44,7 +41,6 @@ class _$RealEstateTypeCopyWithImpl<$Res, $Val extends RealEstateType>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -78,7 +74,6 @@ abstract class _$$_RealEstateTypeCopyWith<$Res>
   factory _$$_RealEstateTypeCopyWith(
           _$_RealEstateType value, $Res Function(_$_RealEstateType) then) =
       __$$_RealEstateTypeCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int id, String name, bool? isRent});
@@ -161,13 +156,10 @@ abstract class _RealEstateType implements RealEstateType {
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   bool? get isRent;
-
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateTypeCopyWith<_$_RealEstateType> get copyWith =>

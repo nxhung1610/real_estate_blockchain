@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final s = S.of(context);
     return BlocListener<RegisterBloc, RegisterState>(
       listener: (context, state) {
-        state.status.when(
+        state.status.maybeWhen(
           success: (value) {
             context.go($appRoute.authLogin);
             context.appSnackBar.show(s.pleaseLoginYourAccountToContinue);
@@ -58,6 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
           idle: () {
             context.appDialog.dismissDialog();
           },
+          orElse: () {},
         );
       },
       child: Scaffold(

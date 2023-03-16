@@ -791,7 +791,6 @@ abstract class _$$_ChangeRealEstateTypeCopyWith<$Res> {
   factory _$$_ChangeRealEstateTypeCopyWith(_$_ChangeRealEstateType value,
           $Res Function(_$_ChangeRealEstateType) then) =
       __$$_ChangeRealEstateTypeCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstateType type});
 

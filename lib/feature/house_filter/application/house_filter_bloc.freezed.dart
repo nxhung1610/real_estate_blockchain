@@ -15,429 +15,6 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HouseFilterState {
-  bool get isSell => throw _privateConstructorUsedError;
-  num get priceStart => throw _privateConstructorUsedError;
-  num get priceEnd => throw _privateConstructorUsedError;
-  num get priceMax => throw _privateConstructorUsedError;
-  int? get noBedRoom => throw _privateConstructorUsedError;
-  int? get noFloor => throw _privateConstructorUsedError;
-  int? get noBath => throw _privateConstructorUsedError;
-  int? get minSquare => throw _privateConstructorUsedError;
-  int? get maxSquare => throw _privateConstructorUsedError;
-  List<Tuple2<Amenity, bool>> get amentities =>
-      throw _privateConstructorUsedError;
-  List<Tuple2<RealEstateType, bool>> get realEstateTypes =>
-      throw _privateConstructorUsedError;
-  bool get isReset => throw _privateConstructorUsedError;
-  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $HouseFilterStateCopyWith<HouseFilterState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HouseFilterStateCopyWith<$Res> {
-  factory $HouseFilterStateCopyWith(
-          HouseFilterState value, $Res Function(HouseFilterState) then) =
-      _$HouseFilterStateCopyWithImpl<$Res, HouseFilterState>;
-  @useResult
-  $Res call(
-      {bool isSell,
-      num priceStart,
-      num priceEnd,
-      num priceMax,
-      int? noBedRoom,
-      int? noFloor,
-      int? noBath,
-      int? minSquare,
-      int? maxSquare,
-      List<Tuple2<Amenity, bool>> amentities,
-      List<Tuple2<RealEstateType, bool>> realEstateTypes,
-      bool isReset,
-      RealEstateFilterInput? filter});
-
-  $RealEstateFilterInputCopyWith<$Res>? get filter;
-}
-
-/// @nodoc
-class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
-    implements $HouseFilterStateCopyWith<$Res> {
-  _$HouseFilterStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isSell = null,
-    Object? priceStart = null,
-    Object? priceEnd = null,
-    Object? priceMax = null,
-    Object? noBedRoom = freezed,
-    Object? noFloor = freezed,
-    Object? noBath = freezed,
-    Object? minSquare = freezed,
-    Object? maxSquare = freezed,
-    Object? amentities = null,
-    Object? realEstateTypes = null,
-    Object? isReset = null,
-    Object? filter = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isSell: null == isSell
-          ? _value.isSell
-          : isSell // ignore: cast_nullable_to_non_nullable
-              as bool,
-      priceStart: null == priceStart
-          ? _value.priceStart
-          : priceStart // ignore: cast_nullable_to_non_nullable
-              as num,
-      priceEnd: null == priceEnd
-          ? _value.priceEnd
-          : priceEnd // ignore: cast_nullable_to_non_nullable
-              as num,
-      priceMax: null == priceMax
-          ? _value.priceMax
-          : priceMax // ignore: cast_nullable_to_non_nullable
-              as num,
-      noBedRoom: freezed == noBedRoom
-          ? _value.noBedRoom
-          : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int?,
-      noFloor: freezed == noFloor
-          ? _value.noFloor
-          : noFloor // ignore: cast_nullable_to_non_nullable
-              as int?,
-      noBath: freezed == noBath
-          ? _value.noBath
-          : noBath // ignore: cast_nullable_to_non_nullable
-              as int?,
-      minSquare: freezed == minSquare
-          ? _value.minSquare
-          : minSquare // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxSquare: freezed == maxSquare
-          ? _value.maxSquare
-          : maxSquare // ignore: cast_nullable_to_non_nullable
-              as int?,
-      amentities: null == amentities
-          ? _value.amentities
-          : amentities // ignore: cast_nullable_to_non_nullable
-              as List<Tuple2<Amenity, bool>>,
-      realEstateTypes: null == realEstateTypes
-          ? _value.realEstateTypes
-          : realEstateTypes // ignore: cast_nullable_to_non_nullable
-              as List<Tuple2<RealEstateType, bool>>,
-      isReset: null == isReset
-          ? _value.isReset
-          : isReset // ignore: cast_nullable_to_non_nullable
-              as bool,
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as RealEstateFilterInput?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RealEstateFilterInputCopyWith<$Res>? get filter {
-    if (_value.filter == null) {
-      return null;
-    }
-
-    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
-      return _then(_value.copyWith(filter: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_HouseFilterStateCopyWith<$Res>
-    implements $HouseFilterStateCopyWith<$Res> {
-  factory _$$_HouseFilterStateCopyWith(
-          _$_HouseFilterState value, $Res Function(_$_HouseFilterState) then) =
-      __$$_HouseFilterStateCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool isSell,
-      num priceStart,
-      num priceEnd,
-      num priceMax,
-      int? noBedRoom,
-      int? noFloor,
-      int? noBath,
-      int? minSquare,
-      int? maxSquare,
-      List<Tuple2<Amenity, bool>> amentities,
-      List<Tuple2<RealEstateType, bool>> realEstateTypes,
-      bool isReset,
-      RealEstateFilterInput? filter});
-
-  @override
-  $RealEstateFilterInputCopyWith<$Res>? get filter;
-}
-
-/// @nodoc
-class __$$_HouseFilterStateCopyWithImpl<$Res>
-    extends _$HouseFilterStateCopyWithImpl<$Res, _$_HouseFilterState>
-    implements _$$_HouseFilterStateCopyWith<$Res> {
-  __$$_HouseFilterStateCopyWithImpl(
-      _$_HouseFilterState _value, $Res Function(_$_HouseFilterState) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isSell = null,
-    Object? priceStart = null,
-    Object? priceEnd = null,
-    Object? priceMax = null,
-    Object? noBedRoom = freezed,
-    Object? noFloor = freezed,
-    Object? noBath = freezed,
-    Object? minSquare = freezed,
-    Object? maxSquare = freezed,
-    Object? amentities = null,
-    Object? realEstateTypes = null,
-    Object? isReset = null,
-    Object? filter = freezed,
-  }) {
-    return _then(_$_HouseFilterState(
-      isSell: null == isSell
-          ? _value.isSell
-          : isSell // ignore: cast_nullable_to_non_nullable
-              as bool,
-      priceStart: null == priceStart
-          ? _value.priceStart
-          : priceStart // ignore: cast_nullable_to_non_nullable
-              as num,
-      priceEnd: null == priceEnd
-          ? _value.priceEnd
-          : priceEnd // ignore: cast_nullable_to_non_nullable
-              as num,
-      priceMax: null == priceMax
-          ? _value.priceMax
-          : priceMax // ignore: cast_nullable_to_non_nullable
-              as num,
-      noBedRoom: freezed == noBedRoom
-          ? _value.noBedRoom
-          : noBedRoom // ignore: cast_nullable_to_non_nullable
-              as int?,
-      noFloor: freezed == noFloor
-          ? _value.noFloor
-          : noFloor // ignore: cast_nullable_to_non_nullable
-              as int?,
-      noBath: freezed == noBath
-          ? _value.noBath
-          : noBath // ignore: cast_nullable_to_non_nullable
-              as int?,
-      minSquare: freezed == minSquare
-          ? _value.minSquare
-          : minSquare // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxSquare: freezed == maxSquare
-          ? _value.maxSquare
-          : maxSquare // ignore: cast_nullable_to_non_nullable
-              as int?,
-      amentities: null == amentities
-          ? _value._amentities
-          : amentities // ignore: cast_nullable_to_non_nullable
-              as List<Tuple2<Amenity, bool>>,
-      realEstateTypes: null == realEstateTypes
-          ? _value._realEstateTypes
-          : realEstateTypes // ignore: cast_nullable_to_non_nullable
-              as List<Tuple2<RealEstateType, bool>>,
-      isReset: null == isReset
-          ? _value.isReset
-          : isReset // ignore: cast_nullable_to_non_nullable
-              as bool,
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as RealEstateFilterInput?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_HouseFilterState implements _HouseFilterState {
-  const _$_HouseFilterState(
-      {this.isSell = true,
-      this.priceStart = 0,
-      this.priceEnd = 500000000,
-      this.priceMax = 1000000000,
-      this.noBedRoom,
-      this.noFloor,
-      this.noBath,
-      this.minSquare,
-      this.maxSquare,
-      final List<Tuple2<Amenity, bool>> amentities = const [],
-      final List<Tuple2<RealEstateType, bool>> realEstateTypes = const [],
-      this.isReset = false,
-      this.filter})
-      : _amentities = amentities,
-        _realEstateTypes = realEstateTypes;
-
-  @override
-  @JsonKey()
-  final bool isSell;
-  @override
-  @JsonKey()
-  final num priceStart;
-  @override
-  @JsonKey()
-  final num priceEnd;
-  @override
-  @JsonKey()
-  final num priceMax;
-  @override
-  final int? noBedRoom;
-  @override
-  final int? noFloor;
-  @override
-  final int? noBath;
-  @override
-  final int? minSquare;
-  @override
-  final int? maxSquare;
-  final List<Tuple2<Amenity, bool>> _amentities;
-  @override
-  @JsonKey()
-  List<Tuple2<Amenity, bool>> get amentities {
-    if (_amentities is EqualUnmodifiableListView) return _amentities;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_amentities);
-  }
-
-  final List<Tuple2<RealEstateType, bool>> _realEstateTypes;
-  @override
-  @JsonKey()
-  List<Tuple2<RealEstateType, bool>> get realEstateTypes {
-    if (_realEstateTypes is EqualUnmodifiableListView) return _realEstateTypes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_realEstateTypes);
-  }
-
-  @override
-  @JsonKey()
-  final bool isReset;
-  @override
-  final RealEstateFilterInput? filter;
-
-  @override
-  String toString() {
-    return 'HouseFilterState(isSell: $isSell, priceStart: $priceStart, priceEnd: $priceEnd, priceMax: $priceMax, noBedRoom: $noBedRoom, noFloor: $noFloor, noBath: $noBath, minSquare: $minSquare, maxSquare: $maxSquare, amentities: $amentities, realEstateTypes: $realEstateTypes, isReset: $isReset, filter: $filter)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_HouseFilterState &&
-            (identical(other.isSell, isSell) || other.isSell == isSell) &&
-            (identical(other.priceStart, priceStart) ||
-                other.priceStart == priceStart) &&
-            (identical(other.priceEnd, priceEnd) ||
-                other.priceEnd == priceEnd) &&
-            (identical(other.priceMax, priceMax) ||
-                other.priceMax == priceMax) &&
-            (identical(other.noBedRoom, noBedRoom) ||
-                other.noBedRoom == noBedRoom) &&
-            (identical(other.noFloor, noFloor) || other.noFloor == noFloor) &&
-            (identical(other.noBath, noBath) || other.noBath == noBath) &&
-            (identical(other.minSquare, minSquare) ||
-                other.minSquare == minSquare) &&
-            (identical(other.maxSquare, maxSquare) ||
-                other.maxSquare == maxSquare) &&
-            const DeepCollectionEquality()
-                .equals(other._amentities, _amentities) &&
-            const DeepCollectionEquality()
-                .equals(other._realEstateTypes, _realEstateTypes) &&
-            (identical(other.isReset, isReset) || other.isReset == isReset) &&
-            (identical(other.filter, filter) || other.filter == filter));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      isSell,
-      priceStart,
-      priceEnd,
-      priceMax,
-      noBedRoom,
-      noFloor,
-      noBath,
-      minSquare,
-      maxSquare,
-      const DeepCollectionEquality().hash(_amentities),
-      const DeepCollectionEquality().hash(_realEstateTypes),
-      isReset,
-      filter);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>
-      __$$_HouseFilterStateCopyWithImpl<_$_HouseFilterState>(this, _$identity);
-}
-
-abstract class _HouseFilterState implements HouseFilterState {
-  const factory _HouseFilterState(
-      {final bool isSell,
-      final num priceStart,
-      final num priceEnd,
-      final num priceMax,
-      final int? noBedRoom,
-      final int? noFloor,
-      final int? noBath,
-      final int? minSquare,
-      final int? maxSquare,
-      final List<Tuple2<Amenity, bool>> amentities,
-      final List<Tuple2<RealEstateType, bool>> realEstateTypes,
-      final bool isReset,
-      final RealEstateFilterInput? filter}) = _$_HouseFilterState;
-
-  @override
-  bool get isSell;
-  @override
-  num get priceStart;
-  @override
-  num get priceEnd;
-  @override
-  num get priceMax;
-  @override
-  int? get noBedRoom;
-  @override
-  int? get noFloor;
-  @override
-  int? get noBath;
-  @override
-  int? get minSquare;
-  @override
-  int? get maxSquare;
-  @override
-  List<Tuple2<Amenity, bool>> get amentities;
-  @override
-  List<Tuple2<RealEstateType, bool>> get realEstateTypes;
-  @override
-  bool get isReset;
-  @override
-  RealEstateFilterInput? get filter;
-  @override
-  @JsonKey(ignore: true)
-  _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$HouseFilterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -3770,4 +3347,457 @@ class _$HouseFilterEventOnApply implements HouseFilterEventOnApply {
 
 abstract class HouseFilterEventOnApply implements HouseFilterEvent {
   const factory HouseFilterEventOnApply() = _$HouseFilterEventOnApply;
+}
+
+/// @nodoc
+mixin _$HouseFilterState {
+  bool get isSell => throw _privateConstructorUsedError;
+
+  num get priceStart => throw _privateConstructorUsedError;
+
+  num get priceEnd => throw _privateConstructorUsedError;
+
+  num get priceMax => throw _privateConstructorUsedError;
+
+  int? get noBedRoom => throw _privateConstructorUsedError;
+
+  int? get noFloor => throw _privateConstructorUsedError;
+
+  int? get noBath => throw _privateConstructorUsedError;
+
+  int? get minSquare => throw _privateConstructorUsedError;
+
+  int? get maxSquare => throw _privateConstructorUsedError;
+
+  List<Tuple2<Amenity, bool>> get amentities =>
+      throw _privateConstructorUsedError;
+
+  List<Tuple2<RealEstateType, bool>> get realEstateTypes =>
+      throw _privateConstructorUsedError;
+
+  bool get isReset => throw _privateConstructorUsedError;
+
+  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $HouseFilterStateCopyWith<HouseFilterState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HouseFilterStateCopyWith<$Res> {
+  factory $HouseFilterStateCopyWith(
+          HouseFilterState value, $Res Function(HouseFilterState) then) =
+      _$HouseFilterStateCopyWithImpl<$Res, HouseFilterState>;
+
+  @useResult
+  $Res call(
+      {bool isSell,
+      num priceStart,
+      num priceEnd,
+      num priceMax,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
+      int? minSquare,
+      int? maxSquare,
+      List<Tuple2<Amenity, bool>> amentities,
+      List<Tuple2<RealEstateType, bool>> realEstateTypes,
+      bool isReset,
+      RealEstateFilterInput? filter});
+
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
+    implements $HouseFilterStateCopyWith<$Res> {
+  _$HouseFilterStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSell = null,
+    Object? priceStart = null,
+    Object? priceEnd = null,
+    Object? priceMax = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
+    Object? minSquare = freezed,
+    Object? maxSquare = freezed,
+    Object? amentities = null,
+    Object? realEstateTypes = null,
+    Object? isReset = null,
+    Object? filter = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isSell: null == isSell
+          ? _value.isSell
+          : isSell // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceStart: null == priceStart
+          ? _value.priceStart
+          : priceStart // ignore: cast_nullable_to_non_nullable
+              as num,
+      priceEnd: null == priceEnd
+          ? _value.priceEnd
+          : priceEnd // ignore: cast_nullable_to_non_nullable
+              as num,
+      priceMax: null == priceMax
+          ? _value.priceMax
+          : priceMax // ignore: cast_nullable_to_non_nullable
+              as num,
+      noBedRoom: freezed == noBedRoom
+          ? _value.noBedRoom
+          : noBedRoom // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noFloor: freezed == noFloor
+          ? _value.noFloor
+          : noFloor // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noBath: freezed == noBath
+          ? _value.noBath
+          : noBath // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minSquare: freezed == minSquare
+          ? _value.minSquare
+          : minSquare // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxSquare: freezed == maxSquare
+          ? _value.maxSquare
+          : maxSquare // ignore: cast_nullable_to_non_nullable
+              as int?,
+      amentities: null == amentities
+          ? _value.amentities
+          : amentities // ignore: cast_nullable_to_non_nullable
+              as List<Tuple2<Amenity, bool>>,
+      realEstateTypes: null == realEstateTypes
+          ? _value.realEstateTypes
+          : realEstateTypes // ignore: cast_nullable_to_non_nullable
+              as List<Tuple2<RealEstateType, bool>>,
+      isReset: null == isReset
+          ? _value.isReset
+          : isReset // ignore: cast_nullable_to_non_nullable
+              as bool,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
+
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_HouseFilterStateCopyWith<$Res>
+    implements $HouseFilterStateCopyWith<$Res> {
+  factory _$$_HouseFilterStateCopyWith(
+          _$_HouseFilterState value, $Res Function(_$_HouseFilterState) then) =
+      __$$_HouseFilterStateCopyWithImpl<$Res>;
+
+  @override
+  @useResult
+  $Res call(
+      {bool isSell,
+      num priceStart,
+      num priceEnd,
+      num priceMax,
+      int? noBedRoom,
+      int? noFloor,
+      int? noBath,
+      int? minSquare,
+      int? maxSquare,
+      List<Tuple2<Amenity, bool>> amentities,
+      List<Tuple2<RealEstateType, bool>> realEstateTypes,
+      bool isReset,
+      RealEstateFilterInput? filter});
+
+  @override
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class __$$_HouseFilterStateCopyWithImpl<$Res>
+    extends _$HouseFilterStateCopyWithImpl<$Res, _$_HouseFilterState>
+    implements _$$_HouseFilterStateCopyWith<$Res> {
+  __$$_HouseFilterStateCopyWithImpl(
+      _$_HouseFilterState _value, $Res Function(_$_HouseFilterState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSell = null,
+    Object? priceStart = null,
+    Object? priceEnd = null,
+    Object? priceMax = null,
+    Object? noBedRoom = freezed,
+    Object? noFloor = freezed,
+    Object? noBath = freezed,
+    Object? minSquare = freezed,
+    Object? maxSquare = freezed,
+    Object? amentities = null,
+    Object? realEstateTypes = null,
+    Object? isReset = null,
+    Object? filter = freezed,
+  }) {
+    return _then(_$_HouseFilterState(
+      isSell: null == isSell
+          ? _value.isSell
+          : isSell // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceStart: null == priceStart
+          ? _value.priceStart
+          : priceStart // ignore: cast_nullable_to_non_nullable
+              as num,
+      priceEnd: null == priceEnd
+          ? _value.priceEnd
+          : priceEnd // ignore: cast_nullable_to_non_nullable
+              as num,
+      priceMax: null == priceMax
+          ? _value.priceMax
+          : priceMax // ignore: cast_nullable_to_non_nullable
+              as num,
+      noBedRoom: freezed == noBedRoom
+          ? _value.noBedRoom
+          : noBedRoom // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noFloor: freezed == noFloor
+          ? _value.noFloor
+          : noFloor // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noBath: freezed == noBath
+          ? _value.noBath
+          : noBath // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minSquare: freezed == minSquare
+          ? _value.minSquare
+          : minSquare // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxSquare: freezed == maxSquare
+          ? _value.maxSquare
+          : maxSquare // ignore: cast_nullable_to_non_nullable
+              as int?,
+      amentities: null == amentities
+          ? _value._amentities
+          : amentities // ignore: cast_nullable_to_non_nullable
+              as List<Tuple2<Amenity, bool>>,
+      realEstateTypes: null == realEstateTypes
+          ? _value._realEstateTypes
+          : realEstateTypes // ignore: cast_nullable_to_non_nullable
+              as List<Tuple2<RealEstateType, bool>>,
+      isReset: null == isReset
+          ? _value.isReset
+          : isReset // ignore: cast_nullable_to_non_nullable
+              as bool,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_HouseFilterState implements _HouseFilterState {
+  const _$_HouseFilterState(
+      {this.isSell = true,
+      this.priceStart = 0,
+      this.priceEnd = 500000000,
+      this.priceMax = 1000000000,
+      this.noBedRoom,
+      this.noFloor,
+      this.noBath,
+      this.minSquare,
+      this.maxSquare,
+      final List<Tuple2<Amenity, bool>> amentities = const [],
+      final List<Tuple2<RealEstateType, bool>> realEstateTypes = const [],
+      this.isReset = false,
+      this.filter})
+      : _amentities = amentities,
+        _realEstateTypes = realEstateTypes;
+
+  @override
+  @JsonKey()
+  final bool isSell;
+  @override
+  @JsonKey()
+  final num priceStart;
+  @override
+  @JsonKey()
+  final num priceEnd;
+  @override
+  @JsonKey()
+  final num priceMax;
+  @override
+  final int? noBedRoom;
+  @override
+  final int? noFloor;
+  @override
+  final int? noBath;
+  @override
+  final int? minSquare;
+  @override
+  final int? maxSquare;
+  final List<Tuple2<Amenity, bool>> _amentities;
+
+  @override
+  @JsonKey()
+  List<Tuple2<Amenity, bool>> get amentities {
+    if (_amentities is EqualUnmodifiableListView) return _amentities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amentities);
+  }
+
+  final List<Tuple2<RealEstateType, bool>> _realEstateTypes;
+
+  @override
+  @JsonKey()
+  List<Tuple2<RealEstateType, bool>> get realEstateTypes {
+    if (_realEstateTypes is EqualUnmodifiableListView) return _realEstateTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_realEstateTypes);
+  }
+
+  @override
+  @JsonKey()
+  final bool isReset;
+  @override
+  final RealEstateFilterInput? filter;
+
+  @override
+  String toString() {
+    return 'HouseFilterState(isSell: $isSell, priceStart: $priceStart, priceEnd: $priceEnd, priceMax: $priceMax, noBedRoom: $noBedRoom, noFloor: $noFloor, noBath: $noBath, minSquare: $minSquare, maxSquare: $maxSquare, amentities: $amentities, realEstateTypes: $realEstateTypes, isReset: $isReset, filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HouseFilterState &&
+            (identical(other.isSell, isSell) || other.isSell == isSell) &&
+            (identical(other.priceStart, priceStart) ||
+                other.priceStart == priceStart) &&
+            (identical(other.priceEnd, priceEnd) ||
+                other.priceEnd == priceEnd) &&
+            (identical(other.priceMax, priceMax) ||
+                other.priceMax == priceMax) &&
+            (identical(other.noBedRoom, noBedRoom) ||
+                other.noBedRoom == noBedRoom) &&
+            (identical(other.noFloor, noFloor) || other.noFloor == noFloor) &&
+            (identical(other.noBath, noBath) || other.noBath == noBath) &&
+            (identical(other.minSquare, minSquare) ||
+                other.minSquare == minSquare) &&
+            (identical(other.maxSquare, maxSquare) ||
+                other.maxSquare == maxSquare) &&
+            const DeepCollectionEquality()
+                .equals(other._amentities, _amentities) &&
+            const DeepCollectionEquality()
+                .equals(other._realEstateTypes, _realEstateTypes) &&
+            (identical(other.isReset, isReset) || other.isReset == isReset) &&
+            (identical(other.filter, filter) || other.filter == filter));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      isSell,
+      priceStart,
+      priceEnd,
+      priceMax,
+      noBedRoom,
+      noFloor,
+      noBath,
+      minSquare,
+      maxSquare,
+      const DeepCollectionEquality().hash(_amentities),
+      const DeepCollectionEquality().hash(_realEstateTypes),
+      isReset,
+      filter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>
+      __$$_HouseFilterStateCopyWithImpl<_$_HouseFilterState>(this, _$identity);
+}
+
+abstract class _HouseFilterState implements HouseFilterState {
+  const factory _HouseFilterState(
+      {final bool isSell,
+      final num priceStart,
+      final num priceEnd,
+      final num priceMax,
+      final int? noBedRoom,
+      final int? noFloor,
+      final int? noBath,
+      final int? minSquare,
+      final int? maxSquare,
+      final List<Tuple2<Amenity, bool>> amentities,
+      final List<Tuple2<RealEstateType, bool>> realEstateTypes,
+      final bool isReset,
+      final RealEstateFilterInput? filter}) = _$_HouseFilterState;
+
+  @override
+  bool get isSell;
+
+  @override
+  num get priceStart;
+
+  @override
+  num get priceEnd;
+
+  @override
+  num get priceMax;
+
+  @override
+  int? get noBedRoom;
+
+  @override
+  int? get noFloor;
+
+  @override
+  int? get noBath;
+
+  @override
+  int? get minSquare;
+
+  @override
+  int? get maxSquare;
+
+  @override
+  List<Tuple2<Amenity, bool>> get amentities;
+
+  @override
+  List<Tuple2<RealEstateType, bool>> get realEstateTypes;
+
+  @override
+  bool get isReset;
+
+  @override
+  RealEstateFilterInput? get filter;
+
+  @override
+  @JsonKey(ignore: true)
+  _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

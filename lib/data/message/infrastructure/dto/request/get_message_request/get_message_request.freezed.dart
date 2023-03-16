@@ -22,8 +22,8 @@ GetMessageRequest _$GetMessageRequestFromJson(Map<String, dynamic> json) {
 mixin _$GetMessageRequest {
   int get page => throw _privateConstructorUsedError;
   int get pageSize => throw _privateConstructorUsedError;
-  int get senderId => throw _privateConstructorUsedError;
-  int get receiverId => throw _privateConstructorUsedError;
+
+  int get groupId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,8 +36,9 @@ abstract class $GetMessageRequestCopyWith<$Res> {
   factory $GetMessageRequestCopyWith(
           GetMessageRequest value, $Res Function(GetMessageRequest) then) =
       _$GetMessageRequestCopyWithImpl<$Res, GetMessageRequest>;
+
   @useResult
-  $Res call({int page, int pageSize, int senderId, int receiverId});
+  $Res call({int page, int pageSize, int groupId});
 }
 
 /// @nodoc
@@ -55,8 +56,7 @@ class _$GetMessageRequestCopyWithImpl<$Res, $Val extends GetMessageRequest>
   $Res call({
     Object? page = null,
     Object? pageSize = null,
-    Object? senderId = null,
-    Object? receiverId = null,
+    Object? groupId = null,
   }) {
     return _then(_value.copyWith(
       page: null == page
@@ -67,13 +67,9 @@ class _$GetMessageRequestCopyWithImpl<$Res, $Val extends GetMessageRequest>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -85,9 +81,10 @@ abstract class _$$_GetMessageRequestCopyWith<$Res>
   factory _$$_GetMessageRequestCopyWith(_$_GetMessageRequest value,
           $Res Function(_$_GetMessageRequest) then) =
       __$$_GetMessageRequestCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({int page, int pageSize, int senderId, int receiverId});
+  $Res call({int page, int pageSize, int groupId});
 }
 
 /// @nodoc
@@ -103,8 +100,7 @@ class __$$_GetMessageRequestCopyWithImpl<$Res>
   $Res call({
     Object? page = null,
     Object? pageSize = null,
-    Object? senderId = null,
-    Object? receiverId = null,
+    Object? groupId = null,
   }) {
     return _then(_$_GetMessageRequest(
       page: null == page
@@ -115,13 +111,9 @@ class __$$_GetMessageRequestCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -132,10 +124,7 @@ class __$$_GetMessageRequestCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class _$_GetMessageRequest implements _GetMessageRequest {
   const _$_GetMessageRequest(
-      {required this.page,
-      required this.pageSize,
-      required this.senderId,
-      required this.receiverId});
+      {required this.page, required this.pageSize, required this.groupId});
 
   factory _$_GetMessageRequest.fromJson(Map<String, dynamic> json) =>
       _$$_GetMessageRequestFromJson(json);
@@ -145,13 +134,11 @@ class _$_GetMessageRequest implements _GetMessageRequest {
   @override
   final int pageSize;
   @override
-  final int senderId;
-  @override
-  final int receiverId;
+  final int groupId;
 
   @override
   String toString() {
-    return 'GetMessageRequest(page: $page, pageSize: $pageSize, senderId: $senderId, receiverId: $receiverId)';
+    return 'GetMessageRequest(page: $page, pageSize: $pageSize, groupId: $groupId)';
   }
 
   @override
@@ -162,16 +149,12 @@ class _$_GetMessageRequest implements _GetMessageRequest {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.pageSize, pageSize) ||
                 other.pageSize == pageSize) &&
-            (identical(other.senderId, senderId) ||
-                other.senderId == senderId) &&
-            (identical(other.receiverId, receiverId) ||
-                other.receiverId == receiverId));
+            (identical(other.groupId, groupId) || other.groupId == groupId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, page, pageSize, senderId, receiverId);
+  int get hashCode => Object.hash(runtimeType, page, pageSize, groupId);
 
   @JsonKey(ignore: true)
   @override
@@ -192,20 +175,20 @@ abstract class _GetMessageRequest implements GetMessageRequest {
   const factory _GetMessageRequest(
       {required final int page,
       required final int pageSize,
-      required final int senderId,
-      required final int receiverId}) = _$_GetMessageRequest;
+      required final int groupId}) = _$_GetMessageRequest;
 
   factory _GetMessageRequest.fromJson(Map<String, dynamic> json) =
       _$_GetMessageRequest.fromJson;
 
   @override
   int get page;
+
   @override
   int get pageSize;
+
   @override
-  int get senderId;
-  @override
-  int get receiverId;
+  int get groupId;
+
   @override
   @JsonKey(ignore: true)
   _$$_GetMessageRequestCopyWith<_$_GetMessageRequest> get copyWith =>

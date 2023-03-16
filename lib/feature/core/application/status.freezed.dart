@@ -21,6 +21,8 @@ mixin _$Status {
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
     required TResult Function() idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +31,8 @@ mixin _$Status {
     TResult? Function(dynamic value)? success,
     TResult? Function(dynamic value)? failure,
     TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
     TResult? Function()? idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +41,8 @@ mixin _$Status {
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
     TResult Function()? idle,
     required TResult orElse(),
   }) =>
@@ -46,6 +52,8 @@ mixin _$Status {
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
     required TResult Function(StatusIdle value) idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +62,8 @@ mixin _$Status {
     TResult? Function(StatusSuccess value)? success,
     TResult? Function(StatusFailure value)? failure,
     TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
     TResult? Function(StatusIdle value)? idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +72,8 @@ mixin _$Status {
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
     TResult Function(StatusIdle value)? idle,
     required TResult orElse(),
   }) =>
@@ -153,6 +165,8 @@ class _$StatusSuccess implements StatusSuccess {
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
     required TResult Function() idle,
   }) {
     return success(value);
@@ -164,6 +178,8 @@ class _$StatusSuccess implements StatusSuccess {
     TResult? Function(dynamic value)? success,
     TResult? Function(dynamic value)? failure,
     TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
     TResult? Function()? idle,
   }) {
     return success?.call(value);
@@ -175,6 +191,8 @@ class _$StatusSuccess implements StatusSuccess {
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
     TResult Function()? idle,
     required TResult orElse(),
   }) {
@@ -190,6 +208,8 @@ class _$StatusSuccess implements StatusSuccess {
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
     required TResult Function(StatusIdle value) idle,
   }) {
     return success(this);
@@ -201,6 +221,8 @@ class _$StatusSuccess implements StatusSuccess {
     TResult? Function(StatusSuccess value)? success,
     TResult? Function(StatusFailure value)? failure,
     TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
     TResult? Function(StatusIdle value)? idle,
   }) {
     return success?.call(this);
@@ -212,6 +234,8 @@ class _$StatusSuccess implements StatusSuccess {
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
     TResult Function(StatusIdle value)? idle,
     required TResult orElse(),
   }) {
@@ -299,6 +323,8 @@ class _$StatusFailure implements StatusFailure {
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
     required TResult Function() idle,
   }) {
     return failure(value);
@@ -310,6 +336,8 @@ class _$StatusFailure implements StatusFailure {
     TResult? Function(dynamic value)? success,
     TResult? Function(dynamic value)? failure,
     TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
     TResult? Function()? idle,
   }) {
     return failure?.call(value);
@@ -321,6 +349,8 @@ class _$StatusFailure implements StatusFailure {
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
     TResult Function()? idle,
     required TResult orElse(),
   }) {
@@ -336,6 +366,8 @@ class _$StatusFailure implements StatusFailure {
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
     required TResult Function(StatusIdle value) idle,
   }) {
     return failure(this);
@@ -347,6 +379,8 @@ class _$StatusFailure implements StatusFailure {
     TResult? Function(StatusSuccess value)? success,
     TResult? Function(StatusFailure value)? failure,
     TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
     TResult? Function(StatusIdle value)? idle,
   }) {
     return failure?.call(this);
@@ -358,6 +392,8 @@ class _$StatusFailure implements StatusFailure {
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
     TResult Function(StatusIdle value)? idle,
     required TResult orElse(),
   }) {
@@ -418,6 +454,8 @@ class _$StatusLoading implements StatusLoading {
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
     required TResult Function() idle,
   }) {
     return loading();
@@ -429,6 +467,8 @@ class _$StatusLoading implements StatusLoading {
     TResult? Function(dynamic value)? success,
     TResult? Function(dynamic value)? failure,
     TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
     TResult? Function()? idle,
   }) {
     return loading?.call();
@@ -440,6 +480,8 @@ class _$StatusLoading implements StatusLoading {
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
     TResult Function()? idle,
     required TResult orElse(),
   }) {
@@ -455,6 +497,8 @@ class _$StatusLoading implements StatusLoading {
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
     required TResult Function(StatusIdle value) idle,
   }) {
     return loading(this);
@@ -466,6 +510,8 @@ class _$StatusLoading implements StatusLoading {
     TResult? Function(StatusSuccess value)? success,
     TResult? Function(StatusFailure value)? failure,
     TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
     TResult? Function(StatusIdle value)? idle,
   }) {
     return loading?.call(this);
@@ -477,6 +523,8 @@ class _$StatusLoading implements StatusLoading {
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
     TResult Function(StatusIdle value)? idle,
     required TResult orElse(),
   }) {
@@ -489,6 +537,258 @@ class _$StatusLoading implements StatusLoading {
 
 abstract class StatusLoading implements Status {
   const factory StatusLoading() = _$StatusLoading;
+}
+
+/// @nodoc
+abstract class _$$StatusRefreshingCopyWith<$Res> {
+  factory _$$StatusRefreshingCopyWith(
+          _$StatusRefreshing value, $Res Function(_$StatusRefreshing) then) =
+      __$$StatusRefreshingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StatusRefreshingCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusRefreshing>
+    implements _$$StatusRefreshingCopyWith<$Res> {
+  __$$StatusRefreshingCopyWithImpl(
+      _$StatusRefreshing _value, $Res Function(_$StatusRefreshing) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StatusRefreshing implements StatusRefreshing {
+  const _$StatusRefreshing();
+
+  @override
+  String toString() {
+    return 'Status.refreshing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$StatusRefreshing);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic value) success,
+    required TResult Function(dynamic value) failure,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
+    required TResult Function() idle,
+  }) {
+    return refreshing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
+    TResult? Function()? idle,
+  }) {
+    return refreshing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic value)? success,
+    TResult Function(dynamic value)? failure,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
+    TResult Function()? idle,
+    required TResult orElse(),
+  }) {
+    if (refreshing != null) {
+      return refreshing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StatusSuccess value) success,
+    required TResult Function(StatusFailure value) failure,
+    required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
+    required TResult Function(StatusIdle value) idle,
+  }) {
+    return refreshing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
+    TResult? Function(StatusIdle value)? idle,
+  }) {
+    return refreshing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StatusSuccess value)? success,
+    TResult Function(StatusFailure value)? failure,
+    TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
+    TResult Function(StatusIdle value)? idle,
+    required TResult orElse(),
+  }) {
+    if (refreshing != null) {
+      return refreshing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StatusRefreshing implements Status {
+  const factory StatusRefreshing() = _$StatusRefreshing;
+}
+
+/// @nodoc
+abstract class _$$StatusMoreLoadingCopyWith<$Res> {
+  factory _$$StatusMoreLoadingCopyWith(
+          _$StatusMoreLoading value, $Res Function(_$StatusMoreLoading) then) =
+      __$$StatusMoreLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StatusMoreLoadingCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusMoreLoading>
+    implements _$$StatusMoreLoadingCopyWith<$Res> {
+  __$$StatusMoreLoadingCopyWithImpl(
+      _$StatusMoreLoading _value, $Res Function(_$StatusMoreLoading) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StatusMoreLoading implements StatusMoreLoading {
+  const _$StatusMoreLoading();
+
+  @override
+  String toString() {
+    return 'Status.moreLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$StatusMoreLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic value) success,
+    required TResult Function(dynamic value) failure,
+    required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
+    required TResult Function() idle,
+  }) {
+    return moreLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(dynamic value)? success,
+    TResult? Function(dynamic value)? failure,
+    TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
+    TResult? Function()? idle,
+  }) {
+    return moreLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic value)? success,
+    TResult Function(dynamic value)? failure,
+    TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
+    TResult Function()? idle,
+    required TResult orElse(),
+  }) {
+    if (moreLoading != null) {
+      return moreLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StatusSuccess value) success,
+    required TResult Function(StatusFailure value) failure,
+    required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
+    required TResult Function(StatusIdle value) idle,
+  }) {
+    return moreLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StatusSuccess value)? success,
+    TResult? Function(StatusFailure value)? failure,
+    TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
+    TResult? Function(StatusIdle value)? idle,
+  }) {
+    return moreLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StatusSuccess value)? success,
+    TResult Function(StatusFailure value)? failure,
+    TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
+    TResult Function(StatusIdle value)? idle,
+    required TResult orElse(),
+  }) {
+    if (moreLoading != null) {
+      return moreLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StatusMoreLoading implements Status {
+  const factory StatusMoreLoading() = _$StatusMoreLoading;
 }
 
 /// @nodoc
@@ -532,6 +832,8 @@ class _$StatusIdle implements StatusIdle {
     required TResult Function(dynamic value) success,
     required TResult Function(dynamic value) failure,
     required TResult Function() loading,
+    required TResult Function() refreshing,
+    required TResult Function() moreLoading,
     required TResult Function() idle,
   }) {
     return idle();
@@ -543,6 +845,8 @@ class _$StatusIdle implements StatusIdle {
     TResult? Function(dynamic value)? success,
     TResult? Function(dynamic value)? failure,
     TResult? Function()? loading,
+    TResult? Function()? refreshing,
+    TResult? Function()? moreLoading,
     TResult? Function()? idle,
   }) {
     return idle?.call();
@@ -554,6 +858,8 @@ class _$StatusIdle implements StatusIdle {
     TResult Function(dynamic value)? success,
     TResult Function(dynamic value)? failure,
     TResult Function()? loading,
+    TResult Function()? refreshing,
+    TResult Function()? moreLoading,
     TResult Function()? idle,
     required TResult orElse(),
   }) {
@@ -569,6 +875,8 @@ class _$StatusIdle implements StatusIdle {
     required TResult Function(StatusSuccess value) success,
     required TResult Function(StatusFailure value) failure,
     required TResult Function(StatusLoading value) loading,
+    required TResult Function(StatusRefreshing value) refreshing,
+    required TResult Function(StatusMoreLoading value) moreLoading,
     required TResult Function(StatusIdle value) idle,
   }) {
     return idle(this);
@@ -580,6 +888,8 @@ class _$StatusIdle implements StatusIdle {
     TResult? Function(StatusSuccess value)? success,
     TResult? Function(StatusFailure value)? failure,
     TResult? Function(StatusLoading value)? loading,
+    TResult? Function(StatusRefreshing value)? refreshing,
+    TResult? Function(StatusMoreLoading value)? moreLoading,
     TResult? Function(StatusIdle value)? idle,
   }) {
     return idle?.call(this);
@@ -591,6 +901,8 @@ class _$StatusIdle implements StatusIdle {
     TResult Function(StatusSuccess value)? success,
     TResult Function(StatusFailure value)? failure,
     TResult Function(StatusLoading value)? loading,
+    TResult Function(StatusRefreshing value)? refreshing,
+    TResult Function(StatusMoreLoading value)? moreLoading,
     TResult Function(StatusIdle value)? idle,
     required TResult orElse(),
   }) {

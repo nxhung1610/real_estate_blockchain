@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SearchPageParams {
   String? get keyword => throw _privateConstructorUsedError;
-
   bool get isNeedCallback => throw _privateConstructorUsedError;
-
   void Function(SearchResultData) get onSearchResult =>
       throw _privateConstructorUsedError;
 
@@ -33,7 +31,6 @@ abstract class $SearchPageParamsCopyWith<$Res> {
   factory $SearchPageParamsCopyWith(
           SearchPageParams value, $Res Function(SearchPageParams) then) =
       _$SearchPageParamsCopyWithImpl<$Res, SearchPageParams>;
-
   @useResult
   $Res call(
       {String? keyword,
@@ -48,7 +45,6 @@ class _$SearchPageParamsCopyWithImpl<$Res, $Val extends SearchPageParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -82,7 +78,6 @@ abstract class _$$_SearchPageParamsCopyWith<$Res>
   factory _$$_SearchPageParamsCopyWith(
           _$_SearchPageParams value, $Res Function(_$_SearchPageParams) then) =
       __$$_SearchPageParamsCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -174,13 +169,10 @@ abstract class _SearchPageParams implements SearchPageParams {
 
   @override
   String? get keyword;
-
   @override
   bool get isNeedCallback;
-
   @override
   void Function(SearchResultData) get onSearchResult;
-
   @override
   @JsonKey(ignore: true)
   _$$_SearchPageParamsCopyWith<_$_SearchPageParams> get copyWith =>
@@ -195,7 +187,6 @@ mixin _$SearchResultData {
     required TResult Function(String keyword) onKeyword,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RealEstate estate)? onSelected,
@@ -209,14 +200,12 @@ mixin _$SearchResultData {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SearchResultDataOnSelected value) onSelected,
     required TResult Function(SearchResultDataOnKeyword value) onKeyword,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SearchResultDataOnSelected value)? onSelected,
@@ -246,7 +235,6 @@ class _$SearchResultDataCopyWithImpl<$Res, $Val extends SearchResultData>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -257,7 +245,6 @@ abstract class _$$SearchResultDataOnSelectedCopyWith<$Res> {
           _$SearchResultDataOnSelected value,
           $Res Function(_$SearchResultDataOnSelected) then) =
       __$$SearchResultDataOnSelectedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({RealEstate estate});
 
@@ -394,7 +381,6 @@ abstract class SearchResultDataOnSelected implements SearchResultData {
       _$SearchResultDataOnSelected;
 
   RealEstate get estate;
-
   @JsonKey(ignore: true)
   _$$SearchResultDataOnSelectedCopyWith<_$SearchResultDataOnSelected>
       get copyWith => throw _privateConstructorUsedError;
@@ -406,7 +392,6 @@ abstract class _$$SearchResultDataOnKeywordCopyWith<$Res> {
           _$SearchResultDataOnKeyword value,
           $Res Function(_$SearchResultDataOnKeyword) then) =
       __$$SearchResultDataOnKeywordCopyWithImpl<$Res>;
-
   @useResult
   $Res call({String keyword});
 }
@@ -532,7 +517,6 @@ abstract class SearchResultDataOnKeyword implements SearchResultData {
       _$SearchResultDataOnKeyword;
 
   String get keyword;
-
   @JsonKey(ignore: true)
   _$$SearchResultDataOnKeywordCopyWith<_$SearchResultDataOnKeyword>
       get copyWith => throw _privateConstructorUsedError;

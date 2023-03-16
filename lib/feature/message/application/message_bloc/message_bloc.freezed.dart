@@ -530,7 +530,6 @@ abstract class MessageReceived implements MessageEvent {
       _$MessageReceived;
 
   ChatMessage get newMessage;
-
   @JsonKey(ignore: true)
   _$$MessageReceivedCopyWith<_$MessageReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -541,7 +540,6 @@ abstract class _$$MessageEventOnCreateRoomCopyWith<$Res> {
   factory _$$MessageEventOnCreateRoomCopyWith(_$MessageEventOnCreateRoom value,
           $Res Function(_$MessageEventOnCreateRoom) then) =
       __$$MessageEventOnCreateRoomCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int senderId, int ownerId});
 }
@@ -690,9 +688,7 @@ abstract class MessageEventOnCreateRoom implements MessageEvent {
       final int senderId, final int ownerId) = _$MessageEventOnCreateRoom;
 
   int get senderId;
-
   int get ownerId;
-
   @JsonKey(ignore: true)
   _$$MessageEventOnCreateRoomCopyWith<_$MessageEventOnCreateRoom>
       get copyWith => throw _privateConstructorUsedError;
@@ -701,9 +697,7 @@ abstract class MessageEventOnCreateRoom implements MessageEvent {
 /// @nodoc
 mixin _$MessageState {
   List<ChatRoom> get rooms => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
-
   ChatMessage? get newMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

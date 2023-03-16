@@ -8,23 +8,20 @@ part of 'chat_room_dto.dart';
 
 _$_ChatRoomDto _$$_ChatRoomDtoFromJson(Map<String, dynamic> json) =>
     _$_ChatRoomDto(
-      senderId: json['sender_id'] as int,
-      receiverId: json['receiver_id'] as int,
-      roomId: json['room_id'] as String,
+      groupId: json['group_id'] as int,
       latestMessage: json['latest_message'] as String?,
       latestMessageCreatedAt:
-          fromApiDate(json['latest_message_created_at'] as String),
-      receiverInfo:
-          UserDto.fromJson(json['receiver_info'] as Map<String, dynamic>),
+          fromApiDate(json['latest_message_created_at'] as String?),
+      members: (json['members'] as List<dynamic>)
+          .map((e) => UserDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_ChatRoomDtoToJson(_$_ChatRoomDto instance) =>
     <String, dynamic>{
-      'sender_id': instance.senderId,
-      'receiver_id': instance.receiverId,
-      'room_id': instance.roomId,
+      'group_id': instance.groupId,
       'latest_message': instance.latestMessage,
       'latest_message_created_at':
           instance.latestMessageCreatedAt?.toIso8601String(),
-      'receiver_info': instance.receiverInfo.toJson(),
+      'members': instance.members.map((e) => e.toJson()).toList(),
     };
