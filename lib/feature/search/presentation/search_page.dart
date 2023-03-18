@@ -16,11 +16,13 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 import '../../app/application/app_bloc.dart';
 import 'models/search_page_params.dart';
-part './widgets/_real_estate_search_shimmer.dart';
+
 part './widgets/_real_estate_search.dart';
+part './widgets/_real_estate_search_shimmer.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key, required this.params});
+
   final SearchPageParams params;
 
   @override

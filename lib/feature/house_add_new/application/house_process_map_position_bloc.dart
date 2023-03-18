@@ -24,6 +24,9 @@ class HouseProcessMapPositionBloc
         event.onValidWithData(ProcessState.map, isValid(), state.position);
       },
     );
+    stream.asBroadcastStream().listen((event) {
+      _subcriber.onValid(isValid());
+    });
     on<_OnMark>((event, emit) {
       emit(state.copyWith(position: event.point));
     });

@@ -1,9 +1,7 @@
-import 'dart:async';
-import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
+
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -31,20 +29,20 @@ import 'package:real_estate_blockchain/injection_dependencies/injection_dependen
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:sliver_tools/sliver_tools.dart';
-import 'package:dartz/dartz.dart' as dartz;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
-part './widgets/_w_info_house.dart';
+
 part './widgets/_w_amenities.dart';
-part './widgets/_w_direction.dart';
 part './widgets/_w_bottom_viewer_action.dart';
+part './widgets/_w_direction.dart';
+part './widgets/_w_info_house.dart';
 part './widgets/_w_location.dart';
 
 class RealEstateDetailPage extends StatefulWidget {
   final RealEstateDetailPageParams params;
+
   const RealEstateDetailPage({super.key, required this.params});
 
   @override

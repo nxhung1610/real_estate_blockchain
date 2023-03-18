@@ -6,9 +6,9 @@ import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
-part 'home_state.dart';
-part 'home_event.dart';
 part 'home_bloc.freezed.dart';
+part 'home_event.dart';
+part 'home_state.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {

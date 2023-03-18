@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -10,8 +8,6 @@ import 'package:real_estate_blockchain/data/file/data.dart';
 import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
-import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_config.dart';
-import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/models/real_estate_mapper.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/validate_subcriber.dart';
@@ -20,9 +16,9 @@ import 'package:real_estate_blockchain/utils/logger.dart';
 
 import 'enums.dart';
 
+part 'house_add_new_bloc.freezed.dart';
 part 'house_add_new_event.dart';
 part 'house_add_new_state.dart';
-part 'house_add_new_bloc.freezed.dart';
 
 @injectable
 class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
@@ -30,6 +26,7 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
   ValidateSubcriber? validateSubcriber;
   final IRealEstateRepository _restateRepository;
   final IFileRepository _fileRepository;
+
   HouseAddNewBloc(this._fileRepository, this._restateRepository)
       : super(const HouseAddNewState()) {
     on<_Setup>((event, emit) async {
@@ -63,11 +60,13 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     on<_OnMap>((event, emit) {
       emit(state.copyWith(position: event.point));
       add(const _CreateRealEstate());
-      // if (isValidForFinish()) {
-
-      // } else {
-
-      // }
+    });
+    on<HouseAddNewEventOnValid>((event, emit) {
+      emit(
+        state.copyWith(
+          isValid: event.isValid,
+        ),
+      );
     });
     on<_CreateRealEstate>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
@@ -110,7 +109,8 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
     if (kDebugMode) {
       print("$state - $isValid - $data");
     }
-    
+    add(HouseAddNewEvent.onValid(isValid));
+
     if (this.state.state == state && isValid) {
       switch (state) {
         case ProcessState.address:
@@ -159,5 +159,10 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
         state.media != null &&
         state.position != null &&
         state.realEstateInfo != null;
+  }
+
+  @override
+  void onValid(bool isValid) {
+    add(HouseAddNewEvent.onValid(isValid));
   }
 }

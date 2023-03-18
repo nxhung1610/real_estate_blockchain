@@ -15,6 +15,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthRepository _authRepository;
   final ApiRemote _apiRemote;
   bool isFetchUser = false;
+
+  User get user => (state as AuthStateAuthenticated).user;
+
   AuthBloc(this._authLocalRepository, this._authRepository, this._apiRemote)
       : super(const AuthState.unKnow()) {
     on<AuthEventStarted>((event, emit) async {

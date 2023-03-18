@@ -6,6 +6,7 @@ import 'package:rxdart/rxdart.dart';
 
 abstract class IValidData {
   void onValidWithData<T>(ProcessState state, bool isValid, T data);
+  void onValid(bool isValid);
 }
 
 class ValidateSubcriber {
@@ -15,6 +16,10 @@ class ValidateSubcriber {
   final BehaviorSubject<IValidData> validStreamController = BehaviorSubject();
 
   BehaviorSubject<IValidData> get stream => validStreamController;
+
+  void onValid(bool isValid) {
+    isValidate.onValid(isValid);
+  }
 
   void callValid() {
     validStreamController.add(isValidate);

@@ -6,6 +6,7 @@ class _RealEstateSearchWidget extends StatelessWidget {
     required this.estate,
     this.onPress,
   });
+
   final RealEstate estate;
   final VoidCallback? onPress;
 

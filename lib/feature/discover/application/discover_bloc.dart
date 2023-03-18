@@ -9,13 +9,14 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
+part 'discover_bloc.freezed.dart';
 part 'discover_event.dart';
 part 'discover_state.dart';
-part 'discover_bloc.freezed.dart';
 
 @injectable
 class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
   final IRealEstateRepository _realEstateRepository;
+
   DiscoverBloc(this._realEstateRepository) : super(const DiscoverState()) {
     on<DiscoverEventOnFilterApply>(
         (event, emit) => emit(state.copyWith(filter: event.input)));

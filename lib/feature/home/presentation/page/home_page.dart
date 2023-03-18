@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart' as dartz;
+import 'package:collection/collection.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -9,7 +9,6 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/province/data.dart';
-import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
@@ -18,12 +17,8 @@ import 'package:real_estate_blockchain/feature/home/module.dart';
 import 'package:real_estate_blockchain/feature/home/presentation/widget/house_newsfeed_shimmer.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
-import 'package:real_estate_blockchain/feature/search/presentation/search_page.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:collection/collection.dart';
-import '../../../real_estate/config/real_estate_config_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -209,6 +204,7 @@ class _NewFeed extends StatefulWidget {
 
 class __NewFeedState extends State<_NewFeed> {
   late final AppBloc appBloc;
+
   @override
   void initState() {
     super.initState();

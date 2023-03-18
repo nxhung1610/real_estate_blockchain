@@ -10,6 +10,7 @@ class _PropertyFacts extends StatefulWidget {
 class _PropertyFactsState extends State<_PropertyFacts> {
   final min = TextEditingController();
   final max = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);

@@ -5,9 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 
 import '../base_response.dart';
 import 'jwt_interceptor.dart';

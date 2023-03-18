@@ -16,6 +16,7 @@ class SearchPageParams with _$SearchPageParams {
 class SearchResultData with _$SearchResultData {
   const factory SearchResultData.onSelected(RealEstate estate) =
       SearchResultDataOnSelected;
+
   const factory SearchResultData.onKeyword(String keyword) =
       SearchResultDataOnKeyword;
 }

@@ -21,6 +21,7 @@ mixin _$ChatRoomEvent {
     required TResult Function() started,
     required TResult Function(String content) messageSent,
     required TResult Function(ChatMessage message) messageReceived,
+    required TResult Function(bool isRefreshed) messageLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$ChatRoomEvent {
     TResult? Function()? started,
     TResult? Function(String content)? messageSent,
     TResult? Function(ChatMessage message)? messageReceived,
+    TResult? Function(bool isRefreshed)? messageLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$ChatRoomEvent {
     TResult Function()? started,
     TResult Function(String content)? messageSent,
     TResult Function(ChatMessage message)? messageReceived,
+    TResult Function(bool isRefreshed)? messageLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$ChatRoomEvent {
     required TResult Function(ChatRoomStarted value) started,
     required TResult Function(ChatRoomMessageSent value) messageSent,
     required TResult Function(ChatRoomMessageReceived value) messageReceived,
+    required TResult Function(ChatRoomMessageLoaded value) messageLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$ChatRoomEvent {
     TResult? Function(ChatRoomStarted value)? started,
     TResult? Function(ChatRoomMessageSent value)? messageSent,
     TResult? Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult? Function(ChatRoomMessageLoaded value)? messageLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$ChatRoomEvent {
     TResult Function(ChatRoomStarted value)? started,
     TResult Function(ChatRoomMessageSent value)? messageSent,
     TResult Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult Function(ChatRoomMessageLoaded value)? messageLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     required TResult Function() started,
     required TResult Function(String content) messageSent,
     required TResult Function(ChatMessage message) messageReceived,
+    required TResult Function(bool isRefreshed) messageLoaded,
   }) {
     return started();
   }
@@ -131,6 +138,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     TResult? Function()? started,
     TResult? Function(String content)? messageSent,
     TResult? Function(ChatMessage message)? messageReceived,
+    TResult? Function(bool isRefreshed)? messageLoaded,
   }) {
     return started?.call();
   }
@@ -141,6 +149,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     TResult Function()? started,
     TResult Function(String content)? messageSent,
     TResult Function(ChatMessage message)? messageReceived,
+    TResult Function(bool isRefreshed)? messageLoaded,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -155,6 +164,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     required TResult Function(ChatRoomStarted value) started,
     required TResult Function(ChatRoomMessageSent value) messageSent,
     required TResult Function(ChatRoomMessageReceived value) messageReceived,
+    required TResult Function(ChatRoomMessageLoaded value) messageLoaded,
   }) {
     return started(this);
   }
@@ -165,6 +175,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     TResult? Function(ChatRoomStarted value)? started,
     TResult? Function(ChatRoomMessageSent value)? messageSent,
     TResult? Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult? Function(ChatRoomMessageLoaded value)? messageLoaded,
   }) {
     return started?.call(this);
   }
@@ -175,6 +186,7 @@ class _$ChatRoomStarted implements ChatRoomStarted {
     TResult Function(ChatRoomStarted value)? started,
     TResult Function(ChatRoomMessageSent value)? messageSent,
     TResult Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult Function(ChatRoomMessageLoaded value)? messageLoaded,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -256,6 +268,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     required TResult Function() started,
     required TResult Function(String content) messageSent,
     required TResult Function(ChatMessage message) messageReceived,
+    required TResult Function(bool isRefreshed) messageLoaded,
   }) {
     return messageSent(content);
   }
@@ -266,6 +279,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     TResult? Function()? started,
     TResult? Function(String content)? messageSent,
     TResult? Function(ChatMessage message)? messageReceived,
+    TResult? Function(bool isRefreshed)? messageLoaded,
   }) {
     return messageSent?.call(content);
   }
@@ -276,6 +290,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     TResult Function()? started,
     TResult Function(String content)? messageSent,
     TResult Function(ChatMessage message)? messageReceived,
+    TResult Function(bool isRefreshed)? messageLoaded,
     required TResult orElse(),
   }) {
     if (messageSent != null) {
@@ -290,6 +305,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     required TResult Function(ChatRoomStarted value) started,
     required TResult Function(ChatRoomMessageSent value) messageSent,
     required TResult Function(ChatRoomMessageReceived value) messageReceived,
+    required TResult Function(ChatRoomMessageLoaded value) messageLoaded,
   }) {
     return messageSent(this);
   }
@@ -300,6 +316,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     TResult? Function(ChatRoomStarted value)? started,
     TResult? Function(ChatRoomMessageSent value)? messageSent,
     TResult? Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult? Function(ChatRoomMessageLoaded value)? messageLoaded,
   }) {
     return messageSent?.call(this);
   }
@@ -310,6 +327,7 @@ class _$ChatRoomMessageSent implements ChatRoomMessageSent {
     TResult Function(ChatRoomStarted value)? started,
     TResult Function(ChatRoomMessageSent value)? messageSent,
     TResult Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult Function(ChatRoomMessageLoaded value)? messageLoaded,
     required TResult orElse(),
   }) {
     if (messageSent != null) {
@@ -407,6 +425,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     required TResult Function() started,
     required TResult Function(String content) messageSent,
     required TResult Function(ChatMessage message) messageReceived,
+    required TResult Function(bool isRefreshed) messageLoaded,
   }) {
     return messageReceived(message);
   }
@@ -417,6 +436,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     TResult? Function()? started,
     TResult? Function(String content)? messageSent,
     TResult? Function(ChatMessage message)? messageReceived,
+    TResult? Function(bool isRefreshed)? messageLoaded,
   }) {
     return messageReceived?.call(message);
   }
@@ -427,6 +447,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     TResult Function()? started,
     TResult Function(String content)? messageSent,
     TResult Function(ChatMessage message)? messageReceived,
+    TResult Function(bool isRefreshed)? messageLoaded,
     required TResult orElse(),
   }) {
     if (messageReceived != null) {
@@ -441,6 +462,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     required TResult Function(ChatRoomStarted value) started,
     required TResult Function(ChatRoomMessageSent value) messageSent,
     required TResult Function(ChatRoomMessageReceived value) messageReceived,
+    required TResult Function(ChatRoomMessageLoaded value) messageLoaded,
   }) {
     return messageReceived(this);
   }
@@ -451,6 +473,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     TResult? Function(ChatRoomStarted value)? started,
     TResult? Function(ChatRoomMessageSent value)? messageSent,
     TResult? Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult? Function(ChatRoomMessageLoaded value)? messageLoaded,
   }) {
     return messageReceived?.call(this);
   }
@@ -461,6 +484,7 @@ class _$ChatRoomMessageReceived implements ChatRoomMessageReceived {
     TResult Function(ChatRoomStarted value)? started,
     TResult Function(ChatRoomMessageSent value)? messageSent,
     TResult Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult Function(ChatRoomMessageLoaded value)? messageLoaded,
     required TResult orElse(),
   }) {
     if (messageReceived != null) {
@@ -475,16 +499,174 @@ abstract class ChatRoomMessageReceived implements ChatRoomEvent {
       _$ChatRoomMessageReceived;
 
   ChatMessage get message;
+
   @JsonKey(ignore: true)
   _$$ChatRoomMessageReceivedCopyWith<_$ChatRoomMessageReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$ChatRoomMessageLoadedCopyWith<$Res> {
+  factory _$$ChatRoomMessageLoadedCopyWith(_$ChatRoomMessageLoaded value,
+          $Res Function(_$ChatRoomMessageLoaded) then) =
+      __$$ChatRoomMessageLoadedCopyWithImpl<$Res>;
+
+  @useResult
+  $Res call({bool isRefreshed});
+}
+
+/// @nodoc
+class __$$ChatRoomMessageLoadedCopyWithImpl<$Res>
+    extends _$ChatRoomEventCopyWithImpl<$Res, _$ChatRoomMessageLoaded>
+    implements _$$ChatRoomMessageLoadedCopyWith<$Res> {
+  __$$ChatRoomMessageLoadedCopyWithImpl(_$ChatRoomMessageLoaded _value,
+      $Res Function(_$ChatRoomMessageLoaded) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRefreshed = null,
+  }) {
+    return _then(_$ChatRoomMessageLoaded(
+      isRefreshed: null == isRefreshed
+          ? _value.isRefreshed
+          : isRefreshed // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChatRoomMessageLoaded implements ChatRoomMessageLoaded {
+  const _$ChatRoomMessageLoaded({this.isRefreshed = false});
+
+  @override
+  @JsonKey()
+  final bool isRefreshed;
+
+  @override
+  String toString() {
+    return 'ChatRoomEvent.messageLoaded(isRefreshed: $isRefreshed)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatRoomMessageLoaded &&
+            (identical(other.isRefreshed, isRefreshed) ||
+                other.isRefreshed == isRefreshed));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRefreshed);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatRoomMessageLoadedCopyWith<_$ChatRoomMessageLoaded> get copyWith =>
+      __$$ChatRoomMessageLoadedCopyWithImpl<_$ChatRoomMessageLoaded>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String content) messageSent,
+    required TResult Function(ChatMessage message) messageReceived,
+    required TResult Function(bool isRefreshed) messageLoaded,
+  }) {
+    return messageLoaded(isRefreshed);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String content)? messageSent,
+    TResult? Function(ChatMessage message)? messageReceived,
+    TResult? Function(bool isRefreshed)? messageLoaded,
+  }) {
+    return messageLoaded?.call(isRefreshed);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String content)? messageSent,
+    TResult Function(ChatMessage message)? messageReceived,
+    TResult Function(bool isRefreshed)? messageLoaded,
+    required TResult orElse(),
+  }) {
+    if (messageLoaded != null) {
+      return messageLoaded(isRefreshed);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChatRoomStarted value) started,
+    required TResult Function(ChatRoomMessageSent value) messageSent,
+    required TResult Function(ChatRoomMessageReceived value) messageReceived,
+    required TResult Function(ChatRoomMessageLoaded value) messageLoaded,
+  }) {
+    return messageLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChatRoomStarted value)? started,
+    TResult? Function(ChatRoomMessageSent value)? messageSent,
+    TResult? Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult? Function(ChatRoomMessageLoaded value)? messageLoaded,
+  }) {
+    return messageLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChatRoomStarted value)? started,
+    TResult Function(ChatRoomMessageSent value)? messageSent,
+    TResult Function(ChatRoomMessageReceived value)? messageReceived,
+    TResult Function(ChatRoomMessageLoaded value)? messageLoaded,
+    required TResult orElse(),
+  }) {
+    if (messageLoaded != null) {
+      return messageLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChatRoomMessageLoaded implements ChatRoomEvent {
+  const factory ChatRoomMessageLoaded({final bool isRefreshed}) =
+      _$ChatRoomMessageLoaded;
+
+  bool get isRefreshed;
+
+  @JsonKey(ignore: true)
+  _$$ChatRoomMessageLoadedCopyWith<_$ChatRoomMessageLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ChatRoomState {
   ChatRoom get room => throw _privateConstructorUsedError;
+
   List<ChatMessage> get messages => throw _privateConstructorUsedError;
+
   Status get status => throw _privateConstructorUsedError;
+
+  int get currentPage => throw _privateConstructorUsedError;
+
+  bool get isEnd => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatRoomStateCopyWith<ChatRoomState> get copyWith =>
@@ -496,8 +678,14 @@ abstract class $ChatRoomStateCopyWith<$Res> {
   factory $ChatRoomStateCopyWith(
           ChatRoomState value, $Res Function(ChatRoomState) then) =
       _$ChatRoomStateCopyWithImpl<$Res, ChatRoomState>;
+
   @useResult
-  $Res call({ChatRoom room, List<ChatMessage> messages, Status status});
+  $Res call(
+      {ChatRoom room,
+      List<ChatMessage> messages,
+      Status status,
+      int currentPage,
+      bool isEnd});
 
   $ChatRoomCopyWith<$Res> get room;
   $StatusCopyWith<$Res> get status;
@@ -519,6 +707,8 @@ class _$ChatRoomStateCopyWithImpl<$Res, $Val extends ChatRoomState>
     Object? room = null,
     Object? messages = null,
     Object? status = null,
+    Object? currentPage = null,
+    Object? isEnd = null,
   }) {
     return _then(_value.copyWith(
       room: null == room
@@ -533,6 +723,14 @@ class _$ChatRoomStateCopyWithImpl<$Res, $Val extends ChatRoomState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      currentPage: null == currentPage
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      isEnd: null == isEnd
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -559,9 +757,15 @@ abstract class _$$_ChatRoomStateCopyWith<$Res>
   factory _$$_ChatRoomStateCopyWith(
           _$_ChatRoomState value, $Res Function(_$_ChatRoomState) then) =
       __$$_ChatRoomStateCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({ChatRoom room, List<ChatMessage> messages, Status status});
+  $Res call(
+      {ChatRoom room,
+      List<ChatMessage> messages,
+      Status status,
+      int currentPage,
+      bool isEnd});
 
   @override
   $ChatRoomCopyWith<$Res> get room;
@@ -583,6 +787,8 @@ class __$$_ChatRoomStateCopyWithImpl<$Res>
     Object? room = null,
     Object? messages = null,
     Object? status = null,
+    Object? currentPage = null,
+    Object? isEnd = null,
   }) {
     return _then(_$_ChatRoomState(
       room: null == room
@@ -597,6 +803,14 @@ class __$$_ChatRoomStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      currentPage: null == currentPage
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      isEnd: null == isEnd
+          ? _value.isEnd
+          : isEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -607,7 +821,9 @@ class _$_ChatRoomState extends _ChatRoomState {
   const _$_ChatRoomState(
       {required this.room,
       final List<ChatMessage> messages = const [],
-      this.status = const Status.idle()})
+      this.status = const Status.idle(),
+      this.currentPage = 0,
+      this.isEnd = false})
       : _messages = messages,
         super._();
 
@@ -625,10 +841,16 @@ class _$_ChatRoomState extends _ChatRoomState {
   @override
   @JsonKey()
   final Status status;
+  @override
+  @JsonKey()
+  final int currentPage;
+  @override
+  @JsonKey()
+  final bool isEnd;
 
   @override
   String toString() {
-    return 'ChatRoomState(room: $room, messages: $messages, status: $status)';
+    return 'ChatRoomState(room: $room, messages: $messages, status: $status, currentPage: $currentPage, isEnd: $isEnd)';
   }
 
   @override
@@ -638,12 +860,20 @@ class _$_ChatRoomState extends _ChatRoomState {
             other is _$_ChatRoomState &&
             (identical(other.room, room) || other.room == room) &&
             const DeepCollectionEquality().equals(other._messages, _messages) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
+            (identical(other.isEnd, isEnd) || other.isEnd == isEnd));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, room,
-      const DeepCollectionEquality().hash(_messages), status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      room,
+      const DeepCollectionEquality().hash(_messages),
+      status,
+      currentPage,
+      isEnd);
 
   @JsonKey(ignore: true)
   @override
@@ -656,15 +886,27 @@ abstract class _ChatRoomState extends ChatRoomState {
   const factory _ChatRoomState(
       {required final ChatRoom room,
       final List<ChatMessage> messages,
-      final Status status}) = _$_ChatRoomState;
+      final Status status,
+      final int currentPage,
+      final bool isEnd}) = _$_ChatRoomState;
+
   const _ChatRoomState._() : super._();
 
   @override
   ChatRoom get room;
+
   @override
   List<ChatMessage> get messages;
+
   @override
   Status get status;
+
+  @override
+  int get currentPage;
+
+  @override
+  bool get isEnd;
+
   @override
   @JsonKey(ignore: true)
   _$$_ChatRoomStateCopyWith<_$_ChatRoomState> get copyWith =>

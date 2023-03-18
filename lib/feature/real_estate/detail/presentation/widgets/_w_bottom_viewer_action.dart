@@ -2,6 +2,7 @@ part of '../real_estate_detail_page.dart';
 
 class _WBottomViewerAction extends StatelessWidget {
   const _WBottomViewerAction({super.key, required this.item});
+
   final RealEstate item;
   @override
   Widget build(BuildContext context) {

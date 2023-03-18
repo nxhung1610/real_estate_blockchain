@@ -22,25 +22,27 @@ ChatMessageRequest _$ChatMessageRequestFromJson(Map<String, dynamic> json) {
 mixin _$ChatMessageRequest {
   String get content => throw _privateConstructorUsedError;
   int get senderId => throw _privateConstructorUsedError;
-  int get receiverId => throw _privateConstructorUsedError;
+
+  int get groupId => throw _privateConstructorUsedError;
+
   ChatMessageType get messageType => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String content, int senderId, int receiverId,
+    required TResult Function(String content, int senderId, int groupId,
             ChatMessageType messageType)
         text,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String content, int senderId, int receiverId,
+    TResult? Function(String content, int senderId, int groupId,
             ChatMessageType messageType)?
         text,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String content, int senderId, int receiverId,
+    TResult Function(String content, int senderId, int groupId,
             ChatMessageType messageType)?
         text,
     required TResult orElse(),
@@ -73,12 +75,10 @@ abstract class $ChatMessageRequestCopyWith<$Res> {
   factory $ChatMessageRequestCopyWith(
           ChatMessageRequest value, $Res Function(ChatMessageRequest) then) =
       _$ChatMessageRequestCopyWithImpl<$Res, ChatMessageRequest>;
+
   @useResult
   $Res call(
-      {String content,
-      int senderId,
-      int receiverId,
-      ChatMessageType messageType});
+      {String content, int senderId, int groupId, ChatMessageType messageType});
 }
 
 /// @nodoc
@@ -96,7 +96,7 @@ class _$ChatMessageRequestCopyWithImpl<$Res, $Val extends ChatMessageRequest>
   $Res call({
     Object? content = null,
     Object? senderId = null,
-    Object? receiverId = null,
+    Object? groupId = null,
     Object? messageType = null,
   }) {
     return _then(_value.copyWith(
@@ -108,9 +108,9 @@ class _$ChatMessageRequestCopyWithImpl<$Res, $Val extends ChatMessageRequest>
           ? _value.senderId
           : senderId // ignore: cast_nullable_to_non_nullable
               as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
       messageType: null == messageType
           ? _value.messageType
@@ -126,13 +126,11 @@ abstract class _$$ChatTextMessageRequestCopyWith<$Res>
   factory _$$ChatTextMessageRequestCopyWith(_$ChatTextMessageRequest value,
           $Res Function(_$ChatTextMessageRequest) then) =
       __$$ChatTextMessageRequestCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {String content,
-      int senderId,
-      int receiverId,
-      ChatMessageType messageType});
+      {String content, int senderId, int groupId, ChatMessageType messageType});
 }
 
 /// @nodoc
@@ -148,7 +146,7 @@ class __$$ChatTextMessageRequestCopyWithImpl<$Res>
   $Res call({
     Object? content = null,
     Object? senderId = null,
-    Object? receiverId = null,
+    Object? groupId = null,
     Object? messageType = null,
   }) {
     return _then(_$ChatTextMessageRequest(
@@ -160,9 +158,9 @@ class __$$ChatTextMessageRequestCopyWithImpl<$Res>
           ? _value.senderId
           : senderId // ignore: cast_nullable_to_non_nullable
               as int,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
+      groupId: null == groupId
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
               as int,
       messageType: null == messageType
           ? _value.messageType
@@ -181,7 +179,7 @@ class _$ChatTextMessageRequest
   const _$ChatTextMessageRequest(
       {required this.content,
       required this.senderId,
-      required this.receiverId,
+      required this.groupId,
       this.messageType = ChatMessageType.text});
 
   factory _$ChatTextMessageRequest.fromJson(Map<String, dynamic> json) =>
@@ -192,14 +190,14 @@ class _$ChatTextMessageRequest
   @override
   final int senderId;
   @override
-  final int receiverId;
+  final int groupId;
   @override
   @JsonKey()
   final ChatMessageType messageType;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChatMessageRequest.text(content: $content, senderId: $senderId, receiverId: $receiverId, messageType: $messageType)';
+    return 'ChatMessageRequest.text(content: $content, senderId: $senderId, groupId: $groupId, messageType: $messageType)';
   }
 
   @override
@@ -209,7 +207,7 @@ class _$ChatTextMessageRequest
       ..add(DiagnosticsProperty('type', 'ChatMessageRequest.text'))
       ..add(DiagnosticsProperty('content', content))
       ..add(DiagnosticsProperty('senderId', senderId))
-      ..add(DiagnosticsProperty('receiverId', receiverId))
+      ..add(DiagnosticsProperty('groupId', groupId))
       ..add(DiagnosticsProperty('messageType', messageType));
   }
 
@@ -221,8 +219,7 @@ class _$ChatTextMessageRequest
             (identical(other.content, content) || other.content == content) &&
             (identical(other.senderId, senderId) ||
                 other.senderId == senderId) &&
-            (identical(other.receiverId, receiverId) ||
-                other.receiverId == receiverId) &&
+            (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.messageType, messageType) ||
                 other.messageType == messageType));
   }
@@ -230,7 +227,7 @@ class _$ChatTextMessageRequest
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, content, senderId, receiverId, messageType);
+      Object.hash(runtimeType, content, senderId, groupId, messageType);
 
   @JsonKey(ignore: true)
   @override
@@ -242,33 +239,33 @@ class _$ChatTextMessageRequest
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String content, int senderId, int receiverId,
+    required TResult Function(String content, int senderId, int groupId,
             ChatMessageType messageType)
         text,
   }) {
-    return text(content, senderId, receiverId, messageType);
+    return text(content, senderId, groupId, messageType);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String content, int senderId, int receiverId,
+    TResult? Function(String content, int senderId, int groupId,
             ChatMessageType messageType)?
         text,
   }) {
-    return text?.call(content, senderId, receiverId, messageType);
+    return text?.call(content, senderId, groupId, messageType);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String content, int senderId, int receiverId,
+    TResult Function(String content, int senderId, int groupId,
             ChatMessageType messageType)?
         text,
     required TResult orElse(),
   }) {
     if (text != null) {
-      return text(content, senderId, receiverId, messageType);
+      return text(content, senderId, groupId, messageType);
     }
     return orElse();
   }
@@ -313,7 +310,7 @@ abstract class ChatTextMessageRequest implements ChatMessageRequest {
   const factory ChatTextMessageRequest(
       {required final String content,
       required final int senderId,
-      required final int receiverId,
+      required final int groupId,
       final ChatMessageType messageType}) = _$ChatTextMessageRequest;
 
   factory ChatTextMessageRequest.fromJson(Map<String, dynamic> json) =
@@ -321,10 +318,13 @@ abstract class ChatTextMessageRequest implements ChatMessageRequest {
 
   @override
   String get content;
+
   @override
   int get senderId;
+
   @override
-  int get receiverId;
+  int get groupId;
+
   @override
   ChatMessageType get messageType;
   @override

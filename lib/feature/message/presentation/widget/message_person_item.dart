@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
+import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/date_extensions.dart';
 
@@ -16,6 +18,8 @@ class MessagePersonItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sender = context.read<AuthBloc>().user;
+    final receiver = room.getReceiverInfo(sender.id);
     return InkWell(
       onTap: () {
         onPressed.call();
@@ -37,7 +41,7 @@ class MessagePersonItem extends StatelessWidget {
                       height: AppSize.avatarMedium,
                       fit: BoxFit.cover,
                       isAntiAlias: true,
-                      room.receiverInfo.avatarUrl ??
+                      receiver.avatarUrl ??
                           'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
                       // "https://i.picsum.photos/id/9/10/10.jpg?hmac=GTRmaTnVGhSSkLFbhtBqhxZdo8scNcoaxlFawVIMF38",
                     ),
@@ -70,7 +74,7 @@ class MessagePersonItem extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          "${room.receiverInfo.firstName} ${room.receiverInfo.lastName} ",
+                          "${receiver.firstName} ${receiver.lastName} ",
                           style: context.textTheme.bodyLarge?.copyWith(
                             color: context.textTheme.displayLarge?.color,
                             fontWeight: FontWeight.bold,

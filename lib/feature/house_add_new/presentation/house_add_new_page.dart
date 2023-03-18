@@ -18,7 +18,6 @@ import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../application/enums.dart';
 import 'model/house_add_new_page_params.dart';
@@ -26,6 +25,7 @@ import 'process_page/process_page.dart';
 
 class HouseAddNewPage extends StatefulWidget {
   final HouseAddNewPageParams params;
+
   const HouseAddNewPage({super.key, required this.params});
 
   @override
@@ -114,24 +114,18 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
                     );
                   },
                 );
+              } else {
+                context.appDialog.showAppDialog(
+                  type: AppDialogType.error,
+                  message: s.anErrorOccurred,
+                  onPositive: () {},
+                );
               }
             },
             success: (value) async {
               if (mounted && value.value is RealEstateCreationOuput) {
-                await Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WebViewScreen(
-                        url:
-                            'https://mumbai.polygonscan.com/tx/${(value.value as RealEstateCreationOuput).hash}',
-                      );
-                    },
-                  ),
-                );
-                if (mounted) {
-                  widget.params.onSucces();
-                  context.pop();
-                }
+                widget.params.onSucces();
+                Navigator.of(context).pop();
               }
 
               // context.appDialog.showAppDialog(
@@ -250,7 +244,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: AppSize.extraLargeWidthDimens,
-                vertical: AppSize.largeHeightDimens,
+                // vertical: AppSize.largeHeightDimens,
               ),
               decoration: BoxDecoration(
                 color: context.theme.colorScheme.background,
@@ -262,16 +256,28 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
                   )
                 ],
               ),
-              child: ButtonApp(
-                label: context.watch<HouseAddNewBloc>().state.state ==
-                        ProcessState.values.last
-                    ? s.done
-                    : s.next,
-                onPressed: () {
-                  dissmissFocus(context);
-                  bloc.processNextPage();
-                },
-                type: ButtonType.primary,
+              child: SafeArea(
+                minimum: EdgeInsets.symmetric(vertical: 16.h),
+                child: BlocSelector<HouseAddNewBloc, HouseAddNewState, bool>(
+                  selector: (state) {
+                    return state.isValid;
+                  },
+                  builder: (context, isValid) {
+                    return ButtonApp(
+                      label: context.watch<HouseAddNewBloc>().state.state ==
+                              ProcessState.values.last
+                          ? s.done
+                          : s.next,
+                      onPressed: !isValid
+                          ? null
+                          : () {
+                              dissmissFocus(context);
+                              bloc.processNextPage();
+                            },
+                      type: ButtonType.primary,
+                    );
+                  },
+                ),
               ),
             )
           ],

@@ -10,6 +10,7 @@ class _RealEstateSelected extends StatefulWidget {
   }) {
     _isSelected = isSelected;
   }
+
   final RealEstate item;
   late bool _isSelected = false;
   final void Function(bool isSelected) onSelected;

@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/feature/home/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_new_route.dart';
 import 'package:real_estate_blockchain/feature/main/module.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
-import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
 
@@ -28,7 +26,9 @@ class AppRoute extends BaseRoute {
   String get homeAddNewProperty => _houseAddNewRoute.url;
   String get messageChat => _mainRoute.messageChat;
   String get search => _searchRoute.url;
+
   String get realEstateDetail => _realEstateRouter.detail;
+
   String get realEstateFavorites => _realEstateRouter.favorites;
 
   @override

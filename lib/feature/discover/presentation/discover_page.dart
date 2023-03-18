@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
@@ -22,6 +22,7 @@ import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/m
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+
 part './widget/_real_estate_selected.dart';
 
 const discoverSearchTag = 'search_tag';
@@ -37,6 +38,7 @@ class _DiscoverPageState extends State<DiscoverPage>
     with AutomaticKeepAliveClientMixin, TickerProviderStateMixin {
   late final FocusScopeNode focusNode;
   late final TextEditingController searchController;
+
   // late final MapboxMapController mapController;
   late final MapControllerImpl mapController;
   Marker? pointer;

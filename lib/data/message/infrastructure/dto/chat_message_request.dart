@@ -14,7 +14,7 @@ class ChatMessageRequest with _$ChatMessageRequest {
   const factory ChatMessageRequest.text({
     required String content,
     required int senderId,
-    required int receiverId,
+    required int groupId,
     @Default(ChatMessageType.text) ChatMessageType messageType,
   }) = ChatTextMessageRequest;
 

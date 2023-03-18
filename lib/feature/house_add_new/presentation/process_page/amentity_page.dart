@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
-import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_config.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';

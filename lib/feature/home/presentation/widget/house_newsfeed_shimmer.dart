@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
-
-import '../../../core/module.dart';
 
 class HouseNewFeedsShimmer extends StatelessWidget {
   const HouseNewFeedsShimmer({super.key});

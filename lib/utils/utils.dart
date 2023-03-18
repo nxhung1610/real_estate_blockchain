@@ -1,11 +1,8 @@
 import 'dart:math';
-import 'dart:typed_data';
-import 'dart:ui';
 
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
 // Future<Uint8List> svgToPng(String svgString,
@@ -45,6 +42,24 @@ Future<T?> waitForDesiredBlocState<T>(Bloc<dynamic, dynamic> bloc,
   return desiredState;
 }
 
-DateTime fromApiDate(String value) {
-  return DateFormat("yyyy-MM-dd HH:mm:ss.SSS Z").parse(value, true).toLocal();
+DateTime fromApiDateNonNull(String? value) {
+  if (value == null) {
+    return DateTime.now();
+  }
+  try {
+    return DateFormat("yyyy-MM-dd HH:mm:ss.SSS Z").parse(value, true).toLocal();
+  } catch (e, trace) {
+    return DateTime.now();
+  }
+}
+
+DateTime? fromApiDate(String? value) {
+  if (value == null) {
+    return null;
+  }
+  try {
+    return DateFormat("yyyy-MM-dd HH:mm:ss.SSS Z").parse(value, true).toLocal();
+  } catch (e, trace) {
+    return null;
+  }
 }

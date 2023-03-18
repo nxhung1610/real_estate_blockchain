@@ -21,6 +21,9 @@ import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
+import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -205,7 +208,8 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                   scrollBehavior: const ScrollBehaviorModified(),
                   debugShowCheckedModeBanner: false,
                   darkTheme: AppTheme.dark,
-                  themeMode: appBloc.state.mode,
+                  // themeMode: appBloc.state.mode,
+                  themeMode: ThemeMode.light,
                   locale: appBloc.state.locale,
                   localizationsDelegates: const [
                     S.delegate,

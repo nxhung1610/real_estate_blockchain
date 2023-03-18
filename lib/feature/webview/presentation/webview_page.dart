@@ -12,6 +12,7 @@ class WebViewScreen extends StatefulWidget {
     required this.url,
   }) : super(key: key);
   final String url;
+
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
 }
@@ -19,6 +20,7 @@ class WebViewScreen extends StatefulWidget {
 class _WebViewScreenState extends State<WebViewScreen> {
   bool isFound = false;
   double progress = 0;
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);

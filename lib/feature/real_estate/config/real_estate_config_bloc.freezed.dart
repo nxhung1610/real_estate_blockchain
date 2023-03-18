@@ -15,8 +15,173 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$RealEstateConfigEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadConfig,
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadConfig,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadConfig,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RealEstateConfigEventOnLoadConfig value)
+        onLoadConfig,
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RealEstateConfigEventCopyWith<$Res> {
+  factory $RealEstateConfigEventCopyWith(RealEstateConfigEvent value,
+          $Res Function(RealEstateConfigEvent) then) =
+      _$RealEstateConfigEventCopyWithImpl<$Res, RealEstateConfigEvent>;
+}
+
+/// @nodoc
+class _$RealEstateConfigEventCopyWithImpl<$Res,
+        $Val extends RealEstateConfigEvent>
+    implements $RealEstateConfigEventCopyWith<$Res> {
+  _$RealEstateConfigEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$RealEstateConfigEventOnLoadConfigCopyWith<$Res> {
+  factory _$$RealEstateConfigEventOnLoadConfigCopyWith(
+          _$RealEstateConfigEventOnLoadConfig value,
+          $Res Function(_$RealEstateConfigEventOnLoadConfig) then) =
+      __$$RealEstateConfigEventOnLoadConfigCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RealEstateConfigEventOnLoadConfigCopyWithImpl<$Res>
+    extends _$RealEstateConfigEventCopyWithImpl<$Res,
+        _$RealEstateConfigEventOnLoadConfig>
+    implements _$$RealEstateConfigEventOnLoadConfigCopyWith<$Res> {
+  __$$RealEstateConfigEventOnLoadConfigCopyWithImpl(
+      _$RealEstateConfigEventOnLoadConfig _value,
+      $Res Function(_$RealEstateConfigEventOnLoadConfig) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RealEstateConfigEventOnLoadConfig
+    implements RealEstateConfigEventOnLoadConfig {
+  const _$RealEstateConfigEventOnLoadConfig();
+
+  @override
+  String toString() {
+    return 'RealEstateConfigEvent.onLoadConfig()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RealEstateConfigEventOnLoadConfig);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadConfig,
+  }) {
+    return onLoadConfig();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadConfig,
+  }) {
+    return onLoadConfig?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadConfig,
+    required TResult orElse(),
+  }) {
+    if (onLoadConfig != null) {
+      return onLoadConfig();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RealEstateConfigEventOnLoadConfig value)
+        onLoadConfig,
+  }) {
+    return onLoadConfig(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
+  }) {
+    return onLoadConfig?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
+    required TResult orElse(),
+  }) {
+    if (onLoadConfig != null) {
+      return onLoadConfig(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RealEstateConfigEventOnLoadConfig
+    implements RealEstateConfigEvent {
+  const factory RealEstateConfigEventOnLoadConfig() =
+      _$RealEstateConfigEventOnLoadConfig;
+}
+
+/// @nodoc
 mixin _$RealEstateConfigState {
   RealEstateConfig? get config => throw _privateConstructorUsedError;
+
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -179,164 +344,4 @@ abstract class _RealEstateConfigState implements RealEstateConfigState {
   @JsonKey(ignore: true)
   _$$_RealEstateConfigStateCopyWith<_$_RealEstateConfigState> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$RealEstateConfigEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onLoadConfig,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onLoadConfig,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onLoadConfig,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RealEstateConfigEventOnLoadConfig value)
-        onLoadConfig,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RealEstateConfigEventCopyWith<$Res> {
-  factory $RealEstateConfigEventCopyWith(RealEstateConfigEvent value,
-          $Res Function(RealEstateConfigEvent) then) =
-      _$RealEstateConfigEventCopyWithImpl<$Res, RealEstateConfigEvent>;
-}
-
-/// @nodoc
-class _$RealEstateConfigEventCopyWithImpl<$Res,
-        $Val extends RealEstateConfigEvent>
-    implements $RealEstateConfigEventCopyWith<$Res> {
-  _$RealEstateConfigEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$RealEstateConfigEventOnLoadConfigCopyWith<$Res> {
-  factory _$$RealEstateConfigEventOnLoadConfigCopyWith(
-          _$RealEstateConfigEventOnLoadConfig value,
-          $Res Function(_$RealEstateConfigEventOnLoadConfig) then) =
-      __$$RealEstateConfigEventOnLoadConfigCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RealEstateConfigEventOnLoadConfigCopyWithImpl<$Res>
-    extends _$RealEstateConfigEventCopyWithImpl<$Res,
-        _$RealEstateConfigEventOnLoadConfig>
-    implements _$$RealEstateConfigEventOnLoadConfigCopyWith<$Res> {
-  __$$RealEstateConfigEventOnLoadConfigCopyWithImpl(
-      _$RealEstateConfigEventOnLoadConfig _value,
-      $Res Function(_$RealEstateConfigEventOnLoadConfig) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RealEstateConfigEventOnLoadConfig
-    implements RealEstateConfigEventOnLoadConfig {
-  const _$RealEstateConfigEventOnLoadConfig();
-
-  @override
-  String toString() {
-    return 'RealEstateConfigEvent.onLoadConfig()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RealEstateConfigEventOnLoadConfig);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onLoadConfig,
-  }) {
-    return onLoadConfig();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onLoadConfig,
-  }) {
-    return onLoadConfig?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onLoadConfig,
-    required TResult orElse(),
-  }) {
-    if (onLoadConfig != null) {
-      return onLoadConfig();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RealEstateConfigEventOnLoadConfig value)
-        onLoadConfig,
-  }) {
-    return onLoadConfig(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
-  }) {
-    return onLoadConfig?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
-    required TResult orElse(),
-  }) {
-    if (onLoadConfig != null) {
-      return onLoadConfig(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RealEstateConfigEventOnLoadConfig
-    implements RealEstateConfigEvent {
-  const factory RealEstateConfigEventOnLoadConfig() =
-      _$RealEstateConfigEventOnLoadConfig;
 }

@@ -28,7 +28,7 @@ class HouseProcessAddressBloc
       },
     );
     stream.asBroadcastStream().listen((event) async {
-      _subcriber.callValid();
+      _subcriber.onValid(isValid());
     });
     on<_Started>((event, emit) async {
       final provinceData = await _repository.provinces();

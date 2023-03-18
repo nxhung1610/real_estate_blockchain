@@ -3,16 +3,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 
+part 'real_estate_favorites_bloc.freezed.dart';
 part 'real_estate_favorites_event.dart';
 part 'real_estate_favorites_state.dart';
-part 'real_estate_favorites_bloc.freezed.dart';
 
 @injectable
 class RealEstateFavoritesBloc
     extends Bloc<RealEstateFavoritesEvent, RealEstateFavoritesState> {
   final IRealEstateRepository _realEstateRepository;
+
   RealEstateFavoritesBloc(this._realEstateRepository)
       : super(const RealEstateFavoritesState()) {
     on<_Started>((event, emit) async {

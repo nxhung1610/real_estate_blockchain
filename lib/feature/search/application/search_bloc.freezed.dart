@@ -15,225 +15,6 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SearchState {
-  String? get keyword => throw _privateConstructorUsedError;
-  Status get status => throw _privateConstructorUsedError;
-  List<RealEstate> get estates => throw _privateConstructorUsedError;
-  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SearchStateCopyWith<SearchState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SearchStateCopyWith<$Res> {
-  factory $SearchStateCopyWith(
-          SearchState value, $Res Function(SearchState) then) =
-      _$SearchStateCopyWithImpl<$Res, SearchState>;
-  @useResult
-  $Res call(
-      {String? keyword,
-      Status status,
-      List<RealEstate> estates,
-      RealEstateFilterInput? filter});
-
-  $StatusCopyWith<$Res> get status;
-  $RealEstateFilterInputCopyWith<$Res>? get filter;
-}
-
-/// @nodoc
-class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
-    implements $SearchStateCopyWith<$Res> {
-  _$SearchStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? keyword = freezed,
-    Object? status = null,
-    Object? estates = null,
-    Object? filter = freezed,
-  }) {
-    return _then(_value.copyWith(
-      keyword: freezed == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status,
-      estates: null == estates
-          ? _value.estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as RealEstateFilterInput?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StatusCopyWith<$Res> get status {
-    return $StatusCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RealEstateFilterInputCopyWith<$Res>? get filter {
-    if (_value.filter == null) {
-      return null;
-    }
-
-    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
-      return _then(_value.copyWith(filter: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_SearchStateCopyWith<$Res>
-    implements $SearchStateCopyWith<$Res> {
-  factory _$$_SearchStateCopyWith(
-          _$_SearchState value, $Res Function(_$_SearchState) then) =
-      __$$_SearchStateCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? keyword,
-      Status status,
-      List<RealEstate> estates,
-      RealEstateFilterInput? filter});
-
-  @override
-  $StatusCopyWith<$Res> get status;
-  @override
-  $RealEstateFilterInputCopyWith<$Res>? get filter;
-}
-
-/// @nodoc
-class __$$_SearchStateCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$_SearchState>
-    implements _$$_SearchStateCopyWith<$Res> {
-  __$$_SearchStateCopyWithImpl(
-      _$_SearchState _value, $Res Function(_$_SearchState) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? keyword = freezed,
-    Object? status = null,
-    Object? estates = null,
-    Object? filter = freezed,
-  }) {
-    return _then(_$_SearchState(
-      keyword: freezed == keyword
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status,
-      estates: null == estates
-          ? _value._estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as RealEstateFilterInput?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SearchState implements _SearchState {
-  const _$_SearchState(
-      {this.keyword,
-      this.status = const Status.idle(),
-      final List<RealEstate> estates = const [],
-      this.filter})
-      : _estates = estates;
-
-  @override
-  final String? keyword;
-  @override
-  @JsonKey()
-  final Status status;
-  final List<RealEstate> _estates;
-  @override
-  @JsonKey()
-  List<RealEstate> get estates {
-    if (_estates is EqualUnmodifiableListView) return _estates;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_estates);
-  }
-
-  @override
-  final RealEstateFilterInput? filter;
-
-  @override
-  String toString() {
-    return 'SearchState(keyword: $keyword, status: $status, estates: $estates, filter: $filter)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SearchState &&
-            (identical(other.keyword, keyword) || other.keyword == keyword) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._estates, _estates) &&
-            (identical(other.filter, filter) || other.filter == filter));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, keyword, status,
-      const DeepCollectionEquality().hash(_estates), filter);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
-      __$$_SearchStateCopyWithImpl<_$_SearchState>(this, _$identity);
-}
-
-abstract class _SearchState implements SearchState {
-  const factory _SearchState(
-      {final String? keyword,
-      final Status status,
-      final List<RealEstate> estates,
-      final RealEstateFilterInput? filter}) = _$_SearchState;
-
-  @override
-  String? get keyword;
-  @override
-  Status get status;
-  @override
-  List<RealEstate> get estates;
-  @override
-  RealEstateFilterInput? get filter;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$SearchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -694,7 +475,240 @@ abstract class SearchEventApplyFilter implements SearchEvent {
       _$SearchEventApplyFilter;
 
   RealEstateFilterInput get filter;
+
   @JsonKey(ignore: true)
   _$$SearchEventApplyFilterCopyWith<_$SearchEventApplyFilter> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$SearchState {
+  String? get keyword => throw _privateConstructorUsedError;
+
+  Status get status => throw _privateConstructorUsedError;
+
+  List<RealEstate> get estates => throw _privateConstructorUsedError;
+
+  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SearchStateCopyWith<SearchState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SearchStateCopyWith<$Res> {
+  factory $SearchStateCopyWith(
+          SearchState value, $Res Function(SearchState) then) =
+      _$SearchStateCopyWithImpl<$Res, SearchState>;
+
+  @useResult
+  $Res call(
+      {String? keyword,
+      Status status,
+      List<RealEstate> estates,
+      RealEstateFilterInput? filter});
+
+  $StatusCopyWith<$Res> get status;
+
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
+    implements $SearchStateCopyWith<$Res> {
+  _$SearchStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyword = freezed,
+    Object? status = null,
+    Object? estates = null,
+    Object? filter = freezed,
+  }) {
+    return _then(_value.copyWith(
+      keyword: freezed == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+      estates: null == estates
+          ? _value.estates
+          : estates // ignore: cast_nullable_to_non_nullable
+              as List<RealEstate>,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatusCopyWith<$Res> get status {
+    return $StatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
+
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_SearchStateCopyWith<$Res>
+    implements $SearchStateCopyWith<$Res> {
+  factory _$$_SearchStateCopyWith(
+          _$_SearchState value, $Res Function(_$_SearchState) then) =
+      __$$_SearchStateCopyWithImpl<$Res>;
+
+  @override
+  @useResult
+  $Res call(
+      {String? keyword,
+      Status status,
+      List<RealEstate> estates,
+      RealEstateFilterInput? filter});
+
+  @override
+  $StatusCopyWith<$Res> get status;
+
+  @override
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class __$$_SearchStateCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$_SearchState>
+    implements _$$_SearchStateCopyWith<$Res> {
+  __$$_SearchStateCopyWithImpl(
+      _$_SearchState _value, $Res Function(_$_SearchState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keyword = freezed,
+    Object? status = null,
+    Object? estates = null,
+    Object? filter = freezed,
+  }) {
+    return _then(_$_SearchState(
+      keyword: freezed == keyword
+          ? _value.keyword
+          : keyword // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+      estates: null == estates
+          ? _value._estates
+          : estates // ignore: cast_nullable_to_non_nullable
+              as List<RealEstate>,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchState implements _SearchState {
+  const _$_SearchState(
+      {this.keyword,
+      this.status = const Status.idle(),
+      final List<RealEstate> estates = const [],
+      this.filter})
+      : _estates = estates;
+
+  @override
+  final String? keyword;
+  @override
+  @JsonKey()
+  final Status status;
+  final List<RealEstate> _estates;
+
+  @override
+  @JsonKey()
+  List<RealEstate> get estates {
+    if (_estates is EqualUnmodifiableListView) return _estates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_estates);
+  }
+
+  @override
+  final RealEstateFilterInput? filter;
+
+  @override
+  String toString() {
+    return 'SearchState(keyword: $keyword, status: $status, estates: $estates, filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchState &&
+            (identical(other.keyword, keyword) || other.keyword == keyword) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._estates, _estates) &&
+            (identical(other.filter, filter) || other.filter == filter));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, keyword, status,
+      const DeepCollectionEquality().hash(_estates), filter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
+      __$$_SearchStateCopyWithImpl<_$_SearchState>(this, _$identity);
+}
+
+abstract class _SearchState implements SearchState {
+  const factory _SearchState(
+      {final String? keyword,
+      final Status status,
+      final List<RealEstate> estates,
+      final RealEstateFilterInput? filter}) = _$_SearchState;
+
+  @override
+  String? get keyword;
+
+  @override
+  Status get status;
+
+  @override
+  List<RealEstate> get estates;
+
+  @override
+  RealEstateFilterInput? get filter;
+
+  @override
+  @JsonKey(ignore: true)
+  _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
       throw _privateConstructorUsedError;
 }

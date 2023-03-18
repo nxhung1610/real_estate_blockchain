@@ -22,6 +22,7 @@ class RealFilterRequest with _$RealFilterRequest {
     @JsonKey(name: 'district_id') String? districtId,
     @JsonKey(name: 'ward_id') String? wardId,
   }) = _RealFilterRequest;
+
   factory RealFilterRequest.fromModel(RealEstateFilterInput model) =>
       RealFilterRequest(
           minPrice: model.minPrice,

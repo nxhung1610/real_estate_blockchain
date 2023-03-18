@@ -5,11 +5,15 @@ import 'package:real_estate_blockchain/feature/real_estate/favorites/router/real
 
 class RealEstateRouter extends BaseRoute {
   RealEstateRouter(super.root, super.path);
+
   late final RealEstateDetailRouter _detail;
   late final RealEstateFavoritesRouter _favorites;
+
   // Path
   String get detail => _detail.url;
+
   String get favorites => _favorites.url;
+
   @override
   List<RouteBase> get routes => [
         ..._detail.routes,

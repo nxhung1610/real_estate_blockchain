@@ -25,8 +25,12 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
   StreamSubscription? messageSubscription;
   final ChatRoomBlocParams params;
 
+  static const kPageSize = 10;
+
   MessageBloc get messageBloc => params.messageBloc;
+
   AuthBloc get authBloc => params.authBloc;
+
   User get user => (authBloc.state as AuthStateAuthenticated).user;
 
   ChatRoomBloc(
@@ -47,6 +51,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
     on<ChatRoomStarted>(_chatRoomStartedToState);
     on<ChatRoomMessageSent>(_chatRoomMessageSentToState);
     on<ChatRoomMessageReceived>(_chatRoomMessageReceivedToState);
+    on<ChatRoomMessageLoaded>(_chatRoomMessageLoadedToState);
   }
 
   FutureOr<void> _chatRoomStartedToState(
@@ -59,32 +64,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
         }
       },
     );
-    try {
-      emit(state.copyWith(status: const Status.loading()));
-      final messageResponse = await messageRepository.getMessages(
-        request: GetMessageRequest(
-          page: 0,
-          pageSize: 200,
-          senderId: state.room.senderId,
-          receiverId: state.room.receiverId,
-        ),
-      );
-      messageResponse.fold(
-        (l) => throw l,
-        (r) => emit(
-          state.copyWith(
-            status: const Status.idle(),
-            messages: [
-              ...r.reversed,
-              ...state.messages,
-            ],
-          ),
-        ),
-      );
-    } catch (e, trace) {
-      printLog(this, message: "Error", error: e, trace: trace);
-      emit(state.copyWith(status: const Status.idle()));
-    }
+    add(const ChatRoomMessageLoaded());
   }
 
   FutureOr<void> _chatRoomMessageSentToState(
@@ -94,7 +74,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
         ChatTextMessageRequest(
           content: event.content,
           senderId: user.id,
-          receiverId: state.room.getReceiverId(user.id),
+          groupId: state.room.groupId,
         ),
         state.room,
       ),
@@ -108,6 +88,44 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
         messages: removeDuplicates([event.message, ...state.messages]),
       ),
     );
+  }
+
+  FutureOr<void> _chatRoomMessageLoadedToState(
+      ChatRoomMessageLoaded event, Emitter<ChatRoomState> emit) async {
+    int page = event.isRefreshed ? 0 : state.currentPage;
+    try {
+      if (!event.isRefreshed && page == 0) {
+        emit(state.copyWith(status: const Status.loading()));
+      } else if (event.isRefreshed) {
+        emit(state.copyWith(status: const StatusRefreshing()));
+      } else {
+        emit(state.copyWith(status: const StatusMoreLoading()));
+      }
+      final messageResponse = await messageRepository.getMessages(
+        request: GetMessageRequest(
+          page: page,
+          pageSize: kPageSize,
+          groupId: state.room.groupId,
+        ),
+      );
+      messageResponse.fold(
+        (l) => throw l,
+        (r) => emit(
+          state.copyWith(
+            status: const Status.idle(),
+            currentPage: state.currentPage + 1,
+            isEnd: r.length < kPageSize,
+            messages: [
+              ...state.messages,
+              ...r,
+            ],
+          ),
+        ),
+      );
+    } catch (e, trace) {
+      printLog(this, message: "Error", error: e, trace: trace);
+      emit(state.copyWith(status: const Status.idle()));
+    }
   }
   //#endregion map event to state
 

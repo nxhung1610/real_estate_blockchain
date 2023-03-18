@@ -6,9 +6,9 @@ import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_type.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 
-part 'house_filter_state.dart';
-part 'house_filter_event.dart';
 part 'house_filter_bloc.freezed.dart';
+part 'house_filter_event.dart';
+part 'house_filter_state.dart';
 
 class HouseFilterBloc extends Bloc<HouseFilterEvent, HouseFilterState> {
   HouseFilterBloc() : super(const HouseFilterState()) {

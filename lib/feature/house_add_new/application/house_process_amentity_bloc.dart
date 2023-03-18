@@ -33,6 +33,9 @@ class HouseProcessAmentityBloc
         );
       }
     });
+    stream.asBroadcastStream().listen((event) {
+      _subcriber.onValid(isValid());
+    });
     on<_Started>((event, emit) {
       emit(
         state.copyWith(

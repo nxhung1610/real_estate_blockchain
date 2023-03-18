@@ -73,7 +73,7 @@ class ChatWSController {
   void onConnected(StompFrame connectFrame) {
     for (final room in rooms) {
       wsClient.subscribe(
-        destination: "/topic/room/${room.roomId}",
+        destination: "/topic/room/${room.groupId}",
         callback: (frame) {
           if (frame.body != null) {
             final newMessage = ChatMessage.fromJson(jsonDecode(frame.body!));
@@ -88,7 +88,7 @@ class ChatWSController {
 
   void sendMessage(ChatMessageRequest message, ChatRoom room) {
     wsClient.send(
-      destination: '/app/room/${room.roomId}',
+      destination: '/app/room/${room.groupId}',
       body: jsonEncode(
         message.toJson(),
       ),

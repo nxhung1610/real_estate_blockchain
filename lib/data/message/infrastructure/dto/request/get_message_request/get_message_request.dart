@@ -9,8 +9,7 @@ class GetMessageRequest with _$GetMessageRequest {
   const factory GetMessageRequest({
     required int page,
     required int pageSize,
-    required int senderId,
-    required int receiverId,
+    required int groupId,
   }) = _GetMessageRequest;
 
   factory GetMessageRequest.fromJson(Map<String, dynamic> json) =>

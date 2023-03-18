@@ -33,6 +33,9 @@ class HouseProcessMediaBloc
         ],
       );
     });
+    stream.asBroadcastStream().listen((event) {
+      _subcriber.onValid(isValid());
+    });
     on<_OnChooseFile>((event, emit) async {
       try {
         emit(state.copyWith(status: const Status.loading()));

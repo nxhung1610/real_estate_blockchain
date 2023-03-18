@@ -9,13 +9,14 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 
-part 'search_state.dart';
-part 'search_event.dart';
 part 'search_bloc.freezed.dart';
+part 'search_event.dart';
+part 'search_state.dart';
 
 @injectable
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final IRealEstateRepository _realEstateRepository;
+
   SearchBloc(this._realEstateRepository) : super(const SearchState()) {
     on<SearchEventOnKeyChanged>(_onKeyChanged);
     on<SearchEventApplyFilter>(_onApplyFilter);

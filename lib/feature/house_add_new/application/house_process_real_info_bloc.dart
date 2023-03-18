@@ -44,6 +44,9 @@ class HouseProcessRealInfoBloc
         ),
       );
     });
+    stream.asBroadcastStream().listen((event) {
+      _subcriber.onValid(isValid());
+    });
     on<_Started>((event, emit) {});
     on<_ChangeTypeSell>((event, emit) {
       emit(state.copyWith(sell: event.sell));

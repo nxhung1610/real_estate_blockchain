@@ -13,9 +13,9 @@ class ChatMessage with _$ChatMessage {
   const factory ChatMessage.text({
     required String content,
     required int senderId,
-    required int receiverId,
     required int id,
-    @JsonKey(fromJson: fromApiDate) required DateTime createdAt,
+    required int groupId,
+    @JsonKey(fromJson: fromApiDateNonNull) required DateTime createdAt,
   }) = ChatTextMessage;
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) =>

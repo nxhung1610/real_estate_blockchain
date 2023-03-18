@@ -1,8 +1,7 @@
-import 'package:collection/collection.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -14,14 +13,13 @@ import 'package:real_estate_blockchain/feature/app/presentation/widgets/button/r
 import 'package:real_estate_blockchain/feature/house_filter/application/house_filter_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
-import 'package:dartz/dartz.dart' as dartz;
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
+part 'widgets/_amenities.dart';
 part 'widgets/_features.dart';
 part 'widgets/_option_type_real_estate.dart';
 part 'widgets/_price_filter_range.dart';
 part 'widgets/_property_facts.dart';
-part 'widgets/_amenities.dart';
 part 'widgets/_property_type.dart';
 
 class HouseFilterPage extends StatefulWidget {

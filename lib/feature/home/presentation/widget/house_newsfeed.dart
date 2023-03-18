@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,18 +7,17 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
-import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:collection/collection.dart';
 
 class HouseNewsFeed extends StatelessWidget {
   final VoidCallback? onPressed;
   final void Function(bool isChecked)? onFavorite;
   final RealEstate value;
+
   const HouseNewsFeed({
     super.key,
     this.onPressed,

@@ -11,7 +11,7 @@ _$ChatTextMessageRequest _$$ChatTextMessageRequestFromJson(
     _$ChatTextMessageRequest(
       content: json['content'] as String,
       senderId: json['sender_id'] as int,
-      receiverId: json['receiver_id'] as int,
+      groupId: json['group_id'] as int,
       messageType:
           $enumDecodeNullable(_$ChatMessageTypeEnumMap, json['message_type']) ??
               ChatMessageType.text,
@@ -22,7 +22,7 @@ Map<String, dynamic> _$$ChatTextMessageRequestToJson(
     <String, dynamic>{
       'content': instance.content,
       'sender_id': instance.senderId,
-      'receiver_id': instance.receiverId,
+      'group_id': instance.groupId,
       'message_type': _$ChatMessageTypeEnumMap[instance.messageType]!,
     };
 
