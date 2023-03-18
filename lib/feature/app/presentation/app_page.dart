@@ -15,6 +15,7 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
+import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
@@ -53,7 +54,7 @@ class _AppCommon extends StatefulWidget {
   State<_AppCommon> createState() => _AppCommonState();
 }
 
-class _AppCommonState extends State<_AppCommon> {
+class _AppCommonState extends State<_AppCommon> with PageMixin {
   late final AppBloc appBloc;
   late final AuthBloc authBloc;
   late final GoRouter appRoute;
@@ -197,11 +198,7 @@ class _AppCommonState extends State<_AppCommon> {
               return GestureDetector(
                 onTap: () {
                   // Unfocus when tap out side
-                  FocusScopeNode currentNode = FocusScope.of(context);
-                  if (!currentNode.hasPrimaryFocus) {
-                    currentNode.unfocus();
-                    currentNode.requestFocus(FocusNode());
-                  }
+                  dissmissFocus(context);
                 },
                 child: MaterialApp.router(
                   theme: AppTheme.light,

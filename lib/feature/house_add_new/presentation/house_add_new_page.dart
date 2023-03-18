@@ -14,6 +14,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/validat
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/presentation/process_page/map_position_page.dart';
 import 'package:real_estate_blockchain/feature/webview/presentation/webview_page.dart';
+import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -31,16 +32,17 @@ class HouseAddNewPage extends StatefulWidget {
   State<HouseAddNewPage> createState() => _HouseAddNewPageState();
 }
 
-class _HouseAddNewPageState extends State<HouseAddNewPage> {
+class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
   late final HouseAddNewBloc bloc;
   late final PageController controller;
-  final ValidateSubcriber validateSubcriber = ValidateSubcriber();
+  late final ValidateSubcriber validateSubcriber;
 
   @override
   void initState() {
     super.initState();
     bloc = context.read<HouseAddNewBloc>();
     controller = PageController(initialPage: 0, keepPage: true);
+    validateSubcriber = ValidateSubcriber(bloc);
     bloc.setup(validateSubcriber);
   }
 
@@ -251,7 +253,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                 vertical: AppSize.largeHeightDimens,
               ),
               decoration: BoxDecoration(
-                color: context.theme.backgroundColor,
+                color: context.theme.colorScheme.background,
                 boxShadow: [
                   BoxShadow(
                     blurRadius: AppSize.extraRadius,
@@ -266,6 +268,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> {
                     ? s.done
                     : s.next,
                 onPressed: () {
+                  dissmissFocus(context);
                   bloc.processNextPage();
                 },
                 type: ButtonType.primary,

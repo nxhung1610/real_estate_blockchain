@@ -51,7 +51,7 @@ class _EmptyPage extends StatelessWidget {
                   },
                   type: ButtonType.primary,
                   style: ButtonScaleStyle.tight,
-                  size: ButtonSize.small,
+                  size: ButtonSize.large,
                 )
               ],
             ),

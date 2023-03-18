@@ -24,6 +24,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) =>
@@ -36,6 +37,7 @@ mixin _$HouseAddNewEvent {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) =>
@@ -48,6 +50,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -61,6 +64,7 @@ mixin _$HouseAddNewEvent {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) =>
@@ -73,6 +77,7 @@ mixin _$HouseAddNewEvent {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) =>
@@ -85,6 +90,7 @@ mixin _$HouseAddNewEvent {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -141,15 +147,23 @@ class __$$_SetupCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Setup implements _Setup {
+class _$_Setup with DiagnosticableTreeMixin implements _Setup {
   const _$_Setup(this.subcriber);
 
   @override
   final ValidateSubcriber subcriber;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.setup(subcriber: $subcriber)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.setup'))
+      ..add(DiagnosticsProperty('subcriber', subcriber));
   }
 
   @override
@@ -179,6 +193,7 @@ class _$_Setup implements _Setup {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -194,6 +209,7 @@ class _$_Setup implements _Setup {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -209,6 +225,7 @@ class _$_Setup implements _Setup {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -228,6 +245,7 @@ class _$_Setup implements _Setup {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -243,6 +261,7 @@ class _$_Setup implements _Setup {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -258,6 +277,7 @@ class _$_Setup implements _Setup {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -296,12 +316,18 @@ class __$$_NextPageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NextPage implements _NextPage {
+class _$_NextPage with DiagnosticableTreeMixin implements _NextPage {
   const _$_NextPage();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.nextPage()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HouseAddNewEvent.nextPage'));
   }
 
   @override
@@ -322,6 +348,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -337,6 +364,7 @@ class _$_NextPage implements _NextPage {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -352,6 +380,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -371,6 +400,7 @@ class _$_NextPage implements _NextPage {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -386,6 +416,7 @@ class _$_NextPage implements _NextPage {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -401,6 +432,7 @@ class _$_NextPage implements _NextPage {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -449,15 +481,25 @@ class __$$_OnAddressChosenCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnAddressChosen implements _OnAddressChosen {
+class _$_OnAddressChosen
+    with DiagnosticableTreeMixin
+    implements _OnAddressChosen {
   const _$_OnAddressChosen(this.addressChoosen);
 
   @override
   final AddressChoosen addressChoosen;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.onAddressChosen(addressChoosen: $addressChoosen)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onAddressChosen'))
+      ..add(DiagnosticsProperty('addressChoosen', addressChoosen));
   }
 
   @override
@@ -487,6 +529,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -502,6 +545,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -517,6 +561,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -536,6 +581,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -551,6 +597,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -566,6 +613,7 @@ class _$_OnAddressChosen implements _OnAddressChosen {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -620,15 +668,25 @@ class __$$_OnRealEstateInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnRealEstateInfo implements _OnRealEstateInfo {
+class _$_OnRealEstateInfo
+    with DiagnosticableTreeMixin
+    implements _OnRealEstateInfo {
   const _$_OnRealEstateInfo(this.realEstateInfo);
 
   @override
   final RealEstateInfo realEstateInfo;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.onRealEstateInfo(realEstateInfo: $realEstateInfo)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onRealEstateInfo'))
+      ..add(DiagnosticsProperty('realEstateInfo', realEstateInfo));
   }
 
   @override
@@ -658,6 +716,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -673,6 +732,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -688,6 +748,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -707,6 +768,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -722,6 +784,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -737,6 +800,7 @@ class _$_OnRealEstateInfo implements _OnRealEstateInfo {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -791,7 +855,7 @@ class __$$_OnAmenityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnAmenity implements _OnAmenity {
+class _$_OnAmenity with DiagnosticableTreeMixin implements _OnAmenity {
   const _$_OnAmenity(final List<Amenity> amenities) : _amenities = amenities;
 
   final List<Amenity> _amenities;
@@ -803,8 +867,16 @@ class _$_OnAmenity implements _OnAmenity {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.onAmenity(amenities: $amenities)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onAmenity'))
+      ..add(DiagnosticsProperty('amenities', amenities));
   }
 
   @override
@@ -835,6 +907,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -850,6 +923,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -865,6 +939,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -884,6 +959,7 @@ class _$_OnAmenity implements _OnAmenity {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -899,6 +975,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -914,6 +991,7 @@ class _$_OnAmenity implements _OnAmenity {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -966,7 +1044,7 @@ class __$$_OnMediaCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnMedia implements _OnMedia {
+class _$_OnMedia with DiagnosticableTreeMixin implements _OnMedia {
   const _$_OnMedia(final List<XFile> media) : _media = media;
 
   final List<XFile> _media;
@@ -978,8 +1056,16 @@ class _$_OnMedia implements _OnMedia {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.onMedia(media: $media)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onMedia'))
+      ..add(DiagnosticsProperty('media', media));
   }
 
   @override
@@ -1009,6 +1095,7 @@ class _$_OnMedia implements _OnMedia {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -1024,6 +1111,7 @@ class _$_OnMedia implements _OnMedia {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -1039,6 +1127,7 @@ class _$_OnMedia implements _OnMedia {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -1058,6 +1147,7 @@ class _$_OnMedia implements _OnMedia {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -1073,6 +1163,7 @@ class _$_OnMedia implements _OnMedia {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -1088,6 +1179,7 @@ class _$_OnMedia implements _OnMedia {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -1105,6 +1197,193 @@ abstract class _OnMedia implements HouseAddNewEvent {
   List<XFile> get media;
   @JsonKey(ignore: true)
   _$$_OnMediaCopyWith<_$_OnMedia> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HouseAddNewEventOnValidCopyWith<$Res> {
+  factory _$$HouseAddNewEventOnValidCopyWith(_$HouseAddNewEventOnValid value,
+          $Res Function(_$HouseAddNewEventOnValid) then) =
+      __$$HouseAddNewEventOnValidCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isValid});
+}
+
+/// @nodoc
+class __$$HouseAddNewEventOnValidCopyWithImpl<$Res>
+    extends _$HouseAddNewEventCopyWithImpl<$Res, _$HouseAddNewEventOnValid>
+    implements _$$HouseAddNewEventOnValidCopyWith<$Res> {
+  __$$HouseAddNewEventOnValidCopyWithImpl(_$HouseAddNewEventOnValid _value,
+      $Res Function(_$HouseAddNewEventOnValid) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isValid = null,
+  }) {
+    return _then(_$HouseAddNewEventOnValid(
+      null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HouseAddNewEventOnValid
+    with DiagnosticableTreeMixin
+    implements HouseAddNewEventOnValid {
+  const _$HouseAddNewEventOnValid(this.isValid);
+
+  @override
+  final bool isValid;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HouseAddNewEvent.onValid(isValid: $isValid)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onValid'))
+      ..add(DiagnosticsProperty('isValid', isValid));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HouseAddNewEventOnValid &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HouseAddNewEventOnValidCopyWith<_$HouseAddNewEventOnValid> get copyWith =>
+      __$$HouseAddNewEventOnValidCopyWithImpl<_$HouseAddNewEventOnValid>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ValidateSubcriber subcriber) setup,
+    required TResult Function() nextPage,
+    required TResult Function(AddressChoosen addressChoosen) onAddressChosen,
+    required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
+    required TResult Function(List<Amenity> amenities) onAmenity,
+    required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
+    required TResult Function(LatLng point) onMap,
+    required TResult Function() createRealEstate,
+  }) {
+    return onValid(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ValidateSubcriber subcriber)? setup,
+    TResult? Function()? nextPage,
+    TResult? Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult? Function(List<Amenity> amenities)? onAmenity,
+    TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
+    TResult? Function(LatLng point)? onMap,
+    TResult? Function()? createRealEstate,
+  }) {
+    return onValid?.call(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ValidateSubcriber subcriber)? setup,
+    TResult Function()? nextPage,
+    TResult Function(AddressChoosen addressChoosen)? onAddressChosen,
+    TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
+    TResult Function(List<Amenity> amenities)? onAmenity,
+    TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
+    TResult Function(LatLng point)? onMap,
+    TResult Function()? createRealEstate,
+    required TResult orElse(),
+  }) {
+    if (onValid != null) {
+      return onValid(isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_NextPage value) nextPage,
+    required TResult Function(_OnAddressChosen value) onAddressChosen,
+    required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
+    required TResult Function(_OnAmenity value) onAmenity,
+    required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
+    required TResult Function(_OnMap value) onMap,
+    required TResult Function(_CreateRealEstate value) createRealEstate,
+  }) {
+    return onValid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_NextPage value)? nextPage,
+    TResult? Function(_OnAddressChosen value)? onAddressChosen,
+    TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult? Function(_OnAmenity value)? onAmenity,
+    TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
+    TResult? Function(_OnMap value)? onMap,
+    TResult? Function(_CreateRealEstate value)? createRealEstate,
+  }) {
+    return onValid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_NextPage value)? nextPage,
+    TResult Function(_OnAddressChosen value)? onAddressChosen,
+    TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
+    TResult Function(_OnAmenity value)? onAmenity,
+    TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
+    TResult Function(_OnMap value)? onMap,
+    TResult Function(_CreateRealEstate value)? createRealEstate,
+    required TResult orElse(),
+  }) {
+    if (onValid != null) {
+      return onValid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HouseAddNewEventOnValid implements HouseAddNewEvent {
+  const factory HouseAddNewEventOnValid(final bool isValid) =
+      _$HouseAddNewEventOnValid;
+
+  bool get isValid;
+  @JsonKey(ignore: true)
+  _$$HouseAddNewEventOnValidCopyWith<_$HouseAddNewEventOnValid> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1139,15 +1418,23 @@ class __$$_OnMapCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnMap implements _OnMap {
+class _$_OnMap with DiagnosticableTreeMixin implements _OnMap {
   const _$_OnMap(this.point);
 
   @override
   final LatLng point;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.onMap(point: $point)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewEvent.onMap'))
+      ..add(DiagnosticsProperty('point', point));
   }
 
   @override
@@ -1176,6 +1463,7 @@ class _$_OnMap implements _OnMap {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -1191,6 +1479,7 @@ class _$_OnMap implements _OnMap {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -1206,6 +1495,7 @@ class _$_OnMap implements _OnMap {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -1225,6 +1515,7 @@ class _$_OnMap implements _OnMap {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -1240,6 +1531,7 @@ class _$_OnMap implements _OnMap {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -1255,6 +1547,7 @@ class _$_OnMap implements _OnMap {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -1293,12 +1586,21 @@ class __$$_CreateRealEstateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateRealEstate implements _CreateRealEstate {
+class _$_CreateRealEstate
+    with DiagnosticableTreeMixin
+    implements _CreateRealEstate {
   const _$_CreateRealEstate();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HouseAddNewEvent.createRealEstate()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'HouseAddNewEvent.createRealEstate'));
   }
 
   @override
@@ -1319,6 +1621,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     required TResult Function(RealEstateInfo realEstateInfo) onRealEstateInfo,
     required TResult Function(List<Amenity> amenities) onAmenity,
     required TResult Function(List<XFile> media) onMedia,
+    required TResult Function(bool isValid) onValid,
     required TResult Function(LatLng point) onMap,
     required TResult Function() createRealEstate,
   }) {
@@ -1334,6 +1637,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult? Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult? Function(List<Amenity> amenities)? onAmenity,
     TResult? Function(List<XFile> media)? onMedia,
+    TResult? Function(bool isValid)? onValid,
     TResult? Function(LatLng point)? onMap,
     TResult? Function()? createRealEstate,
   }) {
@@ -1349,6 +1653,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult Function(RealEstateInfo realEstateInfo)? onRealEstateInfo,
     TResult Function(List<Amenity> amenities)? onAmenity,
     TResult Function(List<XFile> media)? onMedia,
+    TResult Function(bool isValid)? onValid,
     TResult Function(LatLng point)? onMap,
     TResult Function()? createRealEstate,
     required TResult orElse(),
@@ -1368,6 +1673,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     required TResult Function(_OnRealEstateInfo value) onRealEstateInfo,
     required TResult Function(_OnAmenity value) onAmenity,
     required TResult Function(_OnMedia value) onMedia,
+    required TResult Function(HouseAddNewEventOnValid value) onValid,
     required TResult Function(_OnMap value) onMap,
     required TResult Function(_CreateRealEstate value) createRealEstate,
   }) {
@@ -1383,6 +1689,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult? Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult? Function(_OnAmenity value)? onAmenity,
     TResult? Function(_OnMedia value)? onMedia,
+    TResult? Function(HouseAddNewEventOnValid value)? onValid,
     TResult? Function(_OnMap value)? onMap,
     TResult? Function(_CreateRealEstate value)? createRealEstate,
   }) {
@@ -1398,6 +1705,7 @@ class _$_CreateRealEstate implements _CreateRealEstate {
     TResult Function(_OnRealEstateInfo value)? onRealEstateInfo,
     TResult Function(_OnAmenity value)? onAmenity,
     TResult Function(_OnMedia value)? onMedia,
+    TResult Function(HouseAddNewEventOnValid value)? onValid,
     TResult Function(_OnMap value)? onMap,
     TResult Function(_CreateRealEstate value)? createRealEstate,
     required TResult orElse(),
@@ -1422,6 +1730,7 @@ mixin _$HouseAddNewState {
   List<XFile>? get media => throw _privateConstructorUsedError;
   LatLng? get position => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
+  bool get isValid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HouseAddNewStateCopyWith<HouseAddNewState> get copyWith =>
@@ -1441,7 +1750,8 @@ abstract class $HouseAddNewStateCopyWith<$Res> {
       List<Amenity>? amenities,
       List<XFile>? media,
       LatLng? position,
-      Status status});
+      Status status,
+      bool isValid});
 
   $StatusCopyWith<$Res> get status;
 }
@@ -1466,6 +1776,7 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
     Object? media = freezed,
     Object? position = freezed,
     Object? status = null,
+    Object? isValid = null,
   }) {
     return _then(_value.copyWith(
       state: null == state
@@ -1496,6 +1807,10 @@ class _$HouseAddNewStateCopyWithImpl<$Res, $Val extends HouseAddNewState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1523,7 +1838,8 @@ abstract class _$$_HouseAddNewStateCopyWith<$Res>
       List<Amenity>? amenities,
       List<XFile>? media,
       LatLng? position,
-      Status status});
+      Status status,
+      bool isValid});
 
   @override
   $StatusCopyWith<$Res> get status;
@@ -1547,6 +1863,7 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
     Object? media = freezed,
     Object? position = freezed,
     Object? status = null,
+    Object? isValid = null,
   }) {
     return _then(_$_HouseAddNewState(
       state: null == state
@@ -1577,13 +1894,19 @@ class __$$_HouseAddNewStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_HouseAddNewState implements _HouseAddNewState {
+class _$_HouseAddNewState
+    with DiagnosticableTreeMixin
+    implements _HouseAddNewState {
   const _$_HouseAddNewState(
       {this.state = ProcessState.address,
       this.addressChoosen,
@@ -1591,7 +1914,8 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       final List<Amenity>? amenities,
       final List<XFile>? media,
       this.position,
-      this.status = const Status.idle()})
+      this.status = const Status.idle(),
+      this.isValid = false})
       : _amenities = amenities,
         _media = media;
 
@@ -1627,10 +1951,28 @@ class _$_HouseAddNewState implements _HouseAddNewState {
   @override
   @JsonKey()
   final Status status;
+  @override
+  @JsonKey()
+  final bool isValid;
 
   @override
-  String toString() {
-    return 'HouseAddNewState(state: $state, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, position: $position, status: $status)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HouseAddNewState(state: $state, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, position: $position, status: $status, isValid: $isValid)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HouseAddNewState'))
+      ..add(DiagnosticsProperty('state', state))
+      ..add(DiagnosticsProperty('addressChoosen', addressChoosen))
+      ..add(DiagnosticsProperty('realEstateInfo', realEstateInfo))
+      ..add(DiagnosticsProperty('amenities', amenities))
+      ..add(DiagnosticsProperty('media', media))
+      ..add(DiagnosticsProperty('position', position))
+      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('isValid', isValid));
   }
 
   @override
@@ -1648,7 +1990,8 @@ class _$_HouseAddNewState implements _HouseAddNewState {
             const DeepCollectionEquality().equals(other._media, _media) &&
             (identical(other.position, position) ||
                 other.position == position) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
   }
 
   @override
@@ -1660,7 +2003,8 @@ class _$_HouseAddNewState implements _HouseAddNewState {
       const DeepCollectionEquality().hash(_amenities),
       const DeepCollectionEquality().hash(_media),
       position,
-      status);
+      status,
+      isValid);
 
   @JsonKey(ignore: true)
   @override
@@ -1677,7 +2021,8 @@ abstract class _HouseAddNewState implements HouseAddNewState {
       final List<Amenity>? amenities,
       final List<XFile>? media,
       final LatLng? position,
-      final Status status}) = _$_HouseAddNewState;
+      final Status status,
+      final bool isValid}) = _$_HouseAddNewState;
 
   @override
   ProcessState get state;
@@ -1693,6 +2038,8 @@ abstract class _HouseAddNewState implements HouseAddNewState {
   LatLng? get position;
   @override
   Status get status;
+  @override
+  bool get isValid;
   @override
   @JsonKey(ignore: true)
   _$$_HouseAddNewStateCopyWith<_$_HouseAddNewState> get copyWith =>

@@ -21,9 +21,14 @@ class HouseProcessAddressBloc
   late final StreamSubscription _subscription;
   HouseProcessAddressBloc(this._repository, @factoryParam this._subcriber)
       : super(const HouseProcessAddressState()) {
-    _subscription = _subcriber.stream.listen((event) {
-      event.onValidWithData(
-          ProcessState.address, isValid(), state.addressChoosen);
+    _subscription = _subcriber.stream.listen(
+      (event) {
+        event.onValidWithData(
+            ProcessState.address, isValid(), state.addressChoosen);
+      },
+    );
+    stream.asBroadcastStream().listen((event) async {
+      _subcriber.callValid();
     });
     on<_Started>((event, emit) async {
       final provinceData = await _repository.provinces();

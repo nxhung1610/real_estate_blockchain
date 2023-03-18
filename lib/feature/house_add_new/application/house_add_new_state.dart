@@ -10,5 +10,6 @@ class HouseAddNewState with _$HouseAddNewState {
     List<XFile>? media,
     LatLng? position,
     @Default(Status.idle()) Status status,
+    @Default(false) bool isValid,
   }) = _HouseAddNewState;
 }

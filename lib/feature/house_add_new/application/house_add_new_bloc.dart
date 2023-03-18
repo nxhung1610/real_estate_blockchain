@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
@@ -101,12 +102,15 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
   }
 
   void processNextPage() {
-    validateSubcriber?.callValid(this);
+    validateSubcriber?.callValid();
   }
 
   @override
   void onValidWithData<T>(ProcessState state, bool isValid, T data) {
-    print("$state - $isValid - $data");
+    if (kDebugMode) {
+      print("$state - $isValid - $data");
+    }
+    
     if (this.state.state == state && isValid) {
       switch (state) {
         case ProcessState.address:

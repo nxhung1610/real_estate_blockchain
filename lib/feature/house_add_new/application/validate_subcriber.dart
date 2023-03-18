@@ -2,19 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/application/enums.dart';
+import 'package:rxdart/rxdart.dart';
 
 abstract class IValidData {
   void onValidWithData<T>(ProcessState state, bool isValid, T data);
 }
 
 class ValidateSubcriber {
+  final IValidData isValidate;
+  ValidateSubcriber(this.isValidate);
   @protected
-  final StreamController<IValidData> validStreamController =
-      StreamController.broadcast();
+  final BehaviorSubject<IValidData> validStreamController = BehaviorSubject();
 
-  Stream<IValidData> get stream => validStreamController.stream;
+  BehaviorSubject<IValidData> get stream => validStreamController;
 
-  void callValid(IValidData isValidate) {
+  void callValid() {
     validStreamController.add(isValidate);
   }
 }
