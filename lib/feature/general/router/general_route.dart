@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:go_router/src/route.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/feature/profile/module.dart';
+import 'package:real_estate_blockchain/feature/general/module.dart';
 
-class ProfileRoute extends BaseRoute {
-  ProfileRoute(super.root, super.path);
+class GeneralRoute extends BaseRoute {
+  GeneralRoute(super.root, super.path);
 
   @override
   List<RouteBase> get routes => [];

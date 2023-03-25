@@ -3352,31 +3352,19 @@ abstract class HouseFilterEventOnApply implements HouseFilterEvent {
 /// @nodoc
 mixin _$HouseFilterState {
   bool get isSell => throw _privateConstructorUsedError;
-
   num get priceStart => throw _privateConstructorUsedError;
-
   num get priceEnd => throw _privateConstructorUsedError;
-
   num get priceMax => throw _privateConstructorUsedError;
-
   int? get noBedRoom => throw _privateConstructorUsedError;
-
   int? get noFloor => throw _privateConstructorUsedError;
-
   int? get noBath => throw _privateConstructorUsedError;
-
   int? get minSquare => throw _privateConstructorUsedError;
-
   int? get maxSquare => throw _privateConstructorUsedError;
-
   List<Tuple2<Amenity, bool>> get amentities =>
       throw _privateConstructorUsedError;
-
   List<Tuple2<RealEstateType, bool>> get realEstateTypes =>
       throw _privateConstructorUsedError;
-
   bool get isReset => throw _privateConstructorUsedError;
-
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -3389,7 +3377,6 @@ abstract class $HouseFilterStateCopyWith<$Res> {
   factory $HouseFilterStateCopyWith(
           HouseFilterState value, $Res Function(HouseFilterState) then) =
       _$HouseFilterStateCopyWithImpl<$Res, HouseFilterState>;
-
   @useResult
   $Res call(
       {bool isSell,
@@ -3416,7 +3403,6 @@ class _$HouseFilterStateCopyWithImpl<$Res, $Val extends HouseFilterState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -3512,7 +3498,6 @@ abstract class _$$_HouseFilterStateCopyWith<$Res>
   factory _$$_HouseFilterStateCopyWith(
           _$_HouseFilterState value, $Res Function(_$_HouseFilterState) then) =
       __$$_HouseFilterStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -3659,7 +3644,6 @@ class _$_HouseFilterState implements _HouseFilterState {
   @override
   final int? maxSquare;
   final List<Tuple2<Amenity, bool>> _amentities;
-
   @override
   @JsonKey()
   List<Tuple2<Amenity, bool>> get amentities {
@@ -3669,7 +3653,6 @@ class _$_HouseFilterState implements _HouseFilterState {
   }
 
   final List<Tuple2<RealEstateType, bool>> _realEstateTypes;
-
   @override
   @JsonKey()
   List<Tuple2<RealEstateType, bool>> get realEstateTypes {
@@ -3759,43 +3742,30 @@ abstract class _HouseFilterState implements HouseFilterState {
 
   @override
   bool get isSell;
-
   @override
   num get priceStart;
-
   @override
   num get priceEnd;
-
   @override
   num get priceMax;
-
   @override
   int? get noBedRoom;
-
   @override
   int? get noFloor;
-
   @override
   int? get noBath;
-
   @override
   int? get minSquare;
-
   @override
   int? get maxSquare;
-
   @override
   List<Tuple2<Amenity, bool>> get amentities;
-
   @override
   List<Tuple2<RealEstateType, bool>> get realEstateTypes;
-
   @override
   bool get isReset;
-
   @override
   RealEstateFilterInput? get filter;
-
   @override
   @JsonKey(ignore: true)
   _$$_HouseFilterStateCopyWith<_$_HouseFilterState> get copyWith =>

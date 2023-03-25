@@ -34,25 +34,27 @@ class ApiRemote {
     final config = AppConfig.instance;
 
     dio
-      ..options.baseUrl = config.baseUrl
-      ..options.connectTimeout =
-          Duration(milliseconds: config.connectionTimeout)
-      ..options.receiveTimeout = Duration(milliseconds: config.receiveTimeout)
-      // ..options.followRedirects = false
-      ..options.headers = {
-        'Content-Type': 'application/json; charset=utf-8',
-        "Accept": "application/json",
-      }
-      ..interceptors
-          .add(JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token))
-      ..interceptors.add(PrettyDioLogger(
-        request: true,
-        requestBody: true,
-        responseBody: true,
-        requestHeader: true,
-        responseHeader: false,
-        error: true,
-      ));
+          ..options.baseUrl = config.baseUrl
+          ..options.connectTimeout =
+              Duration(milliseconds: config.connectionTimeout)
+          ..options.receiveTimeout =
+              Duration(milliseconds: config.receiveTimeout)
+          // ..options.followRedirects = false
+          ..options.headers = {
+            'Content-Type': 'application/json; charset=utf-8',
+            "Accept": "application/json",
+          }
+          ..interceptors.add(
+              JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token))
+        // ..interceptors.add(PrettyDioLogger(
+        //   request: true,
+        //   requestBody: true,
+        //   responseBody: true,
+        //   requestHeader: true,
+        //   responseHeader: false,
+        //   error: true,
+        // ))
+        ;
     (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       // You can verify the certificate here
@@ -71,24 +73,26 @@ class ApiRemote {
     final config = AppConfig.instance;
 
     dio
-      ..options.baseUrl = config.baseUrl
-      ..options.connectTimeout =
-          Duration(milliseconds: config.connectionTimeout)
-      ..options.receiveTimeout = Duration(milliseconds: config.receiveTimeout)
-      // ..options.followRedirects = false
-      ..options.headers = {
-        'Content-Type': 'application/json; charset=utf-8',
-        "Accept": "application/json",
-      }
-      ..interceptors.add(QueuedInterceptorsWrapper())
-      ..interceptors.add(PrettyDioLogger(
-        request: true,
-        requestBody: true,
-        responseBody: true,
-        requestHeader: true,
-        responseHeader: false,
-        error: true,
-      ));
+          ..options.baseUrl = config.baseUrl
+          ..options.connectTimeout =
+              Duration(milliseconds: config.connectionTimeout)
+          ..options.receiveTimeout =
+              Duration(milliseconds: config.receiveTimeout)
+          // ..options.followRedirects = false
+          ..options.headers = {
+            'Content-Type': 'application/json; charset=utf-8',
+            "Accept": "application/json",
+          }
+          ..interceptors.add(QueuedInterceptorsWrapper())
+        // ..interceptors.add(PrettyDioLogger(
+        //   request: true,
+        //   requestBody: true,
+        //   responseBody: true,
+        //   requestHeader: true,
+        //   responseHeader: false,
+        //   error: true,
+        // ))
+        ;
 
     (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {

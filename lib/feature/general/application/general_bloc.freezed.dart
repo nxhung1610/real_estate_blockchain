@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'profile_bloc.dart';
+part of 'general_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProfileEvent {
+mixin _$GeneralEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -51,16 +51,16 @@ mixin _$ProfileEvent {
 }
 
 /// @nodoc
-abstract class $ProfileEventCopyWith<$Res> {
-  factory $ProfileEventCopyWith(
-          ProfileEvent value, $Res Function(ProfileEvent) then) =
-      _$ProfileEventCopyWithImpl<$Res, ProfileEvent>;
+abstract class $GeneralEventCopyWith<$Res> {
+  factory $GeneralEventCopyWith(
+          GeneralEvent value, $Res Function(GeneralEvent) then) =
+      _$GeneralEventCopyWithImpl<$Res, GeneralEvent>;
 }
 
 /// @nodoc
-class _$ProfileEventCopyWithImpl<$Res, $Val extends ProfileEvent>
-    implements $ProfileEventCopyWith<$Res> {
-  _$ProfileEventCopyWithImpl(this._value, this._then);
+class _$GeneralEventCopyWithImpl<$Res, $Val extends GeneralEvent>
+    implements $GeneralEventCopyWith<$Res> {
+  _$GeneralEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,7 +77,7 @@ abstract class _$$_StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$ProfileEventCopyWithImpl<$Res, _$_Started>
+    extends _$GeneralEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, _then);
@@ -90,7 +90,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'ProfileEvent.started()';
+    return 'GeneralEvent.started()';
   }
 
   @override
@@ -159,12 +159,12 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements ProfileEvent {
+abstract class _Started implements GeneralEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-mixin _$ProfileState {
+mixin _$GeneralState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -200,16 +200,16 @@ mixin _$ProfileState {
 }
 
 /// @nodoc
-abstract class $ProfileStateCopyWith<$Res> {
-  factory $ProfileStateCopyWith(
-          ProfileState value, $Res Function(ProfileState) then) =
-      _$ProfileStateCopyWithImpl<$Res, ProfileState>;
+abstract class $GeneralStateCopyWith<$Res> {
+  factory $GeneralStateCopyWith(
+          GeneralState value, $Res Function(GeneralState) then) =
+      _$GeneralStateCopyWithImpl<$Res, GeneralState>;
 }
 
 /// @nodoc
-class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
-    implements $ProfileStateCopyWith<$Res> {
-  _$ProfileStateCopyWithImpl(this._value, this._then);
+class _$GeneralStateCopyWithImpl<$Res, $Val extends GeneralState>
+    implements $GeneralStateCopyWith<$Res> {
+  _$GeneralStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -226,7 +226,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$_Initial>
+    extends _$GeneralStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -239,7 +239,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ProfileState.initial()';
+    return 'GeneralState.initial()';
   }
 
   @override
@@ -308,6 +308,6 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ProfileState {
+abstract class _Initial implements GeneralState {
   const factory _Initial() = _$_Initial;
 }

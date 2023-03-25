@@ -17,7 +17,7 @@ Future<void> main() async {
     Hive.initFlutter(),
   ]);
 
-  Bloc.observer = AppBlocObserver();
+  // Bloc.observer = AppBlocObserver();
   runApp(const AppPage());
   // FlutterNativeSplash.remove();
 }

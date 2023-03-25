@@ -475,7 +475,6 @@ abstract class SearchEventApplyFilter implements SearchEvent {
       _$SearchEventApplyFilter;
 
   RealEstateFilterInput get filter;
-
   @JsonKey(ignore: true)
   _$$SearchEventApplyFilterCopyWith<_$SearchEventApplyFilter> get copyWith =>
       throw _privateConstructorUsedError;
@@ -484,11 +483,8 @@ abstract class SearchEventApplyFilter implements SearchEvent {
 /// @nodoc
 mixin _$SearchState {
   String? get keyword => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
-
   List<RealEstate> get estates => throw _privateConstructorUsedError;
-
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -501,7 +497,6 @@ abstract class $SearchStateCopyWith<$Res> {
   factory $SearchStateCopyWith(
           SearchState value, $Res Function(SearchState) then) =
       _$SearchStateCopyWithImpl<$Res, SearchState>;
-
   @useResult
   $Res call(
       {String? keyword,
@@ -510,7 +505,6 @@ abstract class $SearchStateCopyWith<$Res> {
       RealEstateFilterInput? filter});
 
   $StatusCopyWith<$Res> get status;
-
   $RealEstateFilterInputCopyWith<$Res>? get filter;
 }
 
@@ -521,7 +515,6 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -580,7 +573,6 @@ abstract class _$$_SearchStateCopyWith<$Res>
   factory _$$_SearchStateCopyWith(
           _$_SearchState value, $Res Function(_$_SearchState) then) =
       __$$_SearchStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -591,7 +583,6 @@ abstract class _$$_SearchStateCopyWith<$Res>
 
   @override
   $StatusCopyWith<$Res> get status;
-
   @override
   $RealEstateFilterInputCopyWith<$Res>? get filter;
 }
@@ -649,7 +640,6 @@ class _$_SearchState implements _SearchState {
   @JsonKey()
   final Status status;
   final List<RealEstate> _estates;
-
   @override
   @JsonKey()
   List<RealEstate> get estates {
@@ -697,16 +687,12 @@ abstract class _SearchState implements SearchState {
 
   @override
   String? get keyword;
-
   @override
   Status get status;
-
   @override
   List<RealEstate> get estates;
-
   @override
   RealEstateFilterInput? get filter;
-
   @override
   @JsonKey(ignore: true)
   _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>

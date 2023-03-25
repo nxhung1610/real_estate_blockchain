@@ -22,7 +22,6 @@ GetMessageRequest _$GetMessageRequestFromJson(Map<String, dynamic> json) {
 mixin _$GetMessageRequest {
   int get page => throw _privateConstructorUsedError;
   int get pageSize => throw _privateConstructorUsedError;
-
   int get groupId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +35,6 @@ abstract class $GetMessageRequestCopyWith<$Res> {
   factory $GetMessageRequestCopyWith(
           GetMessageRequest value, $Res Function(GetMessageRequest) then) =
       _$GetMessageRequestCopyWithImpl<$Res, GetMessageRequest>;
-
   @useResult
   $Res call({int page, int pageSize, int groupId});
 }
@@ -81,7 +79,6 @@ abstract class _$$_GetMessageRequestCopyWith<$Res>
   factory _$$_GetMessageRequestCopyWith(_$_GetMessageRequest value,
           $Res Function(_$_GetMessageRequest) then) =
       __$$_GetMessageRequestCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int page, int pageSize, int groupId});
@@ -182,13 +179,10 @@ abstract class _GetMessageRequest implements GetMessageRequest {
 
   @override
   int get page;
-
   @override
   int get pageSize;
-
   @override
   int get groupId;
-
   @override
   @JsonKey(ignore: true)
   _$$_GetMessageRequestCopyWith<_$_GetMessageRequest> get copyWith =>

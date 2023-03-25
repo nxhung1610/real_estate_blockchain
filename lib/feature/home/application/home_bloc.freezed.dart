@@ -306,7 +306,6 @@ abstract class HomeEventOnProviceChange implements HomeEvent {
       _$HomeEventOnProviceChange;
 
   Province? get provice;
-
   @JsonKey(ignore: true)
   _$$HomeEventOnProviceChangeCopyWith<_$HomeEventOnProviceChange>
       get copyWith => throw _privateConstructorUsedError;
@@ -315,11 +314,8 @@ abstract class HomeEventOnProviceChange implements HomeEvent {
 /// @nodoc
 mixin _$HomeState {
   List<Province> get provinces => throw _privateConstructorUsedError;
-
   Province? get provice => throw _privateConstructorUsedError;
-
   List<RealEstate> get estates => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -331,7 +327,6 @@ mixin _$HomeState {
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
-
   @useResult
   $Res call(
       {List<Province> provinces,
@@ -349,7 +344,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -395,7 +389,6 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   factory _$$_HomeStateCopyWith(
           _$_HomeState value, $Res Function(_$_HomeState) then) =
       __$$_HomeStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -457,7 +450,6 @@ class _$_HomeState implements _HomeState {
         _estates = estates;
 
   final List<Province> _provinces;
-
   @override
   @JsonKey()
   List<Province> get provinces {
@@ -469,7 +461,6 @@ class _$_HomeState implements _HomeState {
   @override
   final Province? provice;
   final List<RealEstate> _estates;
-
   @override
   @JsonKey()
   List<RealEstate> get estates {
@@ -523,16 +514,12 @@ abstract class _HomeState implements HomeState {
 
   @override
   List<Province> get provinces;
-
   @override
   Province? get provice;
-
   @override
   List<RealEstate> get estates;
-
   @override
   Status get status;
-
   @override
   @JsonKey(ignore: true)
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>

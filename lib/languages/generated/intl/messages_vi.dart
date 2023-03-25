@@ -75,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "done": MessageLookupByLibrary.simpleMessage("Hoàn tất"),
         "east": MessageLookupByLibrary.simpleMessage("Đông"),
+        "editProfile":
+            MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin cá nhân"),
         "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
@@ -88,13 +90,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
         "garage": MessageLookupByLibrary.simpleMessage("Nhà để xe"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
+        "goToSetting": MessageLookupByLibrary.simpleMessage("Đi đến cài đặt"),
         "ground": MessageLookupByLibrary.simpleMessage("Đất"),
+        "hi": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
+        "later": MessageLookupByLibrary.simpleMessage("Để sau"),
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Giấy tờ pháp lý"),
         "locale": MessageLookupByLibrary.simpleMessage("Định vị"),
@@ -150,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mật khẩu không hợp lệ"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
+        "permisionCamera": MessageLookupByLibrary.simpleMessage(
+            "Chúng tôi cần bạn cấp quyền truy cập \'Máy ảnh\' để có thể sử dụng tính năng này"),
+        "permisionLibrary": MessageLookupByLibrary.simpleMessage(
+            "Chúng tôi cần bạn cấp quyền truy cập \'Bộ sưu tập\' để có thể sử dụng tính năng này"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "phoneNumberAlreadyUsed": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại đã được sử dụng"),
@@ -187,6 +196,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
+        "saveChange": MessageLookupByLibrary.simpleMessage("Lưu"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Tham quan"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "sell": MessageLookupByLibrary.simpleMessage("Bán"),

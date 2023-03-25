@@ -4,6 +4,7 @@ import 'package:real_estate_blockchain/data/core/infrastructure/remote/api_remot
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../../data.dart';
 
@@ -63,7 +64,8 @@ class AuthRepository implements IAuthRepository {
         default:
           rethrow;
       }
-    } catch (e) {
+    } on Exception catch (e, strace) {
+      printLog(this, message: e, error: e, trace: strace);
       return left(const AuthFailures.unknow());
     }
   }
@@ -122,7 +124,8 @@ class AuthRepository implements IAuthRepository {
         default:
           rethrow;
       }
-    } catch (e) {
+    } on Exception catch (e, strace) {
+      printLog(this, message: e, error: e, trace: strace);
       return left(const AuthFailures.unknow());
     }
   }

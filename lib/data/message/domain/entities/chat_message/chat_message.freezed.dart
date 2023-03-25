@@ -21,13 +21,9 @@ ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChatMessage {
   String get content => throw _privateConstructorUsedError;
-
   int get senderId => throw _privateConstructorUsedError;
-
   int get id => throw _privateConstructorUsedError;
-
   int get groupId => throw _privateConstructorUsedError;
-
   @JsonKey(fromJson: fromApiDateNonNull)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +33,6 @@ mixin _$ChatMessage {
         text,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String content, int senderId, int id, int groupId,
@@ -80,7 +75,6 @@ abstract class $ChatMessageCopyWith<$Res> {
   factory $ChatMessageCopyWith(
           ChatMessage value, $Res Function(ChatMessage) then) =
       _$ChatMessageCopyWithImpl<$Res, ChatMessage>;
-
   @useResult
   $Res call(
       {String content,
@@ -140,7 +134,6 @@ abstract class _$$ChatTextMessageCopyWith<$Res>
   factory _$$ChatTextMessageCopyWith(
           _$ChatTextMessage value, $Res Function(_$ChatTextMessage) then) =
       __$$ChatTextMessageCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -333,20 +326,15 @@ abstract class ChatTextMessage implements ChatMessage {
 
   @override
   String get content;
-
   @override
   int get senderId;
-
   @override
   int get id;
-
   @override
   int get groupId;
-
   @override
   @JsonKey(fromJson: fromApiDateNonNull)
   DateTime get createdAt;
-
   @override
   @JsonKey(ignore: true)
   _$$ChatTextMessageCopyWith<_$ChatTextMessage> get copyWith =>

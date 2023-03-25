@@ -22,9 +22,7 @@ ChatMessageRequest _$ChatMessageRequestFromJson(Map<String, dynamic> json) {
 mixin _$ChatMessageRequest {
   String get content => throw _privateConstructorUsedError;
   int get senderId => throw _privateConstructorUsedError;
-
   int get groupId => throw _privateConstructorUsedError;
-
   ChatMessageType get messageType => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -75,7 +73,6 @@ abstract class $ChatMessageRequestCopyWith<$Res> {
   factory $ChatMessageRequestCopyWith(
           ChatMessageRequest value, $Res Function(ChatMessageRequest) then) =
       _$ChatMessageRequestCopyWithImpl<$Res, ChatMessageRequest>;
-
   @useResult
   $Res call(
       {String content, int senderId, int groupId, ChatMessageType messageType});
@@ -126,7 +123,6 @@ abstract class _$$ChatTextMessageRequestCopyWith<$Res>
   factory _$$ChatTextMessageRequestCopyWith(_$ChatTextMessageRequest value,
           $Res Function(_$ChatTextMessageRequest) then) =
       __$$ChatTextMessageRequestCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -318,13 +314,10 @@ abstract class ChatTextMessageRequest implements ChatMessageRequest {
 
   @override
   String get content;
-
   @override
   int get senderId;
-
   @override
   int get groupId;
-
   @override
   ChatMessageType get messageType;
   @override

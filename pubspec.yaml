@@ -47,13 +47,14 @@ dependencies:
   recase: ^4.1.0
   url_launcher: ^6.1.8
   rxdart: ^0.27.7
+  permission_handler: ^10.2.0
 
   # UI
   go_router: ^6.2.0
   loader_overlay: ^2.0.7
   flutter_screenutil: ^5.5.3+2
   awesome_notifications: ^0.7.4+1
-  flutter_svg: ^2.0.2
+  flutter_svg: 2.0.2
   flutter_animate: ^4.1.0
   dropdown_button2: ^2.0.0
   smooth_page_indicator: ^1.0.0+2
@@ -66,6 +67,7 @@ dependencies:
   flutter_list_view: ^1.1.21
   carousel_slider: ^4.2.1
   webview_flutter: ^3.0.4
+  
 
 
   # Language
@@ -76,6 +78,7 @@ dependencies:
   # Service
   dio: ^5.0.1
   pretty_dio_logger: ^1.1.1
+  
   # Database
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -83,6 +86,7 @@ dependencies:
   flutter_map: 
   latlong2:
   geolocator: ^9.0.2
+  async: ^2.10.0
 
   # Websocket
   stomp_dart_client: ^0.4.4

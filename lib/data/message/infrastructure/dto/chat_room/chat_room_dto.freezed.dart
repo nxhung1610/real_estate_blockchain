@@ -21,12 +21,9 @@ ChatRoomDto _$ChatRoomDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChatRoomDto {
   int get groupId => throw _privateConstructorUsedError;
-
   String? get latestMessage => throw _privateConstructorUsedError;
-
   @JsonKey(fromJson: fromApiDate)
   DateTime? get latestMessageCreatedAt => throw _privateConstructorUsedError;
-
   List<UserDto> get members => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +37,6 @@ abstract class $ChatRoomDtoCopyWith<$Res> {
   factory $ChatRoomDtoCopyWith(
           ChatRoomDto value, $Res Function(ChatRoomDto) then) =
       _$ChatRoomDtoCopyWithImpl<$Res, ChatRoomDto>;
-
   @useResult
   $Res call(
       {int groupId,
@@ -94,7 +90,6 @@ abstract class _$$_ChatRoomDtoCopyWith<$Res>
   factory _$$_ChatRoomDtoCopyWith(
           _$_ChatRoomDto value, $Res Function(_$_ChatRoomDto) then) =
       __$$_ChatRoomDtoCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -164,7 +159,6 @@ class _$_ChatRoomDto extends _ChatRoomDto {
   @JsonKey(fromJson: fromApiDate)
   final DateTime? latestMessageCreatedAt;
   final List<UserDto> _members;
-
   @override
   List<UserDto> get members {
     if (_members is EqualUnmodifiableListView) return _members;
@@ -222,17 +216,13 @@ abstract class _ChatRoomDto extends ChatRoomDto {
 
   @override
   int get groupId;
-
   @override
   String? get latestMessage;
-
   @override
   @JsonKey(fromJson: fromApiDate)
   DateTime? get latestMessageCreatedAt;
-
   @override
   List<UserDto> get members;
-
   @override
   @JsonKey(ignore: true)
   _$$_ChatRoomDtoCopyWith<_$_ChatRoomDto> get copyWith =>

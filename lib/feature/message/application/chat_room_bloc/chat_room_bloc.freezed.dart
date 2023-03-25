@@ -499,7 +499,6 @@ abstract class ChatRoomMessageReceived implements ChatRoomEvent {
       _$ChatRoomMessageReceived;
 
   ChatMessage get message;
-
   @JsonKey(ignore: true)
   _$$ChatRoomMessageReceivedCopyWith<_$ChatRoomMessageReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -510,7 +509,6 @@ abstract class _$$ChatRoomMessageLoadedCopyWith<$Res> {
   factory _$$ChatRoomMessageLoadedCopyWith(_$ChatRoomMessageLoaded value,
           $Res Function(_$ChatRoomMessageLoaded) then) =
       __$$ChatRoomMessageLoadedCopyWithImpl<$Res>;
-
   @useResult
   $Res call({bool isRefreshed});
 }
@@ -650,7 +648,6 @@ abstract class ChatRoomMessageLoaded implements ChatRoomEvent {
       _$ChatRoomMessageLoaded;
 
   bool get isRefreshed;
-
   @JsonKey(ignore: true)
   _$$ChatRoomMessageLoadedCopyWith<_$ChatRoomMessageLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -659,13 +656,9 @@ abstract class ChatRoomMessageLoaded implements ChatRoomEvent {
 /// @nodoc
 mixin _$ChatRoomState {
   ChatRoom get room => throw _privateConstructorUsedError;
-
   List<ChatMessage> get messages => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
-
   int get currentPage => throw _privateConstructorUsedError;
-
   bool get isEnd => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -678,7 +671,6 @@ abstract class $ChatRoomStateCopyWith<$Res> {
   factory $ChatRoomStateCopyWith(
           ChatRoomState value, $Res Function(ChatRoomState) then) =
       _$ChatRoomStateCopyWithImpl<$Res, ChatRoomState>;
-
   @useResult
   $Res call(
       {ChatRoom room,
@@ -757,7 +749,6 @@ abstract class _$$_ChatRoomStateCopyWith<$Res>
   factory _$$_ChatRoomStateCopyWith(
           _$_ChatRoomState value, $Res Function(_$_ChatRoomState) then) =
       __$$_ChatRoomStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -889,24 +880,18 @@ abstract class _ChatRoomState extends ChatRoomState {
       final Status status,
       final int currentPage,
       final bool isEnd}) = _$_ChatRoomState;
-
   const _ChatRoomState._() : super._();
 
   @override
   ChatRoom get room;
-
   @override
   List<ChatMessage> get messages;
-
   @override
   Status get status;
-
   @override
   int get currentPage;
-
   @override
   bool get isEnd;
-
   @override
   @JsonKey(ignore: true)
   _$$_ChatRoomStateCopyWith<_$_ChatRoomState> get copyWith =>

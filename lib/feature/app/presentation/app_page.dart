@@ -43,7 +43,8 @@ class AppPage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt.call<AuthBloc>(),
-        )
+        ),
+        BlocProvider(create: (context) => getIt.call<RealEstateFavoritesBloc>())
       ],
       child: const _AppCommon(),
     );
@@ -177,13 +178,6 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
             create: (context) => getIt.call<RealEstateConfigBloc>()
               ..add(
                 const RealEstateConfigEvent.onLoadConfig(),
-              ),
-          ),
-          BlocProvider(
-            lazy: false,
-            create: (context) => getIt.call<RealEstateFavoritesBloc>()
-              ..add(
-                const RealEstateFavoritesEvent.started(),
               ),
           ),
           BlocProvider(

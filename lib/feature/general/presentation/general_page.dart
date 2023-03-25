@@ -7,7 +7,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/application/application.dart';
-import 'package:real_estate_blockchain/feature/profile/module.dart';
+import 'package:real_estate_blockchain/feature/general/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -52,25 +52,26 @@ class _AccountInfo extends StatelessWidget {
     return Column(
       children: [
         // Avatar
-        Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(AppSize.avatarExtraLarge / 2),
-              child: Image.network(
-                authState.user.avatarUrl ??
-                    'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
-                width: AppSize.avatarExtraLarge,
-                height: AppSize.avatarExtraLarge,
-                fit: BoxFit.cover,
+        GestureDetector(
+          onTap: () {
+            context.push($appRoute.user.profile.url);
+          },
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(AppSize.avatarExtraLarge / 2),
+                child: Image.network(
+                  authState.user.avatarUrl ??
+                      'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
+                  width: AppSize.avatarExtraLarge,
+                  height: AppSize.avatarExtraLarge,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Positioned.fill(
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: GestureDetector(
-                  onTap: () {
-                    // TODO : Handle edit profile
-                  },
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.bottomRight,
                   child: Container(
                     padding: EdgeInsets.all(AppSize.smallWidthDimens),
                     decoration: BoxDecoration(
@@ -91,9 +92,9 @@ class _AccountInfo extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
 
         11.h.verticalSpace,

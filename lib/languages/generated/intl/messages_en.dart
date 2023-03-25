@@ -76,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("District"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "east": MessageLookupByLibrary.simpleMessage("East"),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
@@ -89,13 +90,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
         "garage": MessageLookupByLibrary.simpleMessage("Garage"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
+        "goToSetting": MessageLookupByLibrary.simpleMessage("Go To Setting"),
         "ground": MessageLookupByLibrary.simpleMessage("Ground"),
+        "hi": MessageLookupByLibrary.simpleMessage("Hi"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "later": MessageLookupByLibrary.simpleMessage("Later"),
         "legalDocuments":
             MessageLookupByLibrary.simpleMessage("Legal Documents"),
         "locale": MessageLookupByLibrary.simpleMessage("Location"),
@@ -152,6 +156,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password not valid"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
             "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
+        "permisionCamera": MessageLookupByLibrary.simpleMessage(
+            "We need you to grant \'Camera\' access to be able to use this feature"),
+        "permisionLibrary": MessageLookupByLibrary.simpleMessage(
+            "We need you to grant \'Collection\' access to be able to use this feature"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "phoneNumberAlreadyUsed":
             MessageLookupByLibrary.simpleMessage("Phone number already used"),
@@ -189,6 +197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
+        "saveChange": MessageLookupByLibrary.simpleMessage("Save Change"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Schedule Tour"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sell": MessageLookupByLibrary.simpleMessage("Sell"),

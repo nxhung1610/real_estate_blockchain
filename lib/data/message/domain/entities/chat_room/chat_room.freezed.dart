@@ -17,11 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ChatRoom {
   int get groupId => throw _privateConstructorUsedError;
-
   String? get latestMessage => throw _privateConstructorUsedError;
-
   DateTime? get latestMessageCreatedAt => throw _privateConstructorUsedError;
-
   List<User> get members => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -33,7 +30,6 @@ mixin _$ChatRoom {
 abstract class $ChatRoomCopyWith<$Res> {
   factory $ChatRoomCopyWith(ChatRoom value, $Res Function(ChatRoom) then) =
       _$ChatRoomCopyWithImpl<$Res, ChatRoom>;
-
   @useResult
   $Res call(
       {int groupId,
@@ -86,7 +82,6 @@ abstract class _$$_ChatRoomCopyWith<$Res> implements $ChatRoomCopyWith<$Res> {
   factory _$$_ChatRoomCopyWith(
           _$_ChatRoom value, $Res Function(_$_ChatRoom) then) =
       __$$_ChatRoomCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -151,7 +146,6 @@ class _$_ChatRoom extends _ChatRoom {
   @override
   final DateTime? latestMessageCreatedAt;
   final List<User> _members;
-
   @override
   List<User> get members {
     if (_members is EqualUnmodifiableListView) return _members;
@@ -198,16 +192,12 @@ abstract class _ChatRoom extends ChatRoom {
 
   @override
   int get groupId;
-
   @override
   String? get latestMessage;
-
   @override
   DateTime? get latestMessageCreatedAt;
-
   @override
   List<User> get members;
-
   @override
   @JsonKey(ignore: true)
   _$$_ChatRoomCopyWith<_$_ChatRoom> get copyWith =>

@@ -21,7 +21,6 @@ mixin _$RealEstateConfigEvent {
     required TResult Function() onLoadConfig,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadConfig,
@@ -33,14 +32,12 @@ mixin _$RealEstateConfigEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RealEstateConfigEventOnLoadConfig value)
         onLoadConfig,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(RealEstateConfigEventOnLoadConfig value)? onLoadConfig,
@@ -69,7 +66,6 @@ class _$RealEstateConfigEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -181,7 +177,6 @@ abstract class RealEstateConfigEventOnLoadConfig
 /// @nodoc
 mixin _$RealEstateConfigState {
   RealEstateConfig? get config => throw _privateConstructorUsedError;
-
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

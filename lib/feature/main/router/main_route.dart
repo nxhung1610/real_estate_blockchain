@@ -8,7 +8,7 @@ import 'package:real_estate_blockchain/feature/discover/module.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/module.dart';
-import 'package:real_estate_blockchain/feature/profile/module.dart';
+import 'package:real_estate_blockchain/feature/general/module.dart';
 
 import '../module.dart';
 part 'main_route_params.dart';
@@ -19,7 +19,7 @@ class MainRoute extends BaseRoute {
   late final HomeRoute _homeRoute;
   late final MyHomeRoute _myHomeRoute;
   late final MessageRoute _messageRoute;
-  late final ProfileRoute _profileRoute;
+  late final GeneralRoute _generalRoute;
   late final DiscoverRoute _discoverRoute;
   // Path
   String get messageChat => _messageRoute.chat;
@@ -46,7 +46,7 @@ class MainRoute extends BaseRoute {
         ..._homeRoute.globalRoutes,
         ..._myHomeRoute.globalRoutes,
         ..._messageRoute.globalRoutes,
-        ..._profileRoute.globalRoutes,
+        ..._generalRoute.globalRoutes,
         ..._discoverRoute.globalRoutes,
       ];
 
@@ -55,7 +55,7 @@ class MainRoute extends BaseRoute {
     _homeRoute = HomeRoute(root, '/home');
     _myHomeRoute = MyHomeRoute(root, '/myhome');
     _messageRoute = MessageRoute(root, '/message');
-    _profileRoute = ProfileRoute(root, '/profile');
+    _generalRoute = GeneralRoute(root, '/general');
     _discoverRoute = DiscoverRoute(root, '/discover');
   }
 }

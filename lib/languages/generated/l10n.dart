@@ -1519,6 +1519,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Change`
+  String get saveChange {
+    return Intl.message(
+      'Save Change',
+      name: 'saveChange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hi`
+  String get hi {
+    return Intl.message(
+      'Hi',
+      name: 'hi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go To Setting`
+  String get goToSetting {
+    return Intl.message(
+      'Go To Setting',
+      name: 'goToSetting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We need you to grant 'Camera' access to be able to use this feature`
+  String get permisionCamera {
+    return Intl.message(
+      'We need you to grant \'Camera\' access to be able to use this feature',
+      name: 'permisionCamera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We need you to grant 'Collection' access to be able to use this feature`
+  String get permisionLibrary {
+    return Intl.message(
+      'We need you to grant \'Collection\' access to be able to use this feature',
+      name: 'permisionLibrary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Later`
+  String get later {
+    return Intl.message(
+      'Later',
+      name: 'later',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

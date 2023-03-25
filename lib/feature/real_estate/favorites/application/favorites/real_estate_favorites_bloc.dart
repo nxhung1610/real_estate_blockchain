@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer';
+import 'package:async/async.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -12,25 +15,30 @@ part 'real_estate_favorites_state.dart';
 class RealEstateFavoritesBloc
     extends Bloc<RealEstateFavoritesEvent, RealEstateFavoritesState> {
   final IRealEstateRepository _realEstateRepository;
-
+  CancelableOperation? completer;
   RealEstateFavoritesBloc(this._realEstateRepository)
       : super(const RealEstateFavoritesState()) {
     on<_Started>((event, emit) async {
-      while (true) {
-        try {
-          final estates = await _realEstateRepository.favorites();
-          estates.fold(
-            (l) => null,
-            (r) => emit(
-              state.copyWith(
-                estates: r,
-              ),
-            ),
-          );
-        } finally {
-          await Future.delayed(const Duration(seconds: 5));
-        }
-      }
+      completer = CancelableOperation.fromFuture(
+        Future(() async {
+          while (completer?.isCanceled != true) {
+            try {
+              final estates = await _realEstateRepository.favorites();
+              estates.fold(
+                (l) => null,
+                (r) => emit(
+                  state.copyWith(
+                    estates: r,
+                  ),
+                ),
+              );
+            } finally {
+              await Future.delayed(const Duration(seconds: 5));
+            }
+          }
+        }),
+      );
+      await completer?.value;
     });
     on<RealEstateFavoritesEventOnFavorite>((event, emit) async {
       try {
@@ -102,5 +110,11 @@ class RealEstateFavoritesBloc
         emit(state.copyWith(isProcess: list));
       }
     });
+  }
+  @override
+  Future<void> close() {
+    completer?.cancel();
+    completer = null;
+    return super.close();
   }
 }

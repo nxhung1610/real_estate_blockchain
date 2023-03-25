@@ -151,5 +151,12 @@
   "locale": "Định vị",
   "logOut": "Đăng xuất",
   "contact": "Liên hệ",
-  "transactionDetail": "Chi tiết giao dịch"
+  "transactionDetail": "Chi tiết giao dịch",
+  "editProfile" : "Chỉnh sửa thông tin cá nhân",
+  "saveChange" : "Lưu",
+  "hi" : "Xin chào",
+  "goToSetting" : "Đi đến cài đặt",
+  "permisionCamera" : "Chúng tôi cần bạn cấp quyền truy cập 'Máy ảnh' để có thể sử dụng tính năng này",
+  "permisionLibrary" : "Chúng tôi cần bạn cấp quyền truy cập 'Bộ sưu tập' để có thể sử dụng tính năng này",
+  "later" :"Để sau"
 }
