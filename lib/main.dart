@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
@@ -9,7 +10,7 @@ import 'package:real_estate_blockchain/utils/app_bloc_observer.dart';
 
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Future.wait([
     AppConfig.instance.initialize(),
     configureDependencies(),
@@ -19,5 +20,5 @@ Future<void> main() async {
 
   // Bloc.observer = AppBlocObserver();
   runApp(const AppPage());
-  // FlutterNativeSplash.remove();
+  FlutterNativeSplash.remove();
 }

@@ -140,12 +140,11 @@ class _HouseFilterPageState extends State<HouseFilterPage> {
                     ),
                   ),
                   SafeArea(
+                    minimum: EdgeInsets.symmetric(
+                      horizontal: AppSize.extraWidthDimens,
+                      vertical: AppSize.mediumHeightDimens,
+                    ),
                     child: Container(
-                      padding: EdgeInsets.only(
-                        left: AppSize.extraWidthDimens,
-                        right: AppSize.extraWidthDimens,
-                        top: AppSize.largeHeightDimens,
-                      ),
                       decoration: BoxDecoration(
                         color: context.theme.scaffoldBackgroundColor,
                         boxShadow: [

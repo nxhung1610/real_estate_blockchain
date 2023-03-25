@@ -257,7 +257,10 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
                 ],
               ),
               child: SafeArea(
-                minimum: EdgeInsets.symmetric(vertical: 16.h),
+                minimum: EdgeInsets.symmetric(
+                  vertical: AppSize.mediumHeightDimens,
+                  horizontal: AppSize.extraWidthDimens,
+                ),
                 child: BlocSelector<HouseAddNewBloc, HouseAddNewState, bool>(
                   selector: (state) {
                     return state.isValid;

@@ -70,7 +70,7 @@ class _WCustomRefreshScrollViewState extends State<WCustomRefreshScrollView>
             : Opacity(
                 opacity: opacityCurve
                     .transform(min(pulledExtent / refreshIndicatorExtent, 1.0)),
-                child: const CupertinoActivityIndicator(radius: 14.0),
+                child: CupertinoActivityIndicator(radius: 14.r),
               ),
       ),
     );
@@ -101,7 +101,9 @@ class _WCustomRefreshScrollViewState extends State<WCustomRefreshScrollView>
             : Opacity(
                 opacity: opacityCurve
                     .transform(min(pulledExtent / refreshIndicatorExtent, 1.0)),
-                child: const CircularProgressIndicator(strokeWidth: 2.0),
+                child: CupertinoActivityIndicator(
+                  radius: 14.r,
+                ),
               ),
       ),
     );
