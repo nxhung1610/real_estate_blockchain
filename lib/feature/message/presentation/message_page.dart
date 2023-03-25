@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/ch
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_error.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
@@ -41,6 +42,7 @@ class _MessagePageState extends State<MessagePage>
       ),
       body: BlocListener<MessageBloc, MessageState>(
         listener: (_, state) {
+          print(state.status);
           if (state.status is StatusIdle) {
             if (!refreshCompleter.isCompleted) {
               refreshCompleter.complete();
@@ -55,24 +57,12 @@ class _MessagePageState extends State<MessagePage>
           builder: (context, tuple2) {
             final rooms = tuple2.value1;
             final status = tuple2.value2;
-
-            return status.maybeWhen(
-              failure: (_) {
-                return WError(message: _);
-              },
-              loading: () {
-                return const WLoading().withPadding(EdgeInsets.only(top: 24.w));
-              },
-              idle: () {
-                return RefreshIndicator(
-                  onRefresh: () {
-                    context
-                        .read<MessageBloc>()
-                        .add(const MessageEvent.started());
-                    refreshCompleter = Completer();
-                    return refreshCompleter.future;
-                  },
+            final messageWidget = WCustomRefreshScrollView(
+              children: [
+                SliverToBoxAdapter(
                   child: ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     padding: EdgeInsets.symmetric(
                         vertical: AppSize.extraWidthDimens),
                     itemBuilder: (context, index) {
@@ -102,7 +92,25 @@ class _MessagePageState extends State<MessagePage>
                     },
                     itemCount: rooms.length,
                   ),
-                );
+                )
+              ],
+              onRefresh: () {
+                context.read<MessageBloc>().add(const MessageEvent.started());
+                refreshCompleter = Completer();
+                return refreshCompleter.future;
+              },
+            );
+            return status.maybeWhen(
+              failure: (_) {
+                return WError(message: _);
+              },
+              loading: () {
+                return rooms.isEmpty
+                    ? const WLoading().withPadding(EdgeInsets.only(top: 24.w))
+                    : messageWidget;
+              },
+              idle: () {
+                return messageWidget;
               },
               orElse: () {
                 return kEmpty;

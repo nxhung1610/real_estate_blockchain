@@ -52,11 +52,14 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   FutureOr<void> _messageStarToState(
       MessageStarted event, Emitter<MessageState> emit) async {
-    if (chatWSController != null) {
-      chatWSController!.deactivate();
-      chatWSController = null;
-    }
     try {
+      try {
+        if (chatWSController != null) {
+          chatWSController!.deactivate();
+          chatWSController = null;
+        }
+      } catch (e) {}
+
       emit(state.copyWith(status: const Status.loading()));
 
       final authenticated =

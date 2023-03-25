@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/common/presentation/image/image_popup_common.dart';
@@ -26,7 +27,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final authState = context.read<AuthBloc>().state as AuthStateAuthenticated;
+
     return Scaffold(
       appBar: CustomAppbar(
         context,
@@ -36,120 +37,139 @@ class _UserProfilePageState extends State<UserProfilePage> {
         leading: const UnconstrainedBox(child: BackButtonApp()),
         leadingWidth: AppSize.mediumIcon + 64.w,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 24.h,
-              ),
-              child: Column(
-                children: [
-                  // Avatar
-                  GestureDetector(
-                    onTap: () {
-                      imagePickerAction(
-                        context,
-                        onImage: (path) {
-                          context.read<UserProfileBloc>().add(
-                                UserProfileEvent.onAvatarChanged(
-                                  path: path,
-                                ),
-                              );
-                        },
-                      );
-                    },
-                    child: Stack(
-                      children: [
-                        BlocSelector<UserProfileBloc, UserProfileState,
-                            String?>(
-                          selector: (state) {
-                            return state.pathFile;
-                          },
-                          builder: (context, state) {
-                            if (state != null) {
-                              return SizedBox(
-                                width: 100.r,
-                                height: 100.r,
-                                child: ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.circular(100.r / 2),
-                                  child: ImageCustom.file(
-                                    File(state),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              );
-                            }
-                            return SizedBox(
-                              width: 100.r,
-                              height: 100.r,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(100.r / 2),
-                                child: ImageCustom.network(
-                                  authState.user.avatarUrl ??
-                                      'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                        Positioned.fill(
-                          child: Align(
-                            alignment: Alignment.bottomRight,
-                            child: Container(
-                              padding: EdgeInsets.all(AppSize.smallWidthDimens),
-                              decoration: BoxDecoration(
-                                border: Border.fromBorderSide(
-                                  BorderSide(
-                                    color: AppColor.kNeutrals_.shade50,
-                                    width: 1.r,
-                                  ),
-                                ),
-                                borderRadius: BorderRadius.circular(
-                                    AppSize.mediumIcon / 2),
-                                color: AppColor.kNeutrals_.shade900,
-                              ),
-                              width: AppSize.mediumIcon,
-                              height: AppSize.mediumIcon,
-                              child: Assets.icons.icEditBold.svg(
-                                color: AppColor.kNeutrals_.shade50,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+      body: BlocSelector<UserProfileBloc, UserProfileState, User>(
+        selector: (state) {
+          return state.user;
+        },
+        builder: (context, user) {
+          return SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 24.h,
                   ),
-                ],
-              ),
+                  child: Column(
+                    children: [
+                      // Avatar
+                      GestureDetector(
+                        onTap: () {
+                          imagePickerAction(
+                            context,
+                            onImage: (path) {
+                              context.read<UserProfileBloc>().add(
+                                    UserProfileEvent.onAvatarChanged(
+                                      path: path,
+                                    ),
+                                  );
+                            },
+                          );
+                        },
+                        child: Stack(
+                          children: [
+                            BlocSelector<UserProfileBloc, UserProfileState,
+                                String?>(
+                              selector: (state) {
+                                return state.pathFile;
+                              },
+                              builder: (context, state) {
+                                if (state != null) {
+                                  return SizedBox(
+                                    width: 100.r,
+                                    height: 100.r,
+                                    child: ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(100.r / 2),
+                                      child: ImageCustom.file(
+                                        File(state),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                return SizedBox(
+                                  width: 100.r,
+                                  height: 100.r,
+                                  child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(100.r / 2),
+                                    child: ImageCustom.network(
+                                      user.avatarUrl ??
+                                          'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                            Positioned.fill(
+                              child: Align(
+                                alignment: Alignment.bottomRight,
+                                child: Container(
+                                  padding:
+                                      EdgeInsets.all(AppSize.smallWidthDimens),
+                                  decoration: BoxDecoration(
+                                    border: Border.fromBorderSide(
+                                      BorderSide(
+                                        color: AppColor.kNeutrals_.shade50,
+                                        width: 1.r,
+                                      ),
+                                    ),
+                                    borderRadius: BorderRadius.circular(
+                                        AppSize.mediumIcon / 2),
+                                    color: AppColor.kNeutrals_.shade900,
+                                  ),
+                                  width: AppSize.mediumIcon,
+                                  height: AppSize.mediumIcon,
+                                  child: Assets.icons.icEditBold.svg(
+                                    color: AppColor.kNeutrals_.shade50,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                _InputWithTitle(
+                  title: s.fullName,
+                  init: user.fullName,
+                  onChanged: (value) {
+                    context.read<UserProfileBloc>().add(
+                        UserProfileEvent.onFullNameChanged(fullName: value));
+                  },
+                ),
+                AppSize.largeHeightDimens.verticalSpace,
+                _InputWithTitle(
+                  enable: false,
+                  title: s.phoneNumber,
+                  init: user.phone,
+                  onChanged: (value) {},
+                ),
+              ],
             ),
-            _InputWithTitle(
-              title: s.fullName,
-              init: authState.user.fullName,
-              onChanged: (value) {},
-            ),
-            AppSize.largeHeightDimens.verticalSpace,
-            _InputWithTitle(
-              enable: false,
-              title: s.phoneNumber,
-              init: authState.user.phone,
-              onChanged: (value) {},
-            ),
-          ],
-        ),
+          );
+        },
       ),
       bottomNavigationBar: SafeArea(
         minimum: EdgeInsets.symmetric(
           vertical: AppSize.largeHeightDimens,
           horizontal: AppSize.extraWidthDimens,
         ),
-        child: ButtonApp(
-          label: s.saveChange,
-          onPressed: () {},
-          type: ButtonType.primary,
+        child: BlocSelector<UserProfileBloc, UserProfileState, bool>(
+          selector: (state) {
+            return context.read<UserProfileBloc>().validToSave();
+          },
+          builder: (context, state) {
+            return ButtonApp(
+              label: s.saveChange,
+              onPressed: state ? () {} : null,
+              type: ButtonType.primary,
+            );
+          },
         ),
       ),
     );

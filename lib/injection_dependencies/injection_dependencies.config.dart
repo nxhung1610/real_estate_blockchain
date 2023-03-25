@@ -11,10 +11,12 @@ import 'package:real_estate_blockchain/data/app/data.dart' as _i11;
 import 'package:real_estate_blockchain/data/app/infrastructure/local/app_config_local_repository.dart'
     as _i12;
 import 'package:real_estate_blockchain/data/auth/data.dart' as _i14;
+import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart'
+    as _i34;
 import 'package:real_estate_blockchain/data/auth/infrastructure/local/auth_local_repository.dart'
     as _i15;
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/auth_repository.dart'
-    as _i42;
+    as _i43;
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/mapper/login_mapper.dart'
     as _i22;
 import 'package:real_estate_blockchain/data/core/data.dart' as _i13;
@@ -38,27 +40,27 @@ import 'package:real_estate_blockchain/data/real_estate/domain/i_real_estate_rep
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_estate_repository.dart'
     as _i21;
 import 'package:real_estate_blockchain/feature/app/application/app_bloc.dart'
-    as _i35;
+    as _i36;
 import 'package:real_estate_blockchain/feature/auth/application/application.dart'
-    as _i45;
-import 'package:real_estate_blockchain/feature/auth/application/auth_bloc.dart'
-    as _i47;
-import 'package:real_estate_blockchain/feature/auth/application/login_bloc.dart'
-    as _i43;
-import 'package:real_estate_blockchain/feature/auth/application/register_bloc.dart'
     as _i46;
+import 'package:real_estate_blockchain/feature/auth/application/auth_bloc.dart'
+    as _i48;
+import 'package:real_estate_blockchain/feature/auth/application/login_bloc.dart'
+    as _i44;
+import 'package:real_estate_blockchain/feature/auth/application/register_bloc.dart'
+    as _i47;
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart'
-    as _i34;
+    as _i35;
 import 'package:real_estate_blockchain/feature/discover/application/discover_bloc.dart'
-    as _i38;
+    as _i39;
 import 'package:real_estate_blockchain/feature/general/application/general_bloc.dart'
     as _i5;
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart'
-    as _i39;
-import 'package:real_estate_blockchain/feature/house_add_new/application/house_add_new_bloc.dart'
     as _i40;
-import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_address_bloc.dart'
+import 'package:real_estate_blockchain/feature/house_add_new/application/house_add_new_bloc.dart'
     as _i41;
+import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_address_bloc.dart'
+    as _i42;
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_amentity_bloc.dart'
     as _i6;
 import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_map_position_bloc.dart'
@@ -72,11 +74,11 @@ import 'package:real_estate_blockchain/feature/house_add_new/application/validat
 import 'package:real_estate_blockchain/feature/main/application/main_cubit.dart'
     as _i23;
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc.dart'
-    as _i36;
-import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart'
     as _i37;
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart'
+    as _i38;
 import 'package:real_estate_blockchain/feature/message/application/message_bloc/message_bloc.dart'
-    as _i44;
+    as _i45;
 import 'package:real_estate_blockchain/feature/my_home/application/my_home_bloc.dart'
     as _i25;
 import 'package:real_estate_blockchain/feature/onboarding/application/onboarding_bloc.dart'
@@ -159,57 +161,64 @@ _i1.GetIt $initGetIt(
       () => _i30.RealEstateFavoritesBloc(gh<_i20.IRealEstateRepository>()));
   gh.factory<_i31.SearchBloc>(
       () => _i31.SearchBloc(gh<_i32.IRealEstateRepository>()));
-  gh.factory<_i33.UserProfileBloc>(() => _i33.UserProfileBloc());
-  gh.factory<_i34.AddressBuilderCubit>(
-      () => _i34.AddressBuilderCubit(gh<_i18.IProvincesRepository>()));
-  gh.factory<_i35.AppBloc>(
-      () => _i35.AppBloc(gh<_i11.IAppConfigLocalRepository>()));
-  gh.factoryParam<_i36.ChatRoomBloc, _i37.ChatRoomBlocParams, dynamic>((
+  gh.factoryParam<_i33.UserProfileBloc, _i34.User, dynamic>((
+    user,
+    _,
+  ) =>
+      _i33.UserProfileBloc(
+        gh<_i16.IFileRepository>(),
+        user,
+      ));
+  gh.factory<_i35.AddressBuilderCubit>(
+      () => _i35.AddressBuilderCubit(gh<_i18.IProvincesRepository>()));
+  gh.factory<_i36.AppBloc>(
+      () => _i36.AppBloc(gh<_i11.IAppConfigLocalRepository>()));
+  gh.factoryParam<_i37.ChatRoomBloc, _i38.ChatRoomBlocParams, dynamic>((
     params,
     _,
   ) =>
-      _i36.ChatRoomBloc(
+      _i37.ChatRoomBloc(
         params,
         gh<_i24.MessageRepository>(),
       ));
-  gh.factory<_i38.DiscoverBloc>(
-      () => _i38.DiscoverBloc(gh<_i20.IRealEstateRepository>()));
-  gh.factory<_i39.HomeBloc>(() => _i39.HomeBloc(
+  gh.factory<_i39.DiscoverBloc>(
+      () => _i39.DiscoverBloc(gh<_i20.IRealEstateRepository>()));
+  gh.factory<_i40.HomeBloc>(() => _i40.HomeBloc(
         gh<_i20.IRealEstateRepository>(),
         gh<_i18.IProvincesRepository>(),
       ));
-  gh.factory<_i40.HouseAddNewBloc>(() => _i40.HouseAddNewBloc(
+  gh.factory<_i41.HouseAddNewBloc>(() => _i41.HouseAddNewBloc(
         gh<_i16.IFileRepository>(),
         gh<_i20.IRealEstateRepository>(),
       ));
-  gh.factoryParam<_i41.HouseProcessAddressBloc, _i7.ValidateSubcriber, dynamic>(
+  gh.factoryParam<_i42.HouseProcessAddressBloc, _i7.ValidateSubcriber, dynamic>(
       (
     _subcriber,
     _,
   ) =>
-          _i41.HouseProcessAddressBloc(
+          _i42.HouseProcessAddressBloc(
             gh<_i18.IProvincesRepository>(),
             _subcriber,
           ));
-  gh.lazySingleton<_i14.IAuthRepository>(() => _i42.AuthRepository(
+  gh.lazySingleton<_i14.IAuthRepository>(() => _i43.AuthRepository(
         gh<_i4.ApiRemote>(),
         gh<_i14.LoginMapper>(),
         gh<_i14.IAuthLocalRepository>(),
       ));
-  gh.factory<_i43.LoginBloc>(() => _i43.LoginBloc(gh<_i14.IAuthRepository>()));
-  gh.factoryParam<_i44.MessageBloc, _i45.AuthBloc, String>((
+  gh.factory<_i44.LoginBloc>(() => _i44.LoginBloc(gh<_i14.IAuthRepository>()));
+  gh.factoryParam<_i45.MessageBloc, _i46.AuthBloc, String>((
     authBloc,
     chatWSUrl,
   ) =>
-      _i44.MessageBloc(
+      _i45.MessageBloc(
         authBloc,
         chatWSUrl,
         gh<_i14.IAuthLocalRepository>(),
         gh<_i24.MessageRepository>(),
       ));
-  gh.factory<_i46.RegisterBloc>(
-      () => _i46.RegisterBloc(gh<_i14.IAuthRepository>()));
-  gh.factory<_i47.AuthBloc>(() => _i47.AuthBloc(
+  gh.factory<_i47.RegisterBloc>(
+      () => _i47.RegisterBloc(gh<_i14.IAuthRepository>()));
+  gh.factory<_i48.AuthBloc>(() => _i48.AuthBloc(
         gh<_i14.IAuthLocalRepository>(),
         gh<_i14.IAuthRepository>(),
         gh<_i13.ApiRemote>(),

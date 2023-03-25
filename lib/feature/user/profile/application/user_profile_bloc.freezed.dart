@@ -20,18 +20,24 @@ mixin _$UserProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? path) onAvatarChanged,
+    required TResult Function(String? fullName) onFullNameChanged,
+    required TResult Function() onSaveChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String? path)? onAvatarChanged,
+    TResult? Function(String? fullName)? onFullNameChanged,
+    TResult? Function()? onSaveChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String? path)? onAvatarChanged,
+    TResult Function(String? fullName)? onFullNameChanged,
+    TResult Function()? onSaveChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +46,28 @@ mixin _$UserProfileEvent {
     required TResult Function(_Started value) started,
     required TResult Function(UserProfileEventOnAvatarChanged value)
         onAvatarChanged,
+    required TResult Function(UserProfileEventOnFullNameChanged value)
+        onFullNameChanged,
+    required TResult Function(UserProfileEventOnSaveChanged value)
+        onSaveChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult? Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +130,8 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? path) onAvatarChanged,
+    required TResult Function(String? fullName) onFullNameChanged,
+    required TResult Function() onSaveChanged,
   }) {
     return started();
   }
@@ -123,6 +141,8 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String? path)? onAvatarChanged,
+    TResult? Function(String? fullName)? onFullNameChanged,
+    TResult? Function()? onSaveChanged,
   }) {
     return started?.call();
   }
@@ -132,6 +152,8 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String? path)? onAvatarChanged,
+    TResult Function(String? fullName)? onFullNameChanged,
+    TResult Function()? onSaveChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -146,6 +168,10 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(UserProfileEventOnAvatarChanged value)
         onAvatarChanged,
+    required TResult Function(UserProfileEventOnFullNameChanged value)
+        onFullNameChanged,
+    required TResult Function(UserProfileEventOnSaveChanged value)
+        onSaveChanged,
   }) {
     return started(this);
   }
@@ -155,6 +181,9 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult? Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
   }) {
     return started?.call(this);
   }
@@ -164,6 +193,9 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -248,6 +280,8 @@ class _$UserProfileEventOnAvatarChanged
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? path) onAvatarChanged,
+    required TResult Function(String? fullName) onFullNameChanged,
+    required TResult Function() onSaveChanged,
   }) {
     return onAvatarChanged(path);
   }
@@ -257,6 +291,8 @@ class _$UserProfileEventOnAvatarChanged
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String? path)? onAvatarChanged,
+    TResult? Function(String? fullName)? onFullNameChanged,
+    TResult? Function()? onSaveChanged,
   }) {
     return onAvatarChanged?.call(path);
   }
@@ -266,6 +302,8 @@ class _$UserProfileEventOnAvatarChanged
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String? path)? onAvatarChanged,
+    TResult Function(String? fullName)? onFullNameChanged,
+    TResult Function()? onSaveChanged,
     required TResult orElse(),
   }) {
     if (onAvatarChanged != null) {
@@ -280,6 +318,10 @@ class _$UserProfileEventOnAvatarChanged
     required TResult Function(_Started value) started,
     required TResult Function(UserProfileEventOnAvatarChanged value)
         onAvatarChanged,
+    required TResult Function(UserProfileEventOnFullNameChanged value)
+        onFullNameChanged,
+    required TResult Function(UserProfileEventOnSaveChanged value)
+        onSaveChanged,
   }) {
     return onAvatarChanged(this);
   }
@@ -289,6 +331,9 @@ class _$UserProfileEventOnAvatarChanged
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult? Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
   }) {
     return onAvatarChanged?.call(this);
   }
@@ -298,6 +343,9 @@ class _$UserProfileEventOnAvatarChanged
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
     required TResult orElse(),
   }) {
     if (onAvatarChanged != null) {
@@ -318,9 +366,294 @@ abstract class UserProfileEventOnAvatarChanged implements UserProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$UserProfileEventOnFullNameChangedCopyWith<$Res> {
+  factory _$$UserProfileEventOnFullNameChangedCopyWith(
+          _$UserProfileEventOnFullNameChanged value,
+          $Res Function(_$UserProfileEventOnFullNameChanged) then) =
+      __$$UserProfileEventOnFullNameChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? fullName});
+}
+
+/// @nodoc
+class __$$UserProfileEventOnFullNameChangedCopyWithImpl<$Res>
+    extends _$UserProfileEventCopyWithImpl<$Res,
+        _$UserProfileEventOnFullNameChanged>
+    implements _$$UserProfileEventOnFullNameChangedCopyWith<$Res> {
+  __$$UserProfileEventOnFullNameChangedCopyWithImpl(
+      _$UserProfileEventOnFullNameChanged _value,
+      $Res Function(_$UserProfileEventOnFullNameChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fullName = freezed,
+  }) {
+    return _then(_$UserProfileEventOnFullNameChanged(
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserProfileEventOnFullNameChanged
+    implements UserProfileEventOnFullNameChanged {
+  const _$UserProfileEventOnFullNameChanged({this.fullName});
+
+  @override
+  final String? fullName;
+
+  @override
+  String toString() {
+    return 'UserProfileEvent.onFullNameChanged(fullName: $fullName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserProfileEventOnFullNameChanged &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, fullName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserProfileEventOnFullNameChangedCopyWith<
+          _$UserProfileEventOnFullNameChanged>
+      get copyWith => __$$UserProfileEventOnFullNameChangedCopyWithImpl<
+          _$UserProfileEventOnFullNameChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String? path) onAvatarChanged,
+    required TResult Function(String? fullName) onFullNameChanged,
+    required TResult Function() onSaveChanged,
+  }) {
+    return onFullNameChanged(fullName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String? path)? onAvatarChanged,
+    TResult? Function(String? fullName)? onFullNameChanged,
+    TResult? Function()? onSaveChanged,
+  }) {
+    return onFullNameChanged?.call(fullName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String? path)? onAvatarChanged,
+    TResult Function(String? fullName)? onFullNameChanged,
+    TResult Function()? onSaveChanged,
+    required TResult orElse(),
+  }) {
+    if (onFullNameChanged != null) {
+      return onFullNameChanged(fullName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(UserProfileEventOnAvatarChanged value)
+        onAvatarChanged,
+    required TResult Function(UserProfileEventOnFullNameChanged value)
+        onFullNameChanged,
+    required TResult Function(UserProfileEventOnSaveChanged value)
+        onSaveChanged,
+  }) {
+    return onFullNameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult? Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
+  }) {
+    return onFullNameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
+    required TResult orElse(),
+  }) {
+    if (onFullNameChanged != null) {
+      return onFullNameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserProfileEventOnFullNameChanged implements UserProfileEvent {
+  const factory UserProfileEventOnFullNameChanged({final String? fullName}) =
+      _$UserProfileEventOnFullNameChanged;
+
+  String? get fullName;
+  @JsonKey(ignore: true)
+  _$$UserProfileEventOnFullNameChangedCopyWith<
+          _$UserProfileEventOnFullNameChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserProfileEventOnSaveChangedCopyWith<$Res> {
+  factory _$$UserProfileEventOnSaveChangedCopyWith(
+          _$UserProfileEventOnSaveChanged value,
+          $Res Function(_$UserProfileEventOnSaveChanged) then) =
+      __$$UserProfileEventOnSaveChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserProfileEventOnSaveChangedCopyWithImpl<$Res>
+    extends _$UserProfileEventCopyWithImpl<$Res,
+        _$UserProfileEventOnSaveChanged>
+    implements _$$UserProfileEventOnSaveChangedCopyWith<$Res> {
+  __$$UserProfileEventOnSaveChangedCopyWithImpl(
+      _$UserProfileEventOnSaveChanged _value,
+      $Res Function(_$UserProfileEventOnSaveChanged) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserProfileEventOnSaveChanged implements UserProfileEventOnSaveChanged {
+  const _$UserProfileEventOnSaveChanged();
+
+  @override
+  String toString() {
+    return 'UserProfileEvent.onSaveChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserProfileEventOnSaveChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String? path) onAvatarChanged,
+    required TResult Function(String? fullName) onFullNameChanged,
+    required TResult Function() onSaveChanged,
+  }) {
+    return onSaveChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String? path)? onAvatarChanged,
+    TResult? Function(String? fullName)? onFullNameChanged,
+    TResult? Function()? onSaveChanged,
+  }) {
+    return onSaveChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String? path)? onAvatarChanged,
+    TResult Function(String? fullName)? onFullNameChanged,
+    TResult Function()? onSaveChanged,
+    required TResult orElse(),
+  }) {
+    if (onSaveChanged != null) {
+      return onSaveChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(UserProfileEventOnAvatarChanged value)
+        onAvatarChanged,
+    required TResult Function(UserProfileEventOnFullNameChanged value)
+        onFullNameChanged,
+    required TResult Function(UserProfileEventOnSaveChanged value)
+        onSaveChanged,
+  }) {
+    return onSaveChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult? Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult? Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
+  }) {
+    return onSaveChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(UserProfileEventOnAvatarChanged value)? onAvatarChanged,
+    TResult Function(UserProfileEventOnFullNameChanged value)?
+        onFullNameChanged,
+    TResult Function(UserProfileEventOnSaveChanged value)? onSaveChanged,
+    required TResult orElse(),
+  }) {
+    if (onSaveChanged != null) {
+      return onSaveChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserProfileEventOnSaveChanged implements UserProfileEvent {
+  const factory UserProfileEventOnSaveChanged() =
+      _$UserProfileEventOnSaveChanged;
+}
+
+/// @nodoc
 mixin _$UserProfileState {
   Status get status => throw _privateConstructorUsedError;
   String? get pathFile => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserProfileStateCopyWith<UserProfileState> get copyWith =>
@@ -333,9 +666,10 @@ abstract class $UserProfileStateCopyWith<$Res> {
           UserProfileState value, $Res Function(UserProfileState) then) =
       _$UserProfileStateCopyWithImpl<$Res, UserProfileState>;
   @useResult
-  $Res call({Status status, String? pathFile});
+  $Res call({Status status, String? pathFile, String? fullName, User user});
 
   $StatusCopyWith<$Res> get status;
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -353,6 +687,8 @@ class _$UserProfileStateCopyWithImpl<$Res, $Val extends UserProfileState>
   $Res call({
     Object? status = null,
     Object? pathFile = freezed,
+    Object? fullName = freezed,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -363,6 +699,14 @@ class _$UserProfileStateCopyWithImpl<$Res, $Val extends UserProfileState>
           ? _value.pathFile
           : pathFile // ignore: cast_nullable_to_non_nullable
               as String?,
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ) as $Val);
   }
 
@@ -371,6 +715,14 @@ class _$UserProfileStateCopyWithImpl<$Res, $Val extends UserProfileState>
   $StatusCopyWith<$Res> get status {
     return $StatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -383,10 +735,12 @@ abstract class _$$_UserProfileStateCopyWith<$Res>
       __$$_UserProfileStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Status status, String? pathFile});
+  $Res call({Status status, String? pathFile, String? fullName, User user});
 
   @override
   $StatusCopyWith<$Res> get status;
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -402,6 +756,8 @@ class __$$_UserProfileStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? pathFile = freezed,
+    Object? fullName = freezed,
+    Object? user = null,
   }) {
     return _then(_$_UserProfileState(
       status: null == status
@@ -412,6 +768,14 @@ class __$$_UserProfileStateCopyWithImpl<$Res>
           ? _value.pathFile
           : pathFile // ignore: cast_nullable_to_non_nullable
               as String?,
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -419,17 +783,25 @@ class __$$_UserProfileStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserProfileState implements _UserProfileState {
-  const _$_UserProfileState({this.status = const Status.idle(), this.pathFile});
+  const _$_UserProfileState(
+      {this.status = const Status.idle(),
+      this.pathFile,
+      this.fullName,
+      required this.user});
 
   @override
   @JsonKey()
   final Status status;
   @override
   final String? pathFile;
+  @override
+  final String? fullName;
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'UserProfileState(status: $status, pathFile: $pathFile)';
+    return 'UserProfileState(status: $status, pathFile: $pathFile, fullName: $fullName, user: $user)';
   }
 
   @override
@@ -439,11 +811,15 @@ class _$_UserProfileState implements _UserProfileState {
             other is _$_UserProfileState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.pathFile, pathFile) ||
-                other.pathFile == pathFile));
+                other.pathFile == pathFile) &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, pathFile);
+  int get hashCode =>
+      Object.hash(runtimeType, status, pathFile, fullName, user);
 
   @JsonKey(ignore: true)
   @override
@@ -454,12 +830,19 @@ class _$_UserProfileState implements _UserProfileState {
 
 abstract class _UserProfileState implements UserProfileState {
   const factory _UserProfileState(
-      {final Status status, final String? pathFile}) = _$_UserProfileState;
+      {final Status status,
+      final String? pathFile,
+      final String? fullName,
+      required final User user}) = _$_UserProfileState;
 
   @override
   Status get status;
   @override
   String? get pathFile;
+  @override
+  String? get fullName;
+  @override
+  User get user;
   @override
   @JsonKey(ignore: true)
   _$$_UserProfileStateCopyWith<_$_UserProfileState> get copyWith =>
