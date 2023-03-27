@@ -5,4 +5,5 @@ part 'file_failure.freezed.dart';
 @freezed
 class FileFailure with _$FileFailure {
   const factory FileFailure.unknown() = FileFailureUnknown;
+  const factory FileFailure.compressFailed() = FileFailureCompressFailed;
 }

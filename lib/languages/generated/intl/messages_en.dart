@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
         "appName": MessageLookupByLibrary.simpleMessage("Realus"),
+        "applicationSettings":
+            MessageLookupByLibrary.simpleMessage("Application Settings"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
@@ -171,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pool": MessageLookupByLibrary.simpleMessage("Pool"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
+        "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
@@ -211,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "square": MessageLookupByLibrary.simpleMessage("Square"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
         "structure": MessageLookupByLibrary.simpleMessage("Structure"),
+        "support": MessageLookupByLibrary.simpleMessage("Support"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "titleHint": MessageLookupByLibrary.simpleMessage(
             "Sale private house at Cau Giay"),
@@ -224,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unable to load data"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+        "updateProfileSuccess":
+            MessageLookupByLibrary.simpleMessage("Update profile success"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("View"),

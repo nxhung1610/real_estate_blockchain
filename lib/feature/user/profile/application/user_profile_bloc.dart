@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/file/data.dart';
 import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
+import 'package:real_estate_blockchain/data/user/domain/i_user_repostiory.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
@@ -18,7 +19,9 @@ part 'user_profile_bloc.freezed.dart';
 @injectable
 class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   final IFileRepository fileRepository;
-  UserProfileBloc(this.fileRepository, @factoryParam User user)
+  final IUserRepistory userRepistory;
+  UserProfileBloc(
+      this.fileRepository, @factoryParam User user, this.userRepistory)
       : super(UserProfileState(user: user)) {
     on<UserProfileEventOnAvatarChanged>(_onAvatarChanged);
     on<UserProfileEventOnFullNameChanged>(_onFullNameChanged);
@@ -56,20 +59,31 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
     Emitter<UserProfileState> emit,
   ) async {
     try {
+      emit(state.copyWith(status: const Status.loading()));
       if (state.pathFile != null) {
         final result = await fileRepository.upload(state.pathFile!);
-        result.fold(
+        final url = result.fold(
           (l) => throw l,
-          (r) => emit(
-            state.copyWith(
-              status: Status.success(
-                value: state.user.copyWith(
-                  avatarUrl: r.url,
+          (r) => r.url,
+        );
+        if (url != null) {
+          final resUploadAvatar = await userRepistory.updateAvatar(url);
+          resUploadAvatar.fold(
+            (l) => throw l,
+            (r) => emit(
+              state.copyWith(
+                user: state.user.copyWith(
+                  avatarUrl: url,
+                ),
+                status: Status.success(
+                  value: state.user.copyWith(
+                    avatarUrl: url,
+                  ),
                 ),
               ),
             ),
-          ),
-        );
+          );
+        }
       }
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);

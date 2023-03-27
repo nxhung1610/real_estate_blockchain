@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
         "appName": MessageLookupByLibrary.simpleMessage("Realus"),
+        "applicationSettings":
+            MessageLookupByLibrary.simpleMessage("Cài đặt ứng dụng"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
@@ -170,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
+        "privacyPolicy":
+            MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
@@ -211,6 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
         "structure": MessageLookupByLibrary.simpleMessage("Cấu trúc"),
+        "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "titleHint":
             MessageLookupByLibrary.simpleMessage("Bán nhà riêng tại Cầu Giấy"),
@@ -224,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
         "unknown": MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra!"),
+        "updateProfileSuccess": MessageLookupByLibrary.simpleMessage(
+            "Cập nhập thông tin cá nhân thành công"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),

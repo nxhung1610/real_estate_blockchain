@@ -157,6 +157,9 @@
   "goToSetting" : "Go To Setting",
   "permisionCamera" : "We need you to grant 'Camera' access to be able to use this feature",
   "permisionLibrary" : "We need you to grant 'Collection' access to be able to use this feature",
-  "later" :"Later"
-  
+  "later" :"Later",
+  "updateProfileSuccess" : "Update profile success",
+  "applicationSettings" :"Application Settings",
+  "support" : "Support",
+  "privacyPolicy" : "Privacy Policy"
 }

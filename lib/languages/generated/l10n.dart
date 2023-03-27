@@ -1589,6 +1589,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Update profile success`
+  String get updateProfileSuccess {
+    return Intl.message(
+      'Update profile success',
+      name: 'updateProfileSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Application Settings`
+  String get applicationSettings {
+    return Intl.message(
+      'Application Settings',
+      name: 'applicationSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support`
+  String get support {
+    return Intl.message(
+      'Support',
+      name: 'support',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

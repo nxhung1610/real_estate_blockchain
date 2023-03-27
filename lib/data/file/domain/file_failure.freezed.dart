@@ -19,32 +19,38 @@ mixin _$FileFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unknown,
+    required TResult Function() compressFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unknown,
+    TResult? Function()? compressFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unknown,
+    TResult Function()? compressFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FileFailureUnknown value) unknown,
+    required TResult Function(FileFailureCompressFailed value) compressFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FileFailureUnknown value)? unknown,
+    TResult? Function(FileFailureCompressFailed value)? compressFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FileFailureUnknown value)? unknown,
+    TResult Function(FileFailureCompressFailed value)? compressFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unknown,
+    required TResult Function() compressFailed,
   }) {
     return unknown();
   }
@@ -115,6 +122,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unknown,
+    TResult? Function()? compressFailed,
   }) {
     return unknown?.call();
   }
@@ -123,6 +131,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unknown,
+    TResult Function()? compressFailed,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -135,6 +144,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FileFailureUnknown value) unknown,
+    required TResult Function(FileFailureCompressFailed value) compressFailed,
   }) {
     return unknown(this);
   }
@@ -143,6 +153,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FileFailureUnknown value)? unknown,
+    TResult? Function(FileFailureCompressFailed value)? compressFailed,
   }) {
     return unknown?.call(this);
   }
@@ -151,6 +162,7 @@ class _$FileFailureUnknown implements FileFailureUnknown {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FileFailureUnknown value)? unknown,
+    TResult Function(FileFailureCompressFailed value)? compressFailed,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -162,4 +174,108 @@ class _$FileFailureUnknown implements FileFailureUnknown {
 
 abstract class FileFailureUnknown implements FileFailure {
   const factory FileFailureUnknown() = _$FileFailureUnknown;
+}
+
+/// @nodoc
+abstract class _$$FileFailureCompressFailedCopyWith<$Res> {
+  factory _$$FileFailureCompressFailedCopyWith(
+          _$FileFailureCompressFailed value,
+          $Res Function(_$FileFailureCompressFailed) then) =
+      __$$FileFailureCompressFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FileFailureCompressFailedCopyWithImpl<$Res>
+    extends _$FileFailureCopyWithImpl<$Res, _$FileFailureCompressFailed>
+    implements _$$FileFailureCompressFailedCopyWith<$Res> {
+  __$$FileFailureCompressFailedCopyWithImpl(_$FileFailureCompressFailed _value,
+      $Res Function(_$FileFailureCompressFailed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FileFailureCompressFailed implements FileFailureCompressFailed {
+  const _$FileFailureCompressFailed();
+
+  @override
+  String toString() {
+    return 'FileFailure.compressFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FileFailureCompressFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unknown,
+    required TResult Function() compressFailed,
+  }) {
+    return compressFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unknown,
+    TResult? Function()? compressFailed,
+  }) {
+    return compressFailed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unknown,
+    TResult Function()? compressFailed,
+    required TResult orElse(),
+  }) {
+    if (compressFailed != null) {
+      return compressFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FileFailureUnknown value) unknown,
+    required TResult Function(FileFailureCompressFailed value) compressFailed,
+  }) {
+    return compressFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FileFailureUnknown value)? unknown,
+    TResult? Function(FileFailureCompressFailed value)? compressFailed,
+  }) {
+    return compressFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FileFailureUnknown value)? unknown,
+    TResult Function(FileFailureCompressFailed value)? compressFailed,
+    required TResult orElse(),
+  }) {
+    if (compressFailed != null) {
+      return compressFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FileFailureCompressFailed implements FileFailure {
+  const factory FileFailureCompressFailed() = _$FileFailureCompressFailed;
 }
