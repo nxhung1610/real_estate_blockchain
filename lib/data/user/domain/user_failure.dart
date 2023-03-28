@@ -6,4 +6,5 @@ part 'user_failure.freezed.dart';
 class UserFailure with _$UserFailure {
   const factory UserFailure.updateAvatar() = _UserFailureUpdateAvatar;
   const factory UserFailure.updateProfile() = _UserFailureUpdateProfile;
+  const factory UserFailure.deleteAccount() = _UserFailureDeleteAccount;
 }

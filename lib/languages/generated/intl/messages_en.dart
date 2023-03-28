@@ -70,6 +70,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
+        "deleteAccountMessageDialog": MessageLookupByLibrary.simpleMessage(
+            "Do you want to delete account ?"),
+        "deleteAccountSuccess":
+            MessageLookupByLibrary.simpleMessage("Delete account success."),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
@@ -162,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "We need you to grant \'Camera\' access to be able to use this feature"),
         "permisionLibrary": MessageLookupByLibrary.simpleMessage(
             "We need you to grant \'Collection\' access to be able to use this feature"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "phoneNumberAlreadyUsed":
             MessageLookupByLibrary.simpleMessage("Phone number already used"),

@@ -161,5 +161,9 @@
   "updateProfileSuccess" : "Update profile success",
   "applicationSettings" :"Application Settings",
   "support" : "Support",
-  "privacyPolicy" : "Privacy Policy"
+  "privacyPolicy" : "Privacy Policy",
+  "phone" : "Phone",
+  "deleteAccount" : "Delete Account",
+  "deleteAccountMessageDialog" : "Do you want to delete account ?",
+  "deleteAccountSuccess" : "Delete account success."
 }

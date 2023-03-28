@@ -20,18 +20,21 @@ mixin _$UserFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() updateAvatar,
     required TResult Function() updateProfile,
+    required TResult Function() deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? updateAvatar,
     TResult? Function()? updateProfile,
+    TResult? Function()? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? updateAvatar,
     TResult Function()? updateProfile,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$UserFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_UserFailureUpdateAvatar value) updateAvatar,
     required TResult Function(_UserFailureUpdateProfile value) updateProfile,
+    required TResult Function(_UserFailureDeleteAccount value) deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult? Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult? Function(_UserFailureDeleteAccount value)? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult Function(_UserFailureDeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +121,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult when<TResult extends Object?>({
     required TResult Function() updateAvatar,
     required TResult Function() updateProfile,
+    required TResult Function() deleteAccount,
   }) {
     return updateAvatar();
   }
@@ -124,6 +131,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? updateAvatar,
     TResult? Function()? updateProfile,
+    TResult? Function()? deleteAccount,
   }) {
     return updateAvatar?.call();
   }
@@ -133,6 +141,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? updateAvatar,
     TResult Function()? updateProfile,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (updateAvatar != null) {
@@ -146,6 +155,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult map<TResult extends Object?>({
     required TResult Function(_UserFailureUpdateAvatar value) updateAvatar,
     required TResult Function(_UserFailureUpdateProfile value) updateProfile,
+    required TResult Function(_UserFailureDeleteAccount value) deleteAccount,
   }) {
     return updateAvatar(this);
   }
@@ -155,6 +165,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult? Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult? Function(_UserFailureDeleteAccount value)? deleteAccount,
   }) {
     return updateAvatar?.call(this);
   }
@@ -164,6 +175,7 @@ class _$_UserFailureUpdateAvatar implements _UserFailureUpdateAvatar {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult Function(_UserFailureDeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (updateAvatar != null) {
@@ -219,6 +231,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult when<TResult extends Object?>({
     required TResult Function() updateAvatar,
     required TResult Function() updateProfile,
+    required TResult Function() deleteAccount,
   }) {
     return updateProfile();
   }
@@ -228,6 +241,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? updateAvatar,
     TResult? Function()? updateProfile,
+    TResult? Function()? deleteAccount,
   }) {
     return updateProfile?.call();
   }
@@ -237,6 +251,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? updateAvatar,
     TResult Function()? updateProfile,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (updateProfile != null) {
@@ -250,6 +265,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult map<TResult extends Object?>({
     required TResult Function(_UserFailureUpdateAvatar value) updateAvatar,
     required TResult Function(_UserFailureUpdateProfile value) updateProfile,
+    required TResult Function(_UserFailureDeleteAccount value) deleteAccount,
   }) {
     return updateProfile(this);
   }
@@ -259,6 +275,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult? Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult? Function(_UserFailureDeleteAccount value)? deleteAccount,
   }) {
     return updateProfile?.call(this);
   }
@@ -268,6 +285,7 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserFailureUpdateAvatar value)? updateAvatar,
     TResult Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult Function(_UserFailureDeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (updateProfile != null) {
@@ -279,4 +297,114 @@ class _$_UserFailureUpdateProfile implements _UserFailureUpdateProfile {
 
 abstract class _UserFailureUpdateProfile implements UserFailure {
   const factory _UserFailureUpdateProfile() = _$_UserFailureUpdateProfile;
+}
+
+/// @nodoc
+abstract class _$$_UserFailureDeleteAccountCopyWith<$Res> {
+  factory _$$_UserFailureDeleteAccountCopyWith(
+          _$_UserFailureDeleteAccount value,
+          $Res Function(_$_UserFailureDeleteAccount) then) =
+      __$$_UserFailureDeleteAccountCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UserFailureDeleteAccountCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$_UserFailureDeleteAccount>
+    implements _$$_UserFailureDeleteAccountCopyWith<$Res> {
+  __$$_UserFailureDeleteAccountCopyWithImpl(_$_UserFailureDeleteAccount _value,
+      $Res Function(_$_UserFailureDeleteAccount) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_UserFailureDeleteAccount implements _UserFailureDeleteAccount {
+  const _$_UserFailureDeleteAccount();
+
+  @override
+  String toString() {
+    return 'UserFailure.deleteAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UserFailureDeleteAccount);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() updateAvatar,
+    required TResult Function() updateProfile,
+    required TResult Function() deleteAccount,
+  }) {
+    return deleteAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? updateAvatar,
+    TResult? Function()? updateProfile,
+    TResult? Function()? deleteAccount,
+  }) {
+    return deleteAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? updateAvatar,
+    TResult Function()? updateProfile,
+    TResult Function()? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserFailureUpdateAvatar value) updateAvatar,
+    required TResult Function(_UserFailureUpdateProfile value) updateProfile,
+    required TResult Function(_UserFailureDeleteAccount value) deleteAccount,
+  }) {
+    return deleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserFailureUpdateAvatar value)? updateAvatar,
+    TResult? Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult? Function(_UserFailureDeleteAccount value)? deleteAccount,
+  }) {
+    return deleteAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserFailureUpdateAvatar value)? updateAvatar,
+    TResult Function(_UserFailureUpdateProfile value)? updateProfile,
+    TResult Function(_UserFailureDeleteAccount value)? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserFailureDeleteAccount implements UserFailure {
+  const factory _UserFailureDeleteAccount() = _$_UserFailureDeleteAccount;
 }

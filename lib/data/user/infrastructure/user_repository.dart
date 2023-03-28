@@ -55,4 +55,20 @@ class UserRepostory extends IUserRepistory {
       return left(const UserFailure.updateProfile());
     }
   }
+
+  @override
+  Future<Either<UserFailure, Unit>> deleteAccount() async {
+    try {
+      final res = await _apiRemote.delete(
+        UserConstants.users,
+      );
+      if (res.success) {
+        return right(unit);
+      }
+      throw Exception(res);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(const UserFailure.deleteAccount());
+    }
+  }
 }

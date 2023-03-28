@@ -69,6 +69,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("Xoá tài khoản"),
+        "deleteAccountMessageDialog":
+            MessageLookupByLibrary.simpleMessage("Bạn có muốn xoá tài khoản ?"),
+        "deleteAccountSuccess":
+            MessageLookupByLibrary.simpleMessage("Xoá tài khoản thành công"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
@@ -161,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chúng tôi cần bạn cấp quyền truy cập \'Máy ảnh\' để có thể sử dụng tính năng này"),
         "permisionLibrary": MessageLookupByLibrary.simpleMessage(
             "Chúng tôi cần bạn cấp quyền truy cập \'Bộ sưu tập\' để có thể sử dụng tính năng này"),
+        "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "phoneNumberAlreadyUsed": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại đã được sử dụng"),

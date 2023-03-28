@@ -38,8 +38,12 @@ class _UserProfilePageState extends State<UserProfilePage> {
             context.appDialog.dismissDialog();
           },
           success: (value) {
+            context.read<AuthBloc>().add(const AuthEvent.loadUser());
             context.appSnackBar.show(s.updateProfileSuccess);
             context.pop();
+          },
+          failure: (value) {
+            context.appSnackBar.show(s.anErrorOccurred);
           },
           loading: () {
             context.appDialog.showLoading();
@@ -152,13 +156,36 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       ],
                     ),
                   ),
-                  _InputWithTitle(
-                    title: s.fullName,
-                    init: user.fullName,
-                    onChanged: (value) {
-                      context.read<UserProfileBloc>().add(
-                          UserProfileEvent.onFullNameChanged(fullName: value));
-                    },
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _InputWithTitle(
+                          title: s.firstName,
+                          init: user.firstName,
+                          onChanged: (value) {
+                            context.read<UserProfileBloc>().add(
+                                  UserProfileEvent.onFirstNameChanged(
+                                    firstName: value?.trim(),
+                                  ),
+                                );
+                          },
+                        ),
+                      ),
+                      AppSize.largeWidthDimens.horizontalSpace,
+                      Expanded(
+                        child: _InputWithTitle(
+                          title: s.lastName,
+                          init: user.lastName,
+                          onChanged: (value) {
+                            context.read<UserProfileBloc>().add(
+                                  UserProfileEvent.onLastNameChanged(
+                                    lastName: value?.trim(),
+                                  ),
+                                );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                   AppSize.largeHeightDimens.verticalSpace,
                   _InputWithTitle(

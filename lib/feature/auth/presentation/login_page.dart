@@ -36,6 +36,7 @@ class _LoginPageState extends State<LoginPage> {
     final s = S.of(context);
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
+        if (!mounted) return;
         state.status.whenOrNull(
           idle: () {
             // log('Hide bloc loading');

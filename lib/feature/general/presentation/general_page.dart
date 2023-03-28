@@ -48,71 +48,80 @@ class _AccountInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authState = context.read<AuthBloc>().state as AuthStateAuthenticated;
-    return Column(
-      children: [
-        // Avatar
-        GestureDetector(
-          onTap: () {
-            context.push($appRoute.user.profile.url);
-          },
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(AppSize.avatarExtraLarge / 2),
-                child: Image.network(
-                  authState.user.avatarUrl ??
-                      'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
-                  width: AppSize.avatarExtraLarge,
-                  height: AppSize.avatarExtraLarge,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    padding: EdgeInsets.all(AppSize.smallWidthDimens),
-                    decoration: BoxDecoration(
-                      border: Border.fromBorderSide(
-                        BorderSide(
-                          color: AppColor.kNeutrals_.shade50,
-                          width: 1.r,
-                        ),
-                      ),
-                      borderRadius:
-                          BorderRadius.circular(AppSize.mediumIcon / 2),
-                      color: AppColor.kNeutrals_.shade900,
-                    ),
-                    width: AppSize.mediumIcon,
-                    height: AppSize.mediumIcon,
-                    child: Assets.icons.icEditBold.svg(
-                      color: AppColor.kNeutrals_.shade50,
+    final s = S.of(context);
+    return BlocSelector<AuthBloc, AuthState, AuthStateAuthenticated?>(
+      selector: (state) {
+        return state.mapOrNull(
+          authenticated: (value) => value,
+        );
+      },
+      builder: (context, state) {
+        return Column(
+          children: [
+            // Avatar
+            GestureDetector(
+              onTap: () {
+                context.push($appRoute.user.profile.url);
+              },
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(AppSize.avatarExtraLarge / 2),
+                    child: Image.network(
+                      state?.user.avatarUrl ??
+                          'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
+                      width: AppSize.avatarExtraLarge,
+                      height: AppSize.avatarExtraLarge,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
-        ),
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        padding: EdgeInsets.all(AppSize.smallWidthDimens),
+                        decoration: BoxDecoration(
+                          border: Border.fromBorderSide(
+                            BorderSide(
+                              color: AppColor.kNeutrals_.shade50,
+                              width: 1.r,
+                            ),
+                          ),
+                          borderRadius:
+                              BorderRadius.circular(AppSize.mediumIcon / 2),
+                          color: AppColor.kNeutrals_.shade900,
+                        ),
+                        width: AppSize.mediumIcon,
+                        height: AppSize.mediumIcon,
+                        child: Assets.icons.icEditBold.svg(
+                          color: AppColor.kNeutrals_.shade50,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
 
-        11.h.verticalSpace,
-        // Info
-        Text(
-          authState.user.fullName,
-          style: context.textTheme.bodyLarge?.copyWith(
-            color: context.textTheme.displayLarge?.color,
-            fontWeight: FontWeight.w800,
-          ),
-        ),
-        Text(
-          "Phone: ${authState.user.phone}",
-          style: context.textTheme.bodyMedium?.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
-        )
-      ],
+            11.h.verticalSpace,
+            // Info
+            Text(
+              state?.user.fullName ?? '',
+              style: context.textTheme.bodyLarge?.copyWith(
+                color: context.textTheme.displayLarge?.color,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            Text(
+              "${s.phoneNumber}: ${state?.user.phone ?? ''}",
+              style: context.textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }
@@ -165,6 +174,9 @@ class _Options extends StatelessWidget {
             ProfileOptionData(
               icon: Assets.icons.icSettingLight.svg(),
               label: s.optionSettings,
+              onPressed: () {
+                context.push($appRoute.setting.url);
+              },
             ),
             ProfileOptionData(
               icon: const Icon(

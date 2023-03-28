@@ -162,5 +162,9 @@
   "updateProfileSuccess" : "Cập nhập thông tin cá nhân thành công",
   "applicationSettings" :"Cài đặt ứng dụng",
   "support" : "Hỗ trợ",
-  "privacyPolicy" : "Chính sách bảo mật"
+  "privacyPolicy" : "Chính sách bảo mật",
+  "phone" : "Số điện thoại",
+  "deleteAccount" : "Xoá tài khoản",
+  "deleteAccountMessageDialog" : "Bạn có muốn xoá tài khoản ?",
+  "deleteAccountSuccess" : "Xoá tài khoản thành công"
 }

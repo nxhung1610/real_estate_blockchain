@@ -12,6 +12,7 @@ class AppSnackBar {
 
   show(String? content) {
     if (content == null) return;
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,

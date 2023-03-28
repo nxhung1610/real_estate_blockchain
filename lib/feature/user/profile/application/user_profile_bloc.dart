@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart'
 import 'package:real_estate_blockchain/data/file/data.dart';
 import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/user/domain/i_user_repostiory.dart';
+import 'package:real_estate_blockchain/data/user/domain/model/update_profile_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
@@ -25,6 +26,8 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
       : super(UserProfileState(user: user)) {
     on<UserProfileEventOnAvatarChanged>(_onAvatarChanged);
     on<UserProfileEventOnFullNameChanged>(_onFullNameChanged);
+    on<UserProfileEventOnFirstNameChanged>(_onFirstNameChanged);
+    on<UserProfileEventOnLastNameChanged>(_onLastNameChanged);
     on<UserProfileEventOnSaveChanged>(_onSaveChanged);
   }
 
@@ -47,9 +50,16 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   }
 
   bool validToSave() {
-    if (state.pathFile == null && state.fullName == null) return false;
+    if (state.pathFile == null &&
+        state.fullName == null &&
+        state.firstName == null &&
+        state.lastName == null) return false;
     if (state.fullName == state.user.fullName ||
         state.fullName?.trim().isEmpty == true) return false;
+    if (state.firstName == state.user.firstName ||
+        state.firstName?.trim().isEmpty == true) return false;
+    if (state.lastName == state.user.lastName ||
+        state.lastName?.trim().isEmpty == true) return false;
 
     return true;
   }
@@ -60,36 +70,58 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   ) async {
     try {
       emit(state.copyWith(status: const Status.loading()));
+      String? url;
       if (state.pathFile != null) {
         final result = await fileRepository.upload(state.pathFile!);
-        final url = result.fold(
+        url = result.fold(
           (l) => throw l,
           (r) => r.url,
         );
-        if (url != null) {
-          final resUploadAvatar = await userRepistory.updateAvatar(url);
-          resUploadAvatar.fold(
-            (l) => throw l,
-            (r) => emit(
-              state.copyWith(
-                user: state.user.copyWith(
-                  avatarUrl: url,
-                ),
-                status: Status.success(
-                  value: state.user.copyWith(
-                    avatarUrl: url,
-                  ),
-                ),
+      }
+      final input = UpdateProfileInput(
+        avatar: url,
+        firstName: state.firstName,
+        lastName: state.lastName,
+      );
+      final res = await userRepistory.updateProfile(input: input);
+      res.fold(
+        (l) => throw l,
+        (r) => emit(
+          state.copyWith(
+            user: state.user.copyWith(
+              avatarUrl: url,
+              firstName: state.firstName ?? state.user.firstName,
+              lastName: state.lastName ?? state.user.lastName,
+            ),
+            status: Status.success(
+              value: state.user.copyWith(
+                avatarUrl: url,
+                firstName: state.firstName ?? state.user.firstName,
+                lastName: state.lastName ?? state.user.lastName,
               ),
             ),
-          );
-        }
-      }
+          ),
+        ),
+      );
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       emit(state.copyWith(status: Status.failure(value: e)));
     } finally {
       emit(state.copyWith(status: const Status.idle()));
     }
+  }
+
+  FutureOr<void> _onFirstNameChanged(
+    UserProfileEventOnFirstNameChanged event,
+    Emitter<UserProfileState> emit,
+  ) {
+    emit(state.copyWith(firstName: event.firstName));
+  }
+
+  FutureOr<void> _onLastNameChanged(
+    UserProfileEventOnLastNameChanged event,
+    Emitter<UserProfileState> emit,
+  ) {
+    emit(state.copyWith(lastName: event.lastName));
   }
 }

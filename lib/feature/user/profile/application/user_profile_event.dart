@@ -7,6 +7,10 @@ class UserProfileEvent with _$UserProfileEvent {
       UserProfileEventOnAvatarChanged;
   const factory UserProfileEvent.onFullNameChanged({String? fullName}) =
       UserProfileEventOnFullNameChanged;
+  const factory UserProfileEvent.onFirstNameChanged({String? firstName}) =
+      UserProfileEventOnFirstNameChanged;
+  const factory UserProfileEvent.onLastNameChanged({String? lastName}) =
+      UserProfileEventOnLastNameChanged;
   const factory UserProfileEvent.onSaveChanged() =
       UserProfileEventOnSaveChanged;
 }

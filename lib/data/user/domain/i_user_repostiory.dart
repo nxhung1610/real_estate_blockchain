@@ -9,4 +9,5 @@ abstract class IUserRepistory {
   Future<Either<UserFailure, Unit>> updateProfile({
     required UpdateProfileInput input,
   });
+  Future<Either<UserFailure, Unit>> deleteAccount();
 }

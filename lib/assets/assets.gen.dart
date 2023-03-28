@@ -358,8 +358,11 @@ class $AssetsLottiesGen {
   /// File path: assets/lotties/lotties_upload_file.json
   String get lottiesUploadFile => 'assets/lotties/lotties_upload_file.json';
 
+  /// File path: assets/lotties/success_lottie.json
+  String get successLottie => 'assets/lotties/success_lottie.json';
+
   /// List of all assets
-  List<String> get values => [lottieHouse, lottiesUploadFile];
+  List<String> get values => [lottieHouse, lottiesUploadFile, successLottie];
 }
 
 class Assets {

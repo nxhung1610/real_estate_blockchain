@@ -11,30 +11,37 @@ class _WidgetItemType with _$_WidgetItemType {
 class _WidgetItem extends StatelessWidget {
   const _WidgetItem({
     super.key,
-    required this.type,
     required this.title,
+    required this.type,
+    this.onTap,
   });
-  final _WidgetGroupItem type;
+  final _WidgetItemType type;
   final String title;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: AppSize.largeHeightDimens,
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: AppColor.kNeutrals3,
-                fontWeight: FontWeight.w600,
+    return GestureDetector(
+      onTap: () {
+        onTap?.call();
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: AppSize.largeHeightDimens,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColor.kNeutrals3,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

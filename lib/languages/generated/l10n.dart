@@ -1629,6 +1629,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Account`
+  String get deleteAccount {
+    return Intl.message(
+      'Delete Account',
+      name: 'deleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to delete account ?`
+  String get deleteAccountMessageDialog {
+    return Intl.message(
+      'Do you want to delete account ?',
+      name: 'deleteAccountMessageDialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete account success.`
+  String get deleteAccountSuccess {
+    return Intl.message(
+      'Delete account success.',
+      name: 'deleteAccountSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

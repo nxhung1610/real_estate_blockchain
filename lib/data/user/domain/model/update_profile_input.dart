@@ -6,11 +6,19 @@ part 'update_profile_input.freezed.dart';
 
 @freezed
 class UpdateProfileInput with _$UpdateProfileInput {
-  factory UpdateProfileInput() = _UpdateProfileInput;
+  const factory UpdateProfileInput({
+    String? avatar,
+    String? firstName,
+    String? lastName,
+  }) = _UpdateProfileInput;
 }
 
 extension UpdateProfileInputMapper on UpdateProfileInput {
   UserProfileUpdateRequest toDto() {
-    return UserProfileUpdateRequest();
+    return UserProfileUpdateRequest(
+      avatar: avatar,
+      firstName: firstName,
+      lastName: lastName,
+    );
   }
 }
