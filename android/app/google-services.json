@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "302933003992",
+    "project_id": "real-estate-blockchain-a9b4a",
+    "storage_bucket": "real-estate-blockchain-a9b4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302933003992:android:64cd670a2d683ba9fa11ad",
+        "android_client_info": {
+          "package_name": "com.blockchain.real_estate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDklIauRhoqrFZqJIz1G-by2WdiwkQ6PdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
