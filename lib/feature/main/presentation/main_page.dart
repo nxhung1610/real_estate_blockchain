@@ -28,6 +28,7 @@ class MainPage extends StatefulWidget with GetItStatefulWidgetMixin {
 class _MainPageState extends State<MainPage>
     with SingleTickerProviderStateMixin, GetItStateMixin {
   late final MainCubit cubit;
+  late final RealEstateFavoritesBloc favoritesBloc;
 
   // Tabs
   late final TabController tabController = TabController(
@@ -40,14 +41,15 @@ class _MainPageState extends State<MainPage>
   void initState() {
     super.initState();
     cubit = context.read<MainCubit>();
-    context.read<RealEstateFavoritesBloc>().add(
-          const RealEstateFavoritesEvent.started(),
-        );
+    favoritesBloc = context.read<RealEstateFavoritesBloc>()
+      ..add(
+        const RealEstateFavoritesEvent.started(),
+      );
   }
 
   @override
   void dispose() {
-    context.read<RealEstateFavoritesBloc>().close();
+    favoritesBloc.close();
     tabController.dispose();
     super.dispose();
   }

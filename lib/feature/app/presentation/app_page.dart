@@ -114,6 +114,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
             final unAuthentcationRoutes = [
               $appRoute.onboarding,
               $appRoute.authLogin,
+              $appRoute.authForgotPassword,
               $appRoute.authRegister,
               $appRoute.url,
             ];

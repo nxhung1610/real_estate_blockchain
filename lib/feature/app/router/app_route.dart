@@ -27,6 +27,7 @@ class AppRoute extends BaseRoute {
   String get onboarding => _onboardingRoute.url;
   String get authRegister => _authRoute.register;
   String get authLogin => _authRoute.login;
+  String get authForgotPassword => _authRoute.forgotPassword;
   String get main => _mainRoute.url;
   String get homeAddNewProperty => _houseAddNewRoute.url;
   String get messageChat => _mainRoute.messageChat;

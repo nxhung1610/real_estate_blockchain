@@ -142,6 +142,10 @@ class $AssetsIconsGen {
   SvgGenImage get icFilterLight =>
       const SvgGenImage('assets/icons/ic_filter_light.svg');
 
+  /// File path: assets/icons/ic_forgot_password.svg
+  SvgGenImage get icForgotPassword =>
+      const SvgGenImage('assets/icons/ic_forgot_password.svg');
+
   /// File path: assets/icons/ic_garage.svg
   SvgGenImage get icGarage => const SvgGenImage('assets/icons/ic_garage.svg');
 
@@ -268,6 +272,7 @@ class $AssetsIconsGen {
         icEyeHide,
         icEyeShow,
         icFilterLight,
+        icForgotPassword,
         icGarage,
         icHeartBold,
         icHeartLight,

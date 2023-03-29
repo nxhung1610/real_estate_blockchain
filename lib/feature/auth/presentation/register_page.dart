@@ -246,7 +246,9 @@ class _RegisterForm extends StatelessWidget {
               ),
               AppSize.extraHeightDimens.verticalSpace,
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.push($appRoute.authForgotPassword);
+                },
                 child: Text(
                   s.loginForgotPassword,
                   style: context.textTheme.bodyMedium?.copyWith(
