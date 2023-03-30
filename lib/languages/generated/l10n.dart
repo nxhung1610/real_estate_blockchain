@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -50,10 +51,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Realus`
+  /// `Realust`
   String get appName {
     return Intl.message(
-      'Realus',
+      'Realust',
       name: 'appName',
       desc: '',
       args: [],
