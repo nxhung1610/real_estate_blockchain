@@ -10,14 +10,6 @@ import 'package:loader_overlay/loader_overlay.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
-import 'package:real_estate_blockchain/data/auth/data.dart';
-import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/feature/message/module.dart';
-import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
-import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
-import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
-import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
-import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -25,6 +17,7 @@ import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
+import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 
@@ -58,10 +51,11 @@ class _AppCommon extends StatefulWidget {
   State<_AppCommon> createState() => _AppCommonState();
 }
 
+late GoRouter appRoute;
+
 class _AppCommonState extends State<_AppCommon> with PageMixin {
   late final AppBloc appBloc;
   late final AuthBloc authBloc;
-  late final GoRouter appRoute;
 
   // Value manage process
   late final Completer processIntital;
@@ -77,7 +71,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
     authBloc.initial();
 
     setupRouter(context);
-    intitial();
+    initialize();
   }
 
   @override
@@ -85,7 +79,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
     super.didChangeDependencies();
   }
 
-  void intitial() {
+  void initialize() async {
     appBloc.started();
   }
 
@@ -202,6 +196,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                   theme: AppTheme.light,
                   scrollBehavior: const ScrollBehaviorModified(),
                   debugShowCheckedModeBanner: false,
+
                   darkTheme: AppTheme.dark,
                   // themeMode: appBloc.state.mode,
                   themeMode: ThemeMode.light,
@@ -213,7 +208,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                     GlobalCupertinoLocalizations.delegate,
                   ],
                   builder: (context, child) {
-                    return SplashPage(
+                    final widget = SplashPage(
                       child: child ?? Container(),
                       onLoaded: () async {
                         await Future.wait([
@@ -222,6 +217,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                         ]);
                       },
                     );
+                    return widget;
                   },
                   supportedLocales: S.delegate.supportedLocales,
                   routeInformationParser: appRoute.routeInformationParser,

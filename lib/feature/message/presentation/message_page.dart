@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -38,11 +39,14 @@ class _MessagePageState extends State<MessagePage>
     return Scaffold(
       appBar: CustomAppbar(
         context,
-        title: Text(s.message),
+        title: GestureDetector(
+            onTap: () {
+              AppNotification.showNoti(title: "Hellll", body: "adqwdq");
+            },
+            child: Text(s.message)),
       ),
       body: BlocListener<MessageBloc, MessageState>(
         listener: (_, state) {
-          print(state.status);
           if (state.status is StatusIdle) {
             if (!refreshCompleter.isCompleted) {
               refreshCompleter.complete();
