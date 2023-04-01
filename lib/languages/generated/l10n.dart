@@ -130,6 +130,26 @@ class S {
     );
   }
 
+  /// `Password not match`
+  String get passwordNotMatch {
+    return Intl.message(
+      'Password not match',
+      name: 'passwordNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-enter password not valid`
+  String get rePasswordNotValid {
+    return Intl.message(
+      'Re-enter password not valid',
+      name: 'rePasswordNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone number invalid`
   String get phoneNumberInvalid {
     return Intl.message(
@@ -345,6 +365,16 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-enter password`
+  String get rePassword {
+    return Intl.message(
+      'Re-enter password',
+      name: 'rePassword',
       desc: '',
       args: [],
     );
@@ -1715,6 +1745,56 @@ class S {
     return Intl.message(
       'Let\'s make sure it\'s really you. We\'ve just send a text message with a fresh verification code to the phone number ending in',
       name: 'enterVerificationDes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive the verify code ?`
+  String get didntReceiveTheCode {
+    return Intl.message(
+      'Didn\'t receive the verify code ?',
+      name: 'didntReceiveTheCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend the code`
+  String get resendTheCode {
+    return Intl.message(
+      'Resend the code',
+      name: 'resendTheCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset your password`
+  String get resetYourPassword {
+    return Intl.message(
+      'Reset your password',
+      name: 'resetYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Just type it twice and  try not to forgot it.`
+  String get resetYourPasswordDes {
+    return Intl.message(
+      'Just type it twice and  try not to forgot it.',
+      name: 'resetYourPasswordDes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password success`
+  String get resetPasswordSuccess {
+    return Intl.message(
+      'Reset password success',
+      name: 'resetPasswordSuccess',
       desc: '',
       args: [],
     );

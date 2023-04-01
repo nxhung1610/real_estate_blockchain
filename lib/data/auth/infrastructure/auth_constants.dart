@@ -11,6 +11,7 @@ class $AuthRemote {
   final String userInfo = '/users/user_info';
   final String refreshToken = '/users/refresh_token';
   final String checkPhoneExisted = '/users/check_phone_existed';
+  final String resetPassword = '/users/forgot_password';
 }
 
 class $AuthLocal {

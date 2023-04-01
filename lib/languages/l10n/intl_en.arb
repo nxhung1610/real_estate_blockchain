@@ -7,6 +7,8 @@
   "ok": "Ok",
   "unknown": "Unknown",
   "passwordNotValid": "Password not valid",
+  "passwordNotMatch"  :"Password not match",
+  "rePasswordNotValid" : "Re-enter password not valid",
   "phoneNumberInvalid": "Phone number invalid",
   "combinePhoneNumberOrPasswordInvalid": "Combine phone number or password invalid",
   "pleaseLoginYourAccountToContinue": "Please login your account to continue.",
@@ -29,6 +31,7 @@
   "email": "Email",
   "phoneNumber" : "Phone Number",
   "password": "Password",
+  "rePassword" : "Re-enter password",
   "passwordValidDesc" : "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number",
   "fullName" : "Full Name",
   "firstName" :"First Name",
@@ -170,5 +173,10 @@
   "forgotPasswordDescript" : "Don't worry! It happens. Please enter the phone number that associated with your account.",
   "phoneNumberNotExist" : "Phone number not exist!",
   "enterVerificationCode"  : "Enter the verification code.",
-  "enterVerificationDes" : "Let's make sure it's really you. We've just send a text message with a fresh verification code to the phone number ending in"
+  "enterVerificationDes" : "Let's make sure it's really you. We've just send a text message with a fresh verification code to the phone number ending in",
+  "didntReceiveTheCode" : "Didn't receive the verify code ?",
+  "resendTheCode" : "Resend the code",
+  "resetYourPassword" : "Reset your password",
+  "resetYourPasswordDes" : "Just type it twice and  try not to forgot it.",
+  "resetPasswordSuccess" : "Reset password success"
 }

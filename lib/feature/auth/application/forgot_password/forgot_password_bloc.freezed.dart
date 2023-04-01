@@ -20,36 +20,51 @@ mixin _$ForgotPasswordEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,18 +73,27 @@ mixin _$ForgotPasswordEvent {
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,17 +101,25 @@ mixin _$ForgotPasswordEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,17 +127,25 @@ mixin _$ForgotPasswordEvent {
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,12 +208,17 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return started();
   }
@@ -183,12 +228,17 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return started?.call();
   }
@@ -198,12 +248,17 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -218,18 +273,27 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return started(this);
   }
@@ -240,17 +304,25 @@ class _$_Started implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return started?.call(this);
   }
@@ -261,17 +333,25 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -358,12 +438,17 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onPhoneNumberChanged(phoneNumber);
   }
@@ -373,12 +458,17 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onPhoneNumberChanged?.call(phoneNumber);
   }
@@ -388,12 +478,17 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onPhoneNumberChanged != null) {
@@ -408,18 +503,27 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onPhoneNumberChanged(this);
   }
@@ -430,17 +534,25 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onPhoneNumberChanged?.call(this);
   }
@@ -451,17 +563,25 @@ class _$ForgotPasswordEventOnPhoneNumberChanged
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onPhoneNumberChanged != null) {
@@ -484,40 +604,39 @@ abstract class ForgotPasswordEventOnPhoneNumberChanged
 }
 
 /// @nodoc
-abstract class _$$ForgotPasswordEventOnVerifyPhoneNumberCopyWith<$Res> {
-  factory _$$ForgotPasswordEventOnVerifyPhoneNumberCopyWith(
-          _$ForgotPasswordEventOnVerifyPhoneNumber value,
-          $Res Function(_$ForgotPasswordEventOnVerifyPhoneNumber) then) =
-      __$$ForgotPasswordEventOnVerifyPhoneNumberCopyWithImpl<$Res>;
+abstract class _$$ForgotPasswordEventOnSendCodeCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnSendCodeCopyWith(
+          _$ForgotPasswordEventOnSendCode value,
+          $Res Function(_$ForgotPasswordEventOnSendCode) then) =
+      __$$ForgotPasswordEventOnSendCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ForgotPasswordEventOnVerifyPhoneNumberCopyWithImpl<$Res>
+class __$$ForgotPasswordEventOnSendCodeCopyWithImpl<$Res>
     extends _$ForgotPasswordEventCopyWithImpl<$Res,
-        _$ForgotPasswordEventOnVerifyPhoneNumber>
-    implements _$$ForgotPasswordEventOnVerifyPhoneNumberCopyWith<$Res> {
-  __$$ForgotPasswordEventOnVerifyPhoneNumberCopyWithImpl(
-      _$ForgotPasswordEventOnVerifyPhoneNumber _value,
-      $Res Function(_$ForgotPasswordEventOnVerifyPhoneNumber) _then)
+        _$ForgotPasswordEventOnSendCode>
+    implements _$$ForgotPasswordEventOnSendCodeCopyWith<$Res> {
+  __$$ForgotPasswordEventOnSendCodeCopyWithImpl(
+      _$ForgotPasswordEventOnSendCode _value,
+      $Res Function(_$ForgotPasswordEventOnSendCode) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ForgotPasswordEventOnVerifyPhoneNumber
-    implements ForgotPasswordEventOnVerifyPhoneNumber {
-  const _$ForgotPasswordEventOnVerifyPhoneNumber();
+class _$ForgotPasswordEventOnSendCode implements ForgotPasswordEventOnSendCode {
+  const _$ForgotPasswordEventOnSendCode();
 
   @override
   String toString() {
-    return 'ForgotPasswordEvent.onVerifyPhoneNumber()';
+    return 'ForgotPasswordEvent.onSendCode()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordEventOnVerifyPhoneNumber);
+            other is _$ForgotPasswordEventOnSendCode);
   }
 
   @override
@@ -528,14 +647,19 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
-    return onVerifyPhoneNumber();
+    return onSendCode();
   }
 
   @override
@@ -543,14 +667,19 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
-    return onVerifyPhoneNumber?.call();
+    return onSendCode?.call();
   }
 
   @override
@@ -558,16 +687,21 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
-    if (onVerifyPhoneNumber != null) {
-      return onVerifyPhoneNumber();
+    if (onSendCode != null) {
+      return onSendCode();
     }
     return orElse();
   }
@@ -578,20 +712,29 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
-    return onVerifyPhoneNumber(this);
+    return onSendCode(this);
   }
 
   @override
@@ -600,19 +743,27 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
-    return onVerifyPhoneNumber?.call(this);
+    return onSendCode?.call(this);
   }
 
   @override
@@ -621,30 +772,37 @@ class _$ForgotPasswordEventOnVerifyPhoneNumber
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
-    if (onVerifyPhoneNumber != null) {
-      return onVerifyPhoneNumber(this);
+    if (onSendCode != null) {
+      return onSendCode(this);
     }
     return orElse();
   }
 }
 
-abstract class ForgotPasswordEventOnVerifyPhoneNumber
-    implements ForgotPasswordEvent {
-  const factory ForgotPasswordEventOnVerifyPhoneNumber() =
-      _$ForgotPasswordEventOnVerifyPhoneNumber;
+abstract class ForgotPasswordEventOnSendCode implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnSendCode() =
+      _$ForgotPasswordEventOnSendCode;
 }
 
 /// @nodoc
@@ -692,12 +850,17 @@ class _$ForgotPasswordEventOnValidPhone
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onValidPhone();
   }
@@ -707,12 +870,17 @@ class _$ForgotPasswordEventOnValidPhone
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onValidPhone?.call();
   }
@@ -722,12 +890,17 @@ class _$ForgotPasswordEventOnValidPhone
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onValidPhone != null) {
@@ -742,18 +915,27 @@ class _$ForgotPasswordEventOnValidPhone
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onValidPhone(this);
   }
@@ -764,17 +946,25 @@ class _$ForgotPasswordEventOnValidPhone
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onValidPhone?.call(this);
   }
@@ -785,17 +975,25 @@ class _$ForgotPasswordEventOnValidPhone
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onValidPhone != null) {
@@ -883,12 +1081,17 @@ class _$ForgotPasswordEventOnAddVerificationId
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onAddVerificationId(verificationId);
   }
@@ -898,12 +1101,17 @@ class _$ForgotPasswordEventOnAddVerificationId
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onAddVerificationId?.call(verificationId);
   }
@@ -913,12 +1121,17 @@ class _$ForgotPasswordEventOnAddVerificationId
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onAddVerificationId != null) {
@@ -933,18 +1146,27 @@ class _$ForgotPasswordEventOnAddVerificationId
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onAddVerificationId(this);
   }
@@ -955,17 +1177,25 @@ class _$ForgotPasswordEventOnAddVerificationId
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onAddVerificationId?.call(this);
   }
@@ -976,17 +1206,25 @@ class _$ForgotPasswordEventOnAddVerificationId
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onAddVerificationId != null) {
@@ -1006,6 +1244,209 @@ abstract class ForgotPasswordEventOnAddVerificationId
   _$$ForgotPasswordEventOnAddVerificationIdCopyWith<
           _$ForgotPasswordEventOnAddVerificationId>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ForgotPasswordEventOnCodeVerifyCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnCodeVerifyCopyWith(
+          _$ForgotPasswordEventOnCodeVerify value,
+          $Res Function(_$ForgotPasswordEventOnCodeVerify) then) =
+      __$$ForgotPasswordEventOnCodeVerifyCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ForgotPasswordEventOnCodeVerifyCopyWithImpl<$Res>
+    extends _$ForgotPasswordEventCopyWithImpl<$Res,
+        _$ForgotPasswordEventOnCodeVerify>
+    implements _$$ForgotPasswordEventOnCodeVerifyCopyWith<$Res> {
+  __$$ForgotPasswordEventOnCodeVerifyCopyWithImpl(
+      _$ForgotPasswordEventOnCodeVerify _value,
+      $Res Function(_$ForgotPasswordEventOnCodeVerify) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ForgotPasswordEventOnCodeVerify
+    implements ForgotPasswordEventOnCodeVerify {
+  const _$ForgotPasswordEventOnCodeVerify();
+
+  @override
+  String toString() {
+    return 'ForgotPasswordEvent.onCodeVerify()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordEventOnCodeVerify);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String phoneNumber) onPhoneNumberChanged,
+    required TResult Function() onSendCode,
+    required TResult Function() onValidPhone,
+    required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
+    required TResult Function(String code) onCodeVerifyChanged,
+    required TResult Function() onCodeVerifyComplete,
+    required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
+  }) {
+    return onCodeVerify();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult? Function()? onSendCode,
+    TResult? Function()? onValidPhone,
+    TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
+    TResult? Function(String code)? onCodeVerifyChanged,
+    TResult? Function()? onCodeVerifyComplete,
+    TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
+  }) {
+    return onCodeVerify?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult Function()? onSendCode,
+    TResult Function()? onValidPhone,
+    TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
+    TResult Function(String code)? onCodeVerifyChanged,
+    TResult Function()? onCodeVerifyComplete,
+    TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onCodeVerify != null) {
+      return onCodeVerify();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
+        onPhoneNumberChanged,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
+    required TResult Function(ForgotPasswordEventOnValidPhone value)
+        onValidPhone,
+    required TResult Function(ForgotPasswordEventOnAddVerificationId value)
+        onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
+        onCodeVerifyChanged,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
+        onCodeVerifyComplete,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
+        onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
+  }) {
+    return onCodeVerify(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+  }) {
+    return onCodeVerify?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onCodeVerify != null) {
+      return onCodeVerify(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ForgotPasswordEventOnCodeVerify implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnCodeVerify() =
+      _$ForgotPasswordEventOnCodeVerify;
 }
 
 /// @nodoc
@@ -1080,12 +1521,17 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onCodeVerifyChanged(code);
   }
@@ -1095,12 +1541,17 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onCodeVerifyChanged?.call(code);
   }
@@ -1110,12 +1561,17 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyChanged != null) {
@@ -1130,18 +1586,27 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyChanged(this);
   }
@@ -1152,17 +1617,25 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyChanged?.call(this);
   }
@@ -1173,17 +1646,25 @@ class _$ForgotPasswordEventOnCodeVerifyChanged
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyChanged != null) {
@@ -1206,29 +1687,29 @@ abstract class ForgotPasswordEventOnCodeVerifyChanged
 }
 
 /// @nodoc
-abstract class _$$FForgotPasswordEventOnCodeVerifyCompleteCopyWith<$Res> {
-  factory _$$FForgotPasswordEventOnCodeVerifyCompleteCopyWith(
-          _$FForgotPasswordEventOnCodeVerifyComplete value,
-          $Res Function(_$FForgotPasswordEventOnCodeVerifyComplete) then) =
-      __$$FForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl<$Res>;
+abstract class _$$ForgotPasswordEventOnCodeVerifyCompleteCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnCodeVerifyCompleteCopyWith(
+          _$ForgotPasswordEventOnCodeVerifyComplete value,
+          $Res Function(_$ForgotPasswordEventOnCodeVerifyComplete) then) =
+      __$$ForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl<$Res>
+class __$$ForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl<$Res>
     extends _$ForgotPasswordEventCopyWithImpl<$Res,
-        _$FForgotPasswordEventOnCodeVerifyComplete>
-    implements _$$FForgotPasswordEventOnCodeVerifyCompleteCopyWith<$Res> {
-  __$$FForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl(
-      _$FForgotPasswordEventOnCodeVerifyComplete _value,
-      $Res Function(_$FForgotPasswordEventOnCodeVerifyComplete) _then)
+        _$ForgotPasswordEventOnCodeVerifyComplete>
+    implements _$$ForgotPasswordEventOnCodeVerifyCompleteCopyWith<$Res> {
+  __$$ForgotPasswordEventOnCodeVerifyCompleteCopyWithImpl(
+      _$ForgotPasswordEventOnCodeVerifyComplete _value,
+      $Res Function(_$ForgotPasswordEventOnCodeVerifyComplete) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FForgotPasswordEventOnCodeVerifyComplete
-    implements FForgotPasswordEventOnCodeVerifyComplete {
-  const _$FForgotPasswordEventOnCodeVerifyComplete();
+class _$ForgotPasswordEventOnCodeVerifyComplete
+    implements ForgotPasswordEventOnCodeVerifyComplete {
+  const _$ForgotPasswordEventOnCodeVerifyComplete();
 
   @override
   String toString() {
@@ -1239,7 +1720,7 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FForgotPasswordEventOnCodeVerifyComplete);
+            other is _$ForgotPasswordEventOnCodeVerifyComplete);
   }
 
   @override
@@ -1250,12 +1731,17 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onCodeVerifyComplete();
   }
@@ -1265,12 +1751,17 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onCodeVerifyComplete?.call();
   }
@@ -1280,12 +1771,17 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyComplete != null) {
@@ -1300,18 +1796,27 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyComplete(this);
   }
@@ -1322,17 +1827,25 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyComplete?.call(this);
   }
@@ -1343,17 +1856,25 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyComplete != null) {
@@ -1363,10 +1884,10 @@ class _$FForgotPasswordEventOnCodeVerifyComplete
   }
 }
 
-abstract class FForgotPasswordEventOnCodeVerifyComplete
+abstract class ForgotPasswordEventOnCodeVerifyComplete
     implements ForgotPasswordEvent {
-  const factory FForgotPasswordEventOnCodeVerifyComplete() =
-      _$FForgotPasswordEventOnCodeVerifyComplete;
+  const factory ForgotPasswordEventOnCodeVerifyComplete() =
+      _$ForgotPasswordEventOnCodeVerifyComplete;
 }
 
 /// @nodoc
@@ -1442,12 +1963,17 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String phoneNumber) onPhoneNumberChanged,
-    required TResult Function() onVerifyPhoneNumber,
+    required TResult Function() onSendCode,
     required TResult Function() onValidPhone,
     required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
     required TResult Function(String code) onCodeVerifyChanged,
     required TResult Function() onCodeVerifyComplete,
     required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
   }) {
     return onCodeVerifyFailed(value);
   }
@@ -1457,12 +1983,17 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult? Function()? onVerifyPhoneNumber,
+    TResult? Function()? onSendCode,
     TResult? Function()? onValidPhone,
     TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
     TResult? Function(String code)? onCodeVerifyChanged,
     TResult? Function()? onCodeVerifyComplete,
     TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
   }) {
     return onCodeVerifyFailed?.call(value);
   }
@@ -1472,12 +2003,17 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String phoneNumber)? onPhoneNumberChanged,
-    TResult Function()? onVerifyPhoneNumber,
+    TResult Function()? onSendCode,
     TResult Function()? onValidPhone,
     TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
     TResult Function(String code)? onCodeVerifyChanged,
     TResult Function()? onCodeVerifyComplete,
     TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyFailed != null) {
@@ -1492,18 +2028,27 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
     required TResult Function(_Started value) started,
     required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
         onPhoneNumberChanged,
-    required TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)
-        onVerifyPhoneNumber,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
     required TResult Function(ForgotPasswordEventOnValidPhone value)
         onValidPhone,
     required TResult Function(ForgotPasswordEventOnAddVerificationId value)
         onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
     required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
         onCodeVerifyChanged,
-    required TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
         onCodeVerifyComplete,
     required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
         onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyFailed(this);
   }
@@ -1514,17 +2059,25 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
     TResult? Function(_Started value)? started,
     TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult? Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult? Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
   }) {
     return onCodeVerifyFailed?.call(this);
   }
@@ -1535,17 +2088,25 @@ class _$ForgotPasswordEventOnCodeVerifyFailed
     TResult Function(_Started value)? started,
     TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
         onPhoneNumberChanged,
-    TResult Function(ForgotPasswordEventOnVerifyPhoneNumber value)?
-        onVerifyPhoneNumber,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
     TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
     TResult Function(ForgotPasswordEventOnAddVerificationId value)?
         onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
     TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
         onCodeVerifyChanged,
-    TResult Function(FForgotPasswordEventOnCodeVerifyComplete value)?
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
         onCodeVerifyComplete,
     TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
         onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
     required TResult orElse(),
   }) {
     if (onCodeVerifyFailed != null) {
@@ -1568,6 +2129,890 @@ abstract class ForgotPasswordEventOnCodeVerifyFailed
 }
 
 /// @nodoc
+abstract class _$$ForgotPasswordEventOnPasswordVisibleChangedCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnPasswordVisibleChangedCopyWith(
+          _$ForgotPasswordEventOnPasswordVisibleChanged value,
+          $Res Function(_$ForgotPasswordEventOnPasswordVisibleChanged) then) =
+      __$$ForgotPasswordEventOnPasswordVisibleChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ForgotPasswordEventOnPasswordVisibleChangedCopyWithImpl<$Res>
+    extends _$ForgotPasswordEventCopyWithImpl<$Res,
+        _$ForgotPasswordEventOnPasswordVisibleChanged>
+    implements _$$ForgotPasswordEventOnPasswordVisibleChangedCopyWith<$Res> {
+  __$$ForgotPasswordEventOnPasswordVisibleChangedCopyWithImpl(
+      _$ForgotPasswordEventOnPasswordVisibleChanged _value,
+      $Res Function(_$ForgotPasswordEventOnPasswordVisibleChanged) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ForgotPasswordEventOnPasswordVisibleChanged
+    implements ForgotPasswordEventOnPasswordVisibleChanged {
+  const _$ForgotPasswordEventOnPasswordVisibleChanged();
+
+  @override
+  String toString() {
+    return 'ForgotPasswordEvent.onPasswordVisibleChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordEventOnPasswordVisibleChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String phoneNumber) onPhoneNumberChanged,
+    required TResult Function() onSendCode,
+    required TResult Function() onValidPhone,
+    required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
+    required TResult Function(String code) onCodeVerifyChanged,
+    required TResult Function() onCodeVerifyComplete,
+    required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
+  }) {
+    return onPasswordVisibleChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult? Function()? onSendCode,
+    TResult? Function()? onValidPhone,
+    TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
+    TResult? Function(String code)? onCodeVerifyChanged,
+    TResult? Function()? onCodeVerifyComplete,
+    TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
+  }) {
+    return onPasswordVisibleChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult Function()? onSendCode,
+    TResult Function()? onValidPhone,
+    TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
+    TResult Function(String code)? onCodeVerifyChanged,
+    TResult Function()? onCodeVerifyComplete,
+    TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onPasswordVisibleChanged != null) {
+      return onPasswordVisibleChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
+        onPhoneNumberChanged,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
+    required TResult Function(ForgotPasswordEventOnValidPhone value)
+        onValidPhone,
+    required TResult Function(ForgotPasswordEventOnAddVerificationId value)
+        onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
+        onCodeVerifyChanged,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
+        onCodeVerifyComplete,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
+        onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
+  }) {
+    return onPasswordVisibleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+  }) {
+    return onPasswordVisibleChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onPasswordVisibleChanged != null) {
+      return onPasswordVisibleChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ForgotPasswordEventOnPasswordVisibleChanged
+    implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnPasswordVisibleChanged() =
+      _$ForgotPasswordEventOnPasswordVisibleChanged;
+}
+
+/// @nodoc
+abstract class _$$ForgotPasswordEventOnPasswordChangedCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnPasswordChangedCopyWith(
+          _$ForgotPasswordEventOnPasswordChanged value,
+          $Res Function(_$ForgotPasswordEventOnPasswordChanged) then) =
+      __$$ForgotPasswordEventOnPasswordChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String password});
+}
+
+/// @nodoc
+class __$$ForgotPasswordEventOnPasswordChangedCopyWithImpl<$Res>
+    extends _$ForgotPasswordEventCopyWithImpl<$Res,
+        _$ForgotPasswordEventOnPasswordChanged>
+    implements _$$ForgotPasswordEventOnPasswordChangedCopyWith<$Res> {
+  __$$ForgotPasswordEventOnPasswordChangedCopyWithImpl(
+      _$ForgotPasswordEventOnPasswordChanged _value,
+      $Res Function(_$ForgotPasswordEventOnPasswordChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? password = null,
+  }) {
+    return _then(_$ForgotPasswordEventOnPasswordChanged(
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ForgotPasswordEventOnPasswordChanged
+    implements ForgotPasswordEventOnPasswordChanged {
+  const _$ForgotPasswordEventOnPasswordChanged(this.password);
+
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'ForgotPasswordEvent.onPasswordChanged(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordEventOnPasswordChanged &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ForgotPasswordEventOnPasswordChangedCopyWith<
+          _$ForgotPasswordEventOnPasswordChanged>
+      get copyWith => __$$ForgotPasswordEventOnPasswordChangedCopyWithImpl<
+          _$ForgotPasswordEventOnPasswordChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String phoneNumber) onPhoneNumberChanged,
+    required TResult Function() onSendCode,
+    required TResult Function() onValidPhone,
+    required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
+    required TResult Function(String code) onCodeVerifyChanged,
+    required TResult Function() onCodeVerifyComplete,
+    required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
+  }) {
+    return onPasswordChanged(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult? Function()? onSendCode,
+    TResult? Function()? onValidPhone,
+    TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
+    TResult? Function(String code)? onCodeVerifyChanged,
+    TResult? Function()? onCodeVerifyComplete,
+    TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
+  }) {
+    return onPasswordChanged?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult Function()? onSendCode,
+    TResult Function()? onValidPhone,
+    TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
+    TResult Function(String code)? onCodeVerifyChanged,
+    TResult Function()? onCodeVerifyComplete,
+    TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onPasswordChanged != null) {
+      return onPasswordChanged(password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
+        onPhoneNumberChanged,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
+    required TResult Function(ForgotPasswordEventOnValidPhone value)
+        onValidPhone,
+    required TResult Function(ForgotPasswordEventOnAddVerificationId value)
+        onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
+        onCodeVerifyChanged,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
+        onCodeVerifyComplete,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
+        onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
+  }) {
+    return onPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+  }) {
+    return onPasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onPasswordChanged != null) {
+      return onPasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ForgotPasswordEventOnPasswordChanged
+    implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnPasswordChanged(final String password) =
+      _$ForgotPasswordEventOnPasswordChanged;
+
+  String get password;
+  @JsonKey(ignore: true)
+  _$$ForgotPasswordEventOnPasswordChangedCopyWith<
+          _$ForgotPasswordEventOnPasswordChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ForgotPasswordEventOnRePasswordChangedCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnRePasswordChangedCopyWith(
+          _$ForgotPasswordEventOnRePasswordChanged value,
+          $Res Function(_$ForgotPasswordEventOnRePasswordChanged) then) =
+      __$$ForgotPasswordEventOnRePasswordChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String rePassword});
+}
+
+/// @nodoc
+class __$$ForgotPasswordEventOnRePasswordChangedCopyWithImpl<$Res>
+    extends _$ForgotPasswordEventCopyWithImpl<$Res,
+        _$ForgotPasswordEventOnRePasswordChanged>
+    implements _$$ForgotPasswordEventOnRePasswordChangedCopyWith<$Res> {
+  __$$ForgotPasswordEventOnRePasswordChangedCopyWithImpl(
+      _$ForgotPasswordEventOnRePasswordChanged _value,
+      $Res Function(_$ForgotPasswordEventOnRePasswordChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rePassword = null,
+  }) {
+    return _then(_$ForgotPasswordEventOnRePasswordChanged(
+      null == rePassword
+          ? _value.rePassword
+          : rePassword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ForgotPasswordEventOnRePasswordChanged
+    implements ForgotPasswordEventOnRePasswordChanged {
+  const _$ForgotPasswordEventOnRePasswordChanged(this.rePassword);
+
+  @override
+  final String rePassword;
+
+  @override
+  String toString() {
+    return 'ForgotPasswordEvent.onRePasswordChanged(rePassword: $rePassword)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordEventOnRePasswordChanged &&
+            (identical(other.rePassword, rePassword) ||
+                other.rePassword == rePassword));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, rePassword);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ForgotPasswordEventOnRePasswordChangedCopyWith<
+          _$ForgotPasswordEventOnRePasswordChanged>
+      get copyWith => __$$ForgotPasswordEventOnRePasswordChangedCopyWithImpl<
+          _$ForgotPasswordEventOnRePasswordChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String phoneNumber) onPhoneNumberChanged,
+    required TResult Function() onSendCode,
+    required TResult Function() onValidPhone,
+    required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
+    required TResult Function(String code) onCodeVerifyChanged,
+    required TResult Function() onCodeVerifyComplete,
+    required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
+  }) {
+    return onRePasswordChanged(rePassword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult? Function()? onSendCode,
+    TResult? Function()? onValidPhone,
+    TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
+    TResult? Function(String code)? onCodeVerifyChanged,
+    TResult? Function()? onCodeVerifyComplete,
+    TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
+  }) {
+    return onRePasswordChanged?.call(rePassword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult Function()? onSendCode,
+    TResult Function()? onValidPhone,
+    TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
+    TResult Function(String code)? onCodeVerifyChanged,
+    TResult Function()? onCodeVerifyComplete,
+    TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onRePasswordChanged != null) {
+      return onRePasswordChanged(rePassword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
+        onPhoneNumberChanged,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
+    required TResult Function(ForgotPasswordEventOnValidPhone value)
+        onValidPhone,
+    required TResult Function(ForgotPasswordEventOnAddVerificationId value)
+        onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
+        onCodeVerifyChanged,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
+        onCodeVerifyComplete,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
+        onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
+  }) {
+    return onRePasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+  }) {
+    return onRePasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onRePasswordChanged != null) {
+      return onRePasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ForgotPasswordEventOnRePasswordChanged
+    implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnRePasswordChanged(
+      final String rePassword) = _$ForgotPasswordEventOnRePasswordChanged;
+
+  String get rePassword;
+  @JsonKey(ignore: true)
+  _$$ForgotPasswordEventOnRePasswordChangedCopyWith<
+          _$ForgotPasswordEventOnRePasswordChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ForgotPasswordEventOnResetPasswordSubmitCopyWith<$Res> {
+  factory _$$ForgotPasswordEventOnResetPasswordSubmitCopyWith(
+          _$ForgotPasswordEventOnResetPasswordSubmit value,
+          $Res Function(_$ForgotPasswordEventOnResetPasswordSubmit) then) =
+      __$$ForgotPasswordEventOnResetPasswordSubmitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ForgotPasswordEventOnResetPasswordSubmitCopyWithImpl<$Res>
+    extends _$ForgotPasswordEventCopyWithImpl<$Res,
+        _$ForgotPasswordEventOnResetPasswordSubmit>
+    implements _$$ForgotPasswordEventOnResetPasswordSubmitCopyWith<$Res> {
+  __$$ForgotPasswordEventOnResetPasswordSubmitCopyWithImpl(
+      _$ForgotPasswordEventOnResetPasswordSubmit _value,
+      $Res Function(_$ForgotPasswordEventOnResetPasswordSubmit) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ForgotPasswordEventOnResetPasswordSubmit
+    implements ForgotPasswordEventOnResetPasswordSubmit {
+  const _$ForgotPasswordEventOnResetPasswordSubmit();
+
+  @override
+  String toString() {
+    return 'ForgotPasswordEvent.onResetPasswordSubmit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordEventOnResetPasswordSubmit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String phoneNumber) onPhoneNumberChanged,
+    required TResult Function() onSendCode,
+    required TResult Function() onValidPhone,
+    required TResult Function(String verificationId) onAddVerificationId,
+    required TResult Function() onCodeVerify,
+    required TResult Function(String code) onCodeVerifyChanged,
+    required TResult Function() onCodeVerifyComplete,
+    required TResult Function(dynamic value) onCodeVerifyFailed,
+    required TResult Function() onPasswordVisibleChanged,
+    required TResult Function(String password) onPasswordChanged,
+    required TResult Function(String rePassword) onRePasswordChanged,
+    required TResult Function() onResetPasswordSubmit,
+  }) {
+    return onResetPasswordSubmit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult? Function()? onSendCode,
+    TResult? Function()? onValidPhone,
+    TResult? Function(String verificationId)? onAddVerificationId,
+    TResult? Function()? onCodeVerify,
+    TResult? Function(String code)? onCodeVerifyChanged,
+    TResult? Function()? onCodeVerifyComplete,
+    TResult? Function(dynamic value)? onCodeVerifyFailed,
+    TResult? Function()? onPasswordVisibleChanged,
+    TResult? Function(String password)? onPasswordChanged,
+    TResult? Function(String rePassword)? onRePasswordChanged,
+    TResult? Function()? onResetPasswordSubmit,
+  }) {
+    return onResetPasswordSubmit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String phoneNumber)? onPhoneNumberChanged,
+    TResult Function()? onSendCode,
+    TResult Function()? onValidPhone,
+    TResult Function(String verificationId)? onAddVerificationId,
+    TResult Function()? onCodeVerify,
+    TResult Function(String code)? onCodeVerifyChanged,
+    TResult Function()? onCodeVerifyComplete,
+    TResult Function(dynamic value)? onCodeVerifyFailed,
+    TResult Function()? onPasswordVisibleChanged,
+    TResult Function(String password)? onPasswordChanged,
+    TResult Function(String rePassword)? onRePasswordChanged,
+    TResult Function()? onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onResetPasswordSubmit != null) {
+      return onResetPasswordSubmit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)
+        onPhoneNumberChanged,
+    required TResult Function(ForgotPasswordEventOnSendCode value) onSendCode,
+    required TResult Function(ForgotPasswordEventOnValidPhone value)
+        onValidPhone,
+    required TResult Function(ForgotPasswordEventOnAddVerificationId value)
+        onAddVerificationId,
+    required TResult Function(ForgotPasswordEventOnCodeVerify value)
+        onCodeVerify,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)
+        onCodeVerifyChanged,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)
+        onCodeVerifyComplete,
+    required TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)
+        onCodeVerifyFailed,
+    required TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)
+        onPasswordVisibleChanged,
+    required TResult Function(ForgotPasswordEventOnPasswordChanged value)
+        onPasswordChanged,
+    required TResult Function(ForgotPasswordEventOnRePasswordChanged value)
+        onRePasswordChanged,
+    required TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)
+        onResetPasswordSubmit,
+  }) {
+    return onResetPasswordSubmit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult? Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult? Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult? Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult? Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult? Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult? Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult? Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult? Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult? Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+  }) {
+    return onResetPasswordSubmit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ForgotPasswordEventOnPhoneNumberChanged value)?
+        onPhoneNumberChanged,
+    TResult Function(ForgotPasswordEventOnSendCode value)? onSendCode,
+    TResult Function(ForgotPasswordEventOnValidPhone value)? onValidPhone,
+    TResult Function(ForgotPasswordEventOnAddVerificationId value)?
+        onAddVerificationId,
+    TResult Function(ForgotPasswordEventOnCodeVerify value)? onCodeVerify,
+    TResult Function(ForgotPasswordEventOnCodeVerifyChanged value)?
+        onCodeVerifyChanged,
+    TResult Function(ForgotPasswordEventOnCodeVerifyComplete value)?
+        onCodeVerifyComplete,
+    TResult Function(ForgotPasswordEventOnCodeVerifyFailed value)?
+        onCodeVerifyFailed,
+    TResult Function(ForgotPasswordEventOnPasswordVisibleChanged value)?
+        onPasswordVisibleChanged,
+    TResult Function(ForgotPasswordEventOnPasswordChanged value)?
+        onPasswordChanged,
+    TResult Function(ForgotPasswordEventOnRePasswordChanged value)?
+        onRePasswordChanged,
+    TResult Function(ForgotPasswordEventOnResetPasswordSubmit value)?
+        onResetPasswordSubmit,
+    required TResult orElse(),
+  }) {
+    if (onResetPasswordSubmit != null) {
+      return onResetPasswordSubmit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ForgotPasswordEventOnResetPasswordSubmit
+    implements ForgotPasswordEvent {
+  const factory ForgotPasswordEventOnResetPasswordSubmit() =
+      _$ForgotPasswordEventOnResetPasswordSubmit;
+}
+
+/// @nodoc
 mixin _$ForgotPasswordState {
   PhoneNumberAuth? get phoneNumber => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
@@ -1575,9 +3020,12 @@ mixin _$ForgotPasswordState {
   PasswordAuth? get rePassword => throw _privateConstructorUsedError;
   bool get isVerifyPhone => throw _privateConstructorUsedError;
   bool get isVerifyCode => throw _privateConstructorUsedError;
+  bool? get isResetPasswordSuccess => throw _privateConstructorUsedError;
   ForgotPasswordStateStep get step => throw _privateConstructorUsedError;
   String? get verificationId => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
+  bool get startCountDown => throw _privateConstructorUsedError;
+  bool get passwordVisible => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ForgotPasswordStateCopyWith<ForgotPasswordState> get copyWith =>
@@ -1597,9 +3045,12 @@ abstract class $ForgotPasswordStateCopyWith<$Res> {
       PasswordAuth? rePassword,
       bool isVerifyPhone,
       bool isVerifyCode,
+      bool? isResetPasswordSuccess,
       ForgotPasswordStateStep step,
       String? verificationId,
-      Status status});
+      Status status,
+      bool startCountDown,
+      bool passwordVisible});
 
   $ForgotPasswordStateStepCopyWith<$Res> get step;
   $StatusCopyWith<$Res> get status;
@@ -1624,9 +3075,12 @@ class _$ForgotPasswordStateCopyWithImpl<$Res, $Val extends ForgotPasswordState>
     Object? rePassword = freezed,
     Object? isVerifyPhone = null,
     Object? isVerifyCode = null,
+    Object? isResetPasswordSuccess = freezed,
     Object? step = null,
     Object? verificationId = freezed,
     Object? status = null,
+    Object? startCountDown = null,
+    Object? passwordVisible = null,
   }) {
     return _then(_value.copyWith(
       phoneNumber: freezed == phoneNumber
@@ -1653,6 +3107,10 @@ class _$ForgotPasswordStateCopyWithImpl<$Res, $Val extends ForgotPasswordState>
           ? _value.isVerifyCode
           : isVerifyCode // ignore: cast_nullable_to_non_nullable
               as bool,
+      isResetPasswordSuccess: freezed == isResetPasswordSuccess
+          ? _value.isResetPasswordSuccess
+          : isResetPasswordSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
       step: null == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
@@ -1665,6 +3123,14 @@ class _$ForgotPasswordStateCopyWithImpl<$Res, $Val extends ForgotPasswordState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      startCountDown: null == startCountDown
+          ? _value.startCountDown
+          : startCountDown // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordVisible: null == passwordVisible
+          ? _value.passwordVisible
+          : passwordVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1700,9 +3166,12 @@ abstract class _$$_ForgotPasswordStateCopyWith<$Res>
       PasswordAuth? rePassword,
       bool isVerifyPhone,
       bool isVerifyCode,
+      bool? isResetPasswordSuccess,
       ForgotPasswordStateStep step,
       String? verificationId,
-      Status status});
+      Status status,
+      bool startCountDown,
+      bool passwordVisible});
 
   @override
   $ForgotPasswordStateStepCopyWith<$Res> get step;
@@ -1727,9 +3196,12 @@ class __$$_ForgotPasswordStateCopyWithImpl<$Res>
     Object? rePassword = freezed,
     Object? isVerifyPhone = null,
     Object? isVerifyCode = null,
+    Object? isResetPasswordSuccess = freezed,
     Object? step = null,
     Object? verificationId = freezed,
     Object? status = null,
+    Object? startCountDown = null,
+    Object? passwordVisible = null,
   }) {
     return _then(_$_ForgotPasswordState(
       phoneNumber: freezed == phoneNumber
@@ -1756,6 +3228,10 @@ class __$$_ForgotPasswordStateCopyWithImpl<$Res>
           ? _value.isVerifyCode
           : isVerifyCode // ignore: cast_nullable_to_non_nullable
               as bool,
+      isResetPasswordSuccess: freezed == isResetPasswordSuccess
+          ? _value.isResetPasswordSuccess
+          : isResetPasswordSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
       step: null == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
@@ -1768,6 +3244,14 @@ class __$$_ForgotPasswordStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      startCountDown: null == startCountDown
+          ? _value.startCountDown
+          : startCountDown // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordVisible: null == passwordVisible
+          ? _value.passwordVisible
+          : passwordVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1782,9 +3266,12 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
       this.rePassword,
       this.isVerifyPhone = false,
       this.isVerifyCode = false,
+      this.isResetPasswordSuccess,
       this.step = const ForgotPasswordStateStep.verifyPhone(),
       this.verificationId,
-      this.status = const Status.idle()});
+      this.status = const Status.idle(),
+      this.startCountDown = false,
+      this.passwordVisible = false});
 
   @override
   final PhoneNumberAuth? phoneNumber;
@@ -1801,6 +3288,8 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
   @JsonKey()
   final bool isVerifyCode;
   @override
+  final bool? isResetPasswordSuccess;
+  @override
   @JsonKey()
   final ForgotPasswordStateStep step;
   @override
@@ -1808,10 +3297,16 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
   @override
   @JsonKey()
   final Status status;
+  @override
+  @JsonKey()
+  final bool startCountDown;
+  @override
+  @JsonKey()
+  final bool passwordVisible;
 
   @override
   String toString() {
-    return 'ForgotPasswordState(phoneNumber: $phoneNumber, code: $code, password: $password, rePassword: $rePassword, isVerifyPhone: $isVerifyPhone, isVerifyCode: $isVerifyCode, step: $step, verificationId: $verificationId, status: $status)';
+    return 'ForgotPasswordState(phoneNumber: $phoneNumber, code: $code, password: $password, rePassword: $rePassword, isVerifyPhone: $isVerifyPhone, isVerifyCode: $isVerifyCode, isResetPasswordSuccess: $isResetPasswordSuccess, step: $step, verificationId: $verificationId, status: $status, startCountDown: $startCountDown, passwordVisible: $passwordVisible)';
   }
 
   @override
@@ -1830,15 +3325,33 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
                 other.isVerifyPhone == isVerifyPhone) &&
             (identical(other.isVerifyCode, isVerifyCode) ||
                 other.isVerifyCode == isVerifyCode) &&
+            (identical(other.isResetPasswordSuccess, isResetPasswordSuccess) ||
+                other.isResetPasswordSuccess == isResetPasswordSuccess) &&
             (identical(other.step, step) || other.step == step) &&
             (identical(other.verificationId, verificationId) ||
                 other.verificationId == verificationId) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.startCountDown, startCountDown) ||
+                other.startCountDown == startCountDown) &&
+            (identical(other.passwordVisible, passwordVisible) ||
+                other.passwordVisible == passwordVisible));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, phoneNumber, code, password,
-      rePassword, isVerifyPhone, isVerifyCode, step, verificationId, status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      phoneNumber,
+      code,
+      password,
+      rePassword,
+      isVerifyPhone,
+      isVerifyCode,
+      isResetPasswordSuccess,
+      step,
+      verificationId,
+      status,
+      startCountDown,
+      passwordVisible);
 
   @JsonKey(ignore: true)
   @override
@@ -1856,9 +3369,12 @@ abstract class _ForgotPasswordState implements ForgotPasswordState {
       final PasswordAuth? rePassword,
       final bool isVerifyPhone,
       final bool isVerifyCode,
+      final bool? isResetPasswordSuccess,
       final ForgotPasswordStateStep step,
       final String? verificationId,
-      final Status status}) = _$_ForgotPasswordState;
+      final Status status,
+      final bool startCountDown,
+      final bool passwordVisible}) = _$_ForgotPasswordState;
 
   @override
   PhoneNumberAuth? get phoneNumber;
@@ -1873,11 +3389,17 @@ abstract class _ForgotPasswordState implements ForgotPasswordState {
   @override
   bool get isVerifyCode;
   @override
+  bool? get isResetPasswordSuccess;
+  @override
   ForgotPasswordStateStep get step;
   @override
   String? get verificationId;
   @override
   Status get status;
+  @override
+  bool get startCountDown;
+  @override
+  bool get passwordVisible;
   @override
   @JsonKey(ignore: true)
   _$$_ForgotPasswordStateCopyWith<_$_ForgotPasswordState> get copyWith =>

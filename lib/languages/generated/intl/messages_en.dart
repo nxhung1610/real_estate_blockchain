@@ -78,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
+        "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
+            "Didn\'t receive the verify code ?"),
         "direction": MessageLookupByLibrary.simpleMessage("Direction"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "district": MessageLookupByLibrary.simpleMessage("District"),
@@ -167,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Home search"),
         "other": MessageLookupByLibrary.simpleMessage("other"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordNotMatch":
+            MessageLookupByLibrary.simpleMessage("Password not match"),
         "passwordNotValid":
             MessageLookupByLibrary.simpleMessage("Password not valid"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
@@ -196,6 +200,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertyFacts": MessageLookupByLibrary.simpleMessage("Property Facts"),
         "propertyType": MessageLookupByLibrary.simpleMessage("Property Type"),
         "province": MessageLookupByLibrary.simpleMessage("Province, City"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("Re-enter password"),
+        "rePasswordNotValid":
+            MessageLookupByLibrary.simpleMessage("Re-enter password not valid"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Private house"),
         "realEstateName":
@@ -213,7 +220,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
+        "resendTheCode":
+            MessageLookupByLibrary.simpleMessage("Resend the code"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "resetPasswordSuccess":
+            MessageLookupByLibrary.simpleMessage("Reset password success"),
+        "resetYourPassword":
+            MessageLookupByLibrary.simpleMessage("Reset your password"),
+        "resetYourPasswordDes": MessageLookupByLibrary.simpleMessage(
+            "Just type it twice and  try not to forgot it."),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Save Change"),

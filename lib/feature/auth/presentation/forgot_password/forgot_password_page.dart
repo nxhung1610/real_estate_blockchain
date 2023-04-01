@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/application/forgot_password/forgot_password_bloc.dart';
@@ -44,7 +46,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               loading: () {
                 context.appDialog.showLoading();
               },
-              success: (value) {},
+              success: (value) {
+                if (state.isResetPasswordSuccess == true) {
+                  context.pop();
+                  context.appSnackBar.show(s.resetPasswordSuccess);
+                }
+              },
               failure: (value) {},
             );
           },

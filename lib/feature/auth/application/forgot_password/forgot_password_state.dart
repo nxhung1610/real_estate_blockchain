@@ -9,10 +9,13 @@ class ForgotPasswordState with _$ForgotPasswordState {
     PasswordAuth? rePassword,
     @Default(false) bool isVerifyPhone,
     @Default(false) bool isVerifyCode,
+    bool? isResetPasswordSuccess,
     @Default(ForgotPasswordStateStep.verifyPhone())
         ForgotPasswordStateStep step,
     String? verificationId,
     @Default(Status.idle()) Status status,
+    @Default(false) bool startCountDown,
+    @Default(false) bool passwordVisible,
   }) = _ForgotPasswordState;
 }
 

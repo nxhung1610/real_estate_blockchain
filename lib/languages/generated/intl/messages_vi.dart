@@ -77,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
+        "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
+            "Chưa nhận được mã xác thực ?"),
         "direction": MessageLookupByLibrary.simpleMessage("Hướng"),
         "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
@@ -166,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tìm nhà"),
         "other": MessageLookupByLibrary.simpleMessage("Khác"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "passwordNotMatch":
+            MessageLookupByLibrary.simpleMessage("Mật khẩu không giống nhau"),
         "passwordNotValid":
             MessageLookupByLibrary.simpleMessage("Mật khẩu không hợp lệ"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
@@ -197,6 +201,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thông tin tài sản"),
         "propertyType": MessageLookupByLibrary.simpleMessage("Loại tài sản"),
         "province": MessageLookupByLibrary.simpleMessage("Tỉnh, Thành phố"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("Nhập lại mật khẩu"),
+        "rePasswordNotValid": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu nhập lại không hợp lệ"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Nhà riêng"),
         "realEstateName":
@@ -213,7 +220,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
         "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
+        "resendTheCode": MessageLookupByLibrary.simpleMessage("Gửi lại mã"),
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
+        "resetPasswordSuccess":
+            MessageLookupByLibrary.simpleMessage("Đặt lại mật khẩu thành công"),
+        "resetYourPassword":
+            MessageLookupByLibrary.simpleMessage("Đặt lại mật khẩu"),
+        "resetYourPasswordDes": MessageLookupByLibrary.simpleMessage(
+            "Chỉ cần gõ nó hai lần và cố gắng không quên nó."),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
         "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Lưu"),

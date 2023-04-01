@@ -72,6 +72,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
     }
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.lable != null) ...[
           Text(

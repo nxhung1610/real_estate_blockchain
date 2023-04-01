@@ -6,6 +6,8 @@
   "showLoading": "Hiển thị vòng đợi",
   "unknown": "Có lỗi xảy ra!",
   "passwordNotValid": "Mật khẩu không hợp lệ",
+  "rePasswordNotValid" : "Mật khẩu nhập lại không hợp lệ",
+  "passwordNotMatch"  :"Mật khẩu không giống nhau",
   "phoneNumberInvalid": "Số điện thoại không hợp lệ",
   "combinePhoneNumberOrPasswordInvalid": "Số điện thoại hoặc mật khẩu không hợp lệ",
   "pleaseLoginYourAccountToContinue": "Vui lòng đăng nhập để tiếp tục.",
@@ -29,6 +31,7 @@
   "email": "Email",
   "phoneNumber": "Số điện thoại",
   "password": "Mật khẩu",
+  "rePassword" : "Nhập lại mật khẩu",
   "passwordValidDesc": "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số",
   "firstName": "Họ",
   "lastName": "Tên",
@@ -171,5 +174,10 @@
   "forgotPasswordDescript" : "Đừng lo lắng! Nếu nó xảy ra. Vui lòng nhập số điện thoại được liên kết với tài khoản của bạn.",
   "phoneNumberNotExist" : "Số điện thoại không tồn tại!",
   "enterVerificationCode"  : "Nhập mã xác thực.",
-  "enterVerificationDes" : "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng"
+  "enterVerificationDes" : "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng",
+  "didntReceiveTheCode" : "Chưa nhận được mã xác thực ?",
+  "resendTheCode" : "Gửi lại mã",
+  "resetYourPassword" : "Đặt lại mật khẩu",
+  "resetYourPasswordDes" : "Chỉ cần gõ nó hai lần và cố gắng không quên nó.",
+  "resetPasswordSuccess" : "Đặt lại mật khẩu thành công"
 }

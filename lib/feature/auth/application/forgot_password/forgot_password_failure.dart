@@ -10,4 +10,10 @@ class ForgotPasswordFailure with _$ForgotPasswordFailure {
       ForgotPasswordFailureCodeAutoRetrievalTimeout;
   const factory ForgotPasswordFailure.phoneNumberNotExist() =
       ForgotPasswordFailurePhoneNumberNotExist;
+  const factory ForgotPasswordFailure.passwordNotMatch() =
+      ForgotPasswordFailurePasswordNotMatch;
+  const factory ForgotPasswordFailure.passwordNotValid() =
+      ForgotPasswordFailurePasswordNotValid;
+  const factory ForgotPasswordFailure.rePasswordNotValid() =
+      ForgotPasswordFailureRePasswordNotValid;
 }
