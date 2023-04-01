@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Căn hộ"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
-        "appName": MessageLookupByLibrary.simpleMessage("Realus"),
+        "appName": MessageLookupByLibrary.simpleMessage("Realust"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt ứng dụng"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),

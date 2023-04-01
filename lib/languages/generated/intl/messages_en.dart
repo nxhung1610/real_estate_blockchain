@@ -49,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
-        "appName": MessageLookupByLibrary.simpleMessage("Realus"),
+        "appName": MessageLookupByLibrary.simpleMessage("Realust"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Application Settings"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
