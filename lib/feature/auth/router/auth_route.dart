@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/feature/auth/application/forgot_password/forgot_password_bloc.dart';
-import 'package:real_estate_blockchain/feature/auth/presentation/forgot_password_page.dart';
+import 'package:real_estate_blockchain/feature/auth/presentation/forgot_password/forgot_password_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';

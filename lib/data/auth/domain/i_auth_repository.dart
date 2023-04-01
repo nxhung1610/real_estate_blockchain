@@ -10,4 +10,5 @@ abstract class IAuthRepository {
       NameAuth lastName, PhoneNumberAuth phoneNumber, PasswordAuth password);
   Future<Either<AuthFailures, Unit>> refreshToken();
   Future<Either<AuthFailures, User>> userInfo();
+  Future<Either<AuthFailures, bool>> verifyPhoneExist(PhoneNumberAuth phone);
 }

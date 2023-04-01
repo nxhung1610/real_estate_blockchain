@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -1666,6 +1665,56 @@ class S {
     return Intl.message(
       'Delete account success.',
       name: 'deleteAccountSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot\r\nPassword ?`
+  String get forgotPasswordQues {
+    return Intl.message(
+      'Forgot\r\nPassword ?',
+      name: 'forgotPasswordQues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't worry! It happens. Please enter the phone number that associated with your account.`
+  String get forgotPasswordDescript {
+    return Intl.message(
+      'Don\'t worry! It happens. Please enter the phone number that associated with your account.',
+      name: 'forgotPasswordDescript',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number not exist!`
+  String get phoneNumberNotExist {
+    return Intl.message(
+      'Phone number not exist!',
+      name: 'phoneNumberNotExist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the verification code.`
+  String get enterVerificationCode {
+    return Intl.message(
+      'Enter the verification code.',
+      name: 'enterVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's make sure it's really you. We've just send a text message with a fresh verification code to the phone number ending in`
+  String get enterVerificationDes {
+    return Intl.message(
+      'Let\'s make sure it\'s really you. We\'ve just send a text message with a fresh verification code to the phone number ending in',
+      name: 'enterVerificationDes',
       desc: '',
       args: [],
     );

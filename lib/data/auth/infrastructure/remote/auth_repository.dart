@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/verify_phone/verify_phone_query.dart';
 import 'package:real_estate_blockchain/data/core/infrastructure/remote/api_remote.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
@@ -189,6 +190,29 @@ class AuthRepository implements IAuthRepository {
           rethrow;
       }
     } catch (e) {
+      return left(const AuthFailures.unknow());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailures, bool>> verifyPhoneExist(
+      PhoneNumberAuth phone) async {
+    try {
+      final res = await _apiRemote.get(
+        AuthConstants.remote.checkPhoneExisted,
+        query: VerifyPhoneQuery(
+          phone: phone.getOrCrash(),
+        ).toJson(),
+        parse: (data) {
+          return data as bool;
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(res.data!);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
       return left(const AuthFailures.unknow());
     }
   }

@@ -86,11 +86,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin cá nhân"),
         "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "enterVerificationCode":
+            MessageLookupByLibrary.simpleMessage("Nhập mã xác thực."),
+        "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
+            "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),
         "filter": MessageLookupByLibrary.simpleMessage("Lọc"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
         "floors": MessageLookupByLibrary.simpleMessage("Tầng"),
+        "forgotPasswordDescript": MessageLookupByLibrary.simpleMessage(
+            "Đừng lo lắng! Nếu nó xảy ra. Vui lòng nhập số điện thoại được liên kết với tài khoản của bạn."),
+        "forgotPasswordQues":
+            MessageLookupByLibrary.simpleMessage("Quên\r\nMật khẩu ?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "fullNameNotValid":
             MessageLookupByLibrary.simpleMessage("Tên đầy đủ không hợp lệ"),
@@ -172,6 +180,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số điện thoại đã được sử dụng"),
         "phoneNumberInvalid":
             MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
+        "phoneNumberNotExist": MessageLookupByLibrary.simpleMessage(
+            "Số điện thoại không tồn tại!"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),

@@ -86,11 +86,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "enterVerificationCode": MessageLookupByLibrary.simpleMessage(
+            "Enter the verification code."),
+        "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
+            "Let\'s make sure it\'s really you. We\'ve just send a text message with a fresh verification code to the phone number ending in"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "features": MessageLookupByLibrary.simpleMessage("Features"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "floors": MessageLookupByLibrary.simpleMessage("Floors"),
+        "forgotPasswordDescript": MessageLookupByLibrary.simpleMessage(
+            "Don\'t worry! It happens. Please enter the phone number that associated with your account."),
+        "forgotPasswordQues":
+            MessageLookupByLibrary.simpleMessage("Forgot\r\nPassword ?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "fullNameNotValid":
             MessageLookupByLibrary.simpleMessage("Full name not valid"),
@@ -173,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number already used"),
         "phoneNumberInvalid":
             MessageLookupByLibrary.simpleMessage("Phone number invalid"),
+        "phoneNumberNotExist":
+            MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),

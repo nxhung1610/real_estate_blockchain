@@ -166,5 +166,10 @@
   "phone" : "Số điện thoại",
   "deleteAccount" : "Xoá tài khoản",
   "deleteAccountMessageDialog" : "Bạn có muốn xoá tài khoản ?",
-  "deleteAccountSuccess" : "Xoá tài khoản thành công"
+  "deleteAccountSuccess" : "Xoá tài khoản thành công",
+  "forgotPasswordQues" : "Quên\r\nMật khẩu ?",
+  "forgotPasswordDescript" : "Đừng lo lắng! Nếu nó xảy ra. Vui lòng nhập số điện thoại được liên kết với tài khoản của bạn.",
+  "phoneNumberNotExist" : "Số điện thoại không tồn tại!",
+  "enterVerificationCode"  : "Nhập mã xác thực.",
+  "enterVerificationDes" : "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng"
 }

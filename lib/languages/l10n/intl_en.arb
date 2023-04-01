@@ -165,5 +165,10 @@
   "phone" : "Phone",
   "deleteAccount" : "Delete Account",
   "deleteAccountMessageDialog" : "Do you want to delete account ?",
-  "deleteAccountSuccess" : "Delete account success."
+  "deleteAccountSuccess" : "Delete account success.",
+  "forgotPasswordQues" : "Forgot\r\nPassword ?",
+  "forgotPasswordDescript" : "Don't worry! It happens. Please enter the phone number that associated with your account.",
+  "phoneNumberNotExist" : "Phone number not exist!",
+  "enterVerificationCode"  : "Enter the verification code.",
+  "enterVerificationDes" : "Let's make sure it's really you. We've just send a text message with a fresh verification code to the phone number ending in"
 }

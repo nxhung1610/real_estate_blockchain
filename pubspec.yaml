@@ -53,6 +53,7 @@ dependencies:
   path_provider: ^2.0.14
   uuid: ^3.0.7
   firebase_core: ^2.8.0
+  firebase_auth: ^4.4.0
   flutter_local_notifications: ^13.0.0
   firebase_messaging: ^14.3.0
 
@@ -73,7 +74,7 @@ dependencies:
   flutter_list_view: ^1.1.21
   carousel_slider: ^4.2.1
   webview_flutter: ^3.0.4
-  
+  pin_code_fields: ^7.4.0
 
 
   # Language
