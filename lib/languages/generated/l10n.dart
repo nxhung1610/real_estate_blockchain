@@ -1859,6 +1859,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Get all estate information`
+  String get getAllEstateInformation {
+    return Intl.message(
+      'Get all estate information',
+      name: 'getAllEstateInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy sell and rent a house, you can easily get it!`
+  String get getAllEstateInformationDes {
+    return Intl.message(
+      'Buy sell and rent a house, you can easily get it!',
+      name: 'getAllEstateInformationDes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start with us`
+  String get startWithUs {
+    return Intl.message(
+      'Start with us',
+      name: 'startWithUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are here to help you in Choosing right`
+  String get startWithUsDes {
+    return Intl.message(
+      'We are here to help you in Choosing right',
+      name: 'startWithUsDes',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

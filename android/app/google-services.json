@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "302933003992-jtlb3s05oef22t3eelfhb92r3d27mi9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blockchain.real_estate",
+            "certificate_hash": "11480b2f295224f25af9c828d2d5093487fbec88"
+          }
+        },
+        {
+          "client_id": "302933003992-s7le2nia172p5ctu5niisb6o8ah172nk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blockchain.real_estate",
+            "certificate_hash": "0c4c42c58a186e1e80c2320b45cebfbe0dc59309"
+          }
+        },
+        {
           "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +45,49 @@
             {
               "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.realust.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302933003992:android:35198cfa44331aa3fa11ad",
+        "android_client_info": {
+          "package_name": "com.realust.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDklIauRhoqrFZqJIz1G-by2WdiwkQ6PdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302933003992-pejeboc0g1sj2qoa1vklb521cu17ta9s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.realust.app"
+              }
             }
           ]
         }

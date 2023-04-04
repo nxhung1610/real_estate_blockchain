@@ -110,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Full name not valid"),
         "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
         "garage": MessageLookupByLibrary.simpleMessage("Garage"),
+        "getAllEstateInformation":
+            MessageLookupByLibrary.simpleMessage("Get all estate information"),
+        "getAllEstateInformationDes": MessageLookupByLibrary.simpleMessage(
+            "Buy sell and rent a house, you can easily get it!"),
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "goToSetting": MessageLookupByLibrary.simpleMessage("Go To Setting"),
         "ground": MessageLookupByLibrary.simpleMessage("Ground"),
@@ -254,6 +258,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "southWest": MessageLookupByLibrary.simpleMessage("South West"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Square"),
+        "startWithUs": MessageLookupByLibrary.simpleMessage("Start with us"),
+        "startWithUsDes": MessageLookupByLibrary.simpleMessage(
+            "We are here to help you in Choosing right"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
         "structure": MessageLookupByLibrary.simpleMessage("Structure"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),

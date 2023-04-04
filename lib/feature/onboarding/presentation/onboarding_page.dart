@@ -38,22 +38,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
       viewportFraction: 1,
     );
     // Data
-    _setupData();
+    _setupData(context);
   }
 
-  void _setupData() {
+  void _setupData(BuildContext context) {
+    final s = S.of(context);
     final datas = [
       OnboardingData(
         background: Assets.images.onboarding1.image(),
-        title: 'Enjoy the beautiful world',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        title: s.startWithUs,
+        description: s.startWithUsDes,
       ),
       OnboardingData(
         background: Assets.images.onboarding2.image(),
-        title: 'Enjoy the beautiful world',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        title: s.getAllEstateInformation,
+        description: s.getAllEstateInformationDes,
       ),
     ];
     onboardingBloc.initial(datas);
@@ -181,23 +180,28 @@ class _OnboardingPageState extends State<OnboardingPage> {
             itemCount: onboardingBloc.state.datas.length,
             itemBuilder: (context, index) {
               final data = onboardingBloc.state.datas[index];
-              return Column(
-                children: [
-                  Text(
-                    data.title,
-                    style: context.textTheme.headlineSmall?.copyWith(
-                      color: AppColor.kNeutrals_.shade50,
+              return Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: AppSize.largeWidthDimens),
+                child: Column(
+                  children: [
+                    Text(
+                      data.title,
+                      style: context.textTheme.headlineSmall?.copyWith(
+                        color: AppColor.kNeutrals_.shade50,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  AppSize.largeHeightDimens.verticalSpace,
-                  Text(
-                    data.description,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColor.kNeutrals_.shade50,
+                    AppSize.largeHeightDimens.verticalSpace,
+                    Text(
+                      data.description,
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: AppColor.kNeutrals_.shade50,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                  ],
+                ),
               );
             },
           ),

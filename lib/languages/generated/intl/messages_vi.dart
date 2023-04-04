@@ -109,6 +109,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tên đầy đủ không hợp lệ"),
         "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
         "garage": MessageLookupByLibrary.simpleMessage("Nhà để xe"),
+        "getAllEstateInformation": MessageLookupByLibrary.simpleMessage(
+            "Cung cấp tất cả thông tin bất động sản"),
+        "getAllEstateInformationDes": MessageLookupByLibrary.simpleMessage(
+            "Mua bán và cho thuê nhà, bạn có thể dễ dàng có được nó!"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "goToSetting": MessageLookupByLibrary.simpleMessage("Đi đến cài đặt"),
         "ground": MessageLookupByLibrary.simpleMessage("Đất"),
@@ -253,6 +257,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "southWest": MessageLookupByLibrary.simpleMessage("Tây Nam"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
+        "startWithUs":
+            MessageLookupByLibrary.simpleMessage("Bắt đầu với chúng tôi"),
+        "startWithUsDes": MessageLookupByLibrary.simpleMessage(
+            "Chúng tôi ở đây để giúp bạn lựa chọn đúng"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
         "structure": MessageLookupByLibrary.simpleMessage("Cấu trúc"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),

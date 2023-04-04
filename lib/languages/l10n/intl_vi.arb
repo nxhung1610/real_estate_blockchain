@@ -185,5 +185,9 @@
   "oldPasswordNotValid" : "Mật khẩu cũ không hợp lệ",
   "newPasswordNotValid" :"Mật khẩu mới không hợp lệ",
   "newPasswordNotMatch" :"Mật khẩu mới không trùng nhau",
-  "changePasswordSuccess" : "Đổi mật khẩu thành công"
+  "changePasswordSuccess" : "Đổi mật khẩu thành công",
+  "getAllEstateInformation" : "Cung cấp tất cả thông tin bất động sản",
+  "getAllEstateInformationDes" :"Mua bán và cho thuê nhà, bạn có thể dễ dàng có được nó!",
+  "startWithUs" : "Bắt đầu với chúng tôi",
+  "startWithUsDes" :"Chúng tôi ở đây để giúp bạn lựa chọn đúng"
 }

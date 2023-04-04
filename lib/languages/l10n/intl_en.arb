@@ -184,5 +184,9 @@
   "oldPasswordNotValid" : "Old password not valid",
   "newPasswordNotValid" :"New password not valid",
   "newPasswordNotMatch" :"New password not match",
-  "changePasswordSuccess" : "Change password success"
+  "changePasswordSuccess" : "Change password success",
+  "getAllEstateInformation" : "Get all estate information",
+  "getAllEstateInformationDes" :"Buy sell and rent a house, you can easily get it!",
+  "startWithUs" : "Start with us",
+  "startWithUsDes" :"We are here to help you in Choosing right"
 }

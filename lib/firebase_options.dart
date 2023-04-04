@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDklIauRhoqrFZqJIz1G-by2WdiwkQ6PdQ',
-    appId: '1:302933003992:android:64cd670a2d683ba9fa11ad',
+    appId: '1:302933003992:android:35198cfa44331aa3fa11ad',
     messagingSenderId: '302933003992',
     projectId: 'real-estate-blockchain-a9b4a',
     storageBucket: 'real-estate-blockchain-a9b4a.appspot.com',
@@ -63,8 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '302933003992',
     projectId: 'real-estate-blockchain-a9b4a',
     storageBucket: 'real-estate-blockchain-a9b4a.appspot.com',
-    iosClientId:
-        '302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com',
+    androidClientId: '302933003992-jtlb3s05oef22t3eelfhb92r3d27mi9g.apps.googleusercontent.com',
+    iosClientId: '302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com',
     iosBundleId: 'com.realust.app',
   );
 }
