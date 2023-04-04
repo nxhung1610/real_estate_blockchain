@@ -13,4 +13,8 @@ abstract class IAuthRepository {
   Future<Either<AuthFailures, bool>> verifyPhoneExist(PhoneNumberAuth phone);
   Future<Either<AuthFailures, Unit>> resetPassword(
       PhoneNumberAuth phoneNumber, PasswordAuth password);
+  Future<Either<AuthFailures, Unit>> changePassword(
+    String oldPassword,
+    PasswordAuth newPassword,
+  );
 }

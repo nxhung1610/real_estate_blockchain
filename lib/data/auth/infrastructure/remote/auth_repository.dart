@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/forgot/reset_password_request.dart';
+import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/password/change_password_request.dart';
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/verify_phone/verify_phone_query.dart';
 import 'package:real_estate_blockchain/data/core/infrastructure/remote/api_remote.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
@@ -229,6 +230,29 @@ class AuthRepository implements IAuthRepository {
         data: ResetPasswordRequest(
           phone: phoneNumber.getOrCrash(),
           password: password.getOrCrash(),
+        ).toJson(),
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(unit);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(const AuthFailures.unknow());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailures, Unit>> changePassword(
+    String oldPassword,
+    PasswordAuth newPassword,
+  ) async {
+    try {
+      final res = await _apiRemote.post(
+        AuthConstants.remote.resetPassword,
+        data: ChangePasswordRequest(
+          password: newPassword.getOrCrash(),
+          oldPassword: oldPassword,
         ).toJson(),
       );
       if (!res.success) {

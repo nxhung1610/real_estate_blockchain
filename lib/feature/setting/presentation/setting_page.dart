@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -70,6 +71,13 @@ class _SettingPageState extends State<SettingPage> {
               _WidgetGroupItem(
                 title: s.support,
                 children: [
+                  _WidgetItem(
+                    type: const _WidgetItemType.string(''),
+                    title: s.changePassword,
+                    onTap: () {
+                      context.push($appRoute.user.changePassword.url);
+                    },
+                  ),
                   _WidgetItem(
                     type: const _WidgetItemType.string(''),
                     title: s.deleteAccount,

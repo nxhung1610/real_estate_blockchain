@@ -62,6 +62,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change password"),
+        "changePasswordSuccess":
+            MessageLookupByLibrary.simpleMessage("Change password success"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Combine phone number or password invalid"),
@@ -143,6 +147,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
         "nameNotValid": MessageLookupByLibrary.simpleMessage("Name not valid"),
+        "newPasswordNotMatch":
+            MessageLookupByLibrary.simpleMessage("New password not match"),
+        "newPasswordNotValid":
+            MessageLookupByLibrary.simpleMessage("New password not valid"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noBathRoom":
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
@@ -152,6 +160,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "northEast": MessageLookupByLibrary.simpleMessage("North East"),
         "northWest": MessageLookupByLibrary.simpleMessage("North West"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "oldPassword": MessageLookupByLibrary.simpleMessage("Old password"),
+        "oldPasswordNotValid":
+            MessageLookupByLibrary.simpleMessage("Old password not valid"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Onboarding"),
         "onboardingGetStatred":
             MessageLookupByLibrary.simpleMessage("Get Started"),

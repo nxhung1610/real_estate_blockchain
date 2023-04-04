@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Thay đổi ngôn ngữ"),
+        "changePassword": MessageLookupByLibrary.simpleMessage("Đổi mật khẩu"),
+        "changePasswordSuccess":
+            MessageLookupByLibrary.simpleMessage("Đổi mật khẩu thành công"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Số điện thoại hoặc mật khẩu không hợp lệ"),
@@ -144,6 +147,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),
         "nameNotValid":
             MessageLookupByLibrary.simpleMessage("Tên không hợp lệ"),
+        "newPasswordNotMatch": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu mới không trùng nhau"),
+        "newPasswordNotValid":
+            MessageLookupByLibrary.simpleMessage("Mật khẩu mới không hợp lệ"),
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
@@ -152,6 +159,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),
         "northWest": MessageLookupByLibrary.simpleMessage("Tây Bắc"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
+        "oldPassword": MessageLookupByLibrary.simpleMessage("Mật khẩu cũ"),
+        "oldPasswordNotValid":
+            MessageLookupByLibrary.simpleMessage("Mật khẩu cũ không hợp lệ"),
         "onboarding": MessageLookupByLibrary.simpleMessage("Giới thiệu"),
         "onboardingGetStatred": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "optionMyFavorites":

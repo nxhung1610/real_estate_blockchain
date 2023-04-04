@@ -178,5 +178,11 @@
   "resendTheCode" : "Resend the code",
   "resetYourPassword" : "Reset your password",
   "resetYourPasswordDes" : "Just type it twice and  try not to forgot it.",
-  "resetPasswordSuccess" : "Reset password success"
+  "resetPasswordSuccess" : "Reset password success",
+  "changePassword" : "Change password",
+  "oldPassword" : "Old password",
+  "oldPasswordNotValid" : "Old password not valid",
+  "newPasswordNotValid" :"New password not valid",
+  "newPasswordNotMatch" :"New password not match",
+  "changePasswordSuccess" : "Change password success"
 }

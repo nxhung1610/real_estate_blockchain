@@ -179,5 +179,11 @@
   "resendTheCode" : "Gửi lại mã",
   "resetYourPassword" : "Đặt lại mật khẩu",
   "resetYourPasswordDes" : "Chỉ cần gõ nó hai lần và cố gắng không quên nó.",
-  "resetPasswordSuccess" : "Đặt lại mật khẩu thành công"
+  "resetPasswordSuccess" : "Đặt lại mật khẩu thành công",
+  "changePassword" : "Đổi mật khẩu",
+  "oldPassword" : "Mật khẩu cũ",
+  "oldPasswordNotValid" : "Mật khẩu cũ không hợp lệ",
+  "newPasswordNotValid" :"Mật khẩu mới không hợp lệ",
+  "newPasswordNotMatch" :"Mật khẩu mới không trùng nhau",
+  "changePasswordSuccess" : "Đổi mật khẩu thành công"
 }

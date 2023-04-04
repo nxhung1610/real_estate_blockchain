@@ -37,9 +37,9 @@ import '../data/user/domain/i_user_repostiory.dart' as _i22;
 import '../data/user/infrastructure/user_repository.dart' as _i23;
 import '../feature/app/application/app_bloc.dart' as _i39;
 import '../feature/auth/application/application.dart' as _i49;
-import '../feature/auth/application/auth_bloc.dart' as _i51;
+import '../feature/auth/application/auth_bloc.dart' as _i52;
 import '../feature/auth/application/forgot_password/forgot_password_bloc.dart'
-    as _i52;
+    as _i53;
 import '../feature/auth/application/login_bloc.dart' as _i47;
 import '../feature/auth/application/register_bloc.dart' as _i50;
 import '../feature/common/application/address/address_builder_cubit.dart'
@@ -74,6 +74,8 @@ import '../feature/real_estate/favorites/application/favorites/real_estate_favor
     as _i32;
 import '../feature/search/application/search_bloc.dart' as _i33;
 import '../feature/setting/application/setting_bloc.dart' as _i35;
+import '../feature/user/change_password/application/user_change_password_bloc.dart'
+    as _i51;
 import '../feature/user/profile/application/user_profile_bloc.dart' as _i36;
 
 // ignore_for_file: unnecessary_lambdas
@@ -205,12 +207,14 @@ _i1.GetIt $initGetIt(
       ));
   gh.factory<_i50.RegisterBloc>(
       () => _i50.RegisterBloc(gh<_i14.IAuthRepository>()));
-  gh.factory<_i51.AuthBloc>(() => _i51.AuthBloc(
+  gh.factory<_i51.UserChangePasswordBloc>(
+      () => _i51.UserChangePasswordBloc(gh<_i14.IAuthRepository>()));
+  gh.factory<_i52.AuthBloc>(() => _i52.AuthBloc(
         gh<_i14.IAuthLocalRepository>(),
         gh<_i14.IAuthRepository>(),
         gh<_i13.ApiRemote>(),
       ));
-  gh.factory<_i52.ForgotPasswordBloc>(
-      () => _i52.ForgotPasswordBloc(gh<_i14.IAuthRepository>()));
+  gh.factory<_i53.ForgotPasswordBloc>(
+      () => _i53.ForgotPasswordBloc(gh<_i14.IAuthRepository>()));
   return getIt;
 }
