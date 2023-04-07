@@ -52,6 +52,8 @@ app.*.map.json
 # Secrets
 /envs
 
+**/*.jks
+
 # gen file
 #**/*.freezed.dart
 #**/*.g.dart

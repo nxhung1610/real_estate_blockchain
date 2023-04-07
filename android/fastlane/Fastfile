@@ -52,7 +52,22 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-    gradle(task: "clean assembleRelease",)
-    upload_to_play_store
+    gradle(
+      task: "clean bundle",
+      flavor:"prod",
+      build_type: "Release",
+      print_command: false,
+      properties: {
+        "android.injected.signing.store.file" => ENV["STORE_FILE"],
+        "android.injected.signing.store.password" => ENV["STORE_PASSWORD"],
+        "android.injected.signing.key.alias" => ENV["KEY_ALIAS"],
+        "android.injected.signing.key.password" => ENV["KEY_PASSWORD"],
+      }
+    )
+    upload_to_play_store(
+      package_name: "com.realust.app",
+      aab: "../build/app/outputs/bundle/prodRelease/app-prod-release.aab",
+      
+    )
   end
 end
