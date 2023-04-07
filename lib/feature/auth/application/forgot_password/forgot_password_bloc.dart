@@ -157,6 +157,7 @@ class ForgotPasswordBloc
   ) async {
     try {
       emit(state.copyWith(status: const Status.loading()));
+      await Future.delayed(Duration.zero);
       final credential = PhoneAuthProvider.credential(
         verificationId: state.verificationId!,
         smsCode: state.code!,
@@ -165,9 +166,13 @@ class ForgotPasswordBloc
       emit(state.copyWith(step: const ForgotPasswordStateStep.newPassword()));
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
-      emit(state.copyWith(
+      emit(
+        state.copyWith(
           status: const Status.failure(
-              value: ForgotPasswordFailure.codeVerificationFailed())));
+            value: ForgotPasswordFailure.codeVerificationFailed(),
+          ),
+        ),
+      );
     } finally {
       emit(state.copyWith(status: const Status.idle()));
     }

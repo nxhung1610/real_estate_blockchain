@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,9 +22,17 @@ import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.d
 import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../application/app_bloc.dart';
 import '../router/app_route.dart';
+
+// Toggle this to cause an async error to be thrown during initialization
+// and to test that runZonedGuarded() catches the error
+const _kShouldTestAsyncErrorOnInit = false;
+
+// Toggle this for testing Crashlytics in your app locally.
+const _kTestingCrashlytics = true;
 
 class AppPage extends StatelessWidget {
   const AppPage({Key? key}) : super(key: key);
@@ -60,6 +70,19 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
   // Value manage process
   late final Completer processIntital;
   late final Completer processAuthen;
+  late final Completer processFlutterFire;
+
+  Future<void> _initializeFlutterFire() async {
+    if (_kTestingCrashlytics) {
+      // Force enable crashlytics collection enabled if we're testing it.
+      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+    } else {
+      // Else only enable it in non-debug builds.
+      // You could additionally extend this to allow users to opt-in.
+      await FirebaseCrashlytics.instance
+          .setCrashlyticsCollectionEnabled(!kDebugMode);
+    }
+  }
 
   @override
   void initState() {
@@ -68,6 +91,17 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
     authBloc = context.read<AuthBloc>();
     processIntital = Completer();
     processAuthen = Completer();
+    processFlutterFire = Completer();
+    _initializeFlutterFire().then((value) {
+      if (!processFlutterFire.isCompleted) {
+        processFlutterFire.complete();
+      }
+    }).onError((error, stackTrace) {
+      printLog(this, message: error, error: error, trace: stackTrace);
+      if (!processFlutterFire.isCompleted) {
+        processFlutterFire.complete();
+      }
+    });
     authBloc.initial();
 
     setupRouter(context);
@@ -214,6 +248,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                         await Future.wait([
                           processIntital.future,
                           processAuthen.future,
+                          processFlutterFire.future,
                         ]);
                       },
                     );

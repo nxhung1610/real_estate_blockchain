@@ -21,7 +21,8 @@ class AppNotification {
 
   Future<void> initialize() async {
     FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
-    FirebaseMessaging.instance.subscribeToTopic("realust.notification.all");
+    await FirebaseMessaging.instance
+        .subscribeToTopic("realust.notification.all");
     FirebaseMessaging.onMessage.listen(onForegroundMessage);
     printLog("TOKEN",
         message: "${await FirebaseMessaging.instance.getToken()}");

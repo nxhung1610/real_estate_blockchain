@@ -9,27 +9,25 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
-      "program": "lib/main.dart",
+      "program": "lib/main_dev.dart",
       "args": [
-        "--dart-define",
-        "CONFIG_PATH=envs",
-        "--dart-define",
-        "BUILD_OPTION=prod"
+        "--flavor",
+        "dev",
+        "--target", "lib/main_dev.dart"
       ]
     },
-    {
-      "name": "real_estate_blockchain (profile mode)",
-      "request": "launch",
-      "type": "dart",
-      "flutterMode": "profile",
-      "program": "lib/main.dart"
-    },
+    
     {
       "name": "real_estate_blockchain (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release",
-      "program": "lib/main.dart"
+      "program": "lib/main_prod.dart",
+      "args": [
+        "--flavor",
+        "prod",
+        "--target", "lib/main_prod.dart"
+      ]
     }
   ]
 }
