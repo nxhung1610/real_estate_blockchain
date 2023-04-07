@@ -64,10 +64,12 @@ android {
             dimension "type"
             applicationIdSuffix ".dev"
             manifestPlaceholders = [appName: "[DEV] Realust"]
+            flutter.target "lib/main_dev.dart"
         }
         prod {
             dimension "type"
             manifestPlaceholders = [appName: "Realust"]
+            flutter.target "lib/main_prod.dart"
         }
     }
 

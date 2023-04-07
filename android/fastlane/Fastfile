@@ -26,7 +26,7 @@ platform :android do
 
     gradle(
       task: "clean assemble",
-      # flavor: "prod",
+      flavor: "prod",
       build_type: "Release"
     )
 
@@ -40,7 +40,7 @@ platform :android do
     firebase_app_distribution(
       app: "1:302933003992:android:35198cfa44331aa3fa11ad",
       firebase_cli_token: "1//0ee0gmPmuZ7TPCgYIARAAGA4SNwF-L9IrK4BmBx7gIAXGCYhEV-YxQQoUsoFZoTr2d1brumGIsdbaa3BtpLr9-m_61t8BcRy3PaY",
-      android_artifact_path: "../build/app/outputs/apk/release/app-release.apk",
+      android_artifact_path: "../build/app/outputs/apk/prod/release/app-prod-release.apk",
       testers: "nxhung16102001@gmail.com , humghuy201280@gmail.com",
       # release_notes: "Lots of amazing new features to test out!"
     )
@@ -52,7 +52,7 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-    gradle(task: "clean assembleRelease")
+    gradle(task: "clean assembleRelease",)
     upload_to_play_store
   end
 end
