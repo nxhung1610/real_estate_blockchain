@@ -163,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "north": MessageLookupByLibrary.simpleMessage("North"),
         "northEast": MessageLookupByLibrary.simpleMessage("North East"),
         "northWest": MessageLookupByLibrary.simpleMessage("North West"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old password"),
         "oldPasswordNotValid":

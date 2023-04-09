@@ -188,5 +188,6 @@
   "getAllEstateInformation" : "Get all estate information",
   "getAllEstateInformationDes" :"Buy sell and rent a house, you can easily get it!",
   "startWithUs" : "Start with us",
-  "startWithUsDes" :"We are here to help you in Choosing right"
+  "startWithUsDes" :"We are here to help you in Choosing right",
+  "notification" :"Notification"
 }

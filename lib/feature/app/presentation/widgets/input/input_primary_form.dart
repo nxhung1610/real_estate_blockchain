@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -15,6 +16,7 @@ class InputPrimaryForm extends StatefulWidget {
   final Widget? suffix;
   final Widget? prefix;
   final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final void Function(String value)? onChanged;
   final void Function(String value)? onFieldSubmitted;
   final TextEditingController? controller;
@@ -45,6 +47,7 @@ class InputPrimaryForm extends StatefulWidget {
     this.maxLines = 1,
     this.enable = true,
     this.textKey,
+    this.inputFormatters,
   });
 
   @override
@@ -125,6 +128,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
             ).applyDefaults(
               context.theme.inputDecorationTheme,
             ),
+            inputFormatters: widget.inputFormatters,
             validator: widget.validator,
             onChanged: widget.onChanged,
             controller: widget.controller,

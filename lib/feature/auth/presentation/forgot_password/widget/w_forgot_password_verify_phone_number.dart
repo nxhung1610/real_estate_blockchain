@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
@@ -80,11 +81,20 @@ class _WidgetForgotPasswordVerifyPhoneNumberState
                 style: context.textTheme.bodyLarge?.copyWith(),
               ),
               AppSize.largeHeightDimens.verticalSpace,
+              Text(
+                s.phoneNumber,
+                style: context.textTheme.bodyMedium?.copyWith(),
+              ),
+              AppSize.mediumHeightDimens.verticalSpace,
               Form(
                 key: format,
                 child: InputPrimaryForm(
-                  hint: s.phoneNumber,
+                  // hint: s.phoneNumber,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
                   keyboardType: TextInputType.number,
+
                   onChanged: (value) {
                     context.read<ForgotPasswordBloc>().add(
                           ForgotPasswordEvent.onPhoneNumberChanged(value),

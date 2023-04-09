@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -64,22 +65,41 @@ class _SettingPageState extends State<SettingPage> {
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
           child: Column(
             children: [
-              // _WidgetGroupItem(title: s.applicationSettings, children: [
-              //   _WidgetItem(type: _WidgetGroupItem(title: title, children: children), title: title)
-              // ]),
-              // AppSize.largeHeightDimens.verticalSpace,
+              _WidgetGroupItem(title: s.applicationSettings, children: [
+                BlocSelector<SettingBloc, SettingState, bool>(
+                  selector: (state) {
+                    return state.enableNotification;
+                  },
+                  builder: (context, state) {
+                    return _WidgetItem(
+                      type: _WidgetItemType.switchAction(
+                        value: state,
+                        onSwitch: (value) {
+                          context.read<SettingBloc>().add(
+                                SettingEvent.onNotificationChanged(
+                                  value: value,
+                                ),
+                              );
+                        },
+                      ),
+                      title: s.notification,
+                    );
+                  },
+                )
+              ]),
+              AppSize.largeHeightDimens.verticalSpace,
               _WidgetGroupItem(
                 title: s.support,
                 children: [
                   _WidgetItem(
-                    type: const _WidgetItemType.string(''),
+                    type: const _WidgetItemType.none(),
                     title: s.changePassword,
                     onTap: () {
                       context.push($appRoute.user.changePassword.url);
                     },
                   ),
                   _WidgetItem(
-                    type: const _WidgetItemType.string(''),
+                    type: const _WidgetItemType.none(),
                     title: s.deleteAccount,
                     onTap: () {
                       context.appDialog.showAppDialog(

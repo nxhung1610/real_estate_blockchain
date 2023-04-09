@@ -20,38 +20,47 @@ mixin _$SettingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
+    required TResult Function(bool value) onNotificationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
+    TResult? Function(bool value)? onNotificationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
+    TResult Function(bool value)? onNotificationChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(SettingEventStarted value) started,
     required TResult Function(SettingEventOnDeleteAccount value)
         onDeleteAccount,
+    required TResult Function(SettingEventOnNotificationChanged value)
+        onNotificationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(SettingEventStarted value)? started,
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult? Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(SettingEventStarted value)? started,
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,24 +85,25 @@ class _$SettingEventCopyWithImpl<$Res, $Val extends SettingEvent>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$SettingEventStartedCopyWith<$Res> {
+  factory _$$SettingEventStartedCopyWith(_$SettingEventStarted value,
+          $Res Function(_$SettingEventStarted) then) =
+      __$$SettingEventStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$SettingEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$SettingEventStartedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$SettingEventStarted>
+    implements _$$SettingEventStartedCopyWith<$Res> {
+  __$$SettingEventStartedCopyWithImpl(
+      _$SettingEventStarted _value, $Res Function(_$SettingEventStarted) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$SettingEventStarted implements SettingEventStarted {
+  const _$SettingEventStarted();
 
   @override
   String toString() {
@@ -103,7 +113,7 @@ class _$_Started implements _Started {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$SettingEventStarted);
   }
 
   @override
@@ -114,6 +124,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
+    required TResult Function(bool value) onNotificationChanged,
   }) {
     return started();
   }
@@ -123,6 +134,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
+    TResult? Function(bool value)? onNotificationChanged,
   }) {
     return started?.call();
   }
@@ -132,6 +144,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
+    TResult Function(bool value)? onNotificationChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -143,9 +156,11 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(SettingEventStarted value) started,
     required TResult Function(SettingEventOnDeleteAccount value)
         onDeleteAccount,
+    required TResult Function(SettingEventOnNotificationChanged value)
+        onNotificationChanged,
   }) {
     return started(this);
   }
@@ -153,8 +168,10 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(SettingEventStarted value)? started,
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult? Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
   }) {
     return started?.call(this);
   }
@@ -162,8 +179,10 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(SettingEventStarted value)? started,
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -173,8 +192,8 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements SettingEvent {
-  const factory _Started() = _$_Started;
+abstract class SettingEventStarted implements SettingEvent {
+  const factory SettingEventStarted() = _$SettingEventStarted;
 }
 
 /// @nodoc
@@ -220,6 +239,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
+    required TResult Function(bool value) onNotificationChanged,
   }) {
     return onDeleteAccount();
   }
@@ -229,6 +249,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
+    TResult? Function(bool value)? onNotificationChanged,
   }) {
     return onDeleteAccount?.call();
   }
@@ -238,6 +259,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
+    TResult Function(bool value)? onNotificationChanged,
     required TResult orElse(),
   }) {
     if (onDeleteAccount != null) {
@@ -249,9 +271,11 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(SettingEventStarted value) started,
     required TResult Function(SettingEventOnDeleteAccount value)
         onDeleteAccount,
+    required TResult Function(SettingEventOnNotificationChanged value)
+        onNotificationChanged,
   }) {
     return onDeleteAccount(this);
   }
@@ -259,8 +283,10 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(SettingEventStarted value)? started,
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult? Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
   }) {
     return onDeleteAccount?.call(this);
   }
@@ -268,8 +294,10 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(SettingEventStarted value)? started,
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
     required TResult orElse(),
   }) {
     if (onDeleteAccount != null) {
@@ -284,7 +312,159 @@ abstract class SettingEventOnDeleteAccount implements SettingEvent {
 }
 
 /// @nodoc
+abstract class _$$SettingEventOnNotificationChangedCopyWith<$Res> {
+  factory _$$SettingEventOnNotificationChangedCopyWith(
+          _$SettingEventOnNotificationChanged value,
+          $Res Function(_$SettingEventOnNotificationChanged) then) =
+      __$$SettingEventOnNotificationChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool value});
+}
+
+/// @nodoc
+class __$$SettingEventOnNotificationChangedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res,
+        _$SettingEventOnNotificationChanged>
+    implements _$$SettingEventOnNotificationChangedCopyWith<$Res> {
+  __$$SettingEventOnNotificationChangedCopyWithImpl(
+      _$SettingEventOnNotificationChanged _value,
+      $Res Function(_$SettingEventOnNotificationChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$SettingEventOnNotificationChanged(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SettingEventOnNotificationChanged
+    implements SettingEventOnNotificationChanged {
+  const _$SettingEventOnNotificationChanged({required this.value});
+
+  @override
+  final bool value;
+
+  @override
+  String toString() {
+    return 'SettingEvent.onNotificationChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SettingEventOnNotificationChanged &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SettingEventOnNotificationChangedCopyWith<
+          _$SettingEventOnNotificationChanged>
+      get copyWith => __$$SettingEventOnNotificationChangedCopyWithImpl<
+          _$SettingEventOnNotificationChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onDeleteAccount,
+    required TResult Function(bool value) onNotificationChanged,
+  }) {
+    return onNotificationChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onDeleteAccount,
+    TResult? Function(bool value)? onNotificationChanged,
+  }) {
+    return onNotificationChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onDeleteAccount,
+    TResult Function(bool value)? onNotificationChanged,
+    required TResult orElse(),
+  }) {
+    if (onNotificationChanged != null) {
+      return onNotificationChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SettingEventStarted value) started,
+    required TResult Function(SettingEventOnDeleteAccount value)
+        onDeleteAccount,
+    required TResult Function(SettingEventOnNotificationChanged value)
+        onNotificationChanged,
+  }) {
+    return onNotificationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SettingEventStarted value)? started,
+    TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult? Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
+  }) {
+    return onNotificationChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SettingEventStarted value)? started,
+    TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
+    required TResult orElse(),
+  }) {
+    if (onNotificationChanged != null) {
+      return onNotificationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingEventOnNotificationChanged implements SettingEvent {
+  const factory SettingEventOnNotificationChanged({required final bool value}) =
+      _$SettingEventOnNotificationChanged;
+
+  bool get value;
+  @JsonKey(ignore: true)
+  _$$SettingEventOnNotificationChangedCopyWith<
+          _$SettingEventOnNotificationChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SettingState {
+  bool get enableNotification => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -298,7 +478,7 @@ abstract class $SettingStateCopyWith<$Res> {
           SettingState value, $Res Function(SettingState) then) =
       _$SettingStateCopyWithImpl<$Res, SettingState>;
   @useResult
-  $Res call({Status status});
+  $Res call({bool enableNotification, Status status});
 
   $StatusCopyWith<$Res> get status;
 }
@@ -316,9 +496,14 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? enableNotification = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
+      enableNotification: null == enableNotification
+          ? _value.enableNotification
+          : enableNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -343,7 +528,7 @@ abstract class _$$_SettingStateCopyWith<$Res>
       __$$_SettingStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Status status});
+  $Res call({bool enableNotification, Status status});
 
   @override
   $StatusCopyWith<$Res> get status;
@@ -360,9 +545,14 @@ class __$$_SettingStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? enableNotification = null,
     Object? status = null,
   }) {
     return _then(_$_SettingState(
+      enableNotification: null == enableNotification
+          ? _value.enableNotification
+          : enableNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -374,15 +564,19 @@ class __$$_SettingStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SettingState implements _SettingState {
-  const _$_SettingState({this.status = const Status.idle()});
+  const _$_SettingState(
+      {this.enableNotification = false, this.status = const Status.idle()});
 
+  @override
+  @JsonKey()
+  final bool enableNotification;
   @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'SettingState(status: $status)';
+    return 'SettingState(enableNotification: $enableNotification, status: $status)';
   }
 
   @override
@@ -390,11 +584,13 @@ class _$_SettingState implements _SettingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SettingState &&
+            (identical(other.enableNotification, enableNotification) ||
+                other.enableNotification == enableNotification) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(runtimeType, enableNotification, status);
 
   @JsonKey(ignore: true)
   @override
@@ -404,8 +600,11 @@ class _$_SettingState implements _SettingState {
 }
 
 abstract class _SettingState implements SettingState {
-  const factory _SettingState({final Status status}) = _$_SettingState;
+  const factory _SettingState(
+      {final bool enableNotification, final Status status}) = _$_SettingState;
 
+  @override
+  bool get enableNotification;
   @override
   Status get status;
   @override

@@ -21,8 +21,6 @@ class AppNotification {
 
   Future<void> initialize() async {
     FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
-    await FirebaseMessaging.instance
-        .subscribeToTopic("realust.notification.all");
     FirebaseMessaging.onMessage.listen(onForegroundMessage);
     printLog("TOKEN",
         message: "${await FirebaseMessaging.instance.getToken()}");
@@ -32,7 +30,8 @@ class AppNotification {
         AndroidInitializationSettings('ic_launcher');
     const DarwinInitializationSettings initializationSettingsDarwin =
         DarwinInitializationSettings(
-            onDidReceiveLocalNotification: onDidReceiveLocalNotification);
+      onDidReceiveLocalNotification: onDidReceiveLocalNotification,
+    );
     const InitializationSettings initializationSettings =
         InitializationSettings(
       android: initializationSettingsAndroid,
@@ -59,16 +58,21 @@ class AppNotification {
     }
   }
 
+  Future<void> initializeSubcribe() async {
+    await FirebaseMessaging.instance
+        .subscribeToTopic("realust.notification.all");
+  }
+
   @pragma('vm:entry-point')
   static Future<void> onBackgroundMessage(RemoteMessage message) async {
     // appRoute.routerDelegate.navigatorKey.currentContext?.go(location)
 
-    showNoti(title: message.data["title"], body: message.data["body"]);
+    await showNoti(title: message.data["title"], body: message.data["body"]);
   }
 
   static Future<void> onForegroundMessage(RemoteMessage message) async {
     // appRoute.routerDelegate.navigatorKey.currentContext?.go(location)
-    showNoti(title: message.data["title"], body: message.data["body"]);
+    await showNoti(title: message.data["title"], body: message.data["body"]);
   }
 
   static void onDidReceiveLocalNotification(

@@ -25,6 +25,7 @@ Future<void> main() async {
       forceRecaptchaFlow: false,
     )
   ]);
+
   await AppNotification.instance.initialize();
 
   FlutterError.onError = (errorDetails) {

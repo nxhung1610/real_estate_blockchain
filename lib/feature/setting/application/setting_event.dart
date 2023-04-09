@@ -2,6 +2,8 @@ part of 'setting_bloc.dart';
 
 @freezed
 class SettingEvent with _$SettingEvent {
-  const factory SettingEvent.started() = _Started;
+  const factory SettingEvent.started() = SettingEventStarted;
   const factory SettingEvent.onDeleteAccount() = SettingEventOnDeleteAccount;
+  const factory SettingEvent.onNotificationChanged({required bool value}) =
+      SettingEventOnNotificationChanged;
 }

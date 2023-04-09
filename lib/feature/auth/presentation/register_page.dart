@@ -176,36 +176,75 @@ class _RegisterForm extends StatelessWidget {
       builder: (context, state) {
         return Form(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              InputPrimaryForm(
-                keyboardType: TextInputType.name,
-                hint: s.firstName,
-                onChanged: (value) {
-                  bloc.firstNameChanged(value);
-                },
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.firstName,
+                          style: context.textTheme.bodyMedium?.copyWith(),
+                        ),
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        InputPrimaryForm(
+                          keyboardType: TextInputType.name,
+                          // hint: s.firstName,
+                          onChanged: (value) {
+                            bloc.firstNameChanged(value);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  AppSize.largeWidthDimens.horizontalSpace,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.lastName,
+                          style: context.textTheme.bodyMedium?.copyWith(),
+                        ),
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        InputPrimaryForm(
+                          keyboardType: TextInputType.name,
+                          // hint: s.lastName,
+                          onChanged: (value) {
+                            bloc.lastNameChanged(value);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               AppSize.largeHeightDimens.verticalSpace,
-              InputPrimaryForm(
-                keyboardType: TextInputType.name,
-                hint: s.lastName,
-                onChanged: (value) {
-                  bloc.lastNameChanged(value);
-                },
+              Text(
+                s.phoneNumber,
+                style: context.textTheme.bodyMedium?.copyWith(),
               ),
-              AppSize.largeHeightDimens.verticalSpace,
+              AppSize.mediumHeightDimens.verticalSpace,
               InputPrimaryForm(
                 keyboardType: TextInputType.phone,
-                hint: s.phoneNumber,
+                // hint: s.phoneNumber,
                 onChanged: (value) {
                   bloc.phoneNumberChanged(value);
                 },
               ),
               AppSize.largeHeightDimens.verticalSpace,
               ...[
+                Text(
+                  s.password,
+                  style: context.textTheme.bodyMedium?.copyWith(),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
                 InputPrimaryForm(
                   obscureText: !state.passwordVisible,
-                  hint: s.password,
+                  // hint: s.password,
                   keyboardType: TextInputType.visiblePassword,
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -245,15 +284,17 @@ class _RegisterForm extends StatelessWidget {
                 },
               ),
               AppSize.extraHeightDimens.verticalSpace,
-              GestureDetector(
-                onTap: () {
-                  context.push($appRoute.authForgotPassword);
-                },
-                child: Text(
-                  s.loginForgotPassword,
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.kNeutrals_.shade700,
+              Center(
+                child: GestureDetector(
+                  onTap: () {
+                    context.push($appRoute.authForgotPassword);
+                  },
+                  child: Text(
+                    s.loginForgotPassword,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.kNeutrals_.shade700,
+                    ),
                   ),
                 ),
               )

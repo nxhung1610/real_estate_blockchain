@@ -168,19 +168,30 @@ class __LoginFormState extends State<_LoginForm> {
         return Form(
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                s.phoneNumber,
+                style: context.textTheme.bodyMedium?.copyWith(),
+              ),
+              AppSize.mediumHeightDimens.verticalSpace,
               InputPrimaryForm(
                 keyboardType: TextInputType.phone,
-                hint: s.phoneNumber,
+                // hint: s.phoneNumber,
                 onChanged: (value) {
                   bloc.phoneNumberChanged(value);
                 },
               ),
               AppSize.largeHeightDimens.verticalSpace,
               ...[
+                Text(
+                  s.password,
+                  style: context.textTheme.bodyMedium?.copyWith(),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
                 InputPrimaryForm(
                   obscureText: !state.passwordVisible,
-                  hint: s.password,
+                  // hint: s.password,
                   keyboardType: TextInputType.visiblePassword,
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -210,15 +221,17 @@ class __LoginFormState extends State<_LoginForm> {
                 },
               ),
               AppSize.extraHeightDimens.verticalSpace,
-              GestureDetector(
-                onTap: () {
-                  context.push($appRoute.authForgotPassword);
-                },
-                child: Text(
-                  s.loginForgotPassword,
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.kNeutrals_.shade700,
+              Center(
+                child: GestureDetector(
+                  onTap: () {
+                    context.push($appRoute.authForgotPassword);
+                  },
+                  child: Text(
+                    s.loginForgotPassword,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.kNeutrals_.shade700,
+                    ),
                   ),
                 ),
               )

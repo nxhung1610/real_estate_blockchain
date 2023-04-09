@@ -2,8 +2,10 @@ part of '../setting_page.dart';
 
 @freezed
 class _WidgetItemType with _$_WidgetItemType {
+  const factory _WidgetItemType.none() = _WidgetItemTypeNone;
   const factory _WidgetItemType.string(String label) = _WidgetItemTypeString;
   const factory _WidgetItemType.switchAction({
+    @Default(false) bool value,
     required void Function(bool value) onSwitch,
   }) = _WidgetItemTypeSwitch;
 }
@@ -40,6 +42,31 @@ class _WidgetItem extends StatelessWidget {
                 ),
               ),
             ),
+            type.when(
+              none: () {
+                return const SizedBox.shrink();
+              },
+              string: (label) {
+                return Text(
+                  label,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: AppColor.kNeutrals4,
+                    fontWeight: FontWeight.w600,
+                  ),
+                );
+              },
+              switchAction: (value, onSwitch) {
+                return Transform.scale(
+                  scale: 0.7,
+                  child: CupertinoSwitch(
+                    value: value,
+                    onChanged: (value) {
+                      onSwitch.call(value);
+                    },
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),

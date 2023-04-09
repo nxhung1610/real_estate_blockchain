@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "north": MessageLookupByLibrary.simpleMessage("Bắc"),
         "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),
         "northWest": MessageLookupByLibrary.simpleMessage("Tây Bắc"),
+        "notification": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Mật khẩu cũ"),
         "oldPasswordNotValid":

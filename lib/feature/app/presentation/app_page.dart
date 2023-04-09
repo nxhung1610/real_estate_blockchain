@@ -8,12 +8,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
+import 'package:real_estate_blockchain/feature/connectivity/application/connectivity_bloc.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
@@ -24,6 +26,7 @@ import 'package:real_estate_blockchain/injection_dependencies/injection_dependen
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
+import '../../../config/app_notification.dart';
 import '../application/app_bloc.dart';
 import '../router/app_route.dart';
 
@@ -47,7 +50,12 @@ class AppPage extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt.call<AuthBloc>(),
         ),
-        BlocProvider(create: (context) => getIt.call<RealEstateFavoritesBloc>())
+        BlocProvider(
+          create: (context) => getIt.call<ConnectivityBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt.call<RealEstateFavoritesBloc>(),
+        )
       ],
       child: const _AppCommon(),
     );
@@ -188,6 +196,18 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
 
     return MultiBlocListener(
       listeners: [
+        BlocListener<ConnectivityBloc, ConnectivityState>(
+          listener: (context, state) async {
+            log(state.status.name);
+            switch (state.status) {
+              case InternetConnectionStatus.connected:
+                await AppNotification.instance.initializeSubcribe();
+                return;
+              default:
+                break;
+            }
+          },
+        ),
         BlocListener<AppBloc, AppState>(listener: (context, state) {
           log(state.toString());
           if (state.isFisrtLaunch != null && !processIntital.isCompleted) {
