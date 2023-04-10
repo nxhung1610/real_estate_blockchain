@@ -58,9 +58,9 @@ class AppNotification {
     }
   }
 
-  Future<void> initializeSubcribe() async {
+  Future<void> subscribeToGlobalTopic() async {
     await FirebaseMessaging.instance
-        .subscribeToTopic("realust.notification.all");
+        .subscribeToTopic("REALUST_NOTIFICATION_GLOBAL");
   }
 
   @pragma('vm:entry-point')

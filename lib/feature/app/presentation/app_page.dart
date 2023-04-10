@@ -201,7 +201,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
             log(state.status.name);
             switch (state.status) {
               case InternetConnectionStatus.connected:
-                await AppNotification.instance.initializeSubcribe();
+                await AppNotification.instance.subscribeToGlobalTopic();
                 return;
               default:
                 break;
