@@ -67,7 +67,7 @@ platform :android do
     upload_to_play_store(
       package_name: "com.realust.app",
       aab: "../build/app/outputs/bundle/prodRelease/app-prod-release.aab",
-      
+      track: 'beta'
     )
   end
 end
