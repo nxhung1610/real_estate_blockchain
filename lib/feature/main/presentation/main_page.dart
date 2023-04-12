@@ -49,7 +49,7 @@ class _MainPageState extends State<MainPage>
 
   @override
   void dispose() {
-    favoritesBloc.close();
+    favoritesBloc.dispose();
     tabController.dispose();
     super.dispose();
   }

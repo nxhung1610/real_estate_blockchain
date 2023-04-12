@@ -140,10 +140,10 @@ class _Options extends StatelessWidget {
             horizontal: AppSize.extraWidthDimens,
           ),
           children: [
-            ProfileOptionData(
-              icon: Assets.icons.icEyeShow.svg(),
-              label: s.optionRecentltyViewed,
-            ),
+            // ProfileOptionData(
+            //   icon: Assets.icons.icEyeShow.svg(),
+            //   label: s.optionRecentltyViewed,
+            // ),
             ProfileOptionData(
               icon: Assets.icons.icHeartLight.svg(),
               label: s.optionMyFavorites,
@@ -151,10 +151,10 @@ class _Options extends StatelessWidget {
                 context.push($appRoute.realEstateFavorites);
               },
             ),
-            ProfileOptionData(
-              icon: Assets.icons.icVideoTime.svg(),
-              label: s.optionPastTour,
-            ),
+            // ProfileOptionData(
+            //   icon: Assets.icons.icVideoTime.svg(),
+            //   label: s.optionPastTour,
+            // ),
           ],
         ),
         ProfileOptionGroup(
@@ -163,14 +163,14 @@ class _Options extends StatelessWidget {
             horizontal: AppSize.extraWidthDimens,
           ),
           children: [
-            ProfileOptionData(
-              icon: Assets.icons.icDocumentLight.svg(),
-              label: s.optionSellMyHome,
-            ),
-            ProfileOptionData(
-              icon: Assets.icons.icHome2.svg(),
-              label: s.optionMyListings,
-            ),
+            // ProfileOptionData(
+            //   icon: Assets.icons.icDocumentLight.svg(),
+            //   label: s.optionSellMyHome,
+            // ),
+            // ProfileOptionData(
+            //   icon: Assets.icons.icHome2.svg(),
+            //   label: s.optionMyListings,
+            // ),
             ProfileOptionData(
               icon: Assets.icons.icSettingLight.svg(),
               label: s.optionSettings,

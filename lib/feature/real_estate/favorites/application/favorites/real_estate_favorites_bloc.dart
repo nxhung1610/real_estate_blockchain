@@ -111,10 +111,9 @@ class RealEstateFavoritesBloc
       }
     });
   }
-  @override
-  Future<void> close() {
+
+  Future<void> dispose() async {
     completer?.cancel();
     completer = null;
-    return super.close();
   }
 }
