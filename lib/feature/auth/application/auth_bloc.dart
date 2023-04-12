@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
@@ -47,11 +48,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final result = await _authLocalRepository.saveToken(event.authSession);
         final user = await _authRepository.userInfo();
         add(const AuthEvent.loadUser());
-
         result.fold(
           (l) => logout(),
           (r) {
             user.fold((l) => logout(), (r) {
+              AppNotification.instance.subscribeToUserTopic(r.id);
+
               emit(
                 AuthState.authenticated(
                   event.authSession.token!,
@@ -68,7 +70,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     });
     on<AuthEventLogout>((event, emit) async {
+      final _state = state;
+      if (_state is AuthStateAuthenticated) {
+        AppNotification.instance.unsubscribeFromUserTopic(_state.user.id);
+      }
+
       // Clear token when logout account
+
       await _authLocalRepository.saveToken(null);
       emit(const AuthState.unAuthenticated());
     });

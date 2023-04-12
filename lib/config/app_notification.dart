@@ -19,11 +19,12 @@ class AppNotification {
     return _singleton;
   }
 
+  static final messaging = FirebaseMessaging.instance;
+
   Future<void> initialize() async {
     FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
     FirebaseMessaging.onMessage.listen(onForegroundMessage);
-    printLog("TOKEN",
-        message: "${await FirebaseMessaging.instance.getToken()}");
+    printLog("TOKEN", message: "${await messaging.getToken()}");
     final startedNotification =
         await notificationsPlugin.getNotificationAppLaunchDetails();
     const AndroidInitializationSettings initializationSettingsAndroid =
@@ -59,8 +60,21 @@ class AppNotification {
   }
 
   Future<void> subscribeToGlobalTopic() async {
-    await FirebaseMessaging.instance
-        .subscribeToTopic("REALUST_NOTIFICATION_GLOBAL");
+    await messaging.subscribeToTopic("REALUST_NOTIFICATION_GLOBAL");
+  }
+
+  Future<void> unsubscribeFromGlobalTopic() async {
+    await messaging.unsubscribeFromTopic("REALUST_NOTIFICATION_GLOBAL");
+  }
+
+  Future<void> subscribeToUserTopic(int userId) async {
+    printLog(this, message: "subscribed to $userId");
+
+    return messaging.subscribeToTopic("REALUST_NOTIFICATION_$userId");
+  }
+
+  Future<void> unsubscribeFromUserTopic(int userId) async {
+    return messaging.unsubscribeFromTopic("REALUST_NOTIFICATION_$userId");
   }
 
   @pragma('vm:entry-point')
