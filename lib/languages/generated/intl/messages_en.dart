@@ -79,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Do you want to delete account ?"),
         "deleteAccountSuccess":
             MessageLookupByLibrary.simpleMessage("Delete account success."),
+        "deleteRealEstate": MessageLookupByLibrary.simpleMessage(
+            "Do you want to delete this estate ?"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),

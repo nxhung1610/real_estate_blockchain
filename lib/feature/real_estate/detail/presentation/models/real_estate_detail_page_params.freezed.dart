@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RealEstateDetailPageParams {
   RealEstate get estate => throw _privateConstructorUsedError;
+  VoidCallback? get onSuccess => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RealEstateDetailPageParamsCopyWith<RealEstateDetailPageParams>
@@ -30,7 +31,7 @@ abstract class $RealEstateDetailPageParamsCopyWith<$Res> {
       _$RealEstateDetailPageParamsCopyWithImpl<$Res,
           RealEstateDetailPageParams>;
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({RealEstate estate, VoidCallback? onSuccess});
 
   $RealEstateCopyWith<$Res> get estate;
 }
@@ -50,12 +51,17 @@ class _$RealEstateDetailPageParamsCopyWithImpl<$Res,
   @override
   $Res call({
     Object? estate = null,
+    Object? onSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       estate: null == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
               as RealEstate,
+      onSuccess: freezed == onSuccess
+          ? _value.onSuccess
+          : onSuccess // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
     ) as $Val);
   }
 
@@ -77,7 +83,7 @@ abstract class _$$_RealEstateDetailPageParamsCopyWith<$Res>
       __$$_RealEstateDetailPageParamsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({RealEstate estate, VoidCallback? onSuccess});
 
   @override
   $RealEstateCopyWith<$Res> get estate;
@@ -97,12 +103,17 @@ class __$$_RealEstateDetailPageParamsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? estate = null,
+    Object? onSuccess = freezed,
   }) {
     return _then(_$_RealEstateDetailPageParams(
       estate: null == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
               as RealEstate,
+      onSuccess: freezed == onSuccess
+          ? _value.onSuccess
+          : onSuccess // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
     ));
   }
 }
@@ -110,14 +121,16 @@ class __$$_RealEstateDetailPageParamsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RealEstateDetailPageParams implements _RealEstateDetailPageParams {
-  const _$_RealEstateDetailPageParams({required this.estate});
+  const _$_RealEstateDetailPageParams({required this.estate, this.onSuccess});
 
   @override
   final RealEstate estate;
+  @override
+  final VoidCallback? onSuccess;
 
   @override
   String toString() {
-    return 'RealEstateDetailPageParams(estate: $estate)';
+    return 'RealEstateDetailPageParams(estate: $estate, onSuccess: $onSuccess)';
   }
 
   @override
@@ -125,11 +138,13 @@ class _$_RealEstateDetailPageParams implements _RealEstateDetailPageParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RealEstateDetailPageParams &&
-            (identical(other.estate, estate) || other.estate == estate));
+            (identical(other.estate, estate) || other.estate == estate) &&
+            (identical(other.onSuccess, onSuccess) ||
+                other.onSuccess == onSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate);
+  int get hashCode => Object.hash(runtimeType, estate, onSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -142,10 +157,13 @@ class _$_RealEstateDetailPageParams implements _RealEstateDetailPageParams {
 abstract class _RealEstateDetailPageParams
     implements RealEstateDetailPageParams {
   const factory _RealEstateDetailPageParams(
-      {required final RealEstate estate}) = _$_RealEstateDetailPageParams;
+      {required final RealEstate estate,
+      final VoidCallback? onSuccess}) = _$_RealEstateDetailPageParams;
 
   @override
   RealEstate get estate;
+  @override
+  VoidCallback? get onSuccess;
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateDetailPageParamsCopyWith<_$_RealEstateDetailPageParams>

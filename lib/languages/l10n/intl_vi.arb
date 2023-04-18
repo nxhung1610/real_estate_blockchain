@@ -190,5 +190,6 @@
   "getAllEstateInformationDes" :"Mua bán và cho thuê nhà, bạn có thể dễ dàng có được nó!",
   "startWithUs" : "Bắt đầu với chúng tôi",
   "startWithUsDes" :"Chúng tôi ở đây để giúp bạn lựa chọn đúng",
-  "notification" :"Thông báo"
+  "notification" :"Thông báo",
+  "deleteRealEstate" : "Bạn có muốn xoá bất động sản này ko ?"
 }

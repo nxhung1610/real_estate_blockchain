@@ -50,6 +50,13 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
             $appRoute.realEstateDetail,
             extra: RealEstateDetailPageParams(
               estate: widget.item,
+              onSuccess: () {
+                context.read<DiscoverBloc>().add(
+                      DiscoverEvent.onKeywordChanged(
+                        context.read<DiscoverBloc>().state.keyword ?? '',
+                      ),
+                    );
+              },
             ),
           );
         },

@@ -106,6 +106,9 @@ class $AssetsIconsGen {
   SvgGenImage get icCategoryLight =>
       const SvgGenImage('assets/icons/ic_category_light.svg');
 
+  /// File path: assets/icons/ic_delete.svg
+  SvgGenImage get icDelete => const SvgGenImage('assets/icons/ic_delete.svg');
+
   /// File path: assets/icons/ic_direct_up.svg
   SvgGenImage get icDirectUp =>
       const SvgGenImage('assets/icons/ic_direct_up.svg');
@@ -263,6 +266,7 @@ class $AssetsIconsGen {
         icBtnPlus,
         icCamera,
         icCategoryLight,
+        icDelete,
         icDirectUp,
         icDocumentBold,
         icDocumentLight,

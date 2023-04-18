@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/widgets/button/button_enums.dart';
+import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -151,7 +152,7 @@ class _LoginForm extends StatefulWidget {
   State<_LoginForm> createState() => __LoginFormState();
 }
 
-class __LoginFormState extends State<_LoginForm> {
+class __LoginFormState extends State<_LoginForm> with PageMixin {
   late final LoginBloc bloc;
 
   @override
@@ -217,6 +218,7 @@ class __LoginFormState extends State<_LoginForm> {
                 type: ButtonType.primary,
                 label: s.loginSignIn,
                 onPressed: () {
+                  dissmissFocus(context);
                   bloc.loginPressed();
                 },
               ),

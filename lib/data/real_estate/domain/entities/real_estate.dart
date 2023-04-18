@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 
 import 'amenity.dart';
+import 'real_estate_status.dart';
 import 'real_estate_type.dart';
 
 part 'real_estate.freezed.dart';
@@ -10,7 +11,7 @@ part 'real_estate.freezed.dart';
 class RealEstate with _$RealEstate {
   factory RealEstate({
     required int id,
-    int? status,
+    RealEstateStatus? status,
     DateTime? createdAt,
     DateTime? updatedAt,
     RealEstateType? realEstateType,

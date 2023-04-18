@@ -12,9 +12,11 @@ import 'entities/real_estate_config.dart';
 abstract class IRealEstateRepository {
   Future<Either<RealEstateFailure, RealEstateConfig>> configData();
 
-  Future<Either<RealEstateFailure, RealEstateCreationOuput>> createRealEstate(
+  Future<Either<RealEstateFailure, Unit>> createRealEstate(
     RealEstateCreationInput data,
   );
+
+  Future<Either<RealEstateFailure, Unit>> deleteRealEstate(String estateId);
 
   Future<Either<RealEstateFailure, List<RealEstate>>> realEstates();
 

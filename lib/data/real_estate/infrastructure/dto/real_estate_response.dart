@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/file/infrastructure/dto/image/image_dto_mapper.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_status.dart';
 
 import 'amenity_response.dart';
 import 'image_response.dart';
@@ -71,7 +72,7 @@ extension RealEstateResponseMapper on RealEstateResponse {
       provinceId: provinceId,
       realEstateType: realEstateType?.toModel(),
       reason: reason,
-      status: status,
+      status: RealEstateStatus.fromValue(status),
       updatedAt: updatedAt,
       wardId: wardId,
       name: name,

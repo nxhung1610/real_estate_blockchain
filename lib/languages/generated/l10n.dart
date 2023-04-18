@@ -1909,6 +1909,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Do you want to delete this estate ?`
+  String get deleteRealEstate {
+    return Intl.message(
+      'Do you want to delete this estate ?',
+      name: 'deleteRealEstate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

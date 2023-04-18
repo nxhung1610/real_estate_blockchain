@@ -150,7 +150,11 @@ _i1.GetIt $initGetIt(
     estate,
     _,
   ) =>
-      _i31.RealEstateDetailBloc(estate));
+      _i31.RealEstateDetailBloc(
+        estate,
+        gh<_i27.MessageRepository>(),
+        gh<_i20.IRealEstateRepository>(),
+      ));
   gh.factory<_i33.RealEstateFavoritesBloc>(
       () => _i33.RealEstateFavoritesBloc(gh<_i20.IRealEstateRepository>()));
   gh.factory<_i34.SearchBloc>(

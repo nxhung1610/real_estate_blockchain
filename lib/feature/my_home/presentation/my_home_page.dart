@@ -67,6 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: BlocListener<MyHomeBloc, MyHomeState>(
         listener: (context, state) {
           state.status.whenOrNull(
+            success: (value) {
+              scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.ease,
+              );
+            },
             idle: () {
               indicatorController.disableRefresh();
               if (!(reload?.isCompleted ?? true)) {

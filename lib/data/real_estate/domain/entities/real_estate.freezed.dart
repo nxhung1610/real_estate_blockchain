@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RealEstate {
   int get id => throw _privateConstructorUsedError;
-  int? get status => throw _privateConstructorUsedError;
+  RealEstateStatus? get status => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   RealEstateType? get realEstateType => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ abstract class $RealEstateCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      int? status,
+      RealEstateStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
       RealEstateType? realEstateType,
@@ -133,7 +133,7 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as RealEstateStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -256,7 +256,7 @@ abstract class _$$_RealEstateCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      int? status,
+      RealEstateStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
       RealEstateType? realEstateType,
@@ -332,7 +332,7 @@ class __$$_RealEstateCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as RealEstateStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -469,7 +469,7 @@ class _$_RealEstate implements _RealEstate {
   @override
   final int id;
   @override
-  final int? status;
+  final RealEstateStatus? status;
   @override
   final DateTime? createdAt;
   @override
@@ -627,7 +627,7 @@ class _$_RealEstate implements _RealEstate {
 abstract class _RealEstate implements RealEstate {
   factory _RealEstate(
       {required final int id,
-      final int? status,
+      final RealEstateStatus? status,
       final DateTime? createdAt,
       final DateTime? updatedAt,
       final RealEstateType? realEstateType,
@@ -656,7 +656,7 @@ abstract class _RealEstate implements RealEstate {
   @override
   int get id;
   @override
-  int? get status;
+  RealEstateStatus? get status;
   @override
   DateTime? get createdAt;
   @override

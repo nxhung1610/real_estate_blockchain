@@ -78,11 +78,12 @@ class HouseAddNewBloc extends Bloc<HouseAddNewEvent, HouseAddNewState>
         }
         final createData = await _restateRepository.createRealEstate(
           RealEstateMapper.toData(
-              state.addressChoosen,
-              state.realEstateInfo,
-              state.amenities,
-              datas.map((e) => AppImage(id: e.id)).toList(),
-              state.position),
+            state.addressChoosen,
+            state.realEstateInfo,
+            state.amenities,
+            datas.map((e) => AppImage(id: e.id)).toList(),
+            state.position,
+          ),
         );
         final output = createData
             .getOrElse(() => throw Exception('Create real estate error'));

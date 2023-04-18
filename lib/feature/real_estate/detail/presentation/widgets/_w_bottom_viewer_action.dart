@@ -7,49 +7,23 @@ class _WBottomViewerAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final bloc = context.read<MessageBloc>();
 
-    return BlocListener<MessageBloc, MessageState>(
-      listener: (context, state) {
-        state.status.whenOrNull(
-          idle: () {
-            context.appDialog.dismissDialog();
-          },
-          loading: () {
-            // context.appDialog.showLoading();
-          },
-          success: (value) {
-            context.appDialog.dismissDialog();
-            context.pop();
-            context.push(
-              $appRoute.messageChat,
-              extra: {
-                "params": ChatRoomBlocParams(
-                  messageBloc: context.read<MessageBloc>(),
-                  authBloc: context.read<AuthBloc>(),
-                  room: value,
-                ),
-              },
-            );
-          },
-        );
-      },
-      child: Container(
-        padding: EdgeInsets.only(
-            right: 20.w,
-            left: 20.w,
-            top: 18.h,
-            bottom: MediaQuery.of(context).padding.bottom),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.kNeutrals_.withOpacity(0.07),
-              blurRadius: 30,
-              spreadRadius: 0,
-              offset: const Offset(0, -2),
-            )
-          ],
-          color: AppColor.kBackgroundLight,
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: AppColor.kNeutrals_.withOpacity(0.07),
+            blurRadius: 30,
+            spreadRadius: 0,
+            offset: const Offset(0, -2),
+          )
+        ],
+        color: AppColor.kBackgroundLight,
+      ),
+      child: SafeArea(
+        minimum: EdgeInsets.symmetric(
+          vertical: 8.h,
+          horizontal: 16.w,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -151,8 +125,8 @@ class _WBottomViewerAction extends StatelessWidget {
                   child: ButtonApp(
                     label: s.contact,
                     onPressed: () {
-                      context.read<MessageBloc>().add(
-                            MessageEvent.onCreateRoom(
+                      context.read<RealEstateDetailBloc>().add(
+                            RealEstateDetailEvent.onCreateRoomContact(
                               (context.read<AuthBloc>().state
                                       as AuthStateAuthenticated)
                                   .user

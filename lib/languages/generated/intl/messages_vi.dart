@@ -77,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bạn có muốn xoá tài khoản ?"),
         "deleteAccountSuccess":
             MessageLookupByLibrary.simpleMessage("Xoá tài khoản thành công"),
+        "deleteRealEstate": MessageLookupByLibrary.simpleMessage(
+            "Bạn có muốn xoá bất động sản này ko ?"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),

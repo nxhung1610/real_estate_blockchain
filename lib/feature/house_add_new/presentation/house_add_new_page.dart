@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart' as dartz;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -123,7 +125,7 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
               }
             },
             success: (value) async {
-              if (mounted && value.value is RealEstateCreationOuput) {
+              if (mounted && value.value is dartz.Unit) {
                 widget.params.onSucces();
                 Navigator.of(context).pop();
               }
@@ -134,6 +136,22 @@ class _HouseAddNewPageState extends State<HouseAddNewPage> with PageMixin {
               // );
             },
           );
+          // showCupertinoModalPopup(
+          //   context: context,
+          //   builder: (context) {
+          //     return CupertinoPicker.builder(
+          //       itemExtent: DateTime.now().year - 1950,
+          //       onSelectedItemChanged: (value) {},
+          //       itemBuilder: (context, index) {
+          //         return Text(
+          //           (1950 + index).toString(),
+          //           style: context.textTheme.bodyLarge?.copyWith(),
+          //         );
+          //       },
+          //     );
+          //   },
+          // );
+
           controller.jumpToPage(state.state.index);
         },
         child: Column(

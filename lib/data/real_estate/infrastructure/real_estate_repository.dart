@@ -17,6 +17,7 @@ import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/real_filter_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/search_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_estate_constants.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../../province/data.dart';
 import '../domain/entities/real_estate_config.dart';
@@ -47,20 +48,17 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, RealEstateCreationOuput>> createRealEstate(
+  Future<Either<RealEstateFailure, Unit>> createRealEstate(
       RealEstateCreationInput data) async {
     try {
-      final res = await _apiRemote.post<RealEstateCreationResponse>(
+      final res = await _apiRemote.post(
         RealEstateConstants.root,
         data: RealEstateCreationRequest.fromModel(data).toJson(),
-        parse: (data) {
-          return RealEstateCreationResponse.fromJson(data);
-        },
       );
       if (!res.success) throw res.errorKey!;
-      return right(res.data!.toModel());
+      return right(unit);
     } catch (e, strace) {
-      print(strace);
+      printLog(this, message: e, error: e, trace: strace);
       // inspect(strace);
       return left(const RealEstateFailure.unknown());
     }
@@ -179,6 +177,21 @@ class RealEstateRepository extends IRealEstateRepository {
       if (!res.success) throw res.errorKey!;
       return right(unit);
     } catch (e) {
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, Unit>> deleteRealEstate(
+      String estateId) async {
+    try {
+      final res = await _apiRemote.delete(
+        '${RealEstateConstants.root}/$estateId',
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(unit);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
       return left(const RealEstateFailure.unknown());
     }
   }

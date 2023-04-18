@@ -8,8 +8,10 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_status.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/my_home/application/my_home_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -27,6 +29,9 @@ class HouseMyHomeItem extends StatelessWidget {
           $appRoute.realEstateDetail,
           extra: RealEstateDetailPageParams(
             estate: item,
+            onSuccess: () {
+              context.read<MyHomeBloc>().add(const MyHomeEvent.onLoadedData());
+            },
           ),
         );
       },
@@ -169,6 +174,40 @@ class HouseMyHomeItem extends StatelessWidget {
               ),
             ),
           ),
+          if (item.status != RealEstateStatus.normal)
+            Positioned(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: () {
+                    switch (item.status) {
+                      case RealEstateStatus.delete:
+                        return Colors.redAccent;
+                      case RealEstateStatus.processing:
+                        return Colors.yellowAccent;
+                      case RealEstateStatus.failed:
+                        return Colors.grey.shade600;
+                    }
+                  }(),
+                  borderRadius: BorderRadius.circular(
+                    12.r,
+                  ),
+                  border: const Border.fromBorderSide(
+                    BorderSide(color: Colors.white),
+                  ),
+                ),
+                padding: EdgeInsets.symmetric(
+                  vertical: 4.h,
+                  horizontal: 8.h,
+                ),
+                margin: EdgeInsets.all(10.r),
+                child: Text(
+                  item.status?.title.toString() ?? '',
+                  style: context.textTheme.bodySmall?.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            )
         ],
       ),
     );

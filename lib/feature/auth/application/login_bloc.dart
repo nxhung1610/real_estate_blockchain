@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
@@ -26,23 +27,27 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
     on<LoginEventLoginPressed>((event, emit) async {
       emit(state.copyWith(status: const Status.loading()));
+      try {
+        await Future.delayed(const Duration(milliseconds: 500));
 
-      await Future.delayed(const Duration(milliseconds: 500));
-
-      final result =
-          await authRepository.login(state.phoneNumber, state.password);
-      result.fold(
-        (l) => emit(
-          state.copyWith(
-            status: Status.failure(value: l),
+        final result =
+            await authRepository.login(state.phoneNumber, state.password);
+        result.fold(
+          (l) => emit(
+            state.copyWith(
+              status: Status.failure(value: l),
+            ),
           ),
-        ),
-        (r) => emit(state.copyWith(
-          status: Status.success(value: r),
-        )),
-      );
-
-      emit(state.copyWith(status: const Status.idle()));
+          (r) => emit(state.copyWith(
+            status: Status.success(value: r),
+          )),
+        );
+      } catch (e, trace) {
+        printLog(this, message: e, error: e, trace: trace);
+        emit(state.copyWith(status: Status.failure(value: e)));
+      } finally {
+        emit(state.copyWith(status: const Status.idle()));
+      }
     });
   }
 
