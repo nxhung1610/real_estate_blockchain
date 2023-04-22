@@ -21,10 +21,13 @@ class RealEstateDetailBloc
   final MessageRepository messageRepository;
   final IRealEstateRepository realEstateRepository;
   RealEstateDetailBloc(
-    @factoryParam RealEstate estate,
+    @factoryParam String id,
     this.messageRepository,
     this.realEstateRepository,
-  ) : super(RealEstateDetailState(estate: estate)) {
+  ) : super(RealEstateDetailState(
+          id: id,
+        )) {
+    on<RealEstateDetailEventOnStarted>(_onStarted);
     on<RealEstateDetailEventOnCreateRoomContact>(_onCreateRoomContact);
     on<RealEstateDetailEventOnDelete>(_onDelete);
   }
@@ -62,9 +65,10 @@ class RealEstateDetailBloc
     Emitter<RealEstateDetailState> emit,
   ) async {
     try {
+      if (state.estate == null) return;
       emit(state.copyWith(status: const Status.loading()));
       final result = await realEstateRepository.deleteRealEstate(
-        state.estate.id.toString(),
+        state.estate!.id.toString(),
       );
       result.fold(
         (l) => throw l,
@@ -81,6 +85,27 @@ class RealEstateDetailBloc
       emit(state.copyWith(status: Status.failure(value: e)));
     } finally {
       emit(state.copyWith(status: const Status.idle()));
+    }
+  }
+
+  FutureOr<void> _onStarted(
+    RealEstateDetailEventOnStarted event,
+    Emitter<RealEstateDetailState> emit,
+  ) async {
+    try {
+      final estate = await realEstateRepository.detailEstate(state.id);
+      estate.fold(
+        (l) => throw l,
+        (r) {
+          emit(
+            state.copyWith(estate: r),
+          );
+        },
+      );
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+    } finally {
+      emit(state.copyWith(isShimmer: false));
     }
   }
 }

@@ -22,7 +22,7 @@ class RealEstateDetailRouter extends BaseRoute {
             final params = state.extra as RealEstateDetailPageParams;
             return BlocProvider(
               create: (context) =>
-                  getIt.call<RealEstateDetailBloc>(param1: params.estate),
+                  getIt.call<RealEstateDetailBloc>(param1: params.id),
               child: RealEstateDetailPage(
                 params: params,
               ),

@@ -20,11 +20,8 @@ class $EnvsGen {
   /// File path: envs/prod.env
   String get prod => 'envs/prod.env';
 
-  /// File path: envs/staging.env
-  String get staging => 'envs/staging.env';
-
   /// List of all assets
-  List<String> get values => [dev, prod, staging];
+  List<String> get values => [dev, prod];
 }
 
 class $FontsGen {
@@ -132,6 +129,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_elevator.svg
   SvgGenImage get icElevator =>
       const SvgGenImage('assets/icons/ic_elevator.svg');
+
+  /// File path: assets/icons/ic_error.svg
+  SvgGenImage get icError => const SvgGenImage('assets/icons/ic_error.svg');
 
   /// File path: assets/icons/ic_eye_hide.svg
   SvgGenImage get icEyeHide =>
@@ -273,6 +273,7 @@ class $AssetsIconsGen {
         icEditBold,
         icEditLight,
         icElevator,
+        icError,
         icEyeHide,
         icEyeShow,
         icFilterLight,

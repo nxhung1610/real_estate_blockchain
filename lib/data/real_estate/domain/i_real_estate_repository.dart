@@ -34,4 +34,5 @@ abstract class IRealEstateRepository {
   Future<Either<RealEstateFailure, Unit>> setFavorite(int id);
 
   Future<Either<RealEstateFailure, Unit>> removeFavorite(int id);
+  Future<Either<RealEstateFailure, RealEstate>> detailEstate(String id);
 }

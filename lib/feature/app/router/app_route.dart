@@ -3,6 +3,8 @@ import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_new_route.dart';
 import 'package:real_estate_blockchain/feature/main/module.dart';
+import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
+import 'package:real_estate_blockchain/feature/notification/router/notification_route.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
@@ -23,6 +25,7 @@ class AppRoute extends BaseRoute {
   late final RealEstateRouter _realEstateRouter;
   late final UserRouter user;
   late final SettingRoute setting;
+  late final NotificationRoute notification;
   // Path
   String get onboarding => _onboardingRoute.url;
   String get authRegister => _authRoute.register;
@@ -47,6 +50,7 @@ class AppRoute extends BaseRoute {
         ..._realEstateRouter.routes,
         ...user.routes,
         ...setting.routes,
+        ...notification.routes,
       ];
 
   @override
@@ -57,6 +61,7 @@ class AppRoute extends BaseRoute {
         ..._houseAddNewRoute.globalRoutes,
         ..._realEstateRouter.globalRoutes,
         ...user.globalRoutes,
+        ...notification.globalRoutes,
       ];
 
   @override
@@ -69,5 +74,6 @@ class AppRoute extends BaseRoute {
     _realEstateRouter = RealEstateRouter(url, '/real-estate');
     user = UserRouter(url, '/user');
     setting = SettingRoute(url, '/setting');
+    notification = NotificationRoute(url, '/notification');
   }
 }

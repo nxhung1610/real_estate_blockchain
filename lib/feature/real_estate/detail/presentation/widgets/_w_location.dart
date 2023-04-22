@@ -13,11 +13,12 @@ class _WLocationState extends State<_WLocation> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocSelector<RealEstateDetailBloc, RealEstateDetailState,
-        RealEstate>(
+        RealEstate?>(
       selector: (state) {
         return state.estate;
       },
       builder: (context, state) {
+        if (state == null) return const SizedBox.shrink();
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: AppSize.extraWidthDimens,
@@ -40,11 +41,12 @@ class _WLocationState extends State<_WLocation> {
                   height: 0.2.sh,
                   width: double.infinity,
                   child: BlocSelector<RealEstateDetailBloc,
-                      RealEstateDetailState, RealEstate>(
+                      RealEstateDetailState, RealEstate?>(
                     selector: (state) {
                       return state.estate;
                     },
                     builder: (context, state) {
+                      if (state == null) return const SizedBox.shrink();
                       return GestureDetector(
                         onTap: () async {
                           final url = Uri.parse(

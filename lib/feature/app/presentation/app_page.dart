@@ -18,6 +18,7 @@ import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/connectivity/application/connectivity_bloc.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
+import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';

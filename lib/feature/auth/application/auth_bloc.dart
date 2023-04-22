@@ -5,6 +5,7 @@ import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/grpc/grpc_service.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -15,14 +16,36 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthLocalRepository _authLocalRepository;
   final IAuthRepository _authRepository;
   final ApiRemote _apiRemote;
+  final GrpcService _grpcService;
   bool isFetchUser = false;
 
   User get user => (state as AuthStateAuthenticated).user;
 
-  AuthBloc(this._authLocalRepository, this._authRepository, this._apiRemote)
-      : super(const AuthState.unKnow()) {
+  AuthBloc(
+    this._authLocalRepository,
+    this._authRepository,
+    this._apiRemote,
+    this._grpcService,
+  ) : super(const AuthState.unKnow()) {
     on<AuthEventStarted>((event, emit) async {
       _apiRemote.init(
+        onExpireToken: () {
+          logout();
+        },
+        refreshToken: () async {
+          final res = await _authRepository.refreshToken();
+          if (res.isRight()) {
+            add(const AuthEvent.loadUser());
+          }
+          return res;
+        },
+        token: () async {
+          final token = await _authLocalRepository.getToken();
+          return token.foldRight(
+              '', (r, previous) => r.token?.token ?? previous);
+        },
+      );
+      _grpcService.init(
         onExpireToken: () {
           logout();
         },

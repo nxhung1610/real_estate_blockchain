@@ -7,7 +7,7 @@ class _WDirection extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocSelector<RealEstateDetailBloc, RealEstateDetailState,
-        RealEstate>(
+        RealEstate?>(
       selector: (state) {
         return state.estate;
       },
@@ -36,14 +36,14 @@ class _WDirection extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '${s.houseFacing} : ${RealEstateDirection.fromString(state.houseFacing ?? '')?.title(context)}',
+                      '${s.houseFacing} : ${RealEstateDirection.fromString(state?.houseFacing ?? '')?.title(context)}',
                       style: context.textTheme.bodyLarge?.copyWith(
                         color: AppColor.kNeutrals_,
                       ),
                     ),
                     AppSize.mediumHeightDimens.verticalSpace,
                     Text(
-                      '${s.balconyFacing} : ${RealEstateDirection.fromString(state.balconyFacing ?? '')?.title(context)}',
+                      '${s.balconyFacing} : ${RealEstateDirection.fromString(state?.balconyFacing ?? '')?.title(context)}',
                       style: context.textTheme.bodyLarge?.copyWith(
                         color: AppColor.kNeutrals_,
                       ),

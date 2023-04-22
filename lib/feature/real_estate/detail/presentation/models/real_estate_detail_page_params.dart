@@ -7,7 +7,7 @@ part 'real_estate_detail_page_params.freezed.dart';
 @freezed
 class RealEstateDetailPageParams with _$RealEstateDetailPageParams {
   const factory RealEstateDetailPageParams({
-    required RealEstate estate,
+    required String id,
     VoidCallback? onSuccess,
   }) = _RealEstateDetailPageParams;
 }

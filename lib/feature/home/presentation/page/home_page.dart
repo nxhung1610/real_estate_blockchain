@@ -159,7 +159,9 @@ class _HomePageState extends State<HomePage>
               height: iconSize,
               color: iconColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              context.push($appRoute.notification.url);
+            },
           ),
         ],
       ),
@@ -229,7 +231,7 @@ class __NewFeedState extends State<_NewFeed> {
                   context.push(
                     $appRoute.realEstateDetail,
                     extra: RealEstateDetailPageParams(
-                      estate: estate,
+                      id: estate.id.toString(),
                     ),
                   );
                 },
@@ -354,7 +356,7 @@ class __NewFeedState extends State<_NewFeed> {
                       context.push(
                         $appRoute.realEstateDetail,
                         extra: RealEstateDetailPageParams(
-                          estate: item,
+                          id: item.id.toString(),
                         ),
                       );
                     },

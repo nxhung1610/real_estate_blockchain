@@ -28,7 +28,7 @@ class HouseMyHomeItem extends StatelessWidget {
         context.push(
           $appRoute.realEstateDetail,
           extra: RealEstateDetailPageParams(
-            estate: item,
+            id: item.id.toString(),
             onSuccess: () {
               context.read<MyHomeBloc>().add(const MyHomeEvent.onLoadedData());
             },

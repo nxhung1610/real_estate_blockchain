@@ -24,6 +24,8 @@ class AppConfig {
   }
 
   String get baseUrl => dotenv.get(Constants.kBaseUrl);
+  String get gRpcUrl => dotenv.get(Constants.kGrpcUrl);
+  String get gRpcPort => dotenv.get(Constants.kGrpcPort);
   int get connectionTimeout =>
       int.parse(dotenv.get(Constants.kConnectionTimeout));
   int get receiveTimeout => int.parse(dotenv.get(Constants.kReceiveTimeout));

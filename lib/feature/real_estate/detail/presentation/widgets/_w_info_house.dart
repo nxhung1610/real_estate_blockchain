@@ -21,7 +21,8 @@ class _WInfoHouse extends StatelessWidget {
             ),
           ),
           AppSize.largeHeightDimens.verticalSpace,
-          BlocSelector<RealEstateDetailBloc, RealEstateDetailState, RealEstate>(
+          BlocSelector<RealEstateDetailBloc, RealEstateDetailState,
+              RealEstate?>(
             selector: (state) {
               return state.estate;
             },
@@ -38,7 +39,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icBed
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bedRoom,
-                          sub: '${item.noBedrooms} ${s.rooms}',
+                          sub: '${item?.noBedrooms} ${s.rooms}',
                         ),
                       ),
                       AppSize.extraWidthDimens.horizontalSpace,
@@ -48,7 +49,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icBathroom
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bathRoom,
-                          sub: '${item.noWc} ${s.rooms}',
+                          sub: '${item?.noWc} ${s.rooms}',
                         ),
                       ),
                     ],
@@ -64,7 +65,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icHome2
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.structure,
-                          sub: '${item.floors ?? 0} ${s.floors}',
+                          sub: '${item?.floors ?? 0} ${s.floors}',
                         ),
                       ),
                       AppSize.extraWidthDimens.horizontalSpace,
@@ -74,7 +75,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icSquare
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.square,
-                          sub: '${(item.area?.toInt() ?? 0)} m2',
+                          sub: '${(item?.area?.toInt() ?? 0)} m2',
                         ),
                       ),
                     ],

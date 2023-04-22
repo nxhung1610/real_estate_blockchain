@@ -67,7 +67,7 @@ class AuthRepository implements IAuthRepository {
         default:
           rethrow;
       }
-    } on Exception catch (e, strace) {
+    } catch (e, strace) {
       printLog(this, message: e, error: e, trace: strace);
       return left(const AuthFailures.unknow());
     }

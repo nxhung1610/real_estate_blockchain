@@ -41,11 +41,12 @@ class _WBottomViewerAction extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: BlocSelector<RealEstateDetailBloc,
-                        RealEstateDetailState, RealEstate>(
+                        RealEstateDetailState, RealEstate?>(
                       selector: (state) {
                         return state.estate;
                       },
                       builder: (context, item) {
+                        if (item == null) return const SizedBox.shrink();
                         return Text(
                           NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
                               .format(item.price * (item.area ?? 0))

@@ -5,7 +5,8 @@ class Constants {
 
   // String Config
   static const String kBaseUrl = "BASE_URL";
-  static const String kReUrl = "RE_URL";
+  static const String kGrpcUrl = "GRPC_URL";
+  static const String kGrpcPort = "GRPC_PORT";
   static const String kConnectionTimeout = "CONNECTION_TIMEOUT";
   static const String kReceiveTimeout = "RECEIVE_TIMEOUT";
   static const String kAccessTokenMap = 'ACCESS_TOKEN_MAP';

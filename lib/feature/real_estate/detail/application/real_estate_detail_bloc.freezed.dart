@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RealEstateDetailState {
-  RealEstate get estate => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  RealEstate? get estate => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
+  bool get isShimmer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RealEstateDetailStateCopyWith<RealEstateDetailState> get copyWith =>
@@ -30,9 +32,9 @@ abstract class $RealEstateDetailStateCopyWith<$Res> {
           $Res Function(RealEstateDetailState) then) =
       _$RealEstateDetailStateCopyWithImpl<$Res, RealEstateDetailState>;
   @useResult
-  $Res call({RealEstate estate, Status status});
+  $Res call({String id, RealEstate? estate, Status status, bool isShimmer});
 
-  $RealEstateCopyWith<$Res> get estate;
+  $RealEstateCopyWith<$Res>? get estate;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -50,25 +52,39 @@ class _$RealEstateDetailStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? estate = null,
+    Object? id = null,
+    Object? estate = freezed,
     Object? status = null,
+    Object? isShimmer = null,
   }) {
     return _then(_value.copyWith(
-      estate: null == estate
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      estate: freezed == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate,
+              as RealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      isShimmer: null == isShimmer
+          ? _value.isShimmer
+          : isShimmer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateCopyWith<$Res> get estate {
-    return $RealEstateCopyWith<$Res>(_value.estate, (value) {
+  $RealEstateCopyWith<$Res>? get estate {
+    if (_value.estate == null) {
+      return null;
+    }
+
+    return $RealEstateCopyWith<$Res>(_value.estate!, (value) {
       return _then(_value.copyWith(estate: value) as $Val);
     });
   }
@@ -90,10 +106,10 @@ abstract class _$$_RealEstateDetailStateCopyWith<$Res>
       __$$_RealEstateDetailStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RealEstate estate, Status status});
+  $Res call({String id, RealEstate? estate, Status status, bool isShimmer});
 
   @override
-  $RealEstateCopyWith<$Res> get estate;
+  $RealEstateCopyWith<$Res>? get estate;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -109,18 +125,28 @@ class __$$_RealEstateDetailStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? estate = null,
+    Object? id = null,
+    Object? estate = freezed,
     Object? status = null,
+    Object? isShimmer = null,
   }) {
     return _then(_$_RealEstateDetailState(
-      estate: null == estate
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      estate: freezed == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate,
+              as RealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
+      isShimmer: null == isShimmer
+          ? _value.isShimmer
+          : isShimmer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -129,17 +155,25 @@ class __$$_RealEstateDetailStateCopyWithImpl<$Res>
 
 class _$_RealEstateDetailState implements _RealEstateDetailState {
   const _$_RealEstateDetailState(
-      {required this.estate, this.status = const Status.idle()});
+      {required this.id,
+      this.estate,
+      this.status = const Status.idle(),
+      this.isShimmer = true});
 
   @override
-  final RealEstate estate;
+  final String id;
+  @override
+  final RealEstate? estate;
   @override
   @JsonKey()
   final Status status;
+  @override
+  @JsonKey()
+  final bool isShimmer;
 
   @override
   String toString() {
-    return 'RealEstateDetailState(estate: $estate, status: $status)';
+    return 'RealEstateDetailState(id: $id, estate: $estate, status: $status, isShimmer: $isShimmer)';
   }
 
   @override
@@ -147,12 +181,15 @@ class _$_RealEstateDetailState implements _RealEstateDetailState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RealEstateDetailState &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.estate, estate) || other.estate == estate) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isShimmer, isShimmer) ||
+                other.isShimmer == isShimmer));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate, status);
+  int get hashCode => Object.hash(runtimeType, id, estate, status, isShimmer);
 
   @JsonKey(ignore: true)
   @override
@@ -164,13 +201,19 @@ class _$_RealEstateDetailState implements _RealEstateDetailState {
 
 abstract class _RealEstateDetailState implements RealEstateDetailState {
   const factory _RealEstateDetailState(
-      {required final RealEstate estate,
-      final Status status}) = _$_RealEstateDetailState;
+      {required final String id,
+      final RealEstate? estate,
+      final Status status,
+      final bool isShimmer}) = _$_RealEstateDetailState;
 
   @override
-  RealEstate get estate;
+  String get id;
+  @override
+  RealEstate? get estate;
   @override
   Status get status;
+  @override
+  bool get isShimmer;
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateDetailStateCopyWith<_$_RealEstateDetailState> get copyWith =>

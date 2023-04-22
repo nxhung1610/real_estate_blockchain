@@ -26,7 +26,7 @@ class RealEstateFavoriteItem extends StatelessWidget {
         context.push(
           $appRoute.realEstateDetail,
           extra: RealEstateDetailPageParams(
-            estate: item,
+            id: item.id.toString(),
           ),
         );
       },

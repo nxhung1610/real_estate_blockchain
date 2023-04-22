@@ -26,7 +26,7 @@ class _WAmenities extends StatelessWidget {
             child: BlocSelector<RealEstateDetailBloc, RealEstateDetailState,
                 List<Amenity>>(
               selector: (state) {
-                return state.estate.amenities ?? [];
+                return state.estate?.amenities ?? [];
               },
               builder: (context, state) {
                 return ListView.separated(

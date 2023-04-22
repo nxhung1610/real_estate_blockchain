@@ -7,4 +7,5 @@ class RealEstateConstants {
   static String search = '$root/search';
   static String newfeeds = '$root/feeds';
   static String favorites = '$root/favourites';
+  static String detail = '$root/detail/:id';
 }

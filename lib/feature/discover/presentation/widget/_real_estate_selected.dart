@@ -49,7 +49,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
           context.push(
             $appRoute.realEstateDetail,
             extra: RealEstateDetailPageParams(
-              estate: widget.item,
+              id: widget.item.id.toString(),
               onSuccess: () {
                 context.read<DiscoverBloc>().add(
                       DiscoverEvent.onKeywordChanged(

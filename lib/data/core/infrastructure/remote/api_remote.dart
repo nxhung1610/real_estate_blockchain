@@ -27,7 +27,7 @@ class ApiRemote {
   }
 
   Dio get _dio => _initDio();
-  late final Dio _dioToken = _intiDioToken();
+  late final Dio dioToken = _intiDioToken();
   Dio _initDio() {
     final Dio dio = Dio();
 
@@ -45,7 +45,7 @@ class ApiRemote {
             "Accept": "application/json",
           }
           ..interceptors.add(
-              JWTInterceptor(_onExpireToken, _refreshToken, _dioToken, _token))
+              JWTInterceptor(_onExpireToken, _refreshToken, dioToken, _token))
         // ..interceptors.add(PrettyDioLogger(
         //   request: true,
         //   requestBody: true,
