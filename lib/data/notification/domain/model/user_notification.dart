@@ -36,7 +36,7 @@ class UserNotification with _$UserNotification {
       data: () {
         switch (category) {
           case NotificationCatory.newReListed:
-            return NotificationDataNewReListed(idRe: dto.data);
+            return NotificationDataNewReListed(id: int.parse(dto.data));
           case NotificationCatory.reMined:
             return NotificationDataReMinted.fromJson(jsonDecode(dto.data));
           default:

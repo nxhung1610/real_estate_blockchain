@@ -9,21 +9,21 @@ part of 'notification_data.dart';
 _$NotificationDataNewReListed _$$NotificationDataNewReListedFromJson(
         Map<String, dynamic> json) =>
     _$NotificationDataNewReListed(
-      idRe: json['idRe'] as String,
+      id: json['id'] as int,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$NotificationDataNewReListedToJson(
         _$NotificationDataNewReListed instance) =>
     <String, dynamic>{
-      'idRe': instance.idRe,
+      'id': instance.id,
       'runtimeType': instance.$type,
     };
 
 _$NotificationDataReMinted _$$NotificationDataReMintedFromJson(
         Map<String, dynamic> json) =>
     _$NotificationDataReMinted(
-      idRe: json['idRe'] as String,
+      id: json['re_id'] as int,
       hash: json['hash'] as String,
       $type: json['runtimeType'] as String?,
     );
@@ -31,7 +31,7 @@ _$NotificationDataReMinted _$$NotificationDataReMintedFromJson(
 Map<String, dynamic> _$$NotificationDataReMintedToJson(
         _$NotificationDataReMinted instance) =>
     <String, dynamic>{
-      'idRe': instance.idRe,
+      're_id': instance.id,
       'hash': instance.hash,
       'runtimeType': instance.$type,
     };

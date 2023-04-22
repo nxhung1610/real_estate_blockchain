@@ -29,23 +29,24 @@ NotificationData _$NotificationDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NotificationData {
-  String get idRe => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String idRe) newReListed,
-    required TResult Function(String idRe, String hash) reMinted,
+    required TResult Function(int id) newReListed,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String idRe)? newReListed,
-    TResult? Function(String idRe, String hash)? reMinted,
+    TResult? Function(int id)? newReListed,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String idRe)? newReListed,
-    TResult Function(String idRe, String hash)? reMinted,
+    TResult Function(int id)? newReListed,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,7 +81,7 @@ abstract class $NotificationDataCopyWith<$Res> {
           NotificationData value, $Res Function(NotificationData) then) =
       _$NotificationDataCopyWithImpl<$Res, NotificationData>;
   @useResult
-  $Res call({String idRe});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -96,13 +97,13 @@ class _$NotificationDataCopyWithImpl<$Res, $Val extends NotificationData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? idRe = null,
+    Object? id = null,
   }) {
     return _then(_value.copyWith(
-      idRe: null == idRe
-          ? _value.idRe
-          : idRe // ignore: cast_nullable_to_non_nullable
-              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -116,7 +117,7 @@ abstract class _$$NotificationDataNewReListedCopyWith<$Res>
       __$$NotificationDataNewReListedCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String idRe});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -131,13 +132,13 @@ class __$$NotificationDataNewReListedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? idRe = null,
+    Object? id = null,
   }) {
     return _then(_$NotificationDataNewReListed(
-      idRe: null == idRe
-          ? _value.idRe
-          : idRe // ignore: cast_nullable_to_non_nullable
-              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -145,21 +146,21 @@ class __$$NotificationDataNewReListedCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NotificationDataNewReListed implements NotificationDataNewReListed {
-  const _$NotificationDataNewReListed({required this.idRe, final String? $type})
+  const _$NotificationDataNewReListed({required this.id, final String? $type})
       : $type = $type ?? 'newReListed';
 
   factory _$NotificationDataNewReListed.fromJson(Map<String, dynamic> json) =>
       _$$NotificationDataNewReListedFromJson(json);
 
   @override
-  final String idRe;
+  final int id;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'NotificationData.newReListed(idRe: $idRe)';
+    return 'NotificationData.newReListed(id: $id)';
   }
 
   @override
@@ -167,12 +168,12 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationDataNewReListed &&
-            (identical(other.idRe, idRe) || other.idRe == idRe));
+            (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, idRe);
+  int get hashCode => Object.hash(runtimeType, id);
 
   @JsonKey(ignore: true)
   @override
@@ -184,30 +185,31 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String idRe) newReListed,
-    required TResult Function(String idRe, String hash) reMinted,
+    required TResult Function(int id) newReListed,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
   }) {
-    return newReListed(idRe);
+    return newReListed(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String idRe)? newReListed,
-    TResult? Function(String idRe, String hash)? reMinted,
+    TResult? Function(int id)? newReListed,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
   }) {
-    return newReListed?.call(idRe);
+    return newReListed?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String idRe)? newReListed,
-    TResult Function(String idRe, String hash)? reMinted,
+    TResult Function(int id)? newReListed,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     required TResult orElse(),
   }) {
     if (newReListed != null) {
-      return newReListed(idRe);
+      return newReListed(id);
     }
     return orElse();
   }
@@ -252,14 +254,14 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
 }
 
 abstract class NotificationDataNewReListed implements NotificationData {
-  const factory NotificationDataNewReListed({required final String idRe}) =
+  const factory NotificationDataNewReListed({required final int id}) =
       _$NotificationDataNewReListed;
 
   factory NotificationDataNewReListed.fromJson(Map<String, dynamic> json) =
       _$NotificationDataNewReListed.fromJson;
 
   @override
-  String get idRe;
+  int get id;
   @override
   @JsonKey(ignore: true)
   _$$NotificationDataNewReListedCopyWith<_$NotificationDataNewReListed>
@@ -274,7 +276,7 @@ abstract class _$$NotificationDataReMintedCopyWith<$Res>
       __$$NotificationDataReMintedCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String idRe, String hash});
+  $Res call({@JsonKey(name: "re_id") int id, String hash});
 }
 
 /// @nodoc
@@ -288,14 +290,14 @@ class __$$NotificationDataReMintedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? idRe = null,
+    Object? id = null,
     Object? hash = null,
   }) {
     return _then(_$NotificationDataReMinted(
-      idRe: null == idRe
-          ? _value.idRe
-          : idRe // ignore: cast_nullable_to_non_nullable
-              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       hash: null == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
@@ -308,14 +310,17 @@ class __$$NotificationDataReMintedCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NotificationDataReMinted implements NotificationDataReMinted {
   const _$NotificationDataReMinted(
-      {required this.idRe, required this.hash, final String? $type})
+      {@JsonKey(name: "re_id") required this.id,
+      required this.hash,
+      final String? $type})
       : $type = $type ?? 'reMinted';
 
   factory _$NotificationDataReMinted.fromJson(Map<String, dynamic> json) =>
       _$$NotificationDataReMintedFromJson(json);
 
   @override
-  final String idRe;
+  @JsonKey(name: "re_id")
+  final int id;
   @override
   final String hash;
 
@@ -324,7 +329,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
 
   @override
   String toString() {
-    return 'NotificationData.reMinted(idRe: $idRe, hash: $hash)';
+    return 'NotificationData.reMinted(id: $id, hash: $hash)';
   }
 
   @override
@@ -332,13 +337,13 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationDataReMinted &&
-            (identical(other.idRe, idRe) || other.idRe == idRe) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.hash, hash) || other.hash == hash));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, idRe, hash);
+  int get hashCode => Object.hash(runtimeType, id, hash);
 
   @JsonKey(ignore: true)
   @override
@@ -351,30 +356,31 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String idRe) newReListed,
-    required TResult Function(String idRe, String hash) reMinted,
+    required TResult Function(int id) newReListed,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
   }) {
-    return reMinted(idRe, hash);
+    return reMinted(id, hash);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String idRe)? newReListed,
-    TResult? Function(String idRe, String hash)? reMinted,
+    TResult? Function(int id)? newReListed,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
   }) {
-    return reMinted?.call(idRe, hash);
+    return reMinted?.call(id, hash);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String idRe)? newReListed,
-    TResult Function(String idRe, String hash)? reMinted,
+    TResult Function(int id)? newReListed,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     required TResult orElse(),
   }) {
     if (reMinted != null) {
-      return reMinted(idRe, hash);
+      return reMinted(id, hash);
     }
     return orElse();
   }
@@ -420,14 +426,15 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
 
 abstract class NotificationDataReMinted implements NotificationData {
   const factory NotificationDataReMinted(
-      {required final String idRe,
+      {@JsonKey(name: "re_id") required final int id,
       required final String hash}) = _$NotificationDataReMinted;
 
   factory NotificationDataReMinted.fromJson(Map<String, dynamic> json) =
       _$NotificationDataReMinted.fromJson;
 
   @override
-  String get idRe;
+  @JsonKey(name: "re_id")
+  int get id;
   String get hash;
   @override
   @JsonKey(ignore: true)

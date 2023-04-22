@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
 import 'package:real_estate_blockchain/data/notification/domain/model/user_notification.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class NotificationItem extends StatelessWidget {
@@ -24,9 +25,19 @@ class NotificationItem extends StatelessWidget {
       onTap: () {
         notification.data?.map(
           newReListed: (value) {
-            context.push($appRoute.realEstateDetail);
+            context.push(
+              $appRoute.realEstateDetail,
+              extra: RealEstateDetailPageParams(id: value.id.toString()),
+            );
           },
-          reMinted: (value) {},
+          reMinted: (value) {
+            context.push(
+              $appRoute.realEstateDetail,
+              extra: RealEstateDetailPageParams(
+                id: value.id.toString(),
+              ),
+            );
+          },
         );
       },
       child: Container(

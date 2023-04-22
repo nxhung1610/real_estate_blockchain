@@ -6,10 +6,10 @@ part 'notification_data.g.dart';
 @freezed
 class NotificationData with _$NotificationData {
   const factory NotificationData.newReListed({
-    required String idRe,
+    required int id,
   }) = NotificationDataNewReListed;
   const factory NotificationData.reMinted({
-    required String idRe,
+    @JsonKey(name: "re_id") required int id,
     required String hash,
   }) = NotificationDataReMinted;
 
