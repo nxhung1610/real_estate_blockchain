@@ -2,16 +2,22 @@ import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+bool isFlutterLocalNotificationsInitialized = false;
 
 class AppNotification {
   static const kDefaultChannelId = "realust_notification";
   static const kDefaultChannelName = "Realust";
   static const kDefaultChannelDescription = "Realust's notifications";
+  static const kBackgroundNotificationData = 'BACKGROUND_NOTIFICATION_DATA';
 
-  const AppNotification._internal();
+  AppNotification._internal();
 
-  static const AppNotification _singleton = AppNotification._internal();
+  static final AppNotification _singleton = AppNotification._internal();
   static FlutterLocalNotificationsPlugin notificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
@@ -20,13 +26,11 @@ class AppNotification {
   }
 
   static final messaging = FirebaseMessaging.instance;
-
+  final BehaviorSubject<String?> _onMessage = BehaviorSubject();
+  Stream<String?> get onMessage => _onMessage.asBroadcastStream();
   Future<void> initialize() async {
-    FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
-    FirebaseMessaging.onMessage.listen(onForegroundMessage);
     printLog("TOKEN", message: "${await messaging.getToken()}");
-    final startedNotification =
-        await notificationsPlugin.getNotificationAppLaunchDetails();
+
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('ic_launcher');
     const DarwinInitializationSettings initializationSettingsDarwin =
@@ -40,6 +44,7 @@ class AppNotification {
     );
     await notificationsPlugin.initialize(
       initializationSettings,
+      onDidReceiveNotificationResponse: onDidReceiveNotificationResponse,
     );
 
     if (Platform.isIOS) {
@@ -57,6 +62,13 @@ class AppNotification {
               AndroidFlutterLocalNotificationsPlugin>()
           ?.requestPermission();
     }
+
+    isFlutterLocalNotificationsInitialized = true;
+  }
+
+  Future<void> onMessagingListener() async {
+    FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
+    FirebaseMessaging.onMessage.listen(onForegroundMessage);
   }
 
   Future<void> subscribeToGlobalTopic() async {
@@ -69,7 +81,7 @@ class AppNotification {
 
   Future<void> subscribeToUserTopic(int userId) async {
     printLog(this, message: "subscribed to $userId");
-
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
     return messaging.subscribeToTopic("REALUST_NOTIFICATION_$userId");
   }
 
@@ -79,20 +91,29 @@ class AppNotification {
 
   @pragma('vm:entry-point')
   static Future<void> onBackgroundMessage(RemoteMessage message) async {
-    // appRoute.routerDelegate.navigatorKey.currentContext?.go(location)
-
-    await showNoti(title: message.data["title"], body: message.data["body"]);
+    await showNoti(
+      title: message.data["title"],
+      body: message.data["body"],
+      payload: message.data["data"],
+    );
   }
 
   static Future<void> onForegroundMessage(RemoteMessage message) async {
-    // appRoute.routerDelegate.navigatorKey.currentContext?.go(location)
-    await showNoti(title: message.data["title"], body: message.data["body"]);
+    await showNoti(
+      title: message.data["title"],
+      body: message.data["body"],
+      payload: message.data["data"],
+    );
   }
 
   static void onDidReceiveLocalNotification(
       int id, String? title, String? body, String? payload) {}
 
-  static Future showNoti({required String title, required String body}) {
+  static Future showNoti({
+    required String title,
+    required String body,
+    String? payload,
+  }) {
     const androidNotification = AndroidNotificationDetails(
       kDefaultChannelId,
       kDefaultChannelName,
@@ -102,14 +123,32 @@ class AppNotification {
     );
 
     const iosNotification = DarwinNotificationDetails();
-    const notificationDetails =
-        NotificationDetails(android: androidNotification, iOS: iosNotification);
+    const notificationDetails = NotificationDetails(
+      android: androidNotification,
+      iOS: iosNotification,
+    );
+
     return notificationsPlugin.show(
       body.hashCode,
       title,
       body,
       notificationDetails,
-      payload: 'item x',
+      payload: payload,
     );
+  }
+
+  @pragma('vm:entry-point')
+  static void onDidReceiveBackgroundNotificationResponse(
+    NotificationResponse details,
+  ) async {
+    final sharedPreferences = getIt.call<SharedPreferences>();
+    sharedPreferences.setString(
+        kBackgroundNotificationData, details.payload ?? '');
+  }
+
+  static void onDidReceiveNotificationResponse(
+    NotificationResponse details,
+  ) {
+    _singleton._onMessage.sink.add(details.payload);
   }
 }

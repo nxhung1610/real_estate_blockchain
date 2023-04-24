@@ -11,7 +11,7 @@ class HouseProcessRealInfoState with _$HouseProcessRealInfoState {
     int? reTypeId,
     @Default(0) int noBedroom,
     @Default(0) int noWc,
-    @Default(0) int floors,
+    @Default(1) int floors,
     @Default(0) int builtAt,
     RealEstateDirection? houseFacing,
     RealEstateDirection? balcony,

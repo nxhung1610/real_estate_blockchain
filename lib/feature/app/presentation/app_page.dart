@@ -19,6 +19,7 @@ import 'package:real_estate_blockchain/feature/connectivity/application/connecti
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
+import 'package:real_estate_blockchain/feature/notification_app/application/notification_app/notification_app_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
@@ -28,6 +29,7 @@ import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../../../config/app_notification.dart';
+import '../../real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import '../application/app_bloc.dart';
 import '../router/app_route.dart';
 
@@ -56,7 +58,11 @@ class AppPage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt.call<RealEstateFavoritesBloc>(),
-        )
+        ),
+        BlocProvider(
+          create: (context) => getIt.call<NotificationAppBloc>()
+            ..add(const NotificationAppEvent.onStared()),
+        ),
       ],
       child: const _AppCommon(),
     );
@@ -73,6 +79,7 @@ class _AppCommon extends StatefulWidget {
 late GoRouter appRoute;
 
 class _AppCommonState extends State<_AppCommon> with PageMixin {
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   late final AppBloc appBloc;
   late final AuthBloc authBloc;
 
@@ -248,6 +255,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                   dissmissFocus(context);
                 },
                 child: MaterialApp.router(
+                  key: navigatorKey,
                   theme: AppTheme.light,
                   scrollBehavior: const ScrollBehaviorModified(),
                   debugShowCheckedModeBanner: false,
@@ -273,7 +281,45 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                         ]);
                       },
                     );
-                    return widget;
+                    return BlocListener<NotificationAppBloc,
+                        NotificationAppState>(
+                      listener: (context, state) async {
+                        printLog(
+                          this,
+                          message:
+                              'Notification Loaded ${state.notification?.title}',
+                        );
+                        await processAuthen.future;
+                        if (state.notification != null &&
+                            authBloc.state is AuthStateAuthenticated) {
+                          printLog(
+                            this,
+                            message:
+                                'Notification Navigatorp ${state.notification?.title}',
+                          );
+                          final notification = state.notification!;
+                          notification.data?.map(
+                            newReListed: (value) {
+                              appRoute.push(
+                                $appRoute.realEstateDetail,
+                                extra: RealEstateDetailPageParams(
+                                  id: value.id.toString(),
+                                ),
+                              );
+                            },
+                            reMinted: (value) {
+                              appRoute.push(
+                                $appRoute.realEstateDetail,
+                                extra: RealEstateDetailPageParams(
+                                  id: value.id.toString(),
+                                ),
+                              );
+                            },
+                          );
+                        }
+                      },
+                      child: widget,
+                    );
                   },
                   supportedLocales: S.delegate.supportedLocales,
                   routeInformationParser: appRoute.routeInformationParser,

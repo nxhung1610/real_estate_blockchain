@@ -6,7 +6,7 @@ import 'package:real_estate_blockchain/data/core/infrastructure/remote/jwt_inter
 import 'package:real_estate_blockchain/grpc/core/jwt_grpc_intercepter.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
-@singleton
+@lazySingleton
 class GrpcService {
   VoidCallback? _onExpireToken;
   Future<Either<dynamic, dynamic>> Function()? _refreshToken;
@@ -19,12 +19,15 @@ class GrpcService {
     _onExpireToken = onExpireToken;
     _refreshToken = refreshToken;
     _token = token;
+    JwtGrpcIntercepter.initCallBack(
+      onExpireToken: onExpireToken,
+      refreshToken: refreshToken,
+      token: token,
+    );
   }
 
+  @injectable
   JwtGrpcIntercepter get jwtGrpcIntercepter => JwtGrpcIntercepter(
         dioToken: getIt.call<ApiRemote>().dioToken,
-        onExpireToken: _onExpireToken,
-        refreshToken: _refreshToken,
-        token: _token,
       );
 }

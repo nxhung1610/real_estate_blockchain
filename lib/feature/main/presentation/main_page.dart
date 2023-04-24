@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -16,6 +19,9 @@ import 'package:real_estate_blockchain/injection_dependencies/injection_dependen
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
+
+import '../../notification_app/application/notification_app/notification_app_bloc.dart';
 
 class MainPage extends StatefulWidget with GetItStatefulWidgetMixin {
   final MainRouteParams? params;
@@ -37,6 +43,8 @@ class _MainPageState extends State<MainPage>
     initialIndex: cubit.state.sub.index,
   );
 
+  late final StreamSubscription<String?> onListen;
+
   @override
   void initState() {
     super.initState();
@@ -45,10 +53,22 @@ class _MainPageState extends State<MainPage>
       ..add(
         const RealEstateFavoritesEvent.started(),
       );
+    onListen =
+        AppNotification.instance.onMessage.asBroadcastStream().listen((value) {
+      printLog(this, message: 'On Notification Tap $value');
+      if (mounted) {
+        context.read<NotificationAppBloc>().add(
+              NotificationAppEvent.onMessage(
+                payload: value,
+              ),
+            );
+      }
+    });
   }
 
   @override
   void dispose() {
+    onListen.cancel();
     favoritesBloc.dispose();
     tabController.dispose();
     super.dispose();

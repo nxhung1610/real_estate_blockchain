@@ -22,6 +22,7 @@ Future<void> main() async {
     configureDependencies(),
     Hive.initFlutter(),
   ]);
+  await AppNotification.instance.onMessagingListener();
   await AppNotification.instance.initialize();
 
   FlutterError.onError = (errorDetails) {

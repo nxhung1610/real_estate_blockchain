@@ -3688,7 +3688,7 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
       this.reTypeId,
       this.noBedroom = 0,
       this.noWc = 0,
-      this.floors = 0,
+      this.floors = 1,
       this.builtAt = 0,
       this.houseFacing,
       this.balcony,

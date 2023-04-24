@@ -295,6 +295,14 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                 return _SelectNumberOption(
                   lable: labelByName(values[index]),
                   value: numberByName(values[index], state),
+                  minValue: () {
+                    switch (values[index]) {
+                      case RealEstateDetail.floor:
+                        return 1;
+                      default:
+                        return 0;
+                    }
+                  }(),
                   onDecrease: () {
                     switch (values[index]) {
                       case RealEstateDetail.room:
@@ -622,14 +630,17 @@ class _OptionTypeRealEstateState<T> extends State<_OptionTypeRealEstate<T>>
 class _SelectNumberOption extends StatelessWidget {
   final String lable;
   final int value;
+  final int minValue;
   final void Function() onIncrease;
   final void Function() onDecrease;
-  const _SelectNumberOption(
-      {super.key,
-      required this.lable,
-      required this.value,
-      required this.onIncrease,
-      required this.onDecrease});
+  const _SelectNumberOption({
+    super.key,
+    required this.lable,
+    required this.value,
+    required this.onIncrease,
+    required this.onDecrease,
+    this.minValue = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -653,7 +664,7 @@ class _SelectNumberOption extends StatelessWidget {
               child: Material(
                 elevation: 0,
                 borderRadius: BorderRadius.circular(AppSize.smallRadius),
-                color: value <= 0
+                color: value <= minValue
                     ? AppColor.kNeutrals_.shade600
                     : AppColor.kNeutrals_.shade800,
                 child: IconButton(

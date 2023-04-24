@@ -9,17 +9,24 @@ import 'package:real_estate_blockchain/utils/logger.dart';
 import 'response_future_retry.dart';
 
 class JwtGrpcIntercepter extends ClientInterceptor {
-  final VoidCallback? onExpireToken;
-  final Future<Either<dynamic, dynamic>> Function()? refreshToken;
-  final Future<String> Function()? token;
+  static VoidCallback? onExpireToken;
+  static Future<Either<dynamic, dynamic>> Function()? refreshToken;
+  static Future<String> Function()? token;
   final Dio dioToken;
 
   JwtGrpcIntercepter({
-    this.onExpireToken,
-    this.refreshToken,
-    this.token,
     required this.dioToken,
   });
+
+  static void initCallBack({
+    VoidCallback? onExpireToken,
+    Future<Either<dynamic, dynamic>> Function()? refreshToken,
+    Future<String> Function()? token,
+  }) {
+    JwtGrpcIntercepter.onExpireToken = onExpireToken;
+    JwtGrpcIntercepter.refreshToken = refreshToken;
+    JwtGrpcIntercepter.token = token;
+  }
 
   FutureOr<void> _provider(Map<String, String> metadata, String uri) async {
     final tokenResult = await token?.call();
@@ -59,6 +66,8 @@ class JwtGrpcIntercepter extends ClientInterceptor {
           if (retryCount == 0) {
             await refreshToken?.call();
             continue;
+          } else {
+            onExpireToken?.call();
           }
         } finally {
           result.pendingCall = null;
@@ -66,24 +75,6 @@ class JwtGrpcIntercepter extends ClientInterceptor {
 
         result.complete(future);
         return;
-
-        // final response = invoker(method, request, options);
-        // result.pendingCall = response;
-        // try {
-        //   await response;
-        //   // Fall-through. This will forward value to the result.
-        // } catch (error, st) {
-        //   if (error is GrpcError &&
-        //       error.code == StatusCode.permissionDenied &&
-        //       retryCount < 4) {
-        //     continue;
-        //   }
-        //   // Fall-through. This will forward error to the result.
-        // } finally {
-        //   result.pendingCall = null;
-        // }
-        // result.complete(response);
-        // return; // Done.
       }
     }
 
