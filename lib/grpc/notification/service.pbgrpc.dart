@@ -12,7 +12,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:injectable/injectable.dart';
 import 'notification.pb.dart' as $0;
-import 'response.pb.dart' as $1;
+import '../core/response.pb.dart' as $1;
 export 'service.pb.dart';
 
 class NotificationServiceClient extends $grpc.Client {

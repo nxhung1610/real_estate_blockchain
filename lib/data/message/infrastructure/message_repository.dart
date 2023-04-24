@@ -54,6 +54,7 @@ class MessageRepository {
       throw res.errorKey ?? res.response ?? "";
     } catch (e, trace) {
       printLog(this, message: "getRooms", error: e, trace: trace);
+
       return left(const MessageFailure.loadMessageFailure());
     }
   }
@@ -80,6 +81,14 @@ class MessageRepository {
       throw res.errorKey ?? res.response ?? "";
     } catch (e, trace) {
       printLog(this, message: "getRooms", error: e, trace: trace);
+      if (e is String) {
+        switch (e) {
+          case 'ErrGroupExisted':
+            return left(const MessageFailure.roomExist());
+
+          default:
+        }
+      }
       return left(const MessageFailure.loadMessageFailure());
     }
   }

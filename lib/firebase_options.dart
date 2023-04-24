@@ -63,8 +63,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '302933003992',
     projectId: 'real-estate-blockchain-a9b4a',
     storageBucket: 'real-estate-blockchain-a9b4a.appspot.com',
-    androidClientId: '302933003992-b4tj4i12sullrf2j5bj87narh8ofe585.apps.googleusercontent.com',
-    iosClientId: '302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com',
+    androidClientId:
+        '302933003992-b4tj4i12sullrf2j5bj87narh8ofe585.apps.googleusercontent.com',
+    iosClientId:
+        '302933003992-9m2a5ebk8tqo1q8u3cupn8kqojbp8tjo.apps.googleusercontent.com',
     iosBundleId: 'com.realust.app',
   );
 }

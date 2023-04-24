@@ -20,18 +20,21 @@ mixin _$MessageFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() loadMessageFailure,
     required TResult Function() loadRoomFailure,
+    required TResult Function() roomExist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadMessageFailure,
     TResult? Function()? loadRoomFailure,
+    TResult? Function()? roomExist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadMessageFailure,
     TResult Function()? loadRoomFailure,
+    TResult Function()? roomExist,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$MessageFailure {
     required TResult Function(MessageLoadMessageFailure value)
         loadMessageFailure,
     required TResult Function(MessageLoadRoomFailure value) loadRoomFailure,
+    required TResult Function(MessageFailureRoomExist value) roomExist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult? Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult? Function(MessageFailureRoomExist value)? roomExist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult Function(MessageFailureRoomExist value)? roomExist,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +123,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() loadMessageFailure,
     required TResult Function() loadRoomFailure,
+    required TResult Function() roomExist,
   }) {
     return loadMessageFailure();
   }
@@ -126,6 +133,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadMessageFailure,
     TResult? Function()? loadRoomFailure,
+    TResult? Function()? roomExist,
   }) {
     return loadMessageFailure?.call();
   }
@@ -135,6 +143,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadMessageFailure,
     TResult Function()? loadRoomFailure,
+    TResult Function()? roomExist,
     required TResult orElse(),
   }) {
     if (loadMessageFailure != null) {
@@ -149,6 +158,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
     required TResult Function(MessageLoadMessageFailure value)
         loadMessageFailure,
     required TResult Function(MessageLoadRoomFailure value) loadRoomFailure,
+    required TResult Function(MessageFailureRoomExist value) roomExist,
   }) {
     return loadMessageFailure(this);
   }
@@ -158,6 +168,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult? Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult? Function(MessageFailureRoomExist value)? roomExist,
   }) {
     return loadMessageFailure?.call(this);
   }
@@ -167,6 +178,7 @@ class _$MessageLoadMessageFailure implements MessageLoadMessageFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult Function(MessageFailureRoomExist value)? roomExist,
     required TResult orElse(),
   }) {
     if (loadMessageFailure != null) {
@@ -220,6 +232,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() loadMessageFailure,
     required TResult Function() loadRoomFailure,
+    required TResult Function() roomExist,
   }) {
     return loadRoomFailure();
   }
@@ -229,6 +242,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadMessageFailure,
     TResult? Function()? loadRoomFailure,
+    TResult? Function()? roomExist,
   }) {
     return loadRoomFailure?.call();
   }
@@ -238,6 +252,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadMessageFailure,
     TResult Function()? loadRoomFailure,
+    TResult Function()? roomExist,
     required TResult orElse(),
   }) {
     if (loadRoomFailure != null) {
@@ -252,6 +267,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
     required TResult Function(MessageLoadMessageFailure value)
         loadMessageFailure,
     required TResult Function(MessageLoadRoomFailure value) loadRoomFailure,
+    required TResult Function(MessageFailureRoomExist value) roomExist,
   }) {
     return loadRoomFailure(this);
   }
@@ -261,6 +277,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult? Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult? Function(MessageFailureRoomExist value)? roomExist,
   }) {
     return loadRoomFailure?.call(this);
   }
@@ -270,6 +287,7 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageLoadMessageFailure value)? loadMessageFailure,
     TResult Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult Function(MessageFailureRoomExist value)? roomExist,
     required TResult orElse(),
   }) {
     if (loadRoomFailure != null) {
@@ -281,4 +299,114 @@ class _$MessageLoadRoomFailure implements MessageLoadRoomFailure {
 
 abstract class MessageLoadRoomFailure implements MessageFailure {
   const factory MessageLoadRoomFailure() = _$MessageLoadRoomFailure;
+}
+
+/// @nodoc
+abstract class _$$MessageFailureRoomExistCopyWith<$Res> {
+  factory _$$MessageFailureRoomExistCopyWith(_$MessageFailureRoomExist value,
+          $Res Function(_$MessageFailureRoomExist) then) =
+      __$$MessageFailureRoomExistCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MessageFailureRoomExistCopyWithImpl<$Res>
+    extends _$MessageFailureCopyWithImpl<$Res, _$MessageFailureRoomExist>
+    implements _$$MessageFailureRoomExistCopyWith<$Res> {
+  __$$MessageFailureRoomExistCopyWithImpl(_$MessageFailureRoomExist _value,
+      $Res Function(_$MessageFailureRoomExist) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MessageFailureRoomExist implements MessageFailureRoomExist {
+  const _$MessageFailureRoomExist();
+
+  @override
+  String toString() {
+    return 'MessageFailure.roomExist()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MessageFailureRoomExist);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadMessageFailure,
+    required TResult Function() loadRoomFailure,
+    required TResult Function() roomExist,
+  }) {
+    return roomExist();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadMessageFailure,
+    TResult? Function()? loadRoomFailure,
+    TResult? Function()? roomExist,
+  }) {
+    return roomExist?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadMessageFailure,
+    TResult Function()? loadRoomFailure,
+    TResult Function()? roomExist,
+    required TResult orElse(),
+  }) {
+    if (roomExist != null) {
+      return roomExist();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MessageLoadMessageFailure value)
+        loadMessageFailure,
+    required TResult Function(MessageLoadRoomFailure value) loadRoomFailure,
+    required TResult Function(MessageFailureRoomExist value) roomExist,
+  }) {
+    return roomExist(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MessageLoadMessageFailure value)? loadMessageFailure,
+    TResult? Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult? Function(MessageFailureRoomExist value)? roomExist,
+  }) {
+    return roomExist?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MessageLoadMessageFailure value)? loadMessageFailure,
+    TResult Function(MessageLoadRoomFailure value)? loadRoomFailure,
+    TResult Function(MessageFailureRoomExist value)? roomExist,
+    required TResult orElse(),
+  }) {
+    if (roomExist != null) {
+      return roomExist(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MessageFailureRoomExist implements MessageFailure {
+  const factory MessageFailureRoomExist() = _$MessageFailureRoomExist;
 }

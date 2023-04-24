@@ -3,10 +3,12 @@ import 'package:grpc/grpc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/notification/domain/i_notification_repository.dart';
 import 'package:real_estate_blockchain/grpc/grpc_module.dart';
-import 'package:real_estate_blockchain/grpc/notification.pb.dart'
-    as grpcNotification;
+
 import 'package:real_estate_blockchain/data/notification/domain/notification_failure.dart';
-import 'package:real_estate_blockchain/grpc/service.pbgrpc.dart';
+import 'package:real_estate_blockchain/grpc/notification/notification.pb.dart'
+    as grpcNotification;
+import 'package:real_estate_blockchain/grpc/notification/service.pbgrpc.dart';
+
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../domain/model/user_notification.dart';

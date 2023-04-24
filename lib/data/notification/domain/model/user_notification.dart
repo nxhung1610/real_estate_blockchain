@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
-import 'package:real_estate_blockchain/grpc/notification.pb.dart'
+import 'package:real_estate_blockchain/grpc/notification/notification.pb.dart'
     as grpcNotification;
 
 import 'notification_data.dart';

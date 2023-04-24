@@ -124,22 +124,53 @@ class _WBottomViewerAction extends StatelessWidget {
                 AppSize.largeWidthDimens.horizontalSpace,
                 Expanded(
                   child: ButtonApp(
-                    label: s.contact,
+                    label: s.scheduleTour,
                     onPressed: () {
-                      context.read<RealEstateDetailBloc>().add(
-                            RealEstateDetailEvent.onCreateRoomContact(
-                              (context.read<AuthBloc>().state
-                                      as AuthStateAuthenticated)
-                                  .user
-                                  .id,
-                              item.ownerId!,
-                            ),
-                          );
+                      context.push(
+                        $appRoute.scheduleTour.url,
+                        extra: ScheduleTourParams(
+                          item.id.toString(),
+                        ),
+                      );
                     },
                     type: ButtonType.primary,
                     size: ButtonSize.large,
                   ),
-                )
+                ),
+                AppSize.largeWidthDimens.horizontalSpace,
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16.r),
+                    ),
+                    border: Border.fromBorderSide(
+                      BorderSide(
+                        color: AppColor.kNeutrals_.shade600,
+                      ),
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16.r),
+                    ),
+                    child: Material(
+                      child: IconButton(
+                        onPressed: () {
+                          context.read<RealEstateDetailBloc>().add(
+                                RealEstateDetailEvent.onCreateRoomContact(
+                                  (context.read<AuthBloc>().state
+                                          as AuthStateAuthenticated)
+                                      .user
+                                      .id,
+                                  item.ownerId!,
+                                ),
+                              );
+                        },
+                        icon: Assets.icons.icComment.svg(),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             )
           ],

@@ -6,4 +6,5 @@ part 'message_failure.freezed.dart';
 class MessageFailure with _$MessageFailure {
   const factory MessageFailure.loadMessageFailure() = MessageLoadMessageFailure;
   const factory MessageFailure.loadRoomFailure() = MessageLoadRoomFailure;
+  const factory MessageFailure.roomExist() = MessageFailureRoomExist;
 }

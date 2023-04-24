@@ -8,6 +8,7 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+
 @$core.Deprecated('Use responseStringDescriptor instead')
 const ResponseString$json = const {
   '1': 'ResponseString',
@@ -19,7 +20,8 @@ const ResponseString$json = const {
 };
 
 /// Descriptor for `ResponseString`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseStringDescriptor = $convert.base64Decode('Cg5SZXNwb25zZVN0cmluZxIfCgtzdGF0dXNfY29kZRgBIAEoBVIKc3RhdHVzQ29kZRIYCgdtZXNzYWdlGAIgASgJUgdtZXNzYWdlEhIKBGRhdGEYAyABKAlSBGRhdGE=');
+final $typed_data.Uint8List responseStringDescriptor = $convert.base64Decode(
+    'Cg5SZXNwb25zZVN0cmluZxIfCgtzdGF0dXNfY29kZRgBIAEoBVIKc3RhdHVzQ29kZRIYCgdtZXNzYWdlGAIgASgJUgdtZXNzYWdlEhIKBGRhdGEYAyABKAlSBGRhdGE=');
 @$core.Deprecated('Use responseIdDescriptor instead')
 const ResponseId$json = const {
   '1': 'ResponseId',
@@ -31,4 +33,5 @@ const ResponseId$json = const {
 };
 
 /// Descriptor for `ResponseId`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseIdDescriptor = $convert.base64Decode('CgpSZXNwb25zZUlkEh8KC3N0YXR1c19jb2RlGAEgASgFUgpzdGF0dXNDb2RlEhgKB21lc3NhZ2UYAiABKAlSB21lc3NhZ2USEgoEZGF0YRgDIAEoBVIEZGF0YQ==');
+final $typed_data.Uint8List responseIdDescriptor = $convert.base64Decode(
+    'CgpSZXNwb25zZUlkEh8KC3N0YXR1c19jb2RlGAEgASgFUgpzdGF0dXNDb2RlEhgKB21lc3NhZ2UYAiABKAlSB21lc3NhZ2USEgoEZGF0YRgDIAEoBVIEZGF0YQ==');
