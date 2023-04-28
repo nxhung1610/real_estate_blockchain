@@ -122,7 +122,10 @@ class AppNotification {
       priority: Priority.high,
     );
 
-    const iosNotification = DarwinNotificationDetails();
+    const iosNotification = DarwinNotificationDetails(
+      presentSound: true,
+      presentAlert: true,
+    );
     const notificationDetails = NotificationDetails(
       android: androidNotification,
       iOS: iosNotification,
@@ -143,7 +146,9 @@ class AppNotification {
   ) async {
     final sharedPreferences = getIt.call<SharedPreferences>();
     sharedPreferences.setString(
-        kBackgroundNotificationData, details.payload ?? '');
+      kBackgroundNotificationData,
+      details.payload ?? '',
+    );
   }
 
   static void onDidReceiveNotificationResponse(

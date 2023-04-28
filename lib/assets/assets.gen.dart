@@ -99,6 +99,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_camera.svg
   SvgGenImage get icCamera => const SvgGenImage('assets/icons/ic_camera.svg');
 
+  /// File path: assets/icons/ic_camera_solid.svg
+  SvgGenImage get icCameraSolid =>
+      const SvgGenImage('assets/icons/ic_camera_solid.svg');
+
   /// File path: assets/icons/ic_category_light.svg
   SvgGenImage get icCategoryLight =>
       const SvgGenImage('assets/icons/ic_category_light.svg');
@@ -165,6 +169,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_home_2.svg
   SvgGenImage get icHome2 => const SvgGenImage('assets/icons/ic_home_2.svg');
+
+  /// File path: assets/icons/ic_home_3.svg
+  SvgGenImage get icHome3 => const SvgGenImage('assets/icons/ic_home_3.svg');
 
   /// File path: assets/icons/ic_home_bold.svg
   SvgGenImage get icHomeBold =>
@@ -268,6 +275,7 @@ class $AssetsIconsGen {
         icBed,
         icBtnPlus,
         icCamera,
+        icCameraSolid,
         icCategoryLight,
         icComment,
         icDelete,
@@ -286,6 +294,7 @@ class $AssetsIconsGen {
         icHeartBold,
         icHeartLight,
         icHome2,
+        icHome3,
         icHomeBold,
         icHomeLight,
         icLocationBold,
@@ -333,9 +342,16 @@ class $AssetsImagesGen {
   AssetGenImage get onboarding2 =>
       const AssetGenImage('assets/images/onboarding2.png');
 
+  /// File path: assets/images/telegram.png
+  AssetGenImage get telegram =>
+      const AssetGenImage('assets/images/telegram.png');
+
+  /// File path: assets/images/zalo.png
+  AssetGenImage get zalo => const AssetGenImage('assets/images/zalo.png');
+
   /// List of all assets
   List<AssetGenImage> get values =>
-      [imageHouse, myHomeBackground, onboarding1, onboarding2];
+      [imageHouse, myHomeBackground, onboarding1, onboarding2, telegram, zalo];
 }
 
 class $AssetsLocationsGen {

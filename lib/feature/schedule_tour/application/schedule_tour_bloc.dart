@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/tour/domain/enum/contact_tour_type.dart';
 import 'package:real_estate_blockchain/data/tour/domain/enum/tour_type.dart';
 import 'package:real_estate_blockchain/data/tour/domain/i_tour_repository.dart';
 
@@ -17,6 +18,8 @@ class ScheduleTourBloc extends Bloc<ScheduleTourEvent, ScheduleTourState> {
     on<ScheduleTourEventOnStarted>(_onStarted);
     on<ScheduleTourEventOnChangeDate>(_onChangeDate);
     on<ScheduleTourEventOnSwitchType>(_onSwitchType);
+    on<ScheduleTourEventOnChangeTime>(_onChangeTime);
+    on<ScheduleTourEventOnContactType>(_onContactType);
   }
 
   FutureOr<void> _onStarted(
@@ -28,7 +31,7 @@ class ScheduleTourBloc extends Bloc<ScheduleTourEvent, ScheduleTourState> {
     ScheduleTourEventOnChangeDate event,
     Emitter<ScheduleTourState> emit,
   ) {
-    emit(state.copyWith(time: event.time));
+    emit(state.copyWith(date: event.time));
   }
 
   FutureOr<void> _onSwitchType(
@@ -36,5 +39,19 @@ class ScheduleTourBloc extends Bloc<ScheduleTourEvent, ScheduleTourState> {
     Emitter<ScheduleTourState> emit,
   ) {
     emit(state.copyWith(type: event.type));
+  }
+
+  FutureOr<void> _onChangeTime(
+    ScheduleTourEventOnChangeTime event,
+    Emitter<ScheduleTourState> emit,
+  ) {
+    emit(state.copyWith(time: event.time));
+  }
+
+  FutureOr<void> _onContactType(
+    ScheduleTourEventOnContactType event,
+    Emitter<ScheduleTourState> emit,
+  ) {
+    emit(state.copyWith(contactType: event.type));
   }
 }

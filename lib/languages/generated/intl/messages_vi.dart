@@ -122,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
+        "inPerson": MessageLookupByLibrary.simpleMessage("Trực tiếp"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
@@ -203,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
         "phoneNumberNotExist": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại không tồn tại!"),
+        "pickATime": MessageLookupByLibrary.simpleMessage("Chọn thời gian"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),
@@ -237,6 +239,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
         "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
+        "requestAHomeTour":
+            MessageLookupByLibrary.simpleMessage("Yêu cầu tham quan nhà"),
         "resendTheCode": MessageLookupByLibrary.simpleMessage("Gửi lại mã"),
         "reset": MessageLookupByLibrary.simpleMessage("Khôi phục"),
         "resetPasswordSuccess":
@@ -286,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),
         "villa": MessageLookupByLibrary.simpleMessage("Biệt thự"),
+        "virtual": MessageLookupByLibrary.simpleMessage("Online"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Kho"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),

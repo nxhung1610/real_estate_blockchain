@@ -12,7 +12,7 @@ import 'package:real_estate_blockchain/utils/logger.dart';
 import '../domain/model/create_tour_input.dart';
 import '../domain/model/filter_tour.dart';
 
-@lazySingleton
+@LazySingleton(as: ITourRepository)
 class TourRepository implements ITourRepository {
   final TourServiceClient tourServiceClient;
 

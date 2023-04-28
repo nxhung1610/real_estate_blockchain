@@ -191,5 +191,9 @@
   "startWithUs" : "Bắt đầu với chúng tôi",
   "startWithUsDes" :"Chúng tôi ở đây để giúp bạn lựa chọn đúng",
   "notification" :"Thông báo",
-  "deleteRealEstate" : "Bạn có muốn xoá bất động sản này ko ?"
+  "deleteRealEstate" : "Bạn có muốn xoá bất động sản này ko ?",
+  "requestAHomeTour" : "Yêu cầu tham quan nhà",
+  "inPerson" : "Trực tiếp",
+  "virtual" : "Online",
+  "pickATime" : "Chọn thời gian"
 }

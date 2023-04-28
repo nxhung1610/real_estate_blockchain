@@ -35,7 +35,7 @@ abstract class GrpcModule {
   }
 
   @lazySingleton
-  @Named(GrpcModuleKeys.gRpcNotificationService)
+  @Named(GrpcModuleKeys.gRpcTourService)
   TourServiceClient tourService(
     ClientChannel client,
     GrpcService service,

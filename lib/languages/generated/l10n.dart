@@ -1919,6 +1919,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Request a home tour`
+  String get requestAHomeTour {
+    return Intl.message(
+      'Request a home tour',
+      name: 'requestAHomeTour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In Person`
+  String get inPerson {
+    return Intl.message(
+      'In Person',
+      name: 'inPerson',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Virtual`
+  String get virtual {
+    return Intl.message(
+      'Virtual',
+      name: 'virtual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick a time`
+  String get pickATime {
+    return Intl.message(
+      'Pick a time',
+      name: 'pickATime',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

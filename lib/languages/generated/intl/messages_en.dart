@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
+        "inPerson": MessageLookupByLibrary.simpleMessage("In Person"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
@@ -205,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number invalid"),
         "phoneNumberNotExist":
             MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
+        "pickATime": MessageLookupByLibrary.simpleMessage("Pick a time"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),
@@ -238,6 +240,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
+        "requestAHomeTour":
+            MessageLookupByLibrary.simpleMessage("Request a home tour"),
         "resendTheCode":
             MessageLookupByLibrary.simpleMessage("Resend the code"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
@@ -286,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("View"),
         "villa": MessageLookupByLibrary.simpleMessage("Villa"),
+        "virtual": MessageLookupByLibrary.simpleMessage("Virtual"),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "west": MessageLookupByLibrary.simpleMessage("West"),

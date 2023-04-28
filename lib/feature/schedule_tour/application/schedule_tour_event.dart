@@ -8,4 +8,10 @@ class ScheduleTourEvent with _$ScheduleTourEvent {
       ScheduleTourEventOnSwitchType;
   const factory ScheduleTourEvent.onChangeDate(DateTime time) =
       ScheduleTourEventOnChangeDate;
+
+  const factory ScheduleTourEvent.onChangeTime(DateTime time) =
+      ScheduleTourEventOnChangeTime;
+  const factory ScheduleTourEvent.onSchedule() = ScheduleTourEventOnSchedule;
+  const factory ScheduleTourEvent.onContactType(ContactTourType type) =
+      ScheduleTourEventOnContactType;
 }
