@@ -255,6 +255,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Save Change"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Schedule Tour"),
+        "scheduleTourSuccess":
+            MessageLookupByLibrary.simpleMessage("Schedule tour success"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sell": MessageLookupByLibrary.simpleMessage("Sell"),
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),

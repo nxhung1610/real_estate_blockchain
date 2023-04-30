@@ -253,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Lưu"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Tham quan"),
+        "scheduleTourSuccess":
+            MessageLookupByLibrary.simpleMessage("Đặt lịch thành công"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "sell": MessageLookupByLibrary.simpleMessage("Bán"),
         "showLoading":

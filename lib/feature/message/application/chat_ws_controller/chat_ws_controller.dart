@@ -55,7 +55,7 @@ class ChatWSController {
           //   'sec-websocket-key': key,
           // },
           stompConnectHeaders: {
-            'Authorization': token!,
+            'Authorization': 'Bearer ${token!}',
           },
           onDebugMessage: (message) {
             printLog(this, message: "DEBUG: $message");

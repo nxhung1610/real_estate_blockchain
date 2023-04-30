@@ -194,5 +194,6 @@
   "requestAHomeTour" : "Request a home tour",
   "inPerson" : "In Person",
   "virtual" : "Virtual",
-  "pickATime" : "Pick a time"
+  "pickATime" : "Pick a time",
+  "scheduleTourSuccess" : "Schedule tour success"
 }

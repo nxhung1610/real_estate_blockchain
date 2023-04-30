@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/tour/domain/enum/contact_tour_type.dart';
+import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/schedule_tour/application/schedule_tour_bloc.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class ContactType extends StatefulWidget {
@@ -53,7 +56,7 @@ class _ContactTypeState extends State<ContactType> {
   }
 }
 
-class _Item extends StatelessWidget {
+class _Item extends StatefulWidget {
   final ContactTourType type;
   final bool isSelected;
   const _Item({
@@ -63,9 +66,15 @@ class _Item extends StatelessWidget {
   });
 
   @override
+  State<_Item> createState() => _ItemState();
+}
+
+class _ItemState extends State<_Item> with SingleTickerProviderStateMixin {
+  @override
   Widget build(BuildContext context) {
     Widget icon;
-    switch (type) {
+    final s = S.of(context);
+    switch (widget.type) {
       case ContactTourType.unknow:
         icon = Container(
           decoration: const BoxDecoration(
@@ -92,52 +101,79 @@ class _Item extends StatelessWidget {
           ),
         ),
       ),
-      child: Row(
+      child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(24.r),
-            child: SizedBox(
-              width: 48.r,
-              height: 48.r,
-              child: icon,
-            ),
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(24.r),
+                child: SizedBox(
+                  width: 48.r,
+                  height: 48.r,
+                  child: icon,
+                ),
+              ),
+              AppSize.largeWidthDimens.horizontalSpace,
+              Expanded(
+                child: Text(
+                  widget.type.title,
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    color: AppColor.kNeutrals2,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+              widget.isSelected
+                  ? Container(
+                      width: 24.r,
+                      height: 24.r,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColor.kPrimary1,
+                      ),
+                      child: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 12.r,
+                        weight: 3.r,
+                      ),
+                    )
+                  : Container(
+                      width: 24.r,
+                      height: 24.r,
+                      decoration: BoxDecoration(
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: AppColor.kNeutrals6,
+                            width: 1.r,
+                          ),
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                    )
+            ],
           ),
-          AppSize.largeWidthDimens.horizontalSpace,
-          Expanded(
-            child: Text(
-              type.title,
-              style: context.textTheme.bodyLarge?.copyWith(
-                color: AppColor.kNeutrals2,
-                fontWeight: FontWeight.w900,
+          if (widget.isSelected)
+            AnimatedSize(
+              duration: const Duration(seconds: 1),
+              child: Column(
+                children: [
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  InputPrimaryForm(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
+                    hint: s.phoneNumber,
+                    onChanged: (value) {
+                      context
+                          .read<ScheduleTourBloc>()
+                          .add(ScheduleTourEvent.onPhoneNumber(value));
+                    },
+                  )
+                ],
               ),
             ),
-          ),
-          isSelected
-              ? Container(
-                  width: 24.r,
-                  height: 24.r,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColor.kPrimary1,
-                  ),
-                  child: const Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  ),
-                )
-              : Container(
-                  width: 24.r,
-                  height: 24.r,
-                  decoration: BoxDecoration(
-                    border: Border.fromBorderSide(
-                      BorderSide(
-                        color: AppColor.kNeutrals6,
-                        width: 1.r,
-                      ),
-                    ),
-                    shape: BoxShape.circle,
-                  ),
-                )
         ],
       ),
     );

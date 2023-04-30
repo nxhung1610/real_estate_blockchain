@@ -19,7 +19,8 @@ class ScheduleTourRouter extends BaseRoute {
             assert(state.extra != null && state.extra is ScheduleTourParams);
             return MaterialPage(
                 child: BlocProvider(
-              create: (context) => getIt.call<ScheduleTourBloc>(),
+              create: (context) => getIt.call<ScheduleTourBloc>(
+                  param1: state.extra as ScheduleTourParams),
               child: ScheduleTourPage(
                 params: state.extra as ScheduleTourParams,
               ),

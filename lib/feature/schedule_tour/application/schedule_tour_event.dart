@@ -14,4 +14,6 @@ class ScheduleTourEvent with _$ScheduleTourEvent {
   const factory ScheduleTourEvent.onSchedule() = ScheduleTourEventOnSchedule;
   const factory ScheduleTourEvent.onContactType(ContactTourType type) =
       ScheduleTourEventOnContactType;
+  const factory ScheduleTourEvent.onPhoneNumber(String? phoneNumber) =
+      ScheduleTourEventOnPhoneNumber;
 }

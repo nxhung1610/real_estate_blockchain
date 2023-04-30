@@ -1959,6 +1959,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Schedule tour success`
+  String get scheduleTourSuccess {
+    return Intl.message(
+      'Schedule tour success',
+      name: 'scheduleTourSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -5,10 +5,15 @@ class ScheduleTourState with _$ScheduleTourState {
   const factory ScheduleTourState({
     required DateTime date,
     DateTime? time,
-    @Default(TourType.inPerson) TourType type,
+    @Default(TourType.virtual) TourType type,
     ContactTourType? contactType,
+    PhoneNumberAuth? phoneNumber,
+    @Default(Status.idle()) Status status,
+    required ScheduleTourParams params,
   }) = _ScheduleTourState;
-  factory ScheduleTourState.init() => ScheduleTourState(
+  factory ScheduleTourState.init(ScheduleTourParams params) =>
+      ScheduleTourState(
         date: DateTime.now(),
+        params: params,
       );
 }

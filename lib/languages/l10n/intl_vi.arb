@@ -195,5 +195,6 @@
   "requestAHomeTour" : "Yêu cầu tham quan nhà",
   "inPerson" : "Trực tiếp",
   "virtual" : "Online",
-  "pickATime" : "Chọn thời gian"
+  "pickATime" : "Chọn thời gian",
+  "scheduleTourSuccess" : "Đặt lịch thành công"
 }

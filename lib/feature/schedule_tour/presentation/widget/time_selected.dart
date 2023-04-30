@@ -30,7 +30,7 @@ class _TimeSelectedState extends State<TimeSelected> {
   @override
   void initState() {
     super.initState();
-    time = DateTime.now();
+    time = DateTime(DateTime.now().year);
     itemKeys = List.generate(
       47,
       (index) => GlobalObjectKey(

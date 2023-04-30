@@ -27,10 +27,10 @@ import '../data/auth/infrastructure/remote/mapper/login_mapper.dart' as _i27;
 import '../data/connection/domain/i_connection_repository.dart' as _i52;
 import '../data/connection/infrastructure/connection_repository.dart' as _i53;
 import '../data/core/data.dart' as _i15;
-import '../data/core/infrastructure/infrastructure.dart' as _i71;
+import '../data/core/infrastructure/infrastructure.dart' as _i72;
 import '../data/core/infrastructure/local/api_local_hive.dart' as _i3;
 import '../data/core/infrastructure/remote/api_remote.dart' as _i4;
-import '../data/core/module.dart' as _i70;
+import '../data/core/module.dart' as _i71;
 import '../data/file/data.dart' as _i18;
 import '../data/file/infrastructure/file_repository.dart' as _i19;
 import '../data/message/infrastructure/message_repository.dart' as _i29;
@@ -49,14 +49,14 @@ import '../data/user/domain/i_user_repostiory.dart' as _i24;
 import '../data/user/infrastructure/user_repository.dart' as _i25;
 import '../feature/app/application/app_bloc.dart' as _i44;
 import '../feature/auth/application/application.dart' as _i60;
-import '../feature/auth/application/auth_bloc.dart' as _i66;
+import '../feature/auth/application/auth_bloc.dart' as _i67;
 import '../feature/auth/application/forgot_password/forgot_password_bloc.dart'
-    as _i68;
+    as _i69;
 import '../feature/auth/application/login_bloc.dart' as _i58;
 import '../feature/auth/application/register_bloc.dart' as _i63;
 import '../feature/common/application/address/address_builder_cubit.dart'
     as _i43;
-import '../feature/connectivity/application/connectivity_bloc.dart' as _i67;
+import '../feature/connectivity/application/connectivity_bloc.dart' as _i68;
 import '../feature/discover/application/discover_bloc.dart' as _i47;
 import '../feature/general/application/general_bloc.dart' as _i6;
 import '../feature/home/application/home_bloc.dart' as _i48;
@@ -89,12 +89,13 @@ import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
     as _i35;
 import '../feature/schedule_tour/application/schedule_tour_bloc.dart' as _i64;
+import '../feature/schedule_tour/model/schedule_tour_params.dart' as _i65;
 import '../feature/search/application/search_bloc.dart' as _i36;
 import '../feature/setting/application/setting_bloc.dart' as _i38;
 import '../feature/user/change_password/application/user_change_password_bloc.dart'
-    as _i65;
+    as _i66;
 import '../feature/user/profile/application/user_profile_bloc.dart' as _i41;
-import '../grpc/grpc_module.dart' as _i69;
+import '../grpc/grpc_module.dart' as _i70;
 import '../grpc/grpc_service.dart' as _i7;
 import '../grpc/notification/service.pbgrpc.dart' as _i31;
 import '../grpc/tour/service.pbgrpc.dart' as _i40;
@@ -268,25 +269,31 @@ Future<_i1.GetIt> $initGetIt(
       () => _i62.NotificationBloc(gh<_i54.INotificationRespository>()));
   gh.factory<_i63.RegisterBloc>(
       () => _i63.RegisterBloc(gh<_i16.IAuthRepository>()));
-  gh.factory<_i64.ScheduleTourBloc>(
-      () => _i64.ScheduleTourBloc(gh<_i56.ITourRepository>()));
-  gh.factory<_i65.UserChangePasswordBloc>(
-      () => _i65.UserChangePasswordBloc(gh<_i16.IAuthRepository>()));
-  gh.factory<_i66.AuthBloc>(() => _i66.AuthBloc(
+  gh.factoryParam<_i64.ScheduleTourBloc, _i65.ScheduleTourParams, dynamic>((
+    params,
+    _,
+  ) =>
+      _i64.ScheduleTourBloc(
+        gh<_i56.ITourRepository>(),
+        params,
+      ));
+  gh.factory<_i66.UserChangePasswordBloc>(
+      () => _i66.UserChangePasswordBloc(gh<_i16.IAuthRepository>()));
+  gh.factory<_i67.AuthBloc>(() => _i67.AuthBloc(
         gh<_i16.IAuthLocalRepository>(),
         gh<_i16.IAuthRepository>(),
         gh<_i15.ApiRemote>(),
         gh<_i7.GrpcService>(),
       ));
-  gh.factory<_i67.ConnectivityBloc>(
-      () => _i67.ConnectivityBloc(gh<_i52.IConnectionRepository>()));
-  gh.factory<_i68.ForgotPasswordBloc>(
-      () => _i68.ForgotPasswordBloc(gh<_i16.IAuthRepository>()));
+  gh.factory<_i68.ConnectivityBloc>(
+      () => _i68.ConnectivityBloc(gh<_i52.IConnectionRepository>()));
+  gh.factory<_i69.ForgotPasswordBloc>(
+      () => _i69.ForgotPasswordBloc(gh<_i16.IAuthRepository>()));
   return getIt;
 }
 
-class _$GrpcModule extends _i69.GrpcModule {}
+class _$GrpcModule extends _i70.GrpcModule {}
 
-class _$CoreData extends _i70.CoreData {}
+class _$CoreData extends _i71.CoreData {}
 
-class _$InfrastructureModule extends _i71.InfrastructureModule {}
+class _$InfrastructureModule extends _i72.InfrastructureModule {}

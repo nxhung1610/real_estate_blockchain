@@ -20,6 +20,9 @@ mixin _$ScheduleTourState {
   DateTime? get time => throw _privateConstructorUsedError;
   TourType get type => throw _privateConstructorUsedError;
   ContactTourType? get contactType => throw _privateConstructorUsedError;
+  PhoneNumberAuth? get phoneNumber => throw _privateConstructorUsedError;
+  Status get status => throw _privateConstructorUsedError;
+  ScheduleTourParams get params => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ScheduleTourStateCopyWith<ScheduleTourState> get copyWith =>
@@ -36,7 +39,12 @@ abstract class $ScheduleTourStateCopyWith<$Res> {
       {DateTime date,
       DateTime? time,
       TourType type,
-      ContactTourType? contactType});
+      ContactTourType? contactType,
+      PhoneNumberAuth? phoneNumber,
+      Status status,
+      ScheduleTourParams params});
+
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -56,6 +64,9 @@ class _$ScheduleTourStateCopyWithImpl<$Res, $Val extends ScheduleTourState>
     Object? time = freezed,
     Object? type = null,
     Object? contactType = freezed,
+    Object? phoneNumber = freezed,
+    Object? status = null,
+    Object? params = null,
   }) {
     return _then(_value.copyWith(
       date: null == date
@@ -74,7 +85,27 @@ class _$ScheduleTourStateCopyWithImpl<$Res, $Val extends ScheduleTourState>
           ? _value.contactType
           : contactType // ignore: cast_nullable_to_non_nullable
               as ContactTourType?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as ScheduleTourParams,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatusCopyWith<$Res> get status {
+    return $StatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
   }
 }
 
@@ -90,7 +121,13 @@ abstract class _$$_ScheduleTourStateCopyWith<$Res>
       {DateTime date,
       DateTime? time,
       TourType type,
-      ContactTourType? contactType});
+      ContactTourType? contactType,
+      PhoneNumberAuth? phoneNumber,
+      Status status,
+      ScheduleTourParams params});
+
+  @override
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -108,6 +145,9 @@ class __$$_ScheduleTourStateCopyWithImpl<$Res>
     Object? time = freezed,
     Object? type = null,
     Object? contactType = freezed,
+    Object? phoneNumber = freezed,
+    Object? status = null,
+    Object? params = null,
   }) {
     return _then(_$_ScheduleTourState(
       date: null == date
@@ -126,6 +166,18 @@ class __$$_ScheduleTourStateCopyWithImpl<$Res>
           ? _value.contactType
           : contactType // ignore: cast_nullable_to_non_nullable
               as ContactTourType?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberAuth?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as ScheduleTourParams,
     ));
   }
 }
@@ -136,8 +188,11 @@ class _$_ScheduleTourState implements _ScheduleTourState {
   const _$_ScheduleTourState(
       {required this.date,
       this.time,
-      this.type = TourType.inPerson,
-      this.contactType});
+      this.type = TourType.virtual,
+      this.contactType,
+      this.phoneNumber,
+      this.status = const Status.idle(),
+      required this.params});
 
   @override
   final DateTime date;
@@ -148,10 +203,17 @@ class _$_ScheduleTourState implements _ScheduleTourState {
   final TourType type;
   @override
   final ContactTourType? contactType;
+  @override
+  final PhoneNumberAuth? phoneNumber;
+  @override
+  @JsonKey()
+  final Status status;
+  @override
+  final ScheduleTourParams params;
 
   @override
   String toString() {
-    return 'ScheduleTourState(date: $date, time: $time, type: $type, contactType: $contactType)';
+    return 'ScheduleTourState(date: $date, time: $time, type: $type, contactType: $contactType, phoneNumber: $phoneNumber, status: $status, params: $params)';
   }
 
   @override
@@ -163,11 +225,16 @@ class _$_ScheduleTourState implements _ScheduleTourState {
             (identical(other.time, time) || other.time == time) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.contactType, contactType) ||
-                other.contactType == contactType));
+                other.contactType == contactType) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, date, time, type, contactType);
+  int get hashCode => Object.hash(
+      runtimeType, date, time, type, contactType, phoneNumber, status, params);
 
   @JsonKey(ignore: true)
   @override
@@ -182,7 +249,10 @@ abstract class _ScheduleTourState implements ScheduleTourState {
       {required final DateTime date,
       final DateTime? time,
       final TourType type,
-      final ContactTourType? contactType}) = _$_ScheduleTourState;
+      final ContactTourType? contactType,
+      final PhoneNumberAuth? phoneNumber,
+      final Status status,
+      required final ScheduleTourParams params}) = _$_ScheduleTourState;
 
   @override
   DateTime get date;
@@ -192,6 +262,12 @@ abstract class _ScheduleTourState implements ScheduleTourState {
   TourType get type;
   @override
   ContactTourType? get contactType;
+  @override
+  PhoneNumberAuth? get phoneNumber;
+  @override
+  Status get status;
+  @override
+  ScheduleTourParams get params;
   @override
   @JsonKey(ignore: true)
   _$$_ScheduleTourStateCopyWith<_$_ScheduleTourState> get copyWith =>
@@ -209,6 +285,7 @@ mixin _$ScheduleTourEvent {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -220,6 +297,7 @@ mixin _$ScheduleTourEvent {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -231,6 +309,7 @@ mixin _$ScheduleTourEvent {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -244,6 +323,8 @@ mixin _$ScheduleTourEvent {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -255,6 +336,7 @@ mixin _$ScheduleTourEvent {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -266,6 +348,7 @@ mixin _$ScheduleTourEvent {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -337,6 +420,7 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onStarted();
   }
@@ -351,6 +435,7 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onStarted?.call();
   }
@@ -365,6 +450,7 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -384,6 +470,8 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onStarted(this);
   }
@@ -398,6 +486,7 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onStarted?.call(this);
   }
@@ -412,6 +501,7 @@ class _$ScheduleTourEventOnStarted implements ScheduleTourEventOnStarted {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -472,6 +562,7 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onCreate();
   }
@@ -486,6 +577,7 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onCreate?.call();
   }
@@ -500,6 +592,7 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onCreate != null) {
@@ -519,6 +612,8 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onCreate(this);
   }
@@ -533,6 +628,7 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onCreate?.call(this);
   }
@@ -547,6 +643,7 @@ class _$ScheduleTourEventOnCreate implements ScheduleTourEventOnCreate {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onCreate != null) {
@@ -635,6 +732,7 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onSwitchType(type);
   }
@@ -649,6 +747,7 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onSwitchType?.call(type);
   }
@@ -663,6 +762,7 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onSwitchType != null) {
@@ -682,6 +782,8 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onSwitchType(this);
   }
@@ -696,6 +798,7 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onSwitchType?.call(this);
   }
@@ -710,6 +813,7 @@ class _$ScheduleTourEventOnSwitchType implements ScheduleTourEventOnSwitchType {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onSwitchType != null) {
@@ -804,6 +908,7 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onChangeDate(time);
   }
@@ -818,6 +923,7 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onChangeDate?.call(time);
   }
@@ -832,6 +938,7 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onChangeDate != null) {
@@ -851,6 +958,8 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onChangeDate(this);
   }
@@ -865,6 +974,7 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onChangeDate?.call(this);
   }
@@ -879,6 +989,7 @@ class _$ScheduleTourEventOnChangeDate implements ScheduleTourEventOnChangeDate {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onChangeDate != null) {
@@ -973,6 +1084,7 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onChangeTime(time);
   }
@@ -987,6 +1099,7 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onChangeTime?.call(time);
   }
@@ -1001,6 +1114,7 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onChangeTime != null) {
@@ -1020,6 +1134,8 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onChangeTime(this);
   }
@@ -1034,6 +1150,7 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onChangeTime?.call(this);
   }
@@ -1048,6 +1165,7 @@ class _$ScheduleTourEventOnChangeTime implements ScheduleTourEventOnChangeTime {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onChangeTime != null) {
@@ -1115,6 +1233,7 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onSchedule();
   }
@@ -1129,6 +1248,7 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onSchedule?.call();
   }
@@ -1143,6 +1263,7 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onSchedule != null) {
@@ -1162,6 +1283,8 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onSchedule(this);
   }
@@ -1176,6 +1299,7 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onSchedule?.call(this);
   }
@@ -1190,6 +1314,7 @@ class _$ScheduleTourEventOnSchedule implements ScheduleTourEventOnSchedule {
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onSchedule != null) {
@@ -1279,6 +1404,7 @@ class _$ScheduleTourEventOnContactType
     required TResult Function(DateTime time) onChangeTime,
     required TResult Function() onSchedule,
     required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
   }) {
     return onContactType(type);
   }
@@ -1293,6 +1419,7 @@ class _$ScheduleTourEventOnContactType
     TResult? Function(DateTime time)? onChangeTime,
     TResult? Function()? onSchedule,
     TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
   }) {
     return onContactType?.call(type);
   }
@@ -1307,6 +1434,7 @@ class _$ScheduleTourEventOnContactType
     TResult Function(DateTime time)? onChangeTime,
     TResult Function()? onSchedule,
     TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onContactType != null) {
@@ -1326,6 +1454,8 @@ class _$ScheduleTourEventOnContactType
     required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
     required TResult Function(ScheduleTourEventOnContactType value)
         onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
   }) {
     return onContactType(this);
   }
@@ -1340,6 +1470,7 @@ class _$ScheduleTourEventOnContactType
     TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
   }) {
     return onContactType?.call(this);
   }
@@ -1354,6 +1485,7 @@ class _$ScheduleTourEventOnContactType
     TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
     TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
     TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
     required TResult orElse(),
   }) {
     if (onContactType != null) {
@@ -1370,5 +1502,183 @@ abstract class ScheduleTourEventOnContactType implements ScheduleTourEvent {
   ContactTourType get type;
   @JsonKey(ignore: true)
   _$$ScheduleTourEventOnContactTypeCopyWith<_$ScheduleTourEventOnContactType>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleTourEventOnPhoneNumberCopyWith<$Res> {
+  factory _$$ScheduleTourEventOnPhoneNumberCopyWith(
+          _$ScheduleTourEventOnPhoneNumber value,
+          $Res Function(_$ScheduleTourEventOnPhoneNumber) then) =
+      __$$ScheduleTourEventOnPhoneNumberCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? phoneNumber});
+}
+
+/// @nodoc
+class __$$ScheduleTourEventOnPhoneNumberCopyWithImpl<$Res>
+    extends _$ScheduleTourEventCopyWithImpl<$Res,
+        _$ScheduleTourEventOnPhoneNumber>
+    implements _$$ScheduleTourEventOnPhoneNumberCopyWith<$Res> {
+  __$$ScheduleTourEventOnPhoneNumberCopyWithImpl(
+      _$ScheduleTourEventOnPhoneNumber _value,
+      $Res Function(_$ScheduleTourEventOnPhoneNumber) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? phoneNumber = freezed,
+  }) {
+    return _then(_$ScheduleTourEventOnPhoneNumber(
+      freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleTourEventOnPhoneNumber
+    implements ScheduleTourEventOnPhoneNumber {
+  const _$ScheduleTourEventOnPhoneNumber(this.phoneNumber);
+
+  @override
+  final String? phoneNumber;
+
+  @override
+  String toString() {
+    return 'ScheduleTourEvent.onPhoneNumber(phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleTourEventOnPhoneNumber &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, phoneNumber);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleTourEventOnPhoneNumberCopyWith<_$ScheduleTourEventOnPhoneNumber>
+      get copyWith => __$$ScheduleTourEventOnPhoneNumberCopyWithImpl<
+          _$ScheduleTourEventOnPhoneNumber>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onStarted,
+    required TResult Function() onCreate,
+    required TResult Function(TourType type) onSwitchType,
+    required TResult Function(DateTime time) onChangeDate,
+    required TResult Function(DateTime time) onChangeTime,
+    required TResult Function() onSchedule,
+    required TResult Function(ContactTourType type) onContactType,
+    required TResult Function(String? phoneNumber) onPhoneNumber,
+  }) {
+    return onPhoneNumber(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onStarted,
+    TResult? Function()? onCreate,
+    TResult? Function(TourType type)? onSwitchType,
+    TResult? Function(DateTime time)? onChangeDate,
+    TResult? Function(DateTime time)? onChangeTime,
+    TResult? Function()? onSchedule,
+    TResult? Function(ContactTourType type)? onContactType,
+    TResult? Function(String? phoneNumber)? onPhoneNumber,
+  }) {
+    return onPhoneNumber?.call(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onStarted,
+    TResult Function()? onCreate,
+    TResult Function(TourType type)? onSwitchType,
+    TResult Function(DateTime time)? onChangeDate,
+    TResult Function(DateTime time)? onChangeTime,
+    TResult Function()? onSchedule,
+    TResult Function(ContactTourType type)? onContactType,
+    TResult Function(String? phoneNumber)? onPhoneNumber,
+    required TResult orElse(),
+  }) {
+    if (onPhoneNumber != null) {
+      return onPhoneNumber(phoneNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleTourEventOnStarted value) onStarted,
+    required TResult Function(ScheduleTourEventOnCreate value) onCreate,
+    required TResult Function(ScheduleTourEventOnSwitchType value) onSwitchType,
+    required TResult Function(ScheduleTourEventOnChangeDate value) onChangeDate,
+    required TResult Function(ScheduleTourEventOnChangeTime value) onChangeTime,
+    required TResult Function(ScheduleTourEventOnSchedule value) onSchedule,
+    required TResult Function(ScheduleTourEventOnContactType value)
+        onContactType,
+    required TResult Function(ScheduleTourEventOnPhoneNumber value)
+        onPhoneNumber,
+  }) {
+    return onPhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleTourEventOnStarted value)? onStarted,
+    TResult? Function(ScheduleTourEventOnCreate value)? onCreate,
+    TResult? Function(ScheduleTourEventOnSwitchType value)? onSwitchType,
+    TResult? Function(ScheduleTourEventOnChangeDate value)? onChangeDate,
+    TResult? Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
+    TResult? Function(ScheduleTourEventOnSchedule value)? onSchedule,
+    TResult? Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult? Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
+  }) {
+    return onPhoneNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleTourEventOnStarted value)? onStarted,
+    TResult Function(ScheduleTourEventOnCreate value)? onCreate,
+    TResult Function(ScheduleTourEventOnSwitchType value)? onSwitchType,
+    TResult Function(ScheduleTourEventOnChangeDate value)? onChangeDate,
+    TResult Function(ScheduleTourEventOnChangeTime value)? onChangeTime,
+    TResult Function(ScheduleTourEventOnSchedule value)? onSchedule,
+    TResult Function(ScheduleTourEventOnContactType value)? onContactType,
+    TResult Function(ScheduleTourEventOnPhoneNumber value)? onPhoneNumber,
+    required TResult orElse(),
+  }) {
+    if (onPhoneNumber != null) {
+      return onPhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleTourEventOnPhoneNumber implements ScheduleTourEvent {
+  const factory ScheduleTourEventOnPhoneNumber(final String? phoneNumber) =
+      _$ScheduleTourEventOnPhoneNumber;
+
+  String? get phoneNumber;
+  @JsonKey(ignore: true)
+  _$$ScheduleTourEventOnPhoneNumberCopyWith<_$ScheduleTourEventOnPhoneNumber>
       get copyWith => throw _privateConstructorUsedError;
 }
