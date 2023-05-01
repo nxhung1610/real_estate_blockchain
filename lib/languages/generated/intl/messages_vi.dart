@@ -191,7 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordNotValid":
             MessageLookupByLibrary.simpleMessage("Mật khẩu không hợp lệ"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
-            "Mật khẩu phải có tối thiểu 8 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
+            "Mật khẩu phải có tối thiểu 8 ký tự và tối đa 18 ký tự, ít nhất 1 ký tự viết hoa, 1 ký tự viết thường và 1 số"),
         "permisionCamera": MessageLookupByLibrary.simpleMessage(
             "Chúng tôi cần bạn cấp quyền truy cập \'Máy ảnh\' để có thể sử dụng tính năng này"),
         "permisionLibrary": MessageLookupByLibrary.simpleMessage(

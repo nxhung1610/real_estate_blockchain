@@ -32,6 +32,16 @@ class TourServiceClient extends $grpc.Client {
           '/pb.TourService/GetTourStream',
           ($2.EmptyRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.TourInfo.fromBuffer(value));
+  static final _$rejectTour =
+      $grpc.ClientMethod<$0.TourRejectTourRequest, $1.ResponseString>(
+          '/pb.TourService/RejectTour',
+          ($0.TourRejectTourRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $1.ResponseString.fromBuffer(value));
+  static final _$assignStaffForTour =
+      $grpc.ClientMethod<$0.TourAssignStaffForTourRequest, $1.ResponseString>(
+          '/pb.TourService/AssignStaffForTour',
+          ($0.TourAssignStaffForTourRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $1.ResponseString.fromBuffer(value));
 
   TourServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -53,6 +63,18 @@ class TourServiceClient extends $grpc.Client {
     return $createStreamingCall(
         _$getTourStream, $async.Stream.fromIterable([request]),
         options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ResponseString> rejectTour(
+      $0.TourRejectTourRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$rejectTour, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ResponseString> assignStaffForTour(
+      $0.TourAssignStaffForTourRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$assignStaffForTour, request, options: options);
   }
 }
 
@@ -81,6 +103,23 @@ abstract class TourServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $2.EmptyRequest.fromBuffer(value),
         ($0.TourInfo value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TourRejectTourRequest, $1.ResponseString>(
+        'RejectTour',
+        rejectTour_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TourRejectTourRequest.fromBuffer(value),
+        ($1.ResponseString value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TourAssignStaffForTourRequest,
+            $1.ResponseString>(
+        'AssignStaffForTour',
+        assignStaffForTour_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TourAssignStaffForTourRequest.fromBuffer(value),
+        ($1.ResponseString value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.ResponseId> createTour_Pre($grpc.ServiceCall call,
@@ -98,10 +137,25 @@ abstract class TourServiceBase extends $grpc.Service {
     yield* getTourStream(call, await request);
   }
 
+  $async.Future<$1.ResponseString> rejectTour_Pre($grpc.ServiceCall call,
+      $async.Future<$0.TourRejectTourRequest> request) async {
+    return rejectTour(call, await request);
+  }
+
+  $async.Future<$1.ResponseString> assignStaffForTour_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.TourAssignStaffForTourRequest> request) async {
+    return assignStaffForTour(call, await request);
+  }
+
   $async.Future<$1.ResponseId> createTour(
       $grpc.ServiceCall call, $0.CreateTourRequest request);
   $async.Future<$0.ListTourResponse> listTour(
       $grpc.ServiceCall call, $0.ListTourRequest request);
   $async.Stream<$0.TourInfo> getTourStream(
       $grpc.ServiceCall call, $2.EmptyRequest request);
+  $async.Future<$1.ResponseString> rejectTour(
+      $grpc.ServiceCall call, $0.TourRejectTourRequest request);
+  $async.Future<$1.ResponseString> assignStaffForTour(
+      $grpc.ServiceCall call, $0.TourAssignStaffForTourRequest request);
 }

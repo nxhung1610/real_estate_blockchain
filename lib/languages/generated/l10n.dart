@@ -380,10 +380,10 @@ class S {
     );
   }
 
-  /// `Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number`
+  /// `Password must have minimum 8 characters and maximum 18 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number`
   String get passwordValidDesc {
     return Intl.message(
-      'Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
+      'Password must have minimum 8 characters and maximum 18 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number',
       name: 'passwordValidDesc',
       desc: '',
       args: [],

@@ -193,7 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordNotValid":
             MessageLookupByLibrary.simpleMessage("Password not valid"),
         "passwordValidDesc": MessageLookupByLibrary.simpleMessage(
-            "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
+            "Password must have minimum 8 characters and maximum 18 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"),
         "permisionCamera": MessageLookupByLibrary.simpleMessage(
             "We need you to grant \'Camera\' access to be able to use this feature"),
         "permisionLibrary": MessageLookupByLibrary.simpleMessage(

@@ -26,7 +26,7 @@ class GrpcService {
     );
   }
 
-  @injectable
+  @singleton
   JwtGrpcIntercepter get jwtGrpcIntercepter => JwtGrpcIntercepter(
         dioToken: getIt.call<ApiRemote>().dioToken,
       );

@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import 'response_future_retry.dart';
@@ -29,9 +30,13 @@ class JwtGrpcIntercepter extends ClientInterceptor {
   }
 
   FutureOr<void> _provider(Map<String, String> metadata, String uri) async {
-    final tokenResult = await token?.call();
-    if (tokenResult?.isEmpty == false) {
-      metadata['authorization'] = "Bearer $tokenResult";
+    try {
+      final tokenResult = await token?.call();
+      if (tokenResult?.isEmpty == false) {
+        metadata['Authorization'] = "Bearer $tokenResult";
+      }
+    } on Exception catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
     }
   }
 
@@ -52,6 +57,8 @@ class JwtGrpcIntercepter extends ClientInterceptor {
           request,
           newOptions.mergedWith(
             CallOptions(
+              timeout:
+                  Duration(milliseconds: AppConfig.instance.receiveTimeout),
               providers: [
                 _provider,
               ],
@@ -72,7 +79,6 @@ class JwtGrpcIntercepter extends ClientInterceptor {
         } finally {
           result.pendingCall = null;
         }
-
         result.complete(future);
         return;
       }

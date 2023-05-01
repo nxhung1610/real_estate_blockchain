@@ -32,7 +32,7 @@
   "phoneNumber" : "Phone Number",
   "password": "Password",
   "rePassword" : "Re-enter password",
-  "passwordValidDesc" : "Password must have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number",
+  "passwordValidDesc" : "Password must have minimum 8 characters and maximum 18 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number",
   "fullName" : "Full Name",
   "firstName" :"First Name",
   "lastName" : "Last Name",
