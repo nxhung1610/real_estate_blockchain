@@ -9,8 +9,9 @@ import 'package:real_estate_blockchain/data/tour/domain/enum/tour_type.dart';
 import 'package:real_estate_blockchain/data/tour/domain/i_tour_repository.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/create_tour_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/model/schedule_tour_params.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
+
+import '../model/schedule_tour_params.dart';
 
 part 'schedule_tour_state.dart';
 part 'schedule_tour_event.dart';

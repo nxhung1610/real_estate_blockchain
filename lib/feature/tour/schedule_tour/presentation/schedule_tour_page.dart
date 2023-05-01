@@ -9,16 +9,16 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/tour/domain/enum/tour_type.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/common/presentation/widget/option_tab.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/application/schedule_tour_bloc.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/model/schedule_tour_params.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/presentation/widget/contact_type.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/presentation/widget/schedule_popup_success.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/presentation/widget/time_selected.dart';
+import 'package:real_estate_blockchain/feature/tour/schedule_tour/presentation/widget/schedule_popup_success.dart';
 import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
+import '../application/schedule_tour_bloc.dart';
+import '../model/schedule_tour_params.dart';
 import 'widget/calendar_selected.dart';
+import 'widget/contact_type.dart';
+import 'widget/time_selected.dart';
 
 class ScheduleTourPage extends StatefulWidget {
   final ScheduleTourParams params;

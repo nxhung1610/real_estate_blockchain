@@ -8,4 +8,5 @@ class AuthError {
   static const errUnauthorized = 'ErrUnauthorized';
   static const errUsersAlreadyExists = 'ErrusersAlreadyExists';
   static const errLoginFailed = 'ErrLoginFailed';
+  static const errCannotCreateUsers = 'ErrCannotCreateusers';
 }

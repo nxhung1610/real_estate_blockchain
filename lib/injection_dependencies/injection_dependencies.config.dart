@@ -88,10 +88,11 @@ import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
     as _i34;
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
     as _i35;
-import '../feature/schedule_tour/application/schedule_tour_bloc.dart' as _i64;
-import '../feature/schedule_tour/model/schedule_tour_params.dart' as _i65;
 import '../feature/search/application/search_bloc.dart' as _i36;
 import '../feature/setting/application/setting_bloc.dart' as _i38;
+import '../feature/tour/schedule_tour/application/schedule_tour_bloc.dart'
+    as _i64;
+import '../feature/tour/schedule_tour/model/schedule_tour_params.dart' as _i65;
 import '../feature/user/change_password/application/user_change_password_bloc.dart'
     as _i66;
 import '../feature/user/profile/application/user_profile_bloc.dart' as _i41;

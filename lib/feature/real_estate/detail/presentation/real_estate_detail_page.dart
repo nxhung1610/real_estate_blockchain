@@ -27,7 +27,7 @@ import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skele
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/model/schedule_tour_params.dart';
+import 'package:real_estate_blockchain/feature/tour/schedule_tour/model/schedule_tour_params.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';

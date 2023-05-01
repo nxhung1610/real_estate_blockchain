@@ -7,11 +7,11 @@ import 'package:real_estate_blockchain/feature/notification/application/notifica
 import 'package:real_estate_blockchain/feature/notification/router/notification_route.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/router/schedule_tour_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
 import 'package:real_estate_blockchain/feature/user/router/user_router.dart';
 
 import '../../setting/router/setting_route.dart';
+import '../../tour/schedule_tour/router/schedule_tour_router.dart';
 
 final $appRoute = AppRoute('/', null);
 

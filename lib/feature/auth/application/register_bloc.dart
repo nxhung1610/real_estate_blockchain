@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../module.dart';
 
@@ -58,7 +59,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             status: Status.success(value: r),
           )),
         );
-      } catch (e) {
+      } catch (e, trace) {
+        printLog(this, message: e, error: e, trace: trace);
+        emit(state.copyWith(status: Status.failure(value: e)));
       } finally {
         emit(state.copyWith(status: const Status.idle()));
       }

@@ -27,6 +27,7 @@ mixin _$AuthFailures {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +41,7 @@ mixin _$AuthFailures {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +55,7 @@ mixin _$AuthFailures {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,6 +75,8 @@ mixin _$AuthFailures {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +92,7 @@ mixin _$AuthFailures {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +108,7 @@ mixin _$AuthFailures {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +183,7 @@ class _$AuthFailuresEmailAddressInvalid
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return emailAddressInvalid();
   }
@@ -192,6 +200,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return emailAddressInvalid?.call();
   }
@@ -208,6 +217,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (emailAddressInvalid != null) {
@@ -233,6 +243,8 @@ class _$AuthFailuresEmailAddressInvalid
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return emailAddressInvalid(this);
   }
@@ -251,6 +263,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return emailAddressInvalid?.call(this);
   }
@@ -269,6 +282,7 @@ class _$AuthFailuresEmailAddressInvalid
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (emailAddressInvalid != null) {
@@ -333,6 +347,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return passwordInvalid();
   }
@@ -349,6 +364,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return passwordInvalid?.call();
   }
@@ -365,6 +381,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (passwordInvalid != null) {
@@ -390,6 +407,8 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return passwordInvalid(this);
   }
@@ -408,6 +427,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return passwordInvalid?.call(this);
   }
@@ -426,6 +446,7 @@ class _$AuthFailuresPasswordInvalid implements AuthFailuresPasswordInvalid {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (passwordInvalid != null) {
@@ -489,6 +510,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return fullNameInvalid();
   }
@@ -505,6 +527,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return fullNameInvalid?.call();
   }
@@ -521,6 +544,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (fullNameInvalid != null) {
@@ -546,6 +570,8 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return fullNameInvalid(this);
   }
@@ -564,6 +590,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return fullNameInvalid?.call(this);
   }
@@ -582,6 +609,7 @@ class _$AuthFailureFullNameInvalid implements AuthFailureFullNameInvalid {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (fullNameInvalid != null) {
@@ -642,6 +670,7 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return nameInvalid();
   }
@@ -658,6 +687,7 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return nameInvalid?.call();
   }
@@ -674,6 +704,7 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (nameInvalid != null) {
@@ -699,6 +730,8 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return nameInvalid(this);
   }
@@ -717,6 +750,7 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return nameInvalid?.call(this);
   }
@@ -735,6 +769,7 @@ class _$AuthFailureNameInvalid implements AuthFailureNameInvalid {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (nameInvalid != null) {
@@ -798,6 +833,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return phoneNumberInvalid();
   }
@@ -814,6 +850,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return phoneNumberInvalid?.call();
   }
@@ -830,6 +867,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (phoneNumberInvalid != null) {
@@ -855,6 +893,8 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return phoneNumberInvalid(this);
   }
@@ -873,6 +913,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return phoneNumberInvalid?.call(this);
   }
@@ -891,6 +932,7 @@ class _$AuthFailurePhoneNumberInvalid implements AuthFailurePhoneNumberInvalid {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (phoneNumberInvalid != null) {
@@ -957,6 +999,7 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return combinePhoneNumberOrPasswordInvalid();
   }
@@ -973,6 +1016,7 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return combinePhoneNumberOrPasswordInvalid?.call();
   }
@@ -989,6 +1033,7 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (combinePhoneNumberOrPasswordInvalid != null) {
@@ -1014,6 +1059,8 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return combinePhoneNumberOrPasswordInvalid(this);
   }
@@ -1032,6 +1079,7 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return combinePhoneNumberOrPasswordInvalid?.call(this);
   }
@@ -1050,6 +1098,7 @@ class _$AuthFailureCombinePhoneOrPasswordInvlaid
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (combinePhoneNumberOrPasswordInvalid != null) {
@@ -1115,6 +1164,7 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return userAlreadyExist();
   }
@@ -1131,6 +1181,7 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return userAlreadyExist?.call();
   }
@@ -1147,6 +1198,7 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (userAlreadyExist != null) {
@@ -1172,6 +1224,8 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return userAlreadyExist(this);
   }
@@ -1190,6 +1244,7 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return userAlreadyExist?.call(this);
   }
@@ -1208,6 +1263,7 @@ class _$AuthFailureUserAlreadyExist implements AuthFailureUserAlreadyExist {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (userAlreadyExist != null) {
@@ -1268,6 +1324,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return unknow();
   }
@@ -1284,6 +1341,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return unknow?.call();
   }
@@ -1300,6 +1358,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (unknow != null) {
@@ -1325,6 +1384,8 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return unknow(this);
   }
@@ -1343,6 +1404,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return unknow?.call(this);
   }
@@ -1361,6 +1423,7 @@ class _$AuthFailuresUnknow implements AuthFailuresUnknow {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (unknow != null) {
@@ -1424,6 +1487,7 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
     required TResult Function() userAlreadyExist,
     required TResult Function() unknow,
     required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
   }) {
     return unAuthoiation();
   }
@@ -1440,6 +1504,7 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
     TResult? Function()? userAlreadyExist,
     TResult? Function()? unknow,
     TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
   }) {
     return unAuthoiation?.call();
   }
@@ -1456,6 +1521,7 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
     TResult Function()? userAlreadyExist,
     TResult Function()? unknow,
     TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (unAuthoiation != null) {
@@ -1481,6 +1547,8 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
         userAlreadyExist,
     required TResult Function(AuthFailuresUnknow value) unknow,
     required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
   }) {
     return unAuthoiation(this);
   }
@@ -1499,6 +1567,7 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
     TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult? Function(AuthFailuresUnknow value)? unknow,
     TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
   }) {
     return unAuthoiation?.call(this);
   }
@@ -1517,6 +1586,7 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
     TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
     TResult Function(AuthFailuresUnknow value)? unknow,
     TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
     required TResult orElse(),
   }) {
     if (unAuthoiation != null) {
@@ -1528,4 +1598,167 @@ class _$AuthFailuresUnAuthorization implements AuthFailuresUnAuthorization {
 
 abstract class AuthFailuresUnAuthorization implements AuthFailures {
   const factory AuthFailuresUnAuthorization() = _$AuthFailuresUnAuthorization;
+}
+
+/// @nodoc
+abstract class _$$AuthFailuresCannotCreateUserCopyWith<$Res> {
+  factory _$$AuthFailuresCannotCreateUserCopyWith(
+          _$AuthFailuresCannotCreateUser value,
+          $Res Function(_$AuthFailuresCannotCreateUser) then) =
+      __$$AuthFailuresCannotCreateUserCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthFailuresCannotCreateUserCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$AuthFailuresCannotCreateUser>
+    implements _$$AuthFailuresCannotCreateUserCopyWith<$Res> {
+  __$$AuthFailuresCannotCreateUserCopyWithImpl(
+      _$AuthFailuresCannotCreateUser _value,
+      $Res Function(_$AuthFailuresCannotCreateUser) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AuthFailuresCannotCreateUser implements AuthFailuresCannotCreateUser {
+  const _$AuthFailuresCannotCreateUser();
+
+  @override
+  String toString() {
+    return 'AuthFailures.cannotCreateUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthFailuresCannotCreateUser);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() emailAddressInvalid,
+    required TResult Function() passwordInvalid,
+    required TResult Function() fullNameInvalid,
+    required TResult Function() nameInvalid,
+    required TResult Function() phoneNumberInvalid,
+    required TResult Function() combinePhoneNumberOrPasswordInvalid,
+    required TResult Function() userAlreadyExist,
+    required TResult Function() unknow,
+    required TResult Function() unAuthoiation,
+    required TResult Function() cannotCreateUser,
+  }) {
+    return cannotCreateUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? emailAddressInvalid,
+    TResult? Function()? passwordInvalid,
+    TResult? Function()? fullNameInvalid,
+    TResult? Function()? nameInvalid,
+    TResult? Function()? phoneNumberInvalid,
+    TResult? Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult? Function()? userAlreadyExist,
+    TResult? Function()? unknow,
+    TResult? Function()? unAuthoiation,
+    TResult? Function()? cannotCreateUser,
+  }) {
+    return cannotCreateUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? emailAddressInvalid,
+    TResult Function()? passwordInvalid,
+    TResult Function()? fullNameInvalid,
+    TResult Function()? nameInvalid,
+    TResult Function()? phoneNumberInvalid,
+    TResult Function()? combinePhoneNumberOrPasswordInvalid,
+    TResult Function()? userAlreadyExist,
+    TResult Function()? unknow,
+    TResult Function()? unAuthoiation,
+    TResult Function()? cannotCreateUser,
+    required TResult orElse(),
+  }) {
+    if (cannotCreateUser != null) {
+      return cannotCreateUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthFailuresEmailAddressInvalid value)
+        emailAddressInvalid,
+    required TResult Function(AuthFailuresPasswordInvalid value)
+        passwordInvalid,
+    required TResult Function(AuthFailureFullNameInvalid value) fullNameInvalid,
+    required TResult Function(AuthFailureNameInvalid value) nameInvalid,
+    required TResult Function(AuthFailurePhoneNumberInvalid value)
+        phoneNumberInvalid,
+    required TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)
+        combinePhoneNumberOrPasswordInvalid,
+    required TResult Function(AuthFailureUserAlreadyExist value)
+        userAlreadyExist,
+    required TResult Function(AuthFailuresUnknow value) unknow,
+    required TResult Function(AuthFailuresUnAuthorization value) unAuthoiation,
+    required TResult Function(AuthFailuresCannotCreateUser value)
+        cannotCreateUser,
+  }) {
+    return cannotCreateUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult? Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult? Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult? Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult? Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult? Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
+    TResult? Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult? Function(AuthFailuresUnknow value)? unknow,
+    TResult? Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult? Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
+  }) {
+    return cannotCreateUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthFailuresEmailAddressInvalid value)?
+        emailAddressInvalid,
+    TResult Function(AuthFailuresPasswordInvalid value)? passwordInvalid,
+    TResult Function(AuthFailureFullNameInvalid value)? fullNameInvalid,
+    TResult Function(AuthFailureNameInvalid value)? nameInvalid,
+    TResult Function(AuthFailurePhoneNumberInvalid value)? phoneNumberInvalid,
+    TResult Function(AuthFailureCombinePhoneOrPasswordInvlaid value)?
+        combinePhoneNumberOrPasswordInvalid,
+    TResult Function(AuthFailureUserAlreadyExist value)? userAlreadyExist,
+    TResult Function(AuthFailuresUnknow value)? unknow,
+    TResult Function(AuthFailuresUnAuthorization value)? unAuthoiation,
+    TResult Function(AuthFailuresCannotCreateUser value)? cannotCreateUser,
+    required TResult orElse(),
+  }) {
+    if (cannotCreateUser != null) {
+      return cannotCreateUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthFailuresCannotCreateUser implements AuthFailures {
+  const factory AuthFailuresCannotCreateUser() = _$AuthFailuresCannotCreateUser;
 }

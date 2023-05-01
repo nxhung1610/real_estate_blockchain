@@ -124,6 +124,8 @@ class AuthRepository implements IAuthRepository {
       switch (e) {
         case AuthError.errUsersAlreadyExists:
           return left(const AuthFailures.userAlreadyExist());
+        case AuthError.errCannotCreateUsers:
+          return left(const AuthFailures.cannotCreateUser());
         default:
           rethrow;
       }

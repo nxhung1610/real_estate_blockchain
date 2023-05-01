@@ -9,6 +9,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -21,7 +22,7 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage> with PageMixin {
   late final AuthBloc authBloc;
 
   @override
@@ -49,6 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
               phoneNumberInvalid: (value) => s.phoneNumberInvalid,
               userAlreadyExist: (value) => s.phoneNumberAlreadyUsed,
               unknow: (value) => s.unknown,
+              cannotCreateUser: (value) => s.anErrorOccurred,
             ));
           },
           loading: () {
@@ -165,7 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 }
 
-class _RegisterForm extends StatelessWidget {
+class _RegisterForm extends StatelessWidget with PageMixin {
   const _RegisterForm({super.key});
 
   @override
@@ -280,6 +282,7 @@ class _RegisterForm extends StatelessWidget {
                 type: ButtonType.primary,
                 label: s.registerSignUp,
                 onPressed: () {
+                  dissmissFocus(context);
                   bloc.loginPressed();
                 },
               ),
@@ -287,6 +290,7 @@ class _RegisterForm extends StatelessWidget {
               Center(
                 child: GestureDetector(
                   onTap: () {
+                    dissmissFocus(context);
                     context.push($appRoute.authForgotPassword);
                   },
                   child: Text(

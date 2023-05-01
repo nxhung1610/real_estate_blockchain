@@ -7,9 +7,10 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/tour/domain/enum/contact_tour_type.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/schedule_tour/application/schedule_tour_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+
+import '../../application/schedule_tour_bloc.dart';
 
 class ContactType extends StatefulWidget {
   final void Function(ContactTourType type) onTypeChange;
