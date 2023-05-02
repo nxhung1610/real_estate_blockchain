@@ -151,10 +151,13 @@ class _Options extends StatelessWidget {
                 context.push($appRoute.realEstateFavorites);
               },
             ),
-            // ProfileOptionData(
-            //   icon: Assets.icons.icVideoTime.svg(),
-            //   label: s.optionPastTour,
-            // ),
+            ProfileOptionData(
+              icon: Assets.icons.icVideoTime.svg(),
+              label: s.optionPastTour,
+              onPressed: () {
+                context.push($appRoute.tour.tourOwn.url);
+              },
+            ),
           ],
         ),
         ProfileOptionGroup(

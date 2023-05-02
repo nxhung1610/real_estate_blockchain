@@ -8,6 +8,7 @@ import 'package:real_estate_blockchain/feature/notification/router/notification_
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
+import 'package:real_estate_blockchain/feature/tour/router/tour_route.dart';
 import 'package:real_estate_blockchain/feature/user/router/user_router.dart';
 
 import '../../setting/router/setting_route.dart';
@@ -27,7 +28,8 @@ class AppRoute extends BaseRoute {
   late final UserRouter user;
   late final SettingRoute setting;
   late final NotificationRoute notification;
-  late final ScheduleTourRouter scheduleTour;
+  late final TourRoute tour;
+
   // Path
   String get onboarding => _onboardingRoute.url;
   String get authRegister => _authRoute.register;
@@ -53,7 +55,7 @@ class AppRoute extends BaseRoute {
         ...user.routes,
         ...setting.routes,
         ...notification.routes,
-        ...scheduleTour.routes,
+        ...tour.routes,
       ];
 
   @override
@@ -65,7 +67,7 @@ class AppRoute extends BaseRoute {
         ..._realEstateRouter.globalRoutes,
         ...user.globalRoutes,
         ...notification.globalRoutes,
-        ...scheduleTour.globalRoutes,
+        ...tour.globalRoutes,
       ];
 
   @override
@@ -79,6 +81,6 @@ class AppRoute extends BaseRoute {
     user = UserRouter(url, '/user');
     setting = SettingRoute(url, '/setting');
     notification = NotificationRoute(url, '/notification');
-    scheduleTour = ScheduleTourRouter(url, '/schedule-tour');
+    tour = TourRoute(root, '/tour');
   }
 }

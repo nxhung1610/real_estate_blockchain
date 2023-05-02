@@ -13,13 +13,6 @@ _$NotificationDataNewReListed _$$NotificationDataNewReListedFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$NotificationDataNewReListedToJson(
-        _$NotificationDataNewReListed instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'runtimeType': instance.$type,
-    };
-
 _$NotificationDataReMinted _$$NotificationDataReMintedFromJson(
         Map<String, dynamic> json) =>
     _$NotificationDataReMinted(
@@ -28,10 +21,9 @@ _$NotificationDataReMinted _$$NotificationDataReMintedFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$NotificationDataReMintedToJson(
-        _$NotificationDataReMinted instance) =>
-    <String, dynamic>{
-      're_id': instance.id,
-      'hash': instance.hash,
-      'runtimeType': instance.$type,
-    };
+_$NotificationDataTour _$$NotificationDataTourFromJson(
+        Map<String, dynamic> json) =>
+    _$NotificationDataTour(
+      data: TourResponse.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );

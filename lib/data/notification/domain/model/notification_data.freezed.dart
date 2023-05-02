@@ -20,6 +20,8 @@ NotificationData _$NotificationDataFromJson(Map<String, dynamic> json) {
       return NotificationDataNewReListed.fromJson(json);
     case 'reMinted':
       return NotificationDataReMinted.fromJson(json);
+    case 'tour':
+      return NotificationDataTour.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'NotificationData',
@@ -29,24 +31,26 @@ NotificationData _$NotificationDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NotificationData {
-  int get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) newReListed,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
+    required TResult Function(TourResponse data) tour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,24 +58,23 @@ mixin _$NotificationData {
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
     required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
     TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
     TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotificationDataCopyWith<NotificationData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -80,8 +83,6 @@ abstract class $NotificationDataCopyWith<$Res> {
   factory $NotificationDataCopyWith(
           NotificationData value, $Res Function(NotificationData) then) =
       _$NotificationDataCopyWithImpl<$Res, NotificationData>;
-  @useResult
-  $Res call({int id});
 }
 
 /// @nodoc
@@ -93,29 +94,14 @@ class _$NotificationDataCopyWithImpl<$Res, $Val extends NotificationData>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$NotificationDataNewReListedCopyWith<$Res>
-    implements $NotificationDataCopyWith<$Res> {
+abstract class _$$NotificationDataNewReListedCopyWith<$Res> {
   factory _$$NotificationDataNewReListedCopyWith(
           _$NotificationDataNewReListed value,
           $Res Function(_$NotificationDataNewReListed) then) =
       __$$NotificationDataNewReListedCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({int id});
 }
@@ -144,7 +130,7 @@ class __$$NotificationDataNewReListedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   const _$NotificationDataNewReListed({required this.id, final String? $type})
       : $type = $type ?? 'newReListed';
@@ -188,6 +174,7 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
     required TResult Function(int id) newReListed,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
+    required TResult Function(TourResponse data) tour,
   }) {
     return newReListed(id);
   }
@@ -197,6 +184,7 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
   }) {
     return newReListed?.call(id);
   }
@@ -206,6 +194,7 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
     required TResult orElse(),
   }) {
     if (newReListed != null) {
@@ -219,6 +208,7 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
     required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
   }) {
     return newReListed(this);
   }
@@ -228,6 +218,7 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
     TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
   }) {
     return newReListed?.call(this);
   }
@@ -237,19 +228,13 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
     TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
   }) {
     if (newReListed != null) {
       return newReListed(this);
     }
     return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationDataNewReListedToJson(
-      this,
-    );
   }
 }
 
@@ -260,21 +245,17 @@ abstract class NotificationDataNewReListed implements NotificationData {
   factory NotificationDataNewReListed.fromJson(Map<String, dynamic> json) =
       _$NotificationDataNewReListed.fromJson;
 
-  @override
   int get id;
-  @override
   @JsonKey(ignore: true)
   _$$NotificationDataNewReListedCopyWith<_$NotificationDataNewReListed>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$NotificationDataReMintedCopyWith<$Res>
-    implements $NotificationDataCopyWith<$Res> {
+abstract class _$$NotificationDataReMintedCopyWith<$Res> {
   factory _$$NotificationDataReMintedCopyWith(_$NotificationDataReMinted value,
           $Res Function(_$NotificationDataReMinted) then) =
       __$$NotificationDataReMintedCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({@JsonKey(name: "re_id") int id, String hash});
 }
@@ -307,7 +288,7 @@ class __$$NotificationDataReMintedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$NotificationDataReMinted implements NotificationDataReMinted {
   const _$NotificationDataReMinted(
       {@JsonKey(name: "re_id") required this.id,
@@ -359,6 +340,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
     required TResult Function(int id) newReListed,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
+    required TResult Function(TourResponse data) tour,
   }) {
     return reMinted(id, hash);
   }
@@ -368,6 +350,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
   }) {
     return reMinted?.call(id, hash);
   }
@@ -377,6 +360,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
     required TResult orElse(),
   }) {
     if (reMinted != null) {
@@ -390,6 +374,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
     required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
   }) {
     return reMinted(this);
   }
@@ -399,6 +384,7 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
     TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
   }) {
     return reMinted?.call(this);
   }
@@ -408,19 +394,13 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
     TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
   }) {
     if (reMinted != null) {
       return reMinted(this);
     }
     return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationDataReMintedToJson(
-      this,
-    );
   }
 }
 
@@ -432,12 +412,173 @@ abstract class NotificationDataReMinted implements NotificationData {
   factory NotificationDataReMinted.fromJson(Map<String, dynamic> json) =
       _$NotificationDataReMinted.fromJson;
 
-  @override
   @JsonKey(name: "re_id")
   int get id;
   String get hash;
-  @override
   @JsonKey(ignore: true)
   _$$NotificationDataReMintedCopyWith<_$NotificationDataReMinted>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotificationDataTourCopyWith<$Res> {
+  factory _$$NotificationDataTourCopyWith(_$NotificationDataTour value,
+          $Res Function(_$NotificationDataTour) then) =
+      __$$NotificationDataTourCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TourResponse data});
+
+  $TourResponseCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$NotificationDataTourCopyWithImpl<$Res>
+    extends _$NotificationDataCopyWithImpl<$Res, _$NotificationDataTour>
+    implements _$$NotificationDataTourCopyWith<$Res> {
+  __$$NotificationDataTourCopyWithImpl(_$NotificationDataTour _value,
+      $Res Function(_$NotificationDataTour) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationDataTour(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TourResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TourResponseCopyWith<$Res> get data {
+    return $TourResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable(createToJson: false)
+class _$NotificationDataTour implements NotificationDataTour {
+  const _$NotificationDataTour({required this.data, final String? $type})
+      : $type = $type ?? 'tour';
+
+  factory _$NotificationDataTour.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationDataTourFromJson(json);
+
+  @override
+  final TourResponse data;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'NotificationData.tour(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationDataTour &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDataTourCopyWith<_$NotificationDataTour> get copyWith =>
+      __$$NotificationDataTourCopyWithImpl<_$NotificationDataTour>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) newReListed,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
+    required TResult Function(TourResponse data) tour,
+  }) {
+    return tour(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? newReListed,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
+  }) {
+    return tour?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? newReListed,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
+    required TResult orElse(),
+  }) {
+    if (tour != null) {
+      return tour(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
+  }) {
+    return tour(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
+  }) {
+    return tour?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
+    required TResult orElse(),
+  }) {
+    if (tour != null) {
+      return tour(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationDataTour implements NotificationData {
+  const factory NotificationDataTour({required final TourResponse data}) =
+      _$NotificationDataTour;
+
+  factory NotificationDataTour.fromJson(Map<String, dynamic> json) =
+      _$NotificationDataTour.fromJson;
+
+  TourResponse get data;
+  @JsonKey(ignore: true)
+  _$$NotificationDataTourCopyWith<_$NotificationDataTour> get copyWith =>
+      throw _privateConstructorUsedError;
 }

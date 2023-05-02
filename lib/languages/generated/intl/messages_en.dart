@@ -53,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Application Settings"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
+        "approved": MessageLookupByLibrary.simpleMessage("Approved"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
@@ -81,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Delete account success."),
         "deleteRealEstate": MessageLookupByLibrary.simpleMessage(
             "Do you want to delete this estate ?"),
+        "deleted": MessageLookupByLibrary.simpleMessage("Deleted"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
@@ -99,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
             "Let\'s make sure it\'s really you. We\'ve just send a text message with a fresh verification code to the phone number ending in"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "failed": MessageLookupByLibrary.simpleMessage("Failed"),
         "features": MessageLookupByLibrary.simpleMessage("Features"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
@@ -214,6 +217,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "processing": MessageLookupByLibrary.simpleMessage("Processing"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Property Address"),
@@ -252,6 +256,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetYourPasswordDes": MessageLookupByLibrary.simpleMessage(
             "Just type it twice and  try not to forgot it."),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
+        "reviewYourTour":
+            MessageLookupByLibrary.simpleMessage("Review your tour"),
         "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Save Change"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Schedule Tour"),
@@ -293,6 +299,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "view": MessageLookupByLibrary.simpleMessage("View"),
         "villa": MessageLookupByLibrary.simpleMessage("Villa"),
         "virtual": MessageLookupByLibrary.simpleMessage("Virtual"),
+        "waiting": MessageLookupByLibrary.simpleMessage("Waiting"),
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "west": MessageLookupByLibrary.simpleMessage("West"),

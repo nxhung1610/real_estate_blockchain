@@ -13,7 +13,7 @@ class DateTimeOrNull implements JsonConverter<DateTime?, String?> {
 
   @override
   String? toJson(DateTime? date) {
-    final string = date?.toIso8601String();
+    final string = date?.toUtc().toIso8601String();
     return string;
   }
 }

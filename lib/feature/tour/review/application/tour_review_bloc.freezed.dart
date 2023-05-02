@@ -165,37 +165,13 @@ abstract class _Started implements TourReviewEvent {
 
 /// @nodoc
 mixin _$TourReviewState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  TourReviewParams get params => throw _privateConstructorUsedError;
+  RealEstate? get estate => throw _privateConstructorUsedError;
+  Tour? get tour => throw _privateConstructorUsedError;
+  Status get status => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TourReviewStateCopyWith<TourReviewState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -204,6 +180,14 @@ abstract class $TourReviewStateCopyWith<$Res> {
   factory $TourReviewStateCopyWith(
           TourReviewState value, $Res Function(TourReviewState) then) =
       _$TourReviewStateCopyWithImpl<$Res, TourReviewState>;
+  @useResult
+  $Res call(
+      {TourReviewParams params, RealEstate? estate, Tour? tour, Status status});
+
+  $TourReviewParamsCopyWith<$Res> get params;
+  $RealEstateCopyWith<$Res>? get estate;
+  $TourCopyWith<$Res>? get tour;
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -215,99 +199,196 @@ class _$TourReviewStateCopyWithImpl<$Res, $Val extends TourReviewState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+    Object? estate = freezed,
+    Object? tour = freezed,
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as TourReviewParams,
+      estate: freezed == estate
+          ? _value.estate
+          : estate // ignore: cast_nullable_to_non_nullable
+              as RealEstate?,
+      tour: freezed == tour
+          ? _value.tour
+          : tour // ignore: cast_nullable_to_non_nullable
+              as Tour?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TourReviewParamsCopyWith<$Res> get params {
+    return $TourReviewParamsCopyWith<$Res>(_value.params, (value) {
+      return _then(_value.copyWith(params: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateCopyWith<$Res>? get estate {
+    if (_value.estate == null) {
+      return null;
+    }
+
+    return $RealEstateCopyWith<$Res>(_value.estate!, (value) {
+      return _then(_value.copyWith(estate: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TourCopyWith<$Res>? get tour {
+    if (_value.tour == null) {
+      return null;
+    }
+
+    return $TourCopyWith<$Res>(_value.tour!, (value) {
+      return _then(_value.copyWith(tour: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatusCopyWith<$Res> get status {
+    return $StatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$_TourReviewStateCopyWith<$Res>
+    implements $TourReviewStateCopyWith<$Res> {
+  factory _$$_TourReviewStateCopyWith(
+          _$_TourReviewState value, $Res Function(_$_TourReviewState) then) =
+      __$$_TourReviewStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {TourReviewParams params, RealEstate? estate, Tour? tour, Status status});
+
+  @override
+  $TourReviewParamsCopyWith<$Res> get params;
+  @override
+  $RealEstateCopyWith<$Res>? get estate;
+  @override
+  $TourCopyWith<$Res>? get tour;
+  @override
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$TourReviewStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$_TourReviewStateCopyWithImpl<$Res>
+    extends _$TourReviewStateCopyWithImpl<$Res, _$_TourReviewState>
+    implements _$$_TourReviewStateCopyWith<$Res> {
+  __$$_TourReviewStateCopyWithImpl(
+      _$_TourReviewState _value, $Res Function(_$_TourReviewState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+    Object? estate = freezed,
+    Object? tour = freezed,
+    Object? status = null,
+  }) {
+    return _then(_$_TourReviewState(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as TourReviewParams,
+      estate: freezed == estate
+          ? _value.estate
+          : estate // ignore: cast_nullable_to_non_nullable
+              as RealEstate?,
+      tour: freezed == tour
+          ? _value.tour
+          : tour // ignore: cast_nullable_to_non_nullable
+              as Tour?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_TourReviewState implements _TourReviewState {
+  const _$_TourReviewState(
+      {required this.params,
+      this.estate,
+      this.tour,
+      this.status = const Status.idle()});
+
+  @override
+  final TourReviewParams params;
+  @override
+  final RealEstate? estate;
+  @override
+  final Tour? tour;
+  @override
+  @JsonKey()
+  final Status status;
 
   @override
   String toString() {
-    return 'TourReviewState.initial()';
+    return 'TourReviewState(params: $params, estate: $estate, tour: $tour, status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_TourReviewState &&
+            (identical(other.params, params) || other.params == params) &&
+            (identical(other.estate, estate) || other.estate == estate) &&
+            (identical(other.tour, tour) || other.tour == tour) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, params, estate, tour, status);
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  @pragma('vm:prefer-inline')
+  _$$_TourReviewStateCopyWith<_$_TourReviewState> get copyWith =>
+      __$$_TourReviewStateCopyWithImpl<_$_TourReviewState>(this, _$identity);
 }
 
-abstract class _Initial implements TourReviewState {
-  const factory _Initial() = _$_Initial;
+abstract class _TourReviewState implements TourReviewState {
+  const factory _TourReviewState(
+      {required final TourReviewParams params,
+      final RealEstate? estate,
+      final Tour? tour,
+      final Status status}) = _$_TourReviewState;
+
+  @override
+  TourReviewParams get params;
+  @override
+  RealEstate? get estate;
+  @override
+  Tour? get tour;
+  @override
+  Status get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TourReviewStateCopyWith<_$_TourReviewState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

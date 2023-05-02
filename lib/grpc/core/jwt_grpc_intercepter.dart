@@ -70,11 +70,15 @@ class JwtGrpcIntercepter extends ClientInterceptor {
           await future;
         } catch (e, trace) {
           printLog(this, message: e, error: e, trace: trace);
-          if (retryCount == 0) {
+          if (retryCount == 0 && e is GrpcError && e.code == 16) {
             await refreshToken?.call();
             continue;
           } else {
-            onExpireToken?.call();
+            if (e is GrpcError) {
+              if (e.code == 16) {
+                onExpireToken?.call();
+              }
+            }
           }
         } finally {
           result.pendingCall = null;

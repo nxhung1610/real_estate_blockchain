@@ -8,8 +8,10 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
 import 'package:real_estate_blockchain/data/notification/domain/model/user_notification.dart';
+import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
+import 'package:real_estate_blockchain/feature/tour/review/model/tour_review_params.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class NotificationItem extends StatelessWidget {
@@ -35,6 +37,14 @@ class NotificationItem extends StatelessWidget {
               $appRoute.realEstateDetail,
               extra: RealEstateDetailPageParams(
                 id: value.id.toString(),
+              ),
+            );
+          },
+          tour: (value) {
+            context.push(
+              $appRoute.tour.tourReview.url,
+              extra: TourReviewParams(
+                tour: Tour.fromResponse(value.data),
               ),
             );
           },

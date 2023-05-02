@@ -13,6 +13,7 @@ import 'package:loader_overlay/loader_overlay.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
+import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/connectivity/application/connectivity_bloc.dart';
@@ -23,6 +24,7 @@ import 'package:real_estate_blockchain/feature/notification_app/application/noti
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
+import 'package:real_estate_blockchain/feature/tour/review/model/tour_review_params.dart';
 import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
@@ -304,6 +306,14 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                                 $appRoute.realEstateDetail,
                                 extra: RealEstateDetailPageParams(
                                   id: value.id.toString(),
+                                ),
+                              );
+                            },
+                            tour: (value) {
+                              appRoute.push(
+                                $appRoute.tour.tourReview.url,
+                                extra: TourReviewParams(
+                                  tour: Tour.fromResponse(value.data),
                                 ),
                               );
                             },

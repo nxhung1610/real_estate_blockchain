@@ -195,5 +195,11 @@
   "inPerson" : "In Person",
   "virtual" : "Virtual",
   "pickATime" : "Pick a time",
-  "scheduleTourSuccess" : "Schedule tour success"
+  "scheduleTourSuccess" : "Schedule tour success",
+  "reviewYourTour" : "Review your tour",
+  "waiting" : "Waiting",
+  "deleted" : "Deleted",
+  "processing" : "Processing",
+  "failed" :"Failed",
+  "approved" : "Approved"
 }

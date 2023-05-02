@@ -47,7 +47,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
       _grpcService.init(
         onExpireToken: () {
-          // logout();
+          logout();
         },
         refreshToken: () async {
           final res = await _authRepository.refreshToken();

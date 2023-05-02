@@ -1969,6 +1969,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Review your tour`
+  String get reviewYourTour {
+    return Intl.message(
+      'Review your tour',
+      name: 'reviewYourTour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Waiting`
+  String get waiting {
+    return Intl.message(
+      'Waiting',
+      name: 'waiting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleted`
+  String get deleted {
+    return Intl.message(
+      'Deleted',
+      name: 'deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing`
+  String get processing {
+    return Intl.message(
+      'Processing',
+      name: 'processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed`
+  String get failed {
+    return Intl.message(
+      'Failed',
+      name: 'failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Approved`
+  String get approved {
+    return Intl.message(
+      'Approved',
+      name: 'approved',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

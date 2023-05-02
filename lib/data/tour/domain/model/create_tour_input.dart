@@ -17,7 +17,7 @@ class CreateTourInput {
   CreateTourRequest toDto() {
     return CreateTourRequest(
       reId: reId,
-      date: dateTime.toIso8601String(),
+      date: dateTime.toUtc().toIso8601String(),
       extraData: extraData,
       type: type.value,
     );

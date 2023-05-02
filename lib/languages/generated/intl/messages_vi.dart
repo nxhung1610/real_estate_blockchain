@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt ứng dụng"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
+        "approved": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
@@ -79,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Xoá tài khoản thành công"),
         "deleteRealEstate": MessageLookupByLibrary.simpleMessage(
             "Bạn có muốn xoá bất động sản này ko ?"),
+        "deleted": MessageLookupByLibrary.simpleMessage("Đã bị xoá"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
@@ -98,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
             "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "failed": MessageLookupByLibrary.simpleMessage("Thất bại"),
         "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),
         "filter": MessageLookupByLibrary.simpleMessage("Lọc"),
         "firstName": MessageLookupByLibrary.simpleMessage("Họ"),
@@ -213,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
+        "processing": MessageLookupByLibrary.simpleMessage("Đang duyệt"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "propertyAddress":
             MessageLookupByLibrary.simpleMessage("Thông tin địa chỉ"),
@@ -250,6 +254,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetYourPasswordDes": MessageLookupByLibrary.simpleMessage(
             "Chỉ cần gõ nó hai lần và cố gắng không quên nó."),
         "resort": MessageLookupByLibrary.simpleMessage("Resort"),
+        "reviewYourTour":
+            MessageLookupByLibrary.simpleMessage("Chi tiết lịch hẹn"),
         "rooms": MessageLookupByLibrary.simpleMessage("Phòng"),
         "saveChange": MessageLookupByLibrary.simpleMessage("Lưu"),
         "scheduleTour": MessageLookupByLibrary.simpleMessage("Tham quan"),
@@ -293,6 +299,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),
         "villa": MessageLookupByLibrary.simpleMessage("Biệt thự"),
         "virtual": MessageLookupByLibrary.simpleMessage("Online"),
+        "waiting": MessageLookupByLibrary.simpleMessage("Đợi duyệt"),
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Kho"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),

@@ -127,7 +127,7 @@ class _WBottomViewerAction extends StatelessWidget {
                     label: s.scheduleTour,
                     onPressed: () {
                       context.push(
-                        $appRoute.scheduleTour.url,
+                        $appRoute.tour.scheduleTour.url,
                         extra: ScheduleTourParams(
                           item.id.toString(),
                         ),

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
+import 'package:real_estate_blockchain/data/tour/infrastructure/dto/tour_response.dart';
 import 'package:real_estate_blockchain/grpc/notification/notification.pb.dart'
     as grpcNotification;
 
@@ -39,6 +40,12 @@ class UserNotification with _$UserNotification {
             return NotificationDataNewReListed(id: int.parse(dto.data));
           case NotificationCatory.reMined:
             return NotificationDataReMinted.fromJson(jsonDecode(dto.data));
+          case NotificationCatory.tour:
+            return NotificationDataTour(
+              data: TourResponse.fromJson(
+                jsonDecode(dto.data),
+              ),
+            );
           default:
         }
       }(),

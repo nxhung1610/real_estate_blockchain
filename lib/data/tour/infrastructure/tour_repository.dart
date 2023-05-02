@@ -46,7 +46,7 @@ class TourRepository implements ITourRepository {
       final res = await tourServiceClient.listTour(filter.toDto());
       return right(res.data.map(Tour.fromDto).toList());
     } catch (e, trace) {
-      printLog(e, message: e, trace: trace);
+      printLog(e, message: e, error: e, trace: trace);
       return left(TourFailure());
     }
   }

@@ -196,5 +196,11 @@
   "inPerson" : "Trực tiếp",
   "virtual" : "Online",
   "pickATime" : "Chọn thời gian",
-  "scheduleTourSuccess" : "Đặt lịch thành công"
+  "scheduleTourSuccess" : "Đặt lịch thành công",
+  "reviewYourTour" : "Chi tiết lịch hẹn",
+  "waiting" : "Đợi duyệt",
+  "deleted" : "Đã bị xoá",
+  "processing" : "Đang duyệt",
+  "failed" :"Thất bại",
+  "approved" : "Xác nhận"
 }
