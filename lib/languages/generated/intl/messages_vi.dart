@@ -242,6 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "registerYouAlreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "rejected": MessageLookupByLibrary.simpleMessage("Từ chối"),
         "rent": MessageLookupByLibrary.simpleMessage("Cho thuê"),
         "requestAHomeTour":
             MessageLookupByLibrary.simpleMessage("Yêu cầu tham quan nhà"),

@@ -3,7 +3,8 @@ enum TourStatus {
   deleted(2),
   processing(3),
   failed(4),
-  approved(5);
+  approved(5),
+  rejected(6);
 
   const TourStatus(this.value);
   final int value;

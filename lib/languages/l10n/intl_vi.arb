@@ -202,5 +202,6 @@
   "deleted" : "Đã bị xoá",
   "processing" : "Đang duyệt",
   "failed" :"Thất bại",
-  "approved" : "Xác nhận"
+  "approved" : "Xác nhận",
+  "rejected" : "Từ chối"
 }

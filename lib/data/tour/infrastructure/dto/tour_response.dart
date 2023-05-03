@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 
 part 'tour_response.freezed.dart';
@@ -11,7 +12,7 @@ class TourResponse with _$TourResponse {
     @DateTimeOrNull() DateTime? date,
     required String type,
     @JsonKey(name: "extra_data") String? extraData,
-    @JsonKey(name: "agency_id") int? agencyId,
+    UserDto? staff,
     required int status,
     @JsonKey(name: "re_id") required int reId,
     @JsonKey(name: "user_id") required int userId,

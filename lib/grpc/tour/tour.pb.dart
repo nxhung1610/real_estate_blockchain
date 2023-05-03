@@ -9,14 +9,40 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../core/response.pb.dart' as $1;
+
 class CreateTourRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateTourRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extraData')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reId', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'CreateTourRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'extraData')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'date')
+    ..aOS(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'type')
+    ..a<$core.int>(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'reId',
+        $pb.PbFieldType.O3)
+    ..hasRequiredFields = false;
 
   CreateTourRequest._() : super();
   factory CreateTourRequest({
@@ -40,31 +66,40 @@ class CreateTourRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory CreateTourRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateTourRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory CreateTourRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory CreateTourRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   CreateTourRequest clone() => CreateTourRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateTourRequest copyWith(void Function(CreateTourRequest) updates) => super.copyWith((message) => updates(message as CreateTourRequest)) as CreateTourRequest; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  CreateTourRequest copyWith(void Function(CreateTourRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateTourRequest))
+          as CreateTourRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CreateTourRequest create() => CreateTourRequest._();
   CreateTourRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateTourRequest> createRepeated() => $pb.PbList<CreateTourRequest>();
+  static $pb.PbList<CreateTourRequest> createRepeated() =>
+      $pb.PbList<CreateTourRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateTourRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateTourRequest>(create);
+  static CreateTourRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateTourRequest>(create);
   static CreateTourRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get extraData => $_getSZ(0);
   @$pb.TagNumber(1)
-  set extraData($core.String v) { $_setString(0, v); }
+  set extraData($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasExtraData() => $_has(0);
   @$pb.TagNumber(1)
@@ -73,7 +108,10 @@ class CreateTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get date => $_getSZ(1);
   @$pb.TagNumber(2)
-  set date($core.String v) { $_setString(1, v); }
+  set date($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasDate() => $_has(1);
   @$pb.TagNumber(2)
@@ -82,7 +120,10 @@ class CreateTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get type => $_getSZ(2);
   @$pb.TagNumber(3)
-  set type($core.String v) { $_setString(2, v); }
+  set type($core.String v) {
+    $_setString(2, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasType() => $_has(2);
   @$pb.TagNumber(3)
@@ -91,7 +132,10 @@ class CreateTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.int get reId => $_getIZ(3);
   @$pb.TagNumber(4)
-  set reId($core.int v) { $_setSignedInt32(3, v); }
+  set reId($core.int v) {
+    $_setSignedInt32(3, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasReId() => $_has(3);
   @$pb.TagNumber(4)
@@ -99,11 +143,28 @@ class CreateTourRequest extends $pb.GeneratedMessage {
 }
 
 class ListTourRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListTourRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'page', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'ListTourRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'page',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'size',
+        $pb.PbFieldType.O3)
+    ..hasRequiredFields = false;
 
   ListTourRequest._() : super();
   factory ListTourRequest({
@@ -119,31 +180,40 @@ class ListTourRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListTourRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListTourRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory ListTourRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ListTourRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   ListTourRequest clone() => ListTourRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListTourRequest copyWith(void Function(ListTourRequest) updates) => super.copyWith((message) => updates(message as ListTourRequest)) as ListTourRequest; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ListTourRequest copyWith(void Function(ListTourRequest) updates) =>
+      super.copyWith((message) => updates(message as ListTourRequest))
+          as ListTourRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListTourRequest create() => ListTourRequest._();
   ListTourRequest createEmptyInstance() => create();
-  static $pb.PbList<ListTourRequest> createRepeated() => $pb.PbList<ListTourRequest>();
+  static $pb.PbList<ListTourRequest> createRepeated() =>
+      $pb.PbList<ListTourRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListTourRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTourRequest>(create);
+  static ListTourRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListTourRequest>(create);
   static ListTourRequest? _defaultInstance;
 
   @$pb.TagNumber(2)
   $core.int get page => $_getIZ(0);
   @$pb.TagNumber(2)
-  set page($core.int v) { $_setSignedInt32(0, v); }
+  set page($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(0);
   @$pb.TagNumber(2)
@@ -152,7 +222,10 @@ class ListTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.int get size => $_getIZ(1);
   @$pb.TagNumber(3)
-  set size($core.int v) { $_setSignedInt32(1, v); }
+  set size($core.int v) {
+    $_setSignedInt32(1, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasSize() => $_has(1);
   @$pb.TagNumber(3)
@@ -160,17 +233,66 @@ class ListTourRequest extends $pb.GeneratedMessage {
 }
 
 class TourInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TourInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'date')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extraData')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'agencyId', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reId', $pb.PbFieldType.O3)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'TourInfo',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'id',
+        $pb.PbFieldType.O3)
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'date')
+    ..aOS(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'type')
+    ..aOS(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'extraData')
+    ..aOM<$1.StaffInfo>(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'staff',
+        subBuilder: $1.StaffInfo.create)
+    ..a<$core.int>(
+        6,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'status',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        7,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'reId',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        8,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'userId',
+        $pb.PbFieldType.O3)
+    ..aOS(
+        9,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'reason')
+    ..hasRequiredFields = false;
 
   TourInfo._() : super();
   factory TourInfo({
@@ -178,10 +300,11 @@ class TourInfo extends $pb.GeneratedMessage {
     $core.String? date,
     $core.String? type,
     $core.String? extraData,
-    $core.int? agencyId,
+    $1.StaffInfo? staff,
     $core.int? status,
     $core.int? reId,
     $core.int? userId,
+    $core.String? reason,
   }) {
     final _result = create();
     if (id != null) {
@@ -196,8 +319,8 @@ class TourInfo extends $pb.GeneratedMessage {
     if (extraData != null) {
       _result.extraData = extraData;
     }
-    if (agencyId != null) {
-      _result.agencyId = agencyId;
+    if (staff != null) {
+      _result.staff = staff;
     }
     if (status != null) {
       _result.status = status;
@@ -208,33 +331,44 @@ class TourInfo extends $pb.GeneratedMessage {
     if (userId != null) {
       _result.userId = userId;
     }
+    if (reason != null) {
+      _result.reason = reason;
+    }
     return _result;
   }
-  factory TourInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TourInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory TourInfo.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TourInfo.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   TourInfo clone() => TourInfo()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  TourInfo copyWith(void Function(TourInfo) updates) => super.copyWith((message) => updates(message as TourInfo)) as TourInfo; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TourInfo copyWith(void Function(TourInfo) updates) =>
+      super.copyWith((message) => updates(message as TourInfo))
+          as TourInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TourInfo create() => TourInfo._();
   TourInfo createEmptyInstance() => create();
   static $pb.PbList<TourInfo> createRepeated() => $pb.PbList<TourInfo>();
   @$core.pragma('dart2js:noInline')
-  static TourInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TourInfo>(create);
+  static TourInfo getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TourInfo>(create);
   static TourInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
-  set id($core.int v) { $_setSignedInt32(0, v); }
+  set id($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -243,7 +377,10 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get date => $_getSZ(1);
   @$pb.TagNumber(2)
-  set date($core.String v) { $_setString(1, v); }
+  set date($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasDate() => $_has(1);
   @$pb.TagNumber(2)
@@ -252,7 +389,10 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get type => $_getSZ(2);
   @$pb.TagNumber(3)
-  set type($core.String v) { $_setString(2, v); }
+  set type($core.String v) {
+    $_setString(2, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasType() => $_has(2);
   @$pb.TagNumber(3)
@@ -261,25 +401,36 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get extraData => $_getSZ(3);
   @$pb.TagNumber(4)
-  set extraData($core.String v) { $_setString(3, v); }
+  set extraData($core.String v) {
+    $_setString(3, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasExtraData() => $_has(3);
   @$pb.TagNumber(4)
   void clearExtraData() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.int get agencyId => $_getIZ(4);
+  $1.StaffInfo get staff => $_getN(4);
   @$pb.TagNumber(5)
-  set agencyId($core.int v) { $_setSignedInt32(4, v); }
+  set staff($1.StaffInfo v) {
+    setField(5, v);
+  }
+
   @$pb.TagNumber(5)
-  $core.bool hasAgencyId() => $_has(4);
+  $core.bool hasStaff() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAgencyId() => clearField(5);
+  void clearStaff() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.StaffInfo ensureStaff() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.int get status => $_getIZ(5);
   @$pb.TagNumber(6)
-  set status($core.int v) { $_setSignedInt32(5, v); }
+  set status($core.int v) {
+    $_setSignedInt32(5, v);
+  }
+
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
@@ -288,7 +439,10 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.int get reId => $_getIZ(6);
   @$pb.TagNumber(7)
-  set reId($core.int v) { $_setSignedInt32(6, v); }
+  set reId($core.int v) {
+    $_setSignedInt32(6, v);
+  }
+
   @$pb.TagNumber(7)
   $core.bool hasReId() => $_has(6);
   @$pb.TagNumber(7)
@@ -297,20 +451,57 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.int get userId => $_getIZ(7);
   @$pb.TagNumber(8)
-  set userId($core.int v) { $_setSignedInt32(7, v); }
+  set userId($core.int v) {
+    $_setSignedInt32(7, v);
+  }
+
   @$pb.TagNumber(8)
   $core.bool hasUserId() => $_has(7);
   @$pb.TagNumber(8)
   void clearUserId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get reason => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set reason($core.String v) {
+    $_setString(8, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasReason() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReason() => clearField(9);
 }
 
 class ListTourResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListTourResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'statusCode', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..pc<TourInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: TourInfo.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'ListTourResponse',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'statusCode',
+        $pb.PbFieldType.O3)
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'message')
+    ..pc<TourInfo>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'data',
+        $pb.PbFieldType.PM,
+        subBuilder: TourInfo.create)
+    ..hasRequiredFields = false;
 
   ListTourResponse._() : super();
   factory ListTourResponse({
@@ -330,31 +521,40 @@ class ListTourResponse extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListTourResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListTourResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory ListTourResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ListTourResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   ListTourResponse clone() => ListTourResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListTourResponse copyWith(void Function(ListTourResponse) updates) => super.copyWith((message) => updates(message as ListTourResponse)) as ListTourResponse; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ListTourResponse copyWith(void Function(ListTourResponse) updates) =>
+      super.copyWith((message) => updates(message as ListTourResponse))
+          as ListTourResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListTourResponse create() => ListTourResponse._();
   ListTourResponse createEmptyInstance() => create();
-  static $pb.PbList<ListTourResponse> createRepeated() => $pb.PbList<ListTourResponse>();
+  static $pb.PbList<ListTourResponse> createRepeated() =>
+      $pb.PbList<ListTourResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListTourResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTourResponse>(create);
+  static ListTourResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListTourResponse>(create);
   static ListTourResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get statusCode => $_getIZ(0);
   @$pb.TagNumber(1)
-  set statusCode($core.int v) { $_setSignedInt32(0, v); }
+  set statusCode($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasStatusCode() => $_has(0);
   @$pb.TagNumber(1)
@@ -363,7 +563,10 @@ class ListTourResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get message => $_getSZ(1);
   @$pb.TagNumber(2)
-  set message($core.String v) { $_setString(1, v); }
+  set message($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasMessage() => $_has(1);
   @$pb.TagNumber(2)
@@ -374,11 +577,27 @@ class ListTourResponse extends $pb.GeneratedMessage {
 }
 
 class TourRejectTourRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TourRejectTourRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tourId', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reason')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'TourRejectTourRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'tourId',
+        $pb.PbFieldType.O3)
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'reason')
+    ..hasRequiredFields = false;
 
   TourRejectTourRequest._() : super();
   factory TourRejectTourRequest({
@@ -394,31 +613,42 @@ class TourRejectTourRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory TourRejectTourRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TourRejectTourRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  TourRejectTourRequest clone() => TourRejectTourRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  TourRejectTourRequest copyWith(void Function(TourRejectTourRequest) updates) => super.copyWith((message) => updates(message as TourRejectTourRequest)) as TourRejectTourRequest; // ignore: deprecated_member_use
+  factory TourRejectTourRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TourRejectTourRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TourRejectTourRequest clone() =>
+      TourRejectTourRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TourRejectTourRequest copyWith(
+          void Function(TourRejectTourRequest) updates) =>
+      super.copyWith((message) => updates(message as TourRejectTourRequest))
+          as TourRejectTourRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TourRejectTourRequest create() => TourRejectTourRequest._();
   TourRejectTourRequest createEmptyInstance() => create();
-  static $pb.PbList<TourRejectTourRequest> createRepeated() => $pb.PbList<TourRejectTourRequest>();
+  static $pb.PbList<TourRejectTourRequest> createRepeated() =>
+      $pb.PbList<TourRejectTourRequest>();
   @$core.pragma('dart2js:noInline')
-  static TourRejectTourRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TourRejectTourRequest>(create);
+  static TourRejectTourRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TourRejectTourRequest>(create);
   static TourRejectTourRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get tourId => $_getIZ(0);
   @$pb.TagNumber(1)
-  set tourId($core.int v) { $_setSignedInt32(0, v); }
+  set tourId($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasTourId() => $_has(0);
   @$pb.TagNumber(1)
@@ -427,7 +657,10 @@ class TourRejectTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get reason => $_getSZ(1);
   @$pb.TagNumber(2)
-  set reason($core.String v) { $_setString(1, v); }
+  set reason($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasReason() => $_has(1);
   @$pb.TagNumber(2)
@@ -435,63 +668,97 @@ class TourRejectTourRequest extends $pb.GeneratedMessage {
 }
 
 class TourAssignStaffForTourRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TourAssignStaffForTourRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'pb'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tourId', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'staffId', $pb.PbFieldType.O3, protoName: 'staffId')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'TourAssignStaffForTourRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'tourId',
+        $pb.PbFieldType.O3)
+    ..aOM<$1.StaffInfo>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'staff',
+        subBuilder: $1.StaffInfo.create)
+    ..hasRequiredFields = false;
 
   TourAssignStaffForTourRequest._() : super();
   factory TourAssignStaffForTourRequest({
     $core.int? tourId,
-    $core.int? staffId,
+    $1.StaffInfo? staff,
   }) {
     final _result = create();
     if (tourId != null) {
       _result.tourId = tourId;
     }
-    if (staffId != null) {
-      _result.staffId = staffId;
+    if (staff != null) {
+      _result.staff = staff;
     }
     return _result;
   }
-  factory TourAssignStaffForTourRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TourAssignStaffForTourRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  TourAssignStaffForTourRequest clone() => TourAssignStaffForTourRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  TourAssignStaffForTourRequest copyWith(void Function(TourAssignStaffForTourRequest) updates) => super.copyWith((message) => updates(message as TourAssignStaffForTourRequest)) as TourAssignStaffForTourRequest; // ignore: deprecated_member_use
+  factory TourAssignStaffForTourRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TourAssignStaffForTourRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TourAssignStaffForTourRequest clone() =>
+      TourAssignStaffForTourRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TourAssignStaffForTourRequest copyWith(
+          void Function(TourAssignStaffForTourRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as TourAssignStaffForTourRequest))
+          as TourAssignStaffForTourRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static TourAssignStaffForTourRequest create() => TourAssignStaffForTourRequest._();
+  static TourAssignStaffForTourRequest create() =>
+      TourAssignStaffForTourRequest._();
   TourAssignStaffForTourRequest createEmptyInstance() => create();
-  static $pb.PbList<TourAssignStaffForTourRequest> createRepeated() => $pb.PbList<TourAssignStaffForTourRequest>();
+  static $pb.PbList<TourAssignStaffForTourRequest> createRepeated() =>
+      $pb.PbList<TourAssignStaffForTourRequest>();
   @$core.pragma('dart2js:noInline')
-  static TourAssignStaffForTourRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TourAssignStaffForTourRequest>(create);
+  static TourAssignStaffForTourRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TourAssignStaffForTourRequest>(create);
   static TourAssignStaffForTourRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get tourId => $_getIZ(0);
   @$pb.TagNumber(1)
-  set tourId($core.int v) { $_setSignedInt32(0, v); }
+  set tourId($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasTourId() => $_has(0);
   @$pb.TagNumber(1)
   void clearTourId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get staffId => $_getIZ(1);
+  $1.StaffInfo get staff => $_getN(1);
   @$pb.TagNumber(2)
-  set staffId($core.int v) { $_setSignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasStaffId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearStaffId() => clearField(2);
-}
+  set staff($1.StaffInfo v) {
+    setField(2, v);
+  }
 
+  @$pb.TagNumber(2)
+  $core.bool hasStaff() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStaff() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.StaffInfo ensureStaff() => $_ensure(1);
+}

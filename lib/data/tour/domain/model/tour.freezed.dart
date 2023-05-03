@@ -20,7 +20,7 @@ mixin _$Tour {
   DateTime? get date => throw _privateConstructorUsedError;
   TourType get type => throw _privateConstructorUsedError;
   String? get extraData => throw _privateConstructorUsedError;
-  int? get agencyId => throw _privateConstructorUsedError;
+  User? get staff => throw _privateConstructorUsedError;
   TourStatus get status => throw _privateConstructorUsedError;
   int get reId => throw _privateConstructorUsedError;
   int get userId => throw _privateConstructorUsedError;
@@ -39,10 +39,12 @@ abstract class $TourCopyWith<$Res> {
       DateTime? date,
       TourType type,
       String? extraData,
-      int? agencyId,
+      User? staff,
       TourStatus status,
       int reId,
       int userId});
+
+  $UserCopyWith<$Res>? get staff;
 }
 
 /// @nodoc
@@ -62,7 +64,7 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
     Object? date = freezed,
     Object? type = null,
     Object? extraData = freezed,
-    Object? agencyId = freezed,
+    Object? staff = freezed,
     Object? status = null,
     Object? reId = null,
     Object? userId = null,
@@ -84,10 +86,10 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as String?,
-      agencyId: freezed == agencyId
-          ? _value.agencyId
-          : agencyId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      staff: freezed == staff
+          ? _value.staff
+          : staff // ignore: cast_nullable_to_non_nullable
+              as User?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -102,6 +104,18 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
               as int,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get staff {
+    if (_value.staff == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.staff!, (value) {
+      return _then(_value.copyWith(staff: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -115,10 +129,13 @@ abstract class _$$_TourCopyWith<$Res> implements $TourCopyWith<$Res> {
       DateTime? date,
       TourType type,
       String? extraData,
-      int? agencyId,
+      User? staff,
       TourStatus status,
       int reId,
       int userId});
+
+  @override
+  $UserCopyWith<$Res>? get staff;
 }
 
 /// @nodoc
@@ -134,7 +151,7 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
     Object? date = freezed,
     Object? type = null,
     Object? extraData = freezed,
-    Object? agencyId = freezed,
+    Object? staff = freezed,
     Object? status = null,
     Object? reId = null,
     Object? userId = null,
@@ -156,10 +173,10 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as String?,
-      agencyId: freezed == agencyId
-          ? _value.agencyId
-          : agencyId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      staff: freezed == staff
+          ? _value.staff
+          : staff // ignore: cast_nullable_to_non_nullable
+              as User?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -184,7 +201,7 @@ class _$_Tour implements _Tour {
       this.date,
       required this.type,
       this.extraData,
-      this.agencyId,
+      this.staff,
       required this.status,
       required this.reId,
       required this.userId});
@@ -198,7 +215,7 @@ class _$_Tour implements _Tour {
   @override
   final String? extraData;
   @override
-  final int? agencyId;
+  final User? staff;
   @override
   final TourStatus status;
   @override
@@ -208,7 +225,7 @@ class _$_Tour implements _Tour {
 
   @override
   String toString() {
-    return 'Tour(id: $id, date: $date, type: $type, extraData: $extraData, agencyId: $agencyId, status: $status, reId: $reId, userId: $userId)';
+    return 'Tour(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, reId: $reId, userId: $userId)';
   }
 
   @override
@@ -221,8 +238,7 @@ class _$_Tour implements _Tour {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.extraData, extraData) ||
                 other.extraData == extraData) &&
-            (identical(other.agencyId, agencyId) ||
-                other.agencyId == agencyId) &&
+            (identical(other.staff, staff) || other.staff == staff) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.reId, reId) || other.reId == reId) &&
             (identical(other.userId, userId) || other.userId == userId));
@@ -230,7 +246,7 @@ class _$_Tour implements _Tour {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, date, type, extraData, agencyId, status, reId, userId);
+      runtimeType, id, date, type, extraData, staff, status, reId, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -245,7 +261,7 @@ abstract class _Tour implements Tour {
       final DateTime? date,
       required final TourType type,
       final String? extraData,
-      final int? agencyId,
+      final User? staff,
       required final TourStatus status,
       required final int reId,
       required final int userId}) = _$_Tour;
@@ -259,7 +275,7 @@ abstract class _Tour implements Tour {
   @override
   String? get extraData;
   @override
-  int? get agencyId;
+  User? get staff;
   @override
   TourStatus get status;
   @override

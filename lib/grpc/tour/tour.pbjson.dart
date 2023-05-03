@@ -40,15 +40,16 @@ const TourInfo$json = const {
     const {'1': 'date', '3': 2, '4': 1, '5': 9, '10': 'date'},
     const {'1': 'type', '3': 3, '4': 1, '5': 9, '10': 'type'},
     const {'1': 'extra_data', '3': 4, '4': 1, '5': 9, '10': 'extraData'},
-    const {'1': 'agency_id', '3': 5, '4': 1, '5': 5, '10': 'agencyId'},
+    const {'1': 'staff', '3': 5, '4': 1, '5': 11, '6': '.pb.StaffInfo', '10': 'staff'},
     const {'1': 'status', '3': 6, '4': 1, '5': 5, '10': 'status'},
     const {'1': 're_id', '3': 7, '4': 1, '5': 5, '10': 'reId'},
     const {'1': 'user_id', '3': 8, '4': 1, '5': 5, '10': 'userId'},
+    const {'1': 'reason', '3': 9, '4': 1, '5': 9, '10': 'reason'},
   ],
 };
 
 /// Descriptor for `TourInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tourInfoDescriptor = $convert.base64Decode('CghUb3VySW5mbxIOCgJpZBgBIAEoBVICaWQSEgoEZGF0ZRgCIAEoCVIEZGF0ZRISCgR0eXBlGAMgASgJUgR0eXBlEh0KCmV4dHJhX2RhdGEYBCABKAlSCWV4dHJhRGF0YRIbCglhZ2VuY3lfaWQYBSABKAVSCGFnZW5jeUlkEhYKBnN0YXR1cxgGIAEoBVIGc3RhdHVzEhMKBXJlX2lkGAcgASgFUgRyZUlkEhcKB3VzZXJfaWQYCCABKAVSBnVzZXJJZA==');
+final $typed_data.Uint8List tourInfoDescriptor = $convert.base64Decode('CghUb3VySW5mbxIOCgJpZBgBIAEoBVICaWQSEgoEZGF0ZRgCIAEoCVIEZGF0ZRISCgR0eXBlGAMgASgJUgR0eXBlEh0KCmV4dHJhX2RhdGEYBCABKAlSCWV4dHJhRGF0YRIjCgVzdGFmZhgFIAEoCzINLnBiLlN0YWZmSW5mb1IFc3RhZmYSFgoGc3RhdHVzGAYgASgFUgZzdGF0dXMSEwoFcmVfaWQYByABKAVSBHJlSWQSFwoHdXNlcl9pZBgIIAEoBVIGdXNlcklkEhYKBnJlYXNvbhgJIAEoCVIGcmVhc29u');
 @$core.Deprecated('Use listTourResponseDescriptor instead')
 const ListTourResponse$json = const {
   '1': 'ListTourResponse',
@@ -77,9 +78,9 @@ const TourAssignStaffForTourRequest$json = const {
   '1': 'TourAssignStaffForTourRequest',
   '2': const [
     const {'1': 'tour_id', '3': 1, '4': 1, '5': 5, '10': 'tourId'},
-    const {'1': 'staffId', '3': 2, '4': 1, '5': 5, '10': 'staffId'},
+    const {'1': 'staff', '3': 2, '4': 1, '5': 11, '6': '.pb.StaffInfo', '10': 'staff'},
   ],
 };
 
 /// Descriptor for `TourAssignStaffForTourRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tourAssignStaffForTourRequestDescriptor = $convert.base64Decode('Ch1Ub3VyQXNzaWduU3RhZmZGb3JUb3VyUmVxdWVzdBIXCgd0b3VyX2lkGAEgASgFUgZ0b3VySWQSGAoHc3RhZmZJZBgCIAEoBVIHc3RhZmZJZA==');
+final $typed_data.Uint8List tourAssignStaffForTourRequestDescriptor = $convert.base64Decode('Ch1Ub3VyQXNzaWduU3RhZmZGb3JUb3VyUmVxdWVzdBIXCgd0b3VyX2lkGAEgASgFUgZ0b3VySWQSIwoFc3RhZmYYAiABKAsyDS5wYi5TdGFmZkluZm9SBXN0YWZm');

@@ -12,7 +12,9 @@ _$_TourResponse _$$_TourResponseFromJson(Map<String, dynamic> json) =>
       date: const DateTimeOrNull().fromJson(json['date'] as String?),
       type: json['type'] as String,
       extraData: json['extra_data'] as String?,
-      agencyId: json['agency_id'] as int?,
+      staff: json['staff'] == null
+          ? null
+          : UserDto.fromJson(json['staff'] as Map<String, dynamic>),
       status: json['status'] as int,
       reId: json['re_id'] as int,
       userId: json['user_id'] as int,

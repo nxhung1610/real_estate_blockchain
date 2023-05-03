@@ -26,8 +26,7 @@ mixin _$TourResponse {
   String get type => throw _privateConstructorUsedError;
   @JsonKey(name: "extra_data")
   String? get extraData => throw _privateConstructorUsedError;
-  @JsonKey(name: "agency_id")
-  int? get agencyId => throw _privateConstructorUsedError;
+  UserDto? get staff => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   @JsonKey(name: "re_id")
   int get reId => throw _privateConstructorUsedError;
@@ -50,10 +49,12 @@ abstract class $TourResponseCopyWith<$Res> {
       @DateTimeOrNull() DateTime? date,
       String type,
       @JsonKey(name: "extra_data") String? extraData,
-      @JsonKey(name: "agency_id") int? agencyId,
+      UserDto? staff,
       int status,
       @JsonKey(name: "re_id") int reId,
       @JsonKey(name: "user_id") int userId});
+
+  $UserDtoCopyWith<$Res>? get staff;
 }
 
 /// @nodoc
@@ -73,7 +74,7 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
     Object? date = freezed,
     Object? type = null,
     Object? extraData = freezed,
-    Object? agencyId = freezed,
+    Object? staff = freezed,
     Object? status = null,
     Object? reId = null,
     Object? userId = null,
@@ -95,10 +96,10 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as String?,
-      agencyId: freezed == agencyId
-          ? _value.agencyId
-          : agencyId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      staff: freezed == staff
+          ? _value.staff
+          : staff // ignore: cast_nullable_to_non_nullable
+              as UserDto?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -112,6 +113,18 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDtoCopyWith<$Res>? get staff {
+    if (_value.staff == null) {
+      return null;
+    }
+
+    return $UserDtoCopyWith<$Res>(_value.staff!, (value) {
+      return _then(_value.copyWith(staff: value) as $Val);
+    });
   }
 }
 
@@ -128,10 +141,13 @@ abstract class _$$_TourResponseCopyWith<$Res>
       @DateTimeOrNull() DateTime? date,
       String type,
       @JsonKey(name: "extra_data") String? extraData,
-      @JsonKey(name: "agency_id") int? agencyId,
+      UserDto? staff,
       int status,
       @JsonKey(name: "re_id") int reId,
       @JsonKey(name: "user_id") int userId});
+
+  @override
+  $UserDtoCopyWith<$Res>? get staff;
 }
 
 /// @nodoc
@@ -149,7 +165,7 @@ class __$$_TourResponseCopyWithImpl<$Res>
     Object? date = freezed,
     Object? type = null,
     Object? extraData = freezed,
-    Object? agencyId = freezed,
+    Object? staff = freezed,
     Object? status = null,
     Object? reId = null,
     Object? userId = null,
@@ -171,10 +187,10 @@ class __$$_TourResponseCopyWithImpl<$Res>
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as String?,
-      agencyId: freezed == agencyId
-          ? _value.agencyId
-          : agencyId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      staff: freezed == staff
+          ? _value.staff
+          : staff // ignore: cast_nullable_to_non_nullable
+              as UserDto?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -199,7 +215,7 @@ class _$_TourResponse implements _TourResponse {
       @DateTimeOrNull() this.date,
       required this.type,
       @JsonKey(name: "extra_data") this.extraData,
-      @JsonKey(name: "agency_id") this.agencyId,
+      this.staff,
       required this.status,
       @JsonKey(name: "re_id") required this.reId,
       @JsonKey(name: "user_id") required this.userId});
@@ -218,8 +234,7 @@ class _$_TourResponse implements _TourResponse {
   @JsonKey(name: "extra_data")
   final String? extraData;
   @override
-  @JsonKey(name: "agency_id")
-  final int? agencyId;
+  final UserDto? staff;
   @override
   final int status;
   @override
@@ -231,7 +246,7 @@ class _$_TourResponse implements _TourResponse {
 
   @override
   String toString() {
-    return 'TourResponse(id: $id, date: $date, type: $type, extraData: $extraData, agencyId: $agencyId, status: $status, reId: $reId, userId: $userId)';
+    return 'TourResponse(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, reId: $reId, userId: $userId)';
   }
 
   @override
@@ -244,8 +259,7 @@ class _$_TourResponse implements _TourResponse {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.extraData, extraData) ||
                 other.extraData == extraData) &&
-            (identical(other.agencyId, agencyId) ||
-                other.agencyId == agencyId) &&
+            (identical(other.staff, staff) || other.staff == staff) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.reId, reId) || other.reId == reId) &&
             (identical(other.userId, userId) || other.userId == userId));
@@ -254,7 +268,7 @@ class _$_TourResponse implements _TourResponse {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, date, type, extraData, agencyId, status, reId, userId);
+      runtimeType, id, date, type, extraData, staff, status, reId, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -269,7 +283,7 @@ abstract class _TourResponse implements TourResponse {
       @DateTimeOrNull() final DateTime? date,
       required final String type,
       @JsonKey(name: "extra_data") final String? extraData,
-      @JsonKey(name: "agency_id") final int? agencyId,
+      final UserDto? staff,
       required final int status,
       @JsonKey(name: "re_id") required final int reId,
       @JsonKey(name: "user_id") required final int userId}) = _$_TourResponse;
@@ -288,8 +302,7 @@ abstract class _TourResponse implements TourResponse {
   @JsonKey(name: "extra_data")
   String? get extraData;
   @override
-  @JsonKey(name: "agency_id")
-  int? get agencyId;
+  UserDto? get staff;
   @override
   int get status;
   @override

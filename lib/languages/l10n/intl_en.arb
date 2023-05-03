@@ -201,5 +201,6 @@
   "deleted" : "Deleted",
   "processing" : "Processing",
   "failed" :"Failed",
-  "approved" : "Approved"
+  "approved" : "Approved",
+  "rejected" : "Rejected"
 }

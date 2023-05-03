@@ -243,6 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "registerYouAlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
             "You already have an account?"),
+        "rejected": MessageLookupByLibrary.simpleMessage("Rejected"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "requestAHomeTour":
             MessageLookupByLibrary.simpleMessage("Request a home tour"),

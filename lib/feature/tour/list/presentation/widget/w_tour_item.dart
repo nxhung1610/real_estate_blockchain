@@ -159,6 +159,7 @@ class _StatusTour extends StatelessWidget {
 
       case TourStatus.deleted:
       case TourStatus.failed:
+      case TourStatus.rejected:
         return Container(
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
@@ -192,6 +193,8 @@ class _StatusTour extends StatelessWidget {
         return s.failed;
       case TourStatus.approved:
         return s.approved;
+      case TourStatus.rejected:
+        return s.rejected;
     }
   }
 
