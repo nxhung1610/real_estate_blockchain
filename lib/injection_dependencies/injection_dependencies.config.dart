@@ -294,6 +294,7 @@ Future<_i1.GetIt> $initGetIt(
         gh<_i56.ITourRepository>(),
         gh<_i22.IRealEstateRepository>(),
         gh<_i24.IUserRepistory>(),
+        gh<_i29.MessageRepository>(),
       ));
   gh.factory<_i69.UserChangePasswordBloc>(
       () => _i69.UserChangePasswordBloc(gh<_i16.IAuthRepository>()));

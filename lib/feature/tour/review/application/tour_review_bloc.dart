@@ -4,6 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
+import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
+import 'package:real_estate_blockchain/data/message/domain/message_failure.dart';
+import 'package:real_estate_blockchain/data/message/infrastructure/message_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/tour/domain/i_tour_repository.dart';
@@ -22,13 +25,16 @@ class TourReviewBloc extends Bloc<TourReviewEvent, TourReviewState> {
   final ITourRepository tourRepository;
   final IRealEstateRepository realEstateRepository;
   final IUserRepistory userRepistory;
+  final MessageRepository messageRepository;
   TourReviewBloc(
     @factoryParam TourReviewParams params,
     this.tourRepository,
     this.realEstateRepository,
     this.userRepistory,
+    this.messageRepository,
   ) : super(TourReviewState(params: params)) {
     on<_Started>(_onStarted);
+    on<_OnCreateChatRoom>(_onCreateRoom);
   }
 
   FutureOr<void> _onStarted(
@@ -36,12 +42,16 @@ class TourReviewBloc extends Bloc<TourReviewEvent, TourReviewState> {
     Emitter<TourReviewState> emit,
   ) async {
     try {
-      final data = await Future.wait([
-        realEstateRepository.detailEstate(
-          state.params.tour.reId.toString(),
+      emit(
+        state.copyWith(
+          status: const Status.loading(),
         ),
-      ]);
-      final dataEstate = data[0].fold((l) => throw l, (r) => r);
+      );
+      final data = await realEstateRepository.detailEstate(
+        state.params.tour.reId.toString(),
+      );
+      final dataEstate = data.fold((l) => throw l, (r) => r);
+      emit(state.copyWith(estate: dataEstate));
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       emit(
@@ -51,6 +61,63 @@ class TourReviewBloc extends Bloc<TourReviewEvent, TourReviewState> {
           ),
         ),
       );
+    } finally {
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
+    }
+  }
+
+  FutureOr<void> _onCreateRoom(
+    _OnCreateChatRoom event,
+    Emitter<TourReviewState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(status: const Status.loading()));
+      final result = await messageRepository.createRoom(
+        senderId: event.senderId,
+        ownerId: event.ownerId,
+      );
+      await result.fold(
+        (l) async {
+          if (l is MessageFailureRoomExist) {
+            final getRoom = await messageRepository.getRooms(
+              senderId: event.senderId,
+            );
+            return getRoom.fold(
+                (l) => throw l,
+                (r) => emit(
+                      state.copyWith(
+                        status: Status.success(
+                          value: TourReviewDataState.createRoom(
+                            room: r.firstWhere(
+                              (element) => element.members.any(
+                                (u) => u.id == event.ownerId,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ));
+          } else {
+            throw l;
+          }
+        },
+        (r) async => emit(
+          state.copyWith(
+            status: Status.success(
+              value: TourReviewDataState.createRoom(room: r),
+            ),
+          ),
+        ),
+      );
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      emit(state.copyWith(status: Status.failure(value: e)));
+    } finally {
+      emit(state.copyWith(status: const Status.idle()));
     }
   }
 }

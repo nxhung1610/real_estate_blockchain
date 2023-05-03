@@ -202,5 +202,8 @@
   "processing" : "Processing",
   "failed" :"Failed",
   "approved" : "Approved",
-  "rejected" : "Rejected"
+  "rejected" : "Rejected",
+  "date" : "Date",
+  "time" : "Time",
+  "associateAgency" : "Realust staff will take you on a tour!"
 }

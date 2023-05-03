@@ -3,14 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
+import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/widgets/widget.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/tour/list/application/tour_own_bloc.dart';
 import 'package:real_estate_blockchain/feature/tour/list/presentation/widget/w_tour_item.dart';
+import 'package:real_estate_blockchain/feature/tour/review/model/tour_review_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 
 class TourOwnPage extends StatefulWidget {
@@ -107,8 +110,18 @@ class _TourOwnPageState extends State<TourOwnPage> {
                 pagingController: pageController,
                 builderDelegate: PagedChildBuilderDelegate(
                   itemBuilder: (context, item, index) {
-                    return WTourItem(
-                      estate: item,
+                    return GestureDetector(
+                      onTap: () {
+                        context.push(
+                          $appRoute.tour.tourReview.url,
+                          extra: TourReviewParams(
+                            tour: item.key,
+                          ),
+                        );
+                      },
+                      child: WTourItem(
+                        estate: item,
+                      ),
                     );
                   },
                 ),

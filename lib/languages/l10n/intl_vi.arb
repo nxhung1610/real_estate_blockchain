@@ -203,5 +203,8 @@
   "processing" : "Đang duyệt",
   "failed" :"Thất bại",
   "approved" : "Xác nhận",
-  "rejected" : "Từ chối"
+  "rejected" : "Từ chối",
+  "date" : "Ngày",
+  "time" : "Thời gian",
+  "associateAgency" : "Nhân viên của Realust sẽ đưa bạn đi tham quan!"
 }

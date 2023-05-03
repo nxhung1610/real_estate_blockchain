@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),
         "approved": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
+        "associateAgency": MessageLookupByLibrary.simpleMessage(
+            "Nhân viên của Realust sẽ đưa bạn đi tham quan!"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
@@ -73,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
+        "date": MessageLookupByLibrary.simpleMessage("Ngày"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Xoá tài khoản"),
         "deleteAccountMessageDialog":
             MessageLookupByLibrary.simpleMessage("Bạn có muốn xoá tài khoản ?"),
@@ -280,6 +283,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
         "structure": MessageLookupByLibrary.simpleMessage("Cấu trúc"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
+        "time": MessageLookupByLibrary.simpleMessage("Thời gian"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "titleHint":
             MessageLookupByLibrary.simpleMessage("Bán nhà riêng tại Cầu Giấy"),

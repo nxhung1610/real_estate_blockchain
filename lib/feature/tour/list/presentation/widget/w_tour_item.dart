@@ -154,7 +154,7 @@ class _StatusTour extends StatelessWidget {
         return Icon(
           Icons.error,
           color: Colors.yellow,
-          size: 16.r,
+          size: 20.r,
         );
 
       case TourStatus.deleted:
@@ -163,11 +163,12 @@ class _StatusTour extends StatelessWidget {
         return Container(
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
+            color: Colors.red,
           ),
-          padding: EdgeInsets.all(4.r),
+          padding: EdgeInsets.all(3.r),
           child: Icon(
             Icons.close,
-            color: Colors.red,
+            color: Colors.white,
             size: 12.r,
           ),
         );
@@ -175,7 +176,7 @@ class _StatusTour extends StatelessWidget {
         return Icon(
           Icons.check_circle,
           color: Colors.green,
-          size: 16.r,
+          size: 20.r,
         );
     }
   }

@@ -55,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "approved": MessageLookupByLibrary.simpleMessage("Approved"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
+        "associateAgency": MessageLookupByLibrary.simpleMessage(
+            "Realust staff will take you on a tour!"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
@@ -75,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
+        "date": MessageLookupByLibrary.simpleMessage("Date"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
         "deleteAccountMessageDialog": MessageLookupByLibrary.simpleMessage(
             "Do you want to delete account ?"),
@@ -280,6 +283,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
         "structure": MessageLookupByLibrary.simpleMessage("Structure"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),
+        "time": MessageLookupByLibrary.simpleMessage("Time"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "titleHint": MessageLookupByLibrary.simpleMessage(
             "Sale private house at Cau Giay"),

@@ -19,32 +19,38 @@ mixin _$TourReviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(int ownerId, int senderId) onCreateChatRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(int ownerId, int senderId)? onCreateChatRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(int ownerId, int senderId)? onCreateChatRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnCreateChatRoom value) onCreateChatRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnCreateChatRoom value)? onCreateChatRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnCreateChatRoom value)? onCreateChatRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(int ownerId, int senderId) onCreateChatRoom,
   }) {
     return started();
   }
@@ -114,6 +121,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(int ownerId, int senderId)? onCreateChatRoom,
   }) {
     return started?.call();
   }
@@ -122,6 +130,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(int ownerId, int senderId)? onCreateChatRoom,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +143,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnCreateChatRoom value) onCreateChatRoom,
   }) {
     return started(this);
   }
@@ -142,6 +152,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnCreateChatRoom value)? onCreateChatRoom,
   }) {
     return started?.call(this);
   }
@@ -150,6 +161,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnCreateChatRoom value)? onCreateChatRoom,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,10 +176,153 @@ abstract class _Started implements TourReviewEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnCreateChatRoomCopyWith<$Res> {
+  factory _$$_OnCreateChatRoomCopyWith(
+          _$_OnCreateChatRoom value, $Res Function(_$_OnCreateChatRoom) then) =
+      __$$_OnCreateChatRoomCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int ownerId, int senderId});
+}
+
+/// @nodoc
+class __$$_OnCreateChatRoomCopyWithImpl<$Res>
+    extends _$TourReviewEventCopyWithImpl<$Res, _$_OnCreateChatRoom>
+    implements _$$_OnCreateChatRoomCopyWith<$Res> {
+  __$$_OnCreateChatRoomCopyWithImpl(
+      _$_OnCreateChatRoom _value, $Res Function(_$_OnCreateChatRoom) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ownerId = null,
+    Object? senderId = null,
+  }) {
+    return _then(_$_OnCreateChatRoom(
+      null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == senderId
+          ? _value.senderId
+          : senderId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnCreateChatRoom implements _OnCreateChatRoom {
+  const _$_OnCreateChatRoom(this.ownerId, this.senderId);
+
+  @override
+  final int ownerId;
+  @override
+  final int senderId;
+
+  @override
+  String toString() {
+    return 'TourReviewEvent.onCreateChatRoom(ownerId: $ownerId, senderId: $senderId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnCreateChatRoom &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.senderId, senderId) ||
+                other.senderId == senderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ownerId, senderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnCreateChatRoomCopyWith<_$_OnCreateChatRoom> get copyWith =>
+      __$$_OnCreateChatRoomCopyWithImpl<_$_OnCreateChatRoom>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int ownerId, int senderId) onCreateChatRoom,
+  }) {
+    return onCreateChatRoom(ownerId, senderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int ownerId, int senderId)? onCreateChatRoom,
+  }) {
+    return onCreateChatRoom?.call(ownerId, senderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int ownerId, int senderId)? onCreateChatRoom,
+    required TResult orElse(),
+  }) {
+    if (onCreateChatRoom != null) {
+      return onCreateChatRoom(ownerId, senderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnCreateChatRoom value) onCreateChatRoom,
+  }) {
+    return onCreateChatRoom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnCreateChatRoom value)? onCreateChatRoom,
+  }) {
+    return onCreateChatRoom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnCreateChatRoom value)? onCreateChatRoom,
+    required TResult orElse(),
+  }) {
+    if (onCreateChatRoom != null) {
+      return onCreateChatRoom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnCreateChatRoom implements TourReviewEvent {
+  const factory _OnCreateChatRoom(final int ownerId, final int senderId) =
+      _$_OnCreateChatRoom;
+
+  int get ownerId;
+  int get senderId;
+  @JsonKey(ignore: true)
+  _$$_OnCreateChatRoomCopyWith<_$_OnCreateChatRoom> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$TourReviewState {
   TourReviewParams get params => throw _privateConstructorUsedError;
   RealEstate? get estate => throw _privateConstructorUsedError;
-  Tour? get tour => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -181,12 +336,10 @@ abstract class $TourReviewStateCopyWith<$Res> {
           TourReviewState value, $Res Function(TourReviewState) then) =
       _$TourReviewStateCopyWithImpl<$Res, TourReviewState>;
   @useResult
-  $Res call(
-      {TourReviewParams params, RealEstate? estate, Tour? tour, Status status});
+  $Res call({TourReviewParams params, RealEstate? estate, Status status});
 
   $TourReviewParamsCopyWith<$Res> get params;
   $RealEstateCopyWith<$Res>? get estate;
-  $TourCopyWith<$Res>? get tour;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -205,7 +358,6 @@ class _$TourReviewStateCopyWithImpl<$Res, $Val extends TourReviewState>
   $Res call({
     Object? params = null,
     Object? estate = freezed,
-    Object? tour = freezed,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -217,10 +369,6 @@ class _$TourReviewStateCopyWithImpl<$Res, $Val extends TourReviewState>
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
               as RealEstate?,
-      tour: freezed == tour
-          ? _value.tour
-          : tour // ignore: cast_nullable_to_non_nullable
-              as Tour?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -250,18 +398,6 @@ class _$TourReviewStateCopyWithImpl<$Res, $Val extends TourReviewState>
 
   @override
   @pragma('vm:prefer-inline')
-  $TourCopyWith<$Res>? get tour {
-    if (_value.tour == null) {
-      return null;
-    }
-
-    return $TourCopyWith<$Res>(_value.tour!, (value) {
-      return _then(_value.copyWith(tour: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res> get status {
     return $StatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
@@ -277,15 +413,12 @@ abstract class _$$_TourReviewStateCopyWith<$Res>
       __$$_TourReviewStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {TourReviewParams params, RealEstate? estate, Tour? tour, Status status});
+  $Res call({TourReviewParams params, RealEstate? estate, Status status});
 
   @override
   $TourReviewParamsCopyWith<$Res> get params;
   @override
   $RealEstateCopyWith<$Res>? get estate;
-  @override
-  $TourCopyWith<$Res>? get tour;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -303,7 +436,6 @@ class __$$_TourReviewStateCopyWithImpl<$Res>
   $Res call({
     Object? params = null,
     Object? estate = freezed,
-    Object? tour = freezed,
     Object? status = null,
   }) {
     return _then(_$_TourReviewState(
@@ -315,10 +447,6 @@ class __$$_TourReviewStateCopyWithImpl<$Res>
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
               as RealEstate?,
-      tour: freezed == tour
-          ? _value.tour
-          : tour // ignore: cast_nullable_to_non_nullable
-              as Tour?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -331,24 +459,19 @@ class __$$_TourReviewStateCopyWithImpl<$Res>
 
 class _$_TourReviewState implements _TourReviewState {
   const _$_TourReviewState(
-      {required this.params,
-      this.estate,
-      this.tour,
-      this.status = const Status.idle()});
+      {required this.params, this.estate, this.status = const Status.idle()});
 
   @override
   final TourReviewParams params;
   @override
   final RealEstate? estate;
   @override
-  final Tour? tour;
-  @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'TourReviewState(params: $params, estate: $estate, tour: $tour, status: $status)';
+    return 'TourReviewState(params: $params, estate: $estate, status: $status)';
   }
 
   @override
@@ -358,12 +481,11 @@ class _$_TourReviewState implements _TourReviewState {
             other is _$_TourReviewState &&
             (identical(other.params, params) || other.params == params) &&
             (identical(other.estate, estate) || other.estate == estate) &&
-            (identical(other.tour, tour) || other.tour == tour) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, params, estate, tour, status);
+  int get hashCode => Object.hash(runtimeType, params, estate, status);
 
   @JsonKey(ignore: true)
   @override
@@ -376,7 +498,6 @@ abstract class _TourReviewState implements TourReviewState {
   const factory _TourReviewState(
       {required final TourReviewParams params,
       final RealEstate? estate,
-      final Tour? tour,
       final Status status}) = _$_TourReviewState;
 
   @override
@@ -384,11 +505,221 @@ abstract class _TourReviewState implements TourReviewState {
   @override
   RealEstate? get estate;
   @override
-  Tour? get tour;
-  @override
   Status get status;
   @override
   @JsonKey(ignore: true)
   _$$_TourReviewStateCopyWith<_$_TourReviewState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$TourReviewDataState {
+  ChatRoom get room => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatRoom room) createRoom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatRoom room)? createRoom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatRoom room)? createRoom,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TourReviewDataStateCreateRoom value) createRoom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TourReviewDataStateCreateRoom value)? createRoom,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TourReviewDataStateCreateRoom value)? createRoom,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TourReviewDataStateCopyWith<TourReviewDataState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TourReviewDataStateCopyWith<$Res> {
+  factory $TourReviewDataStateCopyWith(
+          TourReviewDataState value, $Res Function(TourReviewDataState) then) =
+      _$TourReviewDataStateCopyWithImpl<$Res, TourReviewDataState>;
+  @useResult
+  $Res call({ChatRoom room});
+}
+
+/// @nodoc
+class _$TourReviewDataStateCopyWithImpl<$Res, $Val extends TourReviewDataState>
+    implements $TourReviewDataStateCopyWith<$Res> {
+  _$TourReviewDataStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? room = freezed,
+  }) {
+    return _then(_value.copyWith(
+      room: freezed == room
+          ? _value.room
+          : room // ignore: cast_nullable_to_non_nullable
+              as ChatRoom,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_TourReviewDataStateCreateRoomCopyWith<$Res>
+    implements $TourReviewDataStateCopyWith<$Res> {
+  factory _$$_TourReviewDataStateCreateRoomCopyWith(
+          _$_TourReviewDataStateCreateRoom value,
+          $Res Function(_$_TourReviewDataStateCreateRoom) then) =
+      __$$_TourReviewDataStateCreateRoomCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ChatRoom room});
+}
+
+/// @nodoc
+class __$$_TourReviewDataStateCreateRoomCopyWithImpl<$Res>
+    extends _$TourReviewDataStateCopyWithImpl<$Res,
+        _$_TourReviewDataStateCreateRoom>
+    implements _$$_TourReviewDataStateCreateRoomCopyWith<$Res> {
+  __$$_TourReviewDataStateCreateRoomCopyWithImpl(
+      _$_TourReviewDataStateCreateRoom _value,
+      $Res Function(_$_TourReviewDataStateCreateRoom) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? room = freezed,
+  }) {
+    return _then(_$_TourReviewDataStateCreateRoom(
+      room: freezed == room
+          ? _value.room
+          : room // ignore: cast_nullable_to_non_nullable
+              as ChatRoom,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TourReviewDataStateCreateRoom
+    implements _TourReviewDataStateCreateRoom {
+  const _$_TourReviewDataStateCreateRoom({required this.room});
+
+  @override
+  final ChatRoom room;
+
+  @override
+  String toString() {
+    return 'TourReviewDataState.createRoom(room: $room)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TourReviewDataStateCreateRoom &&
+            const DeepCollectionEquality().equals(other.room, room));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(room));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TourReviewDataStateCreateRoomCopyWith<_$_TourReviewDataStateCreateRoom>
+      get copyWith => __$$_TourReviewDataStateCreateRoomCopyWithImpl<
+          _$_TourReviewDataStateCreateRoom>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChatRoom room) createRoom,
+  }) {
+    return createRoom(room);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatRoom room)? createRoom,
+  }) {
+    return createRoom?.call(room);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatRoom room)? createRoom,
+    required TResult orElse(),
+  }) {
+    if (createRoom != null) {
+      return createRoom(room);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TourReviewDataStateCreateRoom value) createRoom,
+  }) {
+    return createRoom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TourReviewDataStateCreateRoom value)? createRoom,
+  }) {
+    return createRoom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TourReviewDataStateCreateRoom value)? createRoom,
+    required TResult orElse(),
+  }) {
+    if (createRoom != null) {
+      return createRoom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TourReviewDataStateCreateRoom implements TourReviewDataState {
+  const factory _TourReviewDataStateCreateRoom({required final ChatRoom room}) =
+      _$_TourReviewDataStateCreateRoom;
+
+  @override
+  ChatRoom get room;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TourReviewDataStateCreateRoomCopyWith<_$_TourReviewDataStateCreateRoom>
+      get copyWith => throw _privateConstructorUsedError;
 }
