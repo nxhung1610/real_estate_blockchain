@@ -1,8 +1,8 @@
 enum TourStatus {
-  waiting(1),
-  deleted(2),
+  // waiting(1),
+  // deleted(2),
   processing(3),
-  failed(4),
+  // failed(4),
   approved(5),
   rejected(6);
 

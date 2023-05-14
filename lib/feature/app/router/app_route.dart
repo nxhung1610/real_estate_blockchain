@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
+import 'package:real_estate_blockchain/feature/bid/router/bid_route.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_new_route.dart';
 import 'package:real_estate_blockchain/feature/main/module.dart';
@@ -29,6 +30,7 @@ class AppRoute extends BaseRoute {
   late final SettingRoute setting;
   late final NotificationRoute notification;
   late final TourRoute tour;
+  late final BidRoute bid;
 
   // Path
   String get onboarding => _onboardingRoute.url;
@@ -56,6 +58,7 @@ class AppRoute extends BaseRoute {
         ...setting.routes,
         ...notification.routes,
         ...tour.routes,
+        ...bid.routes,
       ];
 
   @override
@@ -68,6 +71,7 @@ class AppRoute extends BaseRoute {
         ...user.globalRoutes,
         ...notification.globalRoutes,
         ...tour.globalRoutes,
+        ...bid.globalRoutes,
       ];
 
   @override
@@ -82,5 +86,6 @@ class AppRoute extends BaseRoute {
     setting = SettingRoute(url, '/setting');
     notification = NotificationRoute(url, '/notification');
     tour = TourRoute(root, '/tour');
+    bid = BidRoute(url, '/bid');
   }
 }

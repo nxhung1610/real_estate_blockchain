@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Phòng ngủ"),
+        "bidNow": MessageLookupByLibrary.simpleMessage("Đấu giá "),
+        "biddingHistory":
+            MessageLookupByLibrary.simpleMessage("Lịch sử đấu giá"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Được xây dựng"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "changeLanguage":
@@ -211,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberNotExist": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại không tồn tại!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Chọn thời gian"),
+        "placeABid": MessageLookupByLibrary.simpleMessage("Đặt một giá thầu"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),
@@ -276,6 +280,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "southWest": MessageLookupByLibrary.simpleMessage("Tây Nam"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
+        "startPrice": MessageLookupByLibrary.simpleMessage("Gía khởi điểm"),
         "startWithUs":
             MessageLookupByLibrary.simpleMessage("Bắt đầu với chúng tôi"),
         "startWithUsDes": MessageLookupByLibrary.simpleMessage(
@@ -293,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "townhouse": MessageLookupByLibrary.simpleMessage("Nhà phố"),
         "transactionDetail":
             MessageLookupByLibrary.simpleMessage("Chi tiết giao dịch"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Thử lại"),
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),

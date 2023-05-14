@@ -125,12 +125,11 @@ class ApiRemote {
       );
 
       return BaseResponse.fromJson(
-        response.data,
         parse: (data) => parse?.call(data),
         response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(e.response?.data, response: e.response);
+      return BaseResponse.fromJson(response: e.response);
     }
   }
 
@@ -159,12 +158,11 @@ class ApiRemote {
       );
 
       return BaseResponse.fromJson(
-        response.data,
         parse: (data) => parse?.call(data),
         response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(e.response?.data, response: e.response);
+      return BaseResponse.fromJson(response: e.response);
     }
   }
 
@@ -193,12 +191,11 @@ class ApiRemote {
       );
 
       return BaseResponse.fromJson(
-        response.data,
         parse: (data) => parse?.call(data),
         response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(e.response?.data, response: e.response);
+      return BaseResponse.fromJson(response: e.response);
     }
   }
 
@@ -227,12 +224,11 @@ class ApiRemote {
       );
 
       return BaseResponse.fromJson(
-        response.data,
         parse: (data) => parse?.call(data),
         response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(e.response?.data, response: e.response);
+      return BaseResponse.fromJson(response: e.response);
     }
   }
 
@@ -257,12 +253,11 @@ class ApiRemote {
       );
 
       return BaseResponse.fromJson(
-        response.data,
         parse: (data) => parse?.call(data),
         response: response,
       );
     } on DioError catch (e) {
-      return BaseResponse.fromJson(e.response?.data, response: e.response);
+      return BaseResponse.fromJson(response: e.response);
     }
   }
 }

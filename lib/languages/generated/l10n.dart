@@ -2069,6 +2069,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Try again`
+  String get tryAgain {
+    return Intl.message(
+      'Try again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bid now`
+  String get bidNow {
+    return Intl.message(
+      'Bid now',
+      name: 'bidNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bidding History`
+  String get biddingHistory {
+    return Intl.message(
+      'Bidding History',
+      name: 'biddingHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place a Bid`
+  String get placeABid {
+    return Intl.message(
+      'Place a Bid',
+      name: 'placeABid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Price`
+  String get startPrice {
+    return Intl.message(
+      'Start Price',
+      name: 'startPrice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

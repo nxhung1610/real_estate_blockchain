@@ -149,7 +149,6 @@ class _StatusTour extends StatelessWidget {
 
   Widget icon() {
     switch (status) {
-      case TourStatus.waiting:
       case TourStatus.processing:
         return Icon(
           Icons.error,
@@ -157,8 +156,6 @@ class _StatusTour extends StatelessWidget {
           size: 20.r,
         );
 
-      case TourStatus.deleted:
-      case TourStatus.failed:
       case TourStatus.rejected:
         return Container(
           decoration: const BoxDecoration(
@@ -184,14 +181,14 @@ class _StatusTour extends StatelessWidget {
   String title(BuildContext context) {
     final s = S.of(context);
     switch (status) {
-      case TourStatus.waiting:
-        return s.waiting;
-      case TourStatus.deleted:
-        return s.deleted;
+      // case TourStatus.waiting:
+      //   return s.waiting;
+      // case TourStatus.deleted:
+      //   return s.deleted;
       case TourStatus.processing:
         return s.processing;
-      case TourStatus.failed:
-        return s.failed;
+      // case TourStatus.failed:
+      //   return s.failed;
       case TourStatus.approved:
         return s.approved;
       case TourStatus.rejected:

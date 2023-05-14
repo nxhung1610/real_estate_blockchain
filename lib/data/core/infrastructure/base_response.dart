@@ -10,11 +10,11 @@ class BaseResponse<T> {
   final String? log;
   final Response? response;
 
-  factory BaseResponse.fromJson(
-    Map<String, dynamic> json, {
+  factory BaseResponse.fromJson({
+    required Response? response,
     T Function(dynamic data)? parse,
-    Response? response,
   }) {
+    final json = response?.data ?? {};
     return BaseResponse._(
       success: json["success"],
       data: parse?.call(json["data"]),

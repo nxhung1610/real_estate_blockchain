@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Bed Room"),
+        "bidNow": MessageLookupByLibrary.simpleMessage("Bid now"),
+        "biddingHistory":
+            MessageLookupByLibrary.simpleMessage("Bidding History"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Built At"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeLanguage":
@@ -213,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberNotExist":
             MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Pick a time"),
+        "placeABid": MessageLookupByLibrary.simpleMessage("Place a Bid"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),
@@ -277,6 +281,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "southWest": MessageLookupByLibrary.simpleMessage("South West"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Square"),
+        "startPrice": MessageLookupByLibrary.simpleMessage("Start Price"),
         "startWithUs": MessageLookupByLibrary.simpleMessage("Start with us"),
         "startWithUsDes": MessageLookupByLibrary.simpleMessage(
             "We are here to help you in Choosing right"),
@@ -293,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "townhouse": MessageLookupByLibrary.simpleMessage("Townhouse"),
         "transactionDetail":
             MessageLookupByLibrary.simpleMessage("Transaction Detail"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
         "unableToLoadData":
             MessageLookupByLibrary.simpleMessage("Unable to load data"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),

@@ -3,10 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
+import 'package:real_estate_blockchain/feature/bid/model/bid_params.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/discover/module.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
@@ -63,6 +66,10 @@ class _MainPageState extends State<MainPage>
               ),
             );
       }
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.push($appRoute.bid.url, extra: BidParams(id: 23.toString()));
     });
   }
 

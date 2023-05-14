@@ -197,6 +197,9 @@ class $AssetsIconsGen {
   SvgGenImage get icMessageLight =>
       const SvgGenImage('assets/icons/ic_message_light.svg');
 
+  /// File path: assets/icons/ic_money.svg
+  SvgGenImage get icMoney => const SvgGenImage('assets/icons/ic_money.svg');
+
   /// File path: assets/icons/ic_myhome_bold.svg
   SvgGenImage get icMyhomeBold =>
       const SvgGenImage('assets/icons/ic_myhome_bold.svg');
@@ -250,6 +253,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_square.svg
   SvgGenImage get icSquare => const SvgGenImage('assets/icons/ic_square.svg');
 
+  /// File path: assets/icons/ic_time_circle.svg
+  SvgGenImage get icTimeCircle =>
+      const SvgGenImage('assets/icons/ic_time_circle.svg');
+
   /// File path: assets/icons/ic_video_time.svg
   SvgGenImage get icVideoTime =>
       const SvgGenImage('assets/icons/ic_video_time.svg');
@@ -301,6 +308,7 @@ class $AssetsIconsGen {
         icLocationLight,
         icMessageBold,
         icMessageLight,
+        icMoney,
         icMyhomeBold,
         icMyhomeLight,
         icNotificationLight,
@@ -316,6 +324,7 @@ class $AssetsIconsGen {
         icSort,
         icSpa,
         icSquare,
+        icTimeCircle,
         icVideoTime,
         icWindy,
         logo,

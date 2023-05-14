@@ -560,6 +560,8 @@ abstract class $TourReviewDataStateCopyWith<$Res> {
       _$TourReviewDataStateCopyWithImpl<$Res, TourReviewDataState>;
   @useResult
   $Res call({ChatRoom room});
+
+  $ChatRoomCopyWith<$Res> get room;
 }
 
 /// @nodoc
@@ -575,14 +577,22 @@ class _$TourReviewDataStateCopyWithImpl<$Res, $Val extends TourReviewDataState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? room = freezed,
+    Object? room = null,
   }) {
     return _then(_value.copyWith(
-      room: freezed == room
+      room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as ChatRoom,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatRoomCopyWith<$Res> get room {
+    return $ChatRoomCopyWith<$Res>(_value.room, (value) {
+      return _then(_value.copyWith(room: value) as $Val);
+    });
   }
 }
 
@@ -596,6 +606,9 @@ abstract class _$$_TourReviewDataStateCreateRoomCopyWith<$Res>
   @override
   @useResult
   $Res call({ChatRoom room});
+
+  @override
+  $ChatRoomCopyWith<$Res> get room;
 }
 
 /// @nodoc
@@ -611,10 +624,10 @@ class __$$_TourReviewDataStateCreateRoomCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? room = freezed,
+    Object? room = null,
   }) {
     return _then(_$_TourReviewDataStateCreateRoom(
-      room: freezed == room
+      room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as ChatRoom,
@@ -641,12 +654,11 @@ class _$_TourReviewDataStateCreateRoom
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TourReviewDataStateCreateRoom &&
-            const DeepCollectionEquality().equals(other.room, room));
+            (identical(other.room, room) || other.room == room));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(room));
+  int get hashCode => Object.hash(runtimeType, room);
 
   @JsonKey(ignore: true)
   @override

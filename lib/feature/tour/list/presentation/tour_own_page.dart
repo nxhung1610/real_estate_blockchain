@@ -15,6 +15,7 @@ import 'package:real_estate_blockchain/feature/tour/list/application/tour_own_bl
 import 'package:real_estate_blockchain/feature/tour/list/presentation/widget/w_tour_item.dart';
 import 'package:real_estate_blockchain/feature/tour/review/model/tour_review_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class TourOwnPage extends StatefulWidget {
   const TourOwnPage({super.key});
@@ -109,6 +110,32 @@ class _TourOwnPageState extends State<TourOwnPage> {
                   PagedSliverList<int, MapEntry<Tour, RealEstate>>.separated(
                 pagingController: pageController,
                 builderDelegate: PagedChildBuilderDelegate(
+                  firstPageErrorIndicatorBuilder: (context) {
+                    return Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            s.anErrorOccurred,
+                            style: context.textTheme.bodyLarge?.copyWith(),
+                          ),
+                          AppSize.largeHeightDimens.verticalSpace,
+                          ButtonApp(
+                            label: s.tryAgain,
+                            onPressed: () async {
+                              pageController.error = null;
+                              refresh = Completer();
+                              bloc.add(const TourOwnEvent.started());
+                              await refresh?.future;
+                            },
+                            type: ButtonType.secondary,
+                            size: ButtonSize.small,
+                            style: ButtonScaleStyle.tight,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   itemBuilder: (context, item, index) {
                     return GestureDetector(
                       onTap: () {

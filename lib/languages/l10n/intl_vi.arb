@@ -206,5 +206,10 @@
   "rejected" : "Từ chối",
   "date" : "Ngày",
   "time" : "Thời gian",
-  "associateAgency" : "Nhân viên của Realust sẽ đưa bạn đi tham quan!"
+  "associateAgency" : "Nhân viên của Realust sẽ đưa bạn đi tham quan!",
+  "tryAgain" : "Thử lại",
+  "bidNow" : "Đấu giá ",
+  "biddingHistory" :"Lịch sử đấu giá",
+  "placeABid" :"Đặt một giá thầu",
+  "startPrice" :"Gía khởi điểm"
 }

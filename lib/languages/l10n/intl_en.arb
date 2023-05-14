@@ -205,5 +205,10 @@
   "rejected" : "Rejected",
   "date" : "Date",
   "time" : "Time",
-  "associateAgency" : "Realust staff will take you on a tour!"
+  "associateAgency" : "Realust staff will take you on a tour!",
+  "tryAgain" : "Try again",
+  "bidNow" : "Bid now",
+  "biddingHistory" :"Bidding History",
+  "placeABid" :"Place a Bid",
+  "startPrice" :"Start Price"
 }
