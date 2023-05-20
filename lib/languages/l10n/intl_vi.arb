@@ -220,5 +220,6 @@
   "normal" : "Thường",
   "postTourType" : "Loại bài đăng",
   "createPostSuccess" : "Tạo bài đăng thành công",
-  "createPostAlreadyExist" : "Bất động sản đã được tạo bài đăng"
+  "createPostAlreadyExist" : "Bất động sản đã được tạo bài đăng",
+  "ownerPost" :"Bài đăng của bạn"
 }

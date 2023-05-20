@@ -152,6 +152,13 @@ class _Options extends StatelessWidget {
               },
             ),
             ProfileOptionData(
+              icon: Assets.icons.icSquare.svg(),
+              label: s.ownerPost,
+              onPressed: () {
+                context.push($appRoute.postOwner.url);
+              },
+            ),
+            ProfileOptionData(
               icon: Assets.icons.icVideoTime.svg(),
               label: s.optionPastTour,
               onPressed: () {

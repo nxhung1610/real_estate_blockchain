@@ -202,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Tìm nhà"),
         "other": MessageLookupByLibrary.simpleMessage("Khác"),
+        "ownerPost": MessageLookupByLibrary.simpleMessage("Bài đăng của bạn"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "passwordNotMatch":
             MessageLookupByLibrary.simpleMessage("Mật khẩu không giống nhau"),

@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/feature/search/router/router.dart';
 import 'package:real_estate_blockchain/feature/tour/router/tour_route.dart';
 import 'package:real_estate_blockchain/feature/user/router/user_router.dart';
 
+import '../../post/owner/router/post_owner_router.dart';
 import '../../setting/router/setting_route.dart';
 import '../../tour/schedule_tour/router/schedule_tour_router.dart';
 
@@ -31,6 +32,7 @@ class AppRoute extends BaseRoute {
   late final NotificationRoute notification;
   late final TourRoute tour;
   late final BidRoute bid;
+  late final PostOwnerRoute postOwner;
 
   // Path
   String get onboarding => _onboardingRoute.url;
@@ -59,6 +61,7 @@ class AppRoute extends BaseRoute {
         ...notification.routes,
         ...tour.routes,
         ...bid.routes,
+        ...postOwner.routes,
       ];
 
   @override
@@ -72,6 +75,7 @@ class AppRoute extends BaseRoute {
         ...notification.globalRoutes,
         ...tour.globalRoutes,
         ...bid.globalRoutes,
+        ...postOwner.globalRoutes,
       ];
 
   @override
@@ -87,5 +91,6 @@ class AppRoute extends BaseRoute {
     notification = NotificationRoute(url, '/notification');
     tour = TourRoute(root, '/tour');
     bid = BidRoute(url, '/bid');
+    postOwner = PostOwnerRoute(url, '/posts/owner');
   }
 }

@@ -16,7 +16,7 @@ class BaseResponse<T> {
   }) {
     final json = response?.data ?? {};
     return BaseResponse._(
-      success: json["success"],
+      success: json?["success"] ?? false,
       data: parse?.call(json["data"]),
       message: json["message"],
       statusCode: json['status_code'],

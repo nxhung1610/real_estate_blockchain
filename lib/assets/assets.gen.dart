@@ -215,6 +215,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_pool.svg
   SvgGenImage get icPool => const SvgGenImage('assets/icons/ic_pool.svg');
 
+  /// File path: assets/icons/ic_post.svg
+  SvgGenImage get icPost => const SvgGenImage('assets/icons/ic_post.svg');
+
   /// File path: assets/icons/ic_profile_bold.svg
   SvgGenImage get icProfileBold =>
       const SvgGenImage('assets/icons/ic_profile_bold.svg');
@@ -313,6 +316,7 @@ class $AssetsIconsGen {
         icMyhomeLight,
         icNotificationLight,
         icPool,
+        icPost,
         icProfileBold,
         icProfileLight,
         icRemove,

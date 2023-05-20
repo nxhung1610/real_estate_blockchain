@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../base_response.dart';
 import 'jwt_interceptor.dart';
@@ -161,7 +162,8 @@ class ApiRemote {
         parse: (data) => parse?.call(data),
         response: response,
       );
-    } on DioError catch (e) {
+    } on DioError catch (e, trace) {
+      printLog(this, message: e, trace: trace, error: e);
       return BaseResponse.fromJson(response: e.response);
     }
   }

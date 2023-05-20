@@ -219,6 +219,7 @@
   "normal" : "Normal",
   "postTourType" :"Post tour type",
   "createPostSuccess" : "Create post success",
-  "createPostAlreadyExist" : "Post already exist"
+  "createPostAlreadyExist" : "Post already exist",
+  "ownerPost" :"Owner post"
   
 }

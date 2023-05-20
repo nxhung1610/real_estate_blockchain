@@ -204,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "optionTitleHomeSearch":
             MessageLookupByLibrary.simpleMessage("Home search"),
         "other": MessageLookupByLibrary.simpleMessage("other"),
+        "ownerPost": MessageLookupByLibrary.simpleMessage("Owner post"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordNotMatch":
             MessageLookupByLibrary.simpleMessage("Password not match"),
