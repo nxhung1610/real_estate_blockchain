@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/province/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 

@@ -351,7 +351,7 @@ class __NewFeedState extends State<_NewFeed> {
                 itemBuilder: (context, index) {
                   final item = state.estates[index];
                   return HouseNewsFeed(
-                    value: item,
+                    value: item.realEstate,
                     onPressed: () {
                       context.push(
                         $appRoute.realEstateDetail,

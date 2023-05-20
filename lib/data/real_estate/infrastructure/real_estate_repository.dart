@@ -20,8 +20,10 @@ import 'package:real_estate_blockchain/data/real_estate/infrastructure/real_esta
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../../province/data.dart';
+import '../domain/entities/post_real_estate.dart';
 import '../domain/entities/real_estate_config.dart';
 import '../domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
+import 'dto/post_real_estate_response.dart';
 
 @LazySingleton(as: IRealEstateRepository)
 class RealEstateRepository extends IRealEstateRepository {
@@ -109,11 +111,11 @@ class RealEstateRepository extends IRealEstateRepository {
   }
 
   @override
-  Future<Either<RealEstateFailure, List<RealEstate>>> newfeeds({
+  Future<Either<RealEstateFailure, List<PostRealEstate>>> newfeeds({
     Province? provice,
   }) async {
     try {
-      final res = await _apiRemote.post<List<RealEstateResponse>>(
+      final res = await _apiRemote.post<List<PostRealEstateResponse>>(
         RealEstateConstants.newfeeds,
         url: AppConfig.instance.baseUrl,
         parse: (data) {

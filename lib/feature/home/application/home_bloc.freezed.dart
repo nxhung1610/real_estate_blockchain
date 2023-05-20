@@ -315,7 +315,7 @@ abstract class HomeEventOnProviceChange implements HomeEvent {
 mixin _$HomeState {
   List<Province> get provinces => throw _privateConstructorUsedError;
   Province? get provice => throw _privateConstructorUsedError;
-  List<RealEstate> get estates => throw _privateConstructorUsedError;
+  List<PostRealEstate> get estates => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -331,7 +331,7 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {List<Province> provinces,
       Province? provice,
-      List<RealEstate> estates,
+      List<PostRealEstate> estates,
       Status status});
 
   $StatusCopyWith<$Res> get status;
@@ -367,7 +367,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       estates: null == estates
           ? _value.estates
           : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
+              as List<PostRealEstate>,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -394,7 +394,7 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   $Res call(
       {List<Province> provinces,
       Province? provice,
-      List<RealEstate> estates,
+      List<PostRealEstate> estates,
       Status status});
 
   @override
@@ -429,7 +429,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
       estates: null == estates
           ? _value._estates
           : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
+              as List<PostRealEstate>,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -444,7 +444,7 @@ class _$_HomeState implements _HomeState {
   const _$_HomeState(
       {final List<Province> provinces = const [],
       this.provice,
-      final List<RealEstate> estates = const [],
+      final List<PostRealEstate> estates = const [],
       this.status = const Status.idle()})
       : _provinces = provinces,
         _estates = estates;
@@ -460,10 +460,10 @@ class _$_HomeState implements _HomeState {
 
   @override
   final Province? provice;
-  final List<RealEstate> _estates;
+  final List<PostRealEstate> _estates;
   @override
   @JsonKey()
-  List<RealEstate> get estates {
+  List<PostRealEstate> get estates {
     if (_estates is EqualUnmodifiableListView) return _estates;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_estates);
@@ -509,7 +509,7 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final List<Province> provinces,
       final Province? provice,
-      final List<RealEstate> estates,
+      final List<PostRealEstate> estates,
       final Status status}) = _$_HomeState;
 
   @override
@@ -517,7 +517,7 @@ abstract class _HomeState implements HomeState {
   @override
   Province? get provice;
   @override
-  List<RealEstate> get estates;
+  List<PostRealEstate> get estates;
   @override
   Status get status;
   @override
