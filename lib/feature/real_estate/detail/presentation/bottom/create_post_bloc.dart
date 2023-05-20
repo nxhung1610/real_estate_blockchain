@@ -113,7 +113,7 @@ class CreatePostBloc extends Bloc<CreatePostEvent, CreatePostState> {
       });
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
-      emit(state.copyWith(status: Status.failure(value: e.toString())));
+      emit(state.copyWith(status: Status.failure(value: e)));
     } finally {
       emit(state.copyWith(status: const Status.idle()));
     }

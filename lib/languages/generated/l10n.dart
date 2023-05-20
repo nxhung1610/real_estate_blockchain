@@ -2199,6 +2199,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Post already exist`
+  String get createPostAlreadyExist {
+    return Intl.message(
+      'Post already exist',
+      name: 'createPostAlreadyExist',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

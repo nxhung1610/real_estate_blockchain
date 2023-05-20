@@ -78,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
         "createPost": MessageLookupByLibrary.simpleMessage("Tạo bài đăng"),
+        "createPostAlreadyExist": MessageLookupByLibrary.simpleMessage(
+            "Bất động sản đã được tạo bài đăng"),
         "createPostSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bài đăng thành công"),
         "createRealEstateSuccess":

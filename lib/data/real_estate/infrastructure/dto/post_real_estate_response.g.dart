@@ -22,7 +22,7 @@ _$_PostRealEstateResponse _$$_PostRealEstateResponseFromJson(
       autoRenew: json['auto_renew'] as bool?,
       title: json['title'] as String?,
       description: json['description'] as String?,
-      sellType: json['sell_type'] as String?,
+      sellType: json['sell_type'] as String,
       realEstate: RealEstateResponse.fromJson(
           json['real_estate'] as Map<String, dynamic>),
     );

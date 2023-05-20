@@ -26,7 +26,7 @@ mixin _$PostRealEstate {
   bool? get autoRenew => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  String? get sellType => throw _privateConstructorUsedError;
+  RealEstateSell get sellType => throw _privateConstructorUsedError;
   RealEstate get realEstate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -51,7 +51,7 @@ abstract class $PostRealEstateCopyWith<$Res> {
       bool? autoRenew,
       String? title,
       String? description,
-      String? sellType,
+      RealEstateSell sellType,
       RealEstate realEstate});
 
   $RealEstatePostTypeCopyWith<$Res>? get rePostType;
@@ -81,7 +81,7 @@ class _$PostRealEstateCopyWithImpl<$Res, $Val extends PostRealEstate>
     Object? autoRenew = freezed,
     Object? title = freezed,
     Object? description = freezed,
-    Object? sellType = freezed,
+    Object? sellType = null,
     Object? realEstate = null,
   }) {
     return _then(_value.copyWith(
@@ -125,10 +125,10 @@ class _$PostRealEstateCopyWithImpl<$Res, $Val extends PostRealEstate>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      sellType: freezed == sellType
+      sellType: null == sellType
           ? _value.sellType
           : sellType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as RealEstateSell,
       realEstate: null == realEstate
           ? _value.realEstate
           : realEstate // ignore: cast_nullable_to_non_nullable
@@ -176,7 +176,7 @@ abstract class _$$_PostRealEstateCopyWith<$Res>
       bool? autoRenew,
       String? title,
       String? description,
-      String? sellType,
+      RealEstateSell sellType,
       RealEstate realEstate});
 
   @override
@@ -206,7 +206,7 @@ class __$$_PostRealEstateCopyWithImpl<$Res>
     Object? autoRenew = freezed,
     Object? title = freezed,
     Object? description = freezed,
-    Object? sellType = freezed,
+    Object? sellType = null,
     Object? realEstate = null,
   }) {
     return _then(_$_PostRealEstate(
@@ -250,10 +250,10 @@ class __$$_PostRealEstateCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      sellType: freezed == sellType
+      sellType: null == sellType
           ? _value.sellType
           : sellType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as RealEstateSell,
       realEstate: null == realEstate
           ? _value.realEstate
           : realEstate // ignore: cast_nullable_to_non_nullable
@@ -276,7 +276,7 @@ class _$_PostRealEstate implements _PostRealEstate {
       this.autoRenew,
       this.title,
       this.description,
-      this.sellType,
+      required this.sellType,
       required this.realEstate});
 
   @override
@@ -300,7 +300,7 @@ class _$_PostRealEstate implements _PostRealEstate {
   @override
   final String? description;
   @override
-  final String? sellType;
+  final RealEstateSell sellType;
   @override
   final RealEstate realEstate;
 
@@ -372,7 +372,7 @@ abstract class _PostRealEstate implements PostRealEstate {
       final bool? autoRenew,
       final String? title,
       final String? description,
-      final String? sellType,
+      required final RealEstateSell sellType,
       required final RealEstate realEstate}) = _$_PostRealEstate;
 
   @override
@@ -396,7 +396,7 @@ abstract class _PostRealEstate implements PostRealEstate {
   @override
   String? get description;
   @override
-  String? get sellType;
+  RealEstateSell get sellType;
   @override
   RealEstate get realEstate;
   @override

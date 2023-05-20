@@ -80,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "createPost": MessageLookupByLibrary.simpleMessage("Create Post"),
+        "createPostAlreadyExist":
+            MessageLookupByLibrary.simpleMessage("Post already exist"),
         "createPostSuccess":
             MessageLookupByLibrary.simpleMessage("Create post success"),
         "createRealEstateSuccess":

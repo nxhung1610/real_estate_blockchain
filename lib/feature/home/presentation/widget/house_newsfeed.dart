@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -16,7 +19,7 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 class HouseNewsFeed extends StatelessWidget {
   final VoidCallback? onPressed;
   final void Function(bool isChecked)? onFavorite;
-  final RealEstate value;
+  final PostRealEstate value;
 
   const HouseNewsFeed({
     super.key,
@@ -30,52 +33,92 @@ class HouseNewsFeed extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 0.35.sh,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(
-          AppSize.extraLargeRadius,
-        ),
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: ImageCustom.network(
-                value.images?.firstOrNull?.url ?? '',
-                fit: BoxFit.cover,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned.fill(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(
+                AppSize.extraLargeRadius,
+              ),
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: ImageCustom.network(
+                      value.realEstate.images?.firstOrNull?.url ?? '',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          stops: const [
+                            0.3,
+                            0.9,
+                          ],
+                          colors: [
+                            Colors.transparent,
+                            AppColor.kNeutrals4.withOpacity(0.5),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        onTap: () {
+                          onPressed?.call();
+                        },
+                      ),
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: _infoDesc(context),
+                  ),
+                ],
               ),
             ),
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: const [
-                      0.3,
-                      0.9,
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Transform.rotate(
+                angle: -pi / 4,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.w,
+                    vertical: 2.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.background,
+                    borderRadius: BorderRadius.circular(8.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColor.kNeutrals1.withOpacity(0.5),
+                        blurRadius: 3.r,
+                      )
                     ],
-                    colors: [
-                      Colors.transparent,
-                      AppColor.kNeutrals4.withOpacity(0.5),
-                    ],
+                    border: Border.fromBorderSide(
+                      BorderSide(
+                        color: AppColor.kNeutrals4,
+                        width: 1.r,
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    value.sellType.title(context),
                   ),
                 ),
               ),
             ),
-            Positioned.fill(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  onTap: () {
-                    onPressed?.call();
-                  },
-                ),
-              ),
-            ),
-            Positioned.fill(
-              child: _infoDesc(context),
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -113,11 +156,12 @@ class HouseNewsFeed extends StatelessWidget {
                         if (isFavorite) {
                           context.read<RealEstateFavoritesBloc>().add(
                                 RealEstateFavoritesEvent.onRemoveFavorite(
-                                    value),
+                                    value.realEstate),
                               );
                         } else {
                           context.read<RealEstateFavoritesBloc>().add(
-                                RealEstateFavoritesEvent.onFavorite(value),
+                                RealEstateFavoritesEvent.onFavorite(
+                                    value.realEstate),
                               );
                         }
 
@@ -169,7 +213,7 @@ class HouseNewsFeed extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              value.name,
+                              value.realEstate.name,
                               style: context.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.w500,
                                 color: context.textTheme.displayLarge?.color,
@@ -180,7 +224,8 @@ class HouseNewsFeed extends StatelessWidget {
                           ),
                           Text(
                             NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                                .format(value.price * (value.area ?? 0))
+                                .format(value.realEstate.price *
+                                    (value.realEstate.area ?? 0))
                                 .toString(),
                             style: context.textTheme.titleMedium?.copyWith(
                               color: AppColor.kPrimary1,
@@ -192,9 +237,9 @@ class HouseNewsFeed extends StatelessWidget {
                       BlocProvider(
                         create: (context) => getIt.call<AddressBuilderCubit>()
                           ..onLoadAdress(
-                            proviceId: value.provinceId ?? '',
-                            wardId: value.wardId ?? '',
-                            districtId: value.districtId ?? '',
+                            proviceId: value.realEstate.provinceId ?? '',
+                            wardId: value.realEstate.wardId ?? '',
+                            districtId: value.realEstate.districtId ?? '',
                           ),
                         child: BlocBuilder<AddressBuilderCubit,
                             AddressBuilderState>(
@@ -210,7 +255,7 @@ class HouseNewsFeed extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     (() {
-                                      return (value.address ?? '') +
+                                      return (value.realEstate.address ?? '') +
                                           (addressState.buildAddress(context) ??
                                               '');
                                     })(),

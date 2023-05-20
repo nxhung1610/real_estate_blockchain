@@ -22,8 +22,15 @@ class PostRepository implements IPostRepository {
       if (res.success) {
         return right(unit);
       }
-      throw Exception(res.errorKey);
+
+      throw res.errorKey ?? '';
     } catch (e, trace) {
+      if (e is String) {
+        switch (e) {
+          case 'ErrPostAlreadyExists':
+            return left(const PostFailure.alreadyExist());
+        }
+      }
       printLog(this, message: e, error: e, trace: trace);
       return left(PostFailure());
     }

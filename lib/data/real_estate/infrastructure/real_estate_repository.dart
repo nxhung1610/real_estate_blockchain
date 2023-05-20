@@ -120,7 +120,7 @@ class RealEstateRepository extends IRealEstateRepository {
         url: AppConfig.instance.baseUrl,
         parse: (data) {
           return (data as List<dynamic>)
-              .map((e) => RealEstateResponse.fromJson(e))
+              .map((e) => PostRealEstateResponse.fromJson(e))
               .toList();
         },
         data: provice != null

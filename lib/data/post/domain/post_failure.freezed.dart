@@ -15,7 +15,46 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$PostFailure {}
+mixin _$PostFailure {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() alreadyExist,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function()? alreadyExist,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? alreadyExist,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PostFailure value) $default, {
+    required TResult Function(PostFailureAlreadyExist value) alreadyExist,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PostFailure value)? $default, {
+    TResult? Function(PostFailureAlreadyExist value)? alreadyExist,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PostFailure value)? $default, {
+    TResult Function(PostFailureAlreadyExist value)? alreadyExist,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $PostFailureCopyWith<$Res> {
@@ -69,8 +108,173 @@ class _$_PostFailure implements _PostFailure {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() alreadyExist,
+  }) {
+    return $default();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function()? alreadyExist,
+  }) {
+    return $default?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? alreadyExist,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PostFailure value) $default, {
+    required TResult Function(PostFailureAlreadyExist value) alreadyExist,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PostFailure value)? $default, {
+    TResult? Function(PostFailureAlreadyExist value)? alreadyExist,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PostFailure value)? $default, {
+    TResult Function(PostFailureAlreadyExist value)? alreadyExist,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class _PostFailure implements PostFailure {
   factory _PostFailure() = _$_PostFailure;
+}
+
+/// @nodoc
+abstract class _$$PostFailureAlreadyExistCopyWith<$Res> {
+  factory _$$PostFailureAlreadyExistCopyWith(_$PostFailureAlreadyExist value,
+          $Res Function(_$PostFailureAlreadyExist) then) =
+      __$$PostFailureAlreadyExistCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PostFailureAlreadyExistCopyWithImpl<$Res>
+    extends _$PostFailureCopyWithImpl<$Res, _$PostFailureAlreadyExist>
+    implements _$$PostFailureAlreadyExistCopyWith<$Res> {
+  __$$PostFailureAlreadyExistCopyWithImpl(_$PostFailureAlreadyExist _value,
+      $Res Function(_$PostFailureAlreadyExist) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PostFailureAlreadyExist implements PostFailureAlreadyExist {
+  const _$PostFailureAlreadyExist();
+
+  @override
+  String toString() {
+    return 'PostFailure.alreadyExist()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PostFailureAlreadyExist);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() alreadyExist,
+  }) {
+    return alreadyExist();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function()? alreadyExist,
+  }) {
+    return alreadyExist?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? alreadyExist,
+    required TResult orElse(),
+  }) {
+    if (alreadyExist != null) {
+      return alreadyExist();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PostFailure value) $default, {
+    required TResult Function(PostFailureAlreadyExist value) alreadyExist,
+  }) {
+    return alreadyExist(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PostFailure value)? $default, {
+    TResult? Function(PostFailureAlreadyExist value)? alreadyExist,
+  }) {
+    return alreadyExist?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PostFailure value)? $default, {
+    TResult Function(PostFailureAlreadyExist value)? alreadyExist,
+    required TResult orElse(),
+  }) {
+    if (alreadyExist != null) {
+      return alreadyExist(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PostFailureAlreadyExist implements PostFailure {
+  const factory PostFailureAlreadyExist() = _$PostFailureAlreadyExist;
 }

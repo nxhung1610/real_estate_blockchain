@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 
 import '../../domain/entities/post_real_estate.dart';
 import 'real_estate_post_type_response.dart';
@@ -21,7 +22,7 @@ class PostRealEstateResponse with _$PostRealEstateResponse {
     @JsonKey(name: 'auto_renew') bool? autoRenew,
     String? title,
     String? description,
-    @JsonKey(name: 'sell_type') String? sellType,
+    @JsonKey(name: 'sell_type') required String sellType,
     @JsonKey(name: 'real_estate') required RealEstateResponse realEstate,
   }) = _PostRealEstateResponse;
 
@@ -37,7 +38,9 @@ extension PostRealEstateResponseEx on PostRealEstateResponse {
       description: description,
       duration: duration,
       id: id,
-      sellType: sellType,
+      sellType: RealEstateSell.values.firstWhere(
+        (element) => sellType == element.value,
+      ),
       startDate: startDate,
       title: title,
       updatedAt: updatedAt,

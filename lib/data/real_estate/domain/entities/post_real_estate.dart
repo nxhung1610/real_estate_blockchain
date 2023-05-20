@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_post_type.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/application/enums.dart';
 
 part 'post_real_estate.freezed.dart';
 
@@ -17,7 +18,7 @@ class PostRealEstate with _$PostRealEstate {
     bool? autoRenew,
     String? title,
     String? description,
-    String? sellType,
+    required RealEstateSell sellType,
     required RealEstate realEstate,
   }) = _PostRealEstate;
 }

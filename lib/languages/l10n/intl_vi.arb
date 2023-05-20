@@ -219,5 +219,6 @@
   "premium" : "Premium",
   "normal" : "Thường",
   "postTourType" : "Loại bài đăng",
-  "createPostSuccess" : "Tạo bài đăng thành công"
+  "createPostSuccess" : "Tạo bài đăng thành công",
+  "createPostAlreadyExist" : "Bất động sản đã được tạo bài đăng"
 }

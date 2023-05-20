@@ -48,13 +48,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         await Future.delayed(const Duration(milliseconds: 500));
 
         final result = await authRepository.register(
-            state.firstName, state.lastName, state.phoneNumber, state.password);
+          state.firstName,
+          state.lastName,
+          state.phoneNumber,
+          state.password,
+        );
         result.fold(
-          (l) => emit(
-            state.copyWith(
-              status: Status.failure(value: l),
-            ),
-          ),
+          (l) => throw l,
           (r) => emit(state.copyWith(
             status: Status.success(value: r),
           )),

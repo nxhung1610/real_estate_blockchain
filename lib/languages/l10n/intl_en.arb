@@ -218,6 +218,7 @@
   "premium" : "Premium",
   "normal" : "Normal",
   "postTourType" :"Post tour type",
-  "createPostSuccess" : "Create post success"
+  "createPostSuccess" : "Create post success",
+  "createPostAlreadyExist" : "Post already exist"
   
 }

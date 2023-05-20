@@ -38,7 +38,7 @@ mixin _$PostRealEstateResponse {
   String? get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'sell_type')
-  String? get sellType => throw _privateConstructorUsedError;
+  String get sellType => throw _privateConstructorUsedError;
   @JsonKey(name: 'real_estate')
   RealEstateResponse get realEstate => throw _privateConstructorUsedError;
 
@@ -64,7 +64,7 @@ abstract class $PostRealEstateResponseCopyWith<$Res> {
       @JsonKey(name: 'auto_renew') bool? autoRenew,
       String? title,
       String? description,
-      @JsonKey(name: 'sell_type') String? sellType,
+      @JsonKey(name: 'sell_type') String sellType,
       @JsonKey(name: 'real_estate') RealEstateResponse realEstate});
 
   $RealEstatePostTypeResponseCopyWith<$Res>? get rePostType;
@@ -95,7 +95,7 @@ class _$PostRealEstateResponseCopyWithImpl<$Res,
     Object? autoRenew = freezed,
     Object? title = freezed,
     Object? description = freezed,
-    Object? sellType = freezed,
+    Object? sellType = null,
     Object? realEstate = null,
   }) {
     return _then(_value.copyWith(
@@ -139,10 +139,10 @@ class _$PostRealEstateResponseCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      sellType: freezed == sellType
+      sellType: null == sellType
           ? _value.sellType
           : sellType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       realEstate: null == realEstate
           ? _value.realEstate
           : realEstate // ignore: cast_nullable_to_non_nullable
@@ -191,7 +191,7 @@ abstract class _$$_PostRealEstateResponseCopyWith<$Res>
       @JsonKey(name: 'auto_renew') bool? autoRenew,
       String? title,
       String? description,
-      @JsonKey(name: 'sell_type') String? sellType,
+      @JsonKey(name: 'sell_type') String sellType,
       @JsonKey(name: 'real_estate') RealEstateResponse realEstate});
 
   @override
@@ -222,7 +222,7 @@ class __$$_PostRealEstateResponseCopyWithImpl<$Res>
     Object? autoRenew = freezed,
     Object? title = freezed,
     Object? description = freezed,
-    Object? sellType = freezed,
+    Object? sellType = null,
     Object? realEstate = null,
   }) {
     return _then(_$_PostRealEstateResponse(
@@ -266,10 +266,10 @@ class __$$_PostRealEstateResponseCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      sellType: freezed == sellType
+      sellType: null == sellType
           ? _value.sellType
           : sellType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       realEstate: null == realEstate
           ? _value.realEstate
           : realEstate // ignore: cast_nullable_to_non_nullable
@@ -292,7 +292,7 @@ class _$_PostRealEstateResponse implements _PostRealEstateResponse {
       @JsonKey(name: 'auto_renew') this.autoRenew,
       this.title,
       this.description,
-      @JsonKey(name: 'sell_type') this.sellType,
+      @JsonKey(name: 'sell_type') required this.sellType,
       @JsonKey(name: 'real_estate') required this.realEstate});
 
   factory _$_PostRealEstateResponse.fromJson(Map<String, dynamic> json) =>
@@ -325,7 +325,7 @@ class _$_PostRealEstateResponse implements _PostRealEstateResponse {
   final String? description;
   @override
   @JsonKey(name: 'sell_type')
-  final String? sellType;
+  final String sellType;
   @override
   @JsonKey(name: 'real_estate')
   final RealEstateResponse realEstate;
@@ -406,7 +406,7 @@ abstract class _PostRealEstateResponse implements PostRealEstateResponse {
           final String? title,
           final String? description,
           @JsonKey(name: 'sell_type')
-              final String? sellType,
+              required final String sellType,
           @JsonKey(name: 'real_estate')
               required final RealEstateResponse realEstate}) =
       _$_PostRealEstateResponse;
@@ -441,7 +441,7 @@ abstract class _PostRealEstateResponse implements PostRealEstateResponse {
   String? get description;
   @override
   @JsonKey(name: 'sell_type')
-  String? get sellType;
+  String get sellType;
   @override
   @JsonKey(name: 'real_estate')
   RealEstateResponse get realEstate;

@@ -8,6 +8,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/post/domain/model/post_type_enum.dart';
+import 'package:real_estate_blockchain/data/post/domain/post_failure.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_date_time_picker.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
@@ -47,9 +48,28 @@ class _CreatePostBottomState extends State<CreatePostBottom> {
               Navigator.of(context).pop();
             },
             failure: (value) {
-              context.appDialog.showAppDialog(
-                message: s.anErrorOccurred,
-              );
+              if (value.value is PostFailure) {
+                (value.value as PostFailure).when(
+                  () => () {
+                    context.appDialog.showAppDialog(
+                      message: s.anErrorOccurred,
+                    );
+                  },
+                  alreadyExist: () async {
+                    context.appDialog
+                        .showAppDialog(
+                          message: s.createPostAlreadyExist,
+                        )
+                        .then(
+                          (value) => Navigator.of(context).pop(),
+                        );
+                  },
+                );
+              } else {
+                context.appDialog.showAppDialog(
+                  message: s.anErrorOccurred,
+                );
+              }
             },
           );
         },
