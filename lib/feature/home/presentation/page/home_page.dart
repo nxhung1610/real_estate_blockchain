@@ -356,7 +356,7 @@ class __NewFeedState extends State<_NewFeed> {
                       context.push(
                         $appRoute.realEstateDetail,
                         extra: RealEstateDetailPageParams(
-                          id: item.id.toString(),
+                          id: item.realEstate.id.toString(),
                         ),
                       );
                     },

@@ -143,10 +143,10 @@ class HouseNewsFeed extends StatelessWidget {
                   RealEstateFavoritesState>(
                 builder: (context, state) {
                   final isFavorite = state.estates
-                      .where((element) => element.id == value.id)
+                      .where((element) => element.id == value.realEstate.id)
                       .isNotEmpty;
                   final isProcess = state.isProcess
-                      .where((element) => element.id == value.id)
+                      .where((element) => element.id == value.realEstate.id)
                       .isNotEmpty;
 
                   return Material(
