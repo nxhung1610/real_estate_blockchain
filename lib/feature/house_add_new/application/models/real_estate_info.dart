@@ -2,8 +2,6 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class RealEstateInfo extends Equatable {
-  @JsonKey(name: 'is_rent')
-  final bool? isRent;
   final double? area;
   final double? price;
   final String? name;
@@ -25,7 +23,6 @@ class RealEstateInfo extends Equatable {
 
   const RealEstateInfo({
     this.name,
-    this.isRent,
     this.area,
     this.price,
     this.documents,
@@ -55,7 +52,6 @@ class RealEstateInfo extends Equatable {
     String? interiors,
   }) {
     return RealEstateInfo(
-      isRent: isRent ?? this.isRent,
       area: area ?? this.area,
       price: price ?? this.price,
       documents: documents ?? this.documents,
@@ -74,7 +70,6 @@ class RealEstateInfo extends Equatable {
   @override
   List<Object?> get props {
     return [
-      isRent,
       area,
       price,
       documents,

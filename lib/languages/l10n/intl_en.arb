@@ -210,5 +210,14 @@
   "bidNow" : "Bid now",
   "biddingHistory" :"Bidding History",
   "placeABid" :"Place a Bid",
-  "startPrice" :"Start Price"
+  "startPrice" :"Start Price",
+  "createPost" : "Create Post",
+  "autoRenew" : "Auto review",
+  "startTime" : "Start time",
+  "endTime" : "End time",
+  "premium" : "Premium",
+  "normal" : "Normal",
+  "postTourType" :"Post tour type",
+  "createPostSuccess" : "Create post success"
+  
 }

@@ -2119,6 +2119,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Create Post`
+  String get createPost {
+    return Intl.message(
+      'Create Post',
+      name: 'createPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Auto review`
+  String get autoRenew {
+    return Intl.message(
+      'Auto review',
+      name: 'autoRenew',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start time`
+  String get startTime {
+    return Intl.message(
+      'Start time',
+      name: 'startTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time`
+  String get endTime {
+    return Intl.message(
+      'End time',
+      name: 'endTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Premium`
+  String get premium {
+    return Intl.message(
+      'Premium',
+      name: 'premium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Normal`
+  String get normal {
+    return Intl.message(
+      'Normal',
+      name: 'normal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post tour type`
+  String get postTourType {
+    return Intl.message(
+      'Post tour type',
+      name: 'postTourType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create post success`
+  String get createPostSuccess {
+    return Intl.message(
+      'Create post success',
+      name: 'createPostSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

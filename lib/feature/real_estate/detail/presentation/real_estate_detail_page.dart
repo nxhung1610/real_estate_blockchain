@@ -36,6 +36,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
+import 'widgets/_w_bottom_owner_action.dart';
 
 part './widgets/_w_amenities.dart';
 part './widgets/_w_bottom_viewer_action.dart';
@@ -130,7 +131,7 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                 item: estate,
               );
             }
-            return SizedBox.fromSize();
+            return const WBottomOwnerAction();
           },
         ),
         body: WCustomRefreshScrollView(

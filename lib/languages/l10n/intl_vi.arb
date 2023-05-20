@@ -211,5 +211,13 @@
   "bidNow" : "Đấu giá ",
   "biddingHistory" :"Lịch sử đấu giá",
   "placeABid" :"Đặt một giá thầu",
-  "startPrice" :"Gía khởi điểm"
+  "startPrice" :"Gía khởi điểm",
+  "createPost" : "Tạo bài đăng",
+  "autoRenew" : "Tự động làm mới",
+  "startTime" : "Bắt đầu",
+  "endTime" : "Kết thúc",
+  "premium" : "Premium",
+  "normal" : "Thường",
+  "postTourType" : "Loại bài đăng",
+  "createPostSuccess" : "Tạo bài đăng thành công"
 }

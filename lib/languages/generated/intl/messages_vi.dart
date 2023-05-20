@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "associateAgency": MessageLookupByLibrary.simpleMessage(
             "Nhân viên của Realust sẽ đưa bạn đi tham quan!"),
+        "autoRenew": MessageLookupByLibrary.simpleMessage("Tự động làm mới"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
@@ -76,6 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
+        "createPost": MessageLookupByLibrary.simpleMessage("Tạo bài đăng"),
+        "createPostSuccess":
+            MessageLookupByLibrary.simpleMessage("Tạo bài đăng thành công"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
         "date": MessageLookupByLibrary.simpleMessage("Ngày"),
@@ -101,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin cá nhân"),
         "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "endTime": MessageLookupByLibrary.simpleMessage("Kết thúc"),
         "enterVerificationCode":
             MessageLookupByLibrary.simpleMessage("Nhập mã xác thực."),
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
@@ -171,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
+        "normal": MessageLookupByLibrary.simpleMessage("Thường"),
         "north": MessageLookupByLibrary.simpleMessage("Bắc"),
         "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),
         "northWest": MessageLookupByLibrary.simpleMessage("Tây Bắc"),
@@ -219,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),
         "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
+        "postTourType": MessageLookupByLibrary.simpleMessage("Loại bài đăng"),
+        "premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
         "privacyPolicy":
@@ -281,6 +289,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "startPrice": MessageLookupByLibrary.simpleMessage("Gía khởi điểm"),
+        "startTime": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "startWithUs":
             MessageLookupByLibrary.simpleMessage("Bắt đầu với chúng tôi"),
         "startWithUsDes": MessageLookupByLibrary.simpleMessage(

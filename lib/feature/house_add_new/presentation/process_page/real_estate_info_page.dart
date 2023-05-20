@@ -43,21 +43,6 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _OptionTypeRealEstate<RealEstateSell>(
-          data: const [RealEstateSell.sell, RealEstateSell.rent],
-          onChanged: (value) {
-            bloc.onChangedTypeSell(value);
-          },
-          labelBuild: (value) {
-            switch (value) {
-              case RealEstateSell.sell:
-                return s.sell;
-              case RealEstateSell.rent:
-                return s.rent;
-            }
-          },
-        ),
-        AppSize.largeHeightDimens.verticalSpace,
         ...[
           Text(
             s.realEstateName,
@@ -563,12 +548,12 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
   }
 }
 
-class _OptionTypeRealEstate<T> extends StatefulWidget {
+class OptionTypeRealEstate<T> extends StatefulWidget {
   final List<T> data;
   final T? value;
   final String Function(T value) labelBuild;
   final void Function(T value) onChanged;
-  const _OptionTypeRealEstate({
+  const OptionTypeRealEstate({
     super.key,
     required this.data,
     required this.onChanged,
@@ -577,10 +562,10 @@ class _OptionTypeRealEstate<T> extends StatefulWidget {
   });
 
   @override
-  State<_OptionTypeRealEstate> createState() => _OptionTypeRealEstateState<T>();
+  State<OptionTypeRealEstate> createState() => _OptionTypeRealEstateState<T>();
 }
 
-class _OptionTypeRealEstateState<T> extends State<_OptionTypeRealEstate<T>>
+class _OptionTypeRealEstateState<T> extends State<OptionTypeRealEstate<T>>
     with SingleTickerProviderStateMixin {
   late final TabController tabController;
   @override
@@ -604,7 +589,7 @@ class _OptionTypeRealEstateState<T> extends State<_OptionTypeRealEstate<T>>
       ),
       child: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
-        padding: EdgeInsets.all(AppSize.smallWidthDimens),
+        padding: const EdgeInsets.all(AppSize.smallElevation),
         indicator: BoxDecoration(
           color: AppColor.kNeutrals_.shade50,
           borderRadius: BorderRadius.circular(AppSize.largeRadius),

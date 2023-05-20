@@ -6,7 +6,13 @@ enum ProcessState {
   map,
 }
 
-enum RealEstateSell { sell, rent }
+enum RealEstateSell {
+  sell('sell'),
+  rent('rent');
+
+  const RealEstateSell(this.value);
+  final String value;
+}
 
 enum RealEstateDetail {
   room,

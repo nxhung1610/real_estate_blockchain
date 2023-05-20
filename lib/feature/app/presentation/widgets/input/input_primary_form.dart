@@ -26,6 +26,7 @@ class InputPrimaryForm extends StatefulWidget {
   final int? maxLines;
   final bool enable;
   final Key? textKey;
+  final TextAlign? textAlign;
   const InputPrimaryForm({
     super.key,
     this.lable,
@@ -48,6 +49,7 @@ class InputPrimaryForm extends StatefulWidget {
     this.enable = true,
     this.textKey,
     this.inputFormatters,
+    this.textAlign,
   });
 
   @override
@@ -90,6 +92,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
           width: double.infinity,
           child: TextFormField(
             key: widget.textKey,
+            textAlign: widget.textAlign ?? TextAlign.start,
             enabled: widget.enable,
             maxLines: widget.maxLines,
             focusNode: widget.focusNode,

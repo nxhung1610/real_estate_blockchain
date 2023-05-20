@@ -28,7 +28,6 @@ class HouseProcessRealInfoBloc
         ProcessState.realeStateInfo,
         isValid(),
         RealEstateInfo(
-          isRent: state.sell == RealEstateSell.rent,
           area: state.area,
           documents: state.documents,
           floors: state.floors,
@@ -48,9 +47,9 @@ class HouseProcessRealInfoBloc
       _subcriber.onValid(isValid());
     });
     on<_Started>((event, emit) {});
-    on<_ChangeTypeSell>((event, emit) {
-      emit(state.copyWith(sell: event.sell));
-    });
+    // on<_ChangeTypeSell>((event, emit) {
+    //   emit(state.copyWith(sell: event.sell));
+    // });
     on<_ChangeRealEstateType>((event, emit) {
       emit(state.copyWith(reTypeId: event.type.id));
     });

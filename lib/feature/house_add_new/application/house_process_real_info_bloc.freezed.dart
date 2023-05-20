@@ -3441,7 +3441,6 @@ abstract class _OnFurnitureChanged implements HouseProcessRealInfoEvent {
 
 /// @nodoc
 mixin _$HouseProcessRealInfoState {
-  RealEstateSell get sell => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   double? get area => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
@@ -3467,8 +3466,7 @@ abstract class $HouseProcessRealInfoStateCopyWith<$Res> {
       _$HouseProcessRealInfoStateCopyWithImpl<$Res, HouseProcessRealInfoState>;
   @useResult
   $Res call(
-      {RealEstateSell sell,
-      String? name,
+      {String? name,
       double? area,
       double? price,
       List<String> documents,
@@ -3496,7 +3494,6 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sell = null,
     Object? name = freezed,
     Object? area = freezed,
     Object? price = freezed,
@@ -3511,10 +3508,6 @@ class _$HouseProcessRealInfoStateCopyWithImpl<$Res,
     Object? furniture = freezed,
   }) {
     return _then(_value.copyWith(
-      sell: null == sell
-          ? _value.sell
-          : sell // ignore: cast_nullable_to_non_nullable
-              as RealEstateSell,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -3577,8 +3570,7 @@ abstract class _$$_HouseProcessRealInfoStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {RealEstateSell sell,
-      String? name,
+      {String? name,
       double? area,
       double? price,
       List<String> documents,
@@ -3605,7 +3597,6 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sell = null,
     Object? name = freezed,
     Object? area = freezed,
     Object? price = freezed,
@@ -3620,10 +3611,6 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
     Object? furniture = freezed,
   }) {
     return _then(_$_HouseProcessRealInfoState(
-      sell: null == sell
-          ? _value.sell
-          : sell // ignore: cast_nullable_to_non_nullable
-              as RealEstateSell,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -3680,8 +3667,7 @@ class __$$_HouseProcessRealInfoStateCopyWithImpl<$Res>
 
 class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
   const _$_HouseProcessRealInfoState(
-      {this.sell = RealEstateSell.sell,
-      this.name,
+      {this.name,
       this.area,
       this.price,
       final List<String> documents = const [],
@@ -3695,9 +3681,6 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
       this.furniture})
       : _documents = documents;
 
-  @override
-  @JsonKey()
-  final RealEstateSell sell;
   @override
   final String? name;
   @override
@@ -3736,7 +3719,7 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
 
   @override
   String toString() {
-    return 'HouseProcessRealInfoState(sell: $sell, name: $name, area: $area, price: $price, documents: $documents, reTypeId: $reTypeId, noBedroom: $noBedroom, noWc: $noWc, floors: $floors, builtAt: $builtAt, houseFacing: $houseFacing, balcony: $balcony, furniture: $furniture)';
+    return 'HouseProcessRealInfoState(name: $name, area: $area, price: $price, documents: $documents, reTypeId: $reTypeId, noBedroom: $noBedroom, noWc: $noWc, floors: $floors, builtAt: $builtAt, houseFacing: $houseFacing, balcony: $balcony, furniture: $furniture)';
   }
 
   @override
@@ -3744,7 +3727,6 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HouseProcessRealInfoState &&
-            (identical(other.sell, sell) || other.sell == sell) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.area, area) || other.area == area) &&
             (identical(other.price, price) || other.price == price) &&
@@ -3767,7 +3749,6 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      sell,
       name,
       area,
       price,
@@ -3791,8 +3772,7 @@ class _$_HouseProcessRealInfoState implements _HouseProcessRealInfoState {
 
 abstract class _HouseProcessRealInfoState implements HouseProcessRealInfoState {
   const factory _HouseProcessRealInfoState(
-      {final RealEstateSell sell,
-      final String? name,
+      {final String? name,
       final double? area,
       final double? price,
       final List<String> documents,
@@ -3805,8 +3785,6 @@ abstract class _HouseProcessRealInfoState implements HouseProcessRealInfoState {
       final RealEstateDirection? balcony,
       final String? furniture}) = _$_HouseProcessRealInfoState;
 
-  @override
-  RealEstateSell get sell;
   @override
   String? get name;
   @override

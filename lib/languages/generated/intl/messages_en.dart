@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "associateAgency": MessageLookupByLibrary.simpleMessage(
             "Realust staff will take you on a tour!"),
+        "autoRenew": MessageLookupByLibrary.simpleMessage("Auto review"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
@@ -78,6 +79,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
+        "createPost": MessageLookupByLibrary.simpleMessage("Create Post"),
+        "createPostSuccess":
+            MessageLookupByLibrary.simpleMessage("Create post success"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -102,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "endTime": MessageLookupByLibrary.simpleMessage("End time"),
         "enterVerificationCode": MessageLookupByLibrary.simpleMessage(
             "Enter the verification code."),
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
@@ -172,6 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Number of bedroom"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
+        "normal": MessageLookupByLibrary.simpleMessage("Normal"),
         "north": MessageLookupByLibrary.simpleMessage("North"),
         "northEast": MessageLookupByLibrary.simpleMessage("North East"),
         "northWest": MessageLookupByLibrary.simpleMessage("North West"),
@@ -221,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),
         "pool": MessageLookupByLibrary.simpleMessage("Pool"),
+        "postTourType": MessageLookupByLibrary.simpleMessage("Post tour type"),
+        "premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
@@ -282,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Square"),
         "startPrice": MessageLookupByLibrary.simpleMessage("Start Price"),
+        "startTime": MessageLookupByLibrary.simpleMessage("Start time"),
         "startWithUs": MessageLookupByLibrary.simpleMessage("Start with us"),
         "startWithUsDes": MessageLookupByLibrary.simpleMessage(
             "We are here to help you in Choosing right"),
