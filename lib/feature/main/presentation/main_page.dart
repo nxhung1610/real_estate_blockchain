@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -86,6 +87,13 @@ class _MainPageState extends State<MainPage>
       builder: (context) {
         return MultiBlocListener(
           listeners: [
+            BlocProvider(
+              lazy: false,
+              create: (context) => getIt.call<MessageBloc>(
+                  param1: context.read<AuthBloc>(),
+                  param2: "${AppConfig.instance.baseUrl}/chat/ws")
+                ..add(const MessageStarted()),
+            ),
             BlocListener<MainCubit, MainState>(
               listener: (context, state) {
                 tabController.index = (state.sub.index);

@@ -12,4 +12,5 @@ class MessageEvent with _$MessageEvent {
 
   const factory MessageEvent.onCreateRoom(int senderId, int ownerId) =
       MessageEventOnCreateRoom;
+  const factory MessageEvent.onClose() = MessageEventOnClose;
 }

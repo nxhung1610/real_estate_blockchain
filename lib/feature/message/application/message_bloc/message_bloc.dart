@@ -36,6 +36,8 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
       (authState) {
         if (authState is AuthStateAuthenticated) {
           add(const MessageEvent.started());
+        } else if (authState is AuthStateUnAuthenticated) {
+          add(const MessageEvent.onClose());
         }
       },
     );
@@ -48,6 +50,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     on<MessageReceived>(_messageReceivedToState);
     on<MessageSent>(_messageSentToState);
     on<MessageEventOnCreateRoom>(_onCreateRoom);
+    on<MessageEventOnClose>(_onClose);
   }
 
   FutureOr<void> _messageStarToState(
@@ -58,6 +61,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
           chatWSController!.deactivate();
           chatWSController = null;
         }
+        // ignore: empty_catches
       } catch (e) {}
 
       emit(state.copyWith(status: const Status.loading()));
@@ -119,7 +123,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   @override
   Future<void> close() {
-    chatWSController!.deactivate();
+    chatWSController?.deactivate();
     return super.close();
   }
 
@@ -155,5 +159,12 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
         ),
       );
     }
+  }
+
+  FutureOr<void> _onClose(
+    MessageEventOnClose event,
+    Emitter<MessageState> emit,
+  ) {
+    chatWSController?.deactivate();
   }
 }
