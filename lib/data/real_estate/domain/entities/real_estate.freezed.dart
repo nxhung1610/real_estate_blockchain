@@ -20,7 +20,6 @@ mixin _$RealEstate {
   RealEstateStatus? get status => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  RealEstateType? get realEstateType => throw _privateConstructorUsedError;
   String? get provinceId => throw _privateConstructorUsedError;
   String? get districtId => throw _privateConstructorUsedError;
   String? get wardId => throw _privateConstructorUsedError;
@@ -59,7 +58,6 @@ abstract class $RealEstateCopyWith<$Res> {
       RealEstateStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
-      RealEstateType? realEstateType,
       String? provinceId,
       String? districtId,
       String? wardId,
@@ -81,8 +79,6 @@ abstract class $RealEstateCopyWith<$Res> {
       List<Amenity>? amenities,
       List<AppImage>? images,
       String name});
-
-  $RealEstateTypeCopyWith<$Res>? get realEstateType;
 }
 
 /// @nodoc
@@ -102,7 +98,6 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
     Object? status = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? realEstateType = freezed,
     Object? provinceId = freezed,
     Object? districtId = freezed,
     Object? wardId = freezed,
@@ -142,10 +137,6 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      realEstateType: freezed == realEstateType
-          ? _value.realEstateType
-          : realEstateType // ignore: cast_nullable_to_non_nullable
-              as RealEstateType?,
       provinceId: freezed == provinceId
           ? _value.provinceId
           : provinceId // ignore: cast_nullable_to_non_nullable
@@ -232,18 +223,6 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
               as String,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RealEstateTypeCopyWith<$Res>? get realEstateType {
-    if (_value.realEstateType == null) {
-      return null;
-    }
-
-    return $RealEstateTypeCopyWith<$Res>(_value.realEstateType!, (value) {
-      return _then(_value.copyWith(realEstateType: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -259,7 +238,6 @@ abstract class _$$_RealEstateCopyWith<$Res>
       RealEstateStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
-      RealEstateType? realEstateType,
       String? provinceId,
       String? districtId,
       String? wardId,
@@ -281,9 +259,6 @@ abstract class _$$_RealEstateCopyWith<$Res>
       List<Amenity>? amenities,
       List<AppImage>? images,
       String name});
-
-  @override
-  $RealEstateTypeCopyWith<$Res>? get realEstateType;
 }
 
 /// @nodoc
@@ -301,7 +276,6 @@ class __$$_RealEstateCopyWithImpl<$Res>
     Object? status = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? realEstateType = freezed,
     Object? provinceId = freezed,
     Object? districtId = freezed,
     Object? wardId = freezed,
@@ -341,10 +315,6 @@ class __$$_RealEstateCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      realEstateType: freezed == realEstateType
-          ? _value.realEstateType
-          : realEstateType // ignore: cast_nullable_to_non_nullable
-              as RealEstateType?,
       provinceId: freezed == provinceId
           ? _value.provinceId
           : provinceId // ignore: cast_nullable_to_non_nullable
@@ -441,7 +411,6 @@ class _$_RealEstate implements _RealEstate {
       this.status,
       this.createdAt,
       this.updatedAt,
-      this.realEstateType,
       this.provinceId,
       this.districtId,
       this.wardId,
@@ -474,8 +443,6 @@ class _$_RealEstate implements _RealEstate {
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
-  @override
-  final RealEstateType? realEstateType;
   @override
   final String? provinceId;
   @override
@@ -537,7 +504,7 @@ class _$_RealEstate implements _RealEstate {
 
   @override
   String toString() {
-    return 'RealEstate(id: $id, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, realEstateType: $realEstateType, provinceId: $provinceId, districtId: $districtId, wardId: $wardId, address: $address, latitude: $latitude, longitude: $longitude, price: $price, ownerId: $ownerId, floors: $floors, area: $area, noBedrooms: $noBedrooms, noWc: $noWc, houseFacing: $houseFacing, balconyFacing: $balconyFacing, reason: $reason, builtAt: $builtAt, documents: $documents, interiors: $interiors, amenities: $amenities, images: $images, name: $name)';
+    return 'RealEstate(id: $id, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, provinceId: $provinceId, districtId: $districtId, wardId: $wardId, address: $address, latitude: $latitude, longitude: $longitude, price: $price, ownerId: $ownerId, floors: $floors, area: $area, noBedrooms: $noBedrooms, noWc: $noWc, houseFacing: $houseFacing, balconyFacing: $balconyFacing, reason: $reason, builtAt: $builtAt, documents: $documents, interiors: $interiors, amenities: $amenities, images: $images, name: $name)';
   }
 
   @override
@@ -551,8 +518,6 @@ class _$_RealEstate implements _RealEstate {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            (identical(other.realEstateType, realEstateType) ||
-                other.realEstateType == realEstateType) &&
             (identical(other.provinceId, provinceId) ||
                 other.provinceId == provinceId) &&
             (identical(other.districtId, districtId) ||
@@ -593,7 +558,6 @@ class _$_RealEstate implements _RealEstate {
         status,
         createdAt,
         updatedAt,
-        realEstateType,
         provinceId,
         districtId,
         wardId,
@@ -630,7 +594,6 @@ abstract class _RealEstate implements RealEstate {
       final RealEstateStatus? status,
       final DateTime? createdAt,
       final DateTime? updatedAt,
-      final RealEstateType? realEstateType,
       final String? provinceId,
       final String? districtId,
       final String? wardId,
@@ -661,8 +624,6 @@ abstract class _RealEstate implements RealEstate {
   DateTime? get createdAt;
   @override
   DateTime? get updatedAt;
-  @override
-  RealEstateType? get realEstateType;
   @override
   String? get provinceId;
   @override

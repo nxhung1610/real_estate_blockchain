@@ -9,7 +9,8 @@ import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
-import 'package:real_estate_blockchain/feature/bid/model/bid_params.dart';
+import 'package:real_estate_blockchain/feature/bid/list/application/bid_list_bloc.dart';
+import 'package:real_estate_blockchain/feature/bid/list/presentation/bid_list_page.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/discover/module.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
@@ -67,10 +68,6 @@ class _MainPageState extends State<MainPage>
             );
       }
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.push($appRoute.bid.url, extra: BidParams(id: 23.toString()));
-    });
   }
 
   @override
@@ -119,8 +116,8 @@ class _MainPageState extends State<MainPage>
                   child: const DiscoverPage(),
                 ),
                 BlocProvider(
-                  create: (context) => getIt.call<MyHomeBloc>(),
-                  child: const MyHomePage(),
+                  create: (context) => getIt.call<BidListBloc>(),
+                  child: const BidListPage(),
                 ),
                 BlocProvider(
                   create: (context) => getIt.call<GeneralBloc>(),
@@ -178,7 +175,7 @@ class _MainPageState extends State<MainPage>
                   activeIcon: Assets.icons.icMyhomeBold.svg(
                     color: iconColor,
                   ),
-                  label: s.myHome,
+                  label: s.bid,
                 ),
                 BottomNavigationBarItem(
                   icon: Assets.icons.icProfileLight.svg(

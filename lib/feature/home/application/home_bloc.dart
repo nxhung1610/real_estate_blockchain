@@ -30,7 +30,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                 const Province(fullName: 'Tất cả', fullNameEn: 'All'),
                 ...r
               ],
-              provice: const Province(fullName: 'Tất cả', fullNameEn: 'All'),
+              provice: state.provice ??
+                  const Province(fullName: 'Tất cả', fullNameEn: 'All'),
             ),
           ),
         );
@@ -43,15 +44,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
     on<HomeEventOnProviceChange>((event, emit) async {
       try {
+        final provice = event.provice ?? state.provice;
         emit(
           state.copyWith(
             status: const Status.loading(),
-            provice: event.provice,
+            provice: provice,
           ),
         );
-        final estates = event.provice == null
-            ? await _realEstateRepository.newfeeds()
-            : await _realEstateRepository.newfeeds(provice: event.provice);
+
+        final estates = await _realEstateRepository.newfeeds(
+            provice:
+                provice == const Province(fullName: 'Tất cả', fullNameEn: 'All')
+                    ? null
+                    : provice);
         estates.fold((l) => throw l, (r) => emit(state.copyWith(estates: r)));
       } catch (e) {
         emit(state.copyWith(status: Status.failure(value: e)));

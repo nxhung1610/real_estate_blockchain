@@ -4,9 +4,11 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/bid/domain/i_bid_repository.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
 import 'package:real_estate_blockchain/data/message/domain/message_failure.dart';
 import 'package:real_estate_blockchain/data/message/infrastructure/message_repository.dart';
+import 'package:real_estate_blockchain/data/post/domain/i_post_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -21,10 +23,14 @@ class RealEstateDetailBloc
     extends Bloc<RealEstateDetailEvent, RealEstateDetailState> {
   final MessageRepository messageRepository;
   final IRealEstateRepository realEstateRepository;
+  final IPostRepository postRepository;
+  final IBidRepository bidRepository;
   RealEstateDetailBloc(
     @factoryParam String id,
     this.messageRepository,
     this.realEstateRepository,
+    this.postRepository,
+    this.bidRepository,
   ) : super(RealEstateDetailState(
           id: id,
         )) {
@@ -43,6 +49,7 @@ class RealEstateDetailBloc
         senderId: event.senderId,
         ownerId: event.ownerId,
       );
+
       await result.fold(
         (l) async {
           if (l is MessageFailureRoomExist) {
@@ -117,7 +124,15 @@ class RealEstateDetailBloc
     Emitter<RealEstateDetailState> emit,
   ) async {
     try {
+      emit(state.copyWith(isShimmer: true));
       final estate = await realEstateRepository.detailEstate(state.id);
+      final isBidExist = await bidRepository.checkExist(state.id);
+      final isPostExist = await postRepository.checkExist(state.id);
+      isBidExist.fold((l) {
+        emit(state.copyWith(bidExist: 0));
+      }, (r) => emit(state.copyWith(bidExist: r)));
+      isPostExist.fold((l) => emit(state.copyWith(postExist: 0)),
+          (r) => emit(state.copyWith(postExist: r)));
       estate.fold(
         (l) => throw l,
         (r) {

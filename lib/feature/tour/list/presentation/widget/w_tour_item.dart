@@ -17,7 +17,7 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:collection/collection.dart';
 
 class WTourItem extends StatelessWidget {
-  final MapEntry<Tour, RealEstate> estate;
+  final Tour estate;
   const WTourItem({super.key, required this.estate});
 
   @override
@@ -41,11 +41,11 @@ class WTourItem extends StatelessWidget {
         children: [
           Text(
             DateFormat("EEEE, MM/dd  HH:mm a").format(
-              estate.key.date ?? DateTime.now(),
+              estate.date ?? DateTime.now(),
             ),
           ),
           AppSize.mediumHeightDimens.verticalSpace,
-          _StatusTour(status: estate.key.status),
+          _StatusTour(status: estate.status),
           AppSize.mediumHeightDimens.verticalSpace,
           SizedBox(
             width: double.infinity,
@@ -53,8 +53,8 @@ class WTourItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.r),
               child: ImageCustom(
-                image:
-                    NetworkImage(estate.value.images?.firstOrNull?.url ?? ''),
+                image: NetworkImage(
+                    estate.realEstate.images?.firstOrNull?.url ?? ''),
                 height: 180.h,
               ),
             ),
@@ -71,7 +71,7 @@ class WTourItem extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            estate.value.name,
+                            estate.realEstate.name,
                             style: context.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: context.textTheme.displayLarge?.color,
@@ -82,8 +82,8 @@ class WTourItem extends StatelessWidget {
                         ),
                         Text(
                           NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                              .format(
-                                  estate.value.price * (estate.value.area ?? 0))
+                              .format(estate.realEstate.price *
+                                  (estate.realEstate.area ?? 0))
                               .toString(),
                           style: context.textTheme.titleMedium?.copyWith(
                             color: AppColor.kPrimary1,
@@ -95,9 +95,9 @@ class WTourItem extends StatelessWidget {
                     BlocProvider(
                       create: (context) => getIt.call<AddressBuilderCubit>()
                         ..onLoadAdress(
-                          proviceId: estate.value.provinceId ?? '',
-                          wardId: estate.value.wardId ?? '',
-                          districtId: estate.value.districtId ?? '',
+                          proviceId: estate.realEstate.provinceId ?? '',
+                          wardId: estate.realEstate.wardId ?? '',
+                          districtId: estate.realEstate.districtId ?? '',
                         ),
                       child:
                           BlocBuilder<AddressBuilderCubit, AddressBuilderState>(
@@ -113,7 +113,7 @@ class WTourItem extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   (() {
-                                    return (estate.value.address ?? '') +
+                                    return (estate.realEstate.address ?? '') +
                                         (addressState.buildAddress(context) ??
                                             '');
                                   })(),
@@ -175,14 +175,20 @@ class _StatusTour extends StatelessWidget {
           color: Colors.green,
           size: 20.r,
         );
+      case TourStatus.waiting:
+        return Icon(
+          Icons.hourglass_bottom_rounded,
+          color: Colors.yellow,
+          size: 20.r,
+        );
     }
   }
 
   String title(BuildContext context) {
     final s = S.of(context);
     switch (status) {
-      // case TourStatus.waiting:
-      //   return s.waiting;
+      case TourStatus.waiting:
+        return s.waiting;
       // case TourStatus.deleted:
       //   return s.deleted;
       case TourStatus.processing:

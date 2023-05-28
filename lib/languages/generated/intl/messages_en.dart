@@ -57,12 +57,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "associateAgency": MessageLookupByLibrary.simpleMessage(
             "Realust staff will take you on a tour!"),
+        "auctionEnds": MessageLookupByLibrary.simpleMessage("Auction ends"),
+        "auctionId": MessageLookupByLibrary.simpleMessage("Auction Id"),
+        "auctions": MessageLookupByLibrary.simpleMessage("Auctions"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Auto review"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
+        "beAFirstBidder":
+            MessageLookupByLibrary.simpleMessage("Be a First bidder"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Bed Room"),
+        "bid": MessageLookupByLibrary.simpleMessage("Bid"),
+        "bidIncreasement":
+            MessageLookupByLibrary.simpleMessage("Bid increasement"),
+        "bidIncrement": MessageLookupByLibrary.simpleMessage("Bid Increment"),
         "bidNow": MessageLookupByLibrary.simpleMessage("Bid now"),
+        "bidSuccess": MessageLookupByLibrary.simpleMessage("Bid success"),
         "biddingHistory":
             MessageLookupByLibrary.simpleMessage("Bidding History"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Built At"),
@@ -79,6 +89,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
+        "createBid": MessageLookupByLibrary.simpleMessage("Create bid"),
+        "createBidSuccess":
+            MessageLookupByLibrary.simpleMessage("Create bid success"),
         "createPost": MessageLookupByLibrary.simpleMessage("Create Post"),
         "createPostAlreadyExist":
             MessageLookupByLibrary.simpleMessage("Post already exist"),
@@ -86,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create post success"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Create real estate success"),
+        "currentPrice": MessageLookupByLibrary.simpleMessage("Current price"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
         "deleteAccountMessageDialog": MessageLookupByLibrary.simpleMessage(
@@ -136,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSetting": MessageLookupByLibrary.simpleMessage("Go To Setting"),
         "ground": MessageLookupByLibrary.simpleMessage("Ground"),
         "hi": MessageLookupByLibrary.simpleMessage("Hi"),
+        "highestBindingBid":
+            MessageLookupByLibrary.simpleMessage("Highest Binding Bid"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
@@ -178,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noBathRoom":
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Number of bedroom"),
+        "noBid": MessageLookupByLibrary.simpleMessage("No bid found"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
         "normal": MessageLookupByLibrary.simpleMessage("Normal"),
         "north": MessageLookupByLibrary.simpleMessage("North"),
@@ -231,6 +248,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Please login your account to continue."),
         "pool": MessageLookupByLibrary.simpleMessage("Pool"),
         "postTourType": MessageLookupByLibrary.simpleMessage("Post tour type"),
+        "posts": MessageLookupByLibrary.simpleMessage("Posts"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
@@ -287,6 +305,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "showLoading": MessageLookupByLibrary.simpleMessage("Show Loading"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Show notification"),
+        "someThingWentWrongTapToTryAgain": MessageLookupByLibrary.simpleMessage(
+            "Some thing went wrong. Tap to try again"),
         "south": MessageLookupByLibrary.simpleMessage("South"),
         "southEast": MessageLookupByLibrary.simpleMessage("South East"),
         "southWest": MessageLookupByLibrary.simpleMessage("South West"),
@@ -299,8 +319,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "We are here to help you in Choosing right"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Street Address"),
         "structure": MessageLookupByLibrary.simpleMessage("Structure"),
+        "submitYourBidAt":
+            MessageLookupByLibrary.simpleMessage("Submit Your Bid At"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),
         "time": MessageLookupByLibrary.simpleMessage("Time"),
+        "timeLeft": MessageLookupByLibrary.simpleMessage("Time Left"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "titleHint": MessageLookupByLibrary.simpleMessage(
             "Sale private house at Cau Giay"),

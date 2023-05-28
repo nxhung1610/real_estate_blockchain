@@ -308,6 +308,7 @@ class __NewFeedState extends State<_NewFeed> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return WCustomRefreshScrollView(
       onRefresh: () async {
         context.read<HomeBloc>().add(const HomeEvent.onStarted());
@@ -321,54 +322,82 @@ class __NewFeedState extends State<_NewFeed> {
             child: searchWidget(),
           ),
         ),
-        SliverToBoxAdapter(
-          child: BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) {
-              if (state.status is StatusLoading) {
-                return ListView.separated(
-                  physics: const NeverScrollableScrollPhysics(
-                      parent: BouncingScrollPhysics()),
-                  padding: EdgeInsets.symmetric(
-                    vertical: AppSize.extraHeightDimens,
-                  ),
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return const HouseNewFeedsShimmer();
-                  },
-                  separatorBuilder: (context, index) {
-                    return AppSize.extraHeightDimens.verticalSpace;
-                  },
-                  itemCount: 3,
-                );
-              }
-              return ListView.separated(
-                physics: const NeverScrollableScrollPhysics(
-                    parent: BouncingScrollPhysics()),
-                padding: EdgeInsets.symmetric(
-                  vertical: AppSize.extraHeightDimens,
+        BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            if (state.status is StatusLoading) {
+              return SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppSize.mediumHeightDimens.verticalSpace,
+                    Text(
+                      s.auctions,
+                      style: context.textTheme.bodyLarge?.copyWith(),
+                    ),
+                    ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(
+                          parent: BouncingScrollPhysics()),
+                      padding: EdgeInsets.symmetric(
+                        vertical: AppSize.mediumHeightDimens,
+                      ),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return const HouseNewFeedsShimmer();
+                      },
+                      separatorBuilder: (context, index) {
+                        return AppSize.extraHeightDimens.verticalSpace;
+                      },
+                      itemCount: 3,
+                    ),
+                  ],
                 ),
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  final item = state.estates[index];
-                  return HouseNewsFeed(
-                    value: item,
-                    onPressed: () {
-                      context.push(
-                        $appRoute.realEstateDetail,
-                        extra: RealEstateDetailPageParams(
-                          id: item.realEstate.id.toString(),
-                        ),
+              );
+            }
+            if (state.estates.isEmpty) {
+              return const SliverToBoxAdapter(
+                child: SizedBox(),
+              );
+            }
+            return SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  Text(
+                    s.auctions,
+                    style: context.textTheme.bodyLarge?.copyWith(),
+                  ),
+                  ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(
+                      parent: BouncingScrollPhysics(),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: AppSize.extraHeightDimens,
+                    ),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      final item = state.estates[index];
+                      return HouseNewsFeed(
+                        value: item,
+                        onPressed: () {
+                          context.push(
+                            $appRoute.realEstateDetail,
+                            extra: RealEstateDetailPageParams(
+                              id: item.realEstate.id.toString(),
+                            ),
+                          );
+                        },
                       );
                     },
-                  );
-                },
-                separatorBuilder: (context, index) {
-                  return AppSize.extraHeightDimens.verticalSpace;
-                },
-                itemCount: state.estates.length,
-              );
-            },
-          ),
+                    separatorBuilder: (context, index) {
+                      return AppSize.extraHeightDimens.verticalSpace;
+                    },
+                    itemCount: state.estates.length,
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ],
     );

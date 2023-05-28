@@ -126,7 +126,7 @@ class RealEstateRepository extends IRealEstateRepository {
         data: provice != null
             ? RealFilterRequest(
                 provinceId: provice.code,
-              )
+              ).toJson()
             : {},
       );
       if (!res.success) throw res.errorKey!;

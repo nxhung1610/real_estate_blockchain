@@ -153,13 +153,13 @@ class ListTourRequest extends $pb.GeneratedMessage {
               : 'pb'),
       createEmptyInstance: create)
     ..a<$core.int>(
-        2,
+        1,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'page',
         $pb.PbFieldType.O3)
     ..a<$core.int>(
-        3,
+        2,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'size',
@@ -207,29 +207,271 @@ class ListTourRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ListTourRequest>(create);
   static ListTourRequest? _defaultInstance;
 
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   $core.int get page => $_getIZ(0);
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   set page($core.int v) {
     $_setSignedInt32(0, v);
   }
 
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   $core.bool hasPage() => $_has(0);
-  @$pb.TagNumber(2)
-  void clearPage() => clearField(2);
+  @$pb.TagNumber(1)
+  void clearPage() => clearField(1);
 
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   $core.int get size => $_getIZ(1);
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   set size($core.int v) {
     $_setSignedInt32(1, v);
   }
 
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   $core.bool hasSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSize() => clearField(2);
+}
+
+class ListTourAdminRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'ListTourAdminRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'reId',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'page',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'size',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'status',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'staffId',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        6,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'userId',
+        $pb.PbFieldType.O3)
+    ..aOS(
+        7,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'type')
+    ..aOS(
+        8,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'fromDate')
+    ..aOS(
+        9,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'toDate')
+    ..hasRequiredFields = false;
+
+  ListTourAdminRequest._() : super();
+  factory ListTourAdminRequest({
+    $core.int? reId,
+    $core.int? page,
+    $core.int? size,
+    $core.int? status,
+    $core.int? staffId,
+    $core.int? userId,
+    $core.String? type,
+    $core.String? fromDate,
+    $core.String? toDate,
+  }) {
+    final _result = create();
+    if (reId != null) {
+      _result.reId = reId;
+    }
+    if (page != null) {
+      _result.page = page;
+    }
+    if (size != null) {
+      _result.size = size;
+    }
+    if (status != null) {
+      _result.status = status;
+    }
+    if (staffId != null) {
+      _result.staffId = staffId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    if (fromDate != null) {
+      _result.fromDate = fromDate;
+    }
+    if (toDate != null) {
+      _result.toDate = toDate;
+    }
+    return _result;
+  }
+  factory ListTourAdminRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ListTourAdminRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  ListTourAdminRequest clone() =>
+      ListTourAdminRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ListTourAdminRequest copyWith(void Function(ListTourAdminRequest) updates) =>
+      super.copyWith((message) => updates(message as ListTourAdminRequest))
+          as ListTourAdminRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ListTourAdminRequest create() => ListTourAdminRequest._();
+  ListTourAdminRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTourAdminRequest> createRepeated() =>
+      $pb.PbList<ListTourAdminRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTourAdminRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListTourAdminRequest>(create);
+  static ListTourAdminRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get reId => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set reId($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasReId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get page => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set page($core.int v) {
+    $_setSignedInt32(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPage() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get size => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set size($core.int v) {
+    $_setSignedInt32(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasSize() => $_has(2);
   @$pb.TagNumber(3)
   void clearSize() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get status => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set status($core.int v) {
+    $_setSignedInt32(3, v);
+  }
+
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get staffId => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set staffId($core.int v) {
+    $_setSignedInt32(4, v);
+  }
+
+  @$pb.TagNumber(5)
+  $core.bool hasStaffId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStaffId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get userId => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set userId($core.int v) {
+    $_setSignedInt32(5, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasUserId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUserId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get type => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set type($core.String v) {
+    $_setString(6, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearType() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get fromDate => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set fromDate($core.String v) {
+    $_setString(7, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasFromDate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFromDate() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get toDate => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set toDate($core.String v) {
+    $_setString(8, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasToDate() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearToDate() => clearField(9);
 }
 
 class TourInfo extends $pb.GeneratedMessage {
@@ -263,30 +505,30 @@ class TourInfo extends $pb.GeneratedMessage {
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'extraData')
-    ..aOM<$1.StaffInfo>(
+    ..aOM<$1.AUser>(
         5,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'staff',
-        subBuilder: $1.StaffInfo.create)
+        subBuilder: $1.AUser.create)
     ..a<$core.int>(
         6,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'status',
         $pb.PbFieldType.O3)
-    ..a<$core.int>(
+    ..aOM<$1.ARealEstate>(
         7,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
-            : 'reId',
-        $pb.PbFieldType.O3)
-    ..a<$core.int>(
+            : 'realEstate',
+        subBuilder: $1.ARealEstate.create)
+    ..aOM<$1.AUser>(
         8,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
-            : 'userId',
-        $pb.PbFieldType.O3)
+            : 'user',
+        subBuilder: $1.AUser.create)
     ..aOS(
         9,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
@@ -300,10 +542,10 @@ class TourInfo extends $pb.GeneratedMessage {
     $core.String? date,
     $core.String? type,
     $core.String? extraData,
-    $1.StaffInfo? staff,
+    $1.AUser? staff,
     $core.int? status,
-    $core.int? reId,
-    $core.int? userId,
+    $1.ARealEstate? realEstate,
+    $1.AUser? user,
     $core.String? reason,
   }) {
     final _result = create();
@@ -325,11 +567,11 @@ class TourInfo extends $pb.GeneratedMessage {
     if (status != null) {
       _result.status = status;
     }
-    if (reId != null) {
-      _result.reId = reId;
+    if (realEstate != null) {
+      _result.realEstate = realEstate;
     }
-    if (userId != null) {
-      _result.userId = userId;
+    if (user != null) {
+      _result.user = user;
     }
     if (reason != null) {
       _result.reason = reason;
@@ -411,9 +653,9 @@ class TourInfo extends $pb.GeneratedMessage {
   void clearExtraData() => clearField(4);
 
   @$pb.TagNumber(5)
-  $1.StaffInfo get staff => $_getN(4);
+  $1.AUser get staff => $_getN(4);
   @$pb.TagNumber(5)
-  set staff($1.StaffInfo v) {
+  set staff($1.AUser v) {
     setField(5, v);
   }
 
@@ -422,7 +664,7 @@ class TourInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearStaff() => clearField(5);
   @$pb.TagNumber(5)
-  $1.StaffInfo ensureStaff() => $_ensure(4);
+  $1.AUser ensureStaff() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.int get status => $_getIZ(5);
@@ -437,28 +679,32 @@ class TourInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.int get reId => $_getIZ(6);
+  $1.ARealEstate get realEstate => $_getN(6);
   @$pb.TagNumber(7)
-  set reId($core.int v) {
-    $_setSignedInt32(6, v);
+  set realEstate($1.ARealEstate v) {
+    setField(7, v);
   }
 
   @$pb.TagNumber(7)
-  $core.bool hasReId() => $_has(6);
+  $core.bool hasRealEstate() => $_has(6);
   @$pb.TagNumber(7)
-  void clearReId() => clearField(7);
+  void clearRealEstate() => clearField(7);
+  @$pb.TagNumber(7)
+  $1.ARealEstate ensureRealEstate() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.int get userId => $_getIZ(7);
+  $1.AUser get user => $_getN(7);
   @$pb.TagNumber(8)
-  set userId($core.int v) {
-    $_setSignedInt32(7, v);
+  set user($1.AUser v) {
+    setField(8, v);
   }
 
   @$pb.TagNumber(8)
-  $core.bool hasUserId() => $_has(7);
+  $core.bool hasUser() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUserId() => clearField(8);
+  void clearUser() => clearField(8);
+  @$pb.TagNumber(8)
+  $1.AUser ensureUser() => $_ensure(7);
 
   @$pb.TagNumber(9)
   $core.String get reason => $_getSZ(8);
@@ -494,20 +740,19 @@ class ListTourResponse extends $pb.GeneratedMessage {
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'message')
-    ..pc<TourInfo>(
+    ..aOM<TourListRespData>(
         3,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'data',
-        $pb.PbFieldType.PM,
-        subBuilder: TourInfo.create)
+        subBuilder: TourListRespData.create)
     ..hasRequiredFields = false;
 
   ListTourResponse._() : super();
   factory ListTourResponse({
     $core.int? statusCode,
     $core.String? message,
-    $core.Iterable<TourInfo>? data,
+    TourListRespData? data,
   }) {
     final _result = create();
     if (statusCode != null) {
@@ -517,7 +762,7 @@ class ListTourResponse extends $pb.GeneratedMessage {
       _result.message = message;
     }
     if (data != null) {
-      _result.data.addAll(data);
+      _result.data = data;
     }
     return _result;
   }
@@ -573,7 +818,100 @@ class ListTourResponse extends $pb.GeneratedMessage {
   void clearMessage() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<TourInfo> get data => $_getList(2);
+  TourListRespData get data => $_getN(2);
+  @$pb.TagNumber(3)
+  set data(TourListRespData v) {
+    setField(3, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasData() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearData() => clearField(3);
+  @$pb.TagNumber(3)
+  TourListRespData ensureData() => $_ensure(2);
+}
+
+class TourListRespData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'TourListRespData',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'pb'),
+      createEmptyInstance: create)
+    ..a<$core.int>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'total',
+        $pb.PbFieldType.O3)
+    ..pc<TourInfo>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'data',
+        $pb.PbFieldType.PM,
+        subBuilder: TourInfo.create)
+    ..hasRequiredFields = false;
+
+  TourListRespData._() : super();
+  factory TourListRespData({
+    $core.int? total,
+    $core.Iterable<TourInfo>? data,
+  }) {
+    final _result = create();
+    if (total != null) {
+      _result.total = total;
+    }
+    if (data != null) {
+      _result.data.addAll(data);
+    }
+    return _result;
+  }
+  factory TourListRespData.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory TourListRespData.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  TourListRespData clone() => TourListRespData()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  TourListRespData copyWith(void Function(TourListRespData) updates) =>
+      super.copyWith((message) => updates(message as TourListRespData))
+          as TourListRespData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TourListRespData create() => TourListRespData._();
+  TourListRespData createEmptyInstance() => create();
+  static $pb.PbList<TourListRespData> createRepeated() =>
+      $pb.PbList<TourListRespData>();
+  @$core.pragma('dart2js:noInline')
+  static TourListRespData getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TourListRespData>(create);
+  static TourListRespData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get total => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set total($core.int v) {
+    $_setSignedInt32(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasTotal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotal() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<TourInfo> get data => $_getList(1);
 }
 
 class TourRejectTourRequest extends $pb.GeneratedMessage {
@@ -683,18 +1021,18 @@ class TourAssignStaffForTourRequest extends $pb.GeneratedMessage {
             ? ''
             : 'tourId',
         $pb.PbFieldType.O3)
-    ..aOM<$1.StaffInfo>(
+    ..aOM<$1.AUser>(
         2,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'staff',
-        subBuilder: $1.StaffInfo.create)
+        subBuilder: $1.AUser.create)
     ..hasRequiredFields = false;
 
   TourAssignStaffForTourRequest._() : super();
   factory TourAssignStaffForTourRequest({
     $core.int? tourId,
-    $1.StaffInfo? staff,
+    $1.AUser? staff,
   }) {
     final _result = create();
     if (tourId != null) {
@@ -749,9 +1087,9 @@ class TourAssignStaffForTourRequest extends $pb.GeneratedMessage {
   void clearTourId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.StaffInfo get staff => $_getN(1);
+  $1.AUser get staff => $_getN(1);
   @$pb.TagNumber(2)
-  set staff($1.StaffInfo v) {
+  set staff($1.AUser v) {
     setField(2, v);
   }
 
@@ -760,5 +1098,5 @@ class TourAssignStaffForTourRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStaff() => clearField(2);
   @$pb.TagNumber(2)
-  $1.StaffInfo ensureStaff() => $_ensure(1);
+  $1.AUser ensureStaff() => $_ensure(1);
 }

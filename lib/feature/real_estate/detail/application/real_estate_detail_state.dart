@@ -7,6 +7,8 @@ class RealEstateDetailState with _$RealEstateDetailState {
     RealEstate? estate,
     @Default(Status.idle()) Status status,
     @Default(true) bool isShimmer,
+    int? postExist,
+    int? bidExist,
   }) = _RealEstateDetailState;
 }
 

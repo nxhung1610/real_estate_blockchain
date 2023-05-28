@@ -27,6 +27,12 @@ class TourServiceClient extends $grpc.Client {
           ($0.ListTourRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ListTourResponse.fromBuffer(value));
+  static final _$listTourAdmin =
+      $grpc.ClientMethod<$0.ListTourAdminRequest, $0.ListTourResponse>(
+          '/pb.TourService/ListTourAdmin',
+          ($0.ListTourAdminRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ListTourResponse.fromBuffer(value));
   static final _$getTourStream =
       $grpc.ClientMethod<$2.EmptyRequest, $0.TourInfo>(
           '/pb.TourService/GetTourStream',
@@ -56,6 +62,12 @@ class TourServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.ListTourResponse> listTour($0.ListTourRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listTour, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListTourResponse> listTourAdmin(
+      $0.ListTourAdminRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listTourAdmin, request, options: options);
   }
 
   $grpc.ResponseStream<$0.TourInfo> getTourStream($2.EmptyRequest request,
@@ -96,6 +108,15 @@ abstract class TourServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListTourRequest.fromBuffer(value),
         ($0.ListTourResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.ListTourAdminRequest, $0.ListTourResponse>(
+            'ListTourAdmin',
+            listTourAdmin_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.ListTourAdminRequest.fromBuffer(value),
+            ($0.ListTourResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.EmptyRequest, $0.TourInfo>(
         'GetTourStream',
         getTourStream_Pre,
@@ -132,6 +153,11 @@ abstract class TourServiceBase extends $grpc.Service {
     return listTour(call, await request);
   }
 
+  $async.Future<$0.ListTourResponse> listTourAdmin_Pre($grpc.ServiceCall call,
+      $async.Future<$0.ListTourAdminRequest> request) async {
+    return listTourAdmin(call, await request);
+  }
+
   $async.Stream<$0.TourInfo> getTourStream_Pre(
       $grpc.ServiceCall call, $async.Future<$2.EmptyRequest> request) async* {
     yield* getTourStream(call, await request);
@@ -152,6 +178,8 @@ abstract class TourServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.CreateTourRequest request);
   $async.Future<$0.ListTourResponse> listTour(
       $grpc.ServiceCall call, $0.ListTourRequest request);
+  $async.Future<$0.ListTourResponse> listTourAdmin(
+      $grpc.ServiceCall call, $0.ListTourAdminRequest request);
   $async.Stream<$0.TourInfo> getTourStream(
       $grpc.ServiceCall call, $2.EmptyRequest request);
   $async.Future<$1.ResponseString> rejectTour(

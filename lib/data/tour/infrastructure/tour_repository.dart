@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/core/domain/model/paging.dart';
 import 'package:real_estate_blockchain/data/tour/domain/i_tour_repository.dart';
 import 'package:real_estate_blockchain/data/tour/domain/tour_failure.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
@@ -41,13 +42,27 @@ class TourRepository implements ITourRepository {
   }
 
   @override
-  Future<Either<TourFailure, List<Tour>>> tours(FilterTour filter) async {
+  Future<Either<TourFailure, Paging<Tour>>> tours(FilterTour filter) async {
     try {
       final res = await tourServiceClient.listTour(filter.toDto());
-      return right(res.data.map(Tour.fromDto).toList());
+      return right(res.data.toPaging((value) => Tour.fromDto(value)));
     } catch (e, trace) {
       printLog(e, message: e, error: e, trace: trace);
       return left(TourFailure());
     }
   }
+}
+
+extension TourListRespDataEx on TourListRespData {
+  Paging<Tour> toPaging(
+    Tour Function(TourInfo value) parse,
+  ) =>
+      Paging(
+        total: total,
+        data: data
+            .map(
+              (e) => parse.call(e),
+            )
+            .toList(),
+      );
 }

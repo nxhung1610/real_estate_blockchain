@@ -70,7 +70,6 @@ extension RealEstateResponseMapper on RealEstateResponse {
       ownerId: ownerId,
       price: price,
       provinceId: provinceId,
-      realEstateType: realEstateType?.toModel(),
       reason: reason,
       status: RealEstateStatus.fromValue(status),
       updatedAt: updatedAt,

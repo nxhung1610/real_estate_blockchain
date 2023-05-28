@@ -1,5 +1,5 @@
 enum TourStatus {
-  // waiting(1),
+  waiting(1),
   // deleted(2),
   processing(3),
   // failed(4),

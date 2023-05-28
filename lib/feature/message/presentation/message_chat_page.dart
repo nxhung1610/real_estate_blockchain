@@ -148,7 +148,10 @@ class _MessageChatPageState extends State<MessageChatPage> {
                 ),
               ),
             ),
-            const MessageTextField(),
+            SafeArea(
+              minimum: EdgeInsets.symmetric(vertical: 16.h),
+              child: const MessageTextField(),
+            ),
           ],
         ),
       ),

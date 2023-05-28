@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
@@ -26,7 +27,7 @@ class TourOwnPage extends StatefulWidget {
 
 class _TourOwnPageState extends State<TourOwnPage> {
   late final TourOwnBloc bloc;
-  late final PagingController<int, MapEntry<Tour, RealEstate>> pageController;
+  late final PagingController<int, Tour> pageController;
   Completer<bool>? refresh;
   @override
   void initState() {
@@ -58,12 +59,12 @@ class _TourOwnPageState extends State<TourOwnPage> {
               }
               if (state.canLoadMore) {
                 pageController.appendPage(
-                  state.newTours!.entries.toList(),
+                  state.newTours!.toList(),
                   state.page + 1,
                 );
               } else {
                 pageController.appendLastPage(
-                  state.newTours!.entries.toList(),
+                  state.newTours!.toList(),
                 );
               }
             }
@@ -73,9 +74,7 @@ class _TourOwnPageState extends State<TourOwnPage> {
           listener: (context, state) {
             state.status.whenOrNull(
               failure: (value) {
-                if (state.page == 0) {
-                  pageController.error = value;
-                }
+                pageController.error = value;
               },
               idle: () {
                 if (refresh?.isCompleted != true) {
@@ -106,10 +105,32 @@ class _TourOwnPageState extends State<TourOwnPage> {
                 horizontal: AppSize.extraWidthDimens,
                 vertical: AppSize.extraHeightDimens,
               ),
-              sliver:
-                  PagedSliverList<int, MapEntry<Tour, RealEstate>>.separated(
+              sliver: PagedSliverList<int, Tour>.separated(
                 pagingController: pageController,
                 builderDelegate: PagedChildBuilderDelegate(
+                  newPageErrorIndicatorBuilder: (context) {
+                    return GestureDetector(
+                      onTap: () {
+                        pageController.retryLastFailedRequest();
+                      },
+                      child: Container(
+                        color: Colors.transparent,
+                        child: Column(
+                          children: [
+                            Text(
+                              s.someThingWentWrongTapToTryAgain,
+                              style: context.textTheme.bodyMedium?.copyWith(),
+                            ),
+                            AppSize.smallHeightDimens.verticalSpace,
+                            const Icon(
+                              Icons.refresh,
+                              color: AppColor.kNeutrals3,
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                   firstPageErrorIndicatorBuilder: (context) {
                     return Center(
                       child: Column(
@@ -142,7 +163,7 @@ class _TourOwnPageState extends State<TourOwnPage> {
                         context.push(
                           $appRoute.tour.tourReview.url,
                           extra: TourReviewParams(
-                            tour: item.key,
+                            tour: item,
                           ),
                         );
                       },

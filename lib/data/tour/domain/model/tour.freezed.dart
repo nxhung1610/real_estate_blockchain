@@ -22,8 +22,8 @@ mixin _$Tour {
   String? get extraData => throw _privateConstructorUsedError;
   User? get staff => throw _privateConstructorUsedError;
   TourStatus get status => throw _privateConstructorUsedError;
-  int get reId => throw _privateConstructorUsedError;
-  int get userId => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
+  RealEstate get realEstate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TourCopyWith<Tour> get copyWith => throw _privateConstructorUsedError;
@@ -41,10 +41,12 @@ abstract class $TourCopyWith<$Res> {
       String? extraData,
       User? staff,
       TourStatus status,
-      int reId,
-      int userId});
+      User user,
+      RealEstate realEstate});
 
   $UserCopyWith<$Res>? get staff;
+  $UserCopyWith<$Res> get user;
+  $RealEstateCopyWith<$Res> get realEstate;
 }
 
 /// @nodoc
@@ -66,8 +68,8 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
     Object? extraData = freezed,
     Object? staff = freezed,
     Object? status = null,
-    Object? reId = null,
-    Object? userId = null,
+    Object? user = null,
+    Object? realEstate = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -94,14 +96,14 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TourStatus,
-      reId: null == reId
-          ? _value.reId
-          : reId // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      realEstate: null == realEstate
+          ? _value.realEstate
+          : realEstate // ignore: cast_nullable_to_non_nullable
+              as RealEstate,
     ) as $Val);
   }
 
@@ -114,6 +116,22 @@ class _$TourCopyWithImpl<$Res, $Val extends Tour>
 
     return $UserCopyWith<$Res>(_value.staff!, (value) {
       return _then(_value.copyWith(staff: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateCopyWith<$Res> get realEstate {
+    return $RealEstateCopyWith<$Res>(_value.realEstate, (value) {
+      return _then(_value.copyWith(realEstate: value) as $Val);
     });
   }
 }
@@ -131,11 +149,15 @@ abstract class _$$_TourCopyWith<$Res> implements $TourCopyWith<$Res> {
       String? extraData,
       User? staff,
       TourStatus status,
-      int reId,
-      int userId});
+      User user,
+      RealEstate realEstate});
 
   @override
   $UserCopyWith<$Res>? get staff;
+  @override
+  $UserCopyWith<$Res> get user;
+  @override
+  $RealEstateCopyWith<$Res> get realEstate;
 }
 
 /// @nodoc
@@ -153,8 +175,8 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
     Object? extraData = freezed,
     Object? staff = freezed,
     Object? status = null,
-    Object? reId = null,
-    Object? userId = null,
+    Object? user = null,
+    Object? realEstate = null,
   }) {
     return _then(_$_Tour(
       id: null == id
@@ -181,14 +203,14 @@ class __$$_TourCopyWithImpl<$Res> extends _$TourCopyWithImpl<$Res, _$_Tour>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TourStatus,
-      reId: null == reId
-          ? _value.reId
-          : reId // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      realEstate: null == realEstate
+          ? _value.realEstate
+          : realEstate // ignore: cast_nullable_to_non_nullable
+              as RealEstate,
     ));
   }
 }
@@ -203,8 +225,8 @@ class _$_Tour implements _Tour {
       this.extraData,
       this.staff,
       required this.status,
-      required this.reId,
-      required this.userId});
+      required this.user,
+      required this.realEstate});
 
   @override
   final int id;
@@ -219,13 +241,13 @@ class _$_Tour implements _Tour {
   @override
   final TourStatus status;
   @override
-  final int reId;
+  final User user;
   @override
-  final int userId;
+  final RealEstate realEstate;
 
   @override
   String toString() {
-    return 'Tour(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, reId: $reId, userId: $userId)';
+    return 'Tour(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, user: $user, realEstate: $realEstate)';
   }
 
   @override
@@ -240,13 +262,14 @@ class _$_Tour implements _Tour {
                 other.extraData == extraData) &&
             (identical(other.staff, staff) || other.staff == staff) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.reId, reId) || other.reId == reId) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.realEstate, realEstate) ||
+                other.realEstate == realEstate));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, date, type, extraData, staff, status, reId, userId);
+      runtimeType, id, date, type, extraData, staff, status, user, realEstate);
 
   @JsonKey(ignore: true)
   @override
@@ -263,8 +286,8 @@ abstract class _Tour implements Tour {
       final String? extraData,
       final User? staff,
       required final TourStatus status,
-      required final int reId,
-      required final int userId}) = _$_Tour;
+      required final User user,
+      required final RealEstate realEstate}) = _$_Tour;
 
   @override
   int get id;
@@ -279,9 +302,9 @@ abstract class _Tour implements Tour {
   @override
   TourStatus get status;
   @override
-  int get reId;
+  User get user;
   @override
-  int get userId;
+  RealEstate get realEstate;
   @override
   @JsonKey(ignore: true)
   _$$_TourCopyWith<_$_Tour> get copyWith => throw _privateConstructorUsedError;

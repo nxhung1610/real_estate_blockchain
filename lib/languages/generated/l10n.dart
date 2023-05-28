@@ -2219,6 +2219,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Bid increasement`
+  String get bidIncreasement {
+    return Intl.message(
+      'Bid increasement',
+      name: 'bidIncreasement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create bid`
+  String get createBid {
+    return Intl.message(
+      'Create bid',
+      name: 'createBid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create bid success`
+  String get createBidSuccess {
+    return Intl.message(
+      'Create bid success',
+      name: 'createBidSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posts`
+  String get posts {
+    return Intl.message(
+      'Posts',
+      name: 'posts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Auctions`
+  String get auctions {
+    return Intl.message(
+      'Auctions',
+      name: 'auctions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current price`
+  String get currentPrice {
+    return Intl.message(
+      'Current price',
+      name: 'currentPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Highest Binding Bid`
+  String get highestBindingBid {
+    return Intl.message(
+      'Highest Binding Bid',
+      name: 'highestBindingBid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bid Increment`
+  String get bidIncrement {
+    return Intl.message(
+      'Bid Increment',
+      name: 'bidIncrement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Auction Id`
+  String get auctionId {
+    return Intl.message(
+      'Auction Id',
+      name: 'auctionId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time Left`
+  String get timeLeft {
+    return Intl.message(
+      'Time Left',
+      name: 'timeLeft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Be a First bidder`
+  String get beAFirstBidder {
+    return Intl.message(
+      'Be a First bidder',
+      name: 'beAFirstBidder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Your Bid At`
+  String get submitYourBidAt {
+    return Intl.message(
+      'Submit Your Bid At',
+      name: 'submitYourBidAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Some thing went wrong. Tap to try again`
+  String get someThingWentWrongTapToTryAgain {
+    return Intl.message(
+      'Some thing went wrong. Tap to try again',
+      name: 'someThingWentWrongTapToTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Auction ends`
+  String get auctionEnds {
+    return Intl.message(
+      'Auction ends',
+      name: 'auctionEnds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bid success`
+  String get bidSuccess {
+    return Intl.message(
+      'Bid success',
+      name: 'bidSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bid`
+  String get bid {
+    return Intl.message(
+      'Bid',
+      name: 'bid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No bid found`
+  String get noBid {
+    return Intl.message(
+      'No bid found',
+      name: 'noBid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

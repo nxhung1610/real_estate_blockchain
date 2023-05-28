@@ -56,12 +56,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "area": MessageLookupByLibrary.simpleMessage("Diện tích"),
         "associateAgency": MessageLookupByLibrary.simpleMessage(
             "Nhân viên của Realust sẽ đưa bạn đi tham quan!"),
+        "auctionEnds": MessageLookupByLibrary.simpleMessage("Đấu giá kết thúc"),
+        "auctionId": MessageLookupByLibrary.simpleMessage("Mã đấu thầu"),
+        "auctions": MessageLookupByLibrary.simpleMessage("Đấu thầu"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Tự động làm mới"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
+        "beAFirstBidder": MessageLookupByLibrary.simpleMessage(
+            "Hãy là người đầu tiên đấu giá"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Phòng ngủ"),
+        "bid": MessageLookupByLibrary.simpleMessage("Đấu giá"),
+        "bidIncreasement":
+            MessageLookupByLibrary.simpleMessage("Giá tăng thầu"),
+        "bidIncrement": MessageLookupByLibrary.simpleMessage("Tăng giá thầu"),
         "bidNow": MessageLookupByLibrary.simpleMessage("Đấu giá "),
+        "bidSuccess":
+            MessageLookupByLibrary.simpleMessage("Đấu giá thành công"),
         "biddingHistory":
             MessageLookupByLibrary.simpleMessage("Lịch sử đấu giá"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Được xây dựng"),
@@ -77,6 +88,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
+        "createBid": MessageLookupByLibrary.simpleMessage("Tạo thầu"),
+        "createBidSuccess":
+            MessageLookupByLibrary.simpleMessage("Tạo thầu thành công"),
         "createPost": MessageLookupByLibrary.simpleMessage("Tạo bài đăng"),
         "createPostAlreadyExist": MessageLookupByLibrary.simpleMessage(
             "Bất động sản đã được tạo bài đăng"),
@@ -84,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tạo bài đăng thành công"),
         "createRealEstateSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo bất động sản thành công"),
+        "currentPrice": MessageLookupByLibrary.simpleMessage("Giá hiện tại"),
         "date": MessageLookupByLibrary.simpleMessage("Ngày"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Xoá tài khoản"),
         "deleteAccountMessageDialog":
@@ -135,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSetting": MessageLookupByLibrary.simpleMessage("Đi đến cài đặt"),
         "ground": MessageLookupByLibrary.simpleMessage("Đất"),
         "hi": MessageLookupByLibrary.simpleMessage("Xin chào"),
+        "highestBindingBid":
+            MessageLookupByLibrary.simpleMessage("Giá thầu cao nhất"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
@@ -177,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
+        "noBid": MessageLookupByLibrary.simpleMessage("Chưa có đấu thầu nào"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
         "normal": MessageLookupByLibrary.simpleMessage("Thường"),
         "north": MessageLookupByLibrary.simpleMessage("Bắc"),
@@ -229,6 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Vui lòng đăng nhập để tiếp tục."),
         "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
         "postTourType": MessageLookupByLibrary.simpleMessage("Loại bài đăng"),
+        "posts": MessageLookupByLibrary.simpleMessage("Bài đăng"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
@@ -286,12 +305,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiển thị vòng đợi"),
         "showNotification":
             MessageLookupByLibrary.simpleMessage("Hiển thị thông báo"),
+        "someThingWentWrongTapToTryAgain": MessageLookupByLibrary.simpleMessage(
+            "Đã xảy ra sự cố. Nhấn để thử lại"),
         "south": MessageLookupByLibrary.simpleMessage("Nam"),
         "southEast": MessageLookupByLibrary.simpleMessage("Đông Nam"),
         "southWest": MessageLookupByLibrary.simpleMessage("Tây Nam"),
         "spa": MessageLookupByLibrary.simpleMessage("Spa"),
         "square": MessageLookupByLibrary.simpleMessage("Diện tích"),
-        "startPrice": MessageLookupByLibrary.simpleMessage("Gía khởi điểm"),
+        "startPrice": MessageLookupByLibrary.simpleMessage("Giá khởi điểm"),
         "startTime": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
         "startWithUs":
             MessageLookupByLibrary.simpleMessage("Bắt đầu với chúng tôi"),
@@ -299,8 +320,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chúng tôi ở đây để giúp bạn lựa chọn đúng"),
         "streetAddress": MessageLookupByLibrary.simpleMessage("Đường phố"),
         "structure": MessageLookupByLibrary.simpleMessage("Cấu trúc"),
+        "submitYourBidAt":
+            MessageLookupByLibrary.simpleMessage("Đấu giá thầu của tại"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
         "time": MessageLookupByLibrary.simpleMessage("Thời gian"),
+        "timeLeft": MessageLookupByLibrary.simpleMessage("Thời gian còn lại"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "titleHint":
             MessageLookupByLibrary.simpleMessage("Bán nhà riêng tại Cầu Giấy"),

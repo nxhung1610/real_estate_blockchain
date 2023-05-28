@@ -220,6 +220,22 @@
   "postTourType" :"Post tour type",
   "createPostSuccess" : "Create post success",
   "createPostAlreadyExist" : "Post already exist",
-  "ownerPost" :"Owner post"
-  
+  "ownerPost" :"Owner post",
+  "bidIncreasement" : "Bid increasement",
+  "createBid": "Create bid",
+  "createBidSuccess" : "Create bid success",
+  "posts" : "Posts",
+  "auctions" : "Auctions",
+  "currentPrice" : "Current price",
+  "highestBindingBid"  :"Highest Binding Bid",
+  "bidIncrement" : "Bid Increment",
+  "auctionId" : "Auction Id",
+  "timeLeft" : "Time Left",
+  "beAFirstBidder" : "Be a First bidder",
+  "submitYourBidAt" : "Submit Your Bid At",
+  "someThingWentWrongTapToTryAgain" : "Some thing went wrong. Tap to try again",
+  "auctionEnds" :"Auction ends",
+  "bidSuccess" : "Bid success",
+  "bid" : "Bid",
+  "noBid" : "No bid found"
 }

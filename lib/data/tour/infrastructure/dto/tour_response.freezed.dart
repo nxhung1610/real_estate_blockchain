@@ -28,10 +28,9 @@ mixin _$TourResponse {
   String? get extraData => throw _privateConstructorUsedError;
   UserDto? get staff => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
-  @JsonKey(name: "re_id")
-  int get reId => throw _privateConstructorUsedError;
-  @JsonKey(name: "user_id")
-  int get userId => throw _privateConstructorUsedError;
+  UserDto get user => throw _privateConstructorUsedError;
+  @JsonKey(name: 'real_estate')
+  RealEstateResponse get realEstate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TourResponseCopyWith<TourResponse> get copyWith =>
@@ -51,10 +50,12 @@ abstract class $TourResponseCopyWith<$Res> {
       @JsonKey(name: "extra_data") String? extraData,
       UserDto? staff,
       int status,
-      @JsonKey(name: "re_id") int reId,
-      @JsonKey(name: "user_id") int userId});
+      UserDto user,
+      @JsonKey(name: 'real_estate') RealEstateResponse realEstate});
 
   $UserDtoCopyWith<$Res>? get staff;
+  $UserDtoCopyWith<$Res> get user;
+  $RealEstateResponseCopyWith<$Res> get realEstate;
 }
 
 /// @nodoc
@@ -76,8 +77,8 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
     Object? extraData = freezed,
     Object? staff = freezed,
     Object? status = null,
-    Object? reId = null,
-    Object? userId = null,
+    Object? user = null,
+    Object? realEstate = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -104,14 +105,14 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
-      reId: null == reId
-          ? _value.reId
-          : reId // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserDto,
+      realEstate: null == realEstate
+          ? _value.realEstate
+          : realEstate // ignore: cast_nullable_to_non_nullable
+              as RealEstateResponse,
     ) as $Val);
   }
 
@@ -124,6 +125,22 @@ class _$TourResponseCopyWithImpl<$Res, $Val extends TourResponse>
 
     return $UserDtoCopyWith<$Res>(_value.staff!, (value) {
       return _then(_value.copyWith(staff: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDtoCopyWith<$Res> get user {
+    return $UserDtoCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateResponseCopyWith<$Res> get realEstate {
+    return $RealEstateResponseCopyWith<$Res>(_value.realEstate, (value) {
+      return _then(_value.copyWith(realEstate: value) as $Val);
     });
   }
 }
@@ -143,11 +160,15 @@ abstract class _$$_TourResponseCopyWith<$Res>
       @JsonKey(name: "extra_data") String? extraData,
       UserDto? staff,
       int status,
-      @JsonKey(name: "re_id") int reId,
-      @JsonKey(name: "user_id") int userId});
+      UserDto user,
+      @JsonKey(name: 'real_estate') RealEstateResponse realEstate});
 
   @override
   $UserDtoCopyWith<$Res>? get staff;
+  @override
+  $UserDtoCopyWith<$Res> get user;
+  @override
+  $RealEstateResponseCopyWith<$Res> get realEstate;
 }
 
 /// @nodoc
@@ -167,8 +188,8 @@ class __$$_TourResponseCopyWithImpl<$Res>
     Object? extraData = freezed,
     Object? staff = freezed,
     Object? status = null,
-    Object? reId = null,
-    Object? userId = null,
+    Object? user = null,
+    Object? realEstate = null,
   }) {
     return _then(_$_TourResponse(
       id: null == id
@@ -195,14 +216,14 @@ class __$$_TourResponseCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
-      reId: null == reId
-          ? _value.reId
-          : reId // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserDto,
+      realEstate: null == realEstate
+          ? _value.realEstate
+          : realEstate // ignore: cast_nullable_to_non_nullable
+              as RealEstateResponse,
     ));
   }
 }
@@ -217,8 +238,8 @@ class _$_TourResponse implements _TourResponse {
       @JsonKey(name: "extra_data") this.extraData,
       this.staff,
       required this.status,
-      @JsonKey(name: "re_id") required this.reId,
-      @JsonKey(name: "user_id") required this.userId});
+      required this.user,
+      @JsonKey(name: 'real_estate') required this.realEstate});
 
   factory _$_TourResponse.fromJson(Map<String, dynamic> json) =>
       _$$_TourResponseFromJson(json);
@@ -238,15 +259,14 @@ class _$_TourResponse implements _TourResponse {
   @override
   final int status;
   @override
-  @JsonKey(name: "re_id")
-  final int reId;
+  final UserDto user;
   @override
-  @JsonKey(name: "user_id")
-  final int userId;
+  @JsonKey(name: 'real_estate')
+  final RealEstateResponse realEstate;
 
   @override
   String toString() {
-    return 'TourResponse(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, reId: $reId, userId: $userId)';
+    return 'TourResponse(id: $id, date: $date, type: $type, extraData: $extraData, staff: $staff, status: $status, user: $user, realEstate: $realEstate)';
   }
 
   @override
@@ -261,14 +281,15 @@ class _$_TourResponse implements _TourResponse {
                 other.extraData == extraData) &&
             (identical(other.staff, staff) || other.staff == staff) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.reId, reId) || other.reId == reId) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.realEstate, realEstate) ||
+                other.realEstate == realEstate));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, date, type, extraData, staff, status, reId, userId);
+      runtimeType, id, date, type, extraData, staff, status, user, realEstate);
 
   @JsonKey(ignore: true)
   @override
@@ -280,13 +301,16 @@ class _$_TourResponse implements _TourResponse {
 abstract class _TourResponse implements TourResponse {
   factory _TourResponse(
       {required final int id,
-      @DateTimeOrNull() final DateTime? date,
+      @DateTimeOrNull()
+          final DateTime? date,
       required final String type,
-      @JsonKey(name: "extra_data") final String? extraData,
+      @JsonKey(name: "extra_data")
+          final String? extraData,
       final UserDto? staff,
       required final int status,
-      @JsonKey(name: "re_id") required final int reId,
-      @JsonKey(name: "user_id") required final int userId}) = _$_TourResponse;
+      required final UserDto user,
+      @JsonKey(name: 'real_estate')
+          required final RealEstateResponse realEstate}) = _$_TourResponse;
 
   factory _TourResponse.fromJson(Map<String, dynamic> json) =
       _$_TourResponse.fromJson;
@@ -306,11 +330,10 @@ abstract class _TourResponse implements TourResponse {
   @override
   int get status;
   @override
-  @JsonKey(name: "re_id")
-  int get reId;
+  UserDto get user;
   @override
-  @JsonKey(name: "user_id")
-  int get userId;
+  @JsonKey(name: 'real_estate')
+  RealEstateResponse get realEstate;
   @override
   @JsonKey(ignore: true)
   _$$_TourResponseCopyWith<_$_TourResponse> get copyWith =>

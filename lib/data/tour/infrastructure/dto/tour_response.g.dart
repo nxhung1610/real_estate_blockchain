@@ -16,6 +16,7 @@ _$_TourResponse _$$_TourResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : UserDto.fromJson(json['staff'] as Map<String, dynamic>),
       status: json['status'] as int,
-      reId: json['re_id'] as int,
-      userId: json['user_id'] as int,
+      user: UserDto.fromJson(json['user'] as Map<String, dynamic>),
+      realEstate: RealEstateResponse.fromJson(
+          json['real_estate'] as Map<String, dynamic>),
     );

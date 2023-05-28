@@ -186,6 +186,8 @@ class HouseMyHomeItem extends StatelessWidget {
                         return Colors.yellowAccent;
                       case RealEstateStatus.failed:
                         return Colors.grey.shade600;
+                      default:
+                        return null;
                     }
                   }(),
                   borderRadius: BorderRadius.circular(

@@ -63,6 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: CustomAppbar(
         context,
         title: Text(s.myHome),
+        leading: const UnconstrainedBox(child: BackButtonApp()),
+        leadingWidth: AppSize.mediumIcon + 64.w,
       ),
       body: BlocListener<MyHomeBloc, MyHomeState>(
         listener: (context, state) {

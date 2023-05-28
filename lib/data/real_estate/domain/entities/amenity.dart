@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/grpc/core/response.pb.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 
 part 'amenity.freezed.dart';
@@ -12,6 +13,10 @@ class Amenity with _$Amenity {
     required int id,
     required String name,
   }) = _Amenity;
+
+  factory Amenity.fromGrpc(ARealEstateAmenity amenity) {
+    return Amenity(id: amenity.id, name: amenity.name);
+  }
 }
 
 extension AmenityExt on Amenity {

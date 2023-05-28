@@ -321,8 +321,8 @@ abstract class _onLoadMore implements TourOwnEvent {
 
 /// @nodoc
 mixin _$TourOwnState {
-  Map<Tour, RealEstate> get tours => throw _privateConstructorUsedError;
-  Map<Tour, RealEstate>? get newTours => throw _privateConstructorUsedError;
+  List<Tour> get tours => throw _privateConstructorUsedError;
+  List<Tour>? get newTours => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   bool get canLoadMore => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
@@ -339,8 +339,8 @@ abstract class $TourOwnStateCopyWith<$Res> {
       _$TourOwnStateCopyWithImpl<$Res, TourOwnState>;
   @useResult
   $Res call(
-      {Map<Tour, RealEstate> tours,
-      Map<Tour, RealEstate>? newTours,
+      {List<Tour> tours,
+      List<Tour>? newTours,
       int page,
       bool canLoadMore,
       Status status});
@@ -371,11 +371,11 @@ class _$TourOwnStateCopyWithImpl<$Res, $Val extends TourOwnState>
       tours: null == tours
           ? _value.tours
           : tours // ignore: cast_nullable_to_non_nullable
-              as Map<Tour, RealEstate>,
+              as List<Tour>,
       newTours: freezed == newTours
           ? _value.newTours
           : newTours // ignore: cast_nullable_to_non_nullable
-              as Map<Tour, RealEstate>?,
+              as List<Tour>?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -409,8 +409,8 @@ abstract class _$$_TourOwnStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Map<Tour, RealEstate> tours,
-      Map<Tour, RealEstate>? newTours,
+      {List<Tour> tours,
+      List<Tour>? newTours,
       int page,
       bool canLoadMore,
       Status status});
@@ -440,11 +440,11 @@ class __$$_TourOwnStateCopyWithImpl<$Res>
       tours: null == tours
           ? _value._tours
           : tours // ignore: cast_nullable_to_non_nullable
-              as Map<Tour, RealEstate>,
+              as List<Tour>,
       newTours: freezed == newTours
           ? _value._newTours
           : newTours // ignore: cast_nullable_to_non_nullable
-              as Map<Tour, RealEstate>?,
+              as List<Tour>?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -465,31 +465,31 @@ class __$$_TourOwnStateCopyWithImpl<$Res>
 
 class _$_TourOwnState implements _TourOwnState {
   const _$_TourOwnState(
-      {final Map<Tour, RealEstate> tours = const {},
-      final Map<Tour, RealEstate>? newTours,
+      {final List<Tour> tours = const [],
+      final List<Tour>? newTours,
       this.page = 0,
       this.canLoadMore = true,
       this.status = const Status.idle()})
       : _tours = tours,
         _newTours = newTours;
 
-  final Map<Tour, RealEstate> _tours;
+  final List<Tour> _tours;
   @override
   @JsonKey()
-  Map<Tour, RealEstate> get tours {
-    if (_tours is EqualUnmodifiableMapView) return _tours;
+  List<Tour> get tours {
+    if (_tours is EqualUnmodifiableListView) return _tours;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_tours);
+    return EqualUnmodifiableListView(_tours);
   }
 
-  final Map<Tour, RealEstate>? _newTours;
+  final List<Tour>? _newTours;
   @override
-  Map<Tour, RealEstate>? get newTours {
+  List<Tour>? get newTours {
     final value = _newTours;
     if (value == null) return null;
-    if (_newTours is EqualUnmodifiableMapView) return _newTours;
+    if (_newTours is EqualUnmodifiableListView) return _newTours;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -538,16 +538,16 @@ class _$_TourOwnState implements _TourOwnState {
 
 abstract class _TourOwnState implements TourOwnState {
   const factory _TourOwnState(
-      {final Map<Tour, RealEstate> tours,
-      final Map<Tour, RealEstate>? newTours,
+      {final List<Tour> tours,
+      final List<Tour>? newTours,
       final int page,
       final bool canLoadMore,
       final Status status}) = _$_TourOwnState;
 
   @override
-  Map<Tour, RealEstate> get tours;
+  List<Tour> get tours;
   @override
-  Map<Tour, RealEstate>? get newTours;
+  List<Tour>? get newTours;
   @override
   int get page;
   @override

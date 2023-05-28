@@ -42,16 +42,7 @@ class TourReviewBloc extends Bloc<TourReviewEvent, TourReviewState> {
     Emitter<TourReviewState> emit,
   ) async {
     try {
-      emit(
-        state.copyWith(
-          status: const Status.loading(),
-        ),
-      );
-      final data = await realEstateRepository.detailEstate(
-        state.params.tour.reId.toString(),
-      );
-      final dataEstate = data.fold((l) => throw l, (r) => r);
-      emit(state.copyWith(estate: dataEstate));
+      emit(state.copyWith(estate: state.params.tour.realEstate));
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       emit(

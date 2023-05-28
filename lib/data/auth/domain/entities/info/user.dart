@@ -20,7 +20,7 @@ class User with _$User {
   }) = _User;
   String get fullName => '$firstName $lastName';
 
-  factory User.fromDto(StaffInfo dto) {
+  factory User.fromDto(AUser dto) {
     return User(
       id: dto.id,
       phone: dto.phone,

@@ -45,58 +45,25 @@ class TourOwnBloc extends Bloc<TourOwnEvent, TourOwnState> {
       await tours.fold(
         (l) => throw l,
         (r) async {
-          final estates = (await Future.wait(r
-                  .map((e) =>
-                      realEstateRepository.detailEstate(e.reId.toString()))
-                  .toList()))
-              .map(
-            (e) => e.fold((l) => null, (r) => r),
-          );
           if (event.page == 0) {
             return emit(
               state.copyWith(
-                tours: {},
-                newTours: Map.fromEntries(
-                  estates
-                      .where((element) => element != null)
-                      .cast<RealEstate>()
-                      .map(
-                        (e) => MapEntry(
-                            r.firstWhere((element) => element.reId == e.id), e),
-                      ),
-                ),
-                canLoadMore: r.isNotEmpty,
+                tours: [],
+                newTours: r.data,
+                canLoadMore: (r.data?.length ?? 0) < r.total,
                 page: event.page,
                 status: const Status.success(),
               ),
             );
           }
 
-          final toursClone = Map<Tour, RealEstate>.from(state.tours);
-          toursClone.addAll(
-            Map.fromEntries(
-              estates
-                  .where((element) => element != null)
-                  .cast<RealEstate>()
-                  .map(
-                    (e) => MapEntry(
-                        r.firstWhere((element) => element.reId == e.id), e),
-                  ),
-            ),
-          );
+          final toursClone = List<Tour>.from(state.tours);
+          toursClone.addAll(r.data ?? []);
           emit(
             state.copyWith(
               tours: toursClone,
-              newTours: Map.fromEntries(
-                estates
-                    .where((element) => element != null)
-                    .cast<RealEstate>()
-                    .map(
-                      (e) => MapEntry(
-                          r.firstWhere((element) => element.reId == e.id), e),
-                    ),
-              ),
-              canLoadMore: r.isNotEmpty,
+              newTours: r.data ?? [],
+              canLoadMore: toursClone.length < r.total,
               status: const Status.success(),
               page: event.page,
             ),

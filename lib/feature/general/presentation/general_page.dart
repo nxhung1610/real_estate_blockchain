@@ -165,6 +165,13 @@ class _Options extends StatelessWidget {
                 context.push($appRoute.tour.tourOwn.url);
               },
             ),
+            ProfileOptionData(
+              icon: Assets.icons.icHome2.svg(),
+              label: s.myHome,
+              onPressed: () {
+                context.push($appRoute.myHome.url);
+              },
+            ),
           ],
         ),
         ProfileOptionGroup(

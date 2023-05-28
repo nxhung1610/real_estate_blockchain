@@ -7,11 +7,13 @@ import 'package:real_estate_blockchain/feature/main/module.dart';
 import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
 import 'package:real_estate_blockchain/feature/notification/router/notification_route.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
+import 'package:real_estate_blockchain/feature/post/detail/router/post_real_estate_detail_router.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
 import 'package:real_estate_blockchain/feature/tour/router/tour_route.dart';
 import 'package:real_estate_blockchain/feature/user/router/user_router.dart';
 
+import '../../my_home/module.dart';
 import '../../post/owner/router/post_owner_router.dart';
 import '../../setting/router/setting_route.dart';
 import '../../tour/schedule_tour/router/schedule_tour_router.dart';
@@ -33,6 +35,8 @@ class AppRoute extends BaseRoute {
   late final TourRoute tour;
   late final BidRoute bid;
   late final PostOwnerRoute postOwner;
+  late final PostRealEstateDetailRouter postRealEstateDetail;
+  late final MyHomeRoute myHome;
 
   // Path
   String get onboarding => _onboardingRoute.url;
@@ -62,6 +66,8 @@ class AppRoute extends BaseRoute {
         ...tour.routes,
         ...bid.routes,
         ...postOwner.routes,
+        ...postRealEstateDetail.routes,
+        ...myHome.routes,
       ];
 
   @override
@@ -76,6 +82,8 @@ class AppRoute extends BaseRoute {
         ...tour.globalRoutes,
         ...bid.globalRoutes,
         ...postOwner.globalRoutes,
+        ...postRealEstateDetail.globalRoutes,
+        ...myHome.globalRoutes,
       ];
 
   @override
@@ -92,5 +100,8 @@ class AppRoute extends BaseRoute {
     tour = TourRoute(root, '/tour');
     bid = BidRoute(url, '/bid');
     postOwner = PostOwnerRoute(url, '/posts/owner');
+    postRealEstateDetail =
+        PostRealEstateDetailRouter(url, '/posts/real-estate/detail');
+    myHome = MyHomeRoute(url, '/my-home');
   }
 }

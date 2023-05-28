@@ -211,7 +211,7 @@
   "bidNow" : "Đấu giá ",
   "biddingHistory" :"Lịch sử đấu giá",
   "placeABid" :"Đặt một giá thầu",
-  "startPrice" :"Gía khởi điểm",
+  "startPrice" :"Giá khởi điểm",
   "createPost" : "Tạo bài đăng",
   "autoRenew" : "Tự động làm mới",
   "startTime" : "Bắt đầu",
@@ -221,5 +221,23 @@
   "postTourType" : "Loại bài đăng",
   "createPostSuccess" : "Tạo bài đăng thành công",
   "createPostAlreadyExist" : "Bất động sản đã được tạo bài đăng",
-  "ownerPost" :"Bài đăng của bạn"
+  "ownerPost" :"Bài đăng của bạn",
+  "bidIncreasement" : "Giá tăng thầu",
+  "createBid": "Tạo thầu",
+  "createBidSuccess" : "Tạo thầu thành công",
+  "posts" : "Bài đăng",
+  "auctions" : "Đấu thầu",
+  "currentPrice" : "Giá hiện tại",
+  "highestBindingBid"  :"Giá thầu cao nhất",
+  "bidIncrement" : "Tăng giá thầu",
+  "auctionId" : "Mã đấu thầu",
+  "timeLeft" : "Thời gian còn lại",
+  "beAFirstBidder" : "Hãy là người đầu tiên đấu giá",
+  "submitYourBidAt" : "Đấu giá thầu của tại",
+  "someThingWentWrongTapToTryAgain" : "Đã xảy ra sự cố. Nhấn để thử lại",
+  "auctionEnds" :"Đấu giá kết thúc",
+  "bidSuccess" : "Đấu giá thành công",
+  "bid" : "Đấu giá",
+  "noBid" : "Chưa có đấu thầu nào"
+
 }

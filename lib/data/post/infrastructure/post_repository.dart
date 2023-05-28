@@ -61,4 +61,23 @@ class PostRepository implements IPostRepository {
       return left(PostFailure());
     }
   }
+
+  @override
+  Future<Either<PostFailure, int>> checkExist(String reId) async {
+    try {
+      final res = await _apiRemote.post(
+        '/real-estates/posts/existed/$reId',
+        parse: (data) {
+          return data as int;
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(res.data as int);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(PostFailure());
+    }
+  }
 }
