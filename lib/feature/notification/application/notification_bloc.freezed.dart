@@ -163,7 +163,7 @@ class _$_NotificationState implements _NotificationState {
   const _$_NotificationState(
       {final List<UserNotification> notification = const [],
       final List<UserNotification>? newNotifications,
-      this.page = 0,
+      this.page = 1,
       this.canLoadMore = true,
       this.status = const Status.idle()})
       : _notification = notification,

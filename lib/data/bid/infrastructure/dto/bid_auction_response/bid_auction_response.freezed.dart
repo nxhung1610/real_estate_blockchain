@@ -22,7 +22,7 @@ BidAuctionResponse _$BidAuctionResponseFromJson(Map<String, dynamic> json) {
 mixin _$BidAuctionResponse {
   List<UserDto>? get bidders => throw _privateConstructorUsedError;
   @JsonKey(name: 'bid_history')
-  List<BidderResponse> get bidHistory => throw _privateConstructorUsedError;
+  List<BidderResponse>? get bidHistory => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'end_time')
   @DateTimeOrNull()
@@ -72,7 +72,7 @@ abstract class $BidAuctionResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {List<UserDto>? bidders,
-      @JsonKey(name: 'bid_history') List<BidderResponse> bidHistory,
+      @JsonKey(name: 'bid_history') List<BidderResponse>? bidHistory,
       int id,
       @JsonKey(name: 'end_time') @DateTimeOrNull() DateTime? endTime,
       @JsonKey(name: 'start_time') @DateTimeOrNull() DateTime? startTime,
@@ -110,7 +110,7 @@ class _$BidAuctionResponseCopyWithImpl<$Res, $Val extends BidAuctionResponse>
   @override
   $Res call({
     Object? bidders = freezed,
-    Object? bidHistory = null,
+    Object? bidHistory = freezed,
     Object? id = null,
     Object? endTime = freezed,
     Object? startTime = freezed,
@@ -134,10 +134,10 @@ class _$BidAuctionResponseCopyWithImpl<$Res, $Val extends BidAuctionResponse>
           ? _value.bidders
           : bidders // ignore: cast_nullable_to_non_nullable
               as List<UserDto>?,
-      bidHistory: null == bidHistory
+      bidHistory: freezed == bidHistory
           ? _value.bidHistory
           : bidHistory // ignore: cast_nullable_to_non_nullable
-              as List<BidderResponse>,
+              as List<BidderResponse>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -256,7 +256,7 @@ abstract class _$$_BidAuctionResponseCopyWith<$Res>
   @useResult
   $Res call(
       {List<UserDto>? bidders,
-      @JsonKey(name: 'bid_history') List<BidderResponse> bidHistory,
+      @JsonKey(name: 'bid_history') List<BidderResponse>? bidHistory,
       int id,
       @JsonKey(name: 'end_time') @DateTimeOrNull() DateTime? endTime,
       @JsonKey(name: 'start_time') @DateTimeOrNull() DateTime? startTime,
@@ -295,7 +295,7 @@ class __$$_BidAuctionResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bidders = freezed,
-    Object? bidHistory = null,
+    Object? bidHistory = freezed,
     Object? id = null,
     Object? endTime = freezed,
     Object? startTime = freezed,
@@ -319,10 +319,10 @@ class __$$_BidAuctionResponseCopyWithImpl<$Res>
           ? _value._bidders
           : bidders // ignore: cast_nullable_to_non_nullable
               as List<UserDto>?,
-      bidHistory: null == bidHistory
+      bidHistory: freezed == bidHistory
           ? _value._bidHistory
           : bidHistory // ignore: cast_nullable_to_non_nullable
-              as List<BidderResponse>,
+              as List<BidderResponse>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -400,42 +400,23 @@ class __$$_BidAuctionResponseCopyWithImpl<$Res>
 class _$_BidAuctionResponse implements _BidAuctionResponse {
   _$_BidAuctionResponse(
       {final List<UserDto>? bidders,
-      @JsonKey(name: 'bid_history')
-          final List<BidderResponse> bidHistory = const [],
+      @JsonKey(name: 'bid_history') final List<BidderResponse>? bidHistory,
       required this.id,
-      @JsonKey(name: 'end_time')
-      @DateTimeOrNull()
-          this.endTime,
-      @JsonKey(name: 'start_time')
-      @DateTimeOrNull()
-          this.startTime,
-      @JsonKey(name: 'updated_at')
-      @DateTimeOrNull()
-          this.updatedAt,
-      @JsonKey(name: 'created_at')
-      @DateTimeOrNull()
-          this.createdAt,
-      @JsonKey(name: 'extra_data')
-          this.extraData,
+      @JsonKey(name: 'end_time') @DateTimeOrNull() this.endTime,
+      @JsonKey(name: 'start_time') @DateTimeOrNull() this.startTime,
+      @JsonKey(name: 'updated_at') @DateTimeOrNull() this.updatedAt,
+      @JsonKey(name: 'created_at') @DateTimeOrNull() this.createdAt,
+      @JsonKey(name: 'extra_data') this.extraData,
       this.status,
-      @JsonKey(name: 're_id')
-          this.reId,
-      @JsonKey(name: 'real_estate')
-          this.realEstate,
-      @JsonKey(name: 'highest_binding_bid')
-          this.highestBindingBid,
-      @JsonKey(name: 'highest_bidder_id')
-          this.highestBidderId,
-      @JsonKey(name: 'highest_bidder')
-          this.highestBidder,
-      @JsonKey(name: 'bid_increment')
-          this.bidIncrement,
-      @JsonKey(name: 'starting_price')
-          this.startingPrice,
-      @JsonKey(name: 'contract_address')
-          this.contractAddress,
-      @JsonKey(name: 'rejected_reason')
-          this.rejectedReason,
+      @JsonKey(name: 're_id') this.reId,
+      @JsonKey(name: 'real_estate') this.realEstate,
+      @JsonKey(name: 'highest_binding_bid') this.highestBindingBid,
+      @JsonKey(name: 'highest_bidder_id') this.highestBidderId,
+      @JsonKey(name: 'highest_bidder') this.highestBidder,
+      @JsonKey(name: 'bid_increment') this.bidIncrement,
+      @JsonKey(name: 'starting_price') this.startingPrice,
+      @JsonKey(name: 'contract_address') this.contractAddress,
+      @JsonKey(name: 'rejected_reason') this.rejectedReason,
       this.owner})
       : _bidders = bidders,
         _bidHistory = bidHistory;
@@ -453,13 +434,15 @@ class _$_BidAuctionResponse implements _BidAuctionResponse {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<BidderResponse> _bidHistory;
+  final List<BidderResponse>? _bidHistory;
   @override
   @JsonKey(name: 'bid_history')
-  List<BidderResponse> get bidHistory {
+  List<BidderResponse>? get bidHistory {
+    final value = _bidHistory;
+    if (value == null) return null;
     if (_bidHistory is EqualUnmodifiableListView) return _bidHistory;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bidHistory);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -595,7 +578,7 @@ class _$_BidAuctionResponse implements _BidAuctionResponse {
 abstract class _BidAuctionResponse implements BidAuctionResponse {
   factory _BidAuctionResponse(
       {final List<UserDto>? bidders,
-      @JsonKey(name: 'bid_history') final List<BidderResponse> bidHistory,
+      @JsonKey(name: 'bid_history') final List<BidderResponse>? bidHistory,
       required final int id,
       @JsonKey(name: 'end_time') @DateTimeOrNull() final DateTime? endTime,
       @JsonKey(name: 'start_time') @DateTimeOrNull() final DateTime? startTime,
@@ -621,7 +604,7 @@ abstract class _BidAuctionResponse implements BidAuctionResponse {
   List<UserDto>? get bidders;
   @override
   @JsonKey(name: 'bid_history')
-  List<BidderResponse> get bidHistory;
+  List<BidderResponse>? get bidHistory;
   @override
   int get id;
   @override

@@ -7,12 +7,15 @@ import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.d
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
 
+import 'bidder.dart';
+
 part 'bid_auction.freezed.dart';
 
 @freezed
 class BidAuction with _$BidAuction {
   factory BidAuction({
     List<User>? bidders,
+    List<Bidder>? bidHistory,
     required int id,
     DateTime? endTime,
     DateTime? startTime,
@@ -35,6 +38,7 @@ class BidAuction with _$BidAuction {
   factory BidAuction.fromDto(BidAuctionResponse dto) {
     return BidAuction(
       bidders: dto.bidders?.map((e) => e.toModel()).toList(),
+      bidHistory: dto.bidHistory?.map((e) => Bidder.fromResponse(e)).toList(),
       id: dto.id,
       endTime: dto.endTime,
       startTime: dto.startTime,

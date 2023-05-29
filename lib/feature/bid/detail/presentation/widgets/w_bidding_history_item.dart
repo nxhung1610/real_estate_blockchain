@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
+import 'package:real_estate_blockchain/data/bid/domain/model/bidder.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
 class WBiddingHistoryItem extends StatelessWidget {
   const WBiddingHistoryItem({
     super.key,
-    required this.user,
+    required this.bidder,
   });
-  final User user;
+  final Bidder bidder;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +28,16 @@ class WBiddingHistoryItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(48.r),
-            child: ImageCustom.network(
-              user.avatarUrl ?? '',
+            child: Container(
               width: 48.r,
               height: 48.r,
-              fit: BoxFit.cover,
+              color: Colors.grey.shade400,
+              child: ImageCustom.network(
+                bidder.bidder.avatarUrl ?? '',
+                width: 48.r,
+                height: 48.r,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           AppSize.largeWidthDimens.horizontalSpace,
@@ -39,10 +46,20 @@ class WBiddingHistoryItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  user.fullName,
+                  bidder.bidder.fullName,
                   style: context.textTheme.bodyLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: AppColor.kNeutrals2,
+                  ),
+                ),
+                4.h.verticalSpace,
+                Text(
+                  bidder.createdAt != null
+                      ? DateFormat('dd/MM/yyyy').format(bidder.createdAt!)
+                      : '-- --',
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColor.kNeutrals4,
                   ),
                 ),
               ],

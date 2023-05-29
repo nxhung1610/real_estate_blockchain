@@ -13,9 +13,8 @@ _$_BidAuctionResponse _$$_BidAuctionResponseFromJson(
           ?.map((e) => UserDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       bidHistory: (json['bid_history'] as List<dynamic>?)
-              ?.map((e) => BidderResponse.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
+          ?.map((e) => BidderResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
       id: json['id'] as int,
       endTime: const DateTimeOrNull().fromJson(json['end_time'] as String?),
       startTime: const DateTimeOrNull().fromJson(json['start_time'] as String?),

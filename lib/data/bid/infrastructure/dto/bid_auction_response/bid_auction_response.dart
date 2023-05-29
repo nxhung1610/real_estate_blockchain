@@ -12,7 +12,7 @@ part 'bid_auction_response.g.dart';
 class BidAuctionResponse with _$BidAuctionResponse {
   factory BidAuctionResponse({
     List<UserDto>? bidders,
-    @JsonKey(name: 'bid_history') @Default([]) List<BidderResponse> bidHistory,
+    @JsonKey(name: 'bid_history') List<BidderResponse>? bidHistory,
     required int id,
     @JsonKey(name: 'end_time') @DateTimeOrNull() DateTime? endTime,
     @JsonKey(name: 'start_time') @DateTimeOrNull() DateTime? startTime,

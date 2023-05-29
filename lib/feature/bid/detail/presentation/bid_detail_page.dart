@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
+import 'package:real_estate_blockchain/data/bid/domain/model/bidder.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
@@ -392,21 +393,32 @@ class _BidDetailPageState extends State<BidDetailPage>
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 sliver: SliverToBoxAdapter(
-                  child:
-                      BlocSelector<BidDetailBloc, BidDetailState, BidAuction?>(
+                  child: BlocSelector<BidDetailBloc, BidDetailState,
+                      List<Bidder>?>(
                     selector: (state) {
-                      return state.bid;
-                    },
-                    builder: (context, state) {
-                      if (state?.bidders != null)
-                        return const SizedBox.shrink();
-                      final bidders = state!.bidders!;
-                      return ListView.separated(
-                        itemBuilder: (BuildContext context, int index) {
-                          final user = bidders[index];
-                          return WBiddingHistoryItem(user: user);
+                      final bidders =
+                          List<Bidder>.from(state.bid?.bidHistory ?? []);
+                      bidders.sort(
+                        (a, b) {
+                          return b.createdAt
+                                  ?.compareTo(a.createdAt ?? DateTime.now()) ??
+                              0;
                         },
-                        itemCount: state.bidders?.length ?? 0,
+                      );
+                      return bidders;
+                    },
+                    builder: (context, bidders) {
+                      if (bidders == null) {
+                        return const SizedBox.shrink();
+                      }
+                      return ListView.separated(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          final bidder = bidders[index];
+                          return WBiddingHistoryItem(bidder: bidder);
+                        },
+                        itemCount: bidders.length,
                         separatorBuilder: (BuildContext context, int index) {
                           return 16.h.verticalSpace;
                         },

@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$BidAuction {
   List<User>? get bidders => throw _privateConstructorUsedError;
+  List<Bidder>? get bidHistory => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   DateTime? get endTime => throw _privateConstructorUsedError;
   DateTime? get startTime => throw _privateConstructorUsedError;
@@ -48,6 +49,7 @@ abstract class $BidAuctionCopyWith<$Res> {
   @useResult
   $Res call(
       {List<User>? bidders,
+      List<Bidder>? bidHistory,
       int id,
       DateTime? endTime,
       DateTime? startTime,
@@ -85,6 +87,7 @@ class _$BidAuctionCopyWithImpl<$Res, $Val extends BidAuction>
   @override
   $Res call({
     Object? bidders = freezed,
+    Object? bidHistory = freezed,
     Object? id = null,
     Object? endTime = freezed,
     Object? startTime = freezed,
@@ -108,6 +111,10 @@ class _$BidAuctionCopyWithImpl<$Res, $Val extends BidAuction>
           ? _value.bidders
           : bidders // ignore: cast_nullable_to_non_nullable
               as List<User>?,
+      bidHistory: freezed == bidHistory
+          ? _value.bidHistory
+          : bidHistory // ignore: cast_nullable_to_non_nullable
+              as List<Bidder>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -226,6 +233,7 @@ abstract class _$$_BidAuctionCopyWith<$Res>
   @useResult
   $Res call(
       {List<User>? bidders,
+      List<Bidder>? bidHistory,
       int id,
       DateTime? endTime,
       DateTime? startTime,
@@ -264,6 +272,7 @@ class __$$_BidAuctionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bidders = freezed,
+    Object? bidHistory = freezed,
     Object? id = null,
     Object? endTime = freezed,
     Object? startTime = freezed,
@@ -287,6 +296,10 @@ class __$$_BidAuctionCopyWithImpl<$Res>
           ? _value._bidders
           : bidders // ignore: cast_nullable_to_non_nullable
               as List<User>?,
+      bidHistory: freezed == bidHistory
+          ? _value._bidHistory
+          : bidHistory // ignore: cast_nullable_to_non_nullable
+              as List<Bidder>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -364,6 +377,7 @@ class __$$_BidAuctionCopyWithImpl<$Res>
 class _$_BidAuction implements _BidAuction {
   _$_BidAuction(
       {final List<User>? bidders,
+      final List<Bidder>? bidHistory,
       required this.id,
       this.endTime,
       this.startTime,
@@ -381,7 +395,8 @@ class _$_BidAuction implements _BidAuction {
       this.contractAddress,
       this.rejectedReason,
       this.owner})
-      : _bidders = bidders;
+      : _bidders = bidders,
+        _bidHistory = bidHistory;
 
   final List<User>? _bidders;
   @override
@@ -389,6 +404,16 @@ class _$_BidAuction implements _BidAuction {
     final value = _bidders;
     if (value == null) return null;
     if (_bidders is EqualUnmodifiableListView) return _bidders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Bidder>? _bidHistory;
+  @override
+  List<Bidder>? get bidHistory {
+    final value = _bidHistory;
+    if (value == null) return null;
+    if (_bidHistory is EqualUnmodifiableListView) return _bidHistory;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -430,7 +455,7 @@ class _$_BidAuction implements _BidAuction {
 
   @override
   String toString() {
-    return 'BidAuction(bidders: $bidders, id: $id, endTime: $endTime, startTime: $startTime, updatedAt: $updatedAt, createdAt: $createdAt, extraData: $extraData, status: $status, reId: $reId, realEstate: $realEstate, highestBindingBid: $highestBindingBid, highestBidderId: $highestBidderId, highestBidder: $highestBidder, bidIncrement: $bidIncrement, startingPrice: $startingPrice, contractAddress: $contractAddress, rejectedReason: $rejectedReason, owner: $owner)';
+    return 'BidAuction(bidders: $bidders, bidHistory: $bidHistory, id: $id, endTime: $endTime, startTime: $startTime, updatedAt: $updatedAt, createdAt: $createdAt, extraData: $extraData, status: $status, reId: $reId, realEstate: $realEstate, highestBindingBid: $highestBindingBid, highestBidderId: $highestBidderId, highestBidder: $highestBidder, bidIncrement: $bidIncrement, startingPrice: $startingPrice, contractAddress: $contractAddress, rejectedReason: $rejectedReason, owner: $owner)';
   }
 
   @override
@@ -439,6 +464,8 @@ class _$_BidAuction implements _BidAuction {
         (other.runtimeType == runtimeType &&
             other is _$_BidAuction &&
             const DeepCollectionEquality().equals(other._bidders, _bidders) &&
+            const DeepCollectionEquality()
+                .equals(other._bidHistory, _bidHistory) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
             (identical(other.startTime, startTime) ||
@@ -471,26 +498,28 @@ class _$_BidAuction implements _BidAuction {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_bidders),
-      id,
-      endTime,
-      startTime,
-      updatedAt,
-      createdAt,
-      extraData,
-      status,
-      reId,
-      realEstate,
-      highestBindingBid,
-      highestBidderId,
-      highestBidder,
-      bidIncrement,
-      startingPrice,
-      contractAddress,
-      rejectedReason,
-      owner);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(_bidders),
+        const DeepCollectionEquality().hash(_bidHistory),
+        id,
+        endTime,
+        startTime,
+        updatedAt,
+        createdAt,
+        extraData,
+        status,
+        reId,
+        realEstate,
+        highestBindingBid,
+        highestBidderId,
+        highestBidder,
+        bidIncrement,
+        startingPrice,
+        contractAddress,
+        rejectedReason,
+        owner
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -502,6 +531,7 @@ class _$_BidAuction implements _BidAuction {
 abstract class _BidAuction implements BidAuction {
   factory _BidAuction(
       {final List<User>? bidders,
+      final List<Bidder>? bidHistory,
       required final int id,
       final DateTime? endTime,
       final DateTime? startTime,
@@ -522,6 +552,8 @@ abstract class _BidAuction implements BidAuction {
 
   @override
   List<User>? get bidders;
+  @override
+  List<Bidder>? get bidHistory;
   @override
   int get id;
   @override
