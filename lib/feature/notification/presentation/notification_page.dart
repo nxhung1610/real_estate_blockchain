@@ -32,7 +32,11 @@ class _NotificationPageState extends State<NotificationPage> {
     );
     pageController.addPageRequestListener((pageKey) {
       if (pageKey != 0) {
-        bloc.add(NotificationEvent.onLoadUserNotifications(page: pageKey));
+        bloc.add(
+          NotificationEvent.onLoadUserNotifications(
+            page: bloc.state.page + 1,
+          ),
+        );
       }
     });
     super.initState();
@@ -51,12 +55,13 @@ class _NotificationPageState extends State<NotificationPage> {
       listeners: [
         BlocListener<NotificationBloc, NotificationState>(
           listenWhen: (previous, current) =>
-              previous.newNotifications != current.newNotifications,
+              previous.newNotifications != current.newNotifications &&
+              current.newNotifications != null,
           listener: (context, state) {
+            if (state.page == 1) {
+              pageController.refresh();
+            }
             if (state.newNotifications != null) {
-              if (state.page == 0) {
-                pageController.refresh();
-              }
               if (state.canLoadMore) {
                 pageController.appendPage(
                   state.newNotifications!,
@@ -74,7 +79,7 @@ class _NotificationPageState extends State<NotificationPage> {
           listener: (context, state) {
             state.status.whenOrNull(
               failure: (value) {
-                if (state.page == 0) {
+                if (state.page == 1) {
                   pageController.error = value;
                 }
               },

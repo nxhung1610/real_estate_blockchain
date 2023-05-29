@@ -129,11 +129,14 @@ class BidDetailBloc extends Bloc<BidDetailEvent, BidDetailState> {
       ));
       res.fold(
         (l) => throw l,
-        (r) => emit(
-          state.copyWith(
-            status: Status.success(value: r),
-          ),
-        ),
+        (r) {
+          emit(
+            state.copyWith(
+              status: Status.success(value: r),
+            ),
+          );
+          add(const BidDetailEvent.onStarted());
+        },
       );
     } on Exception catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);

@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/post/domain/i_post_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
@@ -15,9 +17,11 @@ part 'discover_state.dart';
 
 @injectable
 class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
-  final IRealEstateRepository _realEstateRepository;
+  final IPostRepository _postRepository;
 
-  DiscoverBloc(this._realEstateRepository) : super(const DiscoverState()) {
+  DiscoverBloc(
+    this._postRepository,
+  ) : super(const DiscoverState()) {
     on<DiscoverEventOnFilterApply>(
         (event, emit) => emit(state.copyWith(filter: event.input)));
     on<DiscoverEventOnKeywordChanged>((event, emit) {
@@ -28,7 +32,7 @@ class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
     on<DiscoverEventOnRealEstateSelected>(_onEstateSelected);
     on<DiscoverEventUnSelected>(
       (event, emit) => emit(
-        state.copyWith(estateSelected: null),
+        state.copyWith(postSelected: null),
       ),
     );
   }
@@ -39,7 +43,7 @@ class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
   ) async {
     try {
       emit(state.copyWith(status: const Status.loading()));
-      final estates = await _realEstateRepository.search(
+      final estates = await _postRepository.search(
         RealEstateSearchInput(
           keyword: state.keyword,
         ),
@@ -50,7 +54,7 @@ class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
       }, (r) {
         emit(
           state.copyWith(
-            estates: r,
+            posts: r,
           ),
         );
       });
@@ -66,15 +70,13 @@ class DiscoverBloc extends Bloc<DiscoverEvent, DiscoverState> {
     Emitter<DiscoverState> emit,
   ) {
     try {
-      final check =
-          state.estates.where((element) => element.id == event.estate.id);
+      final check = state.posts.where((element) => element.id == event.post.id);
       if (check.isEmpty) {
-        emit(state.copyWith(
-            estates: List.from(state.estates)..add(event.estate)));
+        emit(state.copyWith(posts: List.from(state.posts)..add(event.post)));
       }
     } finally {
-      emit(state.copyWith(estateSelected: null));
-      emit(state.copyWith(estateSelected: event.estate));
+      emit(state.copyWith(postSelected: null));
+      emit(state.copyWith(postSelected: event.post));
     }
   }
 }

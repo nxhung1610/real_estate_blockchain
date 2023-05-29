@@ -484,7 +484,7 @@ abstract class SearchEventApplyFilter implements SearchEvent {
 mixin _$SearchState {
   String? get keyword => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
-  List<RealEstate> get estates => throw _privateConstructorUsedError;
+  List<PostRealEstate> get posts => throw _privateConstructorUsedError;
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -501,7 +501,7 @@ abstract class $SearchStateCopyWith<$Res> {
   $Res call(
       {String? keyword,
       Status status,
-      List<RealEstate> estates,
+      List<PostRealEstate> posts,
       RealEstateFilterInput? filter});
 
   $StatusCopyWith<$Res> get status;
@@ -523,7 +523,7 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
   $Res call({
     Object? keyword = freezed,
     Object? status = null,
-    Object? estates = null,
+    Object? posts = null,
     Object? filter = freezed,
   }) {
     return _then(_value.copyWith(
@@ -535,10 +535,10 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      estates: null == estates
-          ? _value.estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
+      posts: null == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostRealEstate>,
       filter: freezed == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
@@ -578,7 +578,7 @@ abstract class _$$_SearchStateCopyWith<$Res>
   $Res call(
       {String? keyword,
       Status status,
-      List<RealEstate> estates,
+      List<PostRealEstate> posts,
       RealEstateFilterInput? filter});
 
   @override
@@ -600,7 +600,7 @@ class __$$_SearchStateCopyWithImpl<$Res>
   $Res call({
     Object? keyword = freezed,
     Object? status = null,
-    Object? estates = null,
+    Object? posts = null,
     Object? filter = freezed,
   }) {
     return _then(_$_SearchState(
@@ -612,10 +612,10 @@ class __$$_SearchStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      estates: null == estates
-          ? _value._estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostRealEstate>,
       filter: freezed == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
@@ -630,22 +630,22 @@ class _$_SearchState implements _SearchState {
   const _$_SearchState(
       {this.keyword,
       this.status = const Status.idle(),
-      final List<RealEstate> estates = const [],
+      final List<PostRealEstate> posts = const [],
       this.filter})
-      : _estates = estates;
+      : _posts = posts;
 
   @override
   final String? keyword;
   @override
   @JsonKey()
   final Status status;
-  final List<RealEstate> _estates;
+  final List<PostRealEstate> _posts;
   @override
   @JsonKey()
-  List<RealEstate> get estates {
-    if (_estates is EqualUnmodifiableListView) return _estates;
+  List<PostRealEstate> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_estates);
+    return EqualUnmodifiableListView(_posts);
   }
 
   @override
@@ -653,7 +653,7 @@ class _$_SearchState implements _SearchState {
 
   @override
   String toString() {
-    return 'SearchState(keyword: $keyword, status: $status, estates: $estates, filter: $filter)';
+    return 'SearchState(keyword: $keyword, status: $status, posts: $posts, filter: $filter)';
   }
 
   @override
@@ -663,13 +663,13 @@ class _$_SearchState implements _SearchState {
             other is _$_SearchState &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._estates, _estates) &&
+            const DeepCollectionEquality().equals(other._posts, _posts) &&
             (identical(other.filter, filter) || other.filter == filter));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, keyword, status,
-      const DeepCollectionEquality().hash(_estates), filter);
+      const DeepCollectionEquality().hash(_posts), filter);
 
   @JsonKey(ignore: true)
   @override
@@ -682,7 +682,7 @@ abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {final String? keyword,
       final Status status,
-      final List<RealEstate> estates,
+      final List<PostRealEstate> posts,
       final RealEstateFilterInput? filter}) = _$_SearchState;
 
   @override
@@ -690,7 +690,7 @@ abstract class _SearchState implements SearchState {
   @override
   Status get status;
   @override
-  List<RealEstate> get estates;
+  List<PostRealEstate> get posts;
   @override
   RealEstateFilterInput? get filter;
   @override

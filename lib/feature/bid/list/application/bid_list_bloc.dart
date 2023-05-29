@@ -44,7 +44,7 @@ class BidListBloc extends Bloc<BidListEvent, BidListState> {
       bids.fold(
         (l) => throw l,
         (r) {
-          if (event.page == 0) {
+          if (event.page == 1) {
             return emit(
               state.copyWith(
                 bids: [],

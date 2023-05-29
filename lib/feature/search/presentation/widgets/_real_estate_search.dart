@@ -1,13 +1,13 @@
 part of '../search_page.dart';
 
-class _RealEstateSearchWidget extends StatelessWidget {
-  const _RealEstateSearchWidget({
+class _PostRealEstateSearchWidget extends StatelessWidget {
+  const _PostRealEstateSearchWidget({
     super.key,
-    required this.estate,
+    required this.post,
     this.onPress,
   });
 
-  final RealEstate estate;
+  final PostRealEstate post;
   final VoidCallback? onPress;
 
   @override
@@ -32,7 +32,7 @@ class _RealEstateSearchWidget extends StatelessWidget {
                 height: 60.h,
                 width: 60.w,
                 child: ImageCustom.network(
-                  estate.images?.first.url ?? '',
+                  post.realEstate.images?.first.url ?? '',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -44,7 +44,7 @@ class _RealEstateSearchWidget extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: Text(
-                      estate.name,
+                      post.realEstate.name,
                       style: context.textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                         color: AppColor.kNeutrals2,
@@ -56,7 +56,7 @@ class _RealEstateSearchWidget extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: Text(
-                      estate.address ?? '-',
+                      post.realEstate.address ?? '-',
                       style: context.textTheme.bodySmall?.copyWith(
                         color: AppColor.kNeutrals4,
                       ),

@@ -56,7 +56,9 @@ class WShortBidInfo extends StatelessWidget {
                             state?.highestBidder != null
                                 ? NumberFormat.currency(
                                         locale: "vi_VN", symbol: 'đ')
-                                    .format(state?.highestBidder ?? 0)
+                                    .format(num.tryParse(
+                                            state?.highestBindingBid ?? '') ??
+                                        0)
                                     .toString()
                                 : '- -/- -',
                             style: context.textTheme.bodyLarge?.copyWith(

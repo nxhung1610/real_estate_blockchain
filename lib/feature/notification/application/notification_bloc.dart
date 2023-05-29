@@ -37,7 +37,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       notifications.fold(
         (l) => throw l,
         (r) {
-          if (event.page == 0) {
+          if (event.page == 1) {
             return emit(
               state.copyWith(
                 notification: [],

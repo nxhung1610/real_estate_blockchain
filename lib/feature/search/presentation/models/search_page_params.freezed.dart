@@ -183,19 +183,19 @@ abstract class _SearchPageParams implements SearchPageParams {
 mixin _$SearchResultData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RealEstate estate) onSelected,
+    required TResult Function(PostRealEstate post) onSelected,
     required TResult Function(String keyword) onKeyword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RealEstate estate)? onSelected,
+    TResult? Function(PostRealEstate post)? onSelected,
     TResult? Function(String keyword)? onKeyword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RealEstate estate)? onSelected,
+    TResult Function(PostRealEstate post)? onSelected,
     TResult Function(String keyword)? onKeyword,
     required TResult orElse(),
   }) =>
@@ -246,9 +246,9 @@ abstract class _$$SearchResultDataOnSelectedCopyWith<$Res> {
           $Res Function(_$SearchResultDataOnSelected) then) =
       __$$SearchResultDataOnSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({PostRealEstate post});
 
-  $RealEstateCopyWith<$Res> get estate;
+  $PostRealEstateCopyWith<$Res> get post;
 }
 
 /// @nodoc
@@ -263,21 +263,21 @@ class __$$SearchResultDataOnSelectedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? estate = null,
+    Object? post = null,
   }) {
     return _then(_$SearchResultDataOnSelected(
-      null == estate
-          ? _value.estate
-          : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate,
+      null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateCopyWith<$Res> get estate {
-    return $RealEstateCopyWith<$Res>(_value.estate, (value) {
-      return _then(_value.copyWith(estate: value));
+  $PostRealEstateCopyWith<$Res> get post {
+    return $PostRealEstateCopyWith<$Res>(_value.post, (value) {
+      return _then(_value.copyWith(post: value));
     });
   }
 }
@@ -285,14 +285,14 @@ class __$$SearchResultDataOnSelectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchResultDataOnSelected implements SearchResultDataOnSelected {
-  const _$SearchResultDataOnSelected(this.estate);
+  const _$SearchResultDataOnSelected(this.post);
 
   @override
-  final RealEstate estate;
+  final PostRealEstate post;
 
   @override
   String toString() {
-    return 'SearchResultData.onSelected(estate: $estate)';
+    return 'SearchResultData.onSelected(post: $post)';
   }
 
   @override
@@ -300,11 +300,11 @@ class _$SearchResultDataOnSelected implements SearchResultDataOnSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchResultDataOnSelected &&
-            (identical(other.estate, estate) || other.estate == estate));
+            (identical(other.post, post) || other.post == post));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate);
+  int get hashCode => Object.hash(runtimeType, post);
 
   @JsonKey(ignore: true)
   @override
@@ -316,30 +316,30 @@ class _$SearchResultDataOnSelected implements SearchResultDataOnSelected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RealEstate estate) onSelected,
+    required TResult Function(PostRealEstate post) onSelected,
     required TResult Function(String keyword) onKeyword,
   }) {
-    return onSelected(estate);
+    return onSelected(post);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RealEstate estate)? onSelected,
+    TResult? Function(PostRealEstate post)? onSelected,
     TResult? Function(String keyword)? onKeyword,
   }) {
-    return onSelected?.call(estate);
+    return onSelected?.call(post);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RealEstate estate)? onSelected,
+    TResult Function(PostRealEstate post)? onSelected,
     TResult Function(String keyword)? onKeyword,
     required TResult orElse(),
   }) {
     if (onSelected != null) {
-      return onSelected(estate);
+      return onSelected(post);
     }
     return orElse();
   }
@@ -377,10 +377,10 @@ class _$SearchResultDataOnSelected implements SearchResultDataOnSelected {
 }
 
 abstract class SearchResultDataOnSelected implements SearchResultData {
-  const factory SearchResultDataOnSelected(final RealEstate estate) =
+  const factory SearchResultDataOnSelected(final PostRealEstate post) =
       _$SearchResultDataOnSelected;
 
-  RealEstate get estate;
+  PostRealEstate get post;
   @JsonKey(ignore: true)
   _$$SearchResultDataOnSelectedCopyWith<_$SearchResultDataOnSelected>
       get copyWith => throw _privateConstructorUsedError;
@@ -452,7 +452,7 @@ class _$SearchResultDataOnKeyword implements SearchResultDataOnKeyword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RealEstate estate) onSelected,
+    required TResult Function(PostRealEstate post) onSelected,
     required TResult Function(String keyword) onKeyword,
   }) {
     return onKeyword(keyword);
@@ -461,7 +461,7 @@ class _$SearchResultDataOnKeyword implements SearchResultDataOnKeyword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RealEstate estate)? onSelected,
+    TResult? Function(PostRealEstate post)? onSelected,
     TResult? Function(String keyword)? onKeyword,
   }) {
     return onKeyword?.call(keyword);
@@ -470,7 +470,7 @@ class _$SearchResultDataOnKeyword implements SearchResultDataOnKeyword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RealEstate estate)? onSelected,
+    TResult Function(PostRealEstate post)? onSelected,
     TResult Function(String keyword)? onKeyword,
     required TResult orElse(),
   }) {

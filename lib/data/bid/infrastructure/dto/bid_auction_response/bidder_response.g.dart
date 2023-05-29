@@ -9,6 +9,6 @@ part of 'bidder_response.dart';
 _$_BidderResponse _$$_BidderResponseFromJson(Map<String, dynamic> json) =>
     _$_BidderResponse(
       bidder: UserDto.fromJson(json['bidder'] as Map<String, dynamic>),
-      pirce: (json['pirce'] as num).toDouble(),
+      price: (json['price'] as num).toDouble(),
       createdAt: const DateTimeOrNull().fromJson(json['created_at'] as String?),
     );

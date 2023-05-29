@@ -13,7 +13,7 @@ class DiscoverEvent with _$DiscoverEvent {
 
   const factory DiscoverEvent.onSearch() = DiscoverEventOnSearch;
 
-  const factory DiscoverEvent.onRealEstateSelected(RealEstate estate) =
+  const factory DiscoverEvent.onRealEstateSelected(PostRealEstate post) =
       DiscoverEventOnRealEstateSelected;
 
   const factory DiscoverEvent.unSelected() = DiscoverEventUnSelected;

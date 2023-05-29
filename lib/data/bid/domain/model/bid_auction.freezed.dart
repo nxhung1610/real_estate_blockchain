@@ -23,7 +23,7 @@ mixin _$BidAuction {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   String? get extraData => throw _privateConstructorUsedError;
-  int? get status => throw _privateConstructorUsedError;
+  ProcessingStatus? get status => throw _privateConstructorUsedError;
   int? get reId => throw _privateConstructorUsedError;
   RealEstate? get realEstate => throw _privateConstructorUsedError;
   String? get highestBindingBid => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $BidAuctionCopyWith<$Res> {
       DateTime? updatedAt,
       DateTime? createdAt,
       String? extraData,
-      int? status,
+      ProcessingStatus? status,
       int? reId,
       RealEstate? realEstate,
       String? highestBindingBid,
@@ -135,7 +135,7 @@ class _$BidAuctionCopyWithImpl<$Res, $Val extends BidAuction>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as ProcessingStatus?,
       reId: freezed == reId
           ? _value.reId
           : reId // ignore: cast_nullable_to_non_nullable
@@ -232,7 +232,7 @@ abstract class _$$_BidAuctionCopyWith<$Res>
       DateTime? updatedAt,
       DateTime? createdAt,
       String? extraData,
-      int? status,
+      ProcessingStatus? status,
       int? reId,
       RealEstate? realEstate,
       String? highestBindingBid,
@@ -314,7 +314,7 @@ class __$$_BidAuctionCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as ProcessingStatus?,
       reId: freezed == reId
           ? _value.reId
           : reId // ignore: cast_nullable_to_non_nullable
@@ -406,7 +406,7 @@ class _$_BidAuction implements _BidAuction {
   @override
   final String? extraData;
   @override
-  final int? status;
+  final ProcessingStatus? status;
   @override
   final int? reId;
   @override
@@ -508,7 +508,7 @@ abstract class _BidAuction implements BidAuction {
       final DateTime? updatedAt,
       final DateTime? createdAt,
       final String? extraData,
-      final int? status,
+      final ProcessingStatus? status,
       final int? reId,
       final RealEstate? realEstate,
       final String? highestBindingBid,
@@ -535,7 +535,7 @@ abstract class _BidAuction implements BidAuction {
   @override
   String? get extraData;
   @override
-  int? get status;
+  ProcessingStatus? get status;
   @override
   int? get reId;
   @override

@@ -4,9 +4,13 @@ import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/post/domain/post_failure.dart';
 import 'package:real_estate_blockchain/data/post/domain/model/create_post_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/post_real_estate_response.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
+import '../../real_estate/infrastructure/dto/search/real_filter_request.dart';
+import '../../real_estate/infrastructure/dto/search/search_request.dart';
 import '../domain/i_post_repository.dart';
 
 @LazySingleton(as: IPostRepository)
@@ -75,6 +79,32 @@ class PostRepository implements IPostRepository {
         throw res.errorKey!;
       }
       return right(res.data as int);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(PostFailure());
+    }
+  }
+
+  @override
+  Future<Either<PostFailure, List<PostRealEstate>>> search(
+    RealEstateSearchInput data, {
+    RealEstateFilterInput? filter,
+  }) async {
+    try {
+      final res = await _apiRemote.post<List<PostRealEstateResponse>>(
+        '/real-estates/posts/search',
+        queryParameters: SearchRequest.fromModel(data).toJson(),
+        data: filter != null ? RealFilterRequest.fromModel(filter) : null,
+        parse: (data) {
+          return (data as List<dynamic>)
+              .map((e) => PostRealEstateResponse.fromJson(e))
+              .toList();
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(res.data?.map((e) => e.toModel()).toList() ?? []);
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       return left(PostFailure());

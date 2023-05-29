@@ -14,13 +14,13 @@ import 'package:grpc/grpc.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i30;
-import 'package:shared_preferences/shared_preferences.dart' as _i45;
+import 'package:shared_preferences/shared_preferences.dart' as _i44;
 
 import '../data/app/data.dart' as _i13;
 import '../data/app/infrastructure/local/app_config_local_repository.dart'
     as _i14;
 import '../data/auth/data.dart' as _i16;
-import '../data/auth/domain/entities/info/user.dart' as _i48;
+import '../data/auth/domain/entities/info/user.dart' as _i47;
 import '../data/auth/infrastructure/local/auth_local_repository.dart' as _i17;
 import '../data/auth/infrastructure/remote/auth_repository.dart' as _i63;
 import '../data/auth/infrastructure/remote/mapper/login_mapper.dart' as _i31;
@@ -45,23 +45,23 @@ import '../data/province/data.dart' as _i24;
 import '../data/province/infrastructure/local/provinces_repository.dart'
     as _i25;
 import '../data/real_estate/data.dart' as _i26;
-import '../data/real_estate/domain/i_real_estate_repository.dart' as _i43;
+import '../data/real_estate/domain/i_real_estate_repository.dart' as _i51;
 import '../data/real_estate/infrastructure/real_estate_repository.dart' as _i27;
 import '../data/tour/domain/i_tour_repository.dart' as _i68;
 import '../data/tour/infrastructure/tour_repository.dart' as _i69;
 import '../data/user/domain/i_user_repostiory.dart' as _i28;
 import '../data/user/infrastructure/user_repository.dart' as _i29;
-import '../feature/app/application/app_bloc.dart' as _i50;
+import '../feature/app/application/app_bloc.dart' as _i49;
 import '../feature/auth/application/application.dart' as _i72;
 import '../feature/auth/application/auth_bloc.dart' as _i82;
 import '../feature/auth/application/forgot_password/forgot_password_bloc.dart'
     as _i84;
 import '../feature/auth/application/login_bloc.dart' as _i70;
 import '../feature/auth/application/register_bloc.dart' as _i75;
-import '../feature/bid/detail/application/bid_detail_bloc.dart' as _i51;
+import '../feature/bid/detail/application/bid_detail_bloc.dart' as _i50;
 import '../feature/bid/list/application/bid_list_bloc.dart' as _i52;
 import '../feature/common/application/address/address_builder_cubit.dart'
-    as _i49;
+    as _i48;
 import '../feature/connectivity/application/connectivity_bloc.dart' as _i83;
 import '../feature/discover/application/discover_bloc.dart' as _i59;
 import '../feature/general/application/general_bloc.dart' as _i6;
@@ -94,7 +94,7 @@ import '../feature/post/detail/application/post_real_estate_detail_bloc.dart'
 import '../feature/post/detail/presentation/bottom/bid/create_bid_bloc.dart'
     as _i55;
 import '../feature/post/detail/presentation/bottom/create_post_bloc.dart'
-    as _i58;
+    as _i57;
 import '../feature/post/owner/application/post_owner_bloc.dart' as _i37;
 import '../feature/real_estate/config/real_estate_config_bloc.dart' as _i39;
 import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
@@ -102,11 +102,11 @@ import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
 import '../feature/real_estate/detail/presentation/bottom/bid/create_bid_bloc.dart'
     as _i56;
 import '../feature/real_estate/detail/presentation/bottom/create_post_bloc.dart'
-    as _i57;
+    as _i58;
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
     as _i41;
 import '../feature/search/application/search_bloc.dart' as _i42;
-import '../feature/setting/application/setting_bloc.dart' as _i44;
+import '../feature/setting/application/setting_bloc.dart' as _i43;
 import '../feature/tour/list/application/tour_own_bloc.dart' as _i78;
 import '../feature/tour/review/application/tour_review_bloc.dart' as _i79;
 import '../feature/tour/review/model/tour_review_params.dart' as _i80;
@@ -115,11 +115,11 @@ import '../feature/tour/schedule_tour/application/schedule_tour_bloc.dart'
 import '../feature/tour/schedule_tour/model/schedule_tour_params.dart' as _i77;
 import '../feature/user/change_password/application/user_change_password_bloc.dart'
     as _i81;
-import '../feature/user/profile/application/user_profile_bloc.dart' as _i47;
+import '../feature/user/profile/application/user_profile_bloc.dart' as _i46;
 import '../grpc/grpc_module.dart' as _i85;
 import '../grpc/grpc_service.dart' as _i7;
 import '../grpc/notification/service.pbgrpc.dart' as _i35;
-import '../grpc/tour/service.pbgrpc.dart' as _i46;
+import '../grpc/tour/service.pbgrpc.dart' as _i45;
 
 // ignore_for_file: unnecessary_lambdas
 // ignore_for_file: lines_longer_than_80_chars
@@ -226,40 +226,40 @@ Future<_i1.GetIt> $initGetIt(
   gh.factory<_i41.RealEstateFavoritesBloc>(
       () => _i41.RealEstateFavoritesBloc(gh<_i26.IRealEstateRepository>()));
   gh.factory<_i42.SearchBloc>(
-      () => _i42.SearchBloc(gh<_i43.IRealEstateRepository>()));
-  gh.factory<_i44.SettingBloc>(
-      () => _i44.SettingBloc(gh<_i28.IUserRepistory>()));
-  await gh.factoryAsync<_i45.SharedPreferences>(
+      () => _i42.SearchBloc(gh<_i22.IPostRepository>()));
+  gh.factory<_i43.SettingBloc>(
+      () => _i43.SettingBloc(gh<_i28.IUserRepistory>()));
+  await gh.factoryAsync<_i44.SharedPreferences>(
     () => coreData.sharedPreferences(),
     preResolve: true,
   );
-  gh.lazySingleton<_i46.TourServiceClient>(
+  gh.lazySingleton<_i45.TourServiceClient>(
     () => grpcModule.tourService(
       gh<_i5.ClientChannel>(),
       gh<_i7.GrpcService>(),
     ),
     instanceName: 'GRPC_TOUR_SERVICE',
   );
-  gh.factoryParam<_i47.UserProfileBloc, _i48.User, dynamic>((
+  gh.factoryParam<_i46.UserProfileBloc, _i47.User, dynamic>((
     user,
     _,
   ) =>
-      _i47.UserProfileBloc(
+      _i46.UserProfileBloc(
         gh<_i20.IFileRepository>(),
         user,
         gh<_i28.IUserRepistory>(),
       ));
-  gh.factory<_i49.AddressBuilderCubit>(
-      () => _i49.AddressBuilderCubit(gh<_i24.IProvincesRepository>()));
-  gh.factory<_i50.AppBloc>(
-      () => _i50.AppBloc(gh<_i13.IAppConfigLocalRepository>()));
-  gh.factoryParam<_i51.BidDetailBloc, String, dynamic>((
+  gh.factory<_i48.AddressBuilderCubit>(
+      () => _i48.AddressBuilderCubit(gh<_i24.IProvincesRepository>()));
+  gh.factory<_i49.AppBloc>(
+      () => _i49.AppBloc(gh<_i13.IAppConfigLocalRepository>()));
+  gh.factoryParam<_i50.BidDetailBloc, String, dynamic>((
     id,
     _,
   ) =>
-      _i51.BidDetailBloc(
+      _i50.BidDetailBloc(
         id,
-        gh<_i43.IRealEstateRepository>(),
+        gh<_i51.IRealEstateRepository>(),
         gh<_i18.IBidRepository>(),
       ));
   gh.factory<_i52.BidListBloc>(
@@ -305,7 +305,7 @@ Future<_i1.GetIt> $initGetIt(
         reId,
       ));
   gh.factory<_i59.DiscoverBloc>(
-      () => _i59.DiscoverBloc(gh<_i26.IRealEstateRepository>()));
+      () => _i59.DiscoverBloc(gh<_i22.IPostRepository>()));
   gh.factory<_i60.HomeBloc>(() => _i60.HomeBloc(
         gh<_i26.IRealEstateRepository>(),
         gh<_i24.IProvincesRepository>(),
@@ -334,7 +334,7 @@ Future<_i1.GetIt> $initGetIt(
       _i67.NotificationRepository(gh<_i35.NotificationServiceClient>(
           instanceName: 'GRPC_NOTIFICATION_SERVICE')));
   gh.lazySingleton<_i68.ITourRepository>(() => _i69.TourRepository(
-      gh<_i46.TourServiceClient>(instanceName: 'GRPC_TOUR_SERVICE')));
+      gh<_i45.TourServiceClient>(instanceName: 'GRPC_TOUR_SERVICE')));
   gh.factory<_i70.LoginBloc>(() => _i70.LoginBloc(gh<_i16.IAuthRepository>()));
   gh.factoryParam<_i71.MessageBloc, _i72.AuthBloc, String>((
     authBloc,

@@ -13,6 +13,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_location.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -91,10 +92,10 @@ class _DiscoverPageState extends State<DiscoverPage>
           keyword: context.read<DiscoverBloc>().state.keyword,
           onSearchResult: (data) {
             data.when(
-              onSelected: (estate) {
+              onSelected: (post) {
                 context
                     .read<DiscoverBloc>()
-                    .add(DiscoverEvent.onRealEstateSelected(estate));
+                    .add(DiscoverEvent.onRealEstateSelected(post));
               },
               onKeyword: (keyword) {
                 context
@@ -116,14 +117,14 @@ class _DiscoverPageState extends State<DiscoverPage>
       listeners: [
         BlocListener<DiscoverBloc, DiscoverState>(
           listenWhen: (previous, current) =>
-              previous.estateSelected != current.estateSelected,
+              previous.postSelected != current.postSelected,
           listener: (context, state) {
-            if (state.estateSelected != null) {
-              moveToRealEstate(state.estateSelected!);
+            if (state.postSelected != null) {
+              moveToRealEstate(state.postSelected!);
               if (pageController.hasClients) {
                 pageController.animateToPage(
-                  state.estates.indexWhere(
-                      (element) => element.id == state.estateSelected?.id),
+                  state.posts.indexWhere(
+                      (element) => element.id == state.postSelected?.id),
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.ease,
                 );
@@ -161,22 +162,23 @@ class _DiscoverPageState extends State<DiscoverPage>
                 ),
                 BlocBuilder<DiscoverBloc, DiscoverState>(
                   builder: (context, state) {
-                    final items = state.estates;
+                    final items = state.posts;
                     return MarkerLayer(
                       markers: [
                         if (pointer != null) pointer!,
                         ...items
                             .where((element) =>
-                                element.latitude != null &&
-                                element.longitude != null)
+                                element.realEstate.latitude != null &&
+                                element.realEstate.longitude != null)
                             .map(
                               (e) => Marker(
-                                point: LatLng(e.latitude!, e.longitude!),
+                                point: LatLng(e.realEstate.latitude!,
+                                    e.realEstate.longitude!),
                                 rotate: true,
                                 builder: (context) {
                                   return GestureDetector(
                                     onTap: () {
-                                      if (e.id != state.estateSelected?.id) {
+                                      if (e.id != state.postSelected?.id) {
                                         context.read<DiscoverBloc>().add(
                                               DiscoverEvent
                                                   .onRealEstateSelected(
@@ -195,10 +197,10 @@ class _DiscoverPageState extends State<DiscoverPage>
                                           const Duration(milliseconds: 500),
                                       child: Icon(
                                         CupertinoIcons.house_fill,
-                                        color: e.id == state.estateSelected?.id
+                                        color: e.id == state.postSelected?.id
                                             ? AppColor.kPrimary1
                                             : AppColor.kNeutrals11,
-                                        size: e.id == state.estateSelected?.id
+                                        size: e.id == state.postSelected?.id
                                             ? 35.r
                                             : 25.r,
                                       ),
@@ -345,7 +347,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                     ),
                     BlocBuilder<DiscoverBloc, DiscoverState>(
                       builder: (context, state) {
-                        if (state.estates.isEmpty) {
+                        if (state.posts.isEmpty) {
                           return const SizedBox.shrink();
                         }
                         return Column(
@@ -357,17 +359,17 @@ class _DiscoverPageState extends State<DiscoverPage>
                                 position: offsetEstate,
                                 child: ExpandablePageView(
                                   controller: pageController,
-                                  key: PageStorageKey(state.estates),
+                                  key: PageStorageKey(state.posts),
                                   itemBuilder: (context, index) {
-                                    final item = state.estates[index];
+                                    final item = state.posts[index];
                                     return Padding(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: AppSize.extraWidthDimens,
                                       ),
                                       child: _RealEstateSelected(
-                                        item: item,
+                                        item: item.realEstate,
                                         isSelected:
-                                            item.id == state.estateSelected?.id,
+                                            item.id == state.postSelected?.id,
                                         onSelected: (isSelected) {
                                           if (isSelected) {
                                             context.read<DiscoverBloc>().add(
@@ -386,7 +388,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                                       ),
                                     );
                                   },
-                                  itemCount: state.estates.length,
+                                  itemCount: state.posts.length,
                                 ),
                               ),
                             ),
@@ -481,10 +483,11 @@ class _DiscoverPageState extends State<DiscoverPage>
     _animatedMapMove(LatLng(location.latitude, location.longitude), 18);
   }
 
-  void moveToRealEstate(RealEstate estate) async {
+  void moveToRealEstate(PostRealEstate post) async {
     await Future.delayed(Duration.zero);
-    if (estate.latitude != null && estate.longitude != null) {
-      _animatedMapMove(LatLng(estate.latitude!, estate.longitude!), 18);
+    if (post.realEstate.latitude != null && post.realEstate.longitude != null) {
+      _animatedMapMove(
+          LatLng(post.realEstate.latitude!, post.realEstate.longitude!), 18);
     }
   }
 

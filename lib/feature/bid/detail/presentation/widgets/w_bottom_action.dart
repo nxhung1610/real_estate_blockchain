@@ -49,7 +49,11 @@ class _WBottomAction extends StatelessWidget {
                                     return BidBottomAction(
                                       duration: state.remain,
                                       bid: state.bid!,
-                                      onBid: (num bid) {},
+                                      onBid: (num bid) {
+                                        context
+                                            .read<BidDetailBloc>()
+                                            .add(BidDetailEvent.onBid(bid));
+                                      },
                                     );
                                   },
                                 );

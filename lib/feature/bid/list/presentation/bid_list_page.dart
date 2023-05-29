@@ -38,7 +38,7 @@ class _BidListPageState extends State<BidListPage> {
     );
     pageController.addPageRequestListener((pageKey) {
       if (pageKey != 0) {
-        bloc.add(BidListEvent.onFetch(page: pageKey));
+        bloc.add(BidListEvent.onFetch(page: bloc.state.page + 1));
       }
     });
   }
@@ -51,12 +51,12 @@ class _BidListPageState extends State<BidListPage> {
         listeners: [
           BlocListener<BidListBloc, BidListState>(
             listenWhen: (previous, current) =>
-                previous.newBids != current.newBids,
+                previous.newBids != current.newBids && current.newBids != null,
             listener: (context, state) {
+              if (state.page == 1) {
+                pageController.refresh();
+              }
               if (state.newBids != null) {
-                if (state.page == 0) {
-                  pageController.refresh();
-                }
                 if (state.canLoadMore) {
                   pageController.appendPage(
                     state.newBids!,
@@ -74,7 +74,7 @@ class _BidListPageState extends State<BidListPage> {
             listener: (context, state) {
               state.status.whenOrNull(
                 failure: (value) {
-                  if (state.page == 0) {
+                  if (state.page == 1) {
                     pageController.error = value;
                   }
                 },

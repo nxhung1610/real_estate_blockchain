@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PostRealEstate {
   int? get id => throw _privateConstructorUsedError;
-  int? get status => throw _privateConstructorUsedError;
+  ProcessingStatus? get status => throw _privateConstructorUsedError;
   String? get createdAt => throw _privateConstructorUsedError;
   String? get updatedAt => throw _privateConstructorUsedError;
   RealEstatePostType? get rePostType => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $PostRealEstateCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
-      int? status,
+      ProcessingStatus? status,
       String? createdAt,
       String? updatedAt,
       RealEstatePostType? rePostType,
@@ -92,7 +92,7 @@ class _$PostRealEstateCopyWithImpl<$Res, $Val extends PostRealEstate>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as ProcessingStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -167,7 +167,7 @@ abstract class _$$_PostRealEstateCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
-      int? status,
+      ProcessingStatus? status,
       String? createdAt,
       String? updatedAt,
       RealEstatePostType? rePostType,
@@ -217,7 +217,7 @@ class __$$_PostRealEstateCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as ProcessingStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -282,7 +282,7 @@ class _$_PostRealEstate implements _PostRealEstate {
   @override
   final int? id;
   @override
-  final int? status;
+  final ProcessingStatus? status;
   @override
   final String? createdAt;
   @override
@@ -363,7 +363,7 @@ class _$_PostRealEstate implements _PostRealEstate {
 abstract class _PostRealEstate implements PostRealEstate {
   factory _PostRealEstate(
       {final int? id,
-      final int? status,
+      final ProcessingStatus? status,
       final String? createdAt,
       final String? updatedAt,
       final RealEstatePostType? rePostType,
@@ -378,7 +378,7 @@ abstract class _PostRealEstate implements PostRealEstate {
   @override
   int? get id;
   @override
-  int? get status;
+  ProcessingStatus? get status;
   @override
   String? get createdAt;
   @override

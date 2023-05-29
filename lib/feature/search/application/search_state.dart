@@ -5,7 +5,7 @@ class SearchState with _$SearchState {
   const factory SearchState({
     String? keyword,
     @Default(Status.idle()) Status status,
-    @Default([]) List<RealEstate> estates,
+    @Default([]) List<PostRealEstate> posts,
     RealEstateFilterInput? filter,
   }) = _SearchState;
 }

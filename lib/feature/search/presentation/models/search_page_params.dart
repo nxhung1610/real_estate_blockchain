@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 
 part 'search_page_params.freezed.dart';
@@ -14,7 +15,7 @@ class SearchPageParams with _$SearchPageParams {
 
 @freezed
 class SearchResultData with _$SearchResultData {
-  const factory SearchResultData.onSelected(RealEstate estate) =
+  const factory SearchResultData.onSelected(PostRealEstate post) =
       SearchResultDataOnSelected;
 
   const factory SearchResultData.onKeyword(String keyword) =

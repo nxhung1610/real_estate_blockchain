@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_image_custom.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
@@ -217,12 +218,13 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             Expanded(
-                child: BlocSelector<SearchBloc, SearchState, List<RealEstate>?>(
+                child: BlocSelector<SearchBloc, SearchState,
+                    List<PostRealEstate>?>(
               selector: (state) {
                 return state.status.maybeWhen(
                   loading: () => null,
                   orElse: () {
-                    return state.estates;
+                    return state.posts;
                   },
                 );
               },
@@ -241,8 +243,8 @@ class _SearchPageState extends State<SearchPage> {
                 return ListView.separated(
                   itemBuilder: (context, index) {
                     final item = state[index];
-                    return _RealEstateSearchWidget(
-                      estate: item,
+                    return _PostRealEstateSearchWidget(
+                      post: item,
                       onPress: () {
                         context.pop();
                         widget.params.onSearchResult

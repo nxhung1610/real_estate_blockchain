@@ -162,7 +162,7 @@ class _$_BidListState implements _BidListState {
   const _$_BidListState(
       {final List<BidAuction> bids = const [],
       final List<BidAuction>? newBids,
-      this.page = 0,
+      this.page = 1,
       this.canLoadMore = true,
       this.status = const Status.idle()})
       : _bids = bids,

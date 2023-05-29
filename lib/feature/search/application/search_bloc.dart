@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/post/domain/i_post_repository.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/i_real_estate_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
@@ -15,9 +17,11 @@ part 'search_state.dart';
 
 @injectable
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final IRealEstateRepository _realEstateRepository;
+  final IPostRepository _postRepository;
 
-  SearchBloc(this._realEstateRepository) : super(const SearchState()) {
+  SearchBloc(
+    this._postRepository,
+  ) : super(const SearchState()) {
     on<SearchEventOnKeyChanged>(_onKeyChanged);
     on<SearchEventApplyFilter>(_onApplyFilter);
   }
@@ -28,7 +32,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   ) async {
     emit(state.copyWith(status: const Status.loading()));
     try {
-      final estate = await _realEstateRepository.search(
+      final estate = await _postRepository.search(
         RealEstateSearchInput(
           keyword: event.value,
         ),
@@ -39,7 +43,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         (r) {
           emit(
             state.copyWith(
-              estates: r,
+              posts: r,
               status: Status.success(
                 value: r,
               ),

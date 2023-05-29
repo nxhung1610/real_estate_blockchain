@@ -32,11 +32,15 @@ class _BidBottomActionState extends State<BidBottomAction> {
   Duration remain = Duration.zero;
 
   late num currentBid;
+  late num minBid;
   @override
   void initState() {
     super.initState();
-    currentBid = max(widget.bid.startingPrice ?? 0,
-        num.tryParse(widget.bid.highestBindingBid ?? '') ?? 0);
+    minBid = (num.tryParse(widget.bid.highestBindingBid ?? '') ??
+            widget.bid.startingPrice ??
+            0) +
+        (widget.bid.bidIncrement ?? 0);
+    currentBid = minBid;
   }
 
   void increaseBid() {
@@ -50,8 +54,7 @@ class _BidBottomActionState extends State<BidBottomAction> {
       currentBid -= widget.bid.bidIncrement ?? 0;
       currentBid = max(
         currentBid,
-        max(widget.bid.startingPrice ?? 0,
-            num.tryParse(widget.bid.highestBindingBid ?? '') ?? 0),
+        minBid,
       );
     });
   }
@@ -267,7 +270,7 @@ class _BidBottomActionState extends State<BidBottomAction> {
                   borderRadius: BorderRadius.circular(AppSize.smallRadius),
                   color: currentBid <=
                           max(
-                              widget.bid.startingPrice ?? 0,
+                              minBid,
                               num.tryParse(
                                       widget.bid.highestBindingBid ?? '') ??
                                   0)

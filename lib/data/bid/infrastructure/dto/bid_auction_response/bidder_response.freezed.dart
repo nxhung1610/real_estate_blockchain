@@ -21,7 +21,7 @@ BidderResponse _$BidderResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BidderResponse {
   UserDto get bidder => throw _privateConstructorUsedError;
-  double get pirce => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   @DateTimeOrNull()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $BidderResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {UserDto bidder,
-      double pirce,
+      double price,
       @JsonKey(name: 'created_at') @DateTimeOrNull() DateTime? createdAt});
 
   $UserDtoCopyWith<$Res> get bidder;
@@ -59,7 +59,7 @@ class _$BidderResponseCopyWithImpl<$Res, $Val extends BidderResponse>
   @override
   $Res call({
     Object? bidder = null,
-    Object? pirce = null,
+    Object? price = null,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -67,9 +67,9 @@ class _$BidderResponseCopyWithImpl<$Res, $Val extends BidderResponse>
           ? _value.bidder
           : bidder // ignore: cast_nullable_to_non_nullable
               as UserDto,
-      pirce: null == pirce
-          ? _value.pirce
-          : pirce // ignore: cast_nullable_to_non_nullable
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as double,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -97,7 +97,7 @@ abstract class _$$_BidderResponseCopyWith<$Res>
   @useResult
   $Res call(
       {UserDto bidder,
-      double pirce,
+      double price,
       @JsonKey(name: 'created_at') @DateTimeOrNull() DateTime? createdAt});
 
   @override
@@ -116,7 +116,7 @@ class __$$_BidderResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bidder = null,
-    Object? pirce = null,
+    Object? price = null,
     Object? createdAt = freezed,
   }) {
     return _then(_$_BidderResponse(
@@ -124,9 +124,9 @@ class __$$_BidderResponseCopyWithImpl<$Res>
           ? _value.bidder
           : bidder // ignore: cast_nullable_to_non_nullable
               as UserDto,
-      pirce: null == pirce
-          ? _value.pirce
-          : pirce // ignore: cast_nullable_to_non_nullable
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as double,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -141,7 +141,7 @@ class __$$_BidderResponseCopyWithImpl<$Res>
 class _$_BidderResponse implements _BidderResponse {
   _$_BidderResponse(
       {required this.bidder,
-      required this.pirce,
+      required this.price,
       @JsonKey(name: 'created_at') @DateTimeOrNull() this.createdAt});
 
   factory _$_BidderResponse.fromJson(Map<String, dynamic> json) =>
@@ -150,7 +150,7 @@ class _$_BidderResponse implements _BidderResponse {
   @override
   final UserDto bidder;
   @override
-  final double pirce;
+  final double price;
   @override
   @JsonKey(name: 'created_at')
   @DateTimeOrNull()
@@ -158,7 +158,7 @@ class _$_BidderResponse implements _BidderResponse {
 
   @override
   String toString() {
-    return 'BidderResponse(bidder: $bidder, pirce: $pirce, createdAt: $createdAt)';
+    return 'BidderResponse(bidder: $bidder, price: $price, createdAt: $createdAt)';
   }
 
   @override
@@ -167,14 +167,14 @@ class _$_BidderResponse implements _BidderResponse {
         (other.runtimeType == runtimeType &&
             other is _$_BidderResponse &&
             (identical(other.bidder, bidder) || other.bidder == bidder) &&
-            (identical(other.pirce, pirce) || other.pirce == pirce) &&
+            (identical(other.price, price) || other.price == price) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, bidder, pirce, createdAt);
+  int get hashCode => Object.hash(runtimeType, bidder, price, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -186,7 +186,7 @@ class _$_BidderResponse implements _BidderResponse {
 abstract class _BidderResponse implements BidderResponse {
   factory _BidderResponse(
       {required final UserDto bidder,
-      required final double pirce,
+      required final double price,
       @JsonKey(name: 'created_at')
       @DateTimeOrNull()
           final DateTime? createdAt}) = _$_BidderResponse;
@@ -197,7 +197,7 @@ abstract class _BidderResponse implements BidderResponse {
   @override
   UserDto get bidder;
   @override
-  double get pirce;
+  double get price;
   @override
   @JsonKey(name: 'created_at')
   @DateTimeOrNull()

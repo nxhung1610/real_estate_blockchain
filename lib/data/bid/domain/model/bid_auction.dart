@@ -3,6 +3,7 @@ import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart'
 import 'package:real_estate_blockchain/data/auth/infrastructure/remote/dto/info/user_dto/user_dto.dart';
 import 'package:real_estate_blockchain/data/bid/infrastructure/dto/bid_auction_response/bid_auction_response.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
 
@@ -18,7 +19,7 @@ class BidAuction with _$BidAuction {
     DateTime? updatedAt,
     DateTime? createdAt,
     String? extraData,
-    int? status,
+    ProcessingStatus? status,
     int? reId,
     RealEstate? realEstate,
     String? highestBindingBid,
@@ -40,7 +41,7 @@ class BidAuction with _$BidAuction {
       updatedAt: dto.updatedAt,
       createdAt: dto.createdAt,
       extraData: dto.extraData,
-      status: dto.status,
+      status: ProcessingStatus.fromValue(dto.status),
       reId: dto.reId,
       realEstate: dto.realEstate?.toModel(),
       highestBindingBid: dto.highestBindingBid,

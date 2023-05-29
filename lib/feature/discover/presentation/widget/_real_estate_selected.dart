@@ -107,12 +107,15 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                             height: AppSize.smallIcon,
                           ),
                           AppSize.smallWidthDimens.horizontalSpace,
-                          Text(
-                            widget.item.noWc?.toString() ?? '0',
-                            style: context.textTheme.bodyMedium?.copyWith(
-                              color: AppColor.kIconColorSecondary(
-                                context.watch<AppBloc>().state.mode,
+                          Flexible(
+                            child: Text(
+                              widget.item.noWc?.toString() ?? '0',
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                color: AppColor.kIconColorSecondary(
+                                  context.watch<AppBloc>().state.mode,
+                                ),
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           12.w.horizontalSpace,
@@ -124,12 +127,15 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                             height: AppSize.smallIcon,
                           ),
                           AppSize.smallWidthDimens.horizontalSpace,
-                          Text(
-                            widget.item.noBedrooms?.toString() ?? '0',
-                            style: context.textTheme.bodyMedium?.copyWith(
-                              color: AppColor.kIconColorSecondary(
-                                context.watch<AppBloc>().state.mode,
+                          Flexible(
+                            child: Text(
+                              widget.item.noBedrooms?.toString() ?? '0',
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                color: AppColor.kIconColorSecondary(
+                                  context.watch<AppBloc>().state.mode,
+                                ),
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           12.w.horizontalSpace,
@@ -174,6 +180,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                           color: AppColor.kPrimary1,
                           fontWeight: FontWeight.w800,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       )
                     ],
                   ),

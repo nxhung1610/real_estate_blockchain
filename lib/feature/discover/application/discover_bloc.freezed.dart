@@ -22,7 +22,7 @@ mixin _$DiscoverEvent {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ mixin _$DiscoverEvent {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ mixin _$DiscoverEvent {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) =>
@@ -143,7 +143,7 @@ class _$_Started implements _Started {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
     return started();
@@ -156,7 +156,7 @@ class _$_Started implements _Started {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
     return started?.call();
@@ -169,7 +169,7 @@ class _$_Started implements _Started {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
@@ -312,7 +312,7 @@ class _$DiscoverEventOnFilterApply implements DiscoverEventOnFilterApply {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
     return onFilterApply(input);
@@ -325,7 +325,7 @@ class _$DiscoverEventOnFilterApply implements DiscoverEventOnFilterApply {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
     return onFilterApply?.call(input);
@@ -338,7 +338,7 @@ class _$DiscoverEventOnFilterApply implements DiscoverEventOnFilterApply {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
@@ -477,7 +477,7 @@ class _$DiscoverEventOnKeywordChanged implements DiscoverEventOnKeywordChanged {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
     return onKeywordChanged(keyword);
@@ -490,7 +490,7 @@ class _$DiscoverEventOnKeywordChanged implements DiscoverEventOnKeywordChanged {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
     return onKeywordChanged?.call(keyword);
@@ -503,7 +503,7 @@ class _$DiscoverEventOnKeywordChanged implements DiscoverEventOnKeywordChanged {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
@@ -613,7 +613,7 @@ class _$DiscoverEventOnSearch implements DiscoverEventOnSearch {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
     return onSearch();
@@ -626,7 +626,7 @@ class _$DiscoverEventOnSearch implements DiscoverEventOnSearch {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
     return onSearch?.call();
@@ -639,7 +639,7 @@ class _$DiscoverEventOnSearch implements DiscoverEventOnSearch {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
@@ -708,9 +708,9 @@ abstract class _$$DiscoverEventOnRealEstateSelectedCopyWith<$Res> {
           $Res Function(_$DiscoverEventOnRealEstateSelected) then) =
       __$$DiscoverEventOnRealEstateSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({PostRealEstate post});
 
-  $RealEstateCopyWith<$Res> get estate;
+  $PostRealEstateCopyWith<$Res> get post;
 }
 
 /// @nodoc
@@ -726,21 +726,21 @@ class __$$DiscoverEventOnRealEstateSelectedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? estate = null,
+    Object? post = null,
   }) {
     return _then(_$DiscoverEventOnRealEstateSelected(
-      null == estate
-          ? _value.estate
-          : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate,
+      null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateCopyWith<$Res> get estate {
-    return $RealEstateCopyWith<$Res>(_value.estate, (value) {
-      return _then(_value.copyWith(estate: value));
+  $PostRealEstateCopyWith<$Res> get post {
+    return $PostRealEstateCopyWith<$Res>(_value.post, (value) {
+      return _then(_value.copyWith(post: value));
     });
   }
 }
@@ -749,14 +749,14 @@ class __$$DiscoverEventOnRealEstateSelectedCopyWithImpl<$Res>
 
 class _$DiscoverEventOnRealEstateSelected
     implements DiscoverEventOnRealEstateSelected {
-  const _$DiscoverEventOnRealEstateSelected(this.estate);
+  const _$DiscoverEventOnRealEstateSelected(this.post);
 
   @override
-  final RealEstate estate;
+  final PostRealEstate post;
 
   @override
   String toString() {
-    return 'DiscoverEvent.onRealEstateSelected(estate: $estate)';
+    return 'DiscoverEvent.onRealEstateSelected(post: $post)';
   }
 
   @override
@@ -764,11 +764,11 @@ class _$DiscoverEventOnRealEstateSelected
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DiscoverEventOnRealEstateSelected &&
-            (identical(other.estate, estate) || other.estate == estate));
+            (identical(other.post, post) || other.post == post));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate);
+  int get hashCode => Object.hash(runtimeType, post);
 
   @JsonKey(ignore: true)
   @override
@@ -785,10 +785,10 @@ class _$DiscoverEventOnRealEstateSelected
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
-    return onRealEstateSelected(estate);
+    return onRealEstateSelected(post);
   }
 
   @override
@@ -798,10 +798,10 @@ class _$DiscoverEventOnRealEstateSelected
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
-    return onRealEstateSelected?.call(estate);
+    return onRealEstateSelected?.call(post);
   }
 
   @override
@@ -811,12 +811,12 @@ class _$DiscoverEventOnRealEstateSelected
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
     if (onRealEstateSelected != null) {
-      return onRealEstateSelected(estate);
+      return onRealEstateSelected(post);
     }
     return orElse();
   }
@@ -870,10 +870,10 @@ class _$DiscoverEventOnRealEstateSelected
 }
 
 abstract class DiscoverEventOnRealEstateSelected implements DiscoverEvent {
-  const factory DiscoverEventOnRealEstateSelected(final RealEstate estate) =
+  const factory DiscoverEventOnRealEstateSelected(final PostRealEstate post) =
       _$DiscoverEventOnRealEstateSelected;
 
-  RealEstate get estate;
+  PostRealEstate get post;
   @JsonKey(ignore: true)
   _$$DiscoverEventOnRealEstateSelectedCopyWith<
           _$DiscoverEventOnRealEstateSelected>
@@ -923,7 +923,7 @@ class _$DiscoverEventUnSelected implements DiscoverEventUnSelected {
     required TResult Function(RealEstateFilterInput input) onFilterApply,
     required TResult Function(String keyword) onKeywordChanged,
     required TResult Function() onSearch,
-    required TResult Function(RealEstate estate) onRealEstateSelected,
+    required TResult Function(PostRealEstate post) onRealEstateSelected,
     required TResult Function() unSelected,
   }) {
     return unSelected();
@@ -936,7 +936,7 @@ class _$DiscoverEventUnSelected implements DiscoverEventUnSelected {
     TResult? Function(RealEstateFilterInput input)? onFilterApply,
     TResult? Function(String keyword)? onKeywordChanged,
     TResult? Function()? onSearch,
-    TResult? Function(RealEstate estate)? onRealEstateSelected,
+    TResult? Function(PostRealEstate post)? onRealEstateSelected,
     TResult? Function()? unSelected,
   }) {
     return unSelected?.call();
@@ -949,7 +949,7 @@ class _$DiscoverEventUnSelected implements DiscoverEventUnSelected {
     TResult Function(RealEstateFilterInput input)? onFilterApply,
     TResult Function(String keyword)? onKeywordChanged,
     TResult Function()? onSearch,
-    TResult Function(RealEstate estate)? onRealEstateSelected,
+    TResult Function(PostRealEstate post)? onRealEstateSelected,
     TResult Function()? unSelected,
     required TResult orElse(),
   }) {
@@ -1015,8 +1015,8 @@ abstract class DiscoverEventUnSelected implements DiscoverEvent {
 mixin _$DiscoverState {
   String? get keyword => throw _privateConstructorUsedError;
   RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
-  List<RealEstate> get estates => throw _privateConstructorUsedError;
-  RealEstate? get estateSelected => throw _privateConstructorUsedError;
+  List<PostRealEstate> get posts => throw _privateConstructorUsedError;
+  PostRealEstate? get postSelected => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1033,12 +1033,12 @@ abstract class $DiscoverStateCopyWith<$Res> {
   $Res call(
       {String? keyword,
       RealEstateFilterInput? filter,
-      List<RealEstate> estates,
-      RealEstate? estateSelected,
+      List<PostRealEstate> posts,
+      PostRealEstate? postSelected,
       Status status});
 
   $RealEstateFilterInputCopyWith<$Res>? get filter;
-  $RealEstateCopyWith<$Res>? get estateSelected;
+  $PostRealEstateCopyWith<$Res>? get postSelected;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -1057,8 +1057,8 @@ class _$DiscoverStateCopyWithImpl<$Res, $Val extends DiscoverState>
   $Res call({
     Object? keyword = freezed,
     Object? filter = freezed,
-    Object? estates = null,
-    Object? estateSelected = freezed,
+    Object? posts = null,
+    Object? postSelected = freezed,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -1070,14 +1070,14 @@ class _$DiscoverStateCopyWithImpl<$Res, $Val extends DiscoverState>
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
               as RealEstateFilterInput?,
-      estates: null == estates
-          ? _value.estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
-      estateSelected: freezed == estateSelected
-          ? _value.estateSelected
-          : estateSelected // ignore: cast_nullable_to_non_nullable
-              as RealEstate?,
+      posts: null == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostRealEstate>,
+      postSelected: freezed == postSelected
+          ? _value.postSelected
+          : postSelected // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1099,13 +1099,13 @@ class _$DiscoverStateCopyWithImpl<$Res, $Val extends DiscoverState>
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateCopyWith<$Res>? get estateSelected {
-    if (_value.estateSelected == null) {
+  $PostRealEstateCopyWith<$Res>? get postSelected {
+    if (_value.postSelected == null) {
       return null;
     }
 
-    return $RealEstateCopyWith<$Res>(_value.estateSelected!, (value) {
-      return _then(_value.copyWith(estateSelected: value) as $Val);
+    return $PostRealEstateCopyWith<$Res>(_value.postSelected!, (value) {
+      return _then(_value.copyWith(postSelected: value) as $Val);
     });
   }
 
@@ -1129,14 +1129,14 @@ abstract class _$$_DiscoverStateCopyWith<$Res>
   $Res call(
       {String? keyword,
       RealEstateFilterInput? filter,
-      List<RealEstate> estates,
-      RealEstate? estateSelected,
+      List<PostRealEstate> posts,
+      PostRealEstate? postSelected,
       Status status});
 
   @override
   $RealEstateFilterInputCopyWith<$Res>? get filter;
   @override
-  $RealEstateCopyWith<$Res>? get estateSelected;
+  $PostRealEstateCopyWith<$Res>? get postSelected;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -1154,8 +1154,8 @@ class __$$_DiscoverStateCopyWithImpl<$Res>
   $Res call({
     Object? keyword = freezed,
     Object? filter = freezed,
-    Object? estates = null,
-    Object? estateSelected = freezed,
+    Object? posts = null,
+    Object? postSelected = freezed,
     Object? status = null,
   }) {
     return _then(_$_DiscoverState(
@@ -1167,14 +1167,14 @@ class __$$_DiscoverStateCopyWithImpl<$Res>
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
               as RealEstateFilterInput?,
-      estates: null == estates
-          ? _value._estates
-          : estates // ignore: cast_nullable_to_non_nullable
-              as List<RealEstate>,
-      estateSelected: freezed == estateSelected
-          ? _value.estateSelected
-          : estateSelected // ignore: cast_nullable_to_non_nullable
-              as RealEstate?,
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostRealEstate>,
+      postSelected: freezed == postSelected
+          ? _value.postSelected
+          : postSelected // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1189,33 +1189,33 @@ class _$_DiscoverState implements _DiscoverState {
   const _$_DiscoverState(
       {this.keyword,
       this.filter,
-      final List<RealEstate> estates = const [],
-      this.estateSelected,
+      final List<PostRealEstate> posts = const [],
+      this.postSelected,
       this.status = const Status.idle()})
-      : _estates = estates;
+      : _posts = posts;
 
   @override
   final String? keyword;
   @override
   final RealEstateFilterInput? filter;
-  final List<RealEstate> _estates;
+  final List<PostRealEstate> _posts;
   @override
   @JsonKey()
-  List<RealEstate> get estates {
-    if (_estates is EqualUnmodifiableListView) return _estates;
+  List<PostRealEstate> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_estates);
+    return EqualUnmodifiableListView(_posts);
   }
 
   @override
-  final RealEstate? estateSelected;
+  final PostRealEstate? postSelected;
   @override
   @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'DiscoverState(keyword: $keyword, filter: $filter, estates: $estates, estateSelected: $estateSelected, status: $status)';
+    return 'DiscoverState(keyword: $keyword, filter: $filter, posts: $posts, postSelected: $postSelected, status: $status)';
   }
 
   @override
@@ -1225,15 +1225,15 @@ class _$_DiscoverState implements _DiscoverState {
             other is _$_DiscoverState &&
             (identical(other.keyword, keyword) || other.keyword == keyword) &&
             (identical(other.filter, filter) || other.filter == filter) &&
-            const DeepCollectionEquality().equals(other._estates, _estates) &&
-            (identical(other.estateSelected, estateSelected) ||
-                other.estateSelected == estateSelected) &&
+            const DeepCollectionEquality().equals(other._posts, _posts) &&
+            (identical(other.postSelected, postSelected) ||
+                other.postSelected == postSelected) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, keyword, filter,
-      const DeepCollectionEquality().hash(_estates), estateSelected, status);
+      const DeepCollectionEquality().hash(_posts), postSelected, status);
 
   @JsonKey(ignore: true)
   @override
@@ -1246,8 +1246,8 @@ abstract class _DiscoverState implements DiscoverState {
   const factory _DiscoverState(
       {final String? keyword,
       final RealEstateFilterInput? filter,
-      final List<RealEstate> estates,
-      final RealEstate? estateSelected,
+      final List<PostRealEstate> posts,
+      final PostRealEstate? postSelected,
       final Status status}) = _$_DiscoverState;
 
   @override
@@ -1255,9 +1255,9 @@ abstract class _DiscoverState implements DiscoverState {
   @override
   RealEstateFilterInput? get filter;
   @override
-  List<RealEstate> get estates;
+  List<PostRealEstate> get posts;
   @override
-  RealEstate? get estateSelected;
+  PostRealEstate? get postSelected;
   @override
   Status get status;
   @override

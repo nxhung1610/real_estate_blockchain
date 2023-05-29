@@ -53,7 +53,7 @@ class WDetailBidInfo extends StatelessWidget {
             ),
             _Item(
               title: s.auctionId,
-              body: state?.id?.toString() ?? '- -/- - ',
+              body: state?.id.toString() ?? '- -/- - ',
             ),
           ],
         );

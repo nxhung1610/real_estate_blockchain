@@ -16,7 +16,7 @@ class Bidder with _$Bidder {
   factory Bidder.fromResponse(BidderResponse response) {
     return Bidder(
       bidder: response.bidder.toModel(),
-      price: response.pirce,
+      price: response.price,
       createdAt: response.createdAt,
     );
   }

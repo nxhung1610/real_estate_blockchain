@@ -9,7 +9,7 @@ part 'bidder_response.g.dart';
 class BidderResponse with _$BidderResponse {
   factory BidderResponse({
     required UserDto bidder,
-    required double pirce,
+    required double price,
     @JsonKey(name: 'created_at') @DateTimeOrNull() DateTime? createdAt,
   }) = _BidderResponse;
 

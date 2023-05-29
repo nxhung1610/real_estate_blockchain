@@ -8,9 +8,11 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_status.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/bid/detail/model/bid_detail_params.dart';
 import 'package:real_estate_blockchain/feature/bid/list/application/bid_list_bloc.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/my_home/application/my_home_bloc.dart';
@@ -29,7 +31,7 @@ class WBidItem extends StatelessWidget {
       onTap: () {
         context.push(
           $appRoute.bid.url,
-          extra: RealEstateDetailPageParams(
+          extra: BidDetailParams(
             id: item.id.toString(),
             onSuccess: () {
               context.read<BidListBloc>().add(const BidListEvent.onStarted());
@@ -178,42 +180,49 @@ class WBidItem extends StatelessWidget {
               ),
             ),
           ),
-          if (item.realEstate?.status != RealEstateStatus.normal)
-            Positioned(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: () {
-                    switch (item.realEstate?.status) {
-                      case RealEstateStatus.delete:
-                        return Colors.redAccent;
-                      case RealEstateStatus.processing:
-                        return Colors.yellowAccent;
-                      case RealEstateStatus.failed:
-                        return Colors.grey.shade600;
-                      default:
-                        return null;
-                    }
-                  }(),
-                  borderRadius: BorderRadius.circular(
-                    12.r,
-                  ),
-                  border: const Border.fromBorderSide(
-                    BorderSide(color: Colors.white),
-                  ),
-                ),
-                padding: EdgeInsets.symmetric(
-                  vertical: 4.h,
-                  horizontal: 8.h,
-                ),
-                margin: EdgeInsets.all(10.r),
-                child: Text(
-                  item.realEstate?.status?.title.toString() ?? '',
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            )
+          // if (item.status != ProcessingStatus.approved)
+          //   Positioned(
+          //     child: Container(
+          //       decoration: BoxDecoration(
+          //         color: () {
+          //           switch (item.status) {
+          //             case ProcessingStatus.waiting:
+          //             //   return Colors.redAccent;
+          //             case ProcessingStatus.deleted:
+          //               // TODO: Handle this case.
+          //               break;
+          //             case ProcessingStatus.processing:
+          //               return Colors.grey.shade300;
+          //             case ProcessingStatus.failed:
+          //               // TODO: Handle this case.
+          //               break;
+          //             case ProcessingStatus.approved:
+          //               // TODO: Handle this case.
+          //               break;
+          //             default:
+          //               return null;
+          //           }
+          //         }(),
+          //         borderRadius: BorderRadius.circular(
+          //           12.r,
+          //         ),
+          //         border: const Border.fromBorderSide(
+          //           BorderSide(color: Colors.white),
+          //         ),
+          //       ),
+          //       padding: EdgeInsets.symmetric(
+          //         vertical: 4.h,
+          //         horizontal: 8.h,
+          //       ),
+          //       margin: EdgeInsets.all(10.r),
+          //       child: Text(
+          //         item.realEstate?.status?.title.toString() ?? '',
+          //         style: context.textTheme.bodySmall?.copyWith(
+          //           color: Colors.white,
+          //         ),
+          //       ),
+          //     ),
+          //   )
         ],
       ),
     );
