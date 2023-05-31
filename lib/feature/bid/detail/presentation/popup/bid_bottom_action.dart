@@ -36,11 +36,11 @@ class _BidBottomActionState extends State<BidBottomAction> {
   @override
   void initState() {
     super.initState();
-    minBid = (num.tryParse(widget.bid.highestBindingBid ?? '') ??
-            widget.bid.startingPrice ??
-            0) +
-        (widget.bid.bidIncrement ?? 0);
+    minBid = num.tryParse(widget.bid.highestBindingBid ?? '') ??
+        ((widget.bid.startingPrice ?? 0) + (widget.bid.bidIncrement ?? 0));
     currentBid = minBid;
+    remain = widget.duration;
+    startTimer(remain);
   }
 
   void increaseBid() {
@@ -88,7 +88,7 @@ class _BidBottomActionState extends State<BidBottomAction> {
   void setCountDown() {
     const reduceSecondsBy = 1;
     final seconds = remain.inSeconds - reduceSecondsBy;
-    if (seconds < 0) {
+    if (seconds < 0 || !mounted) {
       countdownTimer!.cancel();
     } else {
       setState(() {

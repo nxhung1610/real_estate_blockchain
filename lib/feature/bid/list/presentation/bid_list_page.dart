@@ -102,7 +102,7 @@ class _BidListPageState extends State<BidListPage> {
             children: [
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-                sliver: PagedSliverList<int, BidAuction>(
+                sliver: PagedSliverList<int, BidAuction>.separated(
                   pagingController: pageController,
                   builderDelegate: PagedChildBuilderDelegate(
                     itemBuilder: (context, item, index) {
@@ -157,6 +157,9 @@ class _BidListPageState extends State<BidListPage> {
                       );
                     },
                   ),
+                  separatorBuilder: (BuildContext context, int index) {
+                    return 16.h.verticalSpace;
+                  },
                 ),
               )
             ],

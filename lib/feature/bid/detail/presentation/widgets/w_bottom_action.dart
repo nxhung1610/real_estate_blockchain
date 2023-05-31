@@ -20,6 +20,7 @@ class _WBottomAction extends StatelessWidget {
         color: AppColor.kBackgroundLight,
       ),
       child: BlocBuilder<BidDetailBloc, BidDetailState>(
+        buildWhen: (previous, current) => previous.bid != current.bid,
         builder: (context, state) {
           final authState =
               context.read<AuthBloc>().state as AuthStateAuthenticated?;
@@ -47,7 +48,10 @@ class _WBottomAction extends StatelessWidget {
                                   context: context,
                                   builder: (_) {
                                     return BidBottomAction(
-                                      duration: state.remain,
+                                      duration: context
+                                          .read<BidDetailBloc>()
+                                          .state
+                                          .remain,
                                       bid: state.bid!,
                                       onBid: (num bid) {
                                         context

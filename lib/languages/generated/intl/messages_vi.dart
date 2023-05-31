@@ -151,7 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ground": MessageLookupByLibrary.simpleMessage("Đất"),
         "hi": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "highestBindingBid":
-            MessageLookupByLibrary.simpleMessage("Giá thầu cao nhất"),
+            MessageLookupByLibrary.simpleMessage("Giá thầu ràng buộc"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),

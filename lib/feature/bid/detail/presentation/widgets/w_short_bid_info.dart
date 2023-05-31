@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,9 +58,13 @@ class WShortBidInfo extends StatelessWidget {
                             state?.highestBidder != null
                                 ? NumberFormat.currency(
                                         locale: "vi_VN", symbol: 'đ')
-                                    .format(num.tryParse(
-                                            state?.highestBindingBid ?? '') ??
-                                        0)
+                                    .format((max(
+                                            0,
+                                            num.tryParse(
+                                                    state?.highestBindingBid ??
+                                                        '') ??
+                                                0) -
+                                        (state?.bidIncrement ?? 0)))
                                     .toString()
                                 : '- -/- -',
                             style: context.textTheme.bodyLarge?.copyWith(

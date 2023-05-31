@@ -228,7 +228,7 @@
   "posts" : "Bài đăng",
   "auctions" : "Đấu thầu",
   "currentPrice" : "Giá hiện tại",
-  "highestBindingBid"  :"Giá thầu cao nhất",
+  "highestBindingBid"  :"Giá thầu ràng buộc",
   "bidIncrement" : "Tăng giá thầu",
   "auctionId" : "Mã đấu thầu",
   "timeLeft" : "Thời gian còn lại",
