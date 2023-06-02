@@ -18,6 +18,7 @@ import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart'
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
@@ -43,6 +44,7 @@ part './widgets/_w_amenities.dart';
 part './widgets/_w_direction.dart';
 part './widgets/_w_info_house.dart';
 part './widgets/_w_location.dart';
+part './widgets/_w_bottom_viewer_action.dart';
 
 class PostRealEstateDetailPage extends StatefulWidget {
   final PostRealEstateDetailPageParams params;
@@ -91,7 +93,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
             context.appDialog.showAppDialog(message: s.anErrorOccurred);
           },
           success: (value) {
-            if (value is RealEstateDetailSuccess) {
+            if (value is PostRealEstateDetailSuccess) {
               value.whenOrNull(
                 createRoom: (room) {
                   context.appDialog.dismissDialog();
@@ -118,24 +120,24 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
         );
       },
       child: Scaffold(
-        // bottomNavigationBar: BlocSelector<AuthBloc, AuthState, User?>(
-        //   selector: (state) {
-        //     return state.whenOrNull(
-        //       authenticated: (authToken, user) => user,
-        //     );
-        //   },
-        //   builder: (context, state) {
-        //     final estate =
-        //         context.read<PostRealEstateDetailBloc>().state.estate;
-        //     if (estate == null) return const SizedBox.shrink();
-        //     if (state != null && estate.ownerId != state.id) {
-        //       return _WBottomViewerAction(
-        //         item: estate,
-        //       );
-        //     }
-        //     return const WBottomOwnerAction();
-        //   },
-        // ),
+        bottomNavigationBar: BlocSelector<AuthBloc, AuthState, User?>(
+          selector: (state) {
+            return state.whenOrNull(
+              authenticated: (authToken, user) => user,
+            );
+          },
+          builder: (context, state) {
+            final estate =
+                context.read<PostRealEstateDetailBloc>().state.post?.realEstate;
+            if (estate == null || estate.ownerId == state?.id) {
+              return const SizedBox.shrink();
+            }
+
+            return _WBottomViewerAction(
+              item: estate,
+            );
+          },
+        ),
         body: WCustomRefreshScrollView(
           onRefresh: () async {
             bloc.add(const PostRealEstateDetailEvent.onStarted());
@@ -144,7 +146,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
             BlocSelector<PostRealEstateDetailBloc, PostRealEstateDetailState,
                 bool>(
               selector: (state) {
-                return !(!state.isShimmer && state.estate == null);
+                return !(!state.isShimmer && state.post?.realEstate == null);
               },
               builder: (context, isExpaned) {
                 return SliverAppBar(
@@ -177,7 +179,8 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                         final estate = context
                             .read<PostRealEstateDetailBloc>()
                             .state
-                            .estate;
+                            .post
+                            ?.realEstate;
                         if (estate == null) return const SizedBox.shrink();
                         if (state != null && estate.ownerId == state.id) {
                           return UnconstrainedBox(
@@ -240,7 +243,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                     child: BlocSelector<PostRealEstateDetailBloc,
                         PostRealEstateDetailState, String?>(
                       selector: (state) {
-                        return state.estate?.name;
+                        return state.post?.realEstate.name;
                       },
                       builder: (context, name) {
                         if (name == null) return const SizedBox.shrink();
@@ -263,10 +266,11 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                         );
                         final state =
                             context.read<PostRealEstateDetailBloc>().state;
-                        if (state.isShimmer && state.estate == null) {
+                        if (state.isShimmer && state.post?.realEstate == null) {
                           return const SkeletonWidget();
                         }
-                        if (!state.isShimmer && state.estate == null) {
+                        if (!state.isShimmer &&
+                            state.post?.realEstate == null) {
                           return const SizedBox.shrink();
                         }
                         return FlexibleSpaceBar(
@@ -294,7 +298,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                   children: [
                                     Flexible(
                                       child: Text(
-                                        state.estate?.name ?? '',
+                                        state.post?.realEstate.name ?? '',
                                         style: context.textTheme.headlineSmall
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
@@ -304,15 +308,23 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                     AppSize.smallHeightDimens.verticalSpace,
                                     Flexible(
                                       child: BlocProvider(
-                                        create: (context) => getIt
-                                            .call<AddressBuilderCubit>()
-                                          ..onLoadAdress(
-                                            proviceId:
-                                                state.estate?.provinceId ?? '',
-                                            wardId: state.estate?.wardId ?? '',
-                                            districtId:
-                                                state.estate?.districtId ?? '',
-                                          ),
+                                        create: (context) =>
+                                            getIt.call<AddressBuilderCubit>()
+                                              ..onLoadAdress(
+                                                proviceId: state
+                                                        .post
+                                                        ?.realEstate
+                                                        .provinceId ??
+                                                    '',
+                                                wardId: state.post?.realEstate
+                                                        .wardId ??
+                                                    '',
+                                                districtId: state
+                                                        .post
+                                                        ?.realEstate
+                                                        .districtId ??
+                                                    '',
+                                              ),
                                         child: BlocBuilder<AddressBuilderCubit,
                                             AddressBuilderState>(
                                           builder: (context, addressState) {
@@ -323,7 +335,8 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                                     .languageCode ==
                                                 'vi';
                                             return Text(
-                                              (state.estate?.address ?? '') +
+                                              (state.post?.realEstate.address ??
+                                                      '') +
                                                   (addressState.buildAddress(
                                                           context) ??
                                                       ''),
@@ -349,7 +362,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                 child: BlocSelector<PostRealEstateDetailBloc,
                                     PostRealEstateDetailState, RealEstate?>(
                                   selector: (state) {
-                                    return state.estate;
+                                    return state.post?.realEstate;
                                   },
                                   builder: (context, state) {
                                     return CarouselSlider.builder(
@@ -406,7 +419,11 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
           ],
           children: [
             if (!context.watch<PostRealEstateDetailBloc>().state.isShimmer &&
-                context.watch<PostRealEstateDetailBloc>().state.estate ==
+                context
+                        .watch<PostRealEstateDetailBloc>()
+                        .state
+                        .post
+                        ?.realEstate ==
                     null) ...[
               SliverToBoxAdapter(
                 child: SizedBox(
@@ -416,7 +433,11 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                 ),
               ),
             ],
-            if (context.watch<PostRealEstateDetailBloc>().state.estate !=
+            if (context
+                        .watch<PostRealEstateDetailBloc>()
+                        .state
+                        .post
+                        ?.realEstate !=
                     null &&
                 !context.watch<PostRealEstateDetailBloc>().state.isShimmer) ...[
               SliverToBoxAdapter(

@@ -382,9 +382,9 @@ class __NewFeedState extends State<_NewFeed> {
                         value: item,
                         onPressed: () {
                           context.push(
-                            $appRoute.realEstateDetail,
-                            extra: RealEstateDetailPageParams(
-                              id: item.realEstate.id.toString(),
+                            $appRoute.postRealEstateDetail.url,
+                            extra: PostRealEstateDetailPageParams(
+                              id: item.id.toString(),
                             ),
                           );
                         },

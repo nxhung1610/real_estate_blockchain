@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/data/message/domain/message_failure.dart'
 import 'package:real_estate_blockchain/data/message/infrastructure/message_repository.dart';
 import 'package:real_estate_blockchain/data/post/domain/i_post_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
@@ -62,7 +63,7 @@ class PostRealEstateDetailBloc
                 (r) => emit(
                       state.copyWith(
                         status: Status.success(
-                          value: RealEstateDetailSuccess.createRoom(
+                          value: PostRealEstateDetailSuccess.createRoom(
                             room: r.firstWhere(
                               (element) => element.members.any(
                                 (u) => u.id == event.ownerId,
@@ -79,7 +80,7 @@ class PostRealEstateDetailBloc
         (r) async => emit(
           state.copyWith(
             status: Status.success(
-              value: RealEstateDetailSuccess.createRoom(room: r),
+              value: PostRealEstateDetailSuccess.createRoom(room: r),
             ),
           ),
         ),
@@ -97,17 +98,17 @@ class PostRealEstateDetailBloc
     Emitter<PostRealEstateDetailState> emit,
   ) async {
     try {
-      if (state.estate == null) return;
+      if (state.post == null) return;
       emit(state.copyWith(status: const Status.loading()));
-      final result = await realEstateRepository.deleteRealEstate(
-        state.estate!.id.toString(),
+      final result = await postRepository.deletePostById(
+        state.post!.id.toString(),
       );
       result.fold(
         (l) => throw l,
         (r) => emit(
           state.copyWith(
             status: const Status.success(
-              value: RealEstateDetailSuccess.deleteRoom(),
+              value: PostRealEstateDetailSuccess.deleteRoom(),
             ),
           ),
         ),
@@ -125,19 +126,13 @@ class PostRealEstateDetailBloc
     Emitter<PostRealEstateDetailState> emit,
   ) async {
     try {
-      final estate = await realEstateRepository.detailEstate(state.id);
-      final isBidExist = await bidRepository.checkExist(state.id);
-      final isPostExist = await postRepository.checkExist(state.id);
-      isBidExist.fold((l) {
-        emit(state.copyWith(bidExist: 0));
-      }, (r) => emit(state.copyWith(bidExist: r)));
-      isPostExist.fold((l) => emit(state.copyWith(postExist: 0)),
-          (r) => emit(state.copyWith(postExist: r)));
-      estate.fold(
+      final post = await postRepository.postById(state.id);
+
+      post.fold(
         (l) => throw l,
         (r) {
           emit(
-            state.copyWith(estate: r),
+            state.copyWith(post: r),
           );
         },
       );
@@ -147,29 +142,4 @@ class PostRealEstateDetailBloc
       emit(state.copyWith(isShimmer: false));
     }
   }
-
-  // FutureOr<void> _onBidOpen(
-  //   PostRealEstateDetailEventOnBidOpen event,
-  //   Emitter<PostRealEstateDetailState> emit,
-  // ) async {
-  //   try {
-  //     emit(state.copyWith(status: const Status.loading()));
-  //     final result = await bidRepository.listBids();
-  //     final bid = result.fold((l) => throw l, (r) => r).firstOrNull;
-  //     if (bid != null) {
-  //       emit(
-  //         state.copyWith(
-  //           status: Status.success(
-  //             value: bid,
-  //           ),
-  //         ),
-  //       );
-  //     }
-  //   } catch (e, trace) {
-  //     printLog(this, message: e, error: e, trace: trace);
-  //     emit(state.copyWith(status: Status.failure(value: e)));
-  //   } finally {
-  //     emit(state.copyWith(status: const Status.idle()));
-  //   }
-  // }
 }

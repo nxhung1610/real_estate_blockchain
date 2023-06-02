@@ -110,4 +110,39 @@ class PostRepository implements IPostRepository {
       return left(PostFailure());
     }
   }
+
+  @override
+  Future<Either<PostFailure, PostRealEstate>> postById(String postId) async {
+    try {
+      final res = await _apiRemote.get<PostRealEstateResponse>(
+        '/real-estates/posts/$postId',
+        parse: (data) {
+          return PostRealEstateResponse.fromJson(data);
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(res.data!.toModel());
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(PostFailure());
+    }
+  }
+
+  @override
+  Future<Either<PostFailure, Unit>> deletePostById(String postId) async {
+    try {
+      final res = await _apiRemote.delete(
+        '/real-estates/posts/$postId',
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(unit);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(PostFailure());
+    }
+  }
 }

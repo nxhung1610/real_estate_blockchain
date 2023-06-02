@@ -17,11 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PostRealEstateDetailState {
   String get id => throw _privateConstructorUsedError;
-  RealEstate? get estate => throw _privateConstructorUsedError;
+  PostRealEstate? get post => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
   bool get isShimmer => throw _privateConstructorUsedError;
-  int? get postExist => throw _privateConstructorUsedError;
-  int? get bidExist => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PostRealEstateDetailStateCopyWith<PostRealEstateDetailState> get copyWith =>
@@ -34,15 +32,9 @@ abstract class $PostRealEstateDetailStateCopyWith<$Res> {
           $Res Function(PostRealEstateDetailState) then) =
       _$PostRealEstateDetailStateCopyWithImpl<$Res, PostRealEstateDetailState>;
   @useResult
-  $Res call(
-      {String id,
-      RealEstate? estate,
-      Status status,
-      bool isShimmer,
-      int? postExist,
-      int? bidExist});
+  $Res call({String id, PostRealEstate? post, Status status, bool isShimmer});
 
-  $RealEstateCopyWith<$Res>? get estate;
+  $PostRealEstateCopyWith<$Res>? get post;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -61,21 +53,19 @@ class _$PostRealEstateDetailStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = null,
-    Object? estate = freezed,
+    Object? post = freezed,
     Object? status = null,
     Object? isShimmer = null,
-    Object? postExist = freezed,
-    Object? bidExist = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      estate: freezed == estate
-          ? _value.estate
-          : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate?,
+      post: freezed == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -84,26 +74,18 @@ class _$PostRealEstateDetailStateCopyWithImpl<$Res,
           ? _value.isShimmer
           : isShimmer // ignore: cast_nullable_to_non_nullable
               as bool,
-      postExist: freezed == postExist
-          ? _value.postExist
-          : postExist // ignore: cast_nullable_to_non_nullable
-              as int?,
-      bidExist: freezed == bidExist
-          ? _value.bidExist
-          : bidExist // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RealEstateCopyWith<$Res>? get estate {
-    if (_value.estate == null) {
+  $PostRealEstateCopyWith<$Res>? get post {
+    if (_value.post == null) {
       return null;
     }
 
-    return $RealEstateCopyWith<$Res>(_value.estate!, (value) {
-      return _then(_value.copyWith(estate: value) as $Val);
+    return $PostRealEstateCopyWith<$Res>(_value.post!, (value) {
+      return _then(_value.copyWith(post: value) as $Val);
     });
   }
 
@@ -125,16 +107,10 @@ abstract class _$$_PostRealEstateDetailStateCopyWith<$Res>
       __$$_PostRealEstateDetailStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      RealEstate? estate,
-      Status status,
-      bool isShimmer,
-      int? postExist,
-      int? bidExist});
+  $Res call({String id, PostRealEstate? post, Status status, bool isShimmer});
 
   @override
-  $RealEstateCopyWith<$Res>? get estate;
+  $PostRealEstateCopyWith<$Res>? get post;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -153,21 +129,19 @@ class __$$_PostRealEstateDetailStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? estate = freezed,
+    Object? post = freezed,
     Object? status = null,
     Object? isShimmer = null,
-    Object? postExist = freezed,
-    Object? bidExist = freezed,
   }) {
     return _then(_$_PostRealEstateDetailState(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      estate: freezed == estate
-          ? _value.estate
-          : estate // ignore: cast_nullable_to_non_nullable
-              as RealEstate?,
+      post: freezed == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostRealEstate?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -176,14 +150,6 @@ class __$$_PostRealEstateDetailStateCopyWithImpl<$Res>
           ? _value.isShimmer
           : isShimmer // ignore: cast_nullable_to_non_nullable
               as bool,
-      postExist: freezed == postExist
-          ? _value.postExist
-          : postExist // ignore: cast_nullable_to_non_nullable
-              as int?,
-      bidExist: freezed == bidExist
-          ? _value.bidExist
-          : bidExist // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -193,30 +159,24 @@ class __$$_PostRealEstateDetailStateCopyWithImpl<$Res>
 class _$_PostRealEstateDetailState implements _PostRealEstateDetailState {
   const _$_PostRealEstateDetailState(
       {required this.id,
-      this.estate,
+      this.post,
       this.status = const Status.idle(),
-      this.isShimmer = true,
-      this.postExist,
-      this.bidExist});
+      this.isShimmer = true});
 
   @override
   final String id;
   @override
-  final RealEstate? estate;
+  final PostRealEstate? post;
   @override
   @JsonKey()
   final Status status;
   @override
   @JsonKey()
   final bool isShimmer;
-  @override
-  final int? postExist;
-  @override
-  final int? bidExist;
 
   @override
   String toString() {
-    return 'PostRealEstateDetailState(id: $id, estate: $estate, status: $status, isShimmer: $isShimmer, postExist: $postExist, bidExist: $bidExist)';
+    return 'PostRealEstateDetailState(id: $id, post: $post, status: $status, isShimmer: $isShimmer)';
   }
 
   @override
@@ -225,19 +185,14 @@ class _$_PostRealEstateDetailState implements _PostRealEstateDetailState {
         (other.runtimeType == runtimeType &&
             other is _$_PostRealEstateDetailState &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.estate, estate) || other.estate == estate) &&
+            (identical(other.post, post) || other.post == post) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.isShimmer, isShimmer) ||
-                other.isShimmer == isShimmer) &&
-            (identical(other.postExist, postExist) ||
-                other.postExist == postExist) &&
-            (identical(other.bidExist, bidExist) ||
-                other.bidExist == bidExist));
+                other.isShimmer == isShimmer));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, estate, status, isShimmer, postExist, bidExist);
+  int get hashCode => Object.hash(runtimeType, id, post, status, isShimmer);
 
   @JsonKey(ignore: true)
   @override
@@ -250,24 +205,18 @@ class _$_PostRealEstateDetailState implements _PostRealEstateDetailState {
 abstract class _PostRealEstateDetailState implements PostRealEstateDetailState {
   const factory _PostRealEstateDetailState(
       {required final String id,
-      final RealEstate? estate,
+      final PostRealEstate? post,
       final Status status,
-      final bool isShimmer,
-      final int? postExist,
-      final int? bidExist}) = _$_PostRealEstateDetailState;
+      final bool isShimmer}) = _$_PostRealEstateDetailState;
 
   @override
   String get id;
   @override
-  RealEstate? get estate;
+  PostRealEstate? get post;
   @override
   Status get status;
   @override
   bool get isShimmer;
-  @override
-  int? get postExist;
-  @override
-  int? get bidExist;
   @override
   @JsonKey(ignore: true)
   _$$_PostRealEstateDetailStateCopyWith<_$_PostRealEstateDetailState>
@@ -275,7 +224,7 @@ abstract class _PostRealEstateDetailState implements PostRealEstateDetailState {
 }
 
 /// @nodoc
-mixin _$RealEstateDetailSuccess {
+mixin _$PostRealEstateDetailSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ChatRoom room) createRoom,
@@ -297,39 +246,41 @@ mixin _$RealEstateDetailSuccess {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(_PostRealEstateDetailSuccessCreateRoom value)
         createRoom,
-    required TResult Function(RealEstateDetailSuccessDeleteRoom value)
+    required TResult Function(PostRealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult? Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RealEstateDetailSuccessCopyWith<$Res> {
-  factory $RealEstateDetailSuccessCopyWith(RealEstateDetailSuccess value,
-          $Res Function(RealEstateDetailSuccess) then) =
-      _$RealEstateDetailSuccessCopyWithImpl<$Res, RealEstateDetailSuccess>;
+abstract class $PostRealEstateDetailSuccessCopyWith<$Res> {
+  factory $PostRealEstateDetailSuccessCopyWith(
+          PostRealEstateDetailSuccess value,
+          $Res Function(PostRealEstateDetailSuccess) then) =
+      _$PostRealEstateDetailSuccessCopyWithImpl<$Res,
+          PostRealEstateDetailSuccess>;
 }
 
 /// @nodoc
-class _$RealEstateDetailSuccessCopyWithImpl<$Res,
-        $Val extends RealEstateDetailSuccess>
-    implements $RealEstateDetailSuccessCopyWith<$Res> {
-  _$RealEstateDetailSuccessCopyWithImpl(this._value, this._then);
+class _$PostRealEstateDetailSuccessCopyWithImpl<$Res,
+        $Val extends PostRealEstateDetailSuccess>
+    implements $PostRealEstateDetailSuccessCopyWith<$Res> {
+  _$PostRealEstateDetailSuccessCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -338,11 +289,11 @@ class _$RealEstateDetailSuccessCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
-  factory _$$_RealEstateDetailSuccessCreateRoomCopyWith(
-          _$_RealEstateDetailSuccessCreateRoom value,
-          $Res Function(_$_RealEstateDetailSuccessCreateRoom) then) =
-      __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>;
+abstract class _$$_PostRealEstateDetailSuccessCreateRoomCopyWith<$Res> {
+  factory _$$_PostRealEstateDetailSuccessCreateRoomCopyWith(
+          _$_PostRealEstateDetailSuccessCreateRoom value,
+          $Res Function(_$_PostRealEstateDetailSuccessCreateRoom) then) =
+      __$$_PostRealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>;
   @useResult
   $Res call({ChatRoom room});
 
@@ -350,13 +301,13 @@ abstract class _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
-    extends _$RealEstateDetailSuccessCopyWithImpl<$Res,
-        _$_RealEstateDetailSuccessCreateRoom>
-    implements _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
-  __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl(
-      _$_RealEstateDetailSuccessCreateRoom _value,
-      $Res Function(_$_RealEstateDetailSuccessCreateRoom) _then)
+class __$$_PostRealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
+    extends _$PostRealEstateDetailSuccessCopyWithImpl<$Res,
+        _$_PostRealEstateDetailSuccessCreateRoom>
+    implements _$$_PostRealEstateDetailSuccessCreateRoomCopyWith<$Res> {
+  __$$_PostRealEstateDetailSuccessCreateRoomCopyWithImpl(
+      _$_PostRealEstateDetailSuccessCreateRoom _value,
+      $Res Function(_$_PostRealEstateDetailSuccessCreateRoom) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -364,7 +315,7 @@ class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
   $Res call({
     Object? room = null,
   }) {
-    return _then(_$_RealEstateDetailSuccessCreateRoom(
+    return _then(_$_PostRealEstateDetailSuccessCreateRoom(
       room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
@@ -383,23 +334,23 @@ class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RealEstateDetailSuccessCreateRoom
-    implements _RealEstateDetailSuccessCreateRoom {
-  const _$_RealEstateDetailSuccessCreateRoom({required this.room});
+class _$_PostRealEstateDetailSuccessCreateRoom
+    implements _PostRealEstateDetailSuccessCreateRoom {
+  const _$_PostRealEstateDetailSuccessCreateRoom({required this.room});
 
   @override
   final ChatRoom room;
 
   @override
   String toString() {
-    return 'RealEstateDetailSuccess.createRoom(room: $room)';
+    return 'PostRealEstateDetailSuccess.createRoom(room: $room)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RealEstateDetailSuccessCreateRoom &&
+            other is _$_PostRealEstateDetailSuccessCreateRoom &&
             (identical(other.room, room) || other.room == room));
   }
 
@@ -409,10 +360,10 @@ class _$_RealEstateDetailSuccessCreateRoom
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RealEstateDetailSuccessCreateRoomCopyWith<
-          _$_RealEstateDetailSuccessCreateRoom>
-      get copyWith => __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<
-          _$_RealEstateDetailSuccessCreateRoom>(this, _$identity);
+  _$$_PostRealEstateDetailSuccessCreateRoomCopyWith<
+          _$_PostRealEstateDetailSuccessCreateRoom>
+      get copyWith => __$$_PostRealEstateDetailSuccessCreateRoomCopyWithImpl<
+          _$_PostRealEstateDetailSuccessCreateRoom>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -448,9 +399,9 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(_PostRealEstateDetailSuccessCreateRoom value)
         createRoom,
-    required TResult Function(RealEstateDetailSuccessDeleteRoom value)
+    required TResult Function(PostRealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
   }) {
     return createRoom(this);
@@ -459,8 +410,8 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult? Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) {
     return createRoom?.call(this);
   }
@@ -468,8 +419,8 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) {
     if (createRoom != null) {
@@ -479,53 +430,54 @@ class _$_RealEstateDetailSuccessCreateRoom
   }
 }
 
-abstract class _RealEstateDetailSuccessCreateRoom
-    implements RealEstateDetailSuccess {
-  const factory _RealEstateDetailSuccessCreateRoom(
-      {required final ChatRoom room}) = _$_RealEstateDetailSuccessCreateRoom;
+abstract class _PostRealEstateDetailSuccessCreateRoom
+    implements PostRealEstateDetailSuccess {
+  const factory _PostRealEstateDetailSuccessCreateRoom(
+          {required final ChatRoom room}) =
+      _$_PostRealEstateDetailSuccessCreateRoom;
 
   ChatRoom get room;
   @JsonKey(ignore: true)
-  _$$_RealEstateDetailSuccessCreateRoomCopyWith<
-          _$_RealEstateDetailSuccessCreateRoom>
+  _$$_PostRealEstateDetailSuccessCreateRoomCopyWith<
+          _$_PostRealEstateDetailSuccessCreateRoom>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RealEstateDetailSuccessDeleteRoomCopyWith<$Res> {
-  factory _$$RealEstateDetailSuccessDeleteRoomCopyWith(
-          _$RealEstateDetailSuccessDeleteRoom value,
-          $Res Function(_$RealEstateDetailSuccessDeleteRoom) then) =
-      __$$RealEstateDetailSuccessDeleteRoomCopyWithImpl<$Res>;
+abstract class _$$PostRealEstateDetailSuccessDeleteRoomCopyWith<$Res> {
+  factory _$$PostRealEstateDetailSuccessDeleteRoomCopyWith(
+          _$PostRealEstateDetailSuccessDeleteRoom value,
+          $Res Function(_$PostRealEstateDetailSuccessDeleteRoom) then) =
+      __$$PostRealEstateDetailSuccessDeleteRoomCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RealEstateDetailSuccessDeleteRoomCopyWithImpl<$Res>
-    extends _$RealEstateDetailSuccessCopyWithImpl<$Res,
-        _$RealEstateDetailSuccessDeleteRoom>
-    implements _$$RealEstateDetailSuccessDeleteRoomCopyWith<$Res> {
-  __$$RealEstateDetailSuccessDeleteRoomCopyWithImpl(
-      _$RealEstateDetailSuccessDeleteRoom _value,
-      $Res Function(_$RealEstateDetailSuccessDeleteRoom) _then)
+class __$$PostRealEstateDetailSuccessDeleteRoomCopyWithImpl<$Res>
+    extends _$PostRealEstateDetailSuccessCopyWithImpl<$Res,
+        _$PostRealEstateDetailSuccessDeleteRoom>
+    implements _$$PostRealEstateDetailSuccessDeleteRoomCopyWith<$Res> {
+  __$$PostRealEstateDetailSuccessDeleteRoomCopyWithImpl(
+      _$PostRealEstateDetailSuccessDeleteRoom _value,
+      $Res Function(_$PostRealEstateDetailSuccessDeleteRoom) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RealEstateDetailSuccessDeleteRoom
-    implements RealEstateDetailSuccessDeleteRoom {
-  const _$RealEstateDetailSuccessDeleteRoom();
+class _$PostRealEstateDetailSuccessDeleteRoom
+    implements PostRealEstateDetailSuccessDeleteRoom {
+  const _$PostRealEstateDetailSuccessDeleteRoom();
 
   @override
   String toString() {
-    return 'RealEstateDetailSuccess.deleteRoom()';
+    return 'PostRealEstateDetailSuccess.deleteRoom()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RealEstateDetailSuccessDeleteRoom);
+            other is _$PostRealEstateDetailSuccessDeleteRoom);
   }
 
   @override
@@ -565,9 +517,9 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(_PostRealEstateDetailSuccessCreateRoom value)
         createRoom,
-    required TResult Function(RealEstateDetailSuccessDeleteRoom value)
+    required TResult Function(PostRealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
   }) {
     return deleteRoom(this);
@@ -576,8 +528,8 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult? Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) {
     return deleteRoom?.call(this);
   }
@@ -585,8 +537,8 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
-    TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
+    TResult Function(_PostRealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(PostRealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) {
     if (deleteRoom != null) {
@@ -596,10 +548,10 @@ class _$RealEstateDetailSuccessDeleteRoom
   }
 }
 
-abstract class RealEstateDetailSuccessDeleteRoom
-    implements RealEstateDetailSuccess {
-  const factory RealEstateDetailSuccessDeleteRoom() =
-      _$RealEstateDetailSuccessDeleteRoom;
+abstract class PostRealEstateDetailSuccessDeleteRoom
+    implements PostRealEstateDetailSuccess {
+  const factory PostRealEstateDetailSuccessDeleteRoom() =
+      _$PostRealEstateDetailSuccessDeleteRoom;
 }
 
 /// @nodoc

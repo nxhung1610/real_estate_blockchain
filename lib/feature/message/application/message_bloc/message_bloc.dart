@@ -35,7 +35,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     authBloc.stream.listen(
       (authState) {
         if (authState is AuthStateAuthenticated) {
-          add(const MessageEvent.started());
+          add(const MessageEvent.onLoadRoms());
         } else if (authState is AuthStateUnAuthenticated) {
           add(const MessageEvent.onClose());
         }
@@ -47,6 +47,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
   //#region map event to state
   void _mapEventToState() {
     on<MessageStarted>(_messageStarToState);
+    on<MessageEventOnLoadRoms>(_onLoadRooms);
     on<MessageReceived>(_messageReceivedToState);
     on<MessageSent>(_messageSentToState);
     on<MessageEventOnCreateRoom>(_onCreateRoom);
@@ -65,24 +66,6 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
       } catch (e) {}
 
       emit(state.copyWith(status: const Status.loading()));
-
-      final authenticated =
-          await waitForDesiredBlocState<AuthStateAuthenticated>(authBloc);
-      if (authenticated == null) {
-        throw "unauthenticated";
-      }
-      final roomResponse =
-          await messageRepository.getRooms(senderId: authenticated.user.id);
-      roomResponse.fold((l) => throw l, (r) {
-        chatWSController =
-            ChatWSController(chatWSUrl, authLocalRepository, r, (message) {
-          add(MessageReceived(message));
-        });
-        emit(state.copyWith(
-          rooms: r,
-          status: const Status.idle(),
-        ));
-      });
     } catch (e, trace) {
       printLog(this, message: "Error", error: e, trace: trace);
       emit(
@@ -136,7 +119,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
       final roomResponse = await messageRepository.createRoom(
           senderId: event.senderId, ownerId: event.ownerId);
-      add(const MessageEvent.started());
+      add(const MessageEvent.onLoadRoms());
       roomResponse.fold(
         (l) => throw l,
         (r) => emit(
@@ -166,5 +149,43 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     Emitter<MessageState> emit,
   ) {
     chatWSController?.deactivate();
+  }
+
+  FutureOr<void> _onLoadRooms(
+    MessageEventOnLoadRoms event,
+    Emitter<MessageState> emit,
+  ) async {
+    try {
+      final authenticated =
+          await waitForDesiredBlocState<AuthStateAuthenticated>(authBloc);
+      if (authenticated == null) {
+        throw "unauthenticated";
+      }
+      final roomResponse =
+          await messageRepository.getRooms(senderId: authenticated.user.id);
+      roomResponse.fold((l) => throw l, (r) {
+        chatWSController =
+            ChatWSController(chatWSUrl, authLocalRepository, r, (message) {
+          add(MessageReceived(message));
+        });
+        emit(state.copyWith(
+          rooms: r,
+          status: const Status.idle(),
+        ));
+      });
+    } catch (e, trace) {
+      printLog(this, message: "Error", error: e, trace: trace);
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
+    } finally {
+      emit(
+        state.copyWith(
+          status: const Status.idle(),
+        ),
+      );
+    }
   }
 }

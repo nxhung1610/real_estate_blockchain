@@ -19,6 +19,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -29,6 +31,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -38,6 +42,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -48,6 +54,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -57,6 +65,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -66,6 +76,8 @@ mixin _$MessageEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -132,6 +144,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -145,6 +159,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -157,6 +173,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -173,6 +191,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -185,6 +205,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -197,6 +219,8 @@ class _$MessageStarted implements MessageStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -212,6 +236,272 @@ class _$MessageStarted implements MessageStarted {
 
 abstract class MessageStarted implements MessageEvent {
   const factory MessageStarted() = _$MessageStarted;
+}
+
+/// @nodoc
+abstract class _$$MessageEventOnLoadRomsCopyWith<$Res> {
+  factory _$$MessageEventOnLoadRomsCopyWith(_$MessageEventOnLoadRoms value,
+          $Res Function(_$MessageEventOnLoadRoms) then) =
+      __$$MessageEventOnLoadRomsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MessageEventOnLoadRomsCopyWithImpl<$Res>
+    extends _$MessageEventCopyWithImpl<$Res, _$MessageEventOnLoadRoms>
+    implements _$$MessageEventOnLoadRomsCopyWith<$Res> {
+  __$$MessageEventOnLoadRomsCopyWithImpl(_$MessageEventOnLoadRoms _value,
+      $Res Function(_$MessageEventOnLoadRoms) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MessageEventOnLoadRoms implements MessageEventOnLoadRoms {
+  const _$MessageEventOnLoadRoms();
+
+  @override
+  String toString() {
+    return 'MessageEvent.onLoadRoms()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$MessageEventOnLoadRoms);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
+    required TResult Function(ChatMessageRequest message, ChatRoom room)
+        messageSent,
+    required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
+    required TResult Function() onClose,
+  }) {
+    return onLoadRoms();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
+    TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
+    TResult? Function()? onClose,
+  }) {
+    return onLoadRoms?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
+    TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
+    TResult Function()? onClose,
+    required TResult orElse(),
+  }) {
+    if (onLoadRoms != null) {
+      return onLoadRoms();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
+    required TResult Function(MessageSent value) messageSent,
+    required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
+    required TResult Function(MessageEventOnClose value) onClose,
+  }) {
+    return onLoadRoms(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
+    TResult? Function(MessageSent value)? messageSent,
+    TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
+    TResult? Function(MessageEventOnClose value)? onClose,
+  }) {
+    return onLoadRoms?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
+    TResult Function(MessageSent value)? messageSent,
+    TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
+    TResult Function(MessageEventOnClose value)? onClose,
+    required TResult orElse(),
+  }) {
+    if (onLoadRoms != null) {
+      return onLoadRoms(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MessageEventOnLoadRoms implements MessageEvent {
+  const factory MessageEventOnLoadRoms() = _$MessageEventOnLoadRoms;
+}
+
+/// @nodoc
+abstract class _$$MessageEventCloseCopyWith<$Res> {
+  factory _$$MessageEventCloseCopyWith(
+          _$MessageEventClose value, $Res Function(_$MessageEventClose) then) =
+      __$$MessageEventCloseCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MessageEventCloseCopyWithImpl<$Res>
+    extends _$MessageEventCopyWithImpl<$Res, _$MessageEventClose>
+    implements _$$MessageEventCloseCopyWith<$Res> {
+  __$$MessageEventCloseCopyWithImpl(
+      _$MessageEventClose _value, $Res Function(_$MessageEventClose) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MessageEventClose implements MessageEventClose {
+  const _$MessageEventClose();
+
+  @override
+  String toString() {
+    return 'MessageEvent.close()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$MessageEventClose);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
+    required TResult Function(ChatMessageRequest message, ChatRoom room)
+        messageSent,
+    required TResult Function(ChatMessage newMessage) messageReceived,
+    required TResult Function(int senderId, int ownerId) onCreateRoom,
+    required TResult Function() onClose,
+  }) {
+    return close();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
+    TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult? Function(ChatMessage newMessage)? messageReceived,
+    TResult? Function(int senderId, int ownerId)? onCreateRoom,
+    TResult? Function()? onClose,
+  }) {
+    return close?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
+    TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
+    TResult Function(ChatMessage newMessage)? messageReceived,
+    TResult Function(int senderId, int ownerId)? onCreateRoom,
+    TResult Function()? onClose,
+    required TResult orElse(),
+  }) {
+    if (close != null) {
+      return close();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
+    required TResult Function(MessageSent value) messageSent,
+    required TResult Function(MessageReceived value) messageReceived,
+    required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
+    required TResult Function(MessageEventOnClose value) onClose,
+  }) {
+    return close(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
+    TResult? Function(MessageSent value)? messageSent,
+    TResult? Function(MessageReceived value)? messageReceived,
+    TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
+    TResult? Function(MessageEventOnClose value)? onClose,
+  }) {
+    return close?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
+    TResult Function(MessageSent value)? messageSent,
+    TResult Function(MessageReceived value)? messageReceived,
+    TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
+    TResult Function(MessageEventOnClose value)? onClose,
+    required TResult orElse(),
+  }) {
+    if (close != null) {
+      return close(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MessageEventClose implements MessageEvent {
+  const factory MessageEventClose() = _$MessageEventClose;
 }
 
 /// @nodoc
@@ -306,6 +596,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -319,6 +611,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -331,6 +625,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -347,6 +643,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -359,6 +657,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -371,6 +671,8 @@ class _$MessageSent implements MessageSent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -471,6 +773,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -484,6 +788,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -496,6 +802,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -512,6 +820,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -524,6 +834,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -536,6 +848,8 @@ class _$MessageReceived implements MessageReceived {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -635,6 +949,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -648,6 +964,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -660,6 +978,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -676,6 +996,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -688,6 +1010,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -700,6 +1024,8 @@ class _$MessageEventOnCreateRoom implements MessageEventOnCreateRoom {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -763,6 +1089,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onLoadRoms,
+    required TResult Function() close,
     required TResult Function(ChatMessageRequest message, ChatRoom room)
         messageSent,
     required TResult Function(ChatMessage newMessage) messageReceived,
@@ -776,6 +1104,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onLoadRoms,
+    TResult? Function()? close,
     TResult? Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult? Function(ChatMessage newMessage)? messageReceived,
     TResult? Function(int senderId, int ownerId)? onCreateRoom,
@@ -788,6 +1118,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onLoadRoms,
+    TResult Function()? close,
     TResult Function(ChatMessageRequest message, ChatRoom room)? messageSent,
     TResult Function(ChatMessage newMessage)? messageReceived,
     TResult Function(int senderId, int ownerId)? onCreateRoom,
@@ -804,6 +1136,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MessageStarted value) started,
+    required TResult Function(MessageEventOnLoadRoms value) onLoadRoms,
+    required TResult Function(MessageEventClose value) close,
     required TResult Function(MessageSent value) messageSent,
     required TResult Function(MessageReceived value) messageReceived,
     required TResult Function(MessageEventOnCreateRoom value) onCreateRoom,
@@ -816,6 +1150,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MessageStarted value)? started,
+    TResult? Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult? Function(MessageEventClose value)? close,
     TResult? Function(MessageSent value)? messageSent,
     TResult? Function(MessageReceived value)? messageReceived,
     TResult? Function(MessageEventOnCreateRoom value)? onCreateRoom,
@@ -828,6 +1164,8 @@ class _$MessageEventOnClose implements MessageEventOnClose {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MessageStarted value)? started,
+    TResult Function(MessageEventOnLoadRoms value)? onLoadRoms,
+    TResult Function(MessageEventClose value)? close,
     TResult Function(MessageSent value)? messageSent,
     TResult Function(MessageReceived value)? messageReceived,
     TResult Function(MessageEventOnCreateRoom value)? onCreateRoom,

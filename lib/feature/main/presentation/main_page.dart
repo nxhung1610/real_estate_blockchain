@@ -87,13 +87,6 @@ class _MainPageState extends State<MainPage>
       builder: (context) {
         return MultiBlocListener(
           listeners: [
-            BlocProvider(
-              lazy: false,
-              create: (context) => getIt.call<MessageBloc>(
-                  param1: context.read<AuthBloc>(),
-                  param2: "${AppConfig.instance.baseUrl}/chat/ws")
-                ..add(const MessageStarted()),
-            ),
             BlocListener<MainCubit, MainState>(
               listener: (context, state) {
                 tabController.index = (state.sub.index);

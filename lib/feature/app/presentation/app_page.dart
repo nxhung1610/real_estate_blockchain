@@ -229,6 +229,13 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
           if (state is AuthStateUnknow || processAuthen.isCompleted) return;
           processAuthen.complete();
         }),
+        BlocProvider(
+          lazy: false,
+          create: (context) => getIt.call<MessageBloc>(
+              param1: context.read<AuthBloc>(),
+              param2: "${AppConfig.instance.baseUrl}/chat/ws")
+            ..add(const MessageStarted()),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [

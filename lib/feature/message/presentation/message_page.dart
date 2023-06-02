@@ -39,11 +39,9 @@ class _MessagePageState extends State<MessagePage>
     return Scaffold(
       appBar: CustomAppbar(
         context,
-        title: GestureDetector(
-            onTap: () {
-              AppNotification.showNoti(title: "Hellll", body: "adqwdq");
-            },
-            child: Text(s.message)),
+        title: Text(
+          s.message,
+        ),
       ),
       body: BlocListener<MessageBloc, MessageState>(
         listener: (_, state) {
@@ -99,7 +97,9 @@ class _MessagePageState extends State<MessagePage>
                 )
               ],
               onRefresh: () {
-                context.read<MessageBloc>().add(const MessageEvent.started());
+                context
+                    .read<MessageBloc>()
+                    .add(const MessageEvent.onLoadRoms());
                 refreshCompleter = Completer();
                 return refreshCompleter.future;
               },

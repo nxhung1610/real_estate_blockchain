@@ -9,7 +9,7 @@ class _WDirection extends StatelessWidget {
     return BlocSelector<PostRealEstateDetailBloc, PostRealEstateDetailState,
         RealEstate?>(
       selector: (state) {
-        return state.estate;
+        return state.post?.realEstate;
       },
       builder: (context, state) {
         return Padding(

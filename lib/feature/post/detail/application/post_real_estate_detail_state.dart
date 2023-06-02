@@ -4,19 +4,17 @@ part of 'post_real_estate_detail_bloc.dart';
 class PostRealEstateDetailState with _$PostRealEstateDetailState {
   const factory PostRealEstateDetailState({
     required String id,
-    RealEstate? estate,
+    PostRealEstate? post,
     @Default(Status.idle()) Status status,
     @Default(true) bool isShimmer,
-    int? postExist,
-    int? bidExist,
   }) = _PostRealEstateDetailState;
 }
 
 @freezed
-class RealEstateDetailSuccess with _$RealEstateDetailSuccess {
-  const factory RealEstateDetailSuccess.createRoom({
+class PostRealEstateDetailSuccess with _$PostRealEstateDetailSuccess {
+  const factory PostRealEstateDetailSuccess.createRoom({
     required ChatRoom room,
-  }) = _RealEstateDetailSuccessCreateRoom;
-  const factory RealEstateDetailSuccess.deleteRoom() =
-      RealEstateDetailSuccessDeleteRoom;
+  }) = _PostRealEstateDetailSuccessCreateRoom;
+  const factory PostRealEstateDetailSuccess.deleteRoom() =
+      PostRealEstateDetailSuccessDeleteRoom;
 }

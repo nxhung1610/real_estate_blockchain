@@ -8,6 +8,8 @@ import 'model/create_post_input.dart';
 
 abstract class IPostRepository {
   Future<Either<PostFailure, Unit>> createPost(CreatePostInput input);
+  Future<Either<PostFailure, PostRealEstate>> postById(String postId);
+  Future<Either<PostFailure, Unit>> deletePostById(String postId);
   Future<Either<PostFailure, List<PostRealEstate>>> ownerPosts();
   Future<Either<PostFailure, int>> checkExist(String reId);
   Future<Either<PostFailure, List<PostRealEstate>>> search(

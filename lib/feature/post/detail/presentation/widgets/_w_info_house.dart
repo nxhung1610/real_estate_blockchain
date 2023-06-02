@@ -6,28 +6,51 @@ class _WInfoHouse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSize.extraWidthDimens,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            s.description,
-            style: context.textTheme.bodyLarge?.copyWith(
-              color: AppColor.kNeutrals_,
-              fontWeight: FontWeight.w900,
-            ),
+    return BlocSelector<PostRealEstateDetailBloc, PostRealEstateDetailState,
+        PostRealEstate?>(
+      selector: (state) {
+        return state.post;
+      },
+      builder: (context, post) {
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSize.extraWidthDimens,
           ),
-          AppSize.largeHeightDimens.verticalSpace,
-          BlocSelector<PostRealEstateDetailBloc, PostRealEstateDetailState,
-              RealEstate?>(
-            selector: (state) {
-              return state.estate;
-            },
-            builder: (context, item) {
-              return Column(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    s.description,
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      color: AppColor.kNeutrals_,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16.w),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 4.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColor.kNeutrals4,
+                      borderRadius: BorderRadius.circular(
+                        8.r,
+                      ),
+                    ),
+                    child: Text(
+                      post?.sellType.title(context) ?? '',
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        color: context.theme.colorScheme.background,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              AppSize.largeHeightDimens.verticalSpace,
+              Column(
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -39,7 +62,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icBed
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bedRoom,
-                          sub: '${item?.noBedrooms} ${s.rooms}',
+                          sub: '${post?.realEstate.noBedrooms} ${s.rooms}',
                         ),
                       ),
                       AppSize.extraWidthDimens.horizontalSpace,
@@ -49,7 +72,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icBathroom
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.bathRoom,
-                          sub: '${item?.noWc} ${s.rooms}',
+                          sub: '${post?.realEstate.noWc} ${s.rooms}',
                         ),
                       ),
                     ],
@@ -65,7 +88,7 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icHome2
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.structure,
-                          sub: '${item?.floors ?? 0} ${s.floors}',
+                          sub: '${post?.realEstate.floors ?? 0} ${s.floors}',
                         ),
                       ),
                       AppSize.extraWidthDimens.horizontalSpace,
@@ -75,18 +98,19 @@ class _WInfoHouse extends StatelessWidget {
                           icon: Assets.icons.icSquare
                               .svg(color: AppColor.kNeutrals_.shade50),
                           title: s.square,
-                          sub: '${(item?.area?.toInt() ?? 0)} m2',
+                          sub: '${(post?.realEstate.area?.toInt() ?? 0)} m2',
                         ),
                       ),
                     ],
                   ),
                 ],
-              );
-            },
+              )
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
+    ;
   }
 
   Widget itemBuild(

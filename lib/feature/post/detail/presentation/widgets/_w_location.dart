@@ -15,7 +15,7 @@ class _WLocationState extends State<_WLocation> {
     return BlocSelector<PostRealEstateDetailBloc, PostRealEstateDetailState,
         RealEstate?>(
       selector: (state) {
-        return state.estate;
+        return state.post?.realEstate;
       },
       builder: (context, state) {
         if (state == null) return const SizedBox.shrink();
@@ -43,7 +43,7 @@ class _WLocationState extends State<_WLocation> {
                   child: BlocSelector<PostRealEstateDetailBloc,
                       PostRealEstateDetailState, RealEstate?>(
                     selector: (state) {
-                      return state.estate;
+                      return state.post?.realEstate;
                     },
                     builder: (context, state) {
                       if (state == null) return const SizedBox.shrink();

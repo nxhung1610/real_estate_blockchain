@@ -94,7 +94,7 @@ import '../feature/post/detail/application/post_real_estate_detail_bloc.dart'
 import '../feature/post/detail/presentation/bottom/bid/create_bid_bloc.dart'
     as _i55;
 import '../feature/post/detail/presentation/bottom/create_post_bloc.dart'
-    as _i57;
+    as _i58;
 import '../feature/post/owner/application/post_owner_bloc.dart' as _i37;
 import '../feature/real_estate/config/real_estate_config_bloc.dart' as _i39;
 import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
@@ -102,7 +102,7 @@ import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
 import '../feature/real_estate/detail/presentation/bottom/bid/create_bid_bloc.dart'
     as _i56;
 import '../feature/real_estate/detail/presentation/bottom/create_post_bloc.dart'
-    as _i58;
+    as _i57;
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
     as _i41;
 import '../feature/search/application/search_bloc.dart' as _i42;

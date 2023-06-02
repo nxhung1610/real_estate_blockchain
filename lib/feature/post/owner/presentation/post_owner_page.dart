@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/home/presentation/widget/house_newsfeed_shimmer.dart';
 import 'package:real_estate_blockchain/feature/home/presentation/widget/widget.dart';
+import 'package:real_estate_blockchain/feature/post/detail/presentation/models/post_real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:dartz/dartz.dart' as dartz;
@@ -94,9 +95,9 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
                           value: item,
                           onPressed: () {
                             context.push(
-                              $appRoute.realEstateDetail,
-                              extra: RealEstateDetailPageParams(
-                                id: item.realEstate.id.toString(),
+                              $appRoute.postRealEstateDetail.url,
+                              extra: PostRealEstateDetailPageParams(
+                                id: item.id.toString(),
                               ),
                             );
                           },
