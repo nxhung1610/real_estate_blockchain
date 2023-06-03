@@ -308,7 +308,7 @@ mixin _$RealEstateDetailSuccess {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(RealEstateDetailSuccessCreateRoom value)
         createRoom,
     required TResult Function(RealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
@@ -316,13 +316,13 @@ mixin _$RealEstateDetailSuccess {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) =>
@@ -349,11 +349,11 @@ class _$RealEstateDetailSuccessCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
-  factory _$$_RealEstateDetailSuccessCreateRoomCopyWith(
-          _$_RealEstateDetailSuccessCreateRoom value,
-          $Res Function(_$_RealEstateDetailSuccessCreateRoom) then) =
-      __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>;
+abstract class _$$RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
+  factory _$$RealEstateDetailSuccessCreateRoomCopyWith(
+          _$RealEstateDetailSuccessCreateRoom value,
+          $Res Function(_$RealEstateDetailSuccessCreateRoom) then) =
+      __$$RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>;
   @useResult
   $Res call({ChatRoom room});
 
@@ -361,13 +361,13 @@ abstract class _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
+class __$$RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
     extends _$RealEstateDetailSuccessCopyWithImpl<$Res,
-        _$_RealEstateDetailSuccessCreateRoom>
-    implements _$$_RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
-  __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl(
-      _$_RealEstateDetailSuccessCreateRoom _value,
-      $Res Function(_$_RealEstateDetailSuccessCreateRoom) _then)
+        _$RealEstateDetailSuccessCreateRoom>
+    implements _$$RealEstateDetailSuccessCreateRoomCopyWith<$Res> {
+  __$$RealEstateDetailSuccessCreateRoomCopyWithImpl(
+      _$RealEstateDetailSuccessCreateRoom _value,
+      $Res Function(_$RealEstateDetailSuccessCreateRoom) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -375,7 +375,7 @@ class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
   $Res call({
     Object? room = null,
   }) {
-    return _then(_$_RealEstateDetailSuccessCreateRoom(
+    return _then(_$RealEstateDetailSuccessCreateRoom(
       room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
@@ -394,9 +394,9 @@ class __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RealEstateDetailSuccessCreateRoom
-    implements _RealEstateDetailSuccessCreateRoom {
-  const _$_RealEstateDetailSuccessCreateRoom({required this.room});
+class _$RealEstateDetailSuccessCreateRoom
+    implements RealEstateDetailSuccessCreateRoom {
+  const _$RealEstateDetailSuccessCreateRoom({required this.room});
 
   @override
   final ChatRoom room;
@@ -410,7 +410,7 @@ class _$_RealEstateDetailSuccessCreateRoom
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RealEstateDetailSuccessCreateRoom &&
+            other is _$RealEstateDetailSuccessCreateRoom &&
             (identical(other.room, room) || other.room == room));
   }
 
@@ -420,10 +420,10 @@ class _$_RealEstateDetailSuccessCreateRoom
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RealEstateDetailSuccessCreateRoomCopyWith<
-          _$_RealEstateDetailSuccessCreateRoom>
-      get copyWith => __$$_RealEstateDetailSuccessCreateRoomCopyWithImpl<
-          _$_RealEstateDetailSuccessCreateRoom>(this, _$identity);
+  _$$RealEstateDetailSuccessCreateRoomCopyWith<
+          _$RealEstateDetailSuccessCreateRoom>
+      get copyWith => __$$RealEstateDetailSuccessCreateRoomCopyWithImpl<
+          _$RealEstateDetailSuccessCreateRoom>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -459,7 +459,7 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(RealEstateDetailSuccessCreateRoom value)
         createRoom,
     required TResult Function(RealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
@@ -470,7 +470,7 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) {
     return createRoom?.call(this);
@@ -479,7 +479,7 @@ class _$_RealEstateDetailSuccessCreateRoom
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) {
@@ -490,15 +490,15 @@ class _$_RealEstateDetailSuccessCreateRoom
   }
 }
 
-abstract class _RealEstateDetailSuccessCreateRoom
+abstract class RealEstateDetailSuccessCreateRoom
     implements RealEstateDetailSuccess {
-  const factory _RealEstateDetailSuccessCreateRoom(
-      {required final ChatRoom room}) = _$_RealEstateDetailSuccessCreateRoom;
+  const factory RealEstateDetailSuccessCreateRoom(
+      {required final ChatRoom room}) = _$RealEstateDetailSuccessCreateRoom;
 
   ChatRoom get room;
   @JsonKey(ignore: true)
-  _$$_RealEstateDetailSuccessCreateRoomCopyWith<
-          _$_RealEstateDetailSuccessCreateRoom>
+  _$$RealEstateDetailSuccessCreateRoomCopyWith<
+          _$RealEstateDetailSuccessCreateRoom>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -576,7 +576,7 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RealEstateDetailSuccessCreateRoom value)
+    required TResult Function(RealEstateDetailSuccessCreateRoom value)
         createRoom,
     required TResult Function(RealEstateDetailSuccessDeleteRoom value)
         deleteRoom,
@@ -587,7 +587,7 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult? Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult? Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
   }) {
     return deleteRoom?.call(this);
@@ -596,7 +596,7 @@ class _$RealEstateDetailSuccessDeleteRoom
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RealEstateDetailSuccessCreateRoom value)? createRoom,
+    TResult Function(RealEstateDetailSuccessCreateRoom value)? createRoom,
     TResult Function(RealEstateDetailSuccessDeleteRoom value)? deleteRoom,
     required TResult orElse(),
   }) {

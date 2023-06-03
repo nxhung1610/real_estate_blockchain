@@ -107,6 +107,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
   @override
   Future<void> close() {
     chatWSController?.deactivate();
+    chatWSController = null;
     return super.close();
   }
 
@@ -149,6 +150,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
     Emitter<MessageState> emit,
   ) {
     chatWSController?.deactivate();
+    chatWSController = null;
   }
 
   FutureOr<void> _onLoadRooms(

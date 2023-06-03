@@ -235,6 +235,7 @@
   "submitYourBidAt" : "Submit Your Bid At",
   "someThingWentWrongTapToTryAgain" : "Some thing went wrong. Tap to try again",
   "auctionEnds" :"Auction ends",
+  "endPrice" : "End price",
   "bidSuccess" : "Bid success",
   "bid" : "Bid",
   "noBid" : "No bid found"

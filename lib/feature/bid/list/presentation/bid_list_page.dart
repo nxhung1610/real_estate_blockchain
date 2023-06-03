@@ -118,6 +118,14 @@ class _BidListPageState extends State<BidListPage> {
                         ),
                       );
                     },
+                    noItemsFoundIndicatorBuilder: (context) {
+                      return Center(
+                        child: Text(
+                          s.noBid,
+                          style: context.textTheme.bodyLarge?.copyWith(),
+                        ),
+                      );
+                    },
                     firstPageProgressIndicatorBuilder: (context) {
                       return SingleChildScrollView(
                         child: Column(

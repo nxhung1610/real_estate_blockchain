@@ -22,6 +22,8 @@ import 'package:real_estate_blockchain/feature/common/application/address/addres
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
+import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
+import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/user/profile/application/user_profile_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
@@ -88,7 +90,7 @@ class _BidDetailPageState extends State<BidDetailPage>
         ),
         BlocListener<BidDetailBloc, BidDetailState>(
           listenWhen: (previous, current) => previous.bid != current.bid,
-          listener: (context, state) {
+          listener: (context, state) async {
             final status = state.bid?.status;
             if (status != null && !isShowFinish) {
               isShowFinish = true;
@@ -104,10 +106,19 @@ class _BidDetailPageState extends State<BidDetailPage>
                     },
                   );
                   if (bidders.isNotEmpty) {
-                    BidDonePopup.show(
+                    final result = await BidDonePopup.show(
                       context,
                       bidder: bidders.first,
                     );
+                    if (mounted && result != null) {
+                      context.pushReplacement($appRoute.messageChat, extra: {
+                        "params": ChatRoomBlocParams(
+                          messageBloc: context.read<MessageBloc>(),
+                          authBloc: context.read<AuthBloc>(),
+                          room: result,
+                        ),
+                      });
+                    }
                   }
                   break;
                 default:

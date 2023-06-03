@@ -122,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin cá nhân"),
         "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "endPrice": MessageLookupByLibrary.simpleMessage("Giá cuối"),
         "endTime": MessageLookupByLibrary.simpleMessage("Kết thúc"),
         "enterVerificationCode":
             MessageLookupByLibrary.simpleMessage("Nhập mã xác thực."),

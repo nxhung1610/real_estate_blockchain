@@ -16,7 +16,7 @@ class RealEstateDetailState with _$RealEstateDetailState {
 class RealEstateDetailSuccess with _$RealEstateDetailSuccess {
   const factory RealEstateDetailSuccess.createRoom({
     required ChatRoom room,
-  }) = _RealEstateDetailSuccessCreateRoom;
+  }) = RealEstateDetailSuccessCreateRoom;
   const factory RealEstateDetailSuccess.deleteRoom() =
       RealEstateDetailSuccessDeleteRoom;
 }

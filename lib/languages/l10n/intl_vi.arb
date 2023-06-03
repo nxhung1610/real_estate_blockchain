@@ -236,6 +236,7 @@
   "submitYourBidAt" : "Đấu giá thầu của tại",
   "someThingWentWrongTapToTryAgain" : "Đã xảy ra sự cố. Nhấn để thử lại",
   "auctionEnds" :"Đấu giá kết thúc",
+  "endPrice" : "Giá cuối",
   "bidSuccess" : "Đấu giá thành công",
   "bid" : "Đấu giá",
   "noBid" : "Chưa có đấu thầu nào"

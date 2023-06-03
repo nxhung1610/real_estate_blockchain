@@ -2360,6 +2360,16 @@ class S {
     );
   }
 
+  /// `End price`
+  String get endPrice {
+    return Intl.message(
+      'End price',
+      name: 'endPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bid success`
   String get bidSuccess {
     return Intl.message(

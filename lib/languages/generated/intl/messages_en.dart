@@ -122,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "endPrice": MessageLookupByLibrary.simpleMessage("End price"),
         "endTime": MessageLookupByLibrary.simpleMessage("End time"),
         "enterVerificationCode": MessageLookupByLibrary.simpleMessage(
             "Enter the verification code."),
