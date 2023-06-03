@@ -27,7 +27,7 @@ mixin _$BidAuction {
   ProcessingStatus? get status => throw _privateConstructorUsedError;
   int? get reId => throw _privateConstructorUsedError;
   RealEstate? get realEstate => throw _privateConstructorUsedError;
-  String? get highestBindingBid => throw _privateConstructorUsedError;
+  int? get highestBindingBid => throw _privateConstructorUsedError;
   int? get highestBidderId => throw _privateConstructorUsedError;
   User? get highestBidder => throw _privateConstructorUsedError;
   num? get bidIncrement => throw _privateConstructorUsedError;
@@ -59,7 +59,7 @@ abstract class $BidAuctionCopyWith<$Res> {
       ProcessingStatus? status,
       int? reId,
       RealEstate? realEstate,
-      String? highestBindingBid,
+      int? highestBindingBid,
       int? highestBidderId,
       User? highestBidder,
       num? bidIncrement,
@@ -154,7 +154,7 @@ class _$BidAuctionCopyWithImpl<$Res, $Val extends BidAuction>
       highestBindingBid: freezed == highestBindingBid
           ? _value.highestBindingBid
           : highestBindingBid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       highestBidderId: freezed == highestBidderId
           ? _value.highestBidderId
           : highestBidderId // ignore: cast_nullable_to_non_nullable
@@ -243,7 +243,7 @@ abstract class _$$_BidAuctionCopyWith<$Res>
       ProcessingStatus? status,
       int? reId,
       RealEstate? realEstate,
-      String? highestBindingBid,
+      int? highestBindingBid,
       int? highestBidderId,
       User? highestBidder,
       num? bidIncrement,
@@ -339,7 +339,7 @@ class __$$_BidAuctionCopyWithImpl<$Res>
       highestBindingBid: freezed == highestBindingBid
           ? _value.highestBindingBid
           : highestBindingBid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       highestBidderId: freezed == highestBidderId
           ? _value.highestBidderId
           : highestBidderId // ignore: cast_nullable_to_non_nullable
@@ -437,7 +437,7 @@ class _$_BidAuction implements _BidAuction {
   @override
   final RealEstate? realEstate;
   @override
-  final String? highestBindingBid;
+  final int? highestBindingBid;
   @override
   final int? highestBidderId;
   @override
@@ -541,7 +541,7 @@ abstract class _BidAuction implements BidAuction {
       final ProcessingStatus? status,
       final int? reId,
       final RealEstate? realEstate,
-      final String? highestBindingBid,
+      final int? highestBindingBid,
       final int? highestBidderId,
       final User? highestBidder,
       final num? bidIncrement,
@@ -573,7 +573,7 @@ abstract class _BidAuction implements BidAuction {
   @override
   RealEstate? get realEstate;
   @override
-  String? get highestBindingBid;
+  int? get highestBindingBid;
   @override
   int? get highestBidderId;
   @override

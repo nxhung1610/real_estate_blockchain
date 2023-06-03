@@ -10,6 +10,7 @@ import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../base_response.dart';
+import 'curl_logger_dio_interceptor.dart';
 import 'jwt_interceptor.dart';
 
 @singleton
@@ -45,8 +46,13 @@ class ApiRemote {
             'Content-Type': 'application/json; charset=utf-8',
             "Accept": "application/json",
           }
-          ..interceptors.add(
-              JWTInterceptor(_onExpireToken, _refreshToken, dioToken, _token))
+          ..interceptors.addAll(
+            [
+              JWTInterceptor(_onExpireToken, _refreshToken, dioToken, _token),
+              // CurlLoggerDioInterceptor()
+            ],
+          )
+
         // ..interceptors.add(PrettyDioLogger(
         //   request: true,
         //   requestBody: true,
@@ -85,6 +91,7 @@ class ApiRemote {
             "Accept": "application/json",
           }
           ..interceptors.add(QueuedInterceptorsWrapper())
+        // ..interceptors.add(CurlLoggerDioInterceptor())
         // ..interceptors.add(PrettyDioLogger(
         //   request: true,
         //   requestBody: true,

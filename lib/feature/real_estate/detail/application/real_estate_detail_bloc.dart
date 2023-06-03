@@ -5,14 +5,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/bid/domain/i_bid_repository.dart';
+import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/data/message/domain/entities/chat_room/chat_room.dart';
 import 'package:real_estate_blockchain/data/message/domain/message_failure.dart';
 import 'package:real_estate_blockchain/data/message/infrastructure/message_repository.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/post/domain/i_post_repository.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
+import 'package:collection/collection.dart';
 
 part 'real_estate_detail_state.dart';
 part 'real_estate_detail_event.dart';
@@ -125,14 +128,45 @@ class RealEstateDetailBloc
   ) async {
     try {
       emit(state.copyWith(isShimmer: true));
+
       final estate = await realEstateRepository.detailEstate(state.id);
-      final isBidExist = await bidRepository.checkExist(state.id);
+      final bids = await bidRepository.listMyBids(
+        1,
+        100,
+        reId: state.id,
+        statues: [
+          ProcessingStatus.waiting.value,
+          ProcessingStatus.approved.value,
+          ProcessingStatus.done.value,
+          ProcessingStatus.failed.value,
+        ],
+      );
       final isPostExist = await postRepository.checkExist(state.id);
-      isBidExist.fold((l) {
-        emit(state.copyWith(bidExist: 0));
-      }, (r) => emit(state.copyWith(bidExist: r)));
-      isPostExist.fold((l) => emit(state.copyWith(postExist: 0)),
-          (r) => emit(state.copyWith(postExist: r)));
+      bids.fold(
+        (l) {
+          emit(state.copyWith(bid: null));
+        },
+        (r) {
+          final result = List<BidAuction>.from(r.data ?? []);
+          result.sort(
+            (a, b) =>
+                b.createdAt?.compareTo(a.createdAt ?? DateTime.now()) ?? 0,
+          );
+          emit(
+            state.copyWith(
+              bid: result.firstOrNull,
+            ),
+          );
+        },
+      );
+      isPostExist.fold(
+        (l) => emit(
+          state.copyWith(postExist: 0),
+        ),
+        (r) => emit(
+          state.copyWith(postExist: r),
+        ),
+      );
       estate.fold(
         (l) => throw l,
         (r) {

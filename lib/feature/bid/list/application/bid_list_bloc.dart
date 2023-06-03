@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/bid/domain/i_bid_repository.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
@@ -36,9 +37,12 @@ class BidListBloc extends Bloc<BidListEvent, BidListState> {
     Emitter<BidListState> emit,
   ) async {
     try {
-      final bids = await bidRepository.listBids(
+      final bids = await bidRepository.listOtherBids(
         event.page,
         event.size,
+        statues: [
+          ProcessingStatus.approved.value,
+        ],
       );
 
       bids.fold(

@@ -7,6 +7,7 @@ part 'bid_detail_params.freezed.dart';
 class BidDetailParams with _$BidDetailParams {
   const factory BidDetailParams({
     required String id,
+    @Default(false) bool isOther,
     VoidCallback? onSuccess,
   }) = _BidDetailParams;
 }

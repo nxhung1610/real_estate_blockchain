@@ -35,7 +35,7 @@ class WDetailBidInfo extends StatelessWidget {
               title: s.highestBindingBid,
               body: state?.highestBindingBid != null
                   ? NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                      .format(num.tryParse(state?.highestBindingBid ?? '') ?? 0)
+                      .format(state?.highestBindingBid ?? 0)
                       .toString()
                   : '- -/- -',
             ),

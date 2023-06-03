@@ -27,13 +27,13 @@ _$_BidAuctionResponse _$$_BidAuctionResponseFromJson(
           ? null
           : RealEstateResponse.fromJson(
               json['real_estate'] as Map<String, dynamic>),
-      highestBindingBid: json['highest_binding_bid'] as String?,
+      highestBindingBid: json['highest_binding_bid'] as int?,
       highestBidderId: json['highest_bidder_id'] as int?,
       highestBidder: json['highest_bidder'] == null
           ? null
           : UserDto.fromJson(json['highest_bidder'] as Map<String, dynamic>),
-      bidIncrement: json['bid_increment'] as String?,
-      startingPrice: json['starting_price'] as String?,
+      bidIncrement: json['bid_increment'] as int?,
+      startingPrice: json['starting_price'] as int?,
       contractAddress: json['contract_address'] as String?,
       rejectedReason: json['rejected_reason'] as String?,
       owner: json['owner'] == null

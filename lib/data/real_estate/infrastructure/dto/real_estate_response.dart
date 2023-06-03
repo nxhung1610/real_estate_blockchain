@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/file/infrastructure/dto/image/image_dto_mapper.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_status.dart';
 
@@ -71,7 +72,7 @@ extension RealEstateResponseMapper on RealEstateResponse {
       price: price,
       provinceId: provinceId,
       reason: reason,
-      status: RealEstateStatus.fromValue(status),
+      status: ProcessingStatus.fromValue(status),
       updatedAt: updatedAt,
       wardId: wardId,
       name: name,

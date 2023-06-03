@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/bid/detail/model/bid_detail_params.dart';
 import 'package:real_estate_blockchain/feature/post/detail/presentation/models/post_real_estate_detail_page_params.dart';
@@ -27,9 +28,9 @@ class _WBottomOwnerActionState extends State<WBottomOwnerAction> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocSelector<RealEstateDetailBloc, RealEstateDetailState,
-        dartz.Tuple2<int?, int?>>(
+        dartz.Tuple2<int?, BidAuction?>>(
       selector: (state) {
-        return dartz.Tuple2(state.postExist, state.bidExist);
+        return dartz.Tuple2(state.postExist, state.bid);
       },
       builder: (context, state) {
         return Container(
@@ -92,7 +93,7 @@ class _WBottomOwnerActionState extends State<WBottomOwnerAction> {
                     ),
                     child: Material(
                       child: IconButton(
-                        onPressed: (state.value2 ?? 0) > 0
+                        onPressed: state.value2 != null
                             ? () {
                                 context.push(
                                   $appRoute.bid.url,

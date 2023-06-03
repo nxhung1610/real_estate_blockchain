@@ -36,7 +36,7 @@ class _BidBottomActionState extends State<BidBottomAction> {
   @override
   void initState() {
     super.initState();
-    minBid = num.tryParse(widget.bid.highestBindingBid ?? '') ??
+    minBid = widget.bid.highestBindingBid ??
         ((widget.bid.startingPrice ?? 0) + (widget.bid.bidIncrement ?? 0));
     currentBid = minBid;
     remain = widget.duration;
@@ -228,10 +228,9 @@ class _BidBottomActionState extends State<BidBottomAction> {
                                     widget.bid.highestBindingBid != null
                                         ? NumberFormat.currency(
                                                 locale: "vi_VN", symbol: 'đ')
-                                            .format(num.tryParse(widget.bid
-                                                        .highestBindingBid ??
-                                                    '') ??
-                                                0)
+                                            .format(
+                                                widget.bid.highestBindingBid ??
+                                                    0)
                                             .toString()
                                         : '- -/- -',
                                     style:
@@ -269,11 +268,7 @@ class _BidBottomActionState extends State<BidBottomAction> {
                   elevation: 0,
                   borderRadius: BorderRadius.circular(AppSize.smallRadius),
                   color: currentBid <=
-                          max(
-                              minBid,
-                              num.tryParse(
-                                      widget.bid.highestBindingBid ?? '') ??
-                                  0)
+                          max(minBid, widget.bid.highestBindingBid ?? 0)
                       ? AppColor.kNeutrals_.shade600
                       : AppColor.kNeutrals_.shade800,
                   child: IconButton(

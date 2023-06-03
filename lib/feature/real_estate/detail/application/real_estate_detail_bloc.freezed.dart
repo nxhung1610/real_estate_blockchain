@@ -21,7 +21,7 @@ mixin _$RealEstateDetailState {
   Status get status => throw _privateConstructorUsedError;
   bool get isShimmer => throw _privateConstructorUsedError;
   int? get postExist => throw _privateConstructorUsedError;
-  int? get bidExist => throw _privateConstructorUsedError;
+  BidAuction? get bid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RealEstateDetailStateCopyWith<RealEstateDetailState> get copyWith =>
@@ -40,10 +40,11 @@ abstract class $RealEstateDetailStateCopyWith<$Res> {
       Status status,
       bool isShimmer,
       int? postExist,
-      int? bidExist});
+      BidAuction? bid});
 
   $RealEstateCopyWith<$Res>? get estate;
   $StatusCopyWith<$Res> get status;
+  $BidAuctionCopyWith<$Res>? get bid;
 }
 
 /// @nodoc
@@ -65,7 +66,7 @@ class _$RealEstateDetailStateCopyWithImpl<$Res,
     Object? status = null,
     Object? isShimmer = null,
     Object? postExist = freezed,
-    Object? bidExist = freezed,
+    Object? bid = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -88,10 +89,10 @@ class _$RealEstateDetailStateCopyWithImpl<$Res,
           ? _value.postExist
           : postExist // ignore: cast_nullable_to_non_nullable
               as int?,
-      bidExist: freezed == bidExist
-          ? _value.bidExist
-          : bidExist // ignore: cast_nullable_to_non_nullable
-              as int?,
+      bid: freezed == bid
+          ? _value.bid
+          : bid // ignore: cast_nullable_to_non_nullable
+              as BidAuction?,
     ) as $Val);
   }
 
@@ -114,6 +115,18 @@ class _$RealEstateDetailStateCopyWithImpl<$Res,
       return _then(_value.copyWith(status: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BidAuctionCopyWith<$Res>? get bid {
+    if (_value.bid == null) {
+      return null;
+    }
+
+    return $BidAuctionCopyWith<$Res>(_value.bid!, (value) {
+      return _then(_value.copyWith(bid: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -130,12 +143,14 @@ abstract class _$$_RealEstateDetailStateCopyWith<$Res>
       Status status,
       bool isShimmer,
       int? postExist,
-      int? bidExist});
+      BidAuction? bid});
 
   @override
   $RealEstateCopyWith<$Res>? get estate;
   @override
   $StatusCopyWith<$Res> get status;
+  @override
+  $BidAuctionCopyWith<$Res>? get bid;
 }
 
 /// @nodoc
@@ -154,7 +169,7 @@ class __$$_RealEstateDetailStateCopyWithImpl<$Res>
     Object? status = null,
     Object? isShimmer = null,
     Object? postExist = freezed,
-    Object? bidExist = freezed,
+    Object? bid = freezed,
   }) {
     return _then(_$_RealEstateDetailState(
       id: null == id
@@ -177,10 +192,10 @@ class __$$_RealEstateDetailStateCopyWithImpl<$Res>
           ? _value.postExist
           : postExist // ignore: cast_nullable_to_non_nullable
               as int?,
-      bidExist: freezed == bidExist
-          ? _value.bidExist
-          : bidExist // ignore: cast_nullable_to_non_nullable
-              as int?,
+      bid: freezed == bid
+          ? _value.bid
+          : bid // ignore: cast_nullable_to_non_nullable
+              as BidAuction?,
     ));
   }
 }
@@ -194,7 +209,7 @@ class _$_RealEstateDetailState implements _RealEstateDetailState {
       this.status = const Status.idle(),
       this.isShimmer = true,
       this.postExist,
-      this.bidExist});
+      this.bid});
 
   @override
   final String id;
@@ -209,11 +224,11 @@ class _$_RealEstateDetailState implements _RealEstateDetailState {
   @override
   final int? postExist;
   @override
-  final int? bidExist;
+  final BidAuction? bid;
 
   @override
   String toString() {
-    return 'RealEstateDetailState(id: $id, estate: $estate, status: $status, isShimmer: $isShimmer, postExist: $postExist, bidExist: $bidExist)';
+    return 'RealEstateDetailState(id: $id, estate: $estate, status: $status, isShimmer: $isShimmer, postExist: $postExist, bid: $bid)';
   }
 
   @override
@@ -228,13 +243,12 @@ class _$_RealEstateDetailState implements _RealEstateDetailState {
                 other.isShimmer == isShimmer) &&
             (identical(other.postExist, postExist) ||
                 other.postExist == postExist) &&
-            (identical(other.bidExist, bidExist) ||
-                other.bidExist == bidExist));
+            (identical(other.bid, bid) || other.bid == bid));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, estate, status, isShimmer, postExist, bidExist);
+  int get hashCode =>
+      Object.hash(runtimeType, id, estate, status, isShimmer, postExist, bid);
 
   @JsonKey(ignore: true)
   @override
@@ -251,7 +265,7 @@ abstract class _RealEstateDetailState implements RealEstateDetailState {
       final Status status,
       final bool isShimmer,
       final int? postExist,
-      final int? bidExist}) = _$_RealEstateDetailState;
+      final BidAuction? bid}) = _$_RealEstateDetailState;
 
   @override
   String get id;
@@ -264,7 +278,7 @@ abstract class _RealEstateDetailState implements RealEstateDetailState {
   @override
   int? get postExist;
   @override
-  int? get bidExist;
+  BidAuction? get bid;
   @override
   @JsonKey(ignore: true)
   _$$_RealEstateDetailStateCopyWith<_$_RealEstateDetailState> get copyWith =>

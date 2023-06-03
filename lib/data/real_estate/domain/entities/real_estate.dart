@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/grpc/core/response.pb.dart';
 
 import 'amenity.dart';
@@ -12,7 +13,7 @@ part 'real_estate.freezed.dart';
 class RealEstate with _$RealEstate {
   factory RealEstate({
     required int id,
-    RealEstateStatus? status,
+    ProcessingStatus? status,
     DateTime? createdAt,
     DateTime? updatedAt,
     String? provinceId,
@@ -43,7 +44,7 @@ class RealEstate with _$RealEstate {
       id: realEstate.id,
       price: realEstate.price,
       name: realEstate.name,
-      status: RealEstateStatus.fromValue(realEstate.status),
+      status: ProcessingStatus.fromValue(realEstate.status),
       provinceId: realEstate.provinceId,
       districtId: realEstate.districtId,
       wardId: realEstate.wardId,

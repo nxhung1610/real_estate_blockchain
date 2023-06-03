@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BidDetailState {
-  String get id => throw _privateConstructorUsedError;
+  BidDetailParams get params => throw _privateConstructorUsedError;
   BidAuction? get bid => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
   bool get isShimmer => throw _privateConstructorUsedError;
@@ -35,13 +35,14 @@ abstract class $BidDetailStateCopyWith<$Res> {
       _$BidDetailStateCopyWithImpl<$Res, BidDetailState>;
   @useResult
   $Res call(
-      {String id,
+      {BidDetailParams params,
       BidAuction? bid,
       Status status,
       bool isShimmer,
       Duration remain,
       bool isEnd});
 
+  $BidDetailParamsCopyWith<$Res> get params;
   $BidAuctionCopyWith<$Res>? get bid;
   $StatusCopyWith<$Res> get status;
 }
@@ -59,7 +60,7 @@ class _$BidDetailStateCopyWithImpl<$Res, $Val extends BidDetailState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? params = null,
     Object? bid = freezed,
     Object? status = null,
     Object? isShimmer = null,
@@ -67,10 +68,10 @@ class _$BidDetailStateCopyWithImpl<$Res, $Val extends BidDetailState>
     Object? isEnd = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as BidDetailParams,
       bid: freezed == bid
           ? _value.bid
           : bid // ignore: cast_nullable_to_non_nullable
@@ -92,6 +93,14 @@ class _$BidDetailStateCopyWithImpl<$Res, $Val extends BidDetailState>
           : isEnd // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BidDetailParamsCopyWith<$Res> get params {
+    return $BidDetailParamsCopyWith<$Res>(_value.params, (value) {
+      return _then(_value.copyWith(params: value) as $Val);
+    });
   }
 
   @override
@@ -124,13 +133,15 @@ abstract class _$$_BidDetailStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {BidDetailParams params,
       BidAuction? bid,
       Status status,
       bool isShimmer,
       Duration remain,
       bool isEnd});
 
+  @override
+  $BidDetailParamsCopyWith<$Res> get params;
   @override
   $BidAuctionCopyWith<$Res>? get bid;
   @override
@@ -148,7 +159,7 @@ class __$$_BidDetailStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? params = null,
     Object? bid = freezed,
     Object? status = null,
     Object? isShimmer = null,
@@ -156,10 +167,10 @@ class __$$_BidDetailStateCopyWithImpl<$Res>
     Object? isEnd = null,
   }) {
     return _then(_$_BidDetailState(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as BidDetailParams,
       bid: freezed == bid
           ? _value.bid
           : bid // ignore: cast_nullable_to_non_nullable
@@ -188,7 +199,7 @@ class __$$_BidDetailStateCopyWithImpl<$Res>
 
 class _$_BidDetailState implements _BidDetailState {
   const _$_BidDetailState(
-      {required this.id,
+      {required this.params,
       this.bid,
       this.status = const Status.idle(),
       this.isShimmer = true,
@@ -196,7 +207,7 @@ class _$_BidDetailState implements _BidDetailState {
       this.isEnd = false});
 
   @override
-  final String id;
+  final BidDetailParams params;
   @override
   final BidAuction? bid;
   @override
@@ -214,7 +225,7 @@ class _$_BidDetailState implements _BidDetailState {
 
   @override
   String toString() {
-    return 'BidDetailState(id: $id, bid: $bid, status: $status, isShimmer: $isShimmer, remain: $remain, isEnd: $isEnd)';
+    return 'BidDetailState(params: $params, bid: $bid, status: $status, isShimmer: $isShimmer, remain: $remain, isEnd: $isEnd)';
   }
 
   @override
@@ -222,7 +233,7 @@ class _$_BidDetailState implements _BidDetailState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BidDetailState &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.params, params) || other.params == params) &&
             (identical(other.bid, bid) || other.bid == bid) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.isShimmer, isShimmer) ||
@@ -233,7 +244,7 @@ class _$_BidDetailState implements _BidDetailState {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, bid, status, isShimmer, remain, isEnd);
+      Object.hash(runtimeType, params, bid, status, isShimmer, remain, isEnd);
 
   @JsonKey(ignore: true)
   @override
@@ -244,7 +255,7 @@ class _$_BidDetailState implements _BidDetailState {
 
 abstract class _BidDetailState implements BidDetailState {
   const factory _BidDetailState(
-      {required final String id,
+      {required final BidDetailParams params,
       final BidAuction? bid,
       final Status status,
       final bool isShimmer,
@@ -252,7 +263,7 @@ abstract class _BidDetailState implements BidDetailState {
       final bool isEnd}) = _$_BidDetailState;
 
   @override
-  String get id;
+  BidDetailParams get params;
   @override
   BidAuction? get bid;
   @override

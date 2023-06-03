@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RealEstate {
   int get id => throw _privateConstructorUsedError;
-  RealEstateStatus? get status => throw _privateConstructorUsedError;
+  ProcessingStatus? get status => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get provinceId => throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ abstract class $RealEstateCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      RealEstateStatus? status,
+      ProcessingStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
       String? provinceId,
@@ -128,7 +128,7 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as RealEstateStatus?,
+              as ProcessingStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -235,7 +235,7 @@ abstract class _$$_RealEstateCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      RealEstateStatus? status,
+      ProcessingStatus? status,
       DateTime? createdAt,
       DateTime? updatedAt,
       String? provinceId,
@@ -306,7 +306,7 @@ class __$$_RealEstateCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as RealEstateStatus?,
+              as ProcessingStatus?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -438,7 +438,7 @@ class _$_RealEstate implements _RealEstate {
   @override
   final int id;
   @override
-  final RealEstateStatus? status;
+  final ProcessingStatus? status;
   @override
   final DateTime? createdAt;
   @override
@@ -591,7 +591,7 @@ class _$_RealEstate implements _RealEstate {
 abstract class _RealEstate implements RealEstate {
   factory _RealEstate(
       {required final int id,
-      final RealEstateStatus? status,
+      final ProcessingStatus? status,
       final DateTime? createdAt,
       final DateTime? updatedAt,
       final String? provinceId,
@@ -619,7 +619,7 @@ abstract class _RealEstate implements RealEstate {
   @override
   int get id;
   @override
-  RealEstateStatus? get status;
+  ProcessingStatus? get status;
   @override
   DateTime? get createdAt;
   @override

@@ -60,6 +60,7 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   shared_preferences: ^2.1.0
   fluttertoast: ^8.2.1
+  curl_logger_dio_interceptor: ^1.0.0
 
   # UI
   go_router: ^6.2.0

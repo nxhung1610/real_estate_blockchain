@@ -3,7 +3,7 @@ part of 'bid_detail_bloc.dart';
 @freezed
 class BidDetailState with _$BidDetailState {
   const factory BidDetailState({
-    required String id,
+    required BidDetailParams params,
     BidAuction? bid,
     @Default(Status.idle()) Status status,
     @Default(true) bool isShimmer,

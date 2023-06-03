@@ -10,9 +10,17 @@ abstract class IBidRepository {
   Future<Either<BidFailure, Unit>> createBid(CreateBidInput input);
   Future<Either<BidFailure, Unit>> bid(BidAuctionInput input);
   Future<Either<BidFailure, int>> checkExist(String reId);
-  Future<Either<BidFailure, Paging<BidAuction>>> listBids(
+  Future<Either<BidFailure, Paging<BidAuction>>> listOtherBids(
     int page,
-    int size,
-  );
+    int size, {
+    List<int> statues = const [],
+    String? reId,
+  });
+  Future<Either<BidFailure, Paging<BidAuction>>> listMyBids(
+    int page,
+    int size, {
+    List<int> statues = const [],
+    String? reId,
+  });
   Future<Either<BidFailure, BidAuction>> getBid(String bidId);
 }

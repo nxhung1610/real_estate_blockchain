@@ -94,16 +94,62 @@ class BidRepository implements IBidRepository {
   }
 
   @override
-  Future<Either<BidFailure, Paging<BidAuction>>> listBids(
+  Future<Either<BidFailure, Paging<BidAuction>>> listOtherBids(
     int page,
-    int size,
-  ) async {
+    int size, {
+    List<int> statues = const [],
+    String? reId,
+  }) async {
     try {
       final res = await _apiRemote.post<PagingResponse<BidAuctionResponse>>(
-        '/auction/list',
+        '/auction/others/list',
         data: {
           'page': page,
           'size': size,
+          'statuses': statues,
+          're_id': reId,
+        },
+        parse: (data) {
+          return PagingResponse<BidAuctionResponse>.fromJson(
+            data,
+            parse: (value) {
+              return BidAuctionResponse.fromJson(value);
+            },
+          );
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(
+        Paging.fromResponse<BidAuction, BidAuctionResponse>(
+          res.data!,
+          (value) => BidAuction.fromDto(
+            value,
+          ),
+        ),
+      );
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(BidFailure());
+    }
+  }
+
+  @override
+  Future<Either<BidFailure, Paging<BidAuction>>> listMyBids(
+    int page,
+    int size, {
+    List<int> statues = const [],
+    String? reId,
+  }) async {
+    try {
+      final res = await _apiRemote.post<PagingResponse<BidAuctionResponse>>(
+        '/auction/me/list',
+        data: {
+          'page': page,
+          'size': size,
+          'statues': statues,
+          're_id': reId,
         },
         parse: (data) {
           return PagingResponse<BidAuctionResponse>.fromJson(

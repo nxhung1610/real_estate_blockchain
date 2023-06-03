@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$BidDetailParams {
   String get id => throw _privateConstructorUsedError;
+  bool get isOther => throw _privateConstructorUsedError;
   VoidCallback? get onSuccess => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +31,7 @@ abstract class $BidDetailParamsCopyWith<$Res> {
           BidDetailParams value, $Res Function(BidDetailParams) then) =
       _$BidDetailParamsCopyWithImpl<$Res, BidDetailParams>;
   @useResult
-  $Res call({String id, VoidCallback? onSuccess});
+  $Res call({String id, bool isOther, VoidCallback? onSuccess});
 }
 
 /// @nodoc
@@ -47,6 +48,7 @@ class _$BidDetailParamsCopyWithImpl<$Res, $Val extends BidDetailParams>
   @override
   $Res call({
     Object? id = null,
+    Object? isOther = null,
     Object? onSuccess = freezed,
   }) {
     return _then(_value.copyWith(
@@ -54,6 +56,10 @@ class _$BidDetailParamsCopyWithImpl<$Res, $Val extends BidDetailParams>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      isOther: null == isOther
+          ? _value.isOther
+          : isOther // ignore: cast_nullable_to_non_nullable
+              as bool,
       onSuccess: freezed == onSuccess
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
@@ -70,7 +76,7 @@ abstract class _$$_BidDetailParamsCopyWith<$Res>
       __$$_BidDetailParamsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, VoidCallback? onSuccess});
+  $Res call({String id, bool isOther, VoidCallback? onSuccess});
 }
 
 /// @nodoc
@@ -85,6 +91,7 @@ class __$$_BidDetailParamsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? isOther = null,
     Object? onSuccess = freezed,
   }) {
     return _then(_$_BidDetailParams(
@@ -92,6 +99,10 @@ class __$$_BidDetailParamsCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      isOther: null == isOther
+          ? _value.isOther
+          : isOther // ignore: cast_nullable_to_non_nullable
+              as bool,
       onSuccess: freezed == onSuccess
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
@@ -103,16 +114,20 @@ class __$$_BidDetailParamsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BidDetailParams implements _BidDetailParams {
-  const _$_BidDetailParams({required this.id, this.onSuccess});
+  const _$_BidDetailParams(
+      {required this.id, this.isOther = false, this.onSuccess});
 
   @override
   final String id;
+  @override
+  @JsonKey()
+  final bool isOther;
   @override
   final VoidCallback? onSuccess;
 
   @override
   String toString() {
-    return 'BidDetailParams(id: $id, onSuccess: $onSuccess)';
+    return 'BidDetailParams(id: $id, isOther: $isOther, onSuccess: $onSuccess)';
   }
 
   @override
@@ -121,12 +136,13 @@ class _$_BidDetailParams implements _BidDetailParams {
         (other.runtimeType == runtimeType &&
             other is _$_BidDetailParams &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.isOther, isOther) || other.isOther == isOther) &&
             (identical(other.onSuccess, onSuccess) ||
                 other.onSuccess == onSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, onSuccess);
+  int get hashCode => Object.hash(runtimeType, id, isOther, onSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -138,10 +154,13 @@ class _$_BidDetailParams implements _BidDetailParams {
 abstract class _BidDetailParams implements BidDetailParams {
   const factory _BidDetailParams(
       {required final String id,
+      final bool isOther,
       final VoidCallback? onSuccess}) = _$_BidDetailParams;
 
   @override
   String get id;
+  @override
+  bool get isOther;
   @override
   VoidCallback? get onSuccess;
   @override

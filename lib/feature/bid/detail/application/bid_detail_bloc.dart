@@ -12,6 +12,8 @@ import 'package:real_estate_blockchain/data/real_estate/domain/i_real_estate_rep
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
+import '../model/bid_detail_params.dart';
+
 part 'bid_detail_state.dart';
 part 'bid_detail_event.dart';
 part 'bid_detail_bloc.freezed.dart';
@@ -21,10 +23,10 @@ class BidDetailBloc extends Bloc<BidDetailEvent, BidDetailState> {
   final IRealEstateRepository realEstateRepository;
   final IBidRepository bidRepository;
   BidDetailBloc(
-    @factoryParam String id,
+    @factoryParam BidDetailParams params,
     this.realEstateRepository,
     this.bidRepository,
-  ) : super(BidDetailState(id: id)) {
+  ) : super(BidDetailState(params: params)) {
     on<BidDetailEventOnStarted>(_onStarted);
     on<BidDetailEventOnCountDownTime>(_onCountDownTime);
     on<BidDetailEventOnBidEnd>(_onBidEnd);
@@ -77,7 +79,7 @@ class BidDetailBloc extends Bloc<BidDetailEvent, BidDetailState> {
   ) async {
     try {
       emit(state.copyWith(isShimmer: true));
-      final bid = await bidRepository.getBid(state.id);
+      final bid = await bidRepository.getBid(state.params.id);
       bid.fold(
         (l) => throw l,
         (r) {

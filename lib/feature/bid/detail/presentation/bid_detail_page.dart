@@ -13,13 +13,16 @@ import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bidder.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
+import 'package:real_estate_blockchain/feature/bid/detail/presentation/popup/bid_done_popup.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
+import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/user/profile/application/user_profile_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
@@ -44,6 +47,7 @@ class _BidDetailPageState extends State<BidDetailPage>
   late final AnimationController animationController;
   late final Animation<double> animation;
   late final BidDetailBloc bloc;
+  bool isShowFinish = false;
   @override
   void initState() {
     super.initState();
@@ -62,23 +66,57 @@ class _BidDetailPageState extends State<BidDetailPage>
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return BlocListener<BidDetailBloc, BidDetailState>(
-      listener: (context, state) {
-        state.status.whenOrNull(
-          loading: () {
-            context.appDialog.showLoading();
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<BidDetailBloc, BidDetailState>(
+          listener: (context, state) {
+            state.status.whenOrNull(
+              loading: () {
+                context.appDialog.showLoading();
+              },
+              failure: (value) {
+                context.appSnackBar.show(s.anErrorOccurred);
+              },
+              idle: () {
+                context.appDialog.dismissDialog();
+              },
+              success: (value) {
+                context.appSnackBar.show(s.bidSuccess);
+              },
+            );
           },
-          failure: (value) {
-            context.appSnackBar.show(s.anErrorOccurred);
+        ),
+        BlocListener<BidDetailBloc, BidDetailState>(
+          listenWhen: (previous, current) => previous.bid != current.bid,
+          listener: (context, state) {
+            final status = state.bid?.status;
+            if (status != null && !isShowFinish) {
+              isShowFinish = true;
+              switch (status) {
+                case ProcessingStatus.done:
+                  final bidders =
+                      List<Bidder>.from(state.bid?.bidHistory ?? []);
+                  bidders.sort(
+                    (a, b) {
+                      return b.createdAt
+                              ?.compareTo(a.createdAt ?? DateTime.now()) ??
+                          0;
+                    },
+                  );
+                  if (bidders.isNotEmpty) {
+                    BidDonePopup.show(
+                      context,
+                      bidder: bidders.first,
+                    );
+                  }
+                  break;
+                default:
+                  break;
+              }
+            }
           },
-          idle: () {
-            context.appDialog.dismissDialog();
-          },
-          success: (value) {
-            context.appSnackBar.show(s.bidSuccess);
-          },
-        );
-      },
+        ),
+      ],
       child: Scaffold(
         bottomNavigationBar: const _WBottomAction(),
         body: WCustomRefreshScrollView(
@@ -185,24 +223,32 @@ class _BidDetailPageState extends State<BidDetailPage>
                     ),
                   ),
                   centerTitle: true,
-                  flexibleSpace: IgnorePointer(
-                    child: LayoutBuilder(
-                      builder:
-                          (BuildContext context, BoxConstraints constraints) {
-                        WidgetsBinding.instance.addPostFrameCallback(
-                          (timeStamp) {
-                            animationController
-                                .animateTo(constraints.maxHeight / 300.h);
-                          },
-                        );
-                        final state = context.read<BidDetailBloc>().state;
-                        if (state.isShimmer && state.bid?.realEstate == null) {
-                          return const SkeletonWidget();
-                        }
-                        if (!state.isShimmer && state.bid?.realEstate == null) {
-                          return const SizedBox.shrink();
-                        }
-                        return FlexibleSpaceBar(
+                  flexibleSpace: LayoutBuilder(
+                    builder:
+                        (BuildContext context, BoxConstraints constraints) {
+                      WidgetsBinding.instance.addPostFrameCallback(
+                        (timeStamp) {
+                          animationController
+                              .animateTo(constraints.maxHeight / 300.h);
+                        },
+                      );
+                      final state = context.read<BidDetailBloc>().state;
+                      if (state.isShimmer && state.bid?.realEstate == null) {
+                        return const SkeletonWidget();
+                      }
+                      if (!state.isShimmer && state.bid?.realEstate == null) {
+                        return const SizedBox.shrink();
+                      }
+                      return GestureDetector(
+                        onTap: () {
+                          context.push(
+                            $appRoute.realEstateDetail,
+                            extra: RealEstateDetailPageParams(
+                              id: state.bid?.realEstate?.id.toString() ?? '',
+                            ),
+                          );
+                        },
+                        child: FlexibleSpaceBar(
                           centerTitle: false,
                           expandedTitleScale: 1.2,
                           titlePadding: EdgeInsets.symmetric(
@@ -335,9 +381,9 @@ class _BidDetailPageState extends State<BidDetailPage>
                               ))
                             ],
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 );
               },

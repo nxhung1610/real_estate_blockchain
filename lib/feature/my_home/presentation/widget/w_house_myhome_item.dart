@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_status.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -180,14 +181,25 @@ class HouseMyHomeItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: () {
                     switch (item.status) {
-                      case RealEstateStatus.delete:
+                      case ProcessingStatus.waiting:
+                        return Colors.yellowAccent.shade400;
+                      case ProcessingStatus.deleted:
                         return Colors.redAccent;
-                      case RealEstateStatus.processing:
+                      case ProcessingStatus.processing:
                         return Colors.yellowAccent;
-                      case RealEstateStatus.failed:
+                      case ProcessingStatus.failed:
                         return Colors.grey.shade600;
-                      default:
-                        return null;
+                      case ProcessingStatus.approved:
+                        return Colors.white;
+                      case ProcessingStatus.rejected:
+                        // TODO: Handle this case.
+                        break;
+                      case ProcessingStatus.done:
+                        // TODO: Handle this case.
+                        break;
+                      case ProcessingStatus.close:
+                        // TODO: Handle this case.
+                        break;
                     }
                   }(),
                   borderRadius: BorderRadius.circular(
@@ -205,7 +217,7 @@ class HouseMyHomeItem extends StatelessWidget {
                 child: Text(
                   item.status?.title.toString() ?? '',
                   style: context.textTheme.bodySmall?.copyWith(
-                    color: Colors.white,
+                    color: AppColor.kNeutrals3,
                   ),
                 ),
               ),

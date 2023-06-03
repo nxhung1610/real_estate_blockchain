@@ -19,8 +19,7 @@ class BidRoute extends BaseRoute {
             final params = state.extra as BidDetailParams;
             return CupertinoPage(
               child: BlocProvider(
-                create: (context) =>
-                    getIt.call<BidDetailBloc>(param1: params.id),
+                create: (context) => getIt.call<BidDetailBloc>(param1: params),
                 child: const BidDetailPage(),
               ),
             );

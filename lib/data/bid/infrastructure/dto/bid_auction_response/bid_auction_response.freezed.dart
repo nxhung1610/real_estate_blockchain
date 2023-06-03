@@ -44,15 +44,15 @@ mixin _$BidAuctionResponse {
   @JsonKey(name: 'real_estate')
   RealEstateResponse? get realEstate => throw _privateConstructorUsedError;
   @JsonKey(name: 'highest_binding_bid')
-  String? get highestBindingBid => throw _privateConstructorUsedError;
+  int? get highestBindingBid => throw _privateConstructorUsedError;
   @JsonKey(name: 'highest_bidder_id')
   int? get highestBidderId => throw _privateConstructorUsedError;
   @JsonKey(name: 'highest_bidder')
   UserDto? get highestBidder => throw _privateConstructorUsedError;
   @JsonKey(name: 'bid_increment')
-  String? get bidIncrement => throw _privateConstructorUsedError;
+  int? get bidIncrement => throw _privateConstructorUsedError;
   @JsonKey(name: 'starting_price')
-  String? get startingPrice => throw _privateConstructorUsedError;
+  int? get startingPrice => throw _privateConstructorUsedError;
   @JsonKey(name: 'contract_address')
   String? get contractAddress => throw _privateConstructorUsedError;
   @JsonKey(name: 'rejected_reason')
@@ -82,11 +82,11 @@ abstract class $BidAuctionResponseCopyWith<$Res> {
       int? status,
       @JsonKey(name: 're_id') int? reId,
       @JsonKey(name: 'real_estate') RealEstateResponse? realEstate,
-      @JsonKey(name: 'highest_binding_bid') String? highestBindingBid,
+      @JsonKey(name: 'highest_binding_bid') int? highestBindingBid,
       @JsonKey(name: 'highest_bidder_id') int? highestBidderId,
       @JsonKey(name: 'highest_bidder') UserDto? highestBidder,
-      @JsonKey(name: 'bid_increment') String? bidIncrement,
-      @JsonKey(name: 'starting_price') String? startingPrice,
+      @JsonKey(name: 'bid_increment') int? bidIncrement,
+      @JsonKey(name: 'starting_price') int? startingPrice,
       @JsonKey(name: 'contract_address') String? contractAddress,
       @JsonKey(name: 'rejected_reason') String? rejectedReason,
       UserDto? owner});
@@ -177,7 +177,7 @@ class _$BidAuctionResponseCopyWithImpl<$Res, $Val extends BidAuctionResponse>
       highestBindingBid: freezed == highestBindingBid
           ? _value.highestBindingBid
           : highestBindingBid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       highestBidderId: freezed == highestBidderId
           ? _value.highestBidderId
           : highestBidderId // ignore: cast_nullable_to_non_nullable
@@ -189,11 +189,11 @@ class _$BidAuctionResponseCopyWithImpl<$Res, $Val extends BidAuctionResponse>
       bidIncrement: freezed == bidIncrement
           ? _value.bidIncrement
           : bidIncrement // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       startingPrice: freezed == startingPrice
           ? _value.startingPrice
           : startingPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       contractAddress: freezed == contractAddress
           ? _value.contractAddress
           : contractAddress // ignore: cast_nullable_to_non_nullable
@@ -266,11 +266,11 @@ abstract class _$$_BidAuctionResponseCopyWith<$Res>
       int? status,
       @JsonKey(name: 're_id') int? reId,
       @JsonKey(name: 'real_estate') RealEstateResponse? realEstate,
-      @JsonKey(name: 'highest_binding_bid') String? highestBindingBid,
+      @JsonKey(name: 'highest_binding_bid') int? highestBindingBid,
       @JsonKey(name: 'highest_bidder_id') int? highestBidderId,
       @JsonKey(name: 'highest_bidder') UserDto? highestBidder,
-      @JsonKey(name: 'bid_increment') String? bidIncrement,
-      @JsonKey(name: 'starting_price') String? startingPrice,
+      @JsonKey(name: 'bid_increment') int? bidIncrement,
+      @JsonKey(name: 'starting_price') int? startingPrice,
       @JsonKey(name: 'contract_address') String? contractAddress,
       @JsonKey(name: 'rejected_reason') String? rejectedReason,
       UserDto? owner});
@@ -362,7 +362,7 @@ class __$$_BidAuctionResponseCopyWithImpl<$Res>
       highestBindingBid: freezed == highestBindingBid
           ? _value.highestBindingBid
           : highestBindingBid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       highestBidderId: freezed == highestBidderId
           ? _value.highestBidderId
           : highestBidderId // ignore: cast_nullable_to_non_nullable
@@ -374,11 +374,11 @@ class __$$_BidAuctionResponseCopyWithImpl<$Res>
       bidIncrement: freezed == bidIncrement
           ? _value.bidIncrement
           : bidIncrement // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       startingPrice: freezed == startingPrice
           ? _value.startingPrice
           : startingPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       contractAddress: freezed == contractAddress
           ? _value.contractAddress
           : contractAddress // ignore: cast_nullable_to_non_nullable
@@ -476,7 +476,7 @@ class _$_BidAuctionResponse implements _BidAuctionResponse {
   final RealEstateResponse? realEstate;
   @override
   @JsonKey(name: 'highest_binding_bid')
-  final String? highestBindingBid;
+  final int? highestBindingBid;
   @override
   @JsonKey(name: 'highest_bidder_id')
   final int? highestBidderId;
@@ -485,10 +485,10 @@ class _$_BidAuctionResponse implements _BidAuctionResponse {
   final UserDto? highestBidder;
   @override
   @JsonKey(name: 'bid_increment')
-  final String? bidIncrement;
+  final int? bidIncrement;
   @override
   @JsonKey(name: 'starting_price')
-  final String? startingPrice;
+  final int? startingPrice;
   @override
   @JsonKey(name: 'contract_address')
   final String? contractAddress;
@@ -588,11 +588,11 @@ abstract class _BidAuctionResponse implements BidAuctionResponse {
       final int? status,
       @JsonKey(name: 're_id') final int? reId,
       @JsonKey(name: 'real_estate') final RealEstateResponse? realEstate,
-      @JsonKey(name: 'highest_binding_bid') final String? highestBindingBid,
+      @JsonKey(name: 'highest_binding_bid') final int? highestBindingBid,
       @JsonKey(name: 'highest_bidder_id') final int? highestBidderId,
       @JsonKey(name: 'highest_bidder') final UserDto? highestBidder,
-      @JsonKey(name: 'bid_increment') final String? bidIncrement,
-      @JsonKey(name: 'starting_price') final String? startingPrice,
+      @JsonKey(name: 'bid_increment') final int? bidIncrement,
+      @JsonKey(name: 'starting_price') final int? startingPrice,
       @JsonKey(name: 'contract_address') final String? contractAddress,
       @JsonKey(name: 'rejected_reason') final String? rejectedReason,
       final UserDto? owner}) = _$_BidAuctionResponse;
@@ -636,7 +636,7 @@ abstract class _BidAuctionResponse implements BidAuctionResponse {
   RealEstateResponse? get realEstate;
   @override
   @JsonKey(name: 'highest_binding_bid')
-  String? get highestBindingBid;
+  int? get highestBindingBid;
   @override
   @JsonKey(name: 'highest_bidder_id')
   int? get highestBidderId;
@@ -645,10 +645,10 @@ abstract class _BidAuctionResponse implements BidAuctionResponse {
   UserDto? get highestBidder;
   @override
   @JsonKey(name: 'bid_increment')
-  String? get bidIncrement;
+  int? get bidIncrement;
   @override
   @JsonKey(name: 'starting_price')
-  String? get startingPrice;
+  int? get startingPrice;
   @override
   @JsonKey(name: 'contract_address')
   String? get contractAddress;
