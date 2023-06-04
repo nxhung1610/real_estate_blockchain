@@ -239,6 +239,10 @@
   "endPrice" : "Giá cuối",
   "bidSuccess" : "Đấu giá thành công",
   "bid" : "Đấu giá",
-  "noBid" : "Chưa có đấu thầu nào"
+  "noBid" : "Chưa có đấu thầu nào",
+  "bidWaiting" :"Đấu giá đợi duyệt",
+  "bidReject" : "Giá thầu trước đó đã bị từ chối, vui lòng tạo giá thầu mới",
+  "thePreviousBrowsingAuctionWasRejected" : "Đấu giá đang duyệt trước đó đã bị từ chối, vui lòng tạo mới",
+  "previousAuctionFailed" : "Đấu giá trước đó thất bại, vui lòng tạo mới"
 
 }

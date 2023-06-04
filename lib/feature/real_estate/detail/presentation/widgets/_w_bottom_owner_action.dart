@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/bid/detail/model/bid_detail_params.dart';
 import 'package:real_estate_blockchain/feature/post/detail/presentation/models/post_real_estate_detail_page_params.dart';
@@ -94,13 +96,121 @@ class _WBottomOwnerActionState extends State<WBottomOwnerAction> {
                     child: Material(
                       child: IconButton(
                         onPressed: state.value2 != null
-                            ? () {
-                                context.push(
-                                  $appRoute.bid.url,
-                                  extra: BidDetailParams(
-                                    id: (state.value2?.id ?? 0).toString(),
-                                  ),
-                                );
+                            ? () async {
+                                final bid = state.value2!;
+                                switch (bid.status) {
+                                  case ProcessingStatus.waiting:
+                                  case ProcessingStatus.processing:
+                                    context.appDialog
+                                        .showAppDialog(message: s.bidWaiting);
+                                    break;
+                                  case ProcessingStatus.deleted:
+                                    await context.appDialog.showAppDialog(
+                                      message: s
+                                          .thePreviousBrowsingAuctionWasRejected,
+                                      onPositive: () {
+                                        showModalBottomSheet(
+                                          context: context,
+                                          builder: (_) {
+                                            return CreateBidBottom(
+                                              onSuccess: () {
+                                                context
+                                                    .read<
+                                                        RealEstateDetailBloc>()
+                                                    .add(
+                                                      const RealEstateDetailEventOnStarted(),
+                                                    );
+                                              },
+                                              reId: context
+                                                  .read<RealEstateDetailBloc>()
+                                                  .state
+                                                  .id,
+                                            );
+                                          },
+                                        );
+                                      },
+                                    );
+                                    break;
+                                  case ProcessingStatus.failed:
+                                    await context.appDialog.showAppDialog(
+                                      message: s.previousAuctionFailed,
+                                    );
+                                    if (mounted) {
+                                      await showModalBottomSheet(
+                                        context: context,
+                                        builder: (_) {
+                                          return CreateBidBottom(
+                                            onSuccess: () {
+                                              context
+                                                  .read<RealEstateDetailBloc>()
+                                                  .add(
+                                                    const RealEstateDetailEventOnStarted(),
+                                                  );
+                                            },
+                                            reId: context
+                                                .read<RealEstateDetailBloc>()
+                                                .state
+                                                .id,
+                                          );
+                                        },
+                                      );
+                                    }
+                                    break;
+                                  case ProcessingStatus.rejected:
+                                    await context.appDialog
+                                        .showAppDialog(message: s.bidReject);
+                                    if (mounted) {
+                                      await showModalBottomSheet(
+                                        context: context,
+                                        builder: (_) {
+                                          return CreateBidBottom(
+                                            onSuccess: () {
+                                              context
+                                                  .read<RealEstateDetailBloc>()
+                                                  .add(
+                                                    const RealEstateDetailEventOnStarted(),
+                                                  );
+                                            },
+                                            reId: context
+                                                .read<RealEstateDetailBloc>()
+                                                .state
+                                                .id,
+                                          );
+                                        },
+                                      );
+                                    }
+                                    break;
+                                  case ProcessingStatus.approved:
+                                  case ProcessingStatus.done:
+                                    context.push(
+                                      $appRoute.bid.url,
+                                      extra: BidDetailParams(
+                                        id: (state.value2?.id ?? 0).toString(),
+                                      ),
+                                    );
+                                    break;
+
+                                  case ProcessingStatus.close:
+                                    showModalBottomSheet(
+                                      context: context,
+                                      builder: (_) {
+                                        return CreateBidBottom(
+                                          onSuccess: () {
+                                            context
+                                                .read<RealEstateDetailBloc>()
+                                                .add(
+                                                  const RealEstateDetailEventOnStarted(),
+                                                );
+                                          },
+                                          reId: context
+                                              .read<RealEstateDetailBloc>()
+                                              .state
+                                              .id,
+                                        );
+                                      },
+                                    );
+                                    break;
+                                }
                               }
                             : () {
                                 showModalBottomSheet(

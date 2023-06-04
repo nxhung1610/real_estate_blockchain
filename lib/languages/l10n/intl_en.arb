@@ -238,6 +238,10 @@
   "endPrice" : "End price",
   "bidSuccess" : "Bid success",
   "bid" : "Bid",
-  "noBid" : "No bid found"
+  "noBid" : "No bid found",
+  "bidWaiting" :"Bid waiting",
+  "bidReject" : "The previous bid was rejected, please create a new one",
+  "thePreviousBrowsingAuctionWasRejected" : "The previous browsing auction was rejected, please create a new one",
+  "previousAuctionFailed" : "Previous auction failed, please create a new one"
 
 }

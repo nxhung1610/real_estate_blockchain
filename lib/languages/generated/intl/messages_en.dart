@@ -72,7 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bid increasement"),
         "bidIncrement": MessageLookupByLibrary.simpleMessage("Bid Increment"),
         "bidNow": MessageLookupByLibrary.simpleMessage("Bid now"),
+        "bidReject": MessageLookupByLibrary.simpleMessage(
+            "The previous bid was rejected, please create a new one"),
         "bidSuccess": MessageLookupByLibrary.simpleMessage("Bid success"),
+        "bidWaiting": MessageLookupByLibrary.simpleMessage("Bid waiting"),
         "biddingHistory":
             MessageLookupByLibrary.simpleMessage("Bidding History"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Built At"),
@@ -251,6 +254,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "postTourType": MessageLookupByLibrary.simpleMessage("Post tour type"),
         "posts": MessageLookupByLibrary.simpleMessage("Posts"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
+        "previousAuctionFailed": MessageLookupByLibrary.simpleMessage(
+            "Previous auction failed, please create a new one"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
@@ -323,6 +328,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Submit Your Bid At"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),
+        "thePreviousBrowsingAuctionWasRejected":
+            MessageLookupByLibrary.simpleMessage(
+                "The previous browsing auction was rejected, please create a new one"),
         "time": MessageLookupByLibrary.simpleMessage("Time"),
         "timeLeft": MessageLookupByLibrary.simpleMessage("Time Left"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),

@@ -2399,6 +2399,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Bid waiting`
+  String get bidWaiting {
+    return Intl.message(
+      'Bid waiting',
+      name: 'bidWaiting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The previous bid was rejected, please create a new one`
+  String get bidReject {
+    return Intl.message(
+      'The previous bid was rejected, please create a new one',
+      name: 'bidReject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The previous browsing auction was rejected, please create a new one`
+  String get thePreviousBrowsingAuctionWasRejected {
+    return Intl.message(
+      'The previous browsing auction was rejected, please create a new one',
+      name: 'thePreviousBrowsingAuctionWasRejected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous auction failed, please create a new one`
+  String get previousAuctionFailed {
+    return Intl.message(
+      'Previous auction failed, please create a new one',
+      name: 'previousAuctionFailed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

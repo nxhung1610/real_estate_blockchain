@@ -71,8 +71,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Giá tăng thầu"),
         "bidIncrement": MessageLookupByLibrary.simpleMessage("Tăng giá thầu"),
         "bidNow": MessageLookupByLibrary.simpleMessage("Đấu giá "),
+        "bidReject": MessageLookupByLibrary.simpleMessage(
+            "Giá thầu trước đó đã bị từ chối, vui lòng tạo giá thầu mới"),
         "bidSuccess":
             MessageLookupByLibrary.simpleMessage("Đấu giá thành công"),
+        "bidWaiting": MessageLookupByLibrary.simpleMessage("Đấu giá đợi duyệt"),
         "biddingHistory":
             MessageLookupByLibrary.simpleMessage("Lịch sử đấu giá"),
         "builtAt": MessageLookupByLibrary.simpleMessage("Được xây dựng"),
@@ -250,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "postTourType": MessageLookupByLibrary.simpleMessage("Loại bài đăng"),
         "posts": MessageLookupByLibrary.simpleMessage("Bài đăng"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
+        "previousAuctionFailed": MessageLookupByLibrary.simpleMessage(
+            "Đấu giá trước đó thất bại, vui lòng tạo mới"),
         "price": MessageLookupByLibrary.simpleMessage("Mức giá"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Vùng giá"),
         "privacyPolicy":
@@ -324,6 +329,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Đấu giá thầu của tại"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
+        "thePreviousBrowsingAuctionWasRejected":
+            MessageLookupByLibrary.simpleMessage(
+                "Đấu giá đang duyệt trước đó đã bị từ chối, vui lòng tạo mới"),
         "time": MessageLookupByLibrary.simpleMessage("Thời gian"),
         "timeLeft": MessageLookupByLibrary.simpleMessage("Thời gian còn lại"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
