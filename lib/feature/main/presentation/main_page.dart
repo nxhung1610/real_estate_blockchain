@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_mixin/get_it_mixin.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
@@ -125,6 +126,17 @@ class _MainPageState extends State<MainPage>
                   child: const ProfilePage(),
                 ),
               ],
+            ),
+            floatingActionButton: FloatingActionButton(
+              shape: const CircleBorder(),
+              backgroundColor: AppColor.kNeutrals3,
+              child: const Icon(
+                Icons.messenger_outlined,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                context.push($appRoute.dialogflow.url);
+              },
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: context.watch<MainCubit>().state.sub.index,

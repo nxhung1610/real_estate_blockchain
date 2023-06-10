@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "real-estate-blockchain",
+  "private_key_id": "a1fc9ef09c0acd26429a0750a0e88e134528adc8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDDxaXbEnllaUda\nich4WmmPD4Am9f3lDUW6bS2VXatvTC9w/rHD76isermxf8XquaBZyuvqAG+rFLSe\nBQaiXbEA7Fvna1m5jj6zCoviZyuP4rXcrOYiHiJrPHTWYGL1XBjxREx7vukj2rIO\nrvGMzxoIJKtkw4cvmlIomTqiKFjlDI7E3KV8B7ANkh84CJGr6VoLd+3Zm0jUh1Ha\niDi/UDhGZ+TPPg5YlfJ7UuEtTGrvB29W+ptA68SKmnuu/L5iP2piTMNWI/YMx2Jq\nbot77+3z0Nwa8OlWAmwRt2uur6ED9sOtvHFDpJsbkRUGs5fwE+W2VSjt1KfumwD/\nLCLdMbFxAgMBAAECgf8vGtzh4fKvRXiZcuwj7oJw8Mi9PdkpZy53VjgqKSDDFWP3\nG3sTVN7XsFIa7Wwew4qXOhOmoszKjtTxI0I2gnSjA9zTOo8MQXwrs9VfGO03l1cJ\nZVauXKXvL7fupge4bzGki2NpLukFcS7XDnRbjvfgDtfln9GOWhhAPaE+aHMn4c3Q\nHxNdzLcUnRlBDBnjJq1jWkXluudK9LYJlCrNH41ta/TVHlEQ2XLsmfBQhtkCi6yt\nkaQDV/1IYX/mVQHWRbI/MT+dL+wQjWSTajP/XegjDHuNPao8MUcmehwQC/iV8FD+\nCaunqRCEBYChl1OP1rkXqsEhjS7jIT3zTWDA/kECgYEA4EOshNIa9D8LcyX6RHt4\npVuDMsL3WE91Q/zIW7PPDecdvCJVPO1GwpOr0NhAnTQh+BRhexOz2wfzJ9wDZpDh\nSrqB9uUxgegBcShAzs3g7NyKZxAYrZcWmBEDUlqLBOPg8HFxFwg0yMw6bLiDUA82\nRcZFqyN2jHy12dcUpDscqrECgYEA33nL3ICqTZQAiUH5frL3FcrT3r8ui0XPeaql\n/IIdg/mijvznbMg4XtVvtVPwbFogWfUhAqWszVk4z4/liSgXyTrbe/31EGjZhZA6\nAAw9J4faj/P4RdlU5QU7UlnzW82IevupH1TjZ6wDqSzGZlowmzETJ3le5b/1FTuE\nHRPhosECgYEAyRnmSfReV0dxbQBRO7e8qAs3yv0p7/bQoPa8c/75XO4yq9HdvZTI\nLxNcrxo8Vru4+kzMXSF91pt6X/Pa2M5yOCCnCk7b5jG1mVMPSmMznzLkqSa1+nPR\nvusCn4axwuDVhMc1MgIZ0zXP7k5G8jOx5z+0mZJja/co2v8Tc3HOcwECgYBf8QI8\noGB8/dVdGB3s7xh1GqbrMljhIg94xHKOfa3+QuYvTRRt92d8D1XuGyNU4TySYlLR\nuB7/6hYhxj1dLQFJOyOPj+/uI5V/afP8oUR//CsxMiScmDmCOUTGjieUeiDl67Un\n5mHa2FaaAscKmh3UArWedNTw/gBSJUMK2MY+AQKBgHLrObylhX+NO4jsarSvxj29\n1ECi8LQ3YUtEX6Oj41t19dCVx3/1L8ZY4fUluAR/pT0qNyBCF2q0T8IRFpVd3edV\n9aHLOWafgxjCfVUdpee8WvKKp1BGbl5LQN0Gr5KKPVCk7PXuW4/iQs4HH/RIxWKJ\n8Kt25jznY5Y4t/nDv5M/\n-----END PRIVATE KEY-----\n",
+  "client_email": "chatbot@real-estate-blockchain.iam.gserviceaccount.com",
+  "client_id": "102455331256818093940",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/chatbot%40real-estate-blockchain.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

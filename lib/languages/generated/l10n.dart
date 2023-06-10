@@ -2439,6 +2439,36 @@ class S {
       args: [],
     );
   }
+
+  /// `I don't understand your response yet.`
+  String get iDontUnderstandYourResponseYet {
+    return Intl.message(
+      'I don\'t understand your response yet.',
+      name: 'iDontUnderstandYourResponseYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your response is invalid, please continue or cancel the process.`
+  String get continueEstateProcess {
+    return Intl.message(
+      'Your response is invalid, please continue or cancel the process.',
+      name: 'continueEstateProcess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your real estate address`
+  String get pleaseEnterYourRealEstateAddress {
+    return Intl.message(
+      'Please enter your real estate address',
+      name: 'pleaseEnterYourRealEstateAddress',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

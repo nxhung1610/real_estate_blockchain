@@ -419,12 +419,16 @@ class $AssetsLottiesGen {
 class Assets {
   Assets._();
 
+  static const String dialogFlowAuth = 'assets/dialog_flow_auth.json';
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLocationsGen locations = $AssetsLocationsGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $EnvsGen envs = $EnvsGen();
   static const $FontsGen fonts = $FontsGen();
+
+  /// List of all assets
+  List<String> get values => [dialogFlowAuth];
 }
 
 class AssetGenImage {

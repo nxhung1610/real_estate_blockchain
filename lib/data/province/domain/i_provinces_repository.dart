@@ -10,4 +10,16 @@ abstract class IProvincesRepository {
   Future<Either<ProvinceFailures, List<Ward>>> wardFromDistrict(
     District district,
   );
+
+  Future<Either<ProvinceFailures, List<District>>> districtByKeyword(
+    String keyword, {
+    Province? province,
+  });
+  Future<Either<ProvinceFailures, List<Ward>>> wardByKeyword(
+    String keyword, {
+    District? district,
+  });
+  Future<Either<ProvinceFailures, List<Province>>> provinceByKeyword(
+    String keyword,
+  );
 }

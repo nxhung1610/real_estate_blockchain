@@ -92,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Condotel"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
+        "continueEstateProcess": MessageLookupByLibrary.simpleMessage(
+            "Your response is invalid, please continue or cancel the process."),
         "createBid": MessageLookupByLibrary.simpleMessage("Create bid"),
         "createBidSuccess":
             MessageLookupByLibrary.simpleMessage("Create bid success"),
@@ -159,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
+        "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
+            "I don\'t understand your response yet."),
         "inPerson": MessageLookupByLibrary.simpleMessage("In Person"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
@@ -247,6 +251,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Pick a time"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Place a Bid"),
+        "pleaseEnterYourRealEstateAddress":
+            MessageLookupByLibrary.simpleMessage(
+                "Please enter your real estate address"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),

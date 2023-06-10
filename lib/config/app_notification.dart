@@ -29,7 +29,11 @@ class AppNotification {
   final BehaviorSubject<String?> _onMessage = BehaviorSubject();
   Stream<String?> get onMessage => _onMessage.asBroadcastStream();
   Future<void> initialize() async {
-    printLog("TOKEN", message: "${await messaging.getToken()}");
+    try {
+      printLog("TOKEN", message: "${await messaging.getToken()}");
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+    }
 
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('ic_launcher');

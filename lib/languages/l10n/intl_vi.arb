@@ -243,6 +243,9 @@
   "bidWaiting" :"Đấu giá đợi duyệt",
   "bidReject" : "Giá thầu trước đó đã bị từ chối, vui lòng tạo giá thầu mới",
   "thePreviousBrowsingAuctionWasRejected" : "Đấu giá đang duyệt trước đó đã bị từ chối, vui lòng tạo mới",
-  "previousAuctionFailed" : "Đấu giá trước đó thất bại, vui lòng tạo mới"
+  "previousAuctionFailed" : "Đấu giá trước đó thất bại, vui lòng tạo mới",
+  "iDontUnderstandYourResponseYet" :"Tôi chưa hiểu phản hồi của bạn.",
+  "continueEstateProcess" : "Phản hồi của bạn không hợp lệ, vui lòng tiếp tục hoặc huỷ quá trình.",
+  "pleaseEnterYourRealEstateAddress" : "Vui lòng nhập địa chỉ bất động sản của bạn"
 
 }

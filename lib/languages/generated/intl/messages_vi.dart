@@ -91,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "condotel": MessageLookupByLibrary.simpleMessage("Căn hộ du lịch"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "contact": MessageLookupByLibrary.simpleMessage("Liên hệ"),
+        "continueEstateProcess": MessageLookupByLibrary.simpleMessage(
+            "Phản hồi của bạn không hợp lệ, vui lòng tiếp tục hoặc huỷ quá trình."),
         "createBid": MessageLookupByLibrary.simpleMessage("Tạo thầu"),
         "createBidSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo thầu thành công"),
@@ -159,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
+        "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
+            "Tôi chưa hiểu phản hồi của bạn."),
         "inPerson": MessageLookupByLibrary.simpleMessage("Trực tiếp"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
@@ -246,6 +250,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số điện thoại không tồn tại!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Chọn thời gian"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Đặt một giá thầu"),
+        "pleaseEnterYourRealEstateAddress":
+            MessageLookupByLibrary.simpleMessage(
+                "Vui lòng nhập địa chỉ bất động sản của bạn"),
         "pleaseLoginYourAccountToContinue":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),

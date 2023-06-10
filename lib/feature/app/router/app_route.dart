@@ -13,6 +13,7 @@ import 'package:real_estate_blockchain/feature/search/router/router.dart';
 import 'package:real_estate_blockchain/feature/tour/router/tour_route.dart';
 import 'package:real_estate_blockchain/feature/user/router/user_router.dart';
 
+import '../../dialogflow/router/dialogflow_route.dart';
 import '../../my_home/module.dart';
 import '../../post/owner/router/post_owner_router.dart';
 import '../../setting/router/setting_route.dart';
@@ -37,6 +38,7 @@ class AppRoute extends BaseRoute {
   late final PostOwnerRoute postOwner;
   late final PostRealEstateDetailRouter postRealEstateDetail;
   late final MyHomeRoute myHome;
+  late final DialogflowRoute dialogflow;
 
   // Path
   String get onboarding => _onboardingRoute.url;
@@ -68,6 +70,7 @@ class AppRoute extends BaseRoute {
         ...postOwner.routes,
         ...postRealEstateDetail.routes,
         ...myHome.routes,
+        ...dialogflow.routes
       ];
 
   @override
@@ -84,6 +87,7 @@ class AppRoute extends BaseRoute {
         ...postOwner.globalRoutes,
         ...postRealEstateDetail.globalRoutes,
         ...myHome.globalRoutes,
+        ...dialogflow.globalRoutes,
       ];
 
   @override
@@ -103,5 +107,6 @@ class AppRoute extends BaseRoute {
     postRealEstateDetail =
         PostRealEstateDetailRouter(url, '/posts/real-estate/detail');
     myHome = MyHomeRoute(url, '/my-home');
+    dialogflow = DialogflowRoute(url, '/dialogflow');
   }
 }
