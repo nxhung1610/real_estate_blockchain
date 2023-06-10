@@ -38,6 +38,11 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   ) async {
     try {
       emit(state.copyWith(isWaitingResponse: true));
+      add(
+        _AddMessageApp(
+          messageApp: MessageApp.onMessage(data: event.data),
+        ),
+      );
       await state.processMessage.map(
         normal: (value) {
           event.data.mapOrNull(
@@ -69,15 +74,16 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
         (r) {
           try {
             if (r.message?.text != null) {
-              final type =
-                  MessageAppType.fromValue(r.message!.text!.text!.first);
+              final message = r.message!.text!.text!.first;
+              final type = MessageAppType.fromValue(message);
               switch (type) {
                 case MessageAppType.dialogFlow:
                   add(
                     DialogflowEvent.addMessageApp(
                       messageApp: MessageApp.onResponse(
-                        data: OnResponseDataType.unknown(
+                        data: OnResponseDataType.text(
                           id: const Uuid().v4(),
+                          message: message,
                         ),
                       ),
                     ),

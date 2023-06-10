@@ -36,10 +36,6 @@ class _DialogFlowPageState extends State<DialogFlowPage> {
               context.read<AppBloc>().state.locale.languageCode,
             ),
           );
-      DialogEstateInfoInput.show(
-        context,
-        onSuccess: (info) {},
-      );
     });
   }
 

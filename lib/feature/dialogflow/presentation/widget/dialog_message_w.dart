@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow_bloc.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/model/message_app.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/w_message_estate_item.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/w_message_on_message_item.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/w_message_on_response_item.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 
 import 'w_message_item.dart';
@@ -38,6 +40,17 @@ class _DialogMessageWidgetState extends State<DialogMessageWidget> {
           controller: controller,
           itemBuilder: (context, index) {
             final item = messages[index];
+            return WMessageItem(
+              data: item.map(
+                onMessage: (value) {
+                  return WMessageOnMessageItem(data: value.data);
+                },
+                onResponse: (value) {
+                  return WMessageOnResponseItem(item: value.data);
+                },
+              ),
+              isMe: item is MessageAppOnMessage,
+            );
           },
           separatorBuilder: (context, index) {
             return 8.h.verticalSpace;

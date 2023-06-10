@@ -7,16 +7,16 @@ import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 class WMessageItem extends StatelessWidget {
   const WMessageItem({
     super.key,
-    required this.message,
+    required this.data,
     required this.isMe,
   });
-  final String message;
+  final Widget data;
   final bool isMe;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: EdgeInsets.all(10.r),
       child: Row(
         mainAxisAlignment:
             isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -36,12 +36,7 @@ class WMessageItem extends StatelessWidget {
                     ? Colors.grey.shade800
                     : Colors.grey.shade900.withOpacity(0.8)),
             constraints: BoxConstraints(maxWidth: 1.sw * 2 / 3),
-            child: Text(
-              message,
-              style: context.textTheme.bodyLarge?.copyWith(
-                color: context.theme.colorScheme.background,
-              ),
-            ),
+            child: data,
           ),
         ],
       ),

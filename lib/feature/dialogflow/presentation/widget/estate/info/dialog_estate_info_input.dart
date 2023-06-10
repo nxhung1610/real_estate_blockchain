@@ -23,16 +23,16 @@ class DialogEstateInfoInput extends StatefulWidget {
     BuildContext context, {
     required void Function(RealEstateInfo info) onSuccess,
   }) {
-    return showDialog(
+    return showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
-      builder: (_) => Dialog(
-        backgroundColor: Colors.transparent,
-        child: BlocProvider(
-          create: (context) => getIt.call<DialogEstateInfoBloc>(),
-          child: DialogEstateInfoInput(
+      builder: (context) => BlocProvider(
+        create: (context) => getIt.call<DialogEstateInfoBloc>(),
+        child: Builder(builder: (context) {
+          return DialogEstateInfoInput(
             onSuccess: onSuccess,
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
@@ -52,192 +52,228 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ...[
-          Text(
-            s.realEstateName,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
-            ),
+    return Padding(
+      padding:
+          MediaQueryData.fromWindow(WidgetsBinding.instance.window).viewPadding,
+      child: Scaffold(
+        appBar: CustomAppbar(
+          context,
+          leading: const UnconstrainedBox(child: RemoveButtonApp()),
+          leadingWidth: AppSize.mediumIcon + 64.w,
+        ),
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 16.h,
           ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          InputPrimaryForm(
-            keyboardType: TextInputType.text,
-            onChanged: (value) {
-              bloc.add(DialogEstateInfoEvent.onRealEstateNameChanged(value));
-            },
-          )
-        ],
-        AppSize.largeHeightDimens.verticalSpace,
-        ...[
-          Text(
-            s.realEstateType,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
-            ),
-          ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          BlocBuilder<DialogEstateInfoBloc, DialogEstateInfoState>(
-            builder: (context, state) {
-              final bloc = context.read<RealEstateConfigBloc>();
-              final list = bloc.state.config?.realEstateTypes?.toList() ?? [];
-              return DropdownApp<RealEstateType>(
-                items: list
-                    .map(
-                      (e) => DropdownMenuItem(
-                        value: e,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: Text(
-                            e.title(context) ?? '',
-                            style: context.textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                    .toList(),
-                hint: Text(
-                  s.realEstateDescription,
-                  style: context.theme.inputDecorationTheme.hintStyle,
-                ),
-                onChanged: (value) {
-                  if (value != null) {
-                    this
-                        .bloc
-                        .add(DialogEstateInfoEvent.changeRealEstateType(value));
-                  }
-                },
-                selectedItemBuilder: (context) {
-                  return list
-                      .map((e) => Text(
-                            e.title(context) ?? '',
-                            style: context.textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w500,
-                              color: context.textTheme.displayLarge?.color,
-                            ),
-                          ))
-                      .toList();
-                },
-              );
-            },
-          )
-        ],
-        AppSize.mediumHeightDimens.verticalSpace,
-        Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    s.area,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: context.textTheme.displayLarge?.color,
-                    ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ...[
+                Text(
+                  s.realEstateName,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.textTheme.displayLarge?.color,
                   ),
-                  AppSize.mediumHeightDimens.verticalSpace,
-                  InputPrimaryForm(
-                    hint: '1230000',
-                    keyboardType: TextInputType.number,
-                    suffixIcon: IntrinsicWidth(
-                      child: Center(
-                        child: Text(
-                          'm2',
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                InputPrimaryForm(
+                  keyboardType: TextInputType.text,
+                  onChanged: (value) {
+                    bloc.add(
+                        DialogEstateInfoEvent.onRealEstateNameChanged(value));
+                  },
+                )
+              ],
+              AppSize.largeHeightDimens.verticalSpace,
+              ...[
+                Text(
+                  s.realEstateType,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.textTheme.displayLarge?.color,
+                  ),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                BlocBuilder<DialogEstateInfoBloc, DialogEstateInfoState>(
+                  builder: (context, state) {
+                    final bloc = context.read<RealEstateConfigBloc>();
+                    final list =
+                        bloc.state.config?.realEstateTypes?.toList() ?? [];
+                    return DropdownApp<RealEstateType>(
+                      items: list
+                          .map(
+                            (e) => DropdownMenuItem(
+                              value: e,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                child: Text(
+                                  e.title(context) ?? '',
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      hint: Text(
+                        s.realEstateDescription,
+                        style: context.theme.inputDecorationTheme.hintStyle,
+                      ),
+                      onChanged: (value) {
+                        if (value != null) {
+                          this.bloc.add(
+                              DialogEstateInfoEvent.changeRealEstateType(
+                                  value));
+                        }
+                      },
+                      selectedItemBuilder: (context) {
+                        return list
+                            .map((e) => Text(
+                                  e.title(context) ?? '',
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color:
+                                        context.textTheme.displayLarge?.color,
+                                  ),
+                                ))
+                            .toList();
+                      },
+                    );
+                  },
+                )
+              ],
+              AppSize.mediumHeightDimens.verticalSpace,
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.area,
                           style: context.textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                             color: context.textTheme.displayLarge?.color,
                           ),
-                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    ),
-                    onChanged: (value) {
-                      bloc.add(
-                        DialogEstateInfoEvent.onAreaChanged(
-                          double.tryParse(value) ?? 0,
-                        ),
-                      );
-                    },
-                  )
-                ],
-              ),
-            ),
-            AppSize.largeWidthDimens.horizontalSpace,
-            Expanded(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    s.price,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: context.textTheme.displayLarge?.color,
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        InputPrimaryForm(
+                          hint: '1230000',
+                          keyboardType: TextInputType.number,
+                          suffixIcon: IntrinsicWidth(
+                            child: Center(
+                              child: Text(
+                                'm2',
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: context.textTheme.displayLarge?.color,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                          onChanged: (value) {
+                            bloc.add(
+                              DialogEstateInfoEvent.onAreaChanged(
+                                double.tryParse(value) ?? 0,
+                              ),
+                            );
+                          },
+                        )
+                      ],
                     ),
                   ),
-                  AppSize.mediumHeightDimens.verticalSpace,
-                  InputPrimaryForm(
-                    hint: '1200000',
-                    keyboardType: TextInputType.number,
-                    onChanged: (value) {
-                      bloc.add(DialogEstateInfoEvent.onPriceChanged(
-                          double.tryParse(value) ?? 0));
-                    },
+                  AppSize.largeWidthDimens.horizontalSpace,
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.price,
+                          style: context.textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: context.textTheme.displayLarge?.color,
+                          ),
+                        ),
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        InputPrimaryForm(
+                          hint: '1200000',
+                          keyboardType: TextInputType.number,
+                          onChanged: (value) {
+                            bloc.add(DialogEstateInfoEvent.onPriceChanged(
+                                double.tryParse(value) ?? 0));
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-        AppSize.mediumHeightDimens.verticalSpace,
-        ...[
-          Text(
-            s.builtAt,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
-            ),
-          ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          InputPrimaryForm(
-            hint: '2000',
-            keyboardType: TextInputType.number,
-            onChanged: (value) {
-              bloc.onBuiltAtChanged(int.tryParse(value) ?? 0);
-            },
-          )
-        ],
-        AppSize.mediumHeightDimens.verticalSpace,
-        Text(
-          s.legalDocuments,
-          style: context.textTheme.bodyMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: context.textTheme.displayLarge?.color,
-          ),
-        ),
-        AppSize.mediumHeightDimens.verticalSpace,
-        BlocSelector<HouseProcessRealInfoBloc, HouseProcessRealInfoState,
-            List<String>>(
-          selector: (state) {
-            return state.documents;
-          },
-          builder: (context, list) {
-            return Wrap(
-              spacing: AppSize.mediumWidthDimens,
-              runSpacing: AppSize.mediumHeightDimens,
-              children: [
-                ...list
-                    .map(
-                      (e) => InputChip(
+              AppSize.mediumHeightDimens.verticalSpace,
+              ...[
+                Text(
+                  s.builtAt,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.textTheme.displayLarge?.color,
+                  ),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                InputPrimaryForm(
+                  hint: '2000',
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    bloc.onBuiltAtChanged(int.tryParse(value) ?? 0);
+                  },
+                )
+              ],
+              AppSize.mediumHeightDimens.verticalSpace,
+              Text(
+                s.legalDocuments,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: context.textTheme.displayLarge?.color,
+                ),
+              ),
+              AppSize.mediumHeightDimens.verticalSpace,
+              BlocSelector<DialogEstateInfoBloc, DialogEstateInfoState,
+                  List<String>>(
+                selector: (state) {
+                  return state.documents;
+                },
+                builder: (context, list) {
+                  return Wrap(
+                    spacing: AppSize.mediumWidthDimens,
+                    runSpacing: AppSize.mediumHeightDimens,
+                    children: [
+                      ...list
+                          .map(
+                            (e) => InputChip(
+                              padding: EdgeInsets.all(
+                                8.w,
+                              ),
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              elevation: 0,
+                              shadowColor: Colors.transparent,
+                              backgroundColor: AppColor.kNeutrals_.shade500,
+                              label: Text(
+                                e,
+                                style: context.textTheme.bodyMedium?.copyWith(),
+                              ),
+                              onDeleted: () {
+                                bloc.deleteDocument(e);
+                              },
+                            ),
+                          )
+                          .toList(),
+                      ActionChip(
                         padding: EdgeInsets.all(
                           8.w,
                         ),
@@ -245,267 +281,276 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
                         elevation: 0,
                         shadowColor: Colors.transparent,
                         backgroundColor: AppColor.kNeutrals_.shade500,
-                        label: Text(
-                          e,
-                          style: context.textTheme.bodyMedium?.copyWith(),
+                        label: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              s.addDocument,
+                              style: context.textTheme.bodyMedium?.copyWith(),
+                            ),
+                            AppSize.smallWidthDimens.horizontalSpace,
+                            Icon(
+                              Icons.add,
+                              size: AppSize.smallIcon,
+                            ),
+                          ],
                         ),
-                        onDeleted: () {
-                          bloc.deleteDocument(e);
+                        onPressed: () {
+                          showAddDocument(context);
                         },
-                      ),
-                    )
-                    .toList(),
-                ActionChip(
-                  padding: EdgeInsets.all(
-                    8.w,
-                  ),
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  elevation: 0,
-                  shadowColor: Colors.transparent,
-                  backgroundColor: AppColor.kNeutrals_.shade500,
-                  label: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        s.addDocument,
-                        style: context.textTheme.bodyMedium?.copyWith(),
-                      ),
-                      AppSize.smallWidthDimens.horizontalSpace,
-                      Icon(
-                        Icons.add,
-                        size: AppSize.smallIcon,
-                      ),
+                      )
                     ],
+                  );
+                },
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSize.largeHeightDimens,
+                ),
+                child: const Divider(height: 0),
+              ),
+              BlocBuilder<DialogEstateInfoBloc, DialogEstateInfoState>(
+                builder: (context, state) {
+                  const values = RealEstateDetail.values;
+                  return ListView.separated(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return _SelectNumberOption(
+                        lable: labelByName(values[index]),
+                        value: numberByName(values[index], state),
+                        minValue: () {
+                          switch (values[index]) {
+                            case RealEstateDetail.floor:
+                              return 1;
+                            default:
+                              return 0;
+                          }
+                        }(),
+                        onDecrease: () {
+                          switch (values[index]) {
+                            case RealEstateDetail.room:
+                              bloc.onNumberOfBedRoomChanged(false);
+                              break;
+                            case RealEstateDetail.wc:
+                              bloc.onNumberOfWcChanged(false);
+                              break;
+                            case RealEstateDetail.floor:
+                              bloc.onNumberOfFloorChanged(false);
+                              break;
+                          }
+                        },
+                        onIncrease: () {
+                          switch (values[index]) {
+                            case RealEstateDetail.room:
+                              bloc.onNumberOfBedRoomChanged(true);
+                              break;
+                            case RealEstateDetail.wc:
+                              bloc.onNumberOfWcChanged(true);
+                              break;
+                            case RealEstateDetail.floor:
+                              bloc.onNumberOfFloorChanged(true);
+                              break;
+                          }
+                        },
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return AppSize.mediumHeightDimens.verticalSpace;
+                    },
+                    itemCount: values.length,
+                  );
+                },
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSize.largeHeightDimens,
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      s.additionalDescription,
+                      style: context.textTheme.bodySmall?.copyWith(
+                        color: AppColor.kNeutrals_.shade600,
+                      ),
+                    ),
+                    AppSize.mediumWidthDimens.horizontalSpace,
+                    const Expanded(child: Divider(height: 0)),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.houseFacing,
+                          style: context.textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: context.textTheme.displayLarge?.color,
+                          ),
+                        ),
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        (() {
+                          final list = RealEstateDirection.values.toList();
+                          return DropdownApp<RealEstateDirection>(
+                            isExpanded: true,
+                            items: list
+                                .map(
+                                  (e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                      ),
+                                      child: Text(
+                                        e.title(context),
+                                        style: context.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                            onChanged: (value) {
+                              if (value != null) {
+                                bloc.onHouseFacingChanged(
+                                  RealEstateDirection.values.firstWhere(
+                                    (element) => element == value,
+                                  ),
+                                );
+                              }
+                            },
+                            selectedItemBuilder: (context) {
+                              return list
+                                  .map((e) => Text(
+                                        e.title(context),
+                                        style: context.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          color: context
+                                              .textTheme.displayLarge?.color,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ))
+                                  .toList();
+                            },
+                          );
+                        })()
+                      ],
+                    ),
                   ),
-                  onPressed: () {
-                    showAddDocument(context);
+                  AppSize.mediumWidthDimens.horizontalSpace,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          s.balconyFacing,
+                          style: context.textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: context.textTheme.displayLarge?.color,
+                          ),
+                        ),
+                        AppSize.mediumHeightDimens.verticalSpace,
+                        (() {
+                          final list = RealEstateDirection.values.map((e) => e);
+                          return DropdownApp<RealEstateDirection>(
+                            isExpanded: true,
+                            items: list
+                                .map(
+                                  (e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                      ),
+                                      child: Text(
+                                        e.title(context),
+                                        style: context.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                            onChanged: (value) {
+                              if (value != null) {
+                                bloc.onBalconyFacingChanged(RealEstateDirection
+                                    .values
+                                    .firstWhere((element) => element == value));
+                              }
+                            },
+                            selectedItemBuilder: (context) {
+                              return list
+                                  .map((e) => Text(
+                                        e.title(context),
+                                        style: context.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          color: context
+                                              .textTheme.displayLarge?.color,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ))
+                                  .toList();
+                            },
+                          );
+                        })()
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              AppSize.mediumHeightDimens.verticalSpace,
+              ...[
+                Text(
+                  s.furniture,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.textTheme.displayLarge?.color,
+                  ),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                InputPrimaryForm(
+                  onChanged: (value) {
+                    bloc.onFurnitureChanged(value);
                   },
                 )
               ],
-            );
-          },
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: AppSize.largeHeightDimens,
-          ),
-          child: const Divider(height: 0),
-        ),
-        BlocBuilder<HouseProcessRealInfoBloc, HouseProcessRealInfoState>(
-          builder: (context, state) {
-            const values = RealEstateDetail.values;
-            return ListView.separated(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return _SelectNumberOption(
-                  lable: labelByName(values[index]),
-                  value: numberByName(values[index], state),
-                  minValue: () {
-                    switch (values[index]) {
-                      case RealEstateDetail.floor:
-                        return 1;
-                      default:
-                        return 0;
-                    }
-                  }(),
-                  onDecrease: () {
-                    switch (values[index]) {
-                      case RealEstateDetail.room:
-                        bloc.onNumberOfBedRoomChanged(false);
-                        break;
-                      case RealEstateDetail.wc:
-                        bloc.onNumberOfWcChanged(false);
-                        break;
-                      case RealEstateDetail.floor:
-                        bloc.onNumberOfFloorChanged(false);
-                        break;
-                    }
-                  },
-                  onIncrease: () {
-                    switch (values[index]) {
-                      case RealEstateDetail.room:
-                        bloc.onNumberOfBedRoomChanged(true);
-                        break;
-                      case RealEstateDetail.wc:
-                        bloc.onNumberOfWcChanged(true);
-                        break;
-                      case RealEstateDetail.floor:
-                        bloc.onNumberOfFloorChanged(true);
-                        break;
-                    }
-                  },
-                );
-              },
-              separatorBuilder: (context, index) {
-                return AppSize.mediumHeightDimens.verticalSpace;
-              },
-              itemCount: values.length,
-            );
-          },
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: AppSize.largeHeightDimens,
-          ),
-          child: Row(
-            children: [
-              Text(
-                s.additionalDescription,
-                style: context.textTheme.bodySmall?.copyWith(
-                  color: AppColor.kNeutrals_.shade600,
-                ),
-              ),
-              AppSize.mediumWidthDimens.horizontalSpace,
-              const Expanded(child: Divider(height: 0)),
+              AppSize.mediumHeightDimens.verticalSpace,
             ],
           ),
         ),
-        Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    s.houseFacing,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: context.textTheme.displayLarge?.color,
-                    ),
-                  ),
-                  AppSize.mediumHeightDimens.verticalSpace,
-                  (() {
-                    final list = RealEstateDirection.values.toList();
-                    return DropdownApp<RealEstateDirection>(
-                      isExpanded: true,
-                      items: list
-                          .map(
-                            (e) => DropdownMenuItem(
-                              value: e,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                ),
-                                child: Text(
-                                  e.title(context),
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                      onChanged: (value) {
-                        if (value != null) {
-                          bloc.onHouseFacingChanged(
-                            RealEstateDirection.values.firstWhere(
-                              (element) => element == value,
-                            ),
-                          );
-                        }
-                      },
-                      selectedItemBuilder: (context) {
-                        return list
-                            .map((e) => Text(
-                                  e.title(context),
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color:
-                                        context.textTheme.displayLarge?.color,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ))
-                            .toList();
-                      },
-                    );
-                  })()
-                ],
-              ),
-            ),
-            AppSize.mediumWidthDimens.horizontalSpace,
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    s.balconyFacing,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: context.textTheme.displayLarge?.color,
-                    ),
-                  ),
-                  AppSize.mediumHeightDimens.verticalSpace,
-                  (() {
-                    final list = RealEstateDirection.values.map((e) => e);
-                    return DropdownApp<RealEstateDirection>(
-                      isExpanded: true,
-                      items: list
-                          .map(
-                            (e) => DropdownMenuItem(
-                              value: e,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                ),
-                                child: Text(
-                                  e.title(context),
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                      onChanged: (value) {
-                        if (value != null) {
-                          bloc.onBalconyFacingChanged(RealEstateDirection.values
-                              .firstWhere((element) => element == value));
-                        }
-                      },
-                      selectedItemBuilder: (context) {
-                        return list
-                            .map((e) => Text(
-                                  e.title(context),
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color:
-                                        context.textTheme.displayLarge?.color,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ))
-                            .toList();
-                      },
-                    );
-                  })()
-                ],
-              ),
-            ),
-          ],
-        ),
-        AppSize.mediumHeightDimens.verticalSpace,
-        ...[
-          Text(
-            s.furniture,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
+        bottomNavigationBar: Container(
+          color: context.theme.colorScheme.background,
+          child: SafeArea(
+            minimum: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+            child:
+                BlocSelector<DialogEstateInfoBloc, DialogEstateInfoState, bool>(
+              selector: (state) {
+                return state.isValid();
+              },
+              builder: (context, isValid) {
+                return ButtonApp(
+                  label: s.ok,
+                  onPressed: isValid ? () {} : null,
+                  type: ButtonType.primary,
+                );
+              },
             ),
           ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          InputPrimaryForm(
-            onChanged: (value) {
-              bloc.onFurnitureChanged(value);
-            },
-          )
-        ],
-        AppSize.mediumHeightDimens.verticalSpace,
-      ],
+        ),
+      ),
     );
   }
 
@@ -521,7 +566,7 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
     }
   }
 
-  int numberByName(RealEstateDetail type, HouseProcessRealInfoState state) {
+  int numberByName(RealEstateDetail type, DialogEstateInfoState state) {
     switch (type) {
       case RealEstateDetail.room:
         return state.noBedroom;
