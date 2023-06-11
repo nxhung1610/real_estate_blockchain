@@ -246,6 +246,11 @@
   "previousAuctionFailed" : "Đấu giá trước đó thất bại, vui lòng tạo mới",
   "iDontUnderstandYourResponseYet" :"Tôi chưa hiểu phản hồi của bạn.",
   "continueEstateProcess" : "Phản hồi của bạn không hợp lệ, vui lòng tiếp tục hoặc huỷ quá trình.",
-  "pleaseEnterYourRealEstateAddress" : "Vui lòng nhập địa chỉ bất động sản của bạn"
+  "pleaseEnterYourRealEstateAddress" : "Vui lòng nhập địa chỉ bất động sản của bạn",
+  "anErrorHasOccurredPleaseTryLater" : "Đã xảy ra lỗi, vui lòng thử lại sau.",
+  "addressNotFoundPleaseReEnter" : "Không tìm thấy địa chỉ , vui lòng nhập lại",
+  "hereIsYourAddressInformation" :"Đây là thông tin địa chỉ của bạn",
+  "pleaseEnterYourPropertyInformation" : "Vui lòng nhập thông tin bất động sản của bạn",
+  "enterYourInformationHere" : "Nhập thông tin của bạn ở đây"
 
 }

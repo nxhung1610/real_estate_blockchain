@@ -5,6 +5,7 @@ import 'package:go_router/src/route.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/presentation/dialog_flow_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 
 import '../application/dialogflow_bloc.dart';
 
@@ -18,7 +19,9 @@ class DialogflowRoute extends BaseRoute {
           pageBuilder: (context, state) {
             return CupertinoPage(
                 child: BlocProvider(
-              create: (context) => getIt.call<DialogflowBloc>(),
+              create: (_) => getIt.call<DialogflowBloc>(
+                param1: S.of(context),
+              ),
               child: const DialogFlowPage(),
             ));
           },

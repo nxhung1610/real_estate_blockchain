@@ -11,10 +11,12 @@ part 'message_app.freezed.dart';
 class MessageApp with _$MessageApp {
   factory MessageApp.onMessage({
     required OnMessageDataType data,
+    @Default(false) bool diable,
   }) = MessageAppOnMessage;
 
   factory MessageApp.onResponse({
     required OnResponseDataType data,
+    @Default(false) bool diable,
   }) = MessageAppOnResponse;
 }
 
@@ -58,12 +60,22 @@ class OnMessageDataType with _$OnMessageDataType {
     List<String>? images,
     @Default(false) bool complete,
   }) = OnMessageDataTypeImage;
+  const factory OnMessageDataType.data({
+    required String id,
+    String? message,
+    required OnMessageData data,
+  }) = OnMessageDataTypeData;
   const factory OnMessageDataType.multiSeletect({
     required String id,
     String? message,
     List<DataCheckbox>? seleteced,
     @Default(false) bool complete,
   }) = OnMessageDataTypeMultiSeletect;
+}
+
+@freezed
+class OnMessageData with _$OnMessageData {
+  const factory OnMessageData.realEstateInfo() = _OnMessageDataRealEstateInfo;
 }
 
 @freezed

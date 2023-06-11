@@ -43,7 +43,10 @@ class _DialogMessageWidgetState extends State<DialogMessageWidget> {
             return WMessageItem(
               data: item.map(
                 onMessage: (value) {
-                  return WMessageOnMessageItem(data: value.data);
+                  return WMessageOnMessageItem(
+                    data: value.data,
+                    disable: item.diable,
+                  );
                 },
                 onResponse: (value) {
                   return WMessageOnResponseItem(item: value.data);

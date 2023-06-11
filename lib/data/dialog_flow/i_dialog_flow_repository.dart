@@ -6,7 +6,7 @@ class DialogFlowFailure extends Equatable implements Exception {
   const DialogFlowFailure({this.message});
   final dynamic message;
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [message];
 }
 
 abstract class IDialogFlowRepository {

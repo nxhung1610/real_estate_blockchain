@@ -30,10 +30,10 @@ import '../data/bid/infrastructure/bid_repository.dart' as _i21;
 import '../data/connection/domain/i_connection_repository.dart' as _i70;
 import '../data/connection/infrastructure/connection_repository.dart' as _i71;
 import '../data/core/data.dart' as _i17;
-import '../data/core/infrastructure/infrastructure.dart' as _i96;
+import '../data/core/infrastructure/infrastructure.dart' as _i97;
 import '../data/core/infrastructure/local/api_local_hive.dart' as _i3;
 import '../data/core/infrastructure/remote/api_remote.dart' as _i4;
-import '../data/core/module.dart' as _i95;
+import '../data/core/module.dart' as _i96;
 import '../data/dialog_flow/dialog_flow_repository.dart' as _i23;
 import '../data/dialog_flow/i_dialog_flow_repository.dart' as _i22;
 import '../data/file/data.dart' as _i24;
@@ -60,7 +60,7 @@ import '../feature/app/application/app_bloc.dart' as _i53;
 import '../feature/auth/application/application.dart' as _i80;
 import '../feature/auth/application/auth_bloc.dart' as _i90;
 import '../feature/auth/application/forgot_password/forgot_password_bloc.dart'
-    as _i93;
+    as _i94;
 import '../feature/auth/application/login_bloc.dart' as _i78;
 import '../feature/auth/application/register_bloc.dart' as _i83;
 import '../feature/bid/detail/application/bid_detail_bloc.dart' as _i54;
@@ -103,7 +103,7 @@ import '../feature/onboarding/application/onboarding_bloc.dart' as _i40;
 import '../feature/post/detail/application/post_real_estate_detail_bloc.dart'
     as _i42;
 import '../feature/post/detail/presentation/bottom/bid/create_bid_bloc.dart'
-    as _i61;
+    as _i62;
 import '../feature/post/detail/presentation/bottom/create_post_bloc.dart'
     as _i63;
 import '../feature/post/owner/application/post_owner_bloc.dart' as _i41;
@@ -111,7 +111,7 @@ import '../feature/real_estate/config/real_estate_config_bloc.dart' as _i43;
 import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
     as _i44;
 import '../feature/real_estate/detail/presentation/bottom/bid/create_bid_bloc.dart'
-    as _i62;
+    as _i61;
 import '../feature/real_estate/detail/presentation/bottom/create_post_bloc.dart'
     as _i64;
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
@@ -127,10 +127,11 @@ import '../feature/tour/schedule_tour/model/schedule_tour_params.dart' as _i85;
 import '../feature/user/change_password/application/user_change_password_bloc.dart'
     as _i89;
 import '../feature/user/profile/application/user_profile_bloc.dart' as _i50;
-import '../grpc/grpc_module.dart' as _i94;
+import '../grpc/grpc_module.dart' as _i95;
 import '../grpc/grpc_service.dart' as _i9;
 import '../grpc/notification/service.pbgrpc.dart' as _i39;
 import '../grpc/tour/service.pbgrpc.dart' as _i49;
+import '../languages/languages.dart' as _i93;
 
 // ignore_for_file: unnecessary_lambdas
 // ignore_for_file: lines_longer_than_80_chars
@@ -407,17 +408,22 @@ Future<_i1.GetIt> $initGetIt(
       ));
   gh.factory<_i91.ConnectivityBloc>(
       () => _i91.ConnectivityBloc(gh<_i70.IConnectionRepository>()));
-  gh.factory<_i92.DialogflowBloc>(() => _i92.DialogflowBloc(
-        gh<_i22.IDialogFlowRepository>(),
-        gh<_i72.IMapRepository>(),
+  gh.factoryParam<_i92.DialogflowBloc, _i93.S, dynamic>((
+    s,
+    _,
+  ) =>
+      _i92.DialogflowBloc(
+        s: s,
+        dialogFlowRepository: gh<_i22.IDialogFlowRepository>(),
+        mapRepository: gh<_i72.IMapRepository>(),
       ));
-  gh.factory<_i93.ForgotPasswordBloc>(
-      () => _i93.ForgotPasswordBloc(gh<_i18.IAuthRepository>()));
+  gh.factory<_i94.ForgotPasswordBloc>(
+      () => _i94.ForgotPasswordBloc(gh<_i18.IAuthRepository>()));
   return getIt;
 }
 
-class _$GrpcModule extends _i94.GrpcModule {}
+class _$GrpcModule extends _i95.GrpcModule {}
 
-class _$CoreData extends _i95.CoreData {}
+class _$CoreData extends _i96.CoreData {}
 
-class _$InfrastructureModule extends _i96.InfrastructureModule {}
+class _$InfrastructureModule extends _i97.InfrastructureModule {}

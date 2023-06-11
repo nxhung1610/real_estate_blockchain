@@ -17,22 +17,23 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MessageApp {
   Object get data => throw _privateConstructorUsedError;
+  bool get diable => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data) onMessage,
-    required TResult Function(OnResponseDataType data) onResponse,
+    required TResult Function(OnMessageDataType data, bool diable) onMessage,
+    required TResult Function(OnResponseDataType data, bool diable) onResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data)? onMessage,
-    TResult? Function(OnResponseDataType data)? onResponse,
+    TResult? Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult? Function(OnResponseDataType data, bool diable)? onResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data)? onMessage,
-    TResult Function(OnResponseDataType data)? onResponse,
+    TResult Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult Function(OnResponseDataType data, bool diable)? onResponse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +56,10 @@ mixin _$MessageApp {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $MessageAppCopyWith<MessageApp> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,6 +67,8 @@ abstract class $MessageAppCopyWith<$Res> {
   factory $MessageAppCopyWith(
           MessageApp value, $Res Function(MessageApp) then) =
       _$MessageAppCopyWithImpl<$Res, MessageApp>;
+  @useResult
+  $Res call({bool diable});
 }
 
 /// @nodoc
@@ -73,15 +80,30 @@ class _$MessageAppCopyWithImpl<$Res, $Val extends MessageApp>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? diable = null,
+  }) {
+    return _then(_value.copyWith(
+      diable: null == diable
+          ? _value.diable
+          : diable // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$MessageAppOnMessageCopyWith<$Res> {
+abstract class _$$MessageAppOnMessageCopyWith<$Res>
+    implements $MessageAppCopyWith<$Res> {
   factory _$$MessageAppOnMessageCopyWith(_$MessageAppOnMessage value,
           $Res Function(_$MessageAppOnMessage) then) =
       __$$MessageAppOnMessageCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({OnMessageDataType data});
+  $Res call({OnMessageDataType data, bool diable});
 
   $OnMessageDataTypeCopyWith<$Res> get data;
 }
@@ -98,12 +120,17 @@ class __$$MessageAppOnMessageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? diable = null,
   }) {
     return _then(_$MessageAppOnMessage(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as OnMessageDataType,
+      diable: null == diable
+          ? _value.diable
+          : diable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -119,14 +146,17 @@ class __$$MessageAppOnMessageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MessageAppOnMessage implements MessageAppOnMessage {
-  _$MessageAppOnMessage({required this.data});
+  _$MessageAppOnMessage({required this.data, this.diable = false});
 
   @override
   final OnMessageDataType data;
+  @override
+  @JsonKey()
+  final bool diable;
 
   @override
   String toString() {
-    return 'MessageApp.onMessage(data: $data)';
+    return 'MessageApp.onMessage(data: $data, diable: $diable)';
   }
 
   @override
@@ -134,11 +164,12 @@ class _$MessageAppOnMessage implements MessageAppOnMessage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MessageAppOnMessage &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.diable, diable) || other.diable == diable));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, data, diable);
 
   @JsonKey(ignore: true)
   @override
@@ -150,30 +181,30 @@ class _$MessageAppOnMessage implements MessageAppOnMessage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data) onMessage,
-    required TResult Function(OnResponseDataType data) onResponse,
+    required TResult Function(OnMessageDataType data, bool diable) onMessage,
+    required TResult Function(OnResponseDataType data, bool diable) onResponse,
   }) {
-    return onMessage(data);
+    return onMessage(data, diable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data)? onMessage,
-    TResult? Function(OnResponseDataType data)? onResponse,
+    TResult? Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult? Function(OnResponseDataType data, bool diable)? onResponse,
   }) {
-    return onMessage?.call(data);
+    return onMessage?.call(data, diable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data)? onMessage,
-    TResult Function(OnResponseDataType data)? onResponse,
+    TResult Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult Function(OnResponseDataType data, bool diable)? onResponse,
     required TResult orElse(),
   }) {
     if (onMessage != null) {
-      return onMessage(data);
+      return onMessage(data, diable);
     }
     return orElse();
   }
@@ -211,23 +242,29 @@ class _$MessageAppOnMessage implements MessageAppOnMessage {
 }
 
 abstract class MessageAppOnMessage implements MessageApp {
-  factory MessageAppOnMessage({required final OnMessageDataType data}) =
-      _$MessageAppOnMessage;
+  factory MessageAppOnMessage(
+      {required final OnMessageDataType data,
+      final bool diable}) = _$MessageAppOnMessage;
 
   @override
   OnMessageDataType get data;
+  @override
+  bool get diable;
+  @override
   @JsonKey(ignore: true)
   _$$MessageAppOnMessageCopyWith<_$MessageAppOnMessage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MessageAppOnResponseCopyWith<$Res> {
+abstract class _$$MessageAppOnResponseCopyWith<$Res>
+    implements $MessageAppCopyWith<$Res> {
   factory _$$MessageAppOnResponseCopyWith(_$MessageAppOnResponse value,
           $Res Function(_$MessageAppOnResponse) then) =
       __$$MessageAppOnResponseCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({OnResponseDataType data});
+  $Res call({OnResponseDataType data, bool diable});
 
   $OnResponseDataTypeCopyWith<$Res> get data;
 }
@@ -244,12 +281,17 @@ class __$$MessageAppOnResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? diable = null,
   }) {
     return _then(_$MessageAppOnResponse(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as OnResponseDataType,
+      diable: null == diable
+          ? _value.diable
+          : diable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -265,14 +307,17 @@ class __$$MessageAppOnResponseCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MessageAppOnResponse implements MessageAppOnResponse {
-  _$MessageAppOnResponse({required this.data});
+  _$MessageAppOnResponse({required this.data, this.diable = false});
 
   @override
   final OnResponseDataType data;
+  @override
+  @JsonKey()
+  final bool diable;
 
   @override
   String toString() {
-    return 'MessageApp.onResponse(data: $data)';
+    return 'MessageApp.onResponse(data: $data, diable: $diable)';
   }
 
   @override
@@ -280,11 +325,12 @@ class _$MessageAppOnResponse implements MessageAppOnResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MessageAppOnResponse &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.diable, diable) || other.diable == diable));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, data, diable);
 
   @JsonKey(ignore: true)
   @override
@@ -296,30 +342,30 @@ class _$MessageAppOnResponse implements MessageAppOnResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data) onMessage,
-    required TResult Function(OnResponseDataType data) onResponse,
+    required TResult Function(OnMessageDataType data, bool diable) onMessage,
+    required TResult Function(OnResponseDataType data, bool diable) onResponse,
   }) {
-    return onResponse(data);
+    return onResponse(data, diable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data)? onMessage,
-    TResult? Function(OnResponseDataType data)? onResponse,
+    TResult? Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult? Function(OnResponseDataType data, bool diable)? onResponse,
   }) {
-    return onResponse?.call(data);
+    return onResponse?.call(data, diable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data)? onMessage,
-    TResult Function(OnResponseDataType data)? onResponse,
+    TResult Function(OnMessageDataType data, bool diable)? onMessage,
+    TResult Function(OnResponseDataType data, bool diable)? onResponse,
     required TResult orElse(),
   }) {
     if (onResponse != null) {
-      return onResponse(data);
+      return onResponse(data, diable);
     }
     return orElse();
   }
@@ -357,11 +403,15 @@ class _$MessageAppOnResponse implements MessageAppOnResponse {
 }
 
 abstract class MessageAppOnResponse implements MessageApp {
-  factory MessageAppOnResponse({required final OnResponseDataType data}) =
-      _$MessageAppOnResponse;
+  factory MessageAppOnResponse(
+      {required final OnResponseDataType data,
+      final bool diable}) = _$MessageAppOnResponse;
 
   @override
   OnResponseDataType get data;
+  @override
+  bool get diable;
+  @override
   @JsonKey(ignore: true)
   _$$MessageAppOnResponseCopyWith<_$MessageAppOnResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -377,6 +427,8 @@ mixin _$OnMessageDataType {
     required TResult Function(
             String id, String? message, List<String>? images, bool complete)
         image,
+    required TResult Function(String id, String? message, OnMessageData data)
+        data,
     required TResult Function(String id, String? message,
             List<DataCheckbox>? seleteced, bool complete)
         multiSeletect,
@@ -388,6 +440,7 @@ mixin _$OnMessageDataType {
     TResult? Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult? Function(String id, String? message, OnMessageData data)? data,
     TResult? Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -399,6 +452,7 @@ mixin _$OnMessageDataType {
     TResult Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult Function(String id, String? message, OnMessageData data)? data,
     TResult Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -409,6 +463,7 @@ mixin _$OnMessageDataType {
   TResult map<TResult extends Object?>({
     required TResult Function(OnMessageDataTypeText value) text,
     required TResult Function(OnMessageDataTypeImage value) image,
+    required TResult Function(OnMessageDataTypeData value) data,
     required TResult Function(OnMessageDataTypeMultiSeletect value)
         multiSeletect,
   }) =>
@@ -417,6 +472,7 @@ mixin _$OnMessageDataType {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnMessageDataTypeText value)? text,
     TResult? Function(OnMessageDataTypeImage value)? image,
+    TResult? Function(OnMessageDataTypeData value)? data,
     TResult? Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
   }) =>
       throw _privateConstructorUsedError;
@@ -424,6 +480,7 @@ mixin _$OnMessageDataType {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnMessageDataTypeText value)? text,
     TResult Function(OnMessageDataTypeImage value)? image,
+    TResult Function(OnMessageDataTypeData value)? data,
     TResult Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
     required TResult orElse(),
   }) =>
@@ -551,6 +608,8 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
     required TResult Function(
             String id, String? message, List<String>? images, bool complete)
         image,
+    required TResult Function(String id, String? message, OnMessageData data)
+        data,
     required TResult Function(String id, String? message,
             List<DataCheckbox>? seleteced, bool complete)
         multiSeletect,
@@ -565,6 +624,7 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
     TResult? Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult? Function(String id, String? message, OnMessageData data)? data,
     TResult? Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -579,6 +639,7 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
     TResult Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult Function(String id, String? message, OnMessageData data)? data,
     TResult Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -595,6 +656,7 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
   TResult map<TResult extends Object?>({
     required TResult Function(OnMessageDataTypeText value) text,
     required TResult Function(OnMessageDataTypeImage value) image,
+    required TResult Function(OnMessageDataTypeData value) data,
     required TResult Function(OnMessageDataTypeMultiSeletect value)
         multiSeletect,
   }) {
@@ -606,6 +668,7 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnMessageDataTypeText value)? text,
     TResult? Function(OnMessageDataTypeImage value)? image,
+    TResult? Function(OnMessageDataTypeData value)? data,
     TResult? Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
   }) {
     return text?.call(this);
@@ -616,6 +679,7 @@ class _$OnMessageDataTypeText implements OnMessageDataTypeText {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnMessageDataTypeText value)? text,
     TResult Function(OnMessageDataTypeImage value)? image,
+    TResult Function(OnMessageDataTypeData value)? data,
     TResult Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
     required TResult orElse(),
   }) {
@@ -752,6 +816,8 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
     required TResult Function(
             String id, String? message, List<String>? images, bool complete)
         image,
+    required TResult Function(String id, String? message, OnMessageData data)
+        data,
     required TResult Function(String id, String? message,
             List<DataCheckbox>? seleteced, bool complete)
         multiSeletect,
@@ -766,6 +832,7 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
     TResult? Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult? Function(String id, String? message, OnMessageData data)? data,
     TResult? Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -780,6 +847,7 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
     TResult Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult Function(String id, String? message, OnMessageData data)? data,
     TResult Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -796,6 +864,7 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
   TResult map<TResult extends Object?>({
     required TResult Function(OnMessageDataTypeText value) text,
     required TResult Function(OnMessageDataTypeImage value) image,
+    required TResult Function(OnMessageDataTypeData value) data,
     required TResult Function(OnMessageDataTypeMultiSeletect value)
         multiSeletect,
   }) {
@@ -807,6 +876,7 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnMessageDataTypeText value)? text,
     TResult? Function(OnMessageDataTypeImage value)? image,
+    TResult? Function(OnMessageDataTypeData value)? data,
     TResult? Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
   }) {
     return image?.call(this);
@@ -817,6 +887,7 @@ class _$OnMessageDataTypeImage implements OnMessageDataTypeImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnMessageDataTypeText value)? text,
     TResult Function(OnMessageDataTypeImage value)? image,
+    TResult Function(OnMessageDataTypeData value)? data,
     TResult Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
     required TResult orElse(),
   }) {
@@ -843,6 +914,203 @@ abstract class OnMessageDataTypeImage implements OnMessageDataType {
   @override
   @JsonKey(ignore: true)
   _$$OnMessageDataTypeImageCopyWith<_$OnMessageDataTypeImage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnMessageDataTypeDataCopyWith<$Res>
+    implements $OnMessageDataTypeCopyWith<$Res> {
+  factory _$$OnMessageDataTypeDataCopyWith(_$OnMessageDataTypeData value,
+          $Res Function(_$OnMessageDataTypeData) then) =
+      __$$OnMessageDataTypeDataCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String? message, OnMessageData data});
+
+  $OnMessageDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$OnMessageDataTypeDataCopyWithImpl<$Res>
+    extends _$OnMessageDataTypeCopyWithImpl<$Res, _$OnMessageDataTypeData>
+    implements _$$OnMessageDataTypeDataCopyWith<$Res> {
+  __$$OnMessageDataTypeDataCopyWithImpl(_$OnMessageDataTypeData _value,
+      $Res Function(_$OnMessageDataTypeData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? message = freezed,
+    Object? data = null,
+  }) {
+    return _then(_$OnMessageDataTypeData(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as OnMessageData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OnMessageDataCopyWith<$Res> get data {
+    return $OnMessageDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnMessageDataTypeData implements OnMessageDataTypeData {
+  const _$OnMessageDataTypeData(
+      {required this.id, this.message, required this.data});
+
+  @override
+  final String id;
+  @override
+  final String? message;
+  @override
+  final OnMessageData data;
+
+  @override
+  String toString() {
+    return 'OnMessageDataType.data(id: $id, message: $message, data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnMessageDataTypeData &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, message, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnMessageDataTypeDataCopyWith<_$OnMessageDataTypeData> get copyWith =>
+      __$$OnMessageDataTypeDataCopyWithImpl<_$OnMessageDataTypeData>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id, String message) text,
+    required TResult Function(
+            String id, String? message, List<String>? images, bool complete)
+        image,
+    required TResult Function(String id, String? message, OnMessageData data)
+        data,
+    required TResult Function(String id, String? message,
+            List<DataCheckbox>? seleteced, bool complete)
+        multiSeletect,
+  }) {
+    return data(id, message, this.data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, String message)? text,
+    TResult? Function(
+            String id, String? message, List<String>? images, bool complete)?
+        image,
+    TResult? Function(String id, String? message, OnMessageData data)? data,
+    TResult? Function(String id, String? message, List<DataCheckbox>? seleteced,
+            bool complete)?
+        multiSeletect,
+  }) {
+    return data?.call(id, message, this.data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id, String message)? text,
+    TResult Function(
+            String id, String? message, List<String>? images, bool complete)?
+        image,
+    TResult Function(String id, String? message, OnMessageData data)? data,
+    TResult Function(String id, String? message, List<DataCheckbox>? seleteced,
+            bool complete)?
+        multiSeletect,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(id, message, this.data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnMessageDataTypeText value) text,
+    required TResult Function(OnMessageDataTypeImage value) image,
+    required TResult Function(OnMessageDataTypeData value) data,
+    required TResult Function(OnMessageDataTypeMultiSeletect value)
+        multiSeletect,
+  }) {
+    return data(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnMessageDataTypeText value)? text,
+    TResult? Function(OnMessageDataTypeImage value)? image,
+    TResult? Function(OnMessageDataTypeData value)? data,
+    TResult? Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnMessageDataTypeText value)? text,
+    TResult Function(OnMessageDataTypeImage value)? image,
+    TResult Function(OnMessageDataTypeData value)? data,
+    TResult Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnMessageDataTypeData implements OnMessageDataType {
+  const factory OnMessageDataTypeData(
+      {required final String id,
+      final String? message,
+      required final OnMessageData data}) = _$OnMessageDataTypeData;
+
+  @override
+  String get id;
+  @override
+  String? get message;
+  OnMessageData get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$OnMessageDataTypeDataCopyWith<_$OnMessageDataTypeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -966,6 +1234,8 @@ class _$OnMessageDataTypeMultiSeletect
     required TResult Function(
             String id, String? message, List<String>? images, bool complete)
         image,
+    required TResult Function(String id, String? message, OnMessageData data)
+        data,
     required TResult Function(String id, String? message,
             List<DataCheckbox>? seleteced, bool complete)
         multiSeletect,
@@ -980,6 +1250,7 @@ class _$OnMessageDataTypeMultiSeletect
     TResult? Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult? Function(String id, String? message, OnMessageData data)? data,
     TResult? Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -994,6 +1265,7 @@ class _$OnMessageDataTypeMultiSeletect
     TResult Function(
             String id, String? message, List<String>? images, bool complete)?
         image,
+    TResult Function(String id, String? message, OnMessageData data)? data,
     TResult Function(String id, String? message, List<DataCheckbox>? seleteced,
             bool complete)?
         multiSeletect,
@@ -1010,6 +1282,7 @@ class _$OnMessageDataTypeMultiSeletect
   TResult map<TResult extends Object?>({
     required TResult Function(OnMessageDataTypeText value) text,
     required TResult Function(OnMessageDataTypeImage value) image,
+    required TResult Function(OnMessageDataTypeData value) data,
     required TResult Function(OnMessageDataTypeMultiSeletect value)
         multiSeletect,
   }) {
@@ -1021,6 +1294,7 @@ class _$OnMessageDataTypeMultiSeletect
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnMessageDataTypeText value)? text,
     TResult? Function(OnMessageDataTypeImage value)? image,
+    TResult? Function(OnMessageDataTypeData value)? data,
     TResult? Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
   }) {
     return multiSeletect?.call(this);
@@ -1031,6 +1305,7 @@ class _$OnMessageDataTypeMultiSeletect
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnMessageDataTypeText value)? text,
     TResult Function(OnMessageDataTypeImage value)? image,
+    TResult Function(OnMessageDataTypeData value)? data,
     TResult Function(OnMessageDataTypeMultiSeletect value)? multiSeletect,
     required TResult orElse(),
   }) {
@@ -1058,6 +1333,161 @@ abstract class OnMessageDataTypeMultiSeletect implements OnMessageDataType {
   @JsonKey(ignore: true)
   _$$OnMessageDataTypeMultiSeletectCopyWith<_$OnMessageDataTypeMultiSeletect>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$OnMessageData {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OnMessageDataCopyWith<$Res> {
+  factory $OnMessageDataCopyWith(
+          OnMessageData value, $Res Function(OnMessageData) then) =
+      _$OnMessageDataCopyWithImpl<$Res, OnMessageData>;
+}
+
+/// @nodoc
+class _$OnMessageDataCopyWithImpl<$Res, $Val extends OnMessageData>
+    implements $OnMessageDataCopyWith<$Res> {
+  _$OnMessageDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_OnMessageDataRealEstateInfoCopyWith<$Res> {
+  factory _$$_OnMessageDataRealEstateInfoCopyWith(
+          _$_OnMessageDataRealEstateInfo value,
+          $Res Function(_$_OnMessageDataRealEstateInfo) then) =
+      __$$_OnMessageDataRealEstateInfoCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnMessageDataRealEstateInfoCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res, _$_OnMessageDataRealEstateInfo>
+    implements _$$_OnMessageDataRealEstateInfoCopyWith<$Res> {
+  __$$_OnMessageDataRealEstateInfoCopyWithImpl(
+      _$_OnMessageDataRealEstateInfo _value,
+      $Res Function(_$_OnMessageDataRealEstateInfo) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
+  const _$_OnMessageDataRealEstateInfo();
+
+  @override
+  String toString() {
+    return 'OnMessageData.realEstateInfo()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMessageDataRealEstateInfo);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+  }) {
+    return realEstateInfo();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+  }) {
+    return realEstateInfo?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfo != null) {
+      return realEstateInfo();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+  }) {
+    return realEstateInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+  }) {
+    return realEstateInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfo != null) {
+      return realEstateInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataRealEstateInfo implements OnMessageData {
+  const factory _OnMessageDataRealEstateInfo() = _$_OnMessageDataRealEstateInfo;
 }
 
 /// @nodoc

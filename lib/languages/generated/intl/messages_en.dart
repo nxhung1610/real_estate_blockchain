@@ -40,10 +40,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Additional Description"),
+        "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
+            "Address not found, please re-enter"),
         "air_conditioning":
             MessageLookupByLibrary.simpleMessage("Air conditioning"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "amenities": MessageLookupByLibrary.simpleMessage("Amenities"),
+        "anErrorHasOccurredPleaseTryLater":
+            MessageLookupByLibrary.simpleMessage(
+                "An error has occurred, please try later."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An error occurred"),
         "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
@@ -133,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter the verification code."),
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
             "Let\'s make sure it\'s really you. We\'ve just send a text message with a fresh verification code to the phone number ending in"),
+        "enterYourInformationHere":
+            MessageLookupByLibrary.simpleMessage("Enter your information here"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "failed": MessageLookupByLibrary.simpleMessage("Failed"),
         "features": MessageLookupByLibrary.simpleMessage("Features"),
@@ -155,6 +162,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getBack": MessageLookupByLibrary.simpleMessage("Get Back"),
         "goToSetting": MessageLookupByLibrary.simpleMessage("Go To Setting"),
         "ground": MessageLookupByLibrary.simpleMessage("Ground"),
+        "hereIsYourAddressInformation": MessageLookupByLibrary.simpleMessage(
+            "Here is your address information"),
         "hi": MessageLookupByLibrary.simpleMessage("Hi"),
         "highestBindingBid":
             MessageLookupByLibrary.simpleMessage("Highest Binding Bid"),
@@ -251,6 +260,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Pick a time"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Place a Bid"),
+        "pleaseEnterYourPropertyInformation":
+            MessageLookupByLibrary.simpleMessage(
+                "Please enter your real estate information"),
         "pleaseEnterYourRealEstateAddress":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter your real estate address"),

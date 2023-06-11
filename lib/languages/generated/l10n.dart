@@ -2469,6 +2469,56 @@ class S {
       args: [],
     );
   }
+
+  /// `An error has occurred, please try later.`
+  String get anErrorHasOccurredPleaseTryLater {
+    return Intl.message(
+      'An error has occurred, please try later.',
+      name: 'anErrorHasOccurredPleaseTryLater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address not found, please re-enter`
+  String get addressNotFoundPleaseReEnter {
+    return Intl.message(
+      'Address not found, please re-enter',
+      name: 'addressNotFoundPleaseReEnter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Here is your address information`
+  String get hereIsYourAddressInformation {
+    return Intl.message(
+      'Here is your address information',
+      name: 'hereIsYourAddressInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your real estate information`
+  String get pleaseEnterYourPropertyInformation {
+    return Intl.message(
+      'Please enter your real estate information',
+      name: 'pleaseEnterYourPropertyInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your information here`
+  String get enterYourInformationHere {
+    return Intl.message(
+      'Enter your information here',
+      name: 'enterYourInformationHere',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

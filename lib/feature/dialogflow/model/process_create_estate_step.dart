@@ -9,6 +9,8 @@ part 'process_create_estate_step.freezed.dart';
 enum ProcessCreateEstateStepEnum {
   address,
   realEstateInfo,
+  amenities,
+  media,
 }
 
 @freezed
@@ -23,4 +25,7 @@ class ProcessCreateEstateStep with _$ProcessCreateEstateStep {
   const factory ProcessCreateEstateStep.amenities({
     List<Amenity>? amenities,
   }) = _ProcessCreateEstateStepAmenities;
+  const factory ProcessCreateEstateStep.media({
+    List<String>? medias,
+  }) = _ProcessCreateEstateStepMedia;
 }

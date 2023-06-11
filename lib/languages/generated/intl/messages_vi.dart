@@ -40,9 +40,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Mô tả bổ sung"),
+        "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
+            "Không tìm thấy địa chỉ , vui lòng nhập lại"),
         "air_conditioning": MessageLookupByLibrary.simpleMessage("Máy lạnh"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
         "amenities": MessageLookupByLibrary.simpleMessage("Tiện nghi"),
+        "anErrorHasOccurredPleaseTryLater":
+            MessageLookupByLibrary.simpleMessage(
+                "Đã xảy ra lỗi, vui lòng thử lại sau."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra"),
         "apartment": MessageLookupByLibrary.simpleMessage("Căn hộ"),
@@ -133,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nhập mã xác thực."),
         "enterVerificationDes": MessageLookupByLibrary.simpleMessage(
             "Hãy chắc chắn rằng đó thực sự là bạn. Chúng tôi vừa gửi một tin nhắn văn bản có mã xác minh mới tới số điện thoại kết thúc bằng"),
+        "enterYourInformationHere": MessageLookupByLibrary.simpleMessage(
+            "Nhập thông tin của bạn ở đây"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "failed": MessageLookupByLibrary.simpleMessage("Thất bại"),
         "features": MessageLookupByLibrary.simpleMessage("Đặc điểm"),
@@ -155,6 +162,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getBack": MessageLookupByLibrary.simpleMessage("Quay về"),
         "goToSetting": MessageLookupByLibrary.simpleMessage("Đi đến cài đặt"),
         "ground": MessageLookupByLibrary.simpleMessage("Đất"),
+        "hereIsYourAddressInformation": MessageLookupByLibrary.simpleMessage(
+            "Đây là thông tin địa chỉ của bạn"),
         "hi": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "highestBindingBid":
             MessageLookupByLibrary.simpleMessage("Giá thầu ràng buộc"),
@@ -250,6 +259,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số điện thoại không tồn tại!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Chọn thời gian"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Đặt một giá thầu"),
+        "pleaseEnterYourPropertyInformation":
+            MessageLookupByLibrary.simpleMessage(
+                "Vui lòng nhập thông tin bất động sản của bạn"),
         "pleaseEnterYourRealEstateAddress":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng nhập địa chỉ bất động sản của bạn"),

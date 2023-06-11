@@ -19,19 +19,43 @@ mixin _$ProcessMessage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() normal,
-    required TResult Function() createEstate,
+    required TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)
+        createEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? normal,
-    TResult? Function()? createEstate,
+    TResult? Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? normal,
-    TResult Function()? createEstate,
+    TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +137,15 @@ class _$_ProcessMessageNormal implements _ProcessMessageNormal {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() normal,
-    required TResult Function() createEstate,
+    required TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)
+        createEstate,
   }) {
     return normal();
   }
@@ -122,7 +154,15 @@ class _$_ProcessMessageNormal implements _ProcessMessageNormal {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? normal,
-    TResult? Function()? createEstate,
+    TResult? Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
   }) {
     return normal?.call();
   }
@@ -131,7 +171,15 @@ class _$_ProcessMessageNormal implements _ProcessMessageNormal {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? normal,
-    TResult Function()? createEstate,
+    TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
     required TResult orElse(),
   }) {
     if (normal != null) {
@@ -182,6 +230,15 @@ abstract class _$$ProcessMessageCreateEstateCopyWith<$Res> {
           _$ProcessMessageCreateEstate value,
           $Res Function(_$ProcessMessageCreateEstate) then) =
       __$$ProcessMessageCreateEstateCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {ProcessCreateEstateStepEnum step,
+      bool isResponse,
+      AddressChoosen? addressChoosen,
+      RealEstateInfo? realEstateInfo,
+      List<Amenity>? amenities,
+      List<XFile>? media,
+      LatLng? position});
 }
 
 /// @nodoc
@@ -192,55 +249,193 @@ class __$$ProcessMessageCreateEstateCopyWithImpl<$Res>
       _$ProcessMessageCreateEstate _value,
       $Res Function(_$ProcessMessageCreateEstate) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? step = null,
+    Object? isResponse = null,
+    Object? addressChoosen = freezed,
+    Object? realEstateInfo = freezed,
+    Object? amenities = freezed,
+    Object? media = freezed,
+    Object? position = freezed,
+  }) {
+    return _then(_$ProcessMessageCreateEstate(
+      step: null == step
+          ? _value.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as ProcessCreateEstateStepEnum,
+      isResponse: null == isResponse
+          ? _value.isResponse
+          : isResponse // ignore: cast_nullable_to_non_nullable
+              as bool,
+      addressChoosen: freezed == addressChoosen
+          ? _value.addressChoosen
+          : addressChoosen // ignore: cast_nullable_to_non_nullable
+              as AddressChoosen?,
+      realEstateInfo: freezed == realEstateInfo
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo?,
+      amenities: freezed == amenities
+          ? _value._amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<Amenity>?,
+      media: freezed == media
+          ? _value._media
+          : media // ignore: cast_nullable_to_non_nullable
+              as List<XFile>?,
+      position: freezed == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ProcessMessageCreateEstate implements ProcessMessageCreateEstate {
-  const _$ProcessMessageCreateEstate();
+  const _$ProcessMessageCreateEstate(
+      {required this.step,
+      this.isResponse = false,
+      this.addressChoosen,
+      this.realEstateInfo,
+      final List<Amenity>? amenities,
+      final List<XFile>? media,
+      this.position})
+      : _amenities = amenities,
+        _media = media;
+
+  @override
+  final ProcessCreateEstateStepEnum step;
+  @override
+  @JsonKey()
+  final bool isResponse;
+  @override
+  final AddressChoosen? addressChoosen;
+  @override
+  final RealEstateInfo? realEstateInfo;
+  final List<Amenity>? _amenities;
+  @override
+  List<Amenity>? get amenities {
+    final value = _amenities;
+    if (value == null) return null;
+    if (_amenities is EqualUnmodifiableListView) return _amenities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<XFile>? _media;
+  @override
+  List<XFile>? get media {
+    final value = _media;
+    if (value == null) return null;
+    if (_media is EqualUnmodifiableListView) return _media;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final LatLng? position;
 
   @override
   String toString() {
-    return 'ProcessMessage.createEstate()';
+    return 'ProcessMessage.createEstate(step: $step, isResponse: $isResponse, addressChoosen: $addressChoosen, realEstateInfo: $realEstateInfo, amenities: $amenities, media: $media, position: $position)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProcessMessageCreateEstate);
+            other is _$ProcessMessageCreateEstate &&
+            (identical(other.step, step) || other.step == step) &&
+            (identical(other.isResponse, isResponse) ||
+                other.isResponse == isResponse) &&
+            (identical(other.addressChoosen, addressChoosen) ||
+                other.addressChoosen == addressChoosen) &&
+            (identical(other.realEstateInfo, realEstateInfo) ||
+                other.realEstateInfo == realEstateInfo) &&
+            const DeepCollectionEquality()
+                .equals(other._amenities, _amenities) &&
+            const DeepCollectionEquality().equals(other._media, _media) &&
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      step,
+      isResponse,
+      addressChoosen,
+      realEstateInfo,
+      const DeepCollectionEquality().hash(_amenities),
+      const DeepCollectionEquality().hash(_media),
+      position);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProcessMessageCreateEstateCopyWith<_$ProcessMessageCreateEstate>
+      get copyWith => __$$ProcessMessageCreateEstateCopyWithImpl<
+          _$ProcessMessageCreateEstate>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() normal,
-    required TResult Function() createEstate,
+    required TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)
+        createEstate,
   }) {
-    return createEstate();
+    return createEstate(step, isResponse, addressChoosen, realEstateInfo,
+        amenities, media, position);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? normal,
-    TResult? Function()? createEstate,
+    TResult? Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
   }) {
-    return createEstate?.call();
+    return createEstate?.call(step, isResponse, addressChoosen, realEstateInfo,
+        amenities, media, position);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? normal,
-    TResult Function()? createEstate,
+    TResult Function(
+            ProcessCreateEstateStepEnum step,
+            bool isResponse,
+            AddressChoosen? addressChoosen,
+            RealEstateInfo? realEstateInfo,
+            List<Amenity>? amenities,
+            List<XFile>? media,
+            LatLng? position)?
+        createEstate,
     required TResult orElse(),
   }) {
     if (createEstate != null) {
-      return createEstate();
+      return createEstate(step, isResponse, addressChoosen, realEstateInfo,
+          amenities, media, position);
     }
     return orElse();
   }
@@ -278,5 +473,23 @@ class _$ProcessMessageCreateEstate implements ProcessMessageCreateEstate {
 }
 
 abstract class ProcessMessageCreateEstate implements ProcessMessage {
-  const factory ProcessMessageCreateEstate() = _$ProcessMessageCreateEstate;
+  const factory ProcessMessageCreateEstate(
+      {required final ProcessCreateEstateStepEnum step,
+      final bool isResponse,
+      final AddressChoosen? addressChoosen,
+      final RealEstateInfo? realEstateInfo,
+      final List<Amenity>? amenities,
+      final List<XFile>? media,
+      final LatLng? position}) = _$ProcessMessageCreateEstate;
+
+  ProcessCreateEstateStepEnum get step;
+  bool get isResponse;
+  AddressChoosen? get addressChoosen;
+  RealEstateInfo? get realEstateInfo;
+  List<Amenity>? get amenities;
+  List<XFile>? get media;
+  LatLng? get position;
+  @JsonKey(ignore: true)
+  _$$ProcessMessageCreateEstateCopyWith<_$ProcessMessageCreateEstate>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -15,6 +15,7 @@ class ButtonApp extends StatelessWidget {
   final ButtonScaleStyle style;
   final ButtonIconAlign iconAlign;
   final Color? backgroundColor;
+  final Color? textColor;
   final Widget? icon;
   const ButtonApp({
     super.key,
@@ -27,6 +28,7 @@ class ButtonApp extends StatelessWidget {
     this.iconAlign = ButtonIconAlign.left,
     this.icon,
     this.backgroundColor,
+    this.textColor,
   });
 
   @override
@@ -50,12 +52,12 @@ class ButtonApp extends StatelessWidget {
     switch (type) {
       case ButtonType.primary:
         textStyle = textStyle?.copyWith(
-          color: AppColor.kNeutrals_.shade50,
+          color: textColor ?? AppColor.kNeutrals_.shade50,
         );
         break;
       case ButtonType.secondary:
         textStyle = textStyle?.copyWith(
-          color: AppColor.kNeutrals_.shade900,
+          color: textColor ?? AppColor.kNeutrals_.shade900,
         );
         break;
     }

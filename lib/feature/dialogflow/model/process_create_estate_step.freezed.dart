@@ -22,6 +22,7 @@ mixin _$ProcessCreateEstateStep {
         address,
     required TResult Function(RealEstateInfo? realEstateInfo) realEstateInfo,
     required TResult Function(List<Amenity>? amenities) amenities,
+    required TResult Function(List<String>? medias) media,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ProcessCreateEstateStep {
         address,
     TResult? Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult? Function(List<Amenity>? amenities)? amenities,
+    TResult? Function(List<String>? medias)? media,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +39,7 @@ mixin _$ProcessCreateEstateStep {
     TResult Function(AddressChoosen? addressChoosen, LatLng? position)? address,
     TResult Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult Function(List<Amenity>? amenities)? amenities,
+    TResult Function(List<String>? medias)? media,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ProcessCreateEstateStep {
         realEstateInfo,
     required TResult Function(_ProcessCreateEstateStepAmenities value)
         amenities,
+    required TResult Function(_ProcessCreateEstateStepMedia value) media,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ProcessCreateEstateStep {
     TResult? Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult? Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult? Function(_ProcessCreateEstateStepMedia value)? media,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ProcessCreateEstateStep {
     TResult Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult Function(_ProcessCreateEstateStepMedia value)? media,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,6 +176,7 @@ class _$_ProcessCreateEstateStepAddress
         address,
     required TResult Function(RealEstateInfo? realEstateInfo) realEstateInfo,
     required TResult Function(List<Amenity>? amenities) amenities,
+    required TResult Function(List<String>? medias) media,
   }) {
     return address(addressChoosen, position);
   }
@@ -181,6 +188,7 @@ class _$_ProcessCreateEstateStepAddress
         address,
     TResult? Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult? Function(List<Amenity>? amenities)? amenities,
+    TResult? Function(List<String>? medias)? media,
   }) {
     return address?.call(addressChoosen, position);
   }
@@ -191,6 +199,7 @@ class _$_ProcessCreateEstateStepAddress
     TResult Function(AddressChoosen? addressChoosen, LatLng? position)? address,
     TResult Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult Function(List<Amenity>? amenities)? amenities,
+    TResult Function(List<String>? medias)? media,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -207,6 +216,7 @@ class _$_ProcessCreateEstateStepAddress
         realEstateInfo,
     required TResult Function(_ProcessCreateEstateStepAmenities value)
         amenities,
+    required TResult Function(_ProcessCreateEstateStepMedia value) media,
   }) {
     return address(this);
   }
@@ -218,6 +228,7 @@ class _$_ProcessCreateEstateStepAddress
     TResult? Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult? Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult? Function(_ProcessCreateEstateStepMedia value)? media,
   }) {
     return address?.call(this);
   }
@@ -229,6 +240,7 @@ class _$_ProcessCreateEstateStepAddress
     TResult Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult Function(_ProcessCreateEstateStepMedia value)? media,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -326,6 +338,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
         address,
     required TResult Function(RealEstateInfo? realEstateInfo) realEstateInfo,
     required TResult Function(List<Amenity>? amenities) amenities,
+    required TResult Function(List<String>? medias) media,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -337,6 +350,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
         address,
     TResult? Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult? Function(List<Amenity>? amenities)? amenities,
+    TResult? Function(List<String>? medias)? media,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -347,6 +361,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
     TResult Function(AddressChoosen? addressChoosen, LatLng? position)? address,
     TResult Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult Function(List<Amenity>? amenities)? amenities,
+    TResult Function(List<String>? medias)? media,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -363,6 +378,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
         realEstateInfo,
     required TResult Function(_ProcessCreateEstateStepAmenities value)
         amenities,
+    required TResult Function(_ProcessCreateEstateStepMedia value) media,
   }) {
     return realEstateInfo(this);
   }
@@ -374,6 +390,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
     TResult? Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult? Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult? Function(_ProcessCreateEstateStepMedia value)? media,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -385,6 +402,7 @@ class _$_ProcessCreateEstateStepRealEstateInfo
     TResult Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult Function(_ProcessCreateEstateStepMedia value)? media,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -491,6 +509,7 @@ class _$_ProcessCreateEstateStepAmenities
         address,
     required TResult Function(RealEstateInfo? realEstateInfo) realEstateInfo,
     required TResult Function(List<Amenity>? amenities) amenities,
+    required TResult Function(List<String>? medias) media,
   }) {
     return amenities(this.amenities);
   }
@@ -502,6 +521,7 @@ class _$_ProcessCreateEstateStepAmenities
         address,
     TResult? Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult? Function(List<Amenity>? amenities)? amenities,
+    TResult? Function(List<String>? medias)? media,
   }) {
     return amenities?.call(this.amenities);
   }
@@ -512,6 +532,7 @@ class _$_ProcessCreateEstateStepAmenities
     TResult Function(AddressChoosen? addressChoosen, LatLng? position)? address,
     TResult Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
     TResult Function(List<Amenity>? amenities)? amenities,
+    TResult Function(List<String>? medias)? media,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -528,6 +549,7 @@ class _$_ProcessCreateEstateStepAmenities
         realEstateInfo,
     required TResult Function(_ProcessCreateEstateStepAmenities value)
         amenities,
+    required TResult Function(_ProcessCreateEstateStepMedia value) media,
   }) {
     return amenities(this);
   }
@@ -539,6 +561,7 @@ class _$_ProcessCreateEstateStepAmenities
     TResult? Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult? Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult? Function(_ProcessCreateEstateStepMedia value)? media,
   }) {
     return amenities?.call(this);
   }
@@ -550,6 +573,7 @@ class _$_ProcessCreateEstateStepAmenities
     TResult Function(_ProcessCreateEstateStepRealEstateInfo value)?
         realEstateInfo,
     TResult Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult Function(_ProcessCreateEstateStepMedia value)? media,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -568,5 +592,171 @@ abstract class _ProcessCreateEstateStepAmenities
   @JsonKey(ignore: true)
   _$$_ProcessCreateEstateStepAmenitiesCopyWith<
           _$_ProcessCreateEstateStepAmenities>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ProcessCreateEstateStepMediaCopyWith<$Res> {
+  factory _$$_ProcessCreateEstateStepMediaCopyWith(
+          _$_ProcessCreateEstateStepMedia value,
+          $Res Function(_$_ProcessCreateEstateStepMedia) then) =
+      __$$_ProcessCreateEstateStepMediaCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String>? medias});
+}
+
+/// @nodoc
+class __$$_ProcessCreateEstateStepMediaCopyWithImpl<$Res>
+    extends _$ProcessCreateEstateStepCopyWithImpl<$Res,
+        _$_ProcessCreateEstateStepMedia>
+    implements _$$_ProcessCreateEstateStepMediaCopyWith<$Res> {
+  __$$_ProcessCreateEstateStepMediaCopyWithImpl(
+      _$_ProcessCreateEstateStepMedia _value,
+      $Res Function(_$_ProcessCreateEstateStepMedia) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? medias = freezed,
+  }) {
+    return _then(_$_ProcessCreateEstateStepMedia(
+      medias: freezed == medias
+          ? _value._medias
+          : medias // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ProcessCreateEstateStepMedia implements _ProcessCreateEstateStepMedia {
+  const _$_ProcessCreateEstateStepMedia({final List<String>? medias})
+      : _medias = medias;
+
+  final List<String>? _medias;
+  @override
+  List<String>? get medias {
+    final value = _medias;
+    if (value == null) return null;
+    if (_medias is EqualUnmodifiableListView) return _medias;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ProcessCreateEstateStep.media(medias: $medias)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ProcessCreateEstateStepMedia &&
+            const DeepCollectionEquality().equals(other._medias, _medias));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_medias));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ProcessCreateEstateStepMediaCopyWith<_$_ProcessCreateEstateStepMedia>
+      get copyWith => __$$_ProcessCreateEstateStepMediaCopyWithImpl<
+          _$_ProcessCreateEstateStepMedia>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddressChoosen? addressChoosen, LatLng? position)
+        address,
+    required TResult Function(RealEstateInfo? realEstateInfo) realEstateInfo,
+    required TResult Function(List<Amenity>? amenities) amenities,
+    required TResult Function(List<String>? medias) media,
+  }) {
+    return media(medias);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddressChoosen? addressChoosen, LatLng? position)?
+        address,
+    TResult? Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
+    TResult? Function(List<Amenity>? amenities)? amenities,
+    TResult? Function(List<String>? medias)? media,
+  }) {
+    return media?.call(medias);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddressChoosen? addressChoosen, LatLng? position)? address,
+    TResult Function(RealEstateInfo? realEstateInfo)? realEstateInfo,
+    TResult Function(List<Amenity>? amenities)? amenities,
+    TResult Function(List<String>? medias)? media,
+    required TResult orElse(),
+  }) {
+    if (media != null) {
+      return media(medias);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ProcessCreateEstateStepAddress value) address,
+    required TResult Function(_ProcessCreateEstateStepRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_ProcessCreateEstateStepAmenities value)
+        amenities,
+    required TResult Function(_ProcessCreateEstateStepMedia value) media,
+  }) {
+    return media(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ProcessCreateEstateStepAddress value)? address,
+    TResult? Function(_ProcessCreateEstateStepRealEstateInfo value)?
+        realEstateInfo,
+    TResult? Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult? Function(_ProcessCreateEstateStepMedia value)? media,
+  }) {
+    return media?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ProcessCreateEstateStepAddress value)? address,
+    TResult Function(_ProcessCreateEstateStepRealEstateInfo value)?
+        realEstateInfo,
+    TResult Function(_ProcessCreateEstateStepAmenities value)? amenities,
+    TResult Function(_ProcessCreateEstateStepMedia value)? media,
+    required TResult orElse(),
+  }) {
+    if (media != null) {
+      return media(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProcessCreateEstateStepMedia
+    implements ProcessCreateEstateStep {
+  const factory _ProcessCreateEstateStepMedia({final List<String>? medias}) =
+      _$_ProcessCreateEstateStepMedia;
+
+  List<String>? get medias;
+  @JsonKey(ignore: true)
+  _$$_ProcessCreateEstateStepMediaCopyWith<_$_ProcessCreateEstateStepMedia>
       get copyWith => throw _privateConstructorUsedError;
 }
