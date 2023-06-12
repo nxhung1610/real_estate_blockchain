@@ -33,7 +33,6 @@ class _DialogFlowPageState extends State<DialogFlowPage> {
                 id: const Uuid().v4(),
                 message: S.of(context).hi,
               ),
-              context.read<AppBloc>().state.locale.languageCode,
             ),
           );
     });
@@ -148,13 +147,14 @@ class _MessageTextFieldState extends State<MessageTextField> {
     if (trimmed.isEmpty) {
       return;
     }
-    context.read<DialogflowBloc>().add(DialogflowEvent.onMessage(
-          OnMessageDataType.text(
-            message: trimmed,
-            id: const Uuid().v4(),
+    context.read<DialogflowBloc>().add(
+          DialogflowEvent.onMessage(
+            OnMessageDataType.text(
+              message: trimmed,
+              id: const Uuid().v4(),
+            ),
           ),
-          context.read<AppBloc>().state.locale.languageCode,
-        ));
+        );
     controller.clear();
   }
 }

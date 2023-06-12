@@ -290,6 +290,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Re-enter password not valid"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Private house"),
+        "realEstateInformationConfirmed": MessageLookupByLibrary.simpleMessage(
+            "Real estate information confirmed"),
         "realEstateName":
             MessageLookupByLibrary.simpleMessage("Real estate name"),
         "realEstateType":

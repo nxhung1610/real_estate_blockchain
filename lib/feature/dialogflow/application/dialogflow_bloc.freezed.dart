@@ -208,23 +208,23 @@ abstract class _DialogflowState implements DialogflowState {
 mixin _$DialogflowEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, String languageCode)
-        onMessage,
-    required TResult Function(String message, String languageCode) onResponse,
+    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(OnResponseDataType message, bool isAdd)
+        onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult? Function(String message, String languageCode)? onResponse,
+    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult Function(String message, String languageCode)? onResponse,
+    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
   }) =>
@@ -277,7 +277,7 @@ abstract class _$$_OnMessageCopyWith<$Res> {
           _$_OnMessage value, $Res Function(_$_OnMessage) then) =
       __$$_OnMessageCopyWithImpl<$Res>;
   @useResult
-  $Res call({OnMessageDataType data, String languageCode});
+  $Res call({OnMessageDataType data, bool isAdd});
 
   $OnMessageDataTypeCopyWith<$Res> get data;
 }
@@ -294,17 +294,17 @@ class __$$_OnMessageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
-    Object? languageCode = null,
+    Object? isAdd = null,
   }) {
     return _then(_$_OnMessage(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as OnMessageDataType,
-      null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
+      isAdd: null == isAdd
+          ? _value.isAdd
+          : isAdd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -320,16 +320,17 @@ class __$$_OnMessageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnMessage implements _OnMessage {
-  const _$_OnMessage(this.data, this.languageCode);
+  const _$_OnMessage(this.data, {this.isAdd = true});
 
   @override
   final OnMessageDataType data;
   @override
-  final String languageCode;
+  @JsonKey()
+  final bool isAdd;
 
   @override
   String toString() {
-    return 'DialogflowEvent.onMessage(data: $data, languageCode: $languageCode)';
+    return 'DialogflowEvent.onMessage(data: $data, isAdd: $isAdd)';
   }
 
   @override
@@ -338,12 +339,11 @@ class _$_OnMessage implements _OnMessage {
         (other.runtimeType == runtimeType &&
             other is _$_OnMessage &&
             (identical(other.data, data) || other.data == data) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode));
+            (identical(other.isAdd, isAdd) || other.isAdd == isAdd));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data, languageCode);
+  int get hashCode => Object.hash(runtimeType, data, isAdd);
 
   @JsonKey(ignore: true)
   @override
@@ -354,34 +354,34 @@ class _$_OnMessage implements _OnMessage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, String languageCode)
-        onMessage,
-    required TResult Function(String message, String languageCode) onResponse,
+    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(OnResponseDataType message, bool isAdd)
+        onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
   }) {
-    return onMessage(data, languageCode);
+    return onMessage(data, isAdd);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult? Function(String message, String languageCode)? onResponse,
+    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
-    return onMessage?.call(data, languageCode);
+    return onMessage?.call(data, isAdd);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult Function(String message, String languageCode)? onResponse,
+    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
   }) {
     if (onMessage != null) {
-      return onMessage(data, languageCode);
+      return onMessage(data, isAdd);
     }
     return orElse();
   }
@@ -422,11 +422,11 @@ class _$_OnMessage implements _OnMessage {
 }
 
 abstract class _OnMessage implements DialogflowEvent {
-  const factory _OnMessage(
-      final OnMessageDataType data, final String languageCode) = _$_OnMessage;
+  const factory _OnMessage(final OnMessageDataType data, {final bool isAdd}) =
+      _$_OnMessage;
 
   OnMessageDataType get data;
-  String get languageCode;
+  bool get isAdd;
   @JsonKey(ignore: true)
   _$$_OnMessageCopyWith<_$_OnMessage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -438,7 +438,9 @@ abstract class _$$_OnResponseCopyWith<$Res> {
           _$_OnResponse value, $Res Function(_$_OnResponse) then) =
       __$$_OnResponseCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message, String languageCode});
+  $Res call({OnResponseDataType message, bool isAdd});
+
+  $OnResponseDataTypeCopyWith<$Res> get message;
 }
 
 /// @nodoc
@@ -453,34 +455,43 @@ class __$$_OnResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
-    Object? languageCode = null,
+    Object? isAdd = null,
   }) {
     return _then(_$_OnResponse(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as OnResponseDataType,
+      isAdd: null == isAdd
+          ? _value.isAdd
+          : isAdd // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OnResponseDataTypeCopyWith<$Res> get message {
+    return $OnResponseDataTypeCopyWith<$Res>(_value.message, (value) {
+      return _then(_value.copyWith(message: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_OnResponse implements _OnResponse {
-  const _$_OnResponse(this.message, this.languageCode);
+  const _$_OnResponse(this.message, {this.isAdd = true});
 
   @override
-  final String message;
+  final OnResponseDataType message;
   @override
-  final String languageCode;
+  @JsonKey()
+  final bool isAdd;
 
   @override
   String toString() {
-    return 'DialogflowEvent.onResponse(message: $message, languageCode: $languageCode)';
+    return 'DialogflowEvent.onResponse(message: $message, isAdd: $isAdd)';
   }
 
   @override
@@ -489,12 +500,11 @@ class _$_OnResponse implements _OnResponse {
         (other.runtimeType == runtimeType &&
             other is _$_OnResponse &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode));
+            (identical(other.isAdd, isAdd) || other.isAdd == isAdd));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, languageCode);
+  int get hashCode => Object.hash(runtimeType, message, isAdd);
 
   @JsonKey(ignore: true)
   @override
@@ -505,34 +515,34 @@ class _$_OnResponse implements _OnResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, String languageCode)
-        onMessage,
-    required TResult Function(String message, String languageCode) onResponse,
+    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(OnResponseDataType message, bool isAdd)
+        onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
   }) {
-    return onResponse(message, languageCode);
+    return onResponse(message, isAdd);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult? Function(String message, String languageCode)? onResponse,
+    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
-    return onResponse?.call(message, languageCode);
+    return onResponse?.call(message, isAdd);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult Function(String message, String languageCode)? onResponse,
+    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
   }) {
     if (onResponse != null) {
-      return onResponse(message, languageCode);
+      return onResponse(message, isAdd);
     }
     return orElse();
   }
@@ -573,11 +583,11 @@ class _$_OnResponse implements _OnResponse {
 }
 
 abstract class _OnResponse implements DialogflowEvent {
-  const factory _OnResponse(final String message, final String languageCode) =
-      _$_OnResponse;
+  const factory _OnResponse(final OnResponseDataType message,
+      {final bool isAdd}) = _$_OnResponse;
 
-  String get message;
-  String get languageCode;
+  OnResponseDataType get message;
+  bool get isAdd;
   @JsonKey(ignore: true)
   _$$_OnResponseCopyWith<_$_OnResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -658,9 +668,9 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, String languageCode)
-        onMessage,
-    required TResult Function(String message, String languageCode) onResponse,
+    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(OnResponseDataType message, bool isAdd)
+        onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
   }) {
     return addMessageApp(messageApp);
@@ -669,8 +679,8 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult? Function(String message, String languageCode)? onResponse,
+    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
     return addMessageApp?.call(messageApp);
@@ -679,8 +689,8 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, String languageCode)? onMessage,
-    TResult Function(String message, String languageCode)? onResponse,
+    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
   }) {

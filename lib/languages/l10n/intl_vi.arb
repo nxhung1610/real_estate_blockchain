@@ -251,6 +251,6 @@
   "addressNotFoundPleaseReEnter" : "Không tìm thấy địa chỉ , vui lòng nhập lại",
   "hereIsYourAddressInformation" :"Đây là thông tin địa chỉ của bạn",
   "pleaseEnterYourPropertyInformation" : "Vui lòng nhập thông tin bất động sản của bạn",
-  "enterYourInformationHere" : "Nhập thông tin của bạn ở đây"
-
+  "enterYourInformationHere" : "Nhập thông tin của bạn ở đây",
+  "realEstateInformationConfirmed"  : "Đã xác nhận thông tin bất động sản"
 }

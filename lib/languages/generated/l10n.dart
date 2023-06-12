@@ -2519,6 +2519,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Real estate information confirmed`
+  String get realEstateInformationConfirmed {
+    return Intl.message(
+      'Real estate information confirmed',
+      name: 'realEstateInformationConfirmed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

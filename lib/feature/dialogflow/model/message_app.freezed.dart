@@ -1340,16 +1340,20 @@ mixin _$OnMessageData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1357,16 +1361,22 @@ mixin _$OnMessageData {
   TResult map<TResult extends Object?>({
     required TResult Function(_OnMessageDataRealEstateInfo value)
         realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1432,6 +1442,8 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
   }) {
     return realEstateInfo();
   }
@@ -1440,6 +1452,7 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
   }) {
     return realEstateInfo?.call();
   }
@@ -1448,6 +1461,7 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -1461,6 +1475,8 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(_OnMessageDataRealEstateInfo value)
         realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
   }) {
     return realEstateInfo(this);
   }
@@ -1469,6 +1485,8 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -1477,6 +1495,8 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -1491,26 +1511,175 @@ abstract class _OnMessageDataRealEstateInfo implements OnMessageData {
 }
 
 /// @nodoc
+abstract class _$$_OnMessageDataRealEstateInfoWithDataCopyWith<$Res> {
+  factory _$$_OnMessageDataRealEstateInfoWithDataCopyWith(
+          _$_OnMessageDataRealEstateInfoWithData value,
+          $Res Function(_$_OnMessageDataRealEstateInfoWithData) then) =
+      __$$_OnMessageDataRealEstateInfoWithDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RealEstateInfo realEstateInfo});
+}
+
+/// @nodoc
+class __$$_OnMessageDataRealEstateInfoWithDataCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res,
+        _$_OnMessageDataRealEstateInfoWithData>
+    implements _$$_OnMessageDataRealEstateInfoWithDataCopyWith<$Res> {
+  __$$_OnMessageDataRealEstateInfoWithDataCopyWithImpl(
+      _$_OnMessageDataRealEstateInfoWithData _value,
+      $Res Function(_$_OnMessageDataRealEstateInfoWithData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? realEstateInfo = null,
+  }) {
+    return _then(_$_OnMessageDataRealEstateInfoWithData(
+      null == realEstateInfo
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnMessageDataRealEstateInfoWithData
+    implements _OnMessageDataRealEstateInfoWithData {
+  const _$_OnMessageDataRealEstateInfoWithData(this.realEstateInfo);
+
+  @override
+  final RealEstateInfo realEstateInfo;
+
+  @override
+  String toString() {
+    return 'OnMessageData.realEstateInfoWithData(realEstateInfo: $realEstateInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMessageDataRealEstateInfoWithData &&
+            (identical(other.realEstateInfo, realEstateInfo) ||
+                other.realEstateInfo == realEstateInfo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, realEstateInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnMessageDataRealEstateInfoWithDataCopyWith<
+          _$_OnMessageDataRealEstateInfoWithData>
+      get copyWith => __$$_OnMessageDataRealEstateInfoWithDataCopyWithImpl<
+          _$_OnMessageDataRealEstateInfoWithData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
+  }) {
+    return realEstateInfoWithData(this.realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+  }) {
+    return realEstateInfoWithData?.call(this.realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfoWithData != null) {
+      return realEstateInfoWithData(this.realEstateInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
+  }) {
+    return realEstateInfoWithData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+  }) {
+    return realEstateInfoWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfoWithData != null) {
+      return realEstateInfoWithData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataRealEstateInfoWithData implements OnMessageData {
+  const factory _OnMessageDataRealEstateInfoWithData(
+          final RealEstateInfo realEstateInfo) =
+      _$_OnMessageDataRealEstateInfoWithData;
+
+  RealEstateInfo get realEstateInfo;
+  @JsonKey(ignore: true)
+  _$$_OnMessageDataRealEstateInfoWithDataCopyWith<
+          _$_OnMessageDataRealEstateInfoWithData>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$OnResponseDataType {
   String get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id, String? message, dynamic data) data,
+    required TResult Function(String id, String? message, OnResponseData data)
+        data,
     required TResult Function(String id) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id, String? message, dynamic data)? data,
+    TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id, String? message, dynamic data)? data,
+    TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
   }) =>
@@ -1652,7 +1821,8 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id, String? message, dynamic data) data,
+    required TResult Function(String id, String? message, OnResponseData data)
+        data,
     required TResult Function(String id) unknown,
   }) {
     return text(id, message);
@@ -1662,7 +1832,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id, String? message, dynamic data)? data,
+    TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
     return text?.call(id, message);
@@ -1672,7 +1842,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id, String? message, dynamic data)? data,
+    TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
   }) {
@@ -1739,7 +1909,9 @@ abstract class _$$_OnResponseDataTypeDataCopyWith<$Res>
       __$$_OnResponseDataTypeDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String? message, dynamic data});
+  $Res call({String id, String? message, OnResponseData data});
+
+  $OnResponseDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1755,7 +1927,7 @@ class __$$_OnResponseDataTypeDataCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? message = freezed,
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$_OnResponseDataTypeData(
       id: null == id
@@ -1766,11 +1938,19 @@ class __$$_OnResponseDataTypeDataCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-      data: freezed == data
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as OnResponseData,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OnResponseDataCopyWith<$Res> get data {
+    return $OnResponseDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -1785,7 +1965,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @override
   final String? message;
   @override
-  final dynamic data;
+  final OnResponseData data;
 
   @override
   String toString() {
@@ -1799,12 +1979,11 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
             other is _$_OnResponseDataTypeData &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, message, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, id, message, data);
 
   @JsonKey(ignore: true)
   @override
@@ -1817,7 +1996,8 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id, String? message, dynamic data) data,
+    required TResult Function(String id, String? message, OnResponseData data)
+        data,
     required TResult Function(String id) unknown,
   }) {
     return data(id, message, this.data);
@@ -1827,7 +2007,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id, String? message, dynamic data)? data,
+    TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
     return data?.call(id, message, this.data);
@@ -1837,7 +2017,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id, String? message, dynamic data)? data,
+    TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
   }) {
@@ -1886,12 +2066,12 @@ abstract class _OnResponseDataTypeData implements OnResponseDataType {
   const factory _OnResponseDataTypeData(
       {required final String id,
       final String? message,
-      required final dynamic data}) = _$_OnResponseDataTypeData;
+      required final OnResponseData data}) = _$_OnResponseDataTypeData;
 
   @override
   String get id;
   String? get message;
-  dynamic get data;
+  OnResponseData get data;
   @override
   @JsonKey(ignore: true)
   _$$_OnResponseDataTypeDataCopyWith<_$_OnResponseDataTypeData> get copyWith =>
@@ -1968,7 +2148,8 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id, String? message, dynamic data) data,
+    required TResult Function(String id, String? message, OnResponseData data)
+        data,
     required TResult Function(String id) unknown,
   }) {
     return unknown(id);
@@ -1978,7 +2159,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id, String? message, dynamic data)? data,
+    TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
     return unknown?.call(id);
@@ -1988,7 +2169,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id, String? message, dynamic data)? data,
+    TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
   }) {
@@ -2043,4 +2224,351 @@ abstract class _OnResponseDataTypeUnknown implements OnResponseDataType {
   @JsonKey(ignore: true)
   _$$_OnResponseDataTypeUnknownCopyWith<_$_OnResponseDataTypeUnknown>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$OnResponseData {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OnResponseDataCopyWith<$Res> {
+  factory $OnResponseDataCopyWith(
+          OnResponseData value, $Res Function(OnResponseData) then) =
+      _$OnResponseDataCopyWithImpl<$Res, OnResponseData>;
+}
+
+/// @nodoc
+class _$OnResponseDataCopyWithImpl<$Res, $Val extends OnResponseData>
+    implements $OnResponseDataCopyWith<$Res> {
+  _$OnResponseDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataRealEstateInfoCopyWith<$Res> {
+  factory _$$_OnResponseDataRealEstateInfoCopyWith(
+          _$_OnResponseDataRealEstateInfo value,
+          $Res Function(_$_OnResponseDataRealEstateInfo) then) =
+      __$$_OnResponseDataRealEstateInfoCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RealEstateInfo realEstateInfo});
+}
+
+/// @nodoc
+class __$$_OnResponseDataRealEstateInfoCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataRealEstateInfo>
+    implements _$$_OnResponseDataRealEstateInfoCopyWith<$Res> {
+  __$$_OnResponseDataRealEstateInfoCopyWithImpl(
+      _$_OnResponseDataRealEstateInfo _value,
+      $Res Function(_$_OnResponseDataRealEstateInfo) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? realEstateInfo = null,
+  }) {
+    return _then(_$_OnResponseDataRealEstateInfo(
+      null == realEstateInfo
+          ? _value.realEstateInfo
+          : realEstateInfo // ignore: cast_nullable_to_non_nullable
+              as RealEstateInfo,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
+  const _$_OnResponseDataRealEstateInfo(this.realEstateInfo);
+
+  @override
+  final RealEstateInfo realEstateInfo;
+
+  @override
+  String toString() {
+    return 'OnResponseData.realEstateInfo(realEstateInfo: $realEstateInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataRealEstateInfo &&
+            (identical(other.realEstateInfo, realEstateInfo) ||
+                other.realEstateInfo == realEstateInfo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, realEstateInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnResponseDataRealEstateInfoCopyWith<_$_OnResponseDataRealEstateInfo>
+      get copyWith => __$$_OnResponseDataRealEstateInfoCopyWithImpl<
+          _$_OnResponseDataRealEstateInfo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+  }) {
+    return realEstateInfo(this.realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+  }) {
+    return realEstateInfo?.call(this.realEstateInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfo != null) {
+      return realEstateInfo(this.realEstateInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+  }) {
+    return realEstateInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+  }) {
+    return realEstateInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    required TResult orElse(),
+  }) {
+    if (realEstateInfo != null) {
+      return realEstateInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataRealEstateInfo implements OnResponseData {
+  const factory _OnResponseDataRealEstateInfo(
+      final RealEstateInfo realEstateInfo) = _$_OnResponseDataRealEstateInfo;
+
+  RealEstateInfo get realEstateInfo;
+  @JsonKey(ignore: true)
+  _$$_OnResponseDataRealEstateInfoCopyWith<_$_OnResponseDataRealEstateInfo>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataAddressCopyWith<$Res> {
+  factory _$$_OnResponseDataAddressCopyWith(_$_OnResponseDataAddress value,
+          $Res Function(_$_OnResponseDataAddress) then) =
+      __$$_OnResponseDataAddressCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AddressData addressData});
+
+  $AddressDataCopyWith<$Res> get addressData;
+}
+
+/// @nodoc
+class __$$_OnResponseDataAddressCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataAddress>
+    implements _$$_OnResponseDataAddressCopyWith<$Res> {
+  __$$_OnResponseDataAddressCopyWithImpl(_$_OnResponseDataAddress _value,
+      $Res Function(_$_OnResponseDataAddress) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? addressData = null,
+  }) {
+    return _then(_$_OnResponseDataAddress(
+      null == addressData
+          ? _value.addressData
+          : addressData // ignore: cast_nullable_to_non_nullable
+              as AddressData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AddressDataCopyWith<$Res> get addressData {
+    return $AddressDataCopyWith<$Res>(_value.addressData, (value) {
+      return _then(_value.copyWith(addressData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_OnResponseDataAddress implements _OnResponseDataAddress {
+  const _$_OnResponseDataAddress(this.addressData);
+
+  @override
+  final AddressData addressData;
+
+  @override
+  String toString() {
+    return 'OnResponseData.address(addressData: $addressData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataAddress &&
+            (identical(other.addressData, addressData) ||
+                other.addressData == addressData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, addressData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnResponseDataAddressCopyWith<_$_OnResponseDataAddress> get copyWith =>
+      __$$_OnResponseDataAddressCopyWithImpl<_$_OnResponseDataAddress>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+  }) {
+    return address(addressData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+  }) {
+    return address?.call(addressData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    required TResult orElse(),
+  }) {
+    if (address != null) {
+      return address(addressData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+  }) {
+    return address(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+  }) {
+    return address?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    required TResult orElse(),
+  }) {
+    if (address != null) {
+      return address(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataAddress implements OnResponseData {
+  const factory _OnResponseDataAddress(final AddressData addressData) =
+      _$_OnResponseDataAddress;
+
+  AddressData get addressData;
+  @JsonKey(ignore: true)
+  _$$_OnResponseDataAddressCopyWith<_$_OnResponseDataAddress> get copyWith =>
+      throw _privateConstructorUsedError;
 }

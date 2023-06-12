@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow_bloc.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/model/message_app.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:uuid/uuid.dart';
 
 import 'estate/info/dialog_estate_info_input.dart';
 
@@ -29,6 +32,9 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
     return widget.data.map(
       data: (value) {
         return value.data.map(
+          realEstateInfoWithData: (value) {
+            return Container();
+          },
           realEstateInfo: (value) {
             return Column(
               children: [
@@ -46,7 +52,18 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                       ? () {
                           DialogEstateInfoInput.show(
                             context,
-                            onSuccess: (info) {},
+                            onSuccess: (info) {
+                              context.read<DialogflowBloc>().add(
+                                    DialogflowEvent.onMessage(
+                                      OnMessageDataType.data(
+                                        id: const Uuid().v4(),
+                                        data: OnMessageData
+                                            .realEstateInfoWithData(info),
+                                      ),
+                                      isAdd: false,
+                                    ),
+                                  );
+                            },
                           );
                         }
                       : null,

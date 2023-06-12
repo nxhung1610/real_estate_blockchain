@@ -29,8 +29,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   final IDialogFlowRepository dialogFlowRepository;
   final IMapRepository mapRepository;
   final S s;
+  final String location;
   DialogflowBloc({
     @factoryParam required this.s,
+    @factoryParam required this.location,
     required this.dialogFlowRepository,
     required this.mapRepository,
   }) : super(const DialogflowState()) {
@@ -45,16 +47,25 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   ) async {
     try {
       emit(state.copyWith(isWaitingResponse: true));
-      add(
-        _AddMessageApp(
-          messageApp: MessageApp.onMessage(data: event.data),
-        ),
-      );
+      if (event.isAdd) {
+        add(
+          _AddMessageApp(
+            messageApp: MessageApp.onMessage(data: event.data),
+          ),
+        );
+      }
+
       await state.processMessage.map(
         normal: (value) async {
           await event.data.mapOrNull(
             text: (value) async {
-              await _onProcessMessageNormal(value, event.languageCode, emit);
+              await _onProcessMessageNormal(
+                value,
+                emit,
+              );
+            },
+            data: (value) async {
+              await _onProcessMessageEstate(event.data, emit);
             },
           );
         },
@@ -70,12 +81,11 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
 
   FutureOr<void> _onProcessMessageNormal(
     OnMessageDataTypeText data,
-    String languageCode,
     Emitter<DialogflowState> emit,
   ) async {
     try {
       final result =
-          await dialogFlowRepository.sendMessage(data.message, languageCode);
+          await dialogFlowRepository.sendMessage(data.message, location);
       await result.fold(
         (l) async => throw l,
         (r) async {
@@ -161,15 +171,14 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
               ),
             );
             add(
-              DialogflowEvent.addMessageApp(
-                messageApp: MessageApp.onResponse(
-                  data: OnResponseDataType.text(
-                    message: s.pleaseEnterYourRealEstateAddress,
-                    id: const Uuid().v4(),
-                  ),
+              DialogflowEvent.onResponse(
+                OnResponseDataType.text(
+                  message: s.pleaseEnterYourRealEstateAddress,
+                  id: const Uuid().v4(),
                 ),
               ),
             );
+
             break;
           case ProcessCreateEstateStepEnum.realEstateInfo:
             emit(
@@ -180,23 +189,19 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
               ),
             );
             add(
-              DialogflowEvent.addMessageApp(
-                messageApp: MessageApp.onResponse(
-                  data: OnResponseDataType.text(
-                    message: s.pleaseEnterYourPropertyInformation,
-                    id: const Uuid().v4(),
-                  ),
+              DialogflowEvent.onResponse(
+                OnResponseDataType.text(
+                  message: s.pleaseEnterYourPropertyInformation,
+                  id: const Uuid().v4(),
                 ),
               ),
             );
             add(
-              DialogflowEvent.addMessageApp(
-                messageApp: MessageApp.onMessage(
-                  data: OnMessageDataType.data(
-                    data: const OnMessageData.realEstateInfo(),
-                    message: s.pleaseEnterYourPropertyInformation,
-                    id: const Uuid().v4(),
-                  ),
+              DialogflowEvent.onMessage(
+                OnMessageDataType.data(
+                  data: const OnMessageData.realEstateInfo(),
+                  message: s.enterYourInformationHere,
+                  id: const Uuid().v4(),
                 ),
               ),
             );
@@ -215,12 +220,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                 final result = await mapRepository.getAddress(value.message);
                 await result.fold((l) async {
                   add(
-                    DialogflowEvent.addMessageApp(
-                      messageApp: MessageApp.onResponse(
-                        data: OnResponseDataType.text(
-                          message: s.addressNotFoundPleaseReEnter,
-                          id: const Uuid().v4(),
-                        ),
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.text(
+                        message: s.addressNotFoundPleaseReEnter,
+                        id: const Uuid().v4(),
                       ),
                     ),
                   );
@@ -245,13 +248,11 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   add(
-                    DialogflowEvent.addMessageApp(
-                      messageApp: MessageApp.onResponse(
-                        data: OnResponseDataType.data(
-                          message: s.hereIsYourAddressInformation,
-                          id: const Uuid().v4(),
-                          data: r,
-                        ),
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        message: s.hereIsYourAddressInformation,
+                        id: const Uuid().v4(),
+                        data: OnResponseData.address(r),
                       ),
                     ),
                   );
@@ -262,7 +263,37 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
 
             break;
           case ProcessCreateEstateStepEnum.realEstateInfo:
-            // TODO: Handle this case.
+            await data.maybeMap(
+              orElse: () async {},
+              data: (value) async {
+                await value.data.mapOrNull(
+                  realEstateInfoWithData: (value) async {
+                    emit(
+                      state.copyWith(
+                        isWaitingResponse: false,
+                        processMessage: createEstateData.copyWith(
+                          isResponse: false,
+                          step: ProcessCreateEstateStepEnum.amenities,
+                          realEstateInfo: value.realEstateInfo,
+                        ),
+                      ),
+                    );
+                    add(
+                      DialogflowEvent.onResponse(
+                        OnResponseDataType.data(
+                          id: const Uuid().v4(),
+                          data: OnResponseData.realEstateInfo(
+                            value.realEstateInfo,
+                          ),
+                        ),
+                      ),
+                    );
+                    await _onProcessMessageEstate(data, emit);
+                  },
+                );
+              },
+            );
+
             break;
           case ProcessCreateEstateStepEnum.amenities:
             // TODO: Handle this case.
@@ -275,14 +306,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       add(
-        DialogflowEvent.addMessageApp(
-          messageApp: MessageApp.onResponse(
-            data: OnResponseDataType.text(
-              id: const Uuid().v4(),
-              message: s.anErrorHasOccurredPleaseTryLater,
-            ),
-          ),
-        ),
+        DialogflowEvent.onResponse(OnResponseDataType.text(
+          id: const Uuid().v4(),
+          message: s.anErrorHasOccurredPleaseTryLater,
+        )),
       );
     }
   }
@@ -290,7 +317,38 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   FutureOr<void> _onResponse(
     _OnResponse event,
     Emitter<DialogflowState> emit,
-  ) async {}
+  ) async {
+    if (event.isAdd) {
+      event.message.map(
+        text: (value) {
+          add(
+            DialogflowEvent.addMessageApp(
+              messageApp: MessageApp.onResponse(
+                data: OnResponseDataType.text(
+                  message: value.message,
+                  id: value.id,
+                ),
+              ),
+            ),
+          );
+        },
+        data: (value) {
+          add(
+            DialogflowEvent.addMessageApp(
+              messageApp: MessageApp.onResponse(
+                data: OnResponseDataType.data(
+                  message: value.message,
+                  id: value.id,
+                  data: value.data,
+                ),
+              ),
+            ),
+          );
+        },
+        unknown: (value) {},
+      );
+    }
+  }
 
   FutureOr<void> _addMessageApp(
     _AddMessageApp event,

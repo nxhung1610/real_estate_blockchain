@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/data/map/model/address_data.dart';
+import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:uuid/uuid.dart';
 
 part 'message_app.freezed.dart';
@@ -76,6 +78,8 @@ class OnMessageDataType with _$OnMessageDataType {
 @freezed
 class OnMessageData with _$OnMessageData {
   const factory OnMessageData.realEstateInfo() = _OnMessageDataRealEstateInfo;
+  const factory OnMessageData.realEstateInfoWithData(
+      RealEstateInfo realEstateInfo) = _OnMessageDataRealEstateInfoWithData;
 }
 
 @freezed
@@ -87,9 +91,17 @@ class OnResponseDataType with _$OnResponseDataType {
   const factory OnResponseDataType.data({
     required String id,
     String? message,
-    required dynamic data,
+    required OnResponseData data,
   }) = _OnResponseDataTypeData;
   const factory OnResponseDataType.unknown({
     required String id,
   }) = _OnResponseDataTypeUnknown;
+}
+
+@freezed
+class OnResponseData with _$OnResponseData {
+  const factory OnResponseData.realEstateInfo(RealEstateInfo realEstateInfo) =
+      _OnResponseDataRealEstateInfo;
+  const factory OnResponseData.address(AddressData addressData) =
+      _OnResponseDataAddress;
 }

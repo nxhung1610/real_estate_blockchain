@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_type.dart';
@@ -28,11 +29,13 @@ class DialogEstateInfoInput extends StatefulWidget {
       context: context,
       builder: (context) => BlocProvider(
         create: (context) => getIt.call<DialogEstateInfoBloc>(),
-        child: Builder(builder: (context) {
-          return DialogEstateInfoInput(
-            onSuccess: onSuccess,
-          );
-        }),
+        child: Builder(
+          builder: (context) {
+            return DialogEstateInfoInput(
+              onSuccess: onSuccess,
+            );
+          },
+        ),
       ),
     );
   }
@@ -535,15 +538,31 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
           color: context.theme.colorScheme.background,
           child: SafeArea(
             minimum: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-            child:
-                BlocSelector<DialogEstateInfoBloc, DialogEstateInfoState, bool>(
-              selector: (state) {
-                return state.isValid();
-              },
-              builder: (context, isValid) {
+            child: BlocBuilder<DialogEstateInfoBloc, DialogEstateInfoState>(
+              builder: (context, state) {
                 return ButtonApp(
                   label: s.ok,
-                  onPressed: isValid ? () {} : null,
+                  onPressed: state.isValid()
+                      ? () {
+                          widget.onSuccess(
+                            RealEstateInfo(
+                              area: state.area,
+                              documents: state.documents,
+                              floors: state.floors,
+                              noBedroom: state.noBedroom,
+                              noWc: state.noWc,
+                              price: state.price,
+                              builtAt: state.builtAt,
+                              balconyFacing: state.balcony?.name,
+                              houseFacing: state.houseFacing?.name,
+                              interiors: state.furniture,
+                              name: state.name,
+                              reTypeId: state.reTypeId,
+                            ),
+                          );
+                          Navigator.of(context).pop();
+                        }
+                      : null,
                   type: ButtonType.primary,
                 );
               },

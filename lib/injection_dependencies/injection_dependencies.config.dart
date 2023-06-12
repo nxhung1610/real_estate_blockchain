@@ -103,7 +103,7 @@ import '../feature/onboarding/application/onboarding_bloc.dart' as _i40;
 import '../feature/post/detail/application/post_real_estate_detail_bloc.dart'
     as _i42;
 import '../feature/post/detail/presentation/bottom/bid/create_bid_bloc.dart'
-    as _i62;
+    as _i61;
 import '../feature/post/detail/presentation/bottom/create_post_bloc.dart'
     as _i63;
 import '../feature/post/owner/application/post_owner_bloc.dart' as _i41;
@@ -111,7 +111,7 @@ import '../feature/real_estate/config/real_estate_config_bloc.dart' as _i43;
 import '../feature/real_estate/detail/application/real_estate_detail_bloc.dart'
     as _i44;
 import '../feature/real_estate/detail/presentation/bottom/bid/create_bid_bloc.dart'
-    as _i61;
+    as _i62;
 import '../feature/real_estate/detail/presentation/bottom/create_post_bloc.dart'
     as _i64;
 import '../feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart'
@@ -408,12 +408,13 @@ Future<_i1.GetIt> $initGetIt(
       ));
   gh.factory<_i91.ConnectivityBloc>(
       () => _i91.ConnectivityBloc(gh<_i70.IConnectionRepository>()));
-  gh.factoryParam<_i92.DialogflowBloc, _i93.S, dynamic>((
+  gh.factoryParam<_i92.DialogflowBloc, _i93.S, String>((
     s,
-    _,
+    location,
   ) =>
       _i92.DialogflowBloc(
         s: s,
+        location: location,
         dialogFlowRepository: gh<_i22.IDialogFlowRepository>(),
         mapRepository: gh<_i72.IMapRepository>(),
       ));

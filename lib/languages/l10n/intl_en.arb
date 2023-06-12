@@ -250,6 +250,7 @@
   "addressNotFoundPleaseReEnter" : "Address not found, please re-enter",
   "hereIsYourAddressInformation" :"Here is your address information",
   "pleaseEnterYourPropertyInformation" : "Please enter your real estate information",
-  "enterYourInformationHere" : "Enter your information here"
+  "enterYourInformationHere" : "Enter your information here",
+  "realEstateInformationConfirmed"  : "Real estate information confirmed"
 
 }

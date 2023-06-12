@@ -291,6 +291,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mật khẩu nhập lại không hợp lệ"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Nhà riêng"),
+        "realEstateInformationConfirmed": MessageLookupByLibrary.simpleMessage(
+            "Đã xác nhận thông tin bất động sản"),
         "realEstateName":
             MessageLookupByLibrary.simpleMessage("Tên bất động sản"),
         "realEstateType":

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:go_router/src/route.dart';
+import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/presentation/dialog_flow_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
@@ -21,6 +22,7 @@ class DialogflowRoute extends BaseRoute {
                 child: BlocProvider(
               create: (_) => getIt.call<DialogflowBloc>(
                 param1: S.of(context),
+                param2: context.read<AppBloc>().state.locale.languageCode,
               ),
               child: const DialogFlowPage(),
             ));
