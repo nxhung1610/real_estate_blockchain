@@ -11,6 +11,7 @@ enum ProcessCreateEstateStepEnum {
   realEstateInfo,
   amenities,
   media,
+  processCreate,
 }
 
 @freezed

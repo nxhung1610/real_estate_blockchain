@@ -1342,18 +1342,30 @@ mixin _$OnMessageData {
     required TResult Function() realEstateInfo,
     required TResult Function(RealEstateInfo realEstateInfo)
         realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? realEstateInfo,
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? realEstateInfo,
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1363,6 +1375,11 @@ mixin _$OnMessageData {
         realEstateInfo,
     required TResult Function(_OnMessageDataRealEstateInfoWithData value)
         realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1370,6 +1387,10 @@ mixin _$OnMessageData {
     TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1377,6 +1398,10 @@ mixin _$OnMessageData {
     TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1444,6 +1469,10 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
     required TResult Function() realEstateInfo,
     required TResult Function(RealEstateInfo realEstateInfo)
         realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
   }) {
     return realEstateInfo();
   }
@@ -1453,6 +1482,10 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? realEstateInfo,
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
   }) {
     return realEstateInfo?.call();
   }
@@ -1462,6 +1495,10 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? realEstateInfo,
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -1477,6 +1514,11 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
         realEstateInfo,
     required TResult Function(_OnMessageDataRealEstateInfoWithData value)
         realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
   }) {
     return realEstateInfo(this);
   }
@@ -1487,6 +1529,10 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
     TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -1497,6 +1543,10 @@ class _$_OnMessageDataRealEstateInfo implements _OnMessageDataRealEstateInfo {
     TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -1584,6 +1634,10 @@ class _$_OnMessageDataRealEstateInfoWithData
     required TResult Function() realEstateInfo,
     required TResult Function(RealEstateInfo realEstateInfo)
         realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
   }) {
     return realEstateInfoWithData(this.realEstateInfo);
   }
@@ -1593,6 +1647,10 @@ class _$_OnMessageDataRealEstateInfoWithData
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? realEstateInfo,
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
   }) {
     return realEstateInfoWithData?.call(this.realEstateInfo);
   }
@@ -1602,6 +1660,10 @@ class _$_OnMessageDataRealEstateInfoWithData
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? realEstateInfo,
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfoWithData != null) {
@@ -1617,6 +1679,11 @@ class _$_OnMessageDataRealEstateInfoWithData
         realEstateInfo,
     required TResult Function(_OnMessageDataRealEstateInfoWithData value)
         realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
   }) {
     return realEstateInfoWithData(this);
   }
@@ -1627,6 +1694,10 @@ class _$_OnMessageDataRealEstateInfoWithData
     TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
   }) {
     return realEstateInfoWithData?.call(this);
   }
@@ -1637,6 +1708,10 @@ class _$_OnMessageDataRealEstateInfoWithData
     TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnMessageDataRealEstateInfoWithData value)?
         realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
     required TResult orElse(),
   }) {
     if (realEstateInfoWithData != null) {
@@ -1655,6 +1730,624 @@ abstract class _OnMessageDataRealEstateInfoWithData implements OnMessageData {
   @JsonKey(ignore: true)
   _$$_OnMessageDataRealEstateInfoWithDataCopyWith<
           _$_OnMessageDataRealEstateInfoWithData>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnMessageDataAmenitiesCopyWith<$Res> {
+  factory _$$_OnMessageDataAmenitiesCopyWith(_$_OnMessageDataAmenities value,
+          $Res Function(_$_OnMessageDataAmenities) then) =
+      __$$_OnMessageDataAmenitiesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnMessageDataAmenitiesCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res, _$_OnMessageDataAmenities>
+    implements _$$_OnMessageDataAmenitiesCopyWith<$Res> {
+  __$$_OnMessageDataAmenitiesCopyWithImpl(_$_OnMessageDataAmenities _value,
+      $Res Function(_$_OnMessageDataAmenities) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnMessageDataAmenities implements _OnMessageDataAmenities {
+  const _$_OnMessageDataAmenities();
+
+  @override
+  String toString() {
+    return 'OnMessageData.amenities()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMessageDataAmenities);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
+  }) {
+    return amenities();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
+  }) {
+    return amenities?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (amenities != null) {
+      return amenities();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
+  }) {
+    return amenities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
+  }) {
+    return amenities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (amenities != null) {
+      return amenities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataAmenities implements OnMessageData {
+  const factory _OnMessageDataAmenities() = _$_OnMessageDataAmenities;
+}
+
+/// @nodoc
+abstract class _$$_OnMessageDataAmenitiesWithDataCopyWith<$Res> {
+  factory _$$_OnMessageDataAmenitiesWithDataCopyWith(
+          _$_OnMessageDataAmenitiesWithData value,
+          $Res Function(_$_OnMessageDataAmenitiesWithData) then) =
+      __$$_OnMessageDataAmenitiesWithDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Amenity> amenities});
+}
+
+/// @nodoc
+class __$$_OnMessageDataAmenitiesWithDataCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res, _$_OnMessageDataAmenitiesWithData>
+    implements _$$_OnMessageDataAmenitiesWithDataCopyWith<$Res> {
+  __$$_OnMessageDataAmenitiesWithDataCopyWithImpl(
+      _$_OnMessageDataAmenitiesWithData _value,
+      $Res Function(_$_OnMessageDataAmenitiesWithData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amenities = null,
+  }) {
+    return _then(_$_OnMessageDataAmenitiesWithData(
+      amenities: null == amenities
+          ? _value._amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<Amenity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnMessageDataAmenitiesWithData
+    implements _OnMessageDataAmenitiesWithData {
+  const _$_OnMessageDataAmenitiesWithData(
+      {final List<Amenity> amenities = const []})
+      : _amenities = amenities;
+
+  final List<Amenity> _amenities;
+  @override
+  @JsonKey()
+  List<Amenity> get amenities {
+    if (_amenities is EqualUnmodifiableListView) return _amenities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amenities);
+  }
+
+  @override
+  String toString() {
+    return 'OnMessageData.amenitiesWithData(amenities: $amenities)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMessageDataAmenitiesWithData &&
+            const DeepCollectionEquality()
+                .equals(other._amenities, _amenities));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_amenities));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnMessageDataAmenitiesWithDataCopyWith<_$_OnMessageDataAmenitiesWithData>
+      get copyWith => __$$_OnMessageDataAmenitiesWithDataCopyWithImpl<
+          _$_OnMessageDataAmenitiesWithData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
+  }) {
+    return amenitiesWithData(this.amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
+  }) {
+    return amenitiesWithData?.call(this.amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (amenitiesWithData != null) {
+      return amenitiesWithData(this.amenities);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
+  }) {
+    return amenitiesWithData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
+  }) {
+    return amenitiesWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (amenitiesWithData != null) {
+      return amenitiesWithData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataAmenitiesWithData implements OnMessageData {
+  const factory _OnMessageDataAmenitiesWithData(
+      {final List<Amenity> amenities}) = _$_OnMessageDataAmenitiesWithData;
+
+  List<Amenity> get amenities;
+  @JsonKey(ignore: true)
+  _$$_OnMessageDataAmenitiesWithDataCopyWith<_$_OnMessageDataAmenitiesWithData>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnMessageDataMediaCopyWith<$Res> {
+  factory _$$_OnMessageDataMediaCopyWith(_$_OnMessageDataMedia value,
+          $Res Function(_$_OnMessageDataMedia) then) =
+      __$$_OnMessageDataMediaCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnMessageDataMediaCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res, _$_OnMessageDataMedia>
+    implements _$$_OnMessageDataMediaCopyWith<$Res> {
+  __$$_OnMessageDataMediaCopyWithImpl(
+      _$_OnMessageDataMedia _value, $Res Function(_$_OnMessageDataMedia) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnMessageDataMedia implements _OnMessageDataMedia {
+  const _$_OnMessageDataMedia();
+
+  @override
+  String toString() {
+    return 'OnMessageData.media()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnMessageDataMedia);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
+  }) {
+    return media();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
+  }) {
+    return media?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (media != null) {
+      return media();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
+  }) {
+    return media(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
+  }) {
+    return media?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (media != null) {
+      return media(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataMedia implements OnMessageData {
+  const factory _OnMessageDataMedia() = _$_OnMessageDataMedia;
+}
+
+/// @nodoc
+abstract class _$$_OnMessageDataMediaWithDataCopyWith<$Res> {
+  factory _$$_OnMessageDataMediaWithDataCopyWith(
+          _$_OnMessageDataMediaWithData value,
+          $Res Function(_$_OnMessageDataMediaWithData) then) =
+      __$$_OnMessageDataMediaWithDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<XFile> media});
+}
+
+/// @nodoc
+class __$$_OnMessageDataMediaWithDataCopyWithImpl<$Res>
+    extends _$OnMessageDataCopyWithImpl<$Res, _$_OnMessageDataMediaWithData>
+    implements _$$_OnMessageDataMediaWithDataCopyWith<$Res> {
+  __$$_OnMessageDataMediaWithDataCopyWithImpl(
+      _$_OnMessageDataMediaWithData _value,
+      $Res Function(_$_OnMessageDataMediaWithData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? media = null,
+  }) {
+    return _then(_$_OnMessageDataMediaWithData(
+      media: null == media
+          ? _value._media
+          : media // ignore: cast_nullable_to_non_nullable
+              as List<XFile>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnMessageDataMediaWithData implements _OnMessageDataMediaWithData {
+  const _$_OnMessageDataMediaWithData({final List<XFile> media = const []})
+      : _media = media;
+
+  final List<XFile> _media;
+  @override
+  @JsonKey()
+  List<XFile> get media {
+    if (_media is EqualUnmodifiableListView) return _media;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_media);
+  }
+
+  @override
+  String toString() {
+    return 'OnMessageData.mediaWithData(media: $media)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnMessageDataMediaWithData &&
+            const DeepCollectionEquality().equals(other._media, _media));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_media));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnMessageDataMediaWithDataCopyWith<_$_OnMessageDataMediaWithData>
+      get copyWith => __$$_OnMessageDataMediaWithDataCopyWithImpl<
+          _$_OnMessageDataMediaWithData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() realEstateInfo,
+    required TResult Function(RealEstateInfo realEstateInfo)
+        realEstateInfoWithData,
+    required TResult Function() amenities,
+    required TResult Function(List<Amenity> amenities) amenitiesWithData,
+    required TResult Function() media,
+    required TResult Function(List<XFile> media) mediaWithData,
+  }) {
+    return mediaWithData(this.media);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? realEstateInfo,
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult? Function()? amenities,
+    TResult? Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult? Function()? media,
+    TResult? Function(List<XFile> media)? mediaWithData,
+  }) {
+    return mediaWithData?.call(this.media);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? realEstateInfo,
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfoWithData,
+    TResult Function()? amenities,
+    TResult Function(List<Amenity> amenities)? amenitiesWithData,
+    TResult Function()? media,
+    TResult Function(List<XFile> media)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (mediaWithData != null) {
+      return mediaWithData(this.media);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnMessageDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnMessageDataRealEstateInfoWithData value)
+        realEstateInfoWithData,
+    required TResult Function(_OnMessageDataAmenities value) amenities,
+    required TResult Function(_OnMessageDataAmenitiesWithData value)
+        amenitiesWithData,
+    required TResult Function(_OnMessageDataMedia value) media,
+    required TResult Function(_OnMessageDataMediaWithData value) mediaWithData,
+  }) {
+    return mediaWithData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult? Function(_OnMessageDataAmenities value)? amenities,
+    TResult? Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult? Function(_OnMessageDataMedia value)? media,
+    TResult? Function(_OnMessageDataMediaWithData value)? mediaWithData,
+  }) {
+    return mediaWithData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnMessageDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnMessageDataRealEstateInfoWithData value)?
+        realEstateInfoWithData,
+    TResult Function(_OnMessageDataAmenities value)? amenities,
+    TResult Function(_OnMessageDataAmenitiesWithData value)? amenitiesWithData,
+    TResult Function(_OnMessageDataMedia value)? media,
+    TResult Function(_OnMessageDataMediaWithData value)? mediaWithData,
+    required TResult orElse(),
+  }) {
+    if (mediaWithData != null) {
+      return mediaWithData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnMessageDataMediaWithData implements OnMessageData {
+  const factory _OnMessageDataMediaWithData({final List<XFile> media}) =
+      _$_OnMessageDataMediaWithData;
+
+  List<XFile> get media;
+  @JsonKey(ignore: true)
+  _$$_OnMessageDataMediaWithDataCopyWith<_$_OnMessageDataMediaWithData>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2232,18 +2925,21 @@ mixin _$OnResponseData {
   TResult when<TResult extends Object?>({
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2252,18 +2948,21 @@ mixin _$OnResponseData {
     required TResult Function(_OnResponseDataRealEstateInfo value)
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2357,6 +3056,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
   TResult when<TResult extends Object?>({
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -2366,6 +3066,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -2375,6 +3076,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -2389,6 +3091,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function(_OnResponseDataRealEstateInfo value)
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
   }) {
     return realEstateInfo(this);
   }
@@ -2398,6 +3101,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -2407,6 +3111,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -2504,6 +3209,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
   TResult when<TResult extends Object?>({
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
   }) {
     return address(addressData);
   }
@@ -2513,6 +3219,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
   }) {
     return address?.call(addressData);
   }
@@ -2522,6 +3229,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -2536,6 +3244,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function(_OnResponseDataRealEstateInfo value)
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
   }) {
     return address(this);
   }
@@ -2545,6 +3254,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
   }) {
     return address?.call(this);
   }
@@ -2554,6 +3264,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -2571,4 +3282,155 @@ abstract class _OnResponseDataAddress implements OnResponseData {
   @JsonKey(ignore: true)
   _$$_OnResponseDataAddressCopyWith<_$_OnResponseDataAddress> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataAmenitiesCopyWith<$Res> {
+  factory _$$_OnResponseDataAmenitiesCopyWith(_$_OnResponseDataAmenities value,
+          $Res Function(_$_OnResponseDataAmenities) then) =
+      __$$_OnResponseDataAmenitiesCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Amenity> amenities});
+}
+
+/// @nodoc
+class __$$_OnResponseDataAmenitiesCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataAmenities>
+    implements _$$_OnResponseDataAmenitiesCopyWith<$Res> {
+  __$$_OnResponseDataAmenitiesCopyWithImpl(_$_OnResponseDataAmenities _value,
+      $Res Function(_$_OnResponseDataAmenities) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amenities = null,
+  }) {
+    return _then(_$_OnResponseDataAmenities(
+      null == amenities
+          ? _value._amenities
+          : amenities // ignore: cast_nullable_to_non_nullable
+              as List<Amenity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
+  const _$_OnResponseDataAmenities(final List<Amenity> amenities)
+      : _amenities = amenities;
+
+  final List<Amenity> _amenities;
+  @override
+  List<Amenity> get amenities {
+    if (_amenities is EqualUnmodifiableListView) return _amenities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amenities);
+  }
+
+  @override
+  String toString() {
+    return 'OnResponseData.amenities(amenities: $amenities)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataAmenities &&
+            const DeepCollectionEquality()
+                .equals(other._amenities, _amenities));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_amenities));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnResponseDataAmenitiesCopyWith<_$_OnResponseDataAmenities>
+      get copyWith =>
+          __$$_OnResponseDataAmenitiesCopyWithImpl<_$_OnResponseDataAmenities>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+  }) {
+    return amenities(this.amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+  }) {
+    return amenities?.call(this.amenities);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    required TResult orElse(),
+  }) {
+    if (amenities != null) {
+      return amenities(this.amenities);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+  }) {
+    return amenities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+  }) {
+    return amenities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    required TResult orElse(),
+  }) {
+    if (amenities != null) {
+      return amenities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataAmenities implements OnResponseData {
+  const factory _OnResponseDataAmenities(final List<Amenity> amenities) =
+      _$_OnResponseDataAmenities;
+
+  List<Amenity> get amenities;
+  @JsonKey(ignore: true)
+  _$$_OnResponseDataAmenitiesCopyWith<_$_OnResponseDataAmenities>
+      get copyWith => throw _privateConstructorUsedError;
 }

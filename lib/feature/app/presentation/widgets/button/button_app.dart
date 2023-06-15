@@ -83,9 +83,16 @@ class ButtonApp extends StatelessWidget {
     );
 
     child = Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: AppSize.largeHeightDimens,
-      ),
+      padding: EdgeInsets.symmetric(vertical: () {
+        switch (size) {
+          case ButtonSize.large:
+            return AppSize.largeHeightDimens;
+          case ButtonSize.medium:
+            return AppSize.mediumHeightDimens;
+          case ButtonSize.small:
+            return AppSize.smallHeightDimens;
+        }
+      }()),
       child: child,
     );
 

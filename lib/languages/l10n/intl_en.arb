@@ -251,6 +251,9 @@
   "hereIsYourAddressInformation" :"Here is your address information",
   "pleaseEnterYourPropertyInformation" : "Please enter your real estate information",
   "enterYourInformationHere" : "Enter your information here",
-  "realEstateInformationConfirmed"  : "Real estate information confirmed"
+  "realEstateInformationConfirmed"  : "Real estate information confirmed",
+  "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty" :"Choose from a few of the amenities currently on your property",
+  "pleaseChooseYourGadget" : "Please choose your gadget",
+  "addSomePicturesOfYourProperty" :"Add some pictures of your property"
 
 }

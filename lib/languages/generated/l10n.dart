@@ -2529,6 +2529,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose from a few of the amenities currently on your property`
+  String get chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty {
+    return Intl.message(
+      'Choose from a few of the amenities currently on your property',
+      name: 'chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please choose your gadget`
+  String get pleaseChooseYourGadget {
+    return Intl.message(
+      'Please choose your gadget',
+      name: 'pleaseChooseYourGadget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add some pictures of your property`
+  String get addSomePicturesOfYourProperty {
+    return Intl.message(
+      'Add some pictures of your property',
+      name: 'addSomePicturesOfYourProperty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

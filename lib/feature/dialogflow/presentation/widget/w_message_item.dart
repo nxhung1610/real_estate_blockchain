@@ -16,7 +16,7 @@ class WMessageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.r),
+      margin: EdgeInsets.symmetric(horizontal: 10.r),
       child: Row(
         mainAxisAlignment:
             isMe ? MainAxisAlignment.end : MainAxisAlignment.start,

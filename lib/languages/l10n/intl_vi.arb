@@ -252,5 +252,8 @@
   "hereIsYourAddressInformation" :"Đây là thông tin địa chỉ của bạn",
   "pleaseEnterYourPropertyInformation" : "Vui lòng nhập thông tin bất động sản của bạn",
   "enterYourInformationHere" : "Nhập thông tin của bạn ở đây",
-  "realEstateInformationConfirmed"  : "Đã xác nhận thông tin bất động sản"
+  "realEstateInformationConfirmed"  : "Đã xác nhận thông tin bất động sản",
+  "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty"  :"Chọn một vài tiện ích hiện đang có trong bất động sản của bạn",
+  "pleaseChooseYourGadget" : "Hãy chọn tiện ích của bạn",
+  "addSomePicturesOfYourProperty" :"Thêm một số hình ảnh về bất động sản của bạn"
 }

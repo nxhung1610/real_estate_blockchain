@@ -3,7 +3,9 @@ import 'dart:ui';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:real_estate_blockchain/data/map/model/address_data.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:uuid/uuid.dart';
 
@@ -80,6 +82,14 @@ class OnMessageData with _$OnMessageData {
   const factory OnMessageData.realEstateInfo() = _OnMessageDataRealEstateInfo;
   const factory OnMessageData.realEstateInfoWithData(
       RealEstateInfo realEstateInfo) = _OnMessageDataRealEstateInfoWithData;
+  const factory OnMessageData.amenities() = _OnMessageDataAmenities;
+  const factory OnMessageData.amenitiesWithData({
+    @Default([]) List<Amenity> amenities,
+  }) = _OnMessageDataAmenitiesWithData;
+  const factory OnMessageData.media() = _OnMessageDataMedia;
+  const factory OnMessageData.mediaWithData({
+    @Default([]) List<XFile> media,
+  }) = _OnMessageDataMediaWithData;
 }
 
 @freezed
@@ -104,4 +114,7 @@ class OnResponseData with _$OnResponseData {
       _OnResponseDataRealEstateInfo;
   const factory OnResponseData.address(AddressData addressData) =
       _OnResponseDataAddress;
+
+  const factory OnResponseData.amenities(List<Amenity> amenities) =
+      _OnResponseDataAmenities;
 }

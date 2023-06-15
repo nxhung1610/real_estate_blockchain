@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thông tin bài viết"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Thông tin bất động sản"),
+        "addSomePicturesOfYourProperty": MessageLookupByLibrary.simpleMessage(
+            "Thêm một số hình ảnh về bất động sản của bạn"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Mô tả bổ sung"),
         "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +92,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "changePassword": MessageLookupByLibrary.simpleMessage("Đổi mật khẩu"),
         "changePasswordSuccess":
             MessageLookupByLibrary.simpleMessage("Đổi mật khẩu thành công"),
+        "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
+            MessageLookupByLibrary.simpleMessage(
+                "Chọn một vài tiện ích hiện đang có trong bất động sản của bạn"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Số điện thoại hoặc mật khẩu không hợp lệ"),
@@ -259,6 +264,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số điện thoại không tồn tại!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Chọn thời gian"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Đặt một giá thầu"),
+        "pleaseChooseYourGadget":
+            MessageLookupByLibrary.simpleMessage("Hãy chọn tiện ích của bạn"),
         "pleaseEnterYourPropertyInformation":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng nhập thông tin bất động sản của bạn"),

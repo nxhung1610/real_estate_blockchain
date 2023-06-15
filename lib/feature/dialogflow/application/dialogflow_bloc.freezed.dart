@@ -19,6 +19,7 @@ mixin _$DialogflowState {
   List<MessageApp> get messages => throw _privateConstructorUsedError;
   ProcessMessage get processMessage => throw _privateConstructorUsedError;
   bool get isWaitingResponse => throw _privateConstructorUsedError;
+  Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DialogflowStateCopyWith<DialogflowState> get copyWith =>
@@ -34,9 +35,11 @@ abstract class $DialogflowStateCopyWith<$Res> {
   $Res call(
       {List<MessageApp> messages,
       ProcessMessage processMessage,
-      bool isWaitingResponse});
+      bool isWaitingResponse,
+      Status status});
 
   $ProcessMessageCopyWith<$Res> get processMessage;
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -55,6 +58,7 @@ class _$DialogflowStateCopyWithImpl<$Res, $Val extends DialogflowState>
     Object? messages = null,
     Object? processMessage = null,
     Object? isWaitingResponse = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       messages: null == messages
@@ -69,6 +73,10 @@ class _$DialogflowStateCopyWithImpl<$Res, $Val extends DialogflowState>
           ? _value.isWaitingResponse
           : isWaitingResponse // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
     ) as $Val);
   }
 
@@ -77,6 +85,14 @@ class _$DialogflowStateCopyWithImpl<$Res, $Val extends DialogflowState>
   $ProcessMessageCopyWith<$Res> get processMessage {
     return $ProcessMessageCopyWith<$Res>(_value.processMessage, (value) {
       return _then(_value.copyWith(processMessage: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatusCopyWith<$Res> get status {
+    return $StatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
     });
   }
 }
@@ -92,10 +108,13 @@ abstract class _$$_DialogflowStateCopyWith<$Res>
   $Res call(
       {List<MessageApp> messages,
       ProcessMessage processMessage,
-      bool isWaitingResponse});
+      bool isWaitingResponse,
+      Status status});
 
   @override
   $ProcessMessageCopyWith<$Res> get processMessage;
+  @override
+  $StatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -112,6 +131,7 @@ class __$$_DialogflowStateCopyWithImpl<$Res>
     Object? messages = null,
     Object? processMessage = null,
     Object? isWaitingResponse = null,
+    Object? status = null,
   }) {
     return _then(_$_DialogflowState(
       messages: null == messages
@@ -126,6 +146,10 @@ class __$$_DialogflowStateCopyWithImpl<$Res>
           ? _value.isWaitingResponse
           : isWaitingResponse // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status,
     ));
   }
 }
@@ -136,7 +160,8 @@ class _$_DialogflowState implements _DialogflowState {
   const _$_DialogflowState(
       {final List<MessageApp> messages = const [],
       this.processMessage = const ProcessMessage.normal(),
-      this.isWaitingResponse = false})
+      this.isWaitingResponse = false,
+      this.status = const Status.idle()})
       : _messages = messages;
 
   final List<MessageApp> _messages;
@@ -154,10 +179,13 @@ class _$_DialogflowState implements _DialogflowState {
   @override
   @JsonKey()
   final bool isWaitingResponse;
+  @override
+  @JsonKey()
+  final Status status;
 
   @override
   String toString() {
-    return 'DialogflowState(messages: $messages, processMessage: $processMessage, isWaitingResponse: $isWaitingResponse)';
+    return 'DialogflowState(messages: $messages, processMessage: $processMessage, isWaitingResponse: $isWaitingResponse, status: $status)';
   }
 
   @override
@@ -169,7 +197,8 @@ class _$_DialogflowState implements _DialogflowState {
             (identical(other.processMessage, processMessage) ||
                 other.processMessage == processMessage) &&
             (identical(other.isWaitingResponse, isWaitingResponse) ||
-                other.isWaitingResponse == isWaitingResponse));
+                other.isWaitingResponse == isWaitingResponse) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
@@ -177,7 +206,8 @@ class _$_DialogflowState implements _DialogflowState {
       runtimeType,
       const DeepCollectionEquality().hash(_messages),
       processMessage,
-      isWaitingResponse);
+      isWaitingResponse,
+      status);
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +220,8 @@ abstract class _DialogflowState implements DialogflowState {
   const factory _DialogflowState(
       {final List<MessageApp> messages,
       final ProcessMessage processMessage,
-      final bool isWaitingResponse}) = _$_DialogflowState;
+      final bool isWaitingResponse,
+      final Status status}) = _$_DialogflowState;
 
   @override
   List<MessageApp> get messages;
@@ -198,6 +229,8 @@ abstract class _DialogflowState implements DialogflowState {
   ProcessMessage get processMessage;
   @override
   bool get isWaitingResponse;
+  @override
+  Status get status;
   @override
   @JsonKey(ignore: true)
   _$$_DialogflowStateCopyWith<_$_DialogflowState> get copyWith =>
@@ -208,7 +241,9 @@ abstract class _DialogflowState implements DialogflowState {
 mixin _$DialogflowEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(
+            OnMessageDataType data, bool isAdd, bool needWaiting)
+        onMessage,
     required TResult Function(OnResponseDataType message, bool isAdd)
         onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
@@ -216,14 +251,16 @@ mixin _$DialogflowEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
@@ -277,7 +314,7 @@ abstract class _$$_OnMessageCopyWith<$Res> {
           _$_OnMessage value, $Res Function(_$_OnMessage) then) =
       __$$_OnMessageCopyWithImpl<$Res>;
   @useResult
-  $Res call({OnMessageDataType data, bool isAdd});
+  $Res call({OnMessageDataType data, bool isAdd, bool needWaiting});
 
   $OnMessageDataTypeCopyWith<$Res> get data;
 }
@@ -295,6 +332,7 @@ class __$$_OnMessageCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
     Object? isAdd = null,
+    Object? needWaiting = null,
   }) {
     return _then(_$_OnMessage(
       null == data
@@ -304,6 +342,10 @@ class __$$_OnMessageCopyWithImpl<$Res>
       isAdd: null == isAdd
           ? _value.isAdd
           : isAdd // ignore: cast_nullable_to_non_nullable
+              as bool,
+      needWaiting: null == needWaiting
+          ? _value.needWaiting
+          : needWaiting // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -320,17 +362,20 @@ class __$$_OnMessageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnMessage implements _OnMessage {
-  const _$_OnMessage(this.data, {this.isAdd = true});
+  const _$_OnMessage(this.data, {this.isAdd = true, this.needWaiting = true});
 
   @override
   final OnMessageDataType data;
   @override
   @JsonKey()
   final bool isAdd;
+  @override
+  @JsonKey()
+  final bool needWaiting;
 
   @override
   String toString() {
-    return 'DialogflowEvent.onMessage(data: $data, isAdd: $isAdd)';
+    return 'DialogflowEvent.onMessage(data: $data, isAdd: $isAdd, needWaiting: $needWaiting)';
   }
 
   @override
@@ -339,11 +384,13 @@ class _$_OnMessage implements _OnMessage {
         (other.runtimeType == runtimeType &&
             other is _$_OnMessage &&
             (identical(other.data, data) || other.data == data) &&
-            (identical(other.isAdd, isAdd) || other.isAdd == isAdd));
+            (identical(other.isAdd, isAdd) || other.isAdd == isAdd) &&
+            (identical(other.needWaiting, needWaiting) ||
+                other.needWaiting == needWaiting));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data, isAdd);
+  int get hashCode => Object.hash(runtimeType, data, isAdd, needWaiting);
 
   @JsonKey(ignore: true)
   @override
@@ -354,34 +401,38 @@ class _$_OnMessage implements _OnMessage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(
+            OnMessageDataType data, bool isAdd, bool needWaiting)
+        onMessage,
     required TResult Function(OnResponseDataType message, bool isAdd)
         onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
   }) {
-    return onMessage(data, isAdd);
+    return onMessage(data, isAdd, needWaiting);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
-    return onMessage?.call(data, isAdd);
+    return onMessage?.call(data, isAdd, needWaiting);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
   }) {
     if (onMessage != null) {
-      return onMessage(data, isAdd);
+      return onMessage(data, isAdd, needWaiting);
     }
     return orElse();
   }
@@ -422,11 +473,12 @@ class _$_OnMessage implements _OnMessage {
 }
 
 abstract class _OnMessage implements DialogflowEvent {
-  const factory _OnMessage(final OnMessageDataType data, {final bool isAdd}) =
-      _$_OnMessage;
+  const factory _OnMessage(final OnMessageDataType data,
+      {final bool isAdd, final bool needWaiting}) = _$_OnMessage;
 
   OnMessageDataType get data;
   bool get isAdd;
+  bool get needWaiting;
   @JsonKey(ignore: true)
   _$$_OnMessageCopyWith<_$_OnMessage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -515,7 +567,9 @@ class _$_OnResponse implements _OnResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(
+            OnMessageDataType data, bool isAdd, bool needWaiting)
+        onMessage,
     required TResult Function(OnResponseDataType message, bool isAdd)
         onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
@@ -526,7 +580,8 @@ class _$_OnResponse implements _OnResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
@@ -536,7 +591,8 @@ class _$_OnResponse implements _OnResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),
@@ -668,7 +724,9 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(OnMessageDataType data, bool isAdd) onMessage,
+    required TResult Function(
+            OnMessageDataType data, bool isAdd, bool needWaiting)
+        onMessage,
     required TResult Function(OnResponseDataType message, bool isAdd)
         onResponse,
     required TResult Function(MessageApp messageApp) addMessageApp,
@@ -679,7 +737,8 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult? Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult? Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult? Function(MessageApp messageApp)? addMessageApp,
   }) {
@@ -689,7 +748,8 @@ class _$_AddMessageApp implements _AddMessageApp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OnMessageDataType data, bool isAdd)? onMessage,
+    TResult Function(OnMessageDataType data, bool isAdd, bool needWaiting)?
+        onMessage,
     TResult Function(OnResponseDataType message, bool isAdd)? onResponse,
     TResult Function(MessageApp messageApp)? addMessageApp,
     required TResult orElse(),

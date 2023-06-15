@@ -5,6 +5,7 @@ class DialogflowEvent with _$DialogflowEvent {
   const factory DialogflowEvent.onMessage(
     OnMessageDataType data, {
     @Default(true) bool isAdd,
+    @Default(true) bool needWaiting,
   }) = _OnMessage;
 
   const factory DialogflowEvent.onResponse(

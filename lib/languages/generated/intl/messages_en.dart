@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Post Info"),
         "addNewPropertyRealEstateInfo":
             MessageLookupByLibrary.simpleMessage("Real Estate Info"),
+        "addSomePicturesOfYourProperty": MessageLookupByLibrary.simpleMessage(
+            "Add some pictures of your property"),
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Additional Description"),
         "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +93,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change password"),
         "changePasswordSuccess":
             MessageLookupByLibrary.simpleMessage("Change password success"),
+        "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
+            MessageLookupByLibrary.simpleMessage(
+                "Choose from a few of the amenities currently on your property"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Combine phone number or password invalid"),
@@ -260,6 +265,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number not exist!"),
         "pickATime": MessageLookupByLibrary.simpleMessage("Pick a time"),
         "placeABid": MessageLookupByLibrary.simpleMessage("Place a Bid"),
+        "pleaseChooseYourGadget":
+            MessageLookupByLibrary.simpleMessage("Please choose your gadget"),
         "pleaseEnterYourPropertyInformation":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter your real estate information"),

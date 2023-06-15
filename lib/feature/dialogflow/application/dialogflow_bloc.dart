@@ -5,17 +5,23 @@ import 'dart:ui';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:latlong2/latlong.dart' as lng;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/dialog_flow/i_dialog_flow_repository.dart';
+import 'package:real_estate_blockchain/data/file/data.dart';
+import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/map/i_map_repository.dart';
+import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/model/message_app_type.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../core/application/status.dart';
+import '../../house_add_new/application/models/real_estate_mapper.dart';
 import '../model/message_app.dart';
 import '../model/process_create_estate_step.dart';
 import '../model/process_message.dart';
@@ -28,6 +34,8 @@ part 'dialogflow_bloc.freezed.dart';
 class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   final IDialogFlowRepository dialogFlowRepository;
   final IMapRepository mapRepository;
+  final IFileRepository fileRepository;
+  final IRealEstateRepository realEstateRepository;
   final S s;
   final String location;
   DialogflowBloc({
@@ -35,6 +43,8 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
     @factoryParam required this.location,
     required this.dialogFlowRepository,
     required this.mapRepository,
+    required this.fileRepository,
+    required this.realEstateRepository,
   }) : super(const DialogflowState()) {
     on<_OnMessage>(_onMessage);
     on<_OnResponse>(_onResponse);
@@ -46,7 +56,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
     Emitter<DialogflowState> emit,
   ) async {
     try {
-      emit(state.copyWith(isWaitingResponse: true));
+      if (event.needWaiting) {
+        emit(state.copyWith(isWaitingResponse: true));
+      }
+
       if (event.isAdd) {
         add(
           _AddMessageApp(
@@ -96,12 +109,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
               switch (type) {
                 case MessageAppType.dialogFlow:
                   add(
-                    DialogflowEvent.addMessageApp(
-                      messageApp: MessageApp.onResponse(
-                        data: OnResponseDataType.text(
-                          id: const Uuid().v4(),
-                          message: message,
-                        ),
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.text(
+                        id: const Uuid().v4(),
+                        message: message,
                       ),
                     ),
                   );
@@ -119,11 +130,9 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
           } catch (e, trace) {
             printLog(this, message: e, error: e, trace: trace);
             add(
-              DialogflowEvent.addMessageApp(
-                messageApp: MessageApp.onResponse(
-                  data: OnResponseDataType.unknown(
-                    id: const Uuid().v4(),
-                  ),
+              DialogflowEvent.onResponse(
+                OnResponseDataType.unknown(
+                  id: const Uuid().v4(),
                 ),
               ),
             );
@@ -133,12 +142,10 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       add(
-        DialogflowEvent.addMessageApp(
-          messageApp: MessageApp.onResponse(
-            data: OnResponseDataType.text(
-              id: const Uuid().v4(),
-              message: s.anErrorHasOccurredPleaseTryLater,
-            ),
+        DialogflowEvent.onResponse(
+          OnResponseDataType.text(
+            id: const Uuid().v4(),
+            message: s.anErrorHasOccurredPleaseTryLater,
           ),
         ),
       );
@@ -203,12 +210,72 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   message: s.enterYourInformationHere,
                   id: const Uuid().v4(),
                 ),
+                needWaiting: false,
               ),
             );
             break;
           case ProcessCreateEstateStepEnum.amenities:
+            emit(
+              state.copyWith(
+                processMessage: createEstateData.copyWith(
+                  isResponse: true,
+                ),
+              ),
+            );
+            add(
+              DialogflowEvent.onResponse(
+                OnResponseDataType.text(
+                  message: s.addSomePicturesOfYourProperty,
+                  id: const Uuid().v4(),
+                ),
+              ),
+            );
+            add(
+              DialogflowEvent.onMessage(
+                OnMessageDataType.data(
+                  data: const OnMessageData.amenities(),
+                  message: s.pleaseChooseYourGadget,
+                  id: const Uuid().v4(),
+                ),
+                needWaiting: false,
+              ),
+            );
             break;
           case ProcessCreateEstateStepEnum.media:
+            emit(
+              state.copyWith(
+                processMessage: createEstateData.copyWith(
+                  isResponse: true,
+                ),
+              ),
+            );
+            add(
+              DialogflowEvent.onResponse(
+                OnResponseDataType.text(
+                  message: s.addSomePicturesOfYourProperty,
+                  id: const Uuid().v4(),
+                ),
+              ),
+            );
+            add(
+              DialogflowEvent.onMessage(
+                OnMessageDataType.data(
+                  data: const OnMessageData.media(),
+                  id: const Uuid().v4(),
+                ),
+                needWaiting: false,
+              ),
+            );
+            break;
+          case ProcessCreateEstateStepEnum.processCreate:
+            emit(
+              state.copyWith(
+                processMessage: createEstateData.copyWith(
+                  isResponse: true,
+                ),
+              ),
+            );
+            await _onProcessMessageEstate(data, emit);
             break;
         }
       } else {
@@ -296,10 +363,101 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
 
             break;
           case ProcessCreateEstateStepEnum.amenities:
-            // TODO: Handle this case.
+            await data.maybeMap(
+              orElse: () async {},
+              data: (value) async {
+                await value.data.mapOrNull(
+                  amenitiesWithData: (value) async {
+                    emit(
+                      state.copyWith(
+                        isWaitingResponse: false,
+                        processMessage: createEstateData.copyWith(
+                          isResponse: false,
+                          step: ProcessCreateEstateStepEnum.media,
+                          amenities: value.amenities,
+                        ),
+                      ),
+                    );
+                    // add(
+                    //   DialogflowEvent.onResponse(
+                    //     OnResponseDataType.data(
+                    //       id: const Uuid().v4(),
+                    //       data: OnResponseData.amenities(
+                    //         value.amenities,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // );
+                    await _onProcessMessageEstate(data, emit);
+                  },
+                );
+              },
+            );
             break;
           case ProcessCreateEstateStepEnum.media:
-            // TODO: Handle this case.
+            await data.maybeMap(
+              orElse: () async {},
+              data: (value) async {
+                await value.data.mapOrNull(
+                  mediaWithData: (value) async {
+                    emit(
+                      state.copyWith(
+                        isWaitingResponse: false,
+                        processMessage: createEstateData.copyWith(
+                          isResponse: false,
+                          step: ProcessCreateEstateStepEnum.processCreate,
+                          media: value.media,
+                        ),
+                      ),
+                    );
+                    await _onProcessMessageEstate(data, emit);
+                  },
+                );
+              },
+            );
+            break;
+          case ProcessCreateEstateStepEnum.processCreate:
+            try {
+              List<AppImage> datas = [];
+              for (XFile i in createEstateData.media ?? []) {
+                final data = await fileRepository.upload(i.path);
+                datas.add(data.fold((l) => throw l, (r) => r));
+              }
+              final createData = await realEstateRepository.createRealEstate(
+                RealEstateMapper.toData(
+                  createEstateData.addressChoosen,
+                  createEstateData.realEstateInfo,
+                  createEstateData.amenities,
+                  datas.map((e) => AppImage(id: e.id)).toList(),
+                  createEstateData.position,
+                ),
+              );
+              final output = createData
+                  .getOrElse(() => throw Exception('Create real estate error'));
+              add(
+                DialogflowEvent.onResponse(
+                  OnResponseDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.createRealEstateSuccess),
+                ),
+              );
+            } catch (e, trace) {
+              printLog(this, message: e, trace: trace, error: e);
+              emit(
+                state.copyWith(
+                  processMessage: const ProcessMessage.normal(),
+                  isWaitingResponse: false,
+                ),
+              );
+              add(
+                DialogflowEvent.onResponse(
+                  OnResponseDataType.text(
+                    id: const Uuid().v4(),
+                    message: s.anErrorHasOccurredPleaseTryLater,
+                  ),
+                ),
+              );
+            }
             break;
         }
       }
@@ -347,6 +505,9 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
         },
         unknown: (value) {},
       );
+      emit(state.copyWith(
+        isWaitingResponse: false,
+      ));
     }
   }
 

@@ -82,6 +82,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   infinite_scroll_pagination: ^3.2.0
   dialog_flowtter: ^0.3.3
+  flutter_spinkit: ^5.2.0
 
   #grpc
   grpc: ^3.1.0
