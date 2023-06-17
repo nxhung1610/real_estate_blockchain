@@ -247,13 +247,14 @@
   "continueEstateProcess" : "Your response is invalid, please continue or cancel the process.",
   "pleaseEnterYourRealEstateAddress" : "Please enter your real estate address",
   "anErrorHasOccurredPleaseTryLater" : "An error has occurred, please try later.",
-  "addressNotFoundPleaseReEnter" : "Address not found, please re-enter",
+  "addressNotFoundPleaseReEnter" : "Please enter all real estate information for the best effect",
   "hereIsYourAddressInformation" :"Here is your address information",
   "pleaseEnterYourPropertyInformation" : "Please enter your real estate information",
   "enterYourInformationHere" : "Enter your information here",
   "realEstateInformationConfirmed"  : "Real estate information confirmed",
   "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty" :"Choose from a few of the amenities currently on your property",
   "pleaseChooseYourGadget" : "Please choose your gadget",
-  "addSomePicturesOfYourProperty" :"Add some pictures of your property"
+  "addSomePicturesOfYourProperty" :"Add some pictures of your property",
+  "pleaseEnterInformationAsSpecial" :  "Please enter the information as specified or you can cancel the process by texting \"Cancel\""
 
 }

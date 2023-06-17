@@ -2480,10 +2480,10 @@ class S {
     );
   }
 
-  /// `Address not found, please re-enter`
+  /// `Please enter all real estate information for the best effect`
   String get addressNotFoundPleaseReEnter {
     return Intl.message(
-      'Address not found, please re-enter',
+      'Please enter all real estate information for the best effect',
       name: 'addressNotFoundPleaseReEnter',
       desc: '',
       args: [],
@@ -2555,6 +2555,16 @@ class S {
     return Intl.message(
       'Add some pictures of your property',
       name: 'addSomePicturesOfYourProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the information as specified or you can cancel the process by texting "Cancel"`
+  String get pleaseEnterInformationAsSpecial {
+    return Intl.message(
+      'Please enter the information as specified or you can cancel the process by texting "Cancel"',
+      name: 'pleaseEnterInformationAsSpecial',
       desc: '',
       args: [],
     );

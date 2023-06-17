@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Mô tả bổ sung"),
         "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
-            "Không tìm thấy địa chỉ , vui lòng nhập lại"),
+            "Bạn hãy nhập đầy đủ thông tin bất động sản để có hiệu quả tốt nhất"),
         "air_conditioning": MessageLookupByLibrary.simpleMessage("Máy lạnh"),
         "allow": MessageLookupByLibrary.simpleMessage("Cho phép"),
         "amenities": MessageLookupByLibrary.simpleMessage("Tiện nghi"),
@@ -266,6 +266,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeABid": MessageLookupByLibrary.simpleMessage("Đặt một giá thầu"),
         "pleaseChooseYourGadget":
             MessageLookupByLibrary.simpleMessage("Hãy chọn tiện ích của bạn"),
+        "pleaseEnterInformationAsSpecial": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng nhập thông tin theo chỉ định hoặc bạn có thể huỷ tiến trình bằng cách nhắn \"Huỷ\""),
         "pleaseEnterYourPropertyInformation":
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng nhập thông tin bất động sản của bạn"),

@@ -248,12 +248,13 @@
   "continueEstateProcess" : "Phản hồi của bạn không hợp lệ, vui lòng tiếp tục hoặc huỷ quá trình.",
   "pleaseEnterYourRealEstateAddress" : "Vui lòng nhập địa chỉ bất động sản của bạn",
   "anErrorHasOccurredPleaseTryLater" : "Đã xảy ra lỗi, vui lòng thử lại sau.",
-  "addressNotFoundPleaseReEnter" : "Không tìm thấy địa chỉ , vui lòng nhập lại",
+  "addressNotFoundPleaseReEnter" : "Bạn hãy nhập đầy đủ thông tin bất động sản để có hiệu quả tốt nhất",
   "hereIsYourAddressInformation" :"Đây là thông tin địa chỉ của bạn",
   "pleaseEnterYourPropertyInformation" : "Vui lòng nhập thông tin bất động sản của bạn",
   "enterYourInformationHere" : "Nhập thông tin của bạn ở đây",
   "realEstateInformationConfirmed"  : "Đã xác nhận thông tin bất động sản",
   "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty"  :"Chọn một vài tiện ích hiện đang có trong bất động sản của bạn",
   "pleaseChooseYourGadget" : "Hãy chọn tiện ích của bạn",
-  "addSomePicturesOfYourProperty" :"Thêm một số hình ảnh về bất động sản của bạn"
+  "addSomePicturesOfYourProperty" :"Thêm một số hình ảnh về bất động sản của bạn",
+  "pleaseEnterInformationAsSpecial" :  "Vui lòng nhập thông tin theo chỉ định hoặc bạn có thể huỷ tiến trình bằng cách nhắn \"Huỷ\""
 }

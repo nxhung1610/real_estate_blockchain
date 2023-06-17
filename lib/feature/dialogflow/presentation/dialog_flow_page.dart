@@ -128,9 +128,11 @@ class _MessageTextFieldState extends State<MessageTextField> {
           borderRadius: BorderRadius.circular(16),
           clipBehavior: Clip.hardEdge,
           child: InkWell(
-            onTap: () {
-              _onSent();
-            },
+            onTap: !context.watch<DialogflowBloc>().state.isWaitingResponse
+                ? () {
+                    _onSent();
+                  }
+                : null,
             child: Padding(
               padding: EdgeInsets.all(16.w),
               child: Assets.icons.icSend.svg(),

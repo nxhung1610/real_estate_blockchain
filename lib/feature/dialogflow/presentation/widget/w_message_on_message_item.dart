@@ -118,7 +118,12 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                         builder: (context, state) {
                           return ButtonApp(
                             label: s.ok,
-                            onPressed: state.isNotEmpty && !widget.disable
+                            onPressed: state.isNotEmpty &&
+                                    !widget.disable &&
+                                    !context
+                                        .watch<DialogflowBloc>()
+                                        .state
+                                        .isWaitingResponse
                                 ? () {
                                     context.read<DialogflowBloc>().add(
                                           DialogflowEvent.onMessage(
@@ -225,7 +230,12 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                     builder: (context, state) {
                       return ButtonApp(
                         label: s.ok,
-                        onPressed: state.isNotEmpty && !widget.disable
+                        onPressed: state.isNotEmpty &&
+                                !widget.disable &&
+                                !context
+                                    .watch<DialogflowBloc>()
+                                    .state
+                                    .isWaitingResponse
                             ? () {
                                 context.read<DialogflowBloc>().add(
                                       DialogflowEvent.onMessage(
@@ -267,7 +277,11 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                 ButtonApp(
                   label: s.realEstateDescription,
                   size: ButtonSize.small,
-                  onPressed: !widget.disable
+                  onPressed: !widget.disable &&
+                          !context
+                              .watch<DialogflowBloc>()
+                              .state
+                              .isWaitingResponse
                       ? () {
                           DialogEstateInfoInput.show(
                             context,

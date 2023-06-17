@@ -282,7 +282,16 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
         switch (step) {
           case ProcessCreateEstateStepEnum.address:
             await data.maybeMap(
-              orElse: () async {},
+              orElse: () async {
+                add(
+                  DialogflowEvent.onResponse(
+                    OnResponseDataType.text(
+                      message: s.pleaseEnterInformationAsSpecial,
+                      id: const Uuid().v4(),
+                    ),
+                  ),
+                );
+              },
               text: (value) async {
                 final result = await mapRepository.getAddress(value.message);
                 await result.fold((l) async {
@@ -295,35 +304,48 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                 }, (r) async {
-                  emit(
-                    state.copyWith(
-                      isWaitingResponse: false,
-                      processMessage: createEstateData.copyWith(
-                        isResponse: false,
-                        step: ProcessCreateEstateStepEnum.realEstateInfo,
-                        addressChoosen: AddressChoosen(
-                          address: r.formatAddress,
-                          district: r.district,
-                          province: r.province,
-                          ward: r.ward,
-                        ),
-                        position: lng.LatLng(
-                          r.latitude ?? 0,
-                          r.longitude ?? 0,
+                  if (r.latitude != null &&
+                      r.longitude != null &&
+                      r.formatAddress?.isNotEmpty == true) {
+                    emit(
+                      state.copyWith(
+                        isWaitingResponse: false,
+                        processMessage: createEstateData.copyWith(
+                          isResponse: false,
+                          step: ProcessCreateEstateStepEnum.realEstateInfo,
+                          addressChoosen: AddressChoosen(
+                            address: r.formatAddress,
+                            district: r.district,
+                            province: r.province,
+                            ward: r.ward,
+                          ),
+                          position: lng.LatLng(
+                            r.latitude ?? 0,
+                            r.longitude ?? 0,
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                  add(
-                    DialogflowEvent.onResponse(
-                      OnResponseDataType.data(
-                        message: s.hereIsYourAddressInformation,
-                        id: const Uuid().v4(),
-                        data: OnResponseData.address(r),
+                    );
+                    add(
+                      DialogflowEvent.onResponse(
+                        OnResponseDataType.data(
+                          message: s.hereIsYourAddressInformation,
+                          id: const Uuid().v4(),
+                          data: OnResponseData.address(r),
+                        ),
                       ),
-                    ),
-                  );
-                  await _onProcessMessageEstate(data, emit);
+                    );
+                    await _onProcessMessageEstate(data, emit);
+                  } else {
+                    add(
+                      DialogflowEvent.onResponse(
+                        OnResponseDataType.text(
+                          message: s.addressNotFoundPleaseReEnter,
+                          id: const Uuid().v4(),
+                        ),
+                      ),
+                    );
+                  }
                 });
               },
             );
@@ -331,13 +353,31 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
             break;
           case ProcessCreateEstateStepEnum.realEstateInfo:
             await data.maybeMap(
-              orElse: () async {},
+              orElse: () async {
+                add(
+                  DialogflowEvent.onResponse(
+                    OnResponseDataType.text(
+                      message: s.pleaseEnterInformationAsSpecial,
+                      id: const Uuid().v4(),
+                    ),
+                  ),
+                );
+                add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.data(
+                      data: const OnMessageData.realEstateInfo(),
+                      message: s.enterYourInformationHere,
+                      id: const Uuid().v4(),
+                    ),
+                    needWaiting: false,
+                  ),
+                );
+              },
               data: (value) async {
                 await value.data.mapOrNull(
                   realEstateInfoWithData: (value) async {
                     emit(
                       state.copyWith(
-                        isWaitingResponse: false,
                         processMessage: createEstateData.copyWith(
                           isResponse: false,
                           step: ProcessCreateEstateStepEnum.amenities,
@@ -364,7 +404,26 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
             break;
           case ProcessCreateEstateStepEnum.amenities:
             await data.maybeMap(
-              orElse: () async {},
+              orElse: () async {
+                add(
+                  DialogflowEvent.onResponse(
+                    OnResponseDataType.text(
+                      message: s.pleaseEnterInformationAsSpecial,
+                      id: const Uuid().v4(),
+                    ),
+                  ),
+                );
+                add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.data(
+                      data: const OnMessageData.amenities(),
+                      message: s.pleaseChooseYourGadget,
+                      id: const Uuid().v4(),
+                    ),
+                    needWaiting: false,
+                  ),
+                );
+              },
               data: (value) async {
                 await value.data.mapOrNull(
                   amenitiesWithData: (value) async {
@@ -378,16 +437,6 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                         ),
                       ),
                     );
-                    // add(
-                    //   DialogflowEvent.onResponse(
-                    //     OnResponseDataType.data(
-                    //       id: const Uuid().v4(),
-                    //       data: OnResponseData.amenities(
-                    //         value.amenities,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // );
                     await _onProcessMessageEstate(data, emit);
                   },
                 );
@@ -402,7 +451,6 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   mediaWithData: (value) async {
                     emit(
                       state.copyWith(
-                        isWaitingResponse: false,
                         processMessage: createEstateData.copyWith(
                           isResponse: false,
                           step: ProcessCreateEstateStepEnum.processCreate,
@@ -434,11 +482,16 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
               );
               final output = createData
                   .getOrElse(() => throw Exception('Create real estate error'));
+              emit(state.copyWith(
+                isWaitingResponse: false,
+                processMessage: const ProcessMessage.normal(),
+              ));
               add(
                 DialogflowEvent.onResponse(
                   OnResponseDataType.text(
-                      id: const Uuid().v4(),
-                      message: s.createRealEstateSuccess),
+                    id: const Uuid().v4(),
+                    message: s.createRealEstateSuccess,
+                  ),
                 ),
               );
             } catch (e, trace) {

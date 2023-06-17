@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "additionalDescription":
             MessageLookupByLibrary.simpleMessage("Additional Description"),
         "addressNotFoundPleaseReEnter": MessageLookupByLibrary.simpleMessage(
-            "Address not found, please re-enter"),
+            "Please enter all real estate information for the best effect"),
         "air_conditioning":
             MessageLookupByLibrary.simpleMessage("Air conditioning"),
         "allow": MessageLookupByLibrary.simpleMessage("Allow"),
@@ -267,6 +267,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "placeABid": MessageLookupByLibrary.simpleMessage("Place a Bid"),
         "pleaseChooseYourGadget":
             MessageLookupByLibrary.simpleMessage("Please choose your gadget"),
+        "pleaseEnterInformationAsSpecial": MessageLookupByLibrary.simpleMessage(
+            "Please enter the information as specified or you can cancel the process by texting \"Cancel\""),
         "pleaseEnterYourPropertyInformation":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter your real estate information"),
