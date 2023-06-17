@@ -255,6 +255,9 @@
   "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty" :"Choose from a few of the amenities currently on your property",
   "pleaseChooseYourGadget" : "Please choose your gadget",
   "addSomePicturesOfYourProperty" :"Add some pictures of your property",
-  "pleaseEnterInformationAsSpecial" :  "Please enter the information as specified or you can cancel the process by texting \"Cancel\""
+  "pleaseEnterInformationAsSpecial" :  "Please enter the information as specified or you can cancel the process by texting \"Cancel\"",
+  "createEstate" : "Create real estate",
+  "dialogFlowWellcome" : "Hi I'm Chatbot, how can I help you.",
+  "supportList" :"Support list"
 
 }

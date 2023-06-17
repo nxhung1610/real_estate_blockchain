@@ -98,6 +98,9 @@ class OnResponseDataType with _$OnResponseDataType {
     required String id,
     required String message,
   }) = _OnResponseDataTypeText;
+  const factory OnResponseDataType.menu({
+    required String id,
+  }) = _OnResponseDataTypeMenu;
   const factory OnResponseDataType.data({
     required String id,
     String? message,

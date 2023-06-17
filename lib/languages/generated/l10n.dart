@@ -2569,6 +2569,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Create real estate`
+  String get createEstate {
+    return Intl.message(
+      'Create real estate',
+      name: 'createEstate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hi I'm Chatbot, how can I help you.`
+  String get dialogFlowWellcome {
+    return Intl.message(
+      'Hi I\'m Chatbot, how can I help you.',
+      name: 'dialogFlowWellcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support list`
+  String get supportList {
+    return Intl.message(
+      'Support list',
+      name: 'supportList',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

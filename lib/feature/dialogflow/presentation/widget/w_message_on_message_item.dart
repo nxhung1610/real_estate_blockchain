@@ -46,74 +46,198 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
             return Container();
           },
           media: (value) {
-            return BlocProvider(
-              create: (context) => getIt.call<DialogflowEstateMediaCubit>(),
-              child: BlocSelector<DialogflowEstateMediaCubit,
-                  DialogflowEstateMediaState, List<XFile>>(
-                selector: (state) {
-                  return state.files;
-                },
-                builder: (context, state) {
-                  return Column(
-                    children: [
-                      Wrap(
-                        runSpacing: 8.r,
-                        spacing: 8.r,
-                        children: [
-                          ...state
-                              .map((e) => ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.r),
-                                    child: Container(
-                                      width: 100.r,
-                                      height: 100.r,
-                                      color:
-                                          context.theme.colorScheme.background,
-                                      child: ImageCustom.file(
-                                        File(e.path),
-                                        fit: BoxFit.cover,
+            return IgnorePointer(
+              ignoring: widget.disable,
+              child: BlocProvider(
+                create: (context) => getIt.call<DialogflowEstateMediaCubit>(),
+                child: BlocSelector<DialogflowEstateMediaCubit,
+                    DialogflowEstateMediaState, List<XFile>>(
+                  selector: (state) {
+                    return state.files;
+                  },
+                  builder: (context, state) {
+                    return Column(
+                      children: [
+                        Wrap(
+                          runSpacing: 8.r,
+                          spacing: 8.r,
+                          children: [
+                            ...state
+                                .map((e) => ClipRRect(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      child: Container(
+                                        width: 100.r,
+                                        height: 100.r,
+                                        color: context
+                                            .theme.colorScheme.background,
+                                        child: ImageCustom.file(
+                                          File(e.path),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                    ),
-                                  ))
-                              .toList(),
-                          GestureDetector(
-                            onTap: () async {
-                              try {
-                                final ImagePicker picker = ImagePicker();
-                                List<XFile>? result =
-                                    await picker.pickMultiImage(
-                                        imageQuality: 70,
-                                        maxHeight: 1100,
-                                        maxWidth: 1100,
-                                        requestFullMetadata: false);
-                                if (mounted) {
-                                  context
-                                      .read<DialogflowEstateMediaCubit>()
-                                      .onAddImage(result);
-                                }
-                              } catch (e, trace) {
-                                printLog(this,
-                                    message: e, error: e, trace: trace);
-                              }
+                                    ))
+                                .toList(),
+                            if (!widget.disable)
+                              GestureDetector(
+                                onTap: () async {
+                                  try {
+                                    final ImagePicker picker = ImagePicker();
+                                    List<XFile>? result =
+                                        await picker.pickMultiImage(
+                                            imageQuality: 70,
+                                            maxHeight: 1100,
+                                            maxWidth: 1100,
+                                            requestFullMetadata: false);
+                                    if (mounted) {
+                                      context
+                                          .read<DialogflowEstateMediaCubit>()
+                                          .onAddImage(result);
+                                    }
+                                  } catch (e, trace) {
+                                    printLog(this,
+                                        message: e, error: e, trace: trace);
+                                  }
+                                },
+                                child: Container(
+                                  width: 100.r,
+                                  height: 100.r,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    color: context.theme.colorScheme.background,
+                                  ),
+                                  child: const Icon(Icons.add),
+                                ),
+                              )
+                          ],
+                        ),
+                        if (!widget.disable) ...[
+                          Divider(
+                            color: context.theme.colorScheme.background,
+                          ),
+                          BlocSelector<DialogflowEstateMediaCubit,
+                              DialogflowEstateMediaState, List<XFile>>(
+                            selector: (state) {
+                              return state.files;
                             },
-                            child: Container(
-                              width: 100.r,
-                              height: 100.r,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16.r),
-                                color: context.theme.colorScheme.background,
-                              ),
-                              child: const Icon(Icons.add),
-                            ),
-                          )
-                        ],
+                            builder: (context, state) {
+                              return ButtonApp(
+                                label: s.ok,
+                                onPressed: state.isNotEmpty &&
+                                        !widget.disable &&
+                                        !context
+                                            .watch<DialogflowBloc>()
+                                            .state
+                                            .isWaitingResponse
+                                    ? () {
+                                        context.read<DialogflowBloc>().add(
+                                              DialogflowEvent.onMessage(
+                                                OnMessageDataType.data(
+                                                  id: const Uuid().v4(),
+                                                  data: OnMessageData
+                                                      .mediaWithData(
+                                                    media: state,
+                                                  ),
+                                                ),
+                                                isAdd: false,
+                                              ),
+                                            );
+                                      }
+                                    : null,
+                                type: ButtonType.primary,
+                                size: ButtonSize.small,
+                                backgroundColor: state.isNotEmpty
+                                    ? context.theme.colorScheme.background
+                                    : context.theme.colorScheme.background
+                                        .withOpacity(0.5),
+                                textColor: AppColor.kNeutrals1,
+                              );
+                            },
+                          ),
+                        ]
+                      ],
+                    );
+                  },
+                ),
+              ),
+            );
+          },
+          amenities: (value) {
+            return IgnorePointer(
+              ignoring: widget.disable,
+              child: BlocProvider(
+                create: (context) => getIt.call<AmentitiesBloc>()
+                  ..add(AmentitiesEvent.started(context
+                          .read<RealEstateConfigBloc>()
+                          .state
+                          .config
+                          ?.amenities ??
+                      [])),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${s.pleaseChooseYourGadget} :",
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: context.theme.colorScheme.background,
                       ),
+                    ),
+                    AppSize.mediumHeightDimens.verticalSpace,
+                    BlocBuilder<AmentitiesBloc, AmentitiesState>(
+                      builder: (context, state) {
+                        return Wrap(
+                          runSpacing: AppSize.mediumHeightDimens,
+                          spacing: AppSize.mediumWidthDimens,
+                          children: state.amentities
+                              .map(
+                                (e) => FilterChip(
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  backgroundColor: AppColor.kNeutrals_.shade50,
+                                  selectedColor: AppColor.kNeutrals_.shade50,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        AppSize.extraRadius),
+                                    side: BorderSide(
+                                      color: !e.value2
+                                          ? AppColor.kNeutrals_.shade400
+                                          : AppColor.kPrimary4,
+                                      width: !e.value2 ? 1.r : 2.r,
+                                    ),
+                                  ),
+                                  showCheckmark: false,
+                                  selected: e.value2,
+                                  label: Text(
+                                    e.value1.title(context) ?? '',
+                                    style:
+                                        context.textTheme.bodyMedium?.copyWith(
+                                      color:
+                                          context.textTheme.displayLarge?.color,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  onSelected: (value) {
+                                    context.read<AmentitiesBloc>().add(
+                                          AmentitiesEvent.onSelectAmenity(
+                                              e.value1, value),
+                                        );
+                                  },
+                                ),
+                              )
+                              .toList(),
+                        );
+                      },
+                    ),
+                    if (!widget.disable) ...[
                       Divider(
                         color: context.theme.colorScheme.background,
                       ),
-                      BlocSelector<DialogflowEstateMediaCubit,
-                          DialogflowEstateMediaState, List<XFile>>(
+                      BlocSelector<AmentitiesBloc, AmentitiesState,
+                          List<Amenity>>(
                         selector: (state) {
-                          return state.files;
+                          return state.amentities
+                              .where((element) => element.value2)
+                              .map((e) => e.value1)
+                              .toList();
                         },
                         builder: (context, state) {
                           return ButtonApp(
@@ -129,8 +253,9 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                                           DialogflowEvent.onMessage(
                                             OnMessageDataType.data(
                                               id: const Uuid().v4(),
-                                              data: OnMessageData.mediaWithData(
-                                                media: state,
+                                              data: OnMessageData
+                                                  .amenitiesWithData(
+                                                amenities: state,
                                               ),
                                             ),
                                             isAdd: false,
@@ -149,118 +274,8 @@ class _WMessageOnMessageItemState extends State<WMessageOnMessageItem> {
                         },
                       )
                     ],
-                  );
-                },
-              ),
-            );
-          },
-          amenities: (value) {
-            return BlocProvider(
-              create: (context) => getIt.call<AmentitiesBloc>()
-                ..add(AmentitiesEvent.started(context
-                        .read<RealEstateConfigBloc>()
-                        .state
-                        .config
-                        ?.amenities ??
-                    [])),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${s.pleaseChooseYourGadget} :",
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      color: context.theme.colorScheme.background,
-                    ),
-                  ),
-                  AppSize.mediumHeightDimens.verticalSpace,
-                  BlocBuilder<AmentitiesBloc, AmentitiesState>(
-                    builder: (context, state) {
-                      return Wrap(
-                        runSpacing: AppSize.mediumHeightDimens,
-                        spacing: AppSize.mediumWidthDimens,
-                        children: state.amentities
-                            .map(
-                              (e) => FilterChip(
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                                backgroundColor: AppColor.kNeutrals_.shade50,
-                                selectedColor: AppColor.kNeutrals_.shade50,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                      AppSize.extraRadius),
-                                  side: BorderSide(
-                                    color: !e.value2
-                                        ? AppColor.kNeutrals_.shade400
-                                        : AppColor.kPrimary4,
-                                    width: !e.value2 ? 1.r : 2.r,
-                                  ),
-                                ),
-                                showCheckmark: false,
-                                selected: e.value2,
-                                label: Text(
-                                  e.value1.title(context) ?? '',
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    color:
-                                        context.textTheme.displayLarge?.color,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                onSelected: (value) {
-                                  context.read<AmentitiesBloc>().add(
-                                        AmentitiesEvent.onSelectAmenity(
-                                            e.value1, value),
-                                      );
-                                },
-                              ),
-                            )
-                            .toList(),
-                      );
-                    },
-                  ),
-                  Divider(
-                    color: context.theme.colorScheme.background,
-                  ),
-                  BlocSelector<AmentitiesBloc, AmentitiesState, List<Amenity>>(
-                    selector: (state) {
-                      return state.amentities
-                          .where((element) => element.value2)
-                          .map((e) => e.value1)
-                          .toList();
-                    },
-                    builder: (context, state) {
-                      return ButtonApp(
-                        label: s.ok,
-                        onPressed: state.isNotEmpty &&
-                                !widget.disable &&
-                                !context
-                                    .watch<DialogflowBloc>()
-                                    .state
-                                    .isWaitingResponse
-                            ? () {
-                                context.read<DialogflowBloc>().add(
-                                      DialogflowEvent.onMessage(
-                                        OnMessageDataType.data(
-                                          id: const Uuid().v4(),
-                                          data: OnMessageData.amenitiesWithData(
-                                            amenities: state,
-                                          ),
-                                        ),
-                                        isAdd: false,
-                                      ),
-                                    );
-                              }
-                            : null,
-                        type: ButtonType.primary,
-                        size: ButtonSize.small,
-                        backgroundColor: state.isNotEmpty
-                            ? context.theme.colorScheme.background
-                            : context.theme.colorScheme.background
-                                .withOpacity(0.5),
-                        textColor: AppColor.kNeutrals1,
-                      );
-                    },
-                  )
-                ],
+                  ],
+                ),
               ),
             );
           },

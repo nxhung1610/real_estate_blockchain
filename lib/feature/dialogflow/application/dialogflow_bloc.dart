@@ -83,7 +83,49 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
           );
         },
         createEstate: (value) async {
-          await _onProcessMessageEstate(event.data, emit);
+          await event.data.maybeMap(
+            orElse: () async {
+              await _onProcessMessageEstate(event.data, emit);
+            },
+            text: (value) async {
+              try {
+                final result = await dialogFlowRepository.sendMessage(
+                  value.message,
+                  location,
+                );
+                await result.fold(
+                  (l) async => throw l,
+                  (r) async {
+                    if (r.message?.text != null) {
+                      final message = r.message!.text!.text!.first;
+                      final type = MessageAppType.fromValue(message);
+                      switch (type) {
+                        case MessageAppType.cancel:
+                          emit(state.copyWith(
+                            processMessage: const ProcessMessage.normal(),
+                          ));
+                          add(
+                            DialogflowEvent.onResponse(
+                              OnResponseDataType.menu(
+                                id: const Uuid().v4(),
+                              ),
+                            ),
+                          );
+                          break;
+                        default:
+                          await _onProcessMessageEstate(event.data, emit);
+                          break;
+                      }
+                    } else {
+                      throw Exception();
+                    }
+                  },
+                );
+              } catch (e, trace) {
+                await _onProcessMessageEstate(event.data, emit);
+              }
+            },
+          );
         },
       );
     } catch (e, trace) {
@@ -104,7 +146,7 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
         (r) async {
           try {
             if (r.message?.text != null) {
-              final message = r.message!.text!.text!.first;
+              final message = r.text!;
               final type = MessageAppType.fromValue(message);
               switch (type) {
                 case MessageAppType.dialogFlow:
@@ -123,6 +165,36 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     emit,
                   );
                   break;
+                case MessageAppType.cancel:
+                  emit(state.copyWith(
+                    processMessage: const ProcessMessage.normal(),
+                  ));
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                      ),
+                    ),
+                  );
+                  break;
+                menu:
+                case MessageAppType.menu:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.wellcome:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.text(
+                          id: const Uuid().v4(), message: s.dialogFlowWellcome),
+                    ),
+                  );
+                  continue menu;
               }
             } else {
               throw Exception();
@@ -494,6 +566,13 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   ),
                 ),
               );
+              add(
+                DialogflowEvent.onResponse(
+                  OnResponseDataType.menu(
+                    id: const Uuid().v4(),
+                  ),
+                ),
+              );
             } catch (e, trace) {
               printLog(this, message: e, trace: trace, error: e);
               emit(
@@ -507,6 +586,13 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   OnResponseDataType.text(
                     id: const Uuid().v4(),
                     message: s.anErrorHasOccurredPleaseTryLater,
+                  ),
+                ),
+              );
+              add(
+                DialogflowEvent.onResponse(
+                  OnResponseDataType.menu(
+                    id: const Uuid().v4(),
                   ),
                 ),
               );
@@ -531,6 +617,17 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
   ) async {
     if (event.isAdd) {
       event.message.map(
+        menu: (value) {
+          add(
+            DialogflowEvent.addMessageApp(
+              messageApp: MessageApp.onResponse(
+                data: OnResponseDataType.menu(
+                  id: value.id,
+                ),
+              ),
+            ),
+          );
+        },
         text: (value) {
           add(
             DialogflowEvent.addMessageApp(
@@ -556,7 +653,18 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
             ),
           );
         },
-        unknown: (value) {},
+        unknown: (value) {
+          add(
+            DialogflowEvent.addMessageApp(
+              messageApp: MessageApp.onResponse(
+                data: OnResponseDataType.text(
+                  message: s.iDontUnderstandYourResponseYet,
+                  id: value.id,
+                ),
+              ),
+            ),
+          );
+        },
       );
       emit(state.copyWith(
         isWaitingResponse: false,

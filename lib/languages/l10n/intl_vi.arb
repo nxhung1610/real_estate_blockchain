@@ -256,5 +256,8 @@
   "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty"  :"Chọn một vài tiện ích hiện đang có trong bất động sản của bạn",
   "pleaseChooseYourGadget" : "Hãy chọn tiện ích của bạn",
   "addSomePicturesOfYourProperty" :"Thêm một số hình ảnh về bất động sản của bạn",
-  "pleaseEnterInformationAsSpecial" :  "Vui lòng nhập thông tin theo chỉ định hoặc bạn có thể huỷ tiến trình bằng cách nhắn \"Huỷ\""
+  "pleaseEnterInformationAsSpecial" :  "Vui lòng nhập thông tin theo chỉ định hoặc bạn có thể huỷ tiến trình bằng cách nhắn \"Huỷ\"",
+  "createEstate" : "Tạo bất động sản",
+  "dialogFlowWellcome" : "Xin chào, tôi là Chatbot, tôi có thể giúp gì cho bạn.",
+  "supportList" :"Danh mục hỗ trợ"
 }

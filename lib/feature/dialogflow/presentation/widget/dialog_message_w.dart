@@ -70,10 +70,15 @@ class _DialogMessageWidgetState extends State<DialogMessageWidget> {
                   return WMessageOnMessageItem(
                     data: value.data,
                     disable: item.diable,
+                    key: ObjectKey(value.data.id),
                   );
                 },
                 onResponse: (value) {
-                  return WMessageOnResponseItem(item: value.data);
+                  return WMessageOnResponseItem(
+                    item: value.data,
+                    disable: item.diable,
+                    key: ObjectKey(value.data.id),
+                  );
                 },
               ),
               isMe: item is MessageAppOnMessage,

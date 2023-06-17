@@ -107,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "createBid": MessageLookupByLibrary.simpleMessage("Create bid"),
         "createBidSuccess":
             MessageLookupByLibrary.simpleMessage("Create bid success"),
+        "createEstate":
+            MessageLookupByLibrary.simpleMessage("Create real estate"),
         "createPost": MessageLookupByLibrary.simpleMessage("Create Post"),
         "createPostAlreadyExist":
             MessageLookupByLibrary.simpleMessage("Post already exist"),
@@ -127,6 +129,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
+        "dialogFlowWellcome": MessageLookupByLibrary.simpleMessage(
+            "Hi I\'m Chatbot, how can I help you."),
         "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
             "Didn\'t receive the verify code ?"),
         "direction": MessageLookupByLibrary.simpleMessage("Direction"),
@@ -358,6 +362,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Submit Your Bid At"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),
+        "supportList": MessageLookupByLibrary.simpleMessage("Support list"),
         "thePreviousBrowsingAuctionWasRejected":
             MessageLookupByLibrary.simpleMessage(
                 "The previous browsing auction was rejected, please create a new one"),

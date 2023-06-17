@@ -106,6 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "createBid": MessageLookupByLibrary.simpleMessage("Tạo thầu"),
         "createBidSuccess":
             MessageLookupByLibrary.simpleMessage("Tạo thầu thành công"),
+        "createEstate":
+            MessageLookupByLibrary.simpleMessage("Tạo bất động sản"),
         "createPost": MessageLookupByLibrary.simpleMessage("Tạo bài đăng"),
         "createPostAlreadyExist": MessageLookupByLibrary.simpleMessage(
             "Bất động sản đã được tạo bài đăng"),
@@ -126,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
+        "dialogFlowWellcome": MessageLookupByLibrary.simpleMessage(
+            "Xin chào, tôi là Chatbot, tôi có thể giúp gì cho bạn."),
         "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
             "Chưa nhận được mã xác thực ?"),
         "direction": MessageLookupByLibrary.simpleMessage("Hướng"),
@@ -359,6 +363,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Đấu giá thầu của tại"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
+        "supportList": MessageLookupByLibrary.simpleMessage("Danh mục hỗ trợ"),
         "thePreviousBrowsingAuctionWasRejected":
             MessageLookupByLibrary.simpleMessage(
                 "Đấu giá đang duyệt trước đó đã bị từ chối, vui lòng tạo mới"),

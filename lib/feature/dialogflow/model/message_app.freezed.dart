@@ -2357,6 +2357,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
+    required TResult Function(String id) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2365,6 +2366,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
+    TResult? Function(String id)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) =>
@@ -2372,6 +2374,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
+    TResult Function(String id)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2380,6 +2383,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnResponseDataTypeText value) text,
+    required TResult Function(_OnResponseDataTypeMenu value) menu,
     required TResult Function(_OnResponseDataTypeData value) data,
     required TResult Function(_OnResponseDataTypeUnknown value) unknown,
   }) =>
@@ -2387,6 +2391,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataTypeText value)? text,
+    TResult? Function(_OnResponseDataTypeMenu value)? menu,
     TResult? Function(_OnResponseDataTypeData value)? data,
     TResult? Function(_OnResponseDataTypeUnknown value)? unknown,
   }) =>
@@ -2394,6 +2399,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataTypeText value)? text,
+    TResult Function(_OnResponseDataTypeMenu value)? menu,
     TResult Function(_OnResponseDataTypeData value)? data,
     TResult Function(_OnResponseDataTypeUnknown value)? unknown,
     required TResult orElse(),
@@ -2514,6 +2520,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
+    required TResult Function(String id) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2525,6 +2532,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
+    TResult? Function(String id)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -2535,6 +2543,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
+    TResult Function(String id)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2549,6 +2558,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnResponseDataTypeText value) text,
+    required TResult Function(_OnResponseDataTypeMenu value) menu,
     required TResult Function(_OnResponseDataTypeData value) data,
     required TResult Function(_OnResponseDataTypeUnknown value) unknown,
   }) {
@@ -2559,6 +2569,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataTypeText value)? text,
+    TResult? Function(_OnResponseDataTypeMenu value)? menu,
     TResult? Function(_OnResponseDataTypeData value)? data,
     TResult? Function(_OnResponseDataTypeUnknown value)? unknown,
   }) {
@@ -2569,6 +2580,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataTypeText value)? text,
+    TResult Function(_OnResponseDataTypeMenu value)? menu,
     TResult Function(_OnResponseDataTypeData value)? data,
     TResult Function(_OnResponseDataTypeUnknown value)? unknown,
     required TResult orElse(),
@@ -2591,6 +2603,158 @@ abstract class _OnResponseDataTypeText implements OnResponseDataType {
   @override
   @JsonKey(ignore: true)
   _$$_OnResponseDataTypeTextCopyWith<_$_OnResponseDataTypeText> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataTypeMenuCopyWith<$Res>
+    implements $OnResponseDataTypeCopyWith<$Res> {
+  factory _$$_OnResponseDataTypeMenuCopyWith(_$_OnResponseDataTypeMenu value,
+          $Res Function(_$_OnResponseDataTypeMenu) then) =
+      __$$_OnResponseDataTypeMenuCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$_OnResponseDataTypeMenuCopyWithImpl<$Res>
+    extends _$OnResponseDataTypeCopyWithImpl<$Res, _$_OnResponseDataTypeMenu>
+    implements _$$_OnResponseDataTypeMenuCopyWith<$Res> {
+  __$$_OnResponseDataTypeMenuCopyWithImpl(_$_OnResponseDataTypeMenu _value,
+      $Res Function(_$_OnResponseDataTypeMenu) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$_OnResponseDataTypeMenu(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnResponseDataTypeMenu implements _OnResponseDataTypeMenu {
+  const _$_OnResponseDataTypeMenu({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'OnResponseDataType.menu(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataTypeMenu &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnResponseDataTypeMenuCopyWith<_$_OnResponseDataTypeMenu> get copyWith =>
+      __$$_OnResponseDataTypeMenuCopyWithImpl<_$_OnResponseDataTypeMenu>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id, String message) text,
+    required TResult Function(String id) menu,
+    required TResult Function(String id, String? message, OnResponseData data)
+        data,
+    required TResult Function(String id) unknown,
+  }) {
+    return menu(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, String message)? text,
+    TResult? Function(String id)? menu,
+    TResult? Function(String id, String? message, OnResponseData data)? data,
+    TResult? Function(String id)? unknown,
+  }) {
+    return menu?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id, String message)? text,
+    TResult Function(String id)? menu,
+    TResult Function(String id, String? message, OnResponseData data)? data,
+    TResult Function(String id)? unknown,
+    required TResult orElse(),
+  }) {
+    if (menu != null) {
+      return menu(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataTypeText value) text,
+    required TResult Function(_OnResponseDataTypeMenu value) menu,
+    required TResult Function(_OnResponseDataTypeData value) data,
+    required TResult Function(_OnResponseDataTypeUnknown value) unknown,
+  }) {
+    return menu(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataTypeText value)? text,
+    TResult? Function(_OnResponseDataTypeMenu value)? menu,
+    TResult? Function(_OnResponseDataTypeData value)? data,
+    TResult? Function(_OnResponseDataTypeUnknown value)? unknown,
+  }) {
+    return menu?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataTypeText value)? text,
+    TResult Function(_OnResponseDataTypeMenu value)? menu,
+    TResult Function(_OnResponseDataTypeData value)? data,
+    TResult Function(_OnResponseDataTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (menu != null) {
+      return menu(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataTypeMenu implements OnResponseDataType {
+  const factory _OnResponseDataTypeMenu({required final String id}) =
+      _$_OnResponseDataTypeMenu;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$_OnResponseDataTypeMenuCopyWith<_$_OnResponseDataTypeMenu> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2689,6 +2853,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
+    required TResult Function(String id) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2700,6 +2865,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
+    TResult? Function(String id)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -2710,6 +2876,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
+    TResult Function(String id)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2724,6 +2891,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnResponseDataTypeText value) text,
+    required TResult Function(_OnResponseDataTypeMenu value) menu,
     required TResult Function(_OnResponseDataTypeData value) data,
     required TResult Function(_OnResponseDataTypeUnknown value) unknown,
   }) {
@@ -2734,6 +2902,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataTypeText value)? text,
+    TResult? Function(_OnResponseDataTypeMenu value)? menu,
     TResult? Function(_OnResponseDataTypeData value)? data,
     TResult? Function(_OnResponseDataTypeUnknown value)? unknown,
   }) {
@@ -2744,6 +2913,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataTypeText value)? text,
+    TResult Function(_OnResponseDataTypeMenu value)? menu,
     TResult Function(_OnResponseDataTypeData value)? data,
     TResult Function(_OnResponseDataTypeUnknown value)? unknown,
     required TResult orElse(),
@@ -2841,6 +3011,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
+    required TResult Function(String id) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2852,6 +3023,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
+    TResult? Function(String id)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -2862,6 +3034,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
+    TResult Function(String id)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2876,6 +3049,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnResponseDataTypeText value) text,
+    required TResult Function(_OnResponseDataTypeMenu value) menu,
     required TResult Function(_OnResponseDataTypeData value) data,
     required TResult Function(_OnResponseDataTypeUnknown value) unknown,
   }) {
@@ -2886,6 +3060,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnResponseDataTypeText value)? text,
+    TResult? Function(_OnResponseDataTypeMenu value)? menu,
     TResult? Function(_OnResponseDataTypeData value)? data,
     TResult? Function(_OnResponseDataTypeUnknown value)? unknown,
   }) {
@@ -2896,6 +3071,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnResponseDataTypeText value)? text,
+    TResult Function(_OnResponseDataTypeMenu value)? menu,
     TResult Function(_OnResponseDataTypeData value)? data,
     TResult Function(_OnResponseDataTypeUnknown value)? unknown,
     required TResult orElse(),

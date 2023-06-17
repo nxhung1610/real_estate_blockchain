@@ -8,9 +8,11 @@ import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/map/model/address_data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../model/message_app.dart';
 
@@ -18,8 +20,10 @@ class WMessageOnResponseItem extends StatefulWidget {
   const WMessageOnResponseItem({
     super.key,
     required this.item,
+    required this.disable,
   });
   final OnResponseDataType item;
+  final bool disable;
 
   @override
   State<WMessageOnResponseItem> createState() => _WMessageOnResponseItemState();
@@ -30,6 +34,61 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return widget.item.map(
+      menu: (value) {
+        Widget child = IntrinsicWidth(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "${s.supportList} :",
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                ),
+              ),
+              AppSize.mediumHeightDimens.verticalSpace,
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8.r),
+                    ),
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 3.r,
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.w,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () {
+                  context.read<DialogflowBloc>().add(
+                        DialogflowEvent.onMessage(
+                          OnMessageDataType.text(
+                            id: const Uuid().v4(),
+                            message: s.createEstate,
+                          ),
+                        ),
+                      );
+                },
+                child: Text(
+                  s.createEstate,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: context.theme.colorScheme.background,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+        if (widget.disable) {
+          child = IgnorePointer(
+            child: child,
+          );
+        }
+        return child;
+      },
       text: (value) {
         return Text(
           value.message,

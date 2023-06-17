@@ -155,17 +155,20 @@ class _ButtonPrimary extends StatelessWidget {
 class _ButtonSecondary extends StatelessWidget {
   final bool enable;
   final Widget child;
+  final Color? backgroundColor;
   final void Function()? onPressed;
   const _ButtonSecondary({
     required this.enable,
     required this.onPressed,
     required this.child,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onPressed,
+      style: context.theme.outlinedButtonTheme.style?.copyWith(),
       child: child,
     );
   }
