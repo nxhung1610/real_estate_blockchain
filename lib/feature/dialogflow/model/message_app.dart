@@ -2,12 +2,19 @@ import 'dart:ui';
 
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:real_estate_blockchain/data/map/model/address_data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/amenity.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:uuid/uuid.dart';
+
+import '../application/dialogflow_bloc.dart';
 
 part 'message_app.freezed.dart';
 
@@ -100,6 +107,7 @@ class OnResponseDataType with _$OnResponseDataType {
   }) = _OnResponseDataTypeText;
   const factory OnResponseDataType.menu({
     required String id,
+    @Default(MenuType.all()) MenuType menuType,
   }) = _OnResponseDataTypeMenu;
   const factory OnResponseDataType.data({
     required String id,
@@ -109,6 +117,144 @@ class OnResponseDataType with _$OnResponseDataType {
   const factory OnResponseDataType.unknown({
     required String id,
   }) = _OnResponseDataTypeUnknown;
+}
+
+@freezed
+class MenuType with _$MenuType {
+  const factory MenuType.all() = _MenuTypeAll;
+  const factory MenuType.info() = _MenuTypeInfo;
+  const factory MenuType.estate() = _MenuTypeEstate;
+}
+
+extension MenuTypeEx on MenuType {
+  List<Widget> widgets(BuildContext context) {
+    final s = S.of(context);
+    return map(
+      all: (value) {
+        return [
+          Text(
+            "${s.mainCatalog} :",
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+            ),
+          ),
+          _button(context, text: s.basicInformation, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.informationCatalog,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.realEstate, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.realEstateCatalog,
+                    ),
+                  ),
+                );
+          }),
+        ];
+      },
+      info: (value) {
+        return [
+          Text(
+            "${s.informationCatalog} :",
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+            ),
+          ),
+          _button(context, text: s.appInformation, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.appInformation,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.backToMainMenu, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.mainCatalog,
+                    ),
+                  ),
+                );
+          }),
+        ];
+      },
+      estate: (value) {
+        return [
+          Text(
+            "${s.realEstateCatalog} :",
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+            ),
+          ),
+          _button(context, text: s.createEstate, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.createEstate,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.backToMainMenu, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.mainCatalog,
+                    ),
+                  ),
+                );
+          }),
+        ];
+      },
+    );
+  }
+
+  Widget _button(
+    BuildContext context, {
+    required String text,
+    required VoidCallback onPressed,
+  }) {
+    return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(8.r),
+          ),
+          side: BorderSide(
+            color: Colors.white,
+            width: 3.r,
+          ),
+        ),
+        padding: EdgeInsets.symmetric(
+          horizontal: 8.w,
+        ),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      ),
+      onPressed: () {
+        onPressed();
+      },
+      child: Text(
+        text,
+        style: context.textTheme.bodyMedium?.copyWith(
+          color: context.theme.colorScheme.background,
+        ),
+      ),
+    );
+  }
 }
 
 @freezed

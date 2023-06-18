@@ -178,11 +178,31 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   );
                   break;
                 menu:
-                case MessageAppType.menu:
+                case MessageAppType.mainMenu:
                   add(
                     DialogflowEvent.onResponse(
                       OnResponseDataType.menu(
                         id: const Uuid().v4(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.informationMenu:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.info(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.realEstateMenu:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.estate(),
                       ),
                     ),
                   );
@@ -195,6 +215,24 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   continue menu;
+                case MessageAppType.introduceApp:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.text(
+                        id: const Uuid().v4(),
+                        message: s.appIntroductionDes,
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.info(),
+                      ),
+                    ),
+                  );
+                  break;
               }
             } else {
               throw Exception();
@@ -623,6 +661,7 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
               messageApp: MessageApp.onResponse(
                 data: OnResponseDataType.menu(
                   id: value.id,
+                  menuType: value.menuType,
                 ),
               ),
             ),

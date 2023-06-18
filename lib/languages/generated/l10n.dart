@@ -2599,6 +2599,96 @@ class S {
       args: [],
     );
   }
+
+  /// `App introduction`
+  String get appIntroduction {
+    return Intl.message(
+      'App introduction',
+      name: 'appIntroduction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The lip agent app is a software platform specifically designed for real estate agents to help them manage their business more efficiently. These applications are typically cloud-based and offer a wide range of tools and features that streamline various aspects of real estate agent work.`
+  String get appIntroductionDes {
+    return Intl.message(
+      'The lip agent app is a software platform specifically designed for real estate agents to help them manage their business more efficiently. These applications are typically cloud-based and offer a wide range of tools and features that streamline various aspects of real estate agent work.',
+      name: 'appIntroductionDes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real estate`
+  String get realEstate {
+    return Intl.message(
+      'Real estate',
+      name: 'realEstate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basic information`
+  String get basicInformation {
+    return Intl.message(
+      'Basic information',
+      name: 'basicInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real estate table of contents`
+  String get realEstateCatalog {
+    return Intl.message(
+      'Real estate table of contents',
+      name: 'realEstateCatalog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Information table of contents`
+  String get informationCatalog {
+    return Intl.message(
+      'Information table of contents',
+      name: 'informationCatalog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App information`
+  String get appInformation {
+    return Intl.message(
+      'App information',
+      name: 'appInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to main table of contents`
+  String get backToMainMenu {
+    return Intl.message(
+      'Back to main table of contents',
+      name: 'backToMainMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main table of contents`
+  String get mainCatalog {
+    return Intl.message(
+      'Main table of contents',
+      name: 'mainCatalog',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

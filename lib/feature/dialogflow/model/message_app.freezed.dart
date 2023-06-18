@@ -2357,7 +2357,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id) menu,
+    required TResult Function(String id, MenuType menuType) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2366,7 +2366,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id)? menu,
+    TResult? Function(String id, MenuType menuType)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) =>
@@ -2374,7 +2374,7 @@ mixin _$OnResponseDataType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id)? menu,
+    TResult Function(String id, MenuType menuType)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2520,7 +2520,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id) menu,
+    required TResult Function(String id, MenuType menuType) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2532,7 +2532,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id)? menu,
+    TResult? Function(String id, MenuType menuType)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -2543,7 +2543,7 @@ class _$_OnResponseDataTypeText implements _OnResponseDataTypeText {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id)? menu,
+    TResult Function(String id, MenuType menuType)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -2614,7 +2614,9 @@ abstract class _$$_OnResponseDataTypeMenuCopyWith<$Res>
       __$$_OnResponseDataTypeMenuCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id});
+  $Res call({String id, MenuType menuType});
+
+  $MenuTypeCopyWith<$Res> get menuType;
 }
 
 /// @nodoc
@@ -2629,27 +2631,44 @@ class __$$_OnResponseDataTypeMenuCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? menuType = null,
   }) {
     return _then(_$_OnResponseDataTypeMenu(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      menuType: null == menuType
+          ? _value.menuType
+          : menuType // ignore: cast_nullable_to_non_nullable
+              as MenuType,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MenuTypeCopyWith<$Res> get menuType {
+    return $MenuTypeCopyWith<$Res>(_value.menuType, (value) {
+      return _then(_value.copyWith(menuType: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_OnResponseDataTypeMenu implements _OnResponseDataTypeMenu {
-  const _$_OnResponseDataTypeMenu({required this.id});
+  const _$_OnResponseDataTypeMenu(
+      {required this.id, this.menuType = const MenuType.all()});
 
   @override
   final String id;
+  @override
+  @JsonKey()
+  final MenuType menuType;
 
   @override
   String toString() {
-    return 'OnResponseDataType.menu(id: $id)';
+    return 'OnResponseDataType.menu(id: $id, menuType: $menuType)';
   }
 
   @override
@@ -2657,11 +2676,13 @@ class _$_OnResponseDataTypeMenu implements _OnResponseDataTypeMenu {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnResponseDataTypeMenu &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.menuType, menuType) ||
+                other.menuType == menuType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, id, menuType);
 
   @JsonKey(ignore: true)
   @override
@@ -2674,36 +2695,36 @@ class _$_OnResponseDataTypeMenu implements _OnResponseDataTypeMenu {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id) menu,
+    required TResult Function(String id, MenuType menuType) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
   }) {
-    return menu(id);
+    return menu(id, menuType);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id)? menu,
+    TResult? Function(String id, MenuType menuType)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
-    return menu?.call(id);
+    return menu?.call(id, menuType);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id)? menu,
+    TResult Function(String id, MenuType menuType)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
   }) {
     if (menu != null) {
-      return menu(id);
+      return menu(id, menuType);
     }
     return orElse();
   }
@@ -2747,11 +2768,13 @@ class _$_OnResponseDataTypeMenu implements _OnResponseDataTypeMenu {
 }
 
 abstract class _OnResponseDataTypeMenu implements OnResponseDataType {
-  const factory _OnResponseDataTypeMenu({required final String id}) =
-      _$_OnResponseDataTypeMenu;
+  const factory _OnResponseDataTypeMenu(
+      {required final String id,
+      final MenuType menuType}) = _$_OnResponseDataTypeMenu;
 
   @override
   String get id;
+  MenuType get menuType;
   @override
   @JsonKey(ignore: true)
   _$$_OnResponseDataTypeMenuCopyWith<_$_OnResponseDataTypeMenu> get copyWith =>
@@ -2853,7 +2876,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id) menu,
+    required TResult Function(String id, MenuType menuType) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -2865,7 +2888,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id)? menu,
+    TResult? Function(String id, MenuType menuType)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -2876,7 +2899,7 @@ class _$_OnResponseDataTypeData implements _OnResponseDataTypeData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id)? menu,
+    TResult Function(String id, MenuType menuType)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -3011,7 +3034,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, String message) text,
-    required TResult Function(String id) menu,
+    required TResult Function(String id, MenuType menuType) menu,
     required TResult Function(String id, String? message, OnResponseData data)
         data,
     required TResult Function(String id) unknown,
@@ -3023,7 +3046,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, String message)? text,
-    TResult? Function(String id)? menu,
+    TResult? Function(String id, MenuType menuType)? menu,
     TResult? Function(String id, String? message, OnResponseData data)? data,
     TResult? Function(String id)? unknown,
   }) {
@@ -3034,7 +3057,7 @@ class _$_OnResponseDataTypeUnknown implements _OnResponseDataTypeUnknown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, String message)? text,
-    TResult Function(String id)? menu,
+    TResult Function(String id, MenuType menuType)? menu,
     TResult Function(String id, String? message, OnResponseData data)? data,
     TResult Function(String id)? unknown,
     required TResult orElse(),
@@ -3093,6 +3116,395 @@ abstract class _OnResponseDataTypeUnknown implements OnResponseDataType {
   @JsonKey(ignore: true)
   _$$_OnResponseDataTypeUnknownCopyWith<_$_OnResponseDataTypeUnknown>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$MenuType {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MenuTypeCopyWith<$Res> {
+  factory $MenuTypeCopyWith(MenuType value, $Res Function(MenuType) then) =
+      _$MenuTypeCopyWithImpl<$Res, MenuType>;
+}
+
+/// @nodoc
+class _$MenuTypeCopyWithImpl<$Res, $Val extends MenuType>
+    implements $MenuTypeCopyWith<$Res> {
+  _$MenuTypeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_MenuTypeAllCopyWith<$Res> {
+  factory _$$_MenuTypeAllCopyWith(
+          _$_MenuTypeAll value, $Res Function(_$_MenuTypeAll) then) =
+      __$$_MenuTypeAllCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MenuTypeAllCopyWithImpl<$Res>
+    extends _$MenuTypeCopyWithImpl<$Res, _$_MenuTypeAll>
+    implements _$$_MenuTypeAllCopyWith<$Res> {
+  __$$_MenuTypeAllCopyWithImpl(
+      _$_MenuTypeAll _value, $Res Function(_$_MenuTypeAll) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MenuTypeAll implements _MenuTypeAll {
+  const _$_MenuTypeAll();
+
+  @override
+  String toString() {
+    return 'MenuType.all()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MenuTypeAll);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+  }) {
+    return all();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+  }) {
+    return all?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    required TResult orElse(),
+  }) {
+    if (all != null) {
+      return all();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+  }) {
+    return all(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+  }) {
+    return all?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    required TResult orElse(),
+  }) {
+    if (all != null) {
+      return all(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MenuTypeAll implements MenuType {
+  const factory _MenuTypeAll() = _$_MenuTypeAll;
+}
+
+/// @nodoc
+abstract class _$$_MenuTypeInfoCopyWith<$Res> {
+  factory _$$_MenuTypeInfoCopyWith(
+          _$_MenuTypeInfo value, $Res Function(_$_MenuTypeInfo) then) =
+      __$$_MenuTypeInfoCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MenuTypeInfoCopyWithImpl<$Res>
+    extends _$MenuTypeCopyWithImpl<$Res, _$_MenuTypeInfo>
+    implements _$$_MenuTypeInfoCopyWith<$Res> {
+  __$$_MenuTypeInfoCopyWithImpl(
+      _$_MenuTypeInfo _value, $Res Function(_$_MenuTypeInfo) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MenuTypeInfo implements _MenuTypeInfo {
+  const _$_MenuTypeInfo();
+
+  @override
+  String toString() {
+    return 'MenuType.info()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MenuTypeInfo);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+  }) {
+    return info();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+  }) {
+    return info?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    required TResult orElse(),
+  }) {
+    if (info != null) {
+      return info();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+  }) {
+    return info(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+  }) {
+    return info?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    required TResult orElse(),
+  }) {
+    if (info != null) {
+      return info(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MenuTypeInfo implements MenuType {
+  const factory _MenuTypeInfo() = _$_MenuTypeInfo;
+}
+
+/// @nodoc
+abstract class _$$_MenuTypeEstateCopyWith<$Res> {
+  factory _$$_MenuTypeEstateCopyWith(
+          _$_MenuTypeEstate value, $Res Function(_$_MenuTypeEstate) then) =
+      __$$_MenuTypeEstateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MenuTypeEstateCopyWithImpl<$Res>
+    extends _$MenuTypeCopyWithImpl<$Res, _$_MenuTypeEstate>
+    implements _$$_MenuTypeEstateCopyWith<$Res> {
+  __$$_MenuTypeEstateCopyWithImpl(
+      _$_MenuTypeEstate _value, $Res Function(_$_MenuTypeEstate) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MenuTypeEstate implements _MenuTypeEstate {
+  const _$_MenuTypeEstate();
+
+  @override
+  String toString() {
+    return 'MenuType.estate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MenuTypeEstate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+  }) {
+    return estate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+  }) {
+    return estate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    required TResult orElse(),
+  }) {
+    if (estate != null) {
+      return estate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+  }) {
+    return estate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+  }) {
+    return estate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    required TResult orElse(),
+  }) {
+    if (estate != null) {
+      return estate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MenuTypeEstate implements MenuType {
+  const factory _MenuTypeEstate() = _$_MenuTypeEstate;
 }
 
 /// @nodoc

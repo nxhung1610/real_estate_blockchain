@@ -56,6 +56,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Real Estate Application"),
+        "appInformation":
+            MessageLookupByLibrary.simpleMessage("App information"),
+        "appIntroduction":
+            MessageLookupByLibrary.simpleMessage("App introduction"),
+        "appIntroductionDes": MessageLookupByLibrary.simpleMessage(
+            "The lip agent app is a software platform specifically designed for real estate agents to help them manage their business more efficiently. These applications are typically cloud-based and offer a wide range of tools and features that streamline various aspects of real estate agent work."),
         "appName": MessageLookupByLibrary.simpleMessage("Realust"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Application Settings"),
@@ -68,8 +74,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "auctionId": MessageLookupByLibrary.simpleMessage("Auction Id"),
         "auctions": MessageLookupByLibrary.simpleMessage("Auctions"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Auto review"),
+        "backToMainMenu": MessageLookupByLibrary.simpleMessage(
+            "Back to main table of contents"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Balcony Facing"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
+        "basicInformation":
+            MessageLookupByLibrary.simpleMessage("Basic information"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Bath Room"),
         "beAFirstBidder":
             MessageLookupByLibrary.simpleMessage("Be a First bidder"),
@@ -183,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "I don\'t understand your response yet."),
         "inPerson": MessageLookupByLibrary.simpleMessage("In Person"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "informationCatalog": MessageLookupByLibrary.simpleMessage(
+            "Information table of contents"),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "later": MessageLookupByLibrary.simpleMessage("Later"),
@@ -200,6 +212,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign in to your account"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "mainCatalog":
+            MessageLookupByLibrary.simpleMessage("Main table of contents"),
         "max": MessageLookupByLibrary.simpleMessage("Max"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "min": MessageLookupByLibrary.simpleMessage("Min"),
@@ -301,6 +315,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "rePassword": MessageLookupByLibrary.simpleMessage("Re-enter password"),
         "rePasswordNotValid":
             MessageLookupByLibrary.simpleMessage("Re-enter password not valid"),
+        "realEstate": MessageLookupByLibrary.simpleMessage("Real estate"),
+        "realEstateCatalog": MessageLookupByLibrary.simpleMessage(
+            "Real estate table of contents"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Private house"),
         "realEstateInformationConfirmed": MessageLookupByLibrary.simpleMessage(

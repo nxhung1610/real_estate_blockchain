@@ -259,5 +259,14 @@
   "pleaseEnterInformationAsSpecial" :  "Vui lòng nhập thông tin theo chỉ định hoặc bạn có thể huỷ tiến trình bằng cách nhắn \"Huỷ\"",
   "createEstate" : "Tạo bất động sản",
   "dialogFlowWellcome" : "Xin chào, tôi là Chatbot, tôi có thể giúp gì cho bạn.",
-  "supportList" :"Danh mục hỗ trợ"
+  "supportList" :"Danh mục hỗ trợ",
+  "appIntroduction" : "Giới thiệu ứng dụng",
+  "appIntroductionDes" : "Ứng dụng đại lý môi giới là một nền tảng phần mềm được thiết kế dành riêng cho các đại lý bất động sản để giúp họ quản lý hoạt động kinh doanh của mình hiệu quả hơn. Các ứng dụng này thường dựa trên đám mây và cung cấp nhiều công cụ cũng như tính năng hợp lý hóa các khía cạnh khác nhau của công việc đại lý bất động sản.",
+  "realEstate" : "Bất động sản",
+  "basicInformation" : "Thông tin cơ bản",
+  "realEstateCatalog"  :"Danh mục bất động sản",
+  "informationCatalog" : "Danh mục thông tin",
+  "appInformation" : "Thông tin về ứng dụng",
+  "backToMainMenu" :"Mục chính",
+  "mainCatalog" : "Danh mục chính"
 }

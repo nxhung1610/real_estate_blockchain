@@ -258,6 +258,15 @@
   "pleaseEnterInformationAsSpecial" :  "Please enter the information as specified or you can cancel the process by texting \"Cancel\"",
   "createEstate" : "Create real estate",
   "dialogFlowWellcome" : "Hi I'm Chatbot, how can I help you.",
-  "supportList" :"Support list"
+  "supportList" :"Support list",
+  "appIntroduction" : "App introduction",
+  "appIntroductionDes" : "The lip agent app is a software platform specifically designed for real estate agents to help them manage their business more efficiently. These applications are typically cloud-based and offer a wide range of tools and features that streamline various aspects of real estate agent work.",
+  "realEstate" : "Real estate",
+  "basicInformation" : "Basic information",
+  "realEstateCatalog"  :"Real estate table of contents",
+  "informationCatalog" : "Information table of contents",
+  "appInformation" : "App information",
+  "backToMainMenu" :"Back to main table of contents",
+  "mainCatalog" : "Main table of contents"
 
 }

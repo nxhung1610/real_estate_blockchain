@@ -1,8 +1,11 @@
 enum MessageAppType {
   dialogFlow('DIALOG_FLOW'),
-  createEstate('CREATE_ESTATE'),
   cancel('CANCEL'),
-  menu('MENU'),
+  mainMenu('MAIN_MENU'),
+  realEstateMenu('REAL_ESTATE_MENU'),
+  informationMenu('INFORMATION_MENU'),
+  createEstate('CREATE_ESTATE'),
+  introduceApp('INTRODUCE_APP'),
   wellcome('WELLCOME');
 
   const MessageAppType(this.value);

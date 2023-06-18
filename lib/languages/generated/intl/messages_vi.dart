@@ -55,6 +55,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "apartment": MessageLookupByLibrary.simpleMessage("Căn hộ"),
         "appDescription":
             MessageLookupByLibrary.simpleMessage("Sàn giao dịch Bất Động Sản"),
+        "appInformation":
+            MessageLookupByLibrary.simpleMessage("Thông tin về ứng dụng"),
+        "appIntroduction":
+            MessageLookupByLibrary.simpleMessage("Giới thiệu ứng dụng"),
+        "appIntroductionDes": MessageLookupByLibrary.simpleMessage(
+            "Ứng dụng đại lý môi giới là một nền tảng phần mềm được thiết kế dành riêng cho các đại lý bất động sản để giúp họ quản lý hoạt động kinh doanh của mình hiệu quả hơn. Các ứng dụng này thường dựa trên đám mây và cung cấp nhiều công cụ cũng như tính năng hợp lý hóa các khía cạnh khác nhau của công việc đại lý bất động sản."),
         "appName": MessageLookupByLibrary.simpleMessage("Realust"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt ứng dụng"),
@@ -67,8 +73,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "auctionId": MessageLookupByLibrary.simpleMessage("Mã đấu thầu"),
         "auctions": MessageLookupByLibrary.simpleMessage("Đấu thầu"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Tự động làm mới"),
+        "backToMainMenu": MessageLookupByLibrary.simpleMessage("Mục chính"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
         "bar": MessageLookupByLibrary.simpleMessage("Bar"),
+        "basicInformation":
+            MessageLookupByLibrary.simpleMessage("Thông tin cơ bản"),
         "bathRoom": MessageLookupByLibrary.simpleMessage("Phòng tắm"),
         "beAFirstBidder": MessageLookupByLibrary.simpleMessage(
             "Hãy là người đầu tiên đấu giá"),
@@ -183,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tôi chưa hiểu phản hồi của bạn."),
         "inPerson": MessageLookupByLibrary.simpleMessage("Trực tiếp"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "informationCatalog":
+            MessageLookupByLibrary.simpleMessage("Danh mục thông tin"),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "later": MessageLookupByLibrary.simpleMessage("Để sau"),
@@ -200,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng nhập vào tài khoản"),
         "loginWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Mừng trở lại!"),
+        "mainCatalog": MessageLookupByLibrary.simpleMessage("Danh mục chính"),
         "max": MessageLookupByLibrary.simpleMessage("Tối đa"),
         "message": MessageLookupByLibrary.simpleMessage("Tin nhắn"),
         "min": MessageLookupByLibrary.simpleMessage("Tối thiểu"),
@@ -302,6 +314,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "rePassword": MessageLookupByLibrary.simpleMessage("Nhập lại mật khẩu"),
         "rePasswordNotValid": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu nhập lại không hợp lệ"),
+        "realEstate": MessageLookupByLibrary.simpleMessage("Bất động sản"),
+        "realEstateCatalog":
+            MessageLookupByLibrary.simpleMessage("Danh mục bất động sản"),
         "realEstateDescription":
             MessageLookupByLibrary.simpleMessage("Nhà riêng"),
         "realEstateInformationConfirmed": MessageLookupByLibrary.simpleMessage(
