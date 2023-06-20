@@ -3514,6 +3514,7 @@ mixin _$OnResponseData {
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3521,6 +3522,7 @@ mixin _$OnResponseData {
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3528,6 +3530,7 @@ mixin _$OnResponseData {
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3537,6 +3540,7 @@ mixin _$OnResponseData {
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3544,6 +3548,7 @@ mixin _$OnResponseData {
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3551,6 +3556,7 @@ mixin _$OnResponseData {
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3645,6 +3651,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -3655,6 +3662,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -3665,6 +3673,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -3680,6 +3689,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
   }) {
     return realEstateInfo(this);
   }
@@ -3690,6 +3700,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -3700,6 +3711,7 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -3798,6 +3810,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
   }) {
     return address(addressData);
   }
@@ -3808,6 +3821,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
   }) {
     return address?.call(addressData);
   }
@@ -3818,6 +3832,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -3833,6 +3848,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
   }) {
     return address(this);
   }
@@ -3843,6 +3859,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
   }) {
     return address?.call(this);
   }
@@ -3853,6 +3870,7 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -3949,6 +3967,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
   }) {
     return amenities(this.amenities);
   }
@@ -3959,6 +3978,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
   }) {
     return amenities?.call(this.amenities);
   }
@@ -3969,6 +3989,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -3984,6 +4005,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
         realEstateInfo,
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
   }) {
     return amenities(this);
   }
@@ -3994,6 +4016,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
   }) {
     return amenities?.call(this);
   }
@@ -4004,6 +4027,7 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4021,4 +4045,120 @@ abstract class _OnResponseDataAmenities implements OnResponseData {
   @JsonKey(ignore: true)
   _$$_OnResponseDataAmenitiesCopyWith<_$_OnResponseDataAmenities>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataPoliciesCopyWith<$Res> {
+  factory _$$_OnResponseDataPoliciesCopyWith(_$_OnResponseDataPolicies value,
+          $Res Function(_$_OnResponseDataPolicies) then) =
+      __$$_OnResponseDataPoliciesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataPoliciesCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataPolicies>
+    implements _$$_OnResponseDataPoliciesCopyWith<$Res> {
+  __$$_OnResponseDataPoliciesCopyWithImpl(_$_OnResponseDataPolicies _value,
+      $Res Function(_$_OnResponseDataPolicies) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
+  const _$_OnResponseDataPolicies();
+
+  @override
+  String toString() {
+    return 'OnResponseData.policies()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataPolicies);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+  }) {
+    return policies();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+  }) {
+    return policies?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    required TResult orElse(),
+  }) {
+    if (policies != null) {
+      return policies();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+  }) {
+    return policies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+  }) {
+    return policies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    required TResult orElse(),
+  }) {
+    if (policies != null) {
+      return policies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataPolicies implements OnResponseData {
+  const factory _OnResponseDataPolicies() = _$_OnResponseDataPolicies;
 }

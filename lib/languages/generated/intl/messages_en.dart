@@ -63,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appIntroductionDes": MessageLookupByLibrary.simpleMessage(
             "The lip agent app is a software platform specifically designed for real estate agents to help them manage their business more efficiently. These applications are typically cloud-based and offer a wide range of tools and features that streamline various aspects of real estate agent work."),
         "appName": MessageLookupByLibrary.simpleMessage("Realust"),
+        "appPolicies":
+            MessageLookupByLibrary.simpleMessage("Application key terms"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Application Settings"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),

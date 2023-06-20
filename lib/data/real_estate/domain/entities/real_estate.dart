@@ -62,6 +62,8 @@ class RealEstate with _$RealEstate {
       amenities: realEstate.amenities.map((e) => Amenity.fromGrpc(e)).toList(),
       images: realEstate.images.map((e) => AppImage.fromGrpc(e)).toList(),
       ownerId: realEstate.ownerId,
+      area: realEstate.area,
+      floors: realEstate.floors,
     );
   }
 }

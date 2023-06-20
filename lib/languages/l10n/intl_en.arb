@@ -267,6 +267,7 @@
   "informationCatalog" : "Information table of contents",
   "appInformation" : "App information",
   "backToMainMenu" :"Back to main table of contents",
-  "mainCatalog" : "Main table of contents"
+  "mainCatalog" : "Main table of contents",
+  "appPolicies" :"Application key terms"
 
 }

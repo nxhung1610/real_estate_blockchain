@@ -83,7 +83,7 @@ class WTourItem extends StatelessWidget {
                         Text(
                           NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
                               .format(estate.realEstate.price *
-                                  (estate.realEstate.area ?? 0))
+                                  (estate.realEstate.area ?? 1))
                               .toString(),
                           style: context.textTheme.titleMedium?.copyWith(
                             color: AppColor.kPrimary1,

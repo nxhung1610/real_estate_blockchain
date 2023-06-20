@@ -268,5 +268,6 @@
   "informationCatalog" : "Danh mục thông tin",
   "appInformation" : "Thông tin về ứng dụng",
   "backToMainMenu" :"Mục chính",
-  "mainCatalog" : "Danh mục chính"
+  "mainCatalog" : "Danh mục chính",
+  "appPolicies" :"Điều khoản về ứng dụng" 
 }

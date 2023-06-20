@@ -62,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appIntroductionDes": MessageLookupByLibrary.simpleMessage(
             "Ứng dụng đại lý môi giới là một nền tảng phần mềm được thiết kế dành riêng cho các đại lý bất động sản để giúp họ quản lý hoạt động kinh doanh của mình hiệu quả hơn. Các ứng dụng này thường dựa trên đám mây và cung cấp nhiều công cụ cũng như tính năng hợp lý hóa các khía cạnh khác nhau của công việc đại lý bất động sản."),
         "appName": MessageLookupByLibrary.simpleMessage("Realust"),
+        "appPolicies":
+            MessageLookupByLibrary.simpleMessage("Điều khoản về ứng dụng"),
         "applicationSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt ứng dụng"),
         "apply": MessageLookupByLibrary.simpleMessage("Áp dụng"),

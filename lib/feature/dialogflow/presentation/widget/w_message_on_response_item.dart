@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -12,6 +13,7 @@ import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 
@@ -91,6 +93,39 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
     final s = S.of(context);
     final locale = context.read<AppBloc>().state.locale;
     return data.maybeMap(
+      policies: (value) {
+        return RichText(
+          text: TextSpan(
+            text: '${s.appPolicies} : ',
+            children: [
+              TextSpan(
+                  text: 'https://4jnw.l.time4vps.cloud/privacy-policy',
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: context.theme.colorScheme.background,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      try {
+                        launchUrl(
+                          Uri.parse(
+                            'https://4jnw.l.time4vps.cloud/privacy-policy',
+                          ),
+                          mode: LaunchMode.externalApplication,
+                        );
+                      } catch (e, trace) {
+                        printLog(this, message: e, error: e, trace: trace);
+                      }
+                    }),
+            ],
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        );
+      },
       address: (value) {
         final data = value.addressData;
         return Column(

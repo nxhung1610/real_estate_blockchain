@@ -2689,6 +2689,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Application key terms`
+  String get appPolicies {
+    return Intl.message(
+      'Application key terms',
+      name: 'appPolicies',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -233,6 +233,24 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   break;
+                case MessageAppType.policiesApp:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.policies(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.info(),
+                      ),
+                    ),
+                  );
+                  break;
               }
             } else {
               throw Exception();

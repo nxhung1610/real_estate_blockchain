@@ -6,6 +6,7 @@ enum MessageAppType {
   informationMenu('INFORMATION_MENU'),
   createEstate('CREATE_ESTATE'),
   introduceApp('INTRODUCE_APP'),
+  policiesApp('POLICIES_APP'),
   wellcome('WELLCOME');
 
   const MessageAppType(this.value);

@@ -178,6 +178,16 @@ extension MenuTypeEx on MenuType {
                   ),
                 );
           }),
+          _button(context, text: s.appPolicies, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.appPolicies,
+                    ),
+                  ),
+                );
+          }),
           _button(context, text: s.backToMainMenu, onPressed: () {
             context.read<DialogflowBloc>().add(
                   DialogflowEvent.onMessage(
@@ -266,4 +276,5 @@ class OnResponseData with _$OnResponseData {
 
   const factory OnResponseData.amenities(List<Amenity> amenities) =
       _OnResponseDataAmenities;
+  const factory OnResponseData.policies() = _OnResponseDataPolicies;
 }
