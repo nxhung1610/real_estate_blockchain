@@ -176,14 +176,17 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: AppSize.extraWidthDimens,
-          ),
+          clipBehavior: Clip.none,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               // Top bar
-              topbar(),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSize.extraWidthDimens,
+                ),
+                child: topbar(),
+              ),
 
               // Body
               const Expanded(child: _NewFeed()),
@@ -319,6 +322,8 @@ class __NewFeedState extends State<_NewFeed> {
           child: Padding(
             padding: EdgeInsets.only(
               top: AppSize.extraLargeHeightDimens,
+              left: AppSize.extraWidthDimens,
+              right: AppSize.extraWidthDimens,
             ),
             child: searchWidget(),
           ),
@@ -331,15 +336,21 @@ class __NewFeedState extends State<_NewFeed> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppSize.mediumHeightDimens.verticalSpace,
-                    Text(
-                      s.auctions,
-                      style: context.textTheme.bodyLarge?.copyWith(),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.symmetric(
+                    //     horizontal: AppSize.extraWidthDimens,
+                    //   ),
+                    //   child: Text(
+                    //     s.auctions,
+                    //     style: context.textTheme.bodyLarge?.copyWith(),
+                    //   ),
+                    // ),
                     ListView.separated(
                       physics: const NeverScrollableScrollPhysics(
                           parent: BouncingScrollPhysics()),
                       padding: EdgeInsets.symmetric(
                         vertical: AppSize.mediumHeightDimens,
+                        horizontal: AppSize.extraWidthDimens,
                       ),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
@@ -364,16 +375,23 @@ class __NewFeedState extends State<_NewFeed> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppSize.mediumHeightDimens.verticalSpace,
-                  Text(
-                    s.auctions,
-                    style: context.textTheme.bodyLarge?.copyWith(),
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.symmetric(
+                  //     horizontal: AppSize.extraWidthDimens,
+                  //   ),
+                  //   child: Text(
+                  //     s.auctions,
+                  //     style: context.textTheme.bodyLarge?.copyWith(),
+                  //   ),
+                  // ),
                   ListView.separated(
+                    clipBehavior: Clip.none,
                     physics: const NeverScrollableScrollPhysics(
                       parent: BouncingScrollPhysics(),
                     ),
                     padding: EdgeInsets.symmetric(
                       vertical: AppSize.extraHeightDimens,
+                      horizontal: AppSize.extraWidthDimens,
                     ),
                     shrinkWrap: true,
                     itemBuilder: (context, index) {

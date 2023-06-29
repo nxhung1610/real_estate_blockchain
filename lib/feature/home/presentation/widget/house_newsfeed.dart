@@ -30,9 +30,22 @@ class HouseNewsFeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
       height: 0.35.sh,
+      clipBehavior: Clip.none,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: AppColor.kNeutrals1.withOpacity(0.1),
+            blurRadius: 2.r,
+            spreadRadius: 2.r,
+          ),
+        ],
+        borderRadius: BorderRadius.circular(
+          AppSize.extraLargeRadius,
+        ),
+      ),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -86,33 +99,28 @@ class HouseNewsFeed extends StatelessWidget {
             ),
           ),
           Positioned.fill(
+            top: 10,
             child: Align(
               alignment: Alignment.topLeft,
               child: Transform.rotate(
                 angle: -pi / 4,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 18.w,
-                    vertical: 2.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: context.theme.colorScheme.background,
-                    borderRadius: BorderRadius.circular(8.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColor.kNeutrals1.withOpacity(0.5),
-                        blurRadius: 3.r,
-                      )
-                    ],
-                    border: Border.fromBorderSide(
-                      BorderSide(
-                        color: AppColor.kNeutrals4,
-                        width: 1.r,
+                child: ClipPath(
+                  clipper: CustomTicketShape(),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 18.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                    child: Text(
+                      value.sellType.title(context),
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: AppColor.kNeutrals9,
                       ),
                     ),
-                  ),
-                  child: Text(
-                    value.sellType.title(context),
                   ),
                 ),
               ),
@@ -281,5 +289,28 @@ class HouseNewsFeed extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class CustomTicketShape extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path()
+      ..lineTo(0, size.height / 2 - 4)
+      ..quadraticBezierTo(
+          size.width * 0.10, size.height / 2, 0, size.height / 2 + 4)
+      ..lineTo(0, size.height)
+      ..lineTo(size.width, size.height)
+      ..lineTo(size.width, size.height / 2 + 4)
+      ..quadraticBezierTo(
+          size.width * 0.90, size.height / 2, size.width, size.height / 2 - 4)
+      ..lineTo(size.width, 0);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
   }
 }
