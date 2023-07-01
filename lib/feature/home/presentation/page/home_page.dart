@@ -142,24 +142,24 @@ class _HomePageState extends State<HomePage>
             ],
           ),
           const Spacer(),
-          IconButton(
-            splashRadius: AppSize.extraRadius,
-            highlightColor: Colors.transparent,
-            icon: Assets.icons.icCategoryLight.svg(
-              width: iconSize,
-              height: iconSize,
-              color: iconColor,
-            ),
-            onPressed: () async {
-              final filter = await HouseFilterPage.show(context);
-              if (filter != null && mounted) {
-                context
-                    .read<HomeBloc>()
-                    .add(HomeEvent.onFilterChange(filter: filter));
-              }
-            },
-          ),
-          12.w.horizontalSpace,
+          // IconButton(
+          //   splashRadius: AppSize.extraRadius,
+          //   highlightColor: Colors.transparent,
+          //   icon: Assets.icons.icCategoryLight.svg(
+          //     width: iconSize,
+          //     height: iconSize,
+          //     color: iconColor,
+          //   ),
+          //   onPressed: () async {
+          //     final filter = await HouseFilterPage.show(context);
+          //     if (filter != null && mounted) {
+          //       context
+          //           .read<HomeBloc>()
+          //           .add(HomeEvent.onFilterChange(filter: filter));
+          //     }
+          //   },
+          // ),
+          // 12.w.horizontalSpace,
           IconButton(
             highlightColor: Colors.transparent,
             splashRadius: AppSize.extraRadius,
