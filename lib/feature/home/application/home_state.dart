@@ -5,6 +5,7 @@ class HomeState with _$HomeState {
   const factory HomeState({
     @Default([]) List<Province> provinces,
     Province? provice,
+    RealEstateFilterInput? filter,
     @Default([]) List<PostRealEstate> estates,
     @Default(Status.idle()) Status status,
   }) = _HomeState;

@@ -298,59 +298,59 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                   children: [
                                     Flexible(
                                       child: Text(
-                                        state.post?.realEstate.name ?? '',
+                                        state.post?.title ?? '',
                                         style: context.textTheme.headlineSmall
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
                                         ),
                                       ),
                                     ),
-                                    AppSize.smallHeightDimens.verticalSpace,
-                                    Flexible(
-                                      child: BlocProvider(
-                                        create: (context) =>
-                                            getIt.call<AddressBuilderCubit>()
-                                              ..onLoadAdress(
-                                                proviceId: state
-                                                        .post
-                                                        ?.realEstate
-                                                        .provinceId ??
-                                                    '',
-                                                wardId: state.post?.realEstate
-                                                        .wardId ??
-                                                    '',
-                                                districtId: state
-                                                        .post
-                                                        ?.realEstate
-                                                        .districtId ??
-                                                    '',
-                                              ),
-                                        child: BlocBuilder<AddressBuilderCubit,
-                                            AddressBuilderState>(
-                                          builder: (context, addressState) {
-                                            final isVi = context
-                                                    .read<AppBloc>()
-                                                    .state
-                                                    .locale
-                                                    .languageCode ==
-                                                'vi';
-                                            return Text(
-                                              (state.post?.realEstate.address ??
-                                                      '') +
-                                                  (addressState.buildAddress(
-                                                          context) ??
-                                                      ''),
-                                              style: context
-                                                  .textTheme.bodyMedium
-                                                  ?.copyWith(
-                                                color: AppColor
-                                                    .kNeutrals_.shade400,
-                                              ),
-                                            );
-                                          },
-                                        ),
-                                      ),
-                                    ),
+                                    // AppSize.smallHeightDimens.verticalSpace,
+                                    // Flexible(
+                                    //   child: BlocProvider(
+                                    //     create: (context) =>
+                                    //         getIt.call<AddressBuilderCubit>()
+                                    //           ..onLoadAdress(
+                                    //             proviceId: state
+                                    //                     .post
+                                    //                     ?.realEstate
+                                    //                     .provinceId ??
+                                    //                 '',
+                                    //             wardId: state.post?.realEstate
+                                    //                     .wardId ??
+                                    //                 '',
+                                    //             districtId: state
+                                    //                     .post
+                                    //                     ?.realEstate
+                                    //                     .districtId ??
+                                    //                 '',
+                                    //           ),
+                                    //     child: BlocBuilder<AddressBuilderCubit,
+                                    //         AddressBuilderState>(
+                                    //       builder: (context, addressState) {
+                                    //         final isVi = context
+                                    //                 .read<AppBloc>()
+                                    //                 .state
+                                    //                 .locale
+                                    //                 .languageCode ==
+                                    //             'vi';
+                                    //         return Text(
+                                    //           (state.post?.realEstate.address ??
+                                    //                   '') +
+                                    //               (addressState.buildAddress(
+                                    //                       context) ??
+                                    //                   ''),
+                                    //           style: context
+                                    //               .textTheme.bodyMedium
+                                    //               ?.copyWith(
+                                    //             color: AppColor
+                                    //                 .kNeutrals_.shade400,
+                                    //           ),
+                                    //         );
+                                    //       },
+                                    //     ),
+                                    //   ),
+                                    // ),
                                   ],
                                 );
                               },

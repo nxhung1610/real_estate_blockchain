@@ -49,6 +49,19 @@ class _WInfoHouse extends StatelessWidget {
                   ),
                 ],
               ),
+              AppSize.mediumHeightDimens.verticalSpace,
+              Text(
+                post?.description ?? "",
+                style: context.textTheme.bodyMedium?.copyWith(),
+              ),
+              AppSize.largeHeightDimens.verticalSpace,
+              Text(
+                s.basicInformation,
+                style: context.textTheme.bodyLarge?.copyWith(
+                  color: AppColor.kNeutrals_,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
               AppSize.largeHeightDimens.verticalSpace,
               Column(
                 children: [

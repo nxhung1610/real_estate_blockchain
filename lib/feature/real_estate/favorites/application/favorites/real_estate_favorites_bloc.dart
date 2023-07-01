@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:async/async.dart';
 import 'package:bloc/bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';

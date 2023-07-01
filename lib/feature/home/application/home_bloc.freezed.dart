@@ -20,18 +20,21 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(Province? provice) onProviceChange,
+    required TResult Function(RealEstateFilterInput? filter) onFilterChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(Province? provice)? onProviceChange,
+    TResult? Function(RealEstateFilterInput? filter)? onFilterChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(Province? provice)? onProviceChange,
+    TResult Function(RealEstateFilterInput? filter)? onFilterChange,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeEventOnStarted value) onStarted,
     required TResult Function(HomeEventOnProviceChange value) onProviceChange,
+    required TResult Function(_HomeEventOnFilterChange value) onFilterChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeEventOnStarted value)? onStarted,
     TResult? Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult? Function(_HomeEventOnFilterChange value)? onFilterChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeEventOnStarted value)? onStarted,
     TResult Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult Function(_HomeEventOnFilterChange value)? onFilterChange,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(Province? provice) onProviceChange,
+    required TResult Function(RealEstateFilterInput? filter) onFilterChange,
   }) {
     return onStarted();
   }
@@ -122,6 +129,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(Province? provice)? onProviceChange,
+    TResult? Function(RealEstateFilterInput? filter)? onFilterChange,
   }) {
     return onStarted?.call();
   }
@@ -131,6 +139,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(Province? provice)? onProviceChange,
+    TResult Function(RealEstateFilterInput? filter)? onFilterChange,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -144,6 +153,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeEventOnStarted value) onStarted,
     required TResult Function(HomeEventOnProviceChange value) onProviceChange,
+    required TResult Function(_HomeEventOnFilterChange value) onFilterChange,
   }) {
     return onStarted(this);
   }
@@ -153,6 +163,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeEventOnStarted value)? onStarted,
     TResult? Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult? Function(_HomeEventOnFilterChange value)? onFilterChange,
   }) {
     return onStarted?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_HomeEventOnStarted implements _HomeEventOnStarted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeEventOnStarted value)? onStarted,
     TResult Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult Function(_HomeEventOnFilterChange value)? onFilterChange,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -243,6 +255,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult when<TResult extends Object?>({
     required TResult Function() onStarted,
     required TResult Function(Province? provice) onProviceChange,
+    required TResult Function(RealEstateFilterInput? filter) onFilterChange,
   }) {
     return onProviceChange(provice);
   }
@@ -252,6 +265,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onStarted,
     TResult? Function(Province? provice)? onProviceChange,
+    TResult? Function(RealEstateFilterInput? filter)? onFilterChange,
   }) {
     return onProviceChange?.call(provice);
   }
@@ -261,6 +275,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onStarted,
     TResult Function(Province? provice)? onProviceChange,
+    TResult Function(RealEstateFilterInput? filter)? onFilterChange,
     required TResult orElse(),
   }) {
     if (onProviceChange != null) {
@@ -274,6 +289,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeEventOnStarted value) onStarted,
     required TResult Function(HomeEventOnProviceChange value) onProviceChange,
+    required TResult Function(_HomeEventOnFilterChange value) onFilterChange,
   }) {
     return onProviceChange(this);
   }
@@ -283,6 +299,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeEventOnStarted value)? onStarted,
     TResult? Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult? Function(_HomeEventOnFilterChange value)? onFilterChange,
   }) {
     return onProviceChange?.call(this);
   }
@@ -292,6 +309,7 @@ class _$HomeEventOnProviceChange implements HomeEventOnProviceChange {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeEventOnStarted value)? onStarted,
     TResult Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult Function(_HomeEventOnFilterChange value)? onFilterChange,
     required TResult orElse(),
   }) {
     if (onProviceChange != null) {
@@ -312,9 +330,166 @@ abstract class HomeEventOnProviceChange implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$_HomeEventOnFilterChangeCopyWith<$Res> {
+  factory _$$_HomeEventOnFilterChangeCopyWith(_$_HomeEventOnFilterChange value,
+          $Res Function(_$_HomeEventOnFilterChange) then) =
+      __$$_HomeEventOnFilterChangeCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RealEstateFilterInput? filter});
+
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class __$$_HomeEventOnFilterChangeCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_HomeEventOnFilterChange>
+    implements _$$_HomeEventOnFilterChangeCopyWith<$Res> {
+  __$$_HomeEventOnFilterChangeCopyWithImpl(_$_HomeEventOnFilterChange _value,
+      $Res Function(_$_HomeEventOnFilterChange) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filter = freezed,
+  }) {
+    return _then(_$_HomeEventOnFilterChange(
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
+
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_HomeEventOnFilterChange implements _HomeEventOnFilterChange {
+  const _$_HomeEventOnFilterChange({this.filter});
+
+  @override
+  final RealEstateFilterInput? filter;
+
+  @override
+  String toString() {
+    return 'HomeEvent.onFilterChange(filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HomeEventOnFilterChange &&
+            (identical(other.filter, filter) || other.filter == filter));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, filter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_HomeEventOnFilterChangeCopyWith<_$_HomeEventOnFilterChange>
+      get copyWith =>
+          __$$_HomeEventOnFilterChangeCopyWithImpl<_$_HomeEventOnFilterChange>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onStarted,
+    required TResult Function(Province? provice) onProviceChange,
+    required TResult Function(RealEstateFilterInput? filter) onFilterChange,
+  }) {
+    return onFilterChange(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onStarted,
+    TResult? Function(Province? provice)? onProviceChange,
+    TResult? Function(RealEstateFilterInput? filter)? onFilterChange,
+  }) {
+    return onFilterChange?.call(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onStarted,
+    TResult Function(Province? provice)? onProviceChange,
+    TResult Function(RealEstateFilterInput? filter)? onFilterChange,
+    required TResult orElse(),
+  }) {
+    if (onFilterChange != null) {
+      return onFilterChange(filter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeEventOnStarted value) onStarted,
+    required TResult Function(HomeEventOnProviceChange value) onProviceChange,
+    required TResult Function(_HomeEventOnFilterChange value) onFilterChange,
+  }) {
+    return onFilterChange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HomeEventOnStarted value)? onStarted,
+    TResult? Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult? Function(_HomeEventOnFilterChange value)? onFilterChange,
+  }) {
+    return onFilterChange?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeEventOnStarted value)? onStarted,
+    TResult Function(HomeEventOnProviceChange value)? onProviceChange,
+    TResult Function(_HomeEventOnFilterChange value)? onFilterChange,
+    required TResult orElse(),
+  }) {
+    if (onFilterChange != null) {
+      return onFilterChange(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HomeEventOnFilterChange implements HomeEvent {
+  const factory _HomeEventOnFilterChange(
+      {final RealEstateFilterInput? filter}) = _$_HomeEventOnFilterChange;
+
+  RealEstateFilterInput? get filter;
+  @JsonKey(ignore: true)
+  _$$_HomeEventOnFilterChangeCopyWith<_$_HomeEventOnFilterChange>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   List<Province> get provinces => throw _privateConstructorUsedError;
   Province? get provice => throw _privateConstructorUsedError;
+  RealEstateFilterInput? get filter => throw _privateConstructorUsedError;
   List<PostRealEstate> get estates => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
@@ -331,9 +506,11 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {List<Province> provinces,
       Province? provice,
+      RealEstateFilterInput? filter,
       List<PostRealEstate> estates,
       Status status});
 
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
   $StatusCopyWith<$Res> get status;
 }
 
@@ -352,6 +529,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? provinces = null,
     Object? provice = freezed,
+    Object? filter = freezed,
     Object? estates = null,
     Object? status = null,
   }) {
@@ -364,6 +542,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.provice
           : provice // ignore: cast_nullable_to_non_nullable
               as Province?,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
       estates: null == estates
           ? _value.estates
           : estates // ignore: cast_nullable_to_non_nullable
@@ -373,6 +555,18 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RealEstateFilterInputCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
+
+    return $RealEstateFilterInputCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value) as $Val);
+    });
   }
 
   @override
@@ -394,9 +588,12 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   $Res call(
       {List<Province> provinces,
       Province? provice,
+      RealEstateFilterInput? filter,
       List<PostRealEstate> estates,
       Status status});
 
+  @override
+  $RealEstateFilterInputCopyWith<$Res>? get filter;
   @override
   $StatusCopyWith<$Res> get status;
 }
@@ -414,6 +611,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
   $Res call({
     Object? provinces = null,
     Object? provice = freezed,
+    Object? filter = freezed,
     Object? estates = null,
     Object? status = null,
   }) {
@@ -426,6 +624,10 @@ class __$$_HomeStateCopyWithImpl<$Res>
           ? _value.provice
           : provice // ignore: cast_nullable_to_non_nullable
               as Province?,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as RealEstateFilterInput?,
       estates: null == estates
           ? _value._estates
           : estates // ignore: cast_nullable_to_non_nullable
@@ -444,6 +646,7 @@ class _$_HomeState implements _HomeState {
   const _$_HomeState(
       {final List<Province> provinces = const [],
       this.provice,
+      this.filter,
       final List<PostRealEstate> estates = const [],
       this.status = const Status.idle()})
       : _provinces = provinces,
@@ -460,6 +663,8 @@ class _$_HomeState implements _HomeState {
 
   @override
   final Province? provice;
+  @override
+  final RealEstateFilterInput? filter;
   final List<PostRealEstate> _estates;
   @override
   @JsonKey()
@@ -475,7 +680,7 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(provinces: $provinces, provice: $provice, estates: $estates, status: $status)';
+    return 'HomeState(provinces: $provinces, provice: $provice, filter: $filter, estates: $estates, status: $status)';
   }
 
   @override
@@ -486,6 +691,7 @@ class _$_HomeState implements _HomeState {
             const DeepCollectionEquality()
                 .equals(other._provinces, _provinces) &&
             (identical(other.provice, provice) || other.provice == provice) &&
+            (identical(other.filter, filter) || other.filter == filter) &&
             const DeepCollectionEquality().equals(other._estates, _estates) &&
             (identical(other.status, status) || other.status == status));
   }
@@ -495,6 +701,7 @@ class _$_HomeState implements _HomeState {
       runtimeType,
       const DeepCollectionEquality().hash(_provinces),
       provice,
+      filter,
       const DeepCollectionEquality().hash(_estates),
       status);
 
@@ -509,6 +716,7 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final List<Province> provinces,
       final Province? provice,
+      final RealEstateFilterInput? filter,
       final List<PostRealEstate> estates,
       final Status status}) = _$_HomeState;
 
@@ -516,6 +724,8 @@ abstract class _HomeState implements HomeState {
   List<Province> get provinces;
   @override
   Province? get provice;
+  @override
+  RealEstateFilterInput? get filter;
   @override
   List<PostRealEstate> get estates;
   @override

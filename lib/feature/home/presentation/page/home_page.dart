@@ -15,6 +15,7 @@ import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custo
 import 'package:real_estate_blockchain/feature/home/application/home_bloc.dart';
 import 'package:real_estate_blockchain/feature/home/module.dart';
 import 'package:real_estate_blockchain/feature/home/presentation/widget/house_newsfeed_shimmer.dart';
+import 'package:real_estate_blockchain/feature/house_filter/module.dart';
 import 'package:real_estate_blockchain/feature/post/detail/presentation/models/post_real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
@@ -149,7 +150,14 @@ class _HomePageState extends State<HomePage>
               height: iconSize,
               color: iconColor,
             ),
-            onPressed: () {},
+            onPressed: () async {
+              final filter = await HouseFilterPage.show(context);
+              if (filter != null && mounted) {
+                context
+                    .read<HomeBloc>()
+                    .add(HomeEvent.onFilterChange(filter: filter));
+              }
+            },
           ),
           12.w.horizontalSpace,
           IconButton(

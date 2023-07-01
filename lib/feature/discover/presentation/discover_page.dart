@@ -19,6 +19,7 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/discover/module.dart';
 import 'package:real_estate_blockchain/feature/house_filter/presentation/house_filter_page.dart';
+import 'package:real_estate_blockchain/feature/post/detail/presentation/models/post_real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/search/presentation/models/search_page_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
@@ -367,7 +368,7 @@ class _DiscoverPageState extends State<DiscoverPage>
                                         horizontal: AppSize.extraWidthDimens,
                                       ),
                                       child: _RealEstateSelected(
-                                        item: item.realEstate,
+                                        item: item,
                                         isSelected:
                                             item.id == state.postSelected?.id,
                                         onSelected: (isSelected) {

@@ -11,7 +11,7 @@ class _RealEstateSelected extends StatefulWidget {
     _isSelected = isSelected;
   }
 
-  final RealEstate item;
+  final PostRealEstate item;
   late bool _isSelected = false;
   final void Function(bool isSelected) onSelected;
 
@@ -47,8 +47,8 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
         },
         onDoubleTap: () {
           context.push(
-            $appRoute.realEstateDetail,
-            extra: RealEstateDetailPageParams(
+            $appRoute.postRealEstateDetail.url,
+            extra: PostRealEstateDetailPageParams(
               id: widget.item.id.toString(),
               onSuccess: () {
                 context.read<DiscoverBloc>().add(
@@ -70,7 +70,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                   height: 80.h,
                   width: 94.w,
                   child: ImageCustom.network(
-                    widget.item.images?.firstOrNull?.url ?? '',
+                    widget.item.realEstate.images?.firstOrNull?.url ?? '',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -87,7 +87,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        widget.item.name,
+                        widget.item.realEstate.name,
                         style: context.textTheme.bodyLarge?.copyWith(
                           color: context.textTheme.displayLarge?.color,
                           fontWeight: FontWeight.bold,
@@ -109,7 +109,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                           AppSize.smallWidthDimens.horizontalSpace,
                           Flexible(
                             child: Text(
-                              widget.item.noWc?.toString() ?? '0',
+                              widget.item.realEstate.noWc?.toString() ?? '0',
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
@@ -129,7 +129,8 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                           AppSize.smallWidthDimens.horizontalSpace,
                           Flexible(
                             child: Text(
-                              widget.item.noBedrooms?.toString() ?? '0',
+                              widget.item.realEstate.noBedrooms?.toString() ??
+                                  '0',
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: AppColor.kIconColorSecondary(
                                   context.watch<AppBloc>().state.mode,
@@ -150,7 +151,7 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                           Text.rich(
                             TextSpan(
                               text: NumberFormat.currency(symbol: 'm2')
-                                  .format(widget.item.area),
+                                  .format(widget.item.realEstate.area),
                               // children: [
                               //   const TextSpan(text: ' '),
                               //   TextSpan(
@@ -174,7 +175,8 @@ class _RealEstateSelectedState extends State<_RealEstateSelected> {
                       AppSize.mediumHeightDimens.verticalSpace,
                       Text(
                         NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                            .format(widget.item.price * (widget.item.area ?? 0))
+                            .format(widget.item.realEstate.price *
+                                (widget.item.realEstate.area ?? 0))
                             .toString(),
                         style: context.textTheme.bodyLarge?.copyWith(
                           color: AppColor.kPrimary1,

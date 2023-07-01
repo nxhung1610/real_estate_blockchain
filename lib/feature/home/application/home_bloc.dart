@@ -5,7 +5,9 @@ import 'package:real_estate_blockchain/data/province/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';
@@ -62,6 +64,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(state.copyWith(status: Status.failure(value: e)));
       } finally {
         emit(state.copyWith(status: const Status.idle()));
+      }
+    });
+    on<_HomeEventOnFilterChange>((event, emit) {
+      try {} catch (e, trace) {
+        printLog(this, message: e, trace: trace, error: e);
       }
     });
   }

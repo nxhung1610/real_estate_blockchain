@@ -28,6 +28,7 @@ abstract class IRealEstateRepository {
 
   Future<Either<RealEstateFailure, List<PostRealEstate>>> newfeeds({
     Province? provice,
+    RealEstateFilterInput? filter,
   });
 
   Future<Either<RealEstateFailure, List<RealEstate>>> favorites();

@@ -113,6 +113,7 @@ class RealEstateRepository extends IRealEstateRepository {
   @override
   Future<Either<RealEstateFailure, List<PostRealEstate>>> newfeeds({
     Province? provice,
+    RealEstateFilterInput? filter,
   }) async {
     try {
       final res = await _apiRemote.post<List<PostRealEstateResponse>>(

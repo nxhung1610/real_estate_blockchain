@@ -6,4 +6,7 @@ class HomeEvent with _$HomeEvent {
 
   const factory HomeEvent.onProviceChange({Province? provice}) =
       HomeEventOnProviceChange;
+
+  const factory HomeEvent.onFilterChange({RealEstateFilterInput? filter}) =
+      _HomeEventOnFilterChange;
 }
