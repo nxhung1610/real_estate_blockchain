@@ -221,7 +221,7 @@ class HouseNewsFeed extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              value.realEstate.name,
+                              value.title ?? '',
                               style: context.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.w500,
                                 color: context.textTheme.displayLarge?.color,
