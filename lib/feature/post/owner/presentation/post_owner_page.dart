@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:real_estate_blockchain/assets/assets.gen.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -15,6 +17,7 @@ import 'package:real_estate_blockchain/feature/post/detail/presentation/models/p
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:dartz/dartz.dart' as dartz;
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import '../application/post_owner_bloc.dart';
 
 class PostOwnerPage extends StatefulWidget {
@@ -57,17 +60,17 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
           children: [
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
-              sliver: SliverToBoxAdapter(
-                child: BlocSelector<PostOwnerBloc, PostOwnerState,
-                    dartz.Tuple2<Status, List<PostRealEstate>>>(
-                  selector: (state) {
-                    return dartz.Tuple2(state.status, state.posts);
-                  },
-                  builder: (context, state) {
-                    final posts = state.value2;
-                    final status = state.value1;
-                    if (status is StatusLoading) {
-                      return ListView.separated(
+              sliver: BlocSelector<PostOwnerBloc, PostOwnerState,
+                  dartz.Tuple2<Status, List<PostRealEstate>>>(
+                selector: (state) {
+                  return dartz.Tuple2(state.status, state.posts);
+                },
+                builder: (context, state) {
+                  final posts = state.value2;
+                  final status = state.value1;
+                  if (status is StatusLoading) {
+                    return SliverToBoxAdapter(
+                      child: ListView.separated(
                         physics: const NeverScrollableScrollPhysics(
                             parent: BouncingScrollPhysics()),
                         padding: EdgeInsets.symmetric(
@@ -81,9 +84,35 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
                           return AppSize.extraHeightDimens.verticalSpace;
                         },
                         itemCount: 3,
-                      );
-                    }
-                    return ListView.separated(
+                      ),
+                    );
+                  }
+                  if (posts.isEmpty) {
+                    return SliverFillRemaining(
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Assets.images.box.image(
+                              width: 150.w,
+                              height: 150.h,
+                              color: AppColor.kNeutrals4,
+                            ),
+                            AppSize.mediumHeightDimens.verticalSpace,
+                            Text(
+                              s.noDataFound,
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+
+                  return SliverToBoxAdapter(
+                    child: ListView.separated(
                       physics: const NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.symmetric(
                         vertical: AppSize.extraHeightDimens,
@@ -107,9 +136,9 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
                         return AppSize.extraHeightDimens.verticalSpace;
                       },
                       itemCount: posts.length,
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ],

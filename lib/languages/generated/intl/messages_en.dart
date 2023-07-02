@@ -237,6 +237,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Number of bedroom"),
         "noBid": MessageLookupByLibrary.simpleMessage("No bid found"),
+        "noDataFound": MessageLookupByLibrary.simpleMessage("No data found"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
         "normal": MessageLookupByLibrary.simpleMessage("Normal"),
         "north": MessageLookupByLibrary.simpleMessage("North"),

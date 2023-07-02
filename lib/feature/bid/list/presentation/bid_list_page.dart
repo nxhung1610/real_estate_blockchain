@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
@@ -105,20 +106,33 @@ class _BidListPageState extends State<BidListPage> {
                 sliver: PagedSliverList<int, BidAuction>.separated(
                   pagingController: pageController,
                   builderDelegate: PagedChildBuilderDelegate(
+                    noItemsFoundIndicatorBuilder: (context) {
+                      return Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Assets.images.box.image(
+                              width: 150.w,
+                              height: 150.h,
+                              color: AppColor.kNeutrals4,
+                            ),
+                            AppSize.mediumHeightDimens.verticalSpace,
+                            Text(
+                              s.noDataFound,
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                     itemBuilder: (context, item, index) {
                       return WBidItem(
                         item: item,
                       );
                     },
                     firstPageErrorIndicatorBuilder: (context) {
-                      return Center(
-                        child: Text(
-                          s.noBid,
-                          style: context.textTheme.bodyLarge?.copyWith(),
-                        ),
-                      );
-                    },
-                    noItemsFoundIndicatorBuilder: (context) {
                       return Center(
                         child: Text(
                           s.noBid,

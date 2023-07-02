@@ -269,5 +269,6 @@
   "appInformation" : "Thông tin về ứng dụng",
   "backToMainMenu" :"Mục chính",
   "mainCatalog" : "Danh mục chính",
-  "appPolicies" :"Điều khoản về ứng dụng" 
+  "appPolicies" :"Điều khoản về ứng dụng" ,
+  "noDataFound" : "Không tìm thấy dữ liệu"
 }

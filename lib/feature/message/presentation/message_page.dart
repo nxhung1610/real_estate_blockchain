@@ -16,9 +16,11 @@ import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custo
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_error.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/widget_extensions.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
 
+import '../../../assets/assets.gen.dart';
 import '../module.dart';
 
 class MessagePage extends StatefulWidget {
@@ -61,40 +63,60 @@ class _MessagePageState extends State<MessagePage>
             final status = tuple2.value2;
             final messageWidget = WCustomRefreshScrollView(
               children: [
-                SliverToBoxAdapter(
-                  child: ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppSize.extraWidthDimens),
-                    itemBuilder: (context, index) {
-                      final item = rooms[index];
-                      return MessagePersonItem(
-                        onPressed: () {
-                          context.push($appRoute.messageChat, extra: {
-                            "params": ChatRoomBlocParams(
-                              messageBloc: context.read<MessageBloc>(),
-                              authBloc: context.read<AuthBloc>(),
+                rooms.isEmpty
+                    ? SliverFillRemaining(
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Assets.images.box.image(
+                                width: 150.w,
+                                height: 150.h,
+                                color: AppColor.kNeutrals4,
+                              ),
+                              AppSize.mediumHeightDimens.verticalSpace,
+                              Text(
+                                s.noDataFound,
+                                style: context.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    : SliverToBoxAdapter(
+                        child: ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            final item = rooms[index];
+                            return MessagePersonItem(
+                              onPressed: () {
+                                context.push($appRoute.messageChat, extra: {
+                                  "params": ChatRoomBlocParams(
+                                    messageBloc: context.read<MessageBloc>(),
+                                    authBloc: context.read<AuthBloc>(),
+                                    room: item,
+                                  ),
+                                });
+                              },
                               room: item,
-                            ),
-                          });
-                        },
-                        room: item,
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return Divider(
-                        indent: AppSize.extraWidthDimens,
-                        endIndent: AppSize.extraWidthDimens,
-                        thickness: 1.r,
-                        height: 0,
-                        color: AppColor.kBorderColor(
-                            context.watch<AppBloc>().state.mode),
-                      );
-                    },
-                    itemCount: rooms.length,
-                  ),
-                )
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return Divider(
+                              indent: AppSize.extraWidthDimens,
+                              endIndent: AppSize.extraWidthDimens,
+                              thickness: 1.r,
+                              height: 0,
+                              color: AppColor.kBorderColor(
+                                  context.watch<AppBloc>().state.mode),
+                            );
+                          },
+                          itemCount: rooms.length,
+                        ),
+                      )
               ],
               onRefresh: () {
                 context

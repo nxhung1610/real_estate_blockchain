@@ -347,6 +347,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/box.png
+  AssetGenImage get box => const AssetGenImage('assets/images/box.png');
+
   /// File path: assets/images/image_house.png
   AssetGenImage get imageHouse =>
       const AssetGenImage('assets/images/image_house.png');
@@ -371,8 +374,15 @@ class $AssetsImagesGen {
   AssetGenImage get zalo => const AssetGenImage('assets/images/zalo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [imageHouse, myHomeBackground, onboarding1, onboarding2, telegram, zalo];
+  List<AssetGenImage> get values => [
+        box,
+        imageHouse,
+        myHomeBackground,
+        onboarding1,
+        onboarding2,
+        telegram,
+        zalo
+      ];
 }
 
 class $AssetsLocationsGen {

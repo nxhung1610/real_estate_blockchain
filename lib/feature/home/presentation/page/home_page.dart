@@ -374,8 +374,26 @@ class __NewFeedState extends State<_NewFeed> {
               );
             }
             if (state.estates.isEmpty) {
-              return const SliverToBoxAdapter(
-                child: SizedBox(),
+              return SliverFillRemaining(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Assets.images.box.image(
+                        width: 150.w,
+                        height: 150.h,
+                        color: AppColor.kNeutrals4,
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Text(
+                        s.noDataFound,
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               );
             }
             return SliverToBoxAdapter(
