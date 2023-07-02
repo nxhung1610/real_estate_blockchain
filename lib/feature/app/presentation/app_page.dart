@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,16 +14,17 @@ import 'package:loader_overlay/loader_overlay.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_theme.dart';
+import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/connectivity/application/connectivity_bloc.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
-import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
 import 'package:real_estate_blockchain/feature/notification_app/application/notification_app/notification_app_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
+import 'package:real_estate_blockchain/feature/setting/application/setting_bloc.dart';
 import 'package:real_estate_blockchain/feature/splash/presentation/splash_page.dart';
 import 'package:real_estate_blockchain/feature/tour/review/model/tour_review_params.dart';
 import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
@@ -65,6 +67,10 @@ class AppPage extends StatelessWidget {
           create: (context) => getIt.call<NotificationAppBloc>()
             ..add(const NotificationAppEvent.onStared()),
         ),
+        BlocProvider(
+          create: (context) =>
+              getIt.call<SettingBloc>()..add(const SettingEventStarted()),
+        ),
       ],
       child: const _AppCommon(),
     );
@@ -84,6 +90,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   late final AppBloc appBloc;
   late final AuthBloc authBloc;
+  late final SettingBloc settingBloc;
 
   // Value manage process
   late final Completer processIntital;
@@ -107,6 +114,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
     super.initState();
     appBloc = context.read<AppBloc>();
     authBloc = context.read<AuthBloc>();
+    settingBloc = context.read<SettingBloc>();
     processIntital = Completer();
     processAuthen = Completer();
     processFlutterFire = Completer();
@@ -120,10 +128,39 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
         processFlutterFire.complete();
       }
     });
-    authBloc.initial();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await Future.delayed(const Duration(seconds: 1));
+      final isFingerprintEnabled = settingBloc.state.enableFingerprint;
+      final authLocal = getIt.get<IAuthLocalRepository>();
+      final token = await authLocal.getToken();
+      if (isFingerprintEnabled && token.isRight()) {
+        await _fingerAuth();
+      } else {
+        authBloc.initial();
+      }
+    });
 
     setupRouter(context);
     initialize();
+  }
+
+  _fingerAuth() async {
+    try {
+      await AuthBloc.fingerprintAuth();
+      authBloc.initial();
+    } catch (e, trace) {
+      printLog(
+        this,
+        message: "fingerprintAuth",
+        error: e,
+        trace: trace,
+      );
+      if (e is AuthError) {
+        await showOkAlertDialog(
+            context: context, title: "Lỗi xác thực", message: e.message);
+        _fingerAuth();
+      }
+    }
   }
 
   @override

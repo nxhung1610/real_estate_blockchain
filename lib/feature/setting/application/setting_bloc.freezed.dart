@@ -21,6 +21,7 @@ mixin _$SettingEvent {
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
     required TResult Function(bool value) onNotificationChanged,
+    required TResult Function(bool value) onFingerprintChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$SettingEvent {
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
     TResult? Function(bool value)? onNotificationChanged,
+    TResult? Function(bool value)? onFingerprintChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$SettingEvent {
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
     TResult Function(bool value)? onNotificationChanged,
+    TResult Function(bool value)? onFingerprintChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +48,8 @@ mixin _$SettingEvent {
         onDeleteAccount,
     required TResult Function(SettingEventOnNotificationChanged value)
         onNotificationChanged,
+    required TResult Function(SettingEventOnFingerprintChanged value)
+        onFingerprintChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +58,8 @@ mixin _$SettingEvent {
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult? Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult? Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +68,8 @@ mixin _$SettingEvent {
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,6 +134,7 @@ class _$SettingEventStarted implements SettingEventStarted {
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
     required TResult Function(bool value) onNotificationChanged,
+    required TResult Function(bool value) onFingerprintChanged,
   }) {
     return started();
   }
@@ -135,6 +145,7 @@ class _$SettingEventStarted implements SettingEventStarted {
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
     TResult? Function(bool value)? onNotificationChanged,
+    TResult? Function(bool value)? onFingerprintChanged,
   }) {
     return started?.call();
   }
@@ -145,6 +156,7 @@ class _$SettingEventStarted implements SettingEventStarted {
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
     TResult Function(bool value)? onNotificationChanged,
+    TResult Function(bool value)? onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,6 +173,8 @@ class _$SettingEventStarted implements SettingEventStarted {
         onDeleteAccount,
     required TResult Function(SettingEventOnNotificationChanged value)
         onNotificationChanged,
+    required TResult Function(SettingEventOnFingerprintChanged value)
+        onFingerprintChanged,
   }) {
     return started(this);
   }
@@ -172,6 +186,8 @@ class _$SettingEventStarted implements SettingEventStarted {
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult? Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult? Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
   }) {
     return started?.call(this);
   }
@@ -183,6 +199,8 @@ class _$SettingEventStarted implements SettingEventStarted {
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -240,6 +258,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
     required TResult Function(bool value) onNotificationChanged,
+    required TResult Function(bool value) onFingerprintChanged,
   }) {
     return onDeleteAccount();
   }
@@ -250,6 +269,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
     TResult? Function(bool value)? onNotificationChanged,
+    TResult? Function(bool value)? onFingerprintChanged,
   }) {
     return onDeleteAccount?.call();
   }
@@ -260,6 +280,7 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
     TResult Function(bool value)? onNotificationChanged,
+    TResult Function(bool value)? onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (onDeleteAccount != null) {
@@ -276,6 +297,8 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
         onDeleteAccount,
     required TResult Function(SettingEventOnNotificationChanged value)
         onNotificationChanged,
+    required TResult Function(SettingEventOnFingerprintChanged value)
+        onFingerprintChanged,
   }) {
     return onDeleteAccount(this);
   }
@@ -287,6 +310,8 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult? Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult? Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
   }) {
     return onDeleteAccount?.call(this);
   }
@@ -298,6 +323,8 @@ class _$SettingEventOnDeleteAccount implements SettingEventOnDeleteAccount {
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (onDeleteAccount != null) {
@@ -384,6 +411,7 @@ class _$SettingEventOnNotificationChanged
     required TResult Function() started,
     required TResult Function() onDeleteAccount,
     required TResult Function(bool value) onNotificationChanged,
+    required TResult Function(bool value) onFingerprintChanged,
   }) {
     return onNotificationChanged(value);
   }
@@ -394,6 +422,7 @@ class _$SettingEventOnNotificationChanged
     TResult? Function()? started,
     TResult? Function()? onDeleteAccount,
     TResult? Function(bool value)? onNotificationChanged,
+    TResult? Function(bool value)? onFingerprintChanged,
   }) {
     return onNotificationChanged?.call(value);
   }
@@ -404,6 +433,7 @@ class _$SettingEventOnNotificationChanged
     TResult Function()? started,
     TResult Function()? onDeleteAccount,
     TResult Function(bool value)? onNotificationChanged,
+    TResult Function(bool value)? onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (onNotificationChanged != null) {
@@ -420,6 +450,8 @@ class _$SettingEventOnNotificationChanged
         onDeleteAccount,
     required TResult Function(SettingEventOnNotificationChanged value)
         onNotificationChanged,
+    required TResult Function(SettingEventOnFingerprintChanged value)
+        onFingerprintChanged,
   }) {
     return onNotificationChanged(this);
   }
@@ -431,6 +463,8 @@ class _$SettingEventOnNotificationChanged
     TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult? Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult? Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
   }) {
     return onNotificationChanged?.call(this);
   }
@@ -442,6 +476,8 @@ class _$SettingEventOnNotificationChanged
     TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
     TResult Function(SettingEventOnNotificationChanged value)?
         onNotificationChanged,
+    TResult Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
     required TResult orElse(),
   }) {
     if (onNotificationChanged != null) {
@@ -463,8 +499,169 @@ abstract class SettingEventOnNotificationChanged implements SettingEvent {
 }
 
 /// @nodoc
+abstract class _$$SettingEventOnFingerprintChangedCopyWith<$Res> {
+  factory _$$SettingEventOnFingerprintChangedCopyWith(
+          _$SettingEventOnFingerprintChanged value,
+          $Res Function(_$SettingEventOnFingerprintChanged) then) =
+      __$$SettingEventOnFingerprintChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool value});
+}
+
+/// @nodoc
+class __$$SettingEventOnFingerprintChangedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$SettingEventOnFingerprintChanged>
+    implements _$$SettingEventOnFingerprintChangedCopyWith<$Res> {
+  __$$SettingEventOnFingerprintChangedCopyWithImpl(
+      _$SettingEventOnFingerprintChanged _value,
+      $Res Function(_$SettingEventOnFingerprintChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$SettingEventOnFingerprintChanged(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SettingEventOnFingerprintChanged
+    implements SettingEventOnFingerprintChanged {
+  const _$SettingEventOnFingerprintChanged({required this.value});
+
+  @override
+  final bool value;
+
+  @override
+  String toString() {
+    return 'SettingEvent.onFingerprintChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SettingEventOnFingerprintChanged &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SettingEventOnFingerprintChangedCopyWith<
+          _$SettingEventOnFingerprintChanged>
+      get copyWith => __$$SettingEventOnFingerprintChangedCopyWithImpl<
+          _$SettingEventOnFingerprintChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onDeleteAccount,
+    required TResult Function(bool value) onNotificationChanged,
+    required TResult Function(bool value) onFingerprintChanged,
+  }) {
+    return onFingerprintChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onDeleteAccount,
+    TResult? Function(bool value)? onNotificationChanged,
+    TResult? Function(bool value)? onFingerprintChanged,
+  }) {
+    return onFingerprintChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onDeleteAccount,
+    TResult Function(bool value)? onNotificationChanged,
+    TResult Function(bool value)? onFingerprintChanged,
+    required TResult orElse(),
+  }) {
+    if (onFingerprintChanged != null) {
+      return onFingerprintChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SettingEventStarted value) started,
+    required TResult Function(SettingEventOnDeleteAccount value)
+        onDeleteAccount,
+    required TResult Function(SettingEventOnNotificationChanged value)
+        onNotificationChanged,
+    required TResult Function(SettingEventOnFingerprintChanged value)
+        onFingerprintChanged,
+  }) {
+    return onFingerprintChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SettingEventStarted value)? started,
+    TResult? Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult? Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
+    TResult? Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
+  }) {
+    return onFingerprintChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SettingEventStarted value)? started,
+    TResult Function(SettingEventOnDeleteAccount value)? onDeleteAccount,
+    TResult Function(SettingEventOnNotificationChanged value)?
+        onNotificationChanged,
+    TResult Function(SettingEventOnFingerprintChanged value)?
+        onFingerprintChanged,
+    required TResult orElse(),
+  }) {
+    if (onFingerprintChanged != null) {
+      return onFingerprintChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingEventOnFingerprintChanged implements SettingEvent {
+  const factory SettingEventOnFingerprintChanged({required final bool value}) =
+      _$SettingEventOnFingerprintChanged;
+
+  bool get value;
+  @JsonKey(ignore: true)
+  _$$SettingEventOnFingerprintChangedCopyWith<
+          _$SettingEventOnFingerprintChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SettingState {
   bool get enableNotification => throw _privateConstructorUsedError;
+  bool get enableFingerprint => throw _privateConstructorUsedError;
+  bool get isFingerprintSupported => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -478,7 +675,11 @@ abstract class $SettingStateCopyWith<$Res> {
           SettingState value, $Res Function(SettingState) then) =
       _$SettingStateCopyWithImpl<$Res, SettingState>;
   @useResult
-  $Res call({bool enableNotification, Status status});
+  $Res call(
+      {bool enableNotification,
+      bool enableFingerprint,
+      bool isFingerprintSupported,
+      Status status});
 
   $StatusCopyWith<$Res> get status;
 }
@@ -497,12 +698,22 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
   @override
   $Res call({
     Object? enableNotification = null,
+    Object? enableFingerprint = null,
+    Object? isFingerprintSupported = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
       enableNotification: null == enableNotification
           ? _value.enableNotification
           : enableNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableFingerprint: null == enableFingerprint
+          ? _value.enableFingerprint
+          : enableFingerprint // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFingerprintSupported: null == isFingerprintSupported
+          ? _value.isFingerprintSupported
+          : isFingerprintSupported // ignore: cast_nullable_to_non_nullable
               as bool,
       status: null == status
           ? _value.status
@@ -528,7 +739,11 @@ abstract class _$$_SettingStateCopyWith<$Res>
       __$$_SettingStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool enableNotification, Status status});
+  $Res call(
+      {bool enableNotification,
+      bool enableFingerprint,
+      bool isFingerprintSupported,
+      Status status});
 
   @override
   $StatusCopyWith<$Res> get status;
@@ -546,12 +761,22 @@ class __$$_SettingStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? enableNotification = null,
+    Object? enableFingerprint = null,
+    Object? isFingerprintSupported = null,
     Object? status = null,
   }) {
     return _then(_$_SettingState(
       enableNotification: null == enableNotification
           ? _value.enableNotification
           : enableNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableFingerprint: null == enableFingerprint
+          ? _value.enableFingerprint
+          : enableFingerprint // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFingerprintSupported: null == isFingerprintSupported
+          ? _value.isFingerprintSupported
+          : isFingerprintSupported // ignore: cast_nullable_to_non_nullable
               as bool,
       status: null == status
           ? _value.status
@@ -565,18 +790,27 @@ class __$$_SettingStateCopyWithImpl<$Res>
 
 class _$_SettingState implements _SettingState {
   const _$_SettingState(
-      {this.enableNotification = false, this.status = const Status.idle()});
+      {this.enableNotification = false,
+      this.enableFingerprint = false,
+      this.isFingerprintSupported = false,
+      this.status = const Status.idle()});
 
   @override
   @JsonKey()
   final bool enableNotification;
   @override
   @JsonKey()
+  final bool enableFingerprint;
+  @override
+  @JsonKey()
+  final bool isFingerprintSupported;
+  @override
+  @JsonKey()
   final Status status;
 
   @override
   String toString() {
-    return 'SettingState(enableNotification: $enableNotification, status: $status)';
+    return 'SettingState(enableNotification: $enableNotification, enableFingerprint: $enableFingerprint, isFingerprintSupported: $isFingerprintSupported, status: $status)';
   }
 
   @override
@@ -586,11 +820,16 @@ class _$_SettingState implements _SettingState {
             other is _$_SettingState &&
             (identical(other.enableNotification, enableNotification) ||
                 other.enableNotification == enableNotification) &&
+            (identical(other.enableFingerprint, enableFingerprint) ||
+                other.enableFingerprint == enableFingerprint) &&
+            (identical(other.isFingerprintSupported, isFingerprintSupported) ||
+                other.isFingerprintSupported == isFingerprintSupported) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, enableNotification, status);
+  int get hashCode => Object.hash(runtimeType, enableNotification,
+      enableFingerprint, isFingerprintSupported, status);
 
   @JsonKey(ignore: true)
   @override
@@ -601,10 +840,17 @@ class _$_SettingState implements _SettingState {
 
 abstract class _SettingState implements SettingState {
   const factory _SettingState(
-      {final bool enableNotification, final Status status}) = _$_SettingState;
+      {final bool enableNotification,
+      final bool enableFingerprint,
+      final bool isFingerprintSupported,
+      final Status status}) = _$_SettingState;
 
   @override
   bool get enableNotification;
+  @override
+  bool get enableFingerprint;
+  @override
+  bool get isFingerprintSupported;
   @override
   Status get status;
   @override

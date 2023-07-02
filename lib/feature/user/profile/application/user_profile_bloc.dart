@@ -1,26 +1,24 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/file/data.dart';
-import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
 import 'package:real_estate_blockchain/data/user/domain/i_user_repostiory.dart';
 import 'package:real_estate_blockchain/data/user/domain/model/update_profile_input.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
+part 'user_profile_bloc.freezed.dart';
 part 'user_profile_event.dart';
 part 'user_profile_state.dart';
-part 'user_profile_bloc.freezed.dart';
 
 @injectable
 class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   final IFileRepository fileRepository;
-  final IUserRepistory userRepistory;
+  final IUserRepository userRepistory;
+
   UserProfileBloc(
       this.fileRepository, @factoryParam User user, this.userRepistory)
       : super(UserProfileState(user: user)) {

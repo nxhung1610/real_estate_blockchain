@@ -4,7 +4,6 @@ import 'package:real_estate_blockchain/feature/bid/router/bid_route.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_new_route.dart';
 import 'package:real_estate_blockchain/feature/main/module.dart';
-import 'package:real_estate_blockchain/feature/notification/application/notification_bloc.dart';
 import 'package:real_estate_blockchain/feature/notification/router/notification_route.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
 import 'package:real_estate_blockchain/feature/post/detail/router/post_real_estate_detail_router.dart';
@@ -17,12 +16,12 @@ import '../../dialogflow/router/dialogflow_route.dart';
 import '../../my_home/module.dart';
 import '../../post/owner/router/post_owner_router.dart';
 import '../../setting/router/setting_route.dart';
-import '../../tour/schedule_tour/router/schedule_tour_router.dart';
 
 final $appRoute = AppRoute('/', null);
 
 class AppRoute extends BaseRoute {
   AppRoute(super.root, super.path);
+
   // Route
   late final OnboardingRoute _onboardingRoute;
   late final MainRoute _mainRoute;
@@ -42,17 +41,26 @@ class AppRoute extends BaseRoute {
 
   // Path
   String get onboarding => _onboardingRoute.url;
+
   String get authRegister => _authRoute.register;
+
   String get authLogin => _authRoute.login;
+
   String get authForgotPassword => _authRoute.forgotPassword;
+
   String get main => _mainRoute.url;
+
   String get homeAddNewProperty => _houseAddNewRoute.url;
+
   String get messageChat => _mainRoute.messageChat;
+
   String get search => _searchRoute.url;
 
   String get realEstateDetail => _realEstateRouter.detail;
 
   String get realEstateFavorites => _realEstateRouter.favorites;
+
+  String get realEstateNews => _realEstateRouter.news;
 
   @override
   List<RouteBase> get routes => [

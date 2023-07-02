@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/data/auth/infrastructure/auth_constants.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:real_estate_blockchain/data/file/domain/model/app_image.dart';
-import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/image_response.dart';
 import 'package:real_estate_blockchain/data/user/domain/i_user_repostiory.dart';
 import 'package:real_estate_blockchain/data/user/domain/model/update_profile_input.dart';
 import 'package:real_estate_blockchain/data/user/infrastructure/dto/user_avatar_upload_request.dart';
@@ -11,11 +10,13 @@ import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../domain/user_failure.dart';
 
-@LazySingleton(as: IUserRepistory)
-class UserRepostory extends IUserRepistory {
+@LazySingleton(as: IUserRepository)
+class UserRepository extends IUserRepository {
   final ApiRemote _apiRemote;
+  final ApiLocalHive _apiLocalHive;
 
-  UserRepostory(this._apiRemote);
+  UserRepository(this._apiRemote, this._apiLocalHive);
+
   @override
   Future<Either<UserFailure, int>> updateAvatar(String path) async {
     try {
@@ -70,5 +71,18 @@ class UserRepostory extends IUserRepistory {
       printLog(this, message: e, error: e, trace: trace);
       return left(const UserFailure.deleteAccount());
     }
+  }
+
+  @override
+  Future<void> updateFingerprintStatus(bool value) async {
+    await _apiLocalHive.put(
+        AuthConstants.local.key, AuthConstants.local.enableFingerprint, value);
+  }
+
+  @override
+  Future<bool> getFingerprintStatus() async {
+    return await _apiLocalHive.get(
+            AuthConstants.local.key, AuthConstants.local.enableFingerprint) ??
+        false;
   }
 }

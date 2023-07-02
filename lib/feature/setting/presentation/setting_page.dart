@@ -8,13 +8,16 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
+import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/setting/application/setting_action.dart';
 import 'package:real_estate_blockchain/feature/setting/presentation/widget/delete_account_success.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
+import 'package:real_estate_blockchain/utils/utils.dart';
 
 import '../application/setting_bloc.dart';
+
 part './widget/_w_group_item.dart';
 part './widget/_w_item.dart';
 part 'setting_page.freezed.dart';
@@ -29,6 +32,7 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<SettingBloc>();
     final s = S.of(context);
     return BlocListener<SettingBloc, SettingState>(
       listener: (context, state) {
@@ -75,17 +79,50 @@ class _SettingPageState extends State<SettingPage> {
                       type: _WidgetItemType.switchAction(
                         value: state,
                         onSwitch: (value) {
-                          context.read<SettingBloc>().add(
-                                SettingEvent.onNotificationChanged(
-                                  value: value,
-                                ),
-                              );
+                          bloc.add(
+                            SettingEvent.onNotificationChanged(
+                              value: value,
+                            ),
+                          );
                         },
                       ),
                       title: s.notification,
                     );
                   },
-                )
+                ),
+                BlocSelector<SettingBloc, SettingState, bool>(
+                  selector: (state) {
+                    return state.enableFingerprint;
+                  },
+                  builder: (context, enableFingerprint) {
+                    final isFingerprintSupported =
+                        bloc.state.isFingerprintSupported;
+                    if (!isFingerprintSupported) {
+                      return kEmpty;
+                    }
+                    return _WidgetItem(
+                      type: _WidgetItemType.switchAction(
+                        value: enableFingerprint,
+                        onSwitch: (value) async {
+                          try {
+                            await AuthBloc.fingerprintAuth();
+                            bloc.add(
+                              SettingEvent.onFingerprintChanged(
+                                value: value,
+                              ),
+                            );
+                          } catch (e, trace) {
+                            if (e is AuthError) {
+                              AppDialog.of(context).showAppDialog(
+                                  message: e.message, title: "Lỗi xác thực");
+                            }
+                          }
+                        },
+                      ),
+                      title: "Đăng nhập bằng vân tay",
+                    );
+                  },
+                ),
               ]),
               AppSize.largeHeightDimens.verticalSpace,
               _WidgetGroupItem(
@@ -106,9 +143,9 @@ class _SettingPageState extends State<SettingPage> {
                         message: s.deleteAccountMessageDialog,
                         type: AppDialogType.confirm,
                         onPositive: () {
-                          context.read<SettingBloc>().add(
-                                const SettingEvent.onDeleteAccount(),
-                              );
+                          bloc.add(
+                            const SettingEvent.onDeleteAccount(),
+                          );
                         },
                         onNegative: () {},
                       );

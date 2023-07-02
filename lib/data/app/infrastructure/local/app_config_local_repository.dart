@@ -1,8 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:real_estate_blockchain/data/app/data.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
-import 'package:dartz/dartz.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 
 @Singleton(as: IAppConfigLocalRepository)
 class AppConfigLocalRepository implements IAppConfigLocalRepository {
@@ -13,8 +12,9 @@ class AppConfigLocalRepository implements IAppConfigLocalRepository {
   @override
   Future<Either<AppConfigFailure, bool>> isFirstLaunch() async {
     try {
-      return right(await _apiLocalHive.get<bool>(
-          AppConstants.kAppConfig.key, AppConstants.kAppConfig.kFirstLaunch));
+      return right(await _apiLocalHive.get<bool>(AppConstants.kAppConfig.key,
+              AppConstants.kAppConfig.kFirstLaunch) ??
+          false);
     } catch (e) {
       return left(const AppConfigFailure.unexpected());
     }

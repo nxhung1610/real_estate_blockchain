@@ -10,8 +10,6 @@ import 'package:real_estate_blockchain/feature/app/presentation/app_page.dart';
 import 'package:real_estate_blockchain/firebase_options.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 
-import 'firebase_options.dart';
-
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -36,6 +34,9 @@ Future<void> main() async {
   };
 
   // Bloc.observer = AppBlocObserver();
-  runApp(const AppPage());
+  runApp(const MaterialApp(
+    home: AppPage(),
+    debugShowCheckedModeBanner: false,
+  ));
   FlutterNativeSplash.remove();
 }

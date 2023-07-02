@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 extension CompareDates on DateTime {
@@ -44,8 +41,10 @@ extension FormatDate on DateTime {
 
   DateTime get endOfMonth {
     final totalDaysOfMonth = DateTime(year, month + 1, 0).day;
-    return DateTime(year, month, totalDaysOfMonth);
+    return DateTime(year, month, totalDaysOfMonth, 23, 59, 59);
   }
+
+  String get yyyyMMddHHmmss => DateFormat("yyyy/MM/dd HH:mm:ss").format(this);
 }
 
 enum DateTimeType {

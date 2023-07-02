@@ -1,6 +1,5 @@
-import 'package:injectable/injectable.dart';
-import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 
 @singleton
 class ApiLocalHive {
@@ -11,11 +10,11 @@ class ApiLocalHive {
     return await Hive.openBox<T>(boxName);
   }
 
-  Future<T> get<T>(String boxName, String key) async {
+  Future<T?> get<T>(String boxName, String key) async {
     try {
       final box = await _getBox(boxName);
       final data = box.get(key);
-      return data!;
+      return data;
     } catch (e) {
       await Hive.close();
       rethrow;

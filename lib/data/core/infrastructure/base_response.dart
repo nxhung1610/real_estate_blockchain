@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 class BaseResponse<T> {
   final bool success;
+
   // final int status;
   final T? data;
   final String? message;
@@ -17,11 +20,11 @@ class BaseResponse<T> {
     final json = response?.data ?? {};
     return BaseResponse._(
       success: json?["success"] ??
-          ([200, 201].contains(json['status_code'])) ??
+          ([200, 201].contains(json['status_code'] ?? HttpStatus.ok)) ??
           false,
       data: parse?.call(json["data"]),
       message: json["message"],
-      statusCode: json['status_code'],
+      statusCode: json['status_code'] ?? HttpStatus.ok,
       errorKey: json['error_key'],
       log: json['log'],
       response: response,
