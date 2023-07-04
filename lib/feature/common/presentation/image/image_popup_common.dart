@@ -20,16 +20,15 @@ Future<void> imagePickerAction(
           CupertinoActionSheetAction(
             onPressed: () async {
               try {
-                context.pop();
+                Navigator.of(context).pop();
                 final permission = await Permission.photos.request();
                 if (!permission.isGranted) {
-                  if (permission.isPermanentlyDenied) {
-                    // ignore: use_build_context_synchronously
-                    await PhotosPermission.show(
-                      context,
-                      onCancel: () {},
-                    );
-                  }
+                  // ignore: use_build_context_synchronously
+                  await PhotosPermission.show(
+                    context,
+                    onCancel: () {},
+                  );
+
                   return;
                 }
                 final image = await ImagePicker().pickImage(
@@ -52,7 +51,7 @@ Future<void> imagePickerAction(
           CupertinoActionSheetAction(
             onPressed: () async {
               try {
-                context.pop();
+                Navigator.of(context).pop();
                 final permission = await Permission.camera.request();
                 if (!permission.isGranted) {
                   if (permission.isPermanentlyDenied) {

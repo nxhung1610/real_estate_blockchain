@@ -6,7 +6,7 @@ class PhotosPermission {
   PhotosPermission._();
   static Future<void> show(BuildContext context,
       {VoidCallback? onCancel}) async {
-    showDialog(
+    return showDialog(
       context: context,
       builder: (context) {
         final s = S.of(context);
