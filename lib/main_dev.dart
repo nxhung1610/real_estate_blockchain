@@ -3,12 +3,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/app_page.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
+import 'package:real_estate_blockchain/utils/app_bloc_observer.dart';
 
 import 'firebase_options_dev.dart';
 
@@ -38,7 +40,10 @@ Future<void> main() async {
     return true;
   };
 
-  // Bloc.observer = AppBlocObserver();
-  runApp(const AppPage());
+  Bloc.observer = AppBlocObserver();
+  runApp(const MaterialApp(
+    home: AppPage(),
+    debugShowCheckedModeBanner: false,
+  ));
   FlutterNativeSplash.remove();
 }

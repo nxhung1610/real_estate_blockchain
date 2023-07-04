@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +9,6 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/app/presentation/widgets/button/button_enums.dart';
 import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -26,6 +24,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late final AuthBloc authBloc;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -178,7 +177,7 @@ class __LoginFormState extends State<_LoginForm> with PageMixin {
               AppSize.mediumHeightDimens.verticalSpace,
               InputPrimaryForm(
                 keyboardType: TextInputType.phone,
-                // hint: s.phoneNumber,
+                hint: "Nhập số điện thoại",
                 onChanged: (value) {
                   bloc.phoneNumberChanged(value);
                 },
@@ -192,7 +191,7 @@ class __LoginFormState extends State<_LoginForm> with PageMixin {
                 AppSize.mediumHeightDimens.verticalSpace,
                 InputPrimaryForm(
                   obscureText: !state.passwordVisible,
-                  // hint: s.password,
+                  hint: "Nhập mật khẩu",
                   keyboardType: TextInputType.visiblePassword,
                   suffixIcon: IconButton(
                     onPressed: () {

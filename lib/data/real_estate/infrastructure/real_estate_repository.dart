@@ -12,7 +12,8 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/config/real_estate_config_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_request.dart';
-import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_response/real_estate_creation_response.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/get_news_request/get_news_request.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/real_estate_news.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/real_filter_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/search/search_request.dart';
@@ -22,7 +23,6 @@ import 'package:real_estate_blockchain/utils/logger.dart';
 import '../../province/data.dart';
 import '../domain/entities/post_real_estate.dart';
 import '../domain/entities/real_estate_config.dart';
-import '../domain/params/real_estate_creation_ouput/real_estate_creation_ouput.dart';
 import 'dto/post_real_estate_response.dart';
 
 @LazySingleton(as: IRealEstateRepository)
@@ -30,6 +30,7 @@ class RealEstateRepository extends IRealEstateRepository {
   final ApiRemote _apiRemote;
 
   RealEstateRepository(this._apiRemote);
+
   @override
   Future<Either<RealEstateFailure, RealEstateConfig>> configData() async {
     try {
@@ -210,6 +211,25 @@ class RealEstateRepository extends IRealEstateRepository {
       );
       if (!res.success) throw res.errorKey!;
       return right(res.data!.toModel());
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, List<RealEstateNews>>> getNews(
+      {required GetNewsRequest request}) async {
+    try {
+      final res = await _apiRemote.post<List<RealEstateNews>>(
+        RealEstateConstants.news,
+        data: request.toJson(),
+        parse: (data) {
+          return (data as List).map((e) => RealEstateNews.fromJson(e)).toList();
+        },
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(res.data!);
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       return left(const RealEstateFailure.unknown());

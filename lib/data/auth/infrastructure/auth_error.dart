@@ -1,7 +1,6 @@
-import 'package:real_estate_blockchain/data/auth/data.dart';
+class AuthenError {
+  const AuthenError._();
 
-class AuthError {
-  const AuthError._();
   static const phoneNumberInvalid = 'InvalidPhone';
   static const passwordInvalid = 'InvalidPassword';
   static const nameInvalid = 'InvalidName';

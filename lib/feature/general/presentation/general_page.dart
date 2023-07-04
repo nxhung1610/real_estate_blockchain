@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
@@ -135,7 +136,7 @@ class _Options extends StatelessWidget {
     return Column(
       children: [
         ProfileOptionGroup(
-          title: s.optionTitleHomeSearch,
+          title: "Bất động sản",
           padding: EdgeInsets.symmetric(
             horizontal: AppSize.extraWidthDimens,
           ),
@@ -170,6 +171,20 @@ class _Options extends StatelessWidget {
               label: s.myHome,
               onPressed: () {
                 context.push($appRoute.myHome.url);
+              },
+            ),
+
+            ProfileOptionData(
+              icon: const Center(
+                child: FaIcon(
+                  FontAwesomeIcons.newspaper,
+                  size: 16,
+                  color: AppColor.kPrimary1,
+                ),
+              ),
+              label: "Tin tức",
+              onPressed: () {
+                context.push($appRoute.realEstateNews);
               },
             ),
           ],

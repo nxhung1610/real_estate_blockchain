@@ -38,6 +38,8 @@
 		<string>Main</string>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSFaceIDUsageDescription</key>
+        <string>Realust need face id permission for face id authentication functionality</string>
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>

@@ -9,4 +9,6 @@ class RealEstateConstants {
   static String newfeeds = '$root/posts/feeds';
   static String favorites = '$root/favourites';
   static String detail = '$root/detail/:id';
+  static String news =
+      'https://apidn.reputa.vn/console/insight/market/top-featured-event';
 }

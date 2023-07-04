@@ -1,11 +1,15 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import "package:local_auth/error_codes.dart" as auth_error;
+import 'package:local_auth/local_auth.dart';
 import 'package:real_estate_blockchain/config/app_notification.dart';
 import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/grpc/grpc_service.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -134,5 +138,47 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   void initial() {
     add(const AuthEvent.started());
+  }
+
+  static Future<bool> isFingerprintSupported() async {
+    final _auth = LocalAuthentication();
+
+    // emit(const Authenticating());
+    final bool canAuthenticateWithBiometrics = await _auth.canCheckBiometrics;
+    final bool canAuthenticate =
+        canAuthenticateWithBiometrics || await _auth.isDeviceSupported();
+    return canAuthenticate;
+  }
+
+  static Future fingerprintAuth() async {
+    final _auth = LocalAuthentication();
+
+    // emit(const Authenticating());
+    final bool canAuthenticateWithBiometrics = await _auth.canCheckBiometrics;
+    final bool canAuthenticate =
+        canAuthenticateWithBiometrics || await _auth.isDeviceSupported();
+    if (canAuthenticate) {
+      try {
+        bool didAuthenticate = await _auth.authenticate(
+          localizedReason: "Vui lòng xác thực để sử dụng ứng dụng",
+          options: const AuthenticationOptions(stickyAuth: true),
+        );
+        if (didAuthenticate) {
+          // emit(const AuthSuccess());
+        } else {
+          throw AuthError.failed;
+        }
+      } on PlatformException catch (e, trace) {
+        printLog(AuthBloc,
+            message: "_authStartedToState", error: e, trace: trace);
+        if (e.message == "Required security features not enabled") {
+          // emit(const AuthSuccess());
+          return;
+        }
+        final authError = AuthErrorExt.fromCode(e.code);
+        throw authError;
+        // emit(AuthFailed(error: authError));
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 
 class WLoading extends StatelessWidget {
@@ -7,8 +8,9 @@ class WLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: CircularProgressIndicator(
+      child: SpinKitSpinningLines(
         color: AppColor.kPrimary1,
+        size: 24,
       ),
     );
   }
