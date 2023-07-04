@@ -17,6 +17,11 @@ abstract class IRealEstateRepository {
     RealEstateCreationInput data,
   );
 
+  Future<Either<RealEstateFailure, Unit>> updateRealEstate(
+    String id,
+    RealEstateCreationInput data,
+  );
+
   Future<Either<RealEstateFailure, Unit>> deleteRealEstate(String estateId);
 
   Future<Either<RealEstateFailure, List<RealEstate>>> realEstates();

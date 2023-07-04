@@ -150,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("District"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "east": MessageLookupByLibrary.simpleMessage("East"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "elevator": MessageLookupByLibrary.simpleMessage("Elevator"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -193,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "I don\'t understand your response yet."),
+        "images": MessageLookupByLibrary.simpleMessage("Images"),
         "inPerson": MessageLookupByLibrary.simpleMessage("In Person"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "informationCatalog": MessageLookupByLibrary.simpleMessage(
@@ -402,8 +404,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unable to load data"),
         "unit": MessageLookupByLibrary.simpleMessage("Unit"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
         "updateProfileSuccess":
             MessageLookupByLibrary.simpleMessage("Update profile success"),
+        "updateRealEstateFailed":
+            MessageLookupByLibrary.simpleMessage("Update estate failed"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("View"),

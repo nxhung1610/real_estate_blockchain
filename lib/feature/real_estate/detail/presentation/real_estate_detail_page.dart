@@ -34,6 +34,8 @@ import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../config/real_estate_config_bloc.dart';
+import '../../edit/model/real_estate_edit_params.dart';
 import '../../favorites/application/favorites/real_estate_favorites_bloc.dart';
 import '../application/real_estate_detail_bloc.dart';
 import 'widgets/_w_bottom_owner_action.dart';

@@ -51,6 +51,7 @@ class RealEstateResponse with _$RealEstateResponse {
 extension RealEstateResponseMapper on RealEstateResponse {
   RealEstate toModel() {
     return RealEstate(
+      reTypeId: realEstateType?.id ?? 0,
       address: address,
       amenities: amenities?.map((e) => e.toModel()).toList(),
       area: area,

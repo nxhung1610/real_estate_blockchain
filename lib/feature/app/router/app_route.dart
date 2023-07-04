@@ -29,7 +29,7 @@ class AppRoute extends BaseRoute {
   late final AuthRoute _authRoute;
   late final HouseAddNewRoute _houseAddNewRoute;
   late final SearchRoute _searchRoute;
-  late final RealEstateRouter _realEstateRouter;
+  late final RealEstateRouter realEstateRouter;
   late final UserRouter user;
   late final SettingRoute setting;
   late final NotificationRoute notification;
@@ -50,9 +50,9 @@ class AppRoute extends BaseRoute {
   String get messageChat => _mainRoute.messageChat;
   String get search => _searchRoute.url;
 
-  String get realEstateDetail => _realEstateRouter.detail;
+  String get realEstateDetail => realEstateRouter.detail;
 
-  String get realEstateFavorites => _realEstateRouter.favorites;
+  String get realEstateFavorites => realEstateRouter.favorites;
 
   @override
   List<RouteBase> get routes => [
@@ -61,7 +61,7 @@ class AppRoute extends BaseRoute {
         ..._authRoute.routes,
         ..._houseAddNewRoute.routes,
         ..._searchRoute.routes,
-        ..._realEstateRouter.routes,
+        ...realEstateRouter.routes,
         ...user.routes,
         ...setting.routes,
         ...notification.routes,
@@ -79,7 +79,7 @@ class AppRoute extends BaseRoute {
         ..._mainRoute.globalRoutes,
         ..._authRoute.globalRoutes,
         ..._houseAddNewRoute.globalRoutes,
-        ..._realEstateRouter.globalRoutes,
+        ...realEstateRouter.globalRoutes,
         ...user.globalRoutes,
         ...notification.globalRoutes,
         ...tour.globalRoutes,
@@ -97,7 +97,7 @@ class AppRoute extends BaseRoute {
     _onboardingRoute = OnboardingRoute(url, '/onboarding');
     _houseAddNewRoute = HouseAddNewRoute(url, '/house/add-new');
     _searchRoute = SearchRoute(url, '/search');
-    _realEstateRouter = RealEstateRouter(url, '/real-estate');
+    realEstateRouter = RealEstateRouter(url, '/real-estate');
     user = UserRouter(url, '/user');
     setting = SettingRoute(url, '/setting');
     notification = NotificationRoute(url, '/notification');

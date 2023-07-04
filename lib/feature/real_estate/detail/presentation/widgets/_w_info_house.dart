@@ -13,12 +13,43 @@ class _WInfoHouse extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            s.description,
-            style: context.textTheme.bodyLarge?.copyWith(
-              color: AppColor.kNeutrals_,
-              fontWeight: FontWeight.w900,
-            ),
+          Row(
+            children: [
+              Text(
+                s.description,
+                style: context.textTheme.bodyLarge?.copyWith(
+                  color: AppColor.kNeutrals_,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                padding: EdgeInsets.zero,
+                splashRadius: 20.r,
+                icon: Assets.icons.icEditLight.svg(
+                  width: 24.r,
+                  height: 24.r,
+                ),
+                onPressed: () {
+                  final estate =
+                      context.read<RealEstateDetailBloc>().state.estate;
+                  if (estate != null) {
+                    context.push(
+                      $appRoute.realEstateRouter.edit.url,
+                      extra: RealEstateEditParams(
+                        estate: estate,
+                        amenities: context
+                                .read<RealEstateConfigBloc>()
+                                .state
+                                .config
+                                ?.amenities ??
+                            [],
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
           ),
           AppSize.largeHeightDimens.verticalSpace,
           BlocSelector<RealEstateDetailBloc, RealEstateDetailState,

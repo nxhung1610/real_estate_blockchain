@@ -148,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "district": MessageLookupByLibrary.simpleMessage("Quận Huyện"),
         "done": MessageLookupByLibrary.simpleMessage("Hoàn tất"),
         "east": MessageLookupByLibrary.simpleMessage("Đông"),
+        "edit": MessageLookupByLibrary.simpleMessage("Chỉnh sửa"),
         "editProfile":
             MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin cá nhân"),
         "elevator": MessageLookupByLibrary.simpleMessage("Thang máy"),
@@ -192,6 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "Tôi chưa hiểu phản hồi của bạn."),
+        "images": MessageLookupByLibrary.simpleMessage("Hình ảnh"),
         "inPerson": MessageLookupByLibrary.simpleMessage("Trực tiếp"),
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "informationCatalog":
@@ -402,8 +404,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Không tải được dữ liệu"),
         "unit": MessageLookupByLibrary.simpleMessage("Đơn vị"),
         "unknown": MessageLookupByLibrary.simpleMessage("Có lỗi xảy ra!"),
+        "update": MessageLookupByLibrary.simpleMessage("Cập nhật"),
         "updateProfileSuccess": MessageLookupByLibrary.simpleMessage(
             "Cập nhập thông tin cá nhân thành công"),
+        "updateRealEstateFailed": MessageLookupByLibrary.simpleMessage(
+            "Cập nhật bất động sản thất bại"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),

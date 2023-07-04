@@ -215,4 +215,22 @@ class RealEstateRepository extends IRealEstateRepository {
       return left(const RealEstateFailure.unknown());
     }
   }
+
+  @override
+  Future<Either<RealEstateFailure, Unit>> updateRealEstate(
+    String id,
+    RealEstateCreationInput data,
+  ) async {
+    try {
+      final res = await _apiRemote.put(
+        RealEstateConstants.byId.replaceAll(RegExp(':id'), id),
+        data: RealEstateCreationRequest.fromModel(data).toJson(),
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(unit);
+    } catch (e, strace) {
+      printLog(this, message: e, error: e, trace: strace);
+      return left(const RealEstateFailure.unknown());
+    }
+  }
 }

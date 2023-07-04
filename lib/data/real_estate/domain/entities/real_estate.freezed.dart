@@ -40,6 +40,7 @@ mixin _$RealEstate {
   String? get interiors => throw _privateConstructorUsedError;
   List<Amenity>? get amenities => throw _privateConstructorUsedError;
   List<AppImage>? get images => throw _privateConstructorUsedError;
+  int get reTypeId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -78,6 +79,7 @@ abstract class $RealEstateCopyWith<$Res> {
       String? interiors,
       List<Amenity>? amenities,
       List<AppImage>? images,
+      int reTypeId,
       String name});
 }
 
@@ -118,6 +120,7 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
     Object? interiors = freezed,
     Object? amenities = freezed,
     Object? images = freezed,
+    Object? reTypeId = null,
     Object? name = null,
   }) {
     return _then(_value.copyWith(
@@ -217,6 +220,10 @@ class _$RealEstateCopyWithImpl<$Res, $Val extends RealEstate>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<AppImage>?,
+      reTypeId: null == reTypeId
+          ? _value.reTypeId
+          : reTypeId // ignore: cast_nullable_to_non_nullable
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -258,6 +265,7 @@ abstract class _$$_RealEstateCopyWith<$Res>
       String? interiors,
       List<Amenity>? amenities,
       List<AppImage>? images,
+      int reTypeId,
       String name});
 }
 
@@ -296,6 +304,7 @@ class __$$_RealEstateCopyWithImpl<$Res>
     Object? interiors = freezed,
     Object? amenities = freezed,
     Object? images = freezed,
+    Object? reTypeId = null,
     Object? name = null,
   }) {
     return _then(_$_RealEstate(
@@ -395,6 +404,10 @@ class __$$_RealEstateCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<AppImage>?,
+      reTypeId: null == reTypeId
+          ? _value.reTypeId
+          : reTypeId // ignore: cast_nullable_to_non_nullable
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -431,6 +444,7 @@ class _$_RealEstate implements _RealEstate {
       this.interiors,
       final List<Amenity>? amenities,
       final List<AppImage>? images,
+      required this.reTypeId,
       required this.name})
       : _amenities = amenities,
         _images = images;
@@ -500,11 +514,13 @@ class _$_RealEstate implements _RealEstate {
   }
 
   @override
+  final int reTypeId;
+  @override
   final String name;
 
   @override
   String toString() {
-    return 'RealEstate(id: $id, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, provinceId: $provinceId, districtId: $districtId, wardId: $wardId, address: $address, latitude: $latitude, longitude: $longitude, price: $price, ownerId: $ownerId, floors: $floors, area: $area, noBedrooms: $noBedrooms, noWc: $noWc, houseFacing: $houseFacing, balconyFacing: $balconyFacing, reason: $reason, builtAt: $builtAt, documents: $documents, interiors: $interiors, amenities: $amenities, images: $images, name: $name)';
+    return 'RealEstate(id: $id, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, provinceId: $provinceId, districtId: $districtId, wardId: $wardId, address: $address, latitude: $latitude, longitude: $longitude, price: $price, ownerId: $ownerId, floors: $floors, area: $area, noBedrooms: $noBedrooms, noWc: $noWc, houseFacing: $houseFacing, balconyFacing: $balconyFacing, reason: $reason, builtAt: $builtAt, documents: $documents, interiors: $interiors, amenities: $amenities, images: $images, reTypeId: $reTypeId, name: $name)';
   }
 
   @override
@@ -548,6 +564,8 @@ class _$_RealEstate implements _RealEstate {
             const DeepCollectionEquality()
                 .equals(other._amenities, _amenities) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.reTypeId, reTypeId) ||
+                other.reTypeId == reTypeId) &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -578,6 +596,7 @@ class _$_RealEstate implements _RealEstate {
         interiors,
         const DeepCollectionEquality().hash(_amenities),
         const DeepCollectionEquality().hash(_images),
+        reTypeId,
         name
       ]);
 
@@ -614,6 +633,7 @@ abstract class _RealEstate implements RealEstate {
       final String? interiors,
       final List<Amenity>? amenities,
       final List<AppImage>? images,
+      required final int reTypeId,
       required final String name}) = _$_RealEstate;
 
   @override
@@ -664,6 +684,8 @@ abstract class _RealEstate implements RealEstate {
   List<Amenity>? get amenities;
   @override
   List<AppImage>? get images;
+  @override
+  int get reTypeId;
   @override
   String get name;
   @override

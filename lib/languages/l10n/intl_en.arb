@@ -269,5 +269,9 @@
   "backToMainMenu" :"Back to main table of contents",
   "mainCatalog" : "Main table of contents",
   "appPolicies" :"Application key terms",
-   "noDataFound" : "No data found"
+   "noDataFound" : "No data found",
+   "edit" : "Edit",
+   "images" : "Images",
+   "update" : "Update",
+   "updateRealEstateFailed" : "Update estate failed"
 }

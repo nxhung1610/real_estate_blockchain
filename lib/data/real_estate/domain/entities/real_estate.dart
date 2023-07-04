@@ -36,6 +36,7 @@ class RealEstate with _$RealEstate {
     String? interiors,
     List<Amenity>? amenities,
     List<AppImage>? images,
+    required int reTypeId,
     required String name,
   }) = _RealEstate;
 
@@ -64,6 +65,7 @@ class RealEstate with _$RealEstate {
       ownerId: realEstate.ownerId,
       area: realEstate.area,
       floors: realEstate.floors,
+      reTypeId: realEstate.reTypeId,
     );
   }
 }

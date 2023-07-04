@@ -270,5 +270,9 @@
   "backToMainMenu" :"Mục chính",
   "mainCatalog" : "Danh mục chính",
   "appPolicies" :"Điều khoản về ứng dụng" ,
-  "noDataFound" : "Không tìm thấy dữ liệu"
+  "noDataFound" : "Không tìm thấy dữ liệu",
+  "edit" : "Chỉnh sửa",
+  "images" : "Hình ảnh",
+  "update" : "Cập nhật",
+  "updateRealEstateFailed" : "Cập nhật bất động sản thất bại"
 }
