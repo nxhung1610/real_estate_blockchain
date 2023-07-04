@@ -274,5 +274,9 @@
   "edit" : "Chỉnh sửa",
   "images" : "Hình ảnh",
   "update" : "Cập nhật",
-  "updateRealEstateFailed" : "Cập nhật bất động sản thất bại"
+  "updateRealEstateFailed" : "Cập nhật bất động sản thất bại",
+  "validPhoneNumber" :"Xác nhận số điện thoại",
+  "inputOtp" : "Nhập mã xác thực OTP",
+  "invalidOtp" : "Mã OTP không hợp lệ",
+  "changePhoneNumber" : "Đổi số điện thoại"
 }

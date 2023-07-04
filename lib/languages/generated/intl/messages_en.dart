@@ -105,6 +105,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change password"),
         "changePasswordSuccess":
             MessageLookupByLibrary.simpleMessage("Change password success"),
+        "changePhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Change phone number"),
         "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
             MessageLookupByLibrary.simpleMessage(
                 "Choose from a few of the amenities currently on your property"),
@@ -199,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "informationCatalog": MessageLookupByLibrary.simpleMessage(
             "Information table of contents"),
+        "inputOtp": MessageLookupByLibrary.simpleMessage("Input OTP"),
+        "invalidOtp": MessageLookupByLibrary.simpleMessage("Invalid Otp"),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "later": MessageLookupByLibrary.simpleMessage("Later"),
@@ -409,6 +413,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Update profile success"),
         "updateRealEstateFailed":
             MessageLookupByLibrary.simpleMessage("Update estate failed"),
+        "validPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Valid phone number"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Please use the real image, not duplicate, not insert a phone number. Each image has a minimum size of 100x100, a maximum of 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("View"),

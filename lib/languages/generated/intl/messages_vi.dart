@@ -103,6 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "changePassword": MessageLookupByLibrary.simpleMessage("Đổi mật khẩu"),
         "changePasswordSuccess":
             MessageLookupByLibrary.simpleMessage("Đổi mật khẩu thành công"),
+        "changePhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Đổi số điện thoại"),
         "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
             MessageLookupByLibrary.simpleMessage(
                 "Chọn một vài tiện ích hiện đang có trong bất động sản của bạn"),
@@ -198,6 +200,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "informationCatalog":
             MessageLookupByLibrary.simpleMessage("Danh mục thông tin"),
+        "inputOtp":
+            MessageLookupByLibrary.simpleMessage("Nhập mã xác thực OTP"),
+        "invalidOtp":
+            MessageLookupByLibrary.simpleMessage("Mã OTP không hợp lệ"),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "later": MessageLookupByLibrary.simpleMessage("Để sau"),
@@ -409,6 +415,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Cập nhập thông tin cá nhân thành công"),
         "updateRealEstateFailed": MessageLookupByLibrary.simpleMessage(
             "Cập nhật bất động sản thất bại"),
+        "validPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Xác nhận số điện thoại"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
             "Vui lòng sử dụng hình ảnh thật, không sao chép, không chèn số điện thoại. Mỗi ảnh có kích thước tối thiểu là 100x100, tối đa là 15MB."),
         "view": MessageLookupByLibrary.simpleMessage("Phong cảnh"),

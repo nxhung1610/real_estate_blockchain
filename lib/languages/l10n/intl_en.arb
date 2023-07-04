@@ -273,5 +273,9 @@
    "edit" : "Edit",
    "images" : "Images",
    "update" : "Update",
-   "updateRealEstateFailed" : "Update estate failed"
+   "updateRealEstateFailed" : "Update estate failed",
+   "validPhoneNumber" :"Valid phone number",
+   "inputOtp" : "Input OTP",
+   "invalidOtp" : "Invalid Otp",
+   "changePhoneNumber" : "Change phone number"
 }

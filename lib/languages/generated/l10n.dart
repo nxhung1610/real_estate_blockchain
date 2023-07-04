@@ -2749,6 +2749,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Valid phone number`
+  String get validPhoneNumber {
+    return Intl.message(
+      'Valid phone number',
+      name: 'validPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input OTP`
+  String get inputOtp {
+    return Intl.message(
+      'Input OTP',
+      name: 'inputOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Otp`
+  String get invalidOtp {
+    return Intl.message(
+      'Invalid Otp',
+      name: 'invalidOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change phone number`
+  String get changePhoneNumber {
+    return Intl.message(
+      'Change phone number',
+      name: 'changePhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
