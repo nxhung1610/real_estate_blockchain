@@ -8,6 +8,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/application/application.dart';
+import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/general/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -66,15 +67,18 @@ class _AccountInfo extends StatelessWidget {
               },
               child: Stack(
                 children: [
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(AppSize.avatarExtraLarge / 2),
-                    child: Image.network(
-                      state?.user.avatarUrl ??
-                          'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
-                      width: AppSize.avatarExtraLarge,
-                      height: AppSize.avatarExtraLarge,
-                      fit: BoxFit.cover,
+                  Container(
+                    width: AppSize.avatarExtraLarge,
+                    height: AppSize.avatarExtraLarge,
+                    child: ClipRRect(
+                      borderRadius:
+                          BorderRadius.circular(AppSize.avatarExtraLarge / 2),
+                      child: ImageCustom.network(
+                        state?.user.avatarUrl ?? '',
+                        width: AppSize.avatarExtraLarge,
+                        height: AppSize.avatarExtraLarge,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Positioned.fill(
