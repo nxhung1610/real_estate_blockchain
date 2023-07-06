@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/search/rea
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/config/real_estate_config_response.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/creation/real_estate_creation_request.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/market_analysis/market_analysis.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/get_news_request/get_news_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/real_estate_news.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/real_estate_response.dart';
@@ -250,6 +251,37 @@ class RealEstateRepository extends IRealEstateRepository {
       return right(unit);
     } catch (e, strace) {
       printLog(this, message: e, error: e, trace: strace);
+      return left(const RealEstateFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<RealEstateFailure, ArticleList>> getMarketAnalysis(
+      {required int page, required int size}) async {
+    try {
+      final res = await _apiRemote.post<MarketAnalysisResponse>(
+        RealEstateConstants.marketAnalysis,
+        data: {
+          "operationName": "Query",
+          "variables": {
+            "page": page,
+            "pageSize": size,
+            "market": "vn",
+            "language": "vn",
+            "category": ["market-analysis"],
+            "exclude": []
+          },
+          "query":
+              "query Query(\$page: Int, \$pageSize: Int, \$market: String!, \$language: String, \$category: [String], \$exclude: [Int], \$tag: String) {\n  articleList(\n    page: \$page\n    pageSize: \$pageSize\n    market: \$market\n    language: \$language\n    category: \$category\n    exclude: \$exclude\n    tag: \$tag\n  ) {\n    totalCount\n    totalPage\n    items {\n      id\n      title\n      excerpt\n      slug\n      link\n      featuredImage\n      postDate\n      modifiedDate\n      location\n      author {\n        id\n        name\n        slug\n        link\n        profilePhoto\n        __typename\n      }\n      sponsor {\n        slug\n        name\n        picture\n        bio\n        __typename\n      }\n      category {\n        id\n        name\n        slug\n        link\n        __typename\n      }\n      tags {\n        id\n        name\n        slug\n        link\n        __typename\n      }\n      profiles {\n        id\n        name\n        slug\n        link\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+        },
+        parse: (data) {
+          return MarketAnalysisResponse.fromJson(data);
+        },
+      );
+      if (!res.success) throw res.errorKey!;
+      return right(res.data!.articleList!);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
       return left(const RealEstateFailure.unknown());
     }
   }

@@ -191,6 +191,19 @@ class _Options extends StatelessWidget {
                 context.push($appRoute.realEstateNews);
               },
             ),
+            ProfileOptionData(
+              icon: const Center(
+                child: FaIcon(
+                  FontAwesomeIcons.star,
+                  size: 16,
+                  color: AppColor.kPrimary1,
+                ),
+              ),
+              label: "Góc nhìn chuyên gia",
+              onPressed: () {
+                context.push($appRoute.marketAnalysis);
+              },
+            ),
           ],
         ),
         ProfileOptionGroup(

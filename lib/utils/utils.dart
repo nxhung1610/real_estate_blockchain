@@ -18,6 +18,7 @@ import 'package:intl/intl.dart';
 Color get randColor =>
     Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
 const kEmpty = SizedBox.shrink();
+
 Future<T?> waitForDesiredBlocState<T>(Bloc<dynamic, dynamic> bloc,
     {int maxTryCount = 5}) async {
   final StreamQueue<dynamic> stateStreamQueue = StreamQueue(bloc.stream);
@@ -59,6 +60,17 @@ DateTime? fromApiDate(String? value) {
   }
   try {
     return DateFormat("yyyy-MM-dd HH:mm:ss.SSS Z").parse(value, true).toLocal();
+  } catch (e, trace) {
+    return null;
+  }
+}
+
+DateTime? fromApiDate1(String? value) {
+  if (value == null) {
+    return null;
+  }
+  try {
+    return DateFormat("yyyy-MM-dd HH:mm:ss").parse(value, true).toLocal();
   } catch (e, trace) {
     return null;
   }

@@ -11,4 +11,6 @@ class RealEstateConstants {
   static String detail = '$root/detail/:id';
   static String news =
       'https://apidn.reputa.vn/console/insight/market/top-featured-event';
+  static String marketAnalysis =
+      'https://api-angel-green.batdongsan.com.vn/graphql/bds';
 }

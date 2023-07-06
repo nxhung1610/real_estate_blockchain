@@ -38,7 +38,7 @@ class CurlLoggerDioInterceptor extends Interceptor {
   void _renderCurlRepresentation(RequestOptions requestOptions) {
     // add a breakpoint here so all errors can break
     try {
-      printLog(this, message: _cURLRepresentation(requestOptions));
+      log(_cURLRepresentation(requestOptions));
     } catch (err) {
       printLog(
         this,

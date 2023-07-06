@@ -62,6 +62,8 @@ class AppRoute extends BaseRoute {
 
   String get realEstateNews => realEstateRouter.news;
 
+  String get marketAnalysis => realEstateRouter.marketAnalysis;
+
   @override
   List<RouteBase> get routes => [
         ..._onboardingRoute.routes,

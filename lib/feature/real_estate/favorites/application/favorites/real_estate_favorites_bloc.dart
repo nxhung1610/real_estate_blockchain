@@ -136,7 +136,7 @@ class RealEstateFavoritesBloc
             style: const TextStyle(color: AppColor.kNeutrals11),
             children: [
               TextSpan(
-                  text: "Mục ưa thích",
+                  text: "Mục yêu thích",
                   style: const TextStyle(
                       decoration: TextDecoration.underline,
                       color: AppColor.kPrimary1),
