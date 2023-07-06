@@ -4,6 +4,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
+import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewScreen extends StatefulWidget {
@@ -45,6 +46,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
           ),
           Expanded(
             child: WebView(
+              backgroundColor: context.theme.colorScheme.background,
               javascriptMode: JavascriptMode.unrestricted,
               initialUrl: widget.url,
               onProgress: (value) {
