@@ -442,11 +442,11 @@ class _BidDetailPageState extends State<BidDetailPage>
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 16.h,
-                ),
-              ),
+              // SliverToBoxAdapter(
+              //   child: SizedBox(
+              //     height: 16.h,
+              //   ),
+              // ),
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 sliver: SliverToBoxAdapter(

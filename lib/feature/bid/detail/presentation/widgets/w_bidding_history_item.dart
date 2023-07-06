@@ -65,15 +65,15 @@ class WBiddingHistoryItem extends StatelessWidget {
               ],
             ),
           ),
-          AppSize.largeWidthDimens.horizontalSpace,
-          Assets.icons.icArrowRight.svg(
-            colorFilter: const ColorFilter.mode(
-              AppColor.kNeutrals5,
-              BlendMode.srcIn,
-            ),
-            width: 20.r,
-            height: 20.r,
-          )
+          // AppSize.largeWidthDimens.horizontalSpace,
+          // Assets.icons.icArrowRight.svg(
+          //   colorFilter: const ColorFilter.mode(
+          //     AppColor.kNeutrals5,
+          //     BlendMode.srcIn,
+          //   ),
+          //   width: 20.r,
+          //   height: 20.r,
+          // )
         ],
       ),
     );
