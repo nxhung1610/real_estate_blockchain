@@ -286,6 +286,7 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
         ],
         child: GlobalLoaderOverlay(
           child: ScreenUtilInit(
+            useInheritedMediaQuery: true,
             designSize: AppSize.designSize,
             builder: (context, child) {
               return GestureDetector(
@@ -298,7 +299,6 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                   theme: AppTheme.light,
                   scrollBehavior: const ScrollBehaviorModified(),
                   debugShowCheckedModeBanner: false,
-
                   darkTheme: AppTheme.dark,
                   // themeMode: appBloc.state.mode,
                   themeMode: ThemeMode.light,

@@ -30,7 +30,6 @@ class _DialogMessageWidgetState extends State<DialogMessageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     return BlocSelector<DialogflowBloc, DialogflowState,
         dartz.Tuple2<List<MessageApp>, bool>>(
       selector: (state) {

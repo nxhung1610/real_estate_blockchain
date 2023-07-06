@@ -34,9 +34,6 @@ Future<void> main() async {
   };
 
   // Bloc.observer = AppBlocObserver();
-  runApp(const MaterialApp(
-    home: AppPage(),
-    debugShowCheckedModeBanner: false,
-  ));
+  runApp(const AppPage());
   FlutterNativeSplash.remove();
 }

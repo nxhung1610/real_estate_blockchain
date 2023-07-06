@@ -71,89 +71,86 @@ class _MessageChatPageState extends State<MessageChatPage> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: BlocListener<ChatRoomBloc, ChatRoomState>(
-                listener: (_, state) {
-                  if (state.status is StatusIdle) {
-                    if (!refreshCompleter.isCompleted) {
-                      refreshCompleter.complete();
-                    }
+      body: Column(
+        children: [
+          Expanded(
+            child: BlocListener<ChatRoomBloc, ChatRoomState>(
+              listener: (_, state) {
+                if (state.status is StatusIdle) {
+                  if (!refreshCompleter.isCompleted) {
+                    refreshCompleter.complete();
                   }
+                }
+              },
+              child: BlocSelector<ChatRoomBloc, ChatRoomState,
+                  z.Tuple2<List<ChatMessage>, Status>>(
+                selector: (state) {
+                  return z.Tuple2(state.messages, state.status);
                 },
-                child: BlocSelector<ChatRoomBloc, ChatRoomState,
-                    z.Tuple2<List<ChatMessage>, Status>>(
-                  selector: (state) {
-                    return z.Tuple2(state.messages, state.status);
-                  },
-                  builder: (context, tuple2) {
-                    final messages = tuple2.value1;
-                    final status = tuple2.value2;
-                    final authState = context.read<AuthBloc>().state
-                        as AuthStateAuthenticated;
+                builder: (context, tuple2) {
+                  final messages = tuple2.value1;
+                  final status = tuple2.value2;
+                  final authState =
+                      context.read<AuthBloc>().state as AuthStateAuthenticated;
 
-                    if (status is StatusLoading) {
-                      return const WLoading();
-                    }
+                  if (status is StatusLoading) {
+                    return const WLoading();
+                  }
 
-                    return Padding(
-                      padding: EdgeInsets.only(left: 24.w, right: 24.w),
-                      child: WLazyLoadWrapper(
-                        scrollView: FlutterListView(
-                          reverse: true,
-                          delegate: FlutterListViewDelegate(
-                            (context, index) {
-                              final item = messages[index];
-                              final child = MessageItem(
-                                message: item,
-                                isMe: authState.user.id == item.senderId,
-                              );
+                  return Padding(
+                    padding: EdgeInsets.only(left: 24.w, right: 24.w),
+                    child: WLazyLoadWrapper(
+                      scrollView: FlutterListView(
+                        reverse: true,
+                        delegate: FlutterListViewDelegate(
+                          (context, index) {
+                            final item = messages[index];
+                            final child = MessageItem(
+                              message: item,
+                              isMe: authState.user.id == item.senderId,
+                            );
 
-                              if (index == messages.length - 1) {
-                                if (status is StatusMoreLoading) {
-                                  return Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      32.verticalSpace,
-                                      const WLoading(),
-                                      child,
-                                    ],
-                                  );
-                                }
-                                return child
-                                    .withPadding(EdgeInsets.only(top: 32.w));
+                            if (index == messages.length - 1) {
+                              if (status is StatusMoreLoading) {
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    32.verticalSpace,
+                                    const WLoading(),
+                                    child,
+                                  ],
+                                );
                               }
-                              return child;
-                            },
-                            childCount: messages.length,
-                            onItemKey: (index) => messages[index].id.toString(),
-                            initOffset: 0,
-                            initOffsetBasedOnBottom: true,
-                            firstItemAlign: FirstItemAlign.end,
-                          ),
+                              return child
+                                  .withPadding(EdgeInsets.only(top: 32.w));
+                            }
+                            return child;
+                          },
+                          childCount: messages.length,
+                          onItemKey: (index) => messages[index].id.toString(),
+                          initOffset: 0,
+                          initOffsetBasedOnBottom: true,
+                          firstItemAlign: FirstItemAlign.end,
                         ),
-                        onLoad: () {
-                          if (!bloc.state.canLoadMore) {
-                            return;
-                          }
-                          bloc.add(const ChatRoomMessageLoaded());
-                        },
                       ),
-                    );
-                  },
-                ),
+                      onLoad: () {
+                        if (!bloc.state.canLoadMore) {
+                          return;
+                        }
+                        bloc.add(const ChatRoomMessageLoaded());
+                      },
+                    ),
+                  );
+                },
               ),
             ),
-            SafeArea(
-              minimum: EdgeInsets.symmetric(vertical: 16.h),
-              child: const MessageTextField(),
-            ),
-          ],
-        ),
+          ),
+          SafeArea(
+            minimum: EdgeInsets.symmetric(vertical: 16.h),
+            child: const MessageTextField(),
+          ),
+        ],
       ),
     );
   }

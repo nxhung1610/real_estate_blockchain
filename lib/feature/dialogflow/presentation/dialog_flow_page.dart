@@ -51,17 +51,49 @@ class _DialogFlowPageState extends State<DialogFlowPage> {
         leadingWidth: AppSize.mediumIcon + 64.w,
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          const Expanded(
-            child: DialogMessageWidget(),
-          ),
-          SafeArea(
-            minimum: EdgeInsets.symmetric(vertical: 16.h),
-            child: const MessageTextField(),
-          ),
-        ],
+      body: LayoutBuilder(
+        builder: (context, _) {
+          return Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+            ),
+            child: Column(
+              children: [
+                const Expanded(child: DialogMessageWidget()),
+                SafeArea(
+                  minimum: EdgeInsets.symmetric(vertical: 16.h),
+                  child: const MessageTextField(),
+                ),
+              ],
+            ),
+          );
+        },
       ),
+
+      // body: LayoutBuilder(
+      //   builder: (context, constrains) {
+      //     return SingleChildScrollView(
+      //       child: ConstrainedBox(
+      //         constraints: BoxConstraints(minHeight: constrains.maxHeight),
+      //         child: IntrinsicHeight(
+      //           child: Column(
+      //             children: [
+      //               Expanded(
+      //                 child: Container(
+      //                   child: ,
+      //                 ),
+      //               ),
+      //               SafeArea(
+      //                 minimum: EdgeInsets.symmetric(vertical: 16.h),
+      //                 child: const MessageTextField(),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //     );
+      //   },
+      // ),
     );
   }
 }
