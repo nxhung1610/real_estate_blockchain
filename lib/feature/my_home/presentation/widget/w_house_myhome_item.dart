@@ -86,6 +86,8 @@ class HouseMyHomeItem extends StatelessWidget {
                               color: context.textTheme.displayLarge?.color,
                               fontWeight: FontWeight.bold,
                             ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
                           ),
                           AppSize.mediumHeightDimens.verticalSpace,
                           Row(

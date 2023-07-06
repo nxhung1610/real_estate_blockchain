@@ -59,6 +59,7 @@ class _WidgetItem extends StatelessWidget {
                 return Transform.scale(
                   scale: 0.7,
                   child: CupertinoSwitch(
+                    activeColor: AppColor.kNeutrals1,
                     value: value,
                     onChanged: (value) {
                       onSwitch.call(value);
