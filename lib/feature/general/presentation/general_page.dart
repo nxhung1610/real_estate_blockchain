@@ -67,7 +67,7 @@ class _AccountInfo extends StatelessWidget {
               },
               child: Stack(
                 children: [
-                  Container(
+                  SizedBox(
                     width: AppSize.avatarExtraLarge,
                     height: AppSize.avatarExtraLarge,
                     child: ClipRRect(

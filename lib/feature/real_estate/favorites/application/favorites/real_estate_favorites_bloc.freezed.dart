@@ -19,22 +19,25 @@ mixin _$RealEstateFavoritesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(RealEstate estate) onFavorite,
-    required TResult Function(RealEstate estate) onRemoveFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onRemoveFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(RealEstate estate)? onFavorite,
-    TResult? Function(RealEstate estate)? onRemoveFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)?
+        onRemoveFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(RealEstate estate)? onFavorite,
-    TResult Function(RealEstate estate)? onRemoveFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onRemoveFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,8 +126,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(RealEstate estate) onFavorite,
-    required TResult Function(RealEstate estate) onRemoveFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onRemoveFavorite,
   }) {
     return started();
   }
@@ -133,8 +138,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(RealEstate estate)? onFavorite,
-    TResult? Function(RealEstate estate)? onRemoveFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)?
+        onRemoveFavorite,
   }) {
     return started?.call();
   }
@@ -143,8 +149,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(RealEstate estate)? onFavorite,
-    TResult Function(RealEstate estate)? onRemoveFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onRemoveFavorite,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -203,7 +209,7 @@ abstract class _$$RealEstateFavoritesEventOnFavoriteCopyWith<$Res> {
           $Res Function(_$RealEstateFavoritesEventOnFavorite) then) =
       __$$RealEstateFavoritesEventOnFavoriteCopyWithImpl<$Res>;
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({BuildContext context, RealEstate estate});
 
   $RealEstateCopyWith<$Res> get estate;
 }
@@ -221,9 +227,14 @@ class __$$RealEstateFavoritesEventOnFavoriteCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? context = null,
     Object? estate = null,
   }) {
     return _then(_$RealEstateFavoritesEventOnFavorite(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
       null == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
@@ -244,14 +255,16 @@ class __$$RealEstateFavoritesEventOnFavoriteCopyWithImpl<$Res>
 
 class _$RealEstateFavoritesEventOnFavorite
     implements RealEstateFavoritesEventOnFavorite {
-  const _$RealEstateFavoritesEventOnFavorite(this.estate);
+  const _$RealEstateFavoritesEventOnFavorite(this.context, this.estate);
 
+  @override
+  final BuildContext context;
   @override
   final RealEstate estate;
 
   @override
   String toString() {
-    return 'RealEstateFavoritesEvent.onFavorite(estate: $estate)';
+    return 'RealEstateFavoritesEvent.onFavorite(context: $context, estate: $estate)';
   }
 
   @override
@@ -259,11 +272,12 @@ class _$RealEstateFavoritesEventOnFavorite
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealEstateFavoritesEventOnFavorite &&
+            (identical(other.context, context) || other.context == context) &&
             (identical(other.estate, estate) || other.estate == estate));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate);
+  int get hashCode => Object.hash(runtimeType, context, estate);
 
   @JsonKey(ignore: true)
   @override
@@ -277,32 +291,35 @@ class _$RealEstateFavoritesEventOnFavorite
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(RealEstate estate) onFavorite,
-    required TResult Function(RealEstate estate) onRemoveFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onRemoveFavorite,
   }) {
-    return onFavorite(estate);
+    return onFavorite(context, estate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(RealEstate estate)? onFavorite,
-    TResult? Function(RealEstate estate)? onRemoveFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)?
+        onRemoveFavorite,
   }) {
-    return onFavorite?.call(estate);
+    return onFavorite?.call(context, estate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(RealEstate estate)? onFavorite,
-    TResult Function(RealEstate estate)? onRemoveFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onRemoveFavorite,
     required TResult orElse(),
   }) {
     if (onFavorite != null) {
-      return onFavorite(estate);
+      return onFavorite(context, estate);
     }
     return orElse();
   }
@@ -348,9 +365,11 @@ class _$RealEstateFavoritesEventOnFavorite
 
 abstract class RealEstateFavoritesEventOnFavorite
     implements RealEstateFavoritesEvent {
-  const factory RealEstateFavoritesEventOnFavorite(final RealEstate estate) =
+  const factory RealEstateFavoritesEventOnFavorite(
+          final BuildContext context, final RealEstate estate) =
       _$RealEstateFavoritesEventOnFavorite;
 
+  BuildContext get context;
   RealEstate get estate;
   @JsonKey(ignore: true)
   _$$RealEstateFavoritesEventOnFavoriteCopyWith<
@@ -365,7 +384,7 @@ abstract class _$$RealEstateFavoritesEventOnRemoveFavoriteCopyWith<$Res> {
           $Res Function(_$RealEstateFavoritesEventOnRemoveFavorite) then) =
       __$$RealEstateFavoritesEventOnRemoveFavoriteCopyWithImpl<$Res>;
   @useResult
-  $Res call({RealEstate estate});
+  $Res call({BuildContext context, RealEstate estate});
 
   $RealEstateCopyWith<$Res> get estate;
 }
@@ -383,9 +402,14 @@ class __$$RealEstateFavoritesEventOnRemoveFavoriteCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? context = null,
     Object? estate = null,
   }) {
     return _then(_$RealEstateFavoritesEventOnRemoveFavorite(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
       null == estate
           ? _value.estate
           : estate // ignore: cast_nullable_to_non_nullable
@@ -406,14 +430,16 @@ class __$$RealEstateFavoritesEventOnRemoveFavoriteCopyWithImpl<$Res>
 
 class _$RealEstateFavoritesEventOnRemoveFavorite
     implements RealEstateFavoritesEventOnRemoveFavorite {
-  const _$RealEstateFavoritesEventOnRemoveFavorite(this.estate);
+  const _$RealEstateFavoritesEventOnRemoveFavorite(this.context, this.estate);
 
+  @override
+  final BuildContext context;
   @override
   final RealEstate estate;
 
   @override
   String toString() {
-    return 'RealEstateFavoritesEvent.onRemoveFavorite(estate: $estate)';
+    return 'RealEstateFavoritesEvent.onRemoveFavorite(context: $context, estate: $estate)';
   }
 
   @override
@@ -421,11 +447,12 @@ class _$RealEstateFavoritesEventOnRemoveFavorite
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealEstateFavoritesEventOnRemoveFavorite &&
+            (identical(other.context, context) || other.context == context) &&
             (identical(other.estate, estate) || other.estate == estate));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, estate);
+  int get hashCode => Object.hash(runtimeType, context, estate);
 
   @JsonKey(ignore: true)
   @override
@@ -439,32 +466,35 @@ class _$RealEstateFavoritesEventOnRemoveFavorite
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(RealEstate estate) onFavorite,
-    required TResult Function(RealEstate estate) onRemoveFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onFavorite,
+    required TResult Function(BuildContext context, RealEstate estate)
+        onRemoveFavorite,
   }) {
-    return onRemoveFavorite(estate);
+    return onRemoveFavorite(context, estate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(RealEstate estate)? onFavorite,
-    TResult? Function(RealEstate estate)? onRemoveFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult? Function(BuildContext context, RealEstate estate)?
+        onRemoveFavorite,
   }) {
-    return onRemoveFavorite?.call(estate);
+    return onRemoveFavorite?.call(context, estate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(RealEstate estate)? onFavorite,
-    TResult Function(RealEstate estate)? onRemoveFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onFavorite,
+    TResult Function(BuildContext context, RealEstate estate)? onRemoveFavorite,
     required TResult orElse(),
   }) {
     if (onRemoveFavorite != null) {
-      return onRemoveFavorite(estate);
+      return onRemoveFavorite(context, estate);
     }
     return orElse();
   }
@@ -511,8 +541,10 @@ class _$RealEstateFavoritesEventOnRemoveFavorite
 abstract class RealEstateFavoritesEventOnRemoveFavorite
     implements RealEstateFavoritesEvent {
   const factory RealEstateFavoritesEventOnRemoveFavorite(
-      final RealEstate estate) = _$RealEstateFavoritesEventOnRemoveFavorite;
+          final BuildContext context, final RealEstate estate) =
+      _$RealEstateFavoritesEventOnRemoveFavorite;
 
+  BuildContext get context;
   RealEstate get estate;
   @JsonKey(ignore: true)
   _$$RealEstateFavoritesEventOnRemoveFavoriteCopyWith<

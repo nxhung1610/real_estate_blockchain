@@ -4,6 +4,7 @@ class _WBottomViewerAction extends StatelessWidget {
   const _WBottomViewerAction({super.key, required this.item});
 
   final RealEstate item;
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -96,11 +97,12 @@ class _WBottomViewerAction extends StatelessWidget {
                               if (isFavorite) {
                                 context.read<RealEstateFavoritesBloc>().add(
                                       RealEstateFavoritesEvent.onRemoveFavorite(
-                                          item),
+                                          context, item),
                                     );
                               } else {
                                 context.read<RealEstateFavoritesBloc>().add(
-                                      RealEstateFavoritesEvent.onFavorite(item),
+                                      RealEstateFavoritesEvent.onFavorite(
+                                          context, item),
                                     );
                               }
                             },
