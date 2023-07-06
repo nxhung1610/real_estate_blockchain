@@ -32,6 +32,7 @@ import 'package:real_estate_blockchain/injection_dependencies/injection_dependen
 import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../config/real_estate_config_bloc.dart';
@@ -296,6 +297,8 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
                                         ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                     AppSize.smallHeightDimens.verticalSpace,
@@ -330,6 +333,8 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                                 color: AppColor
                                                     .kNeutrals_.shade400,
                                               ),
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
                                             );
                                           },
                                         ),
@@ -402,6 +407,75 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
             )
           ],
           children: [
+            if (context.watch<RealEstateDetailBloc>().state.isShimmer) ...[
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 50.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 200.w,
+                        height: 50.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                      ),
+                      AppSize.extraHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 70.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      Wrap(
+                        spacing: 16.w,
+                        runSpacing: 16.h,
+                        children: List.generate(
+                          6,
+                          (index) => SizedBox(
+                            width: 50.w,
+                            height: 50.h,
+                            child: SkeletonWidget(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AppSize.extraHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 70.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      Center(
+                        child: SizedBox(
+                          width: 200.w,
+                          height: 150.h,
+                          child: SkeletonWidget(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             if (!context.watch<RealEstateDetailBloc>().state.isShimmer &&
                 context.watch<RealEstateDetailBloc>().state.estate == null) ...[
               SliverToBoxAdapter(

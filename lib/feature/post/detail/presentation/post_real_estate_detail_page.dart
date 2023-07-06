@@ -303,54 +303,10 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                             ?.copyWith(
                                           color: AppColor.kNeutrals_.shade400,
                                         ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
-                                    // AppSize.smallHeightDimens.verticalSpace,
-                                    // Flexible(
-                                    //   child: BlocProvider(
-                                    //     create: (context) =>
-                                    //         getIt.call<AddressBuilderCubit>()
-                                    //           ..onLoadAdress(
-                                    //             proviceId: state
-                                    //                     .post
-                                    //                     ?.realEstate
-                                    //                     .provinceId ??
-                                    //                 '',
-                                    //             wardId: state.post?.realEstate
-                                    //                     .wardId ??
-                                    //                 '',
-                                    //             districtId: state
-                                    //                     .post
-                                    //                     ?.realEstate
-                                    //                     .districtId ??
-                                    //                 '',
-                                    //           ),
-                                    //     child: BlocBuilder<AddressBuilderCubit,
-                                    //         AddressBuilderState>(
-                                    //       builder: (context, addressState) {
-                                    //         final isVi = context
-                                    //                 .read<AppBloc>()
-                                    //                 .state
-                                    //                 .locale
-                                    //                 .languageCode ==
-                                    //             'vi';
-                                    //         return Text(
-                                    //           (state.post?.realEstate.address ??
-                                    //                   '') +
-                                    //               (addressState.buildAddress(
-                                    //                       context) ??
-                                    //                   ''),
-                                    //           style: context
-                                    //               .textTheme.bodyMedium
-                                    //               ?.copyWith(
-                                    //             color: AppColor
-                                    //                 .kNeutrals_.shade400,
-                                    //           ),
-                                    //         );
-                                    //       },
-                                    //     ),
-                                    //   ),
-                                    // ),
                                   ],
                                 );
                               },
@@ -418,6 +374,75 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
             )
           ],
           children: [
+            if (context.watch<PostRealEstateDetailBloc>().state.isShimmer) ...[
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 50.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 200.w,
+                        height: 50.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                      ),
+                      AppSize.extraHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 70.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      Wrap(
+                        spacing: 16.w,
+                        runSpacing: 16.h,
+                        children: List.generate(
+                          6,
+                          (index) => SizedBox(
+                            width: 50.w,
+                            height: 50.h,
+                            child: SkeletonWidget(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AppSize.extraHeightDimens.verticalSpace,
+                      SizedBox(
+                        width: 70.w,
+                        height: 20.h,
+                        child: SkeletonWidget(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      AppSize.largeHeightDimens.verticalSpace,
+                      Center(
+                        child: SizedBox(
+                          width: 200.w,
+                          height: 150.h,
+                          child: SkeletonWidget(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             if (!context.watch<PostRealEstateDetailBloc>().state.isShimmer &&
                 context
                         .watch<PostRealEstateDetailBloc>()
