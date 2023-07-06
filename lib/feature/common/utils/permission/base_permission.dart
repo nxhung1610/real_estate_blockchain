@@ -51,7 +51,7 @@ class BasePermission extends StatelessWidget {
               ButtonApp(
                 label: s.goToSetting,
                 onPressed: () {
-                  context.pop();
+                  Navigator.of(context).pop();
                   openAppSettings();
                 },
                 type: ButtonType.primary,

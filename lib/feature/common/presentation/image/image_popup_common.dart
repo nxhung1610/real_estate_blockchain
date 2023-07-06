@@ -14,75 +14,107 @@ Future<void> imagePickerAction(
 }) async {
   return showCupertinoModalPopup(
     context: context,
-    builder: (context) {
-      return CupertinoActionSheet(
-        actions: [
-          CupertinoActionSheetAction(
-            onPressed: () async {
-              try {
-                Navigator.of(context).pop();
-                final permission = await Permission.photos.request();
-                if (!permission.isGranted) {
-                  // ignore: use_build_context_synchronously
-                  await PhotosPermission.show(
-                    context,
-                    onCancel: () {},
-                  );
-
-                  return;
-                }
-                final image = await ImagePicker().pickImage(
-                  source: ImageSource.gallery,
-                );
-                if (image != null) {
-                  return onImage.call(image.path);
-                }
-              } on Exception catch (e, trace) {
-                printLog(e, message: e, error: e, trace: trace);
-              }
-            },
-            child: Text(
-              'Hình ảnh từ thư viện',
-              style: context.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          CupertinoActionSheetAction(
-            onPressed: () async {
-              try {
-                Navigator.of(context).pop();
-                final permission = await Permission.camera.request();
-                if (!permission.isGranted) {
-                  if (permission.isPermanentlyDenied) {
-                    // ignore: use_build_context_synchronously
-                    await CameraPermission.show(
-                      context,
-                      onCancel: () {},
-                    );
-                  }
-                  return;
-                }
-
-                final image = await ImagePicker().pickImage(
-                  source: ImageSource.camera,
-                );
-                if (image != null) {
-                  return onImage.call(image.path);
-                }
-              } on Exception catch (e, trace) {
-                printLog(e, message: e, error: e, trace: trace);
-              }
-            },
-            child: Text(
-              'Chụp hình ảnh',
-              style: context.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          )
-        ],
+    builder: (_) {
+      return _Popup(
+        onImage: onImage,
+        onSetting: () {
+          PhotosPermission.show(
+            context,
+            onCancel: () {},
+          );
+        },
+        onCamera: () {
+          CameraPermission.show(
+            context,
+            onCancel: () {},
+          );
+        },
       );
     },
   );
+}
+
+class _Popup extends StatefulWidget {
+  const _Popup({
+    super.key,
+    required this.onImage,
+    required this.onSetting,
+    required this.onCamera,
+  });
+  final void Function(String path) onImage;
+  final VoidCallback onSetting;
+  final VoidCallback onCamera;
+
+  @override
+  State<_Popup> createState() => __PopupState();
+}
+
+class __PopupState extends State<_Popup> {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoActionSheet(
+      actions: [
+        CupertinoActionSheetAction(
+          onPressed: () async {
+            try {
+              Navigator.of(context).pop();
+              final permission = await Permission.photos.request();
+              if (!permission.isGranted) {
+                // ignore: use_build_context_synchronously
+
+                // ignore: use_build_context_synchronously
+
+                widget.onSetting.call();
+                return;
+              }
+              final image = await ImagePicker().pickImage(
+                source: ImageSource.gallery,
+              );
+              if (image != null) {
+                return widget.onImage.call(image.path);
+              }
+            } on Exception catch (e, trace) {
+              printLog(e, message: e, error: e, trace: trace);
+            }
+          },
+          child: Text(
+            'Hình ảnh từ thư viện',
+            style: context.textTheme.bodyLarge?.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        CupertinoActionSheetAction(
+          onPressed: () async {
+            try {
+              Navigator.of(context).pop();
+              final permission = await Permission.camera.request();
+              if (!permission.isGranted) {
+                if (permission.isPermanentlyDenied) {
+                  // ignore: use_build_context_synchronously
+                  widget.onCamera.call();
+                }
+                return;
+              }
+
+              final image = await ImagePicker().pickImage(
+                source: ImageSource.camera,
+              );
+              if (image != null) {
+                return widget.onImage.call(image.path);
+              }
+            } on Exception catch (e, trace) {
+              printLog(e, message: e, error: e, trace: trace);
+            }
+          },
+          child: Text(
+            'Chụp hình ảnh',
+            style: context.textTheme.bodyLarge?.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        )
+      ],
+    );
+  }
 }
