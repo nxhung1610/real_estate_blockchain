@@ -116,11 +116,24 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                     child: ClipRRect(
                                       borderRadius:
                                           BorderRadius.circular(100.r / 2),
-                                      child: ImageCustom.network(
-                                        user.avatarUrl ??
-                                            'https://tophinhanh.com/wp-content/uploads/2021/12/hinh-anime-nu-sieu-de-thuong.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
+                                      child: user.avatarUrl != null
+                                          ? ImageCustom.network(
+                                              user.avatarUrl ?? '',
+                                              fit: BoxFit.cover,
+                                            )
+                                          : Container(
+                                              color:
+                                                  AppColor.kNeutrals_.shade500,
+                                              child: Center(
+                                                child: Assets
+                                                    .icons.icProfileLight
+                                                    .svg(
+                                                  width: 50.w,
+                                                  height: 50.h,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
                                     ),
                                   );
                                 },

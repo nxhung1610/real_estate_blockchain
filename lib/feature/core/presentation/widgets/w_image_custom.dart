@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 
 class ImageCustom extends Image {
@@ -107,6 +109,11 @@ class _ErrorWidgget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColor.kNeutrals_.shade500,
+      child: Assets.icons.icImageError.svg(
+        color: Colors.white,
+        width: 50.r,
+        height: 50.r,
+      ),
     );
   }
 }

@@ -73,12 +73,23 @@ class _AccountInfo extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius:
                           BorderRadius.circular(AppSize.avatarExtraLarge / 2),
-                      child: ImageCustom.network(
-                        state?.user.avatarUrl ?? '',
-                        width: AppSize.avatarExtraLarge,
-                        height: AppSize.avatarExtraLarge,
-                        fit: BoxFit.cover,
-                      ),
+                      child: state?.user.avatarUrl != null
+                          ? ImageCustom.network(
+                              state?.user.avatarUrl ?? '',
+                              width: AppSize.avatarExtraLarge,
+                              height: AppSize.avatarExtraLarge,
+                              fit: BoxFit.cover,
+                            )
+                          : Container(
+                              color: AppColor.kNeutrals_.shade500,
+                              child: Center(
+                                child: Assets.icons.icProfileLight.svg(
+                                  width: 25.w,
+                                  height: 25.h,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                     ),
                   ),
                   Positioned.fill(

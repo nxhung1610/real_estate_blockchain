@@ -187,6 +187,10 @@ class $AssetsIconsGen {
   SvgGenImage get icHomeLight =>
       const SvgGenImage('assets/icons/ic_home_light.svg');
 
+  /// File path: assets/icons/ic_image_error.svg
+  SvgGenImage get icImageError =>
+      const SvgGenImage('assets/icons/ic_image_error.svg');
+
   /// File path: assets/icons/ic_location_bold.svg
   SvgGenImage get icLocationBold =>
       const SvgGenImage('assets/icons/ic_location_bold.svg');
@@ -315,6 +319,7 @@ class $AssetsIconsGen {
         icHome3,
         icHomeBold,
         icHomeLight,
+        icImageError,
         icLocationBold,
         icLocationLight,
         icMessageBold,
