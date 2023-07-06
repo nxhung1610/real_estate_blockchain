@@ -1,12 +1,17 @@
 import 'dart:async';
-import 'dart:developer';
+
+import 'package:another_flushbar/flushbar.dart';
 import 'package:async/async.dart';
 import 'package:bloc/bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
+import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/data/real_estate/data.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
+import 'package:real_estate_blockchain/feature/app/router/app_route.dart';
 
 part 'real_estate_favorites_bloc.freezed.dart';
 part 'real_estate_favorites_event.dart';
@@ -17,6 +22,7 @@ class RealEstateFavoritesBloc
     extends Bloc<RealEstateFavoritesEvent, RealEstateFavoritesState> {
   final IRealEstateRepository _realEstateRepository;
   CancelableOperation? completer;
+
   RealEstateFavoritesBloc(this._realEstateRepository)
       : super(const RealEstateFavoritesState()) {
     on<_Started>((event, emit) async {
@@ -54,6 +60,7 @@ class RealEstateFavoritesBloc
           ),
         );
         final estate = await _realEstateRepository.setFavorite(event.estate.id);
+        showToast(event.context, isAdd: true);
         emit(
           state.copyWith(
             estates: List.from(
@@ -94,6 +101,8 @@ class RealEstateFavoritesBloc
         );
         final estate =
             await _realEstateRepository.removeFavorite(event.estate.id);
+        showToast(event.context, isAdd: false);
+
         emit(
           state.copyWith(
             estates: List.from(
@@ -116,5 +125,37 @@ class RealEstateFavoritesBloc
   Future<void> dispose() async {
     completer?.cancel();
     completer = null;
+  }
+
+  Future showToast(BuildContext context, {required bool isAdd}) async {
+    late final Flushbar flush;
+    flush = Flushbar<bool?>(
+      messageText: Text.rich(
+        TextSpan(
+            text: isAdd ? "Đã thêm vào " : "Đã xóa khỏi ",
+            style: const TextStyle(color: AppColor.kNeutrals11),
+            children: [
+              TextSpan(
+                  text: "Mục ưa thích",
+                  style: const TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: AppColor.kPrimary1),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      flush.dismiss(true); // result = true
+                    })
+            ]),
+      ),
+      margin: const EdgeInsets.only(bottom: 24),
+      duration: const Duration(seconds: 2),
+      icon: const Icon(
+        Icons.info_outline,
+        color: AppColor.kPrimary1,
+      ),
+    );
+    final result = await flush.show(context);
+    if (result == true) {
+      context.push($appRoute.realEstateFavorites);
+    }
   }
 }

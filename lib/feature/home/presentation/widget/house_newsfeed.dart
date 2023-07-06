@@ -9,7 +9,6 @@ import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/post_real_estate.dart';
-import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
@@ -164,12 +163,12 @@ class HouseNewsFeed extends StatelessWidget {
                         if (isFavorite) {
                           context.read<RealEstateFavoritesBloc>().add(
                                 RealEstateFavoritesEvent.onRemoveFavorite(
-                                    value.realEstate),
+                                    context, value.realEstate),
                               );
                         } else {
                           context.read<RealEstateFavoritesBloc>().add(
                                 RealEstateFavoritesEvent.onFavorite(
-                                    value.realEstate),
+                                    context, value.realEstate),
                               );
                         }
 
