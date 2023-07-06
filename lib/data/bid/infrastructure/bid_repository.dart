@@ -48,6 +48,9 @@ class BidRepository implements IBidRepository {
           return unit;
         },
       );
+      if (!res.success) {
+        throw res;
+      }
       return right(unit);
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);

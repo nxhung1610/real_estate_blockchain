@@ -10,8 +10,10 @@ class WebViewScreen extends StatefulWidget {
   const WebViewScreen({
     Key? key,
     required this.url,
+    required this.title,
   }) : super(key: key);
   final String url;
+  final String title;
 
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
@@ -29,7 +31,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
         context,
         leading: const UnconstrainedBox(child: BackButtonApp()),
         leadingWidth: AppSize.mediumIcon + 64.w,
-        title: Text(s.transactionDetail),
+        title: Text(s.news),
         centerTitle: true,
       ),
       body: Column(

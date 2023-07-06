@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,8 @@ import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_lazy_load_wrapper.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/application/real_estate_news_bloc/real_estate_news_bloc.dart';
 import 'package:real_estate_blockchain/feature/real_estate/news/presentation/widgets/w_real_estate_news.dart';
+import 'package:real_estate_blockchain/feature/webview/presentation/webview_page.dart';
+import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/widget_extensions.dart';
 
 class RealEstateNewsPage extends StatelessWidget {
@@ -20,12 +23,13 @@ class RealEstateNewsPage extends StatelessWidget {
     final data = bloc.state.data;
     final status = bloc.state.status;
     final state = bloc.state;
+    final s = S.of(context);
     return Scaffold(
       appBar: CustomAppbar(
         context,
         leading: const UnconstrainedBox(child: BackButtonApp()),
         leadingWidth: AppSize.mediumIcon + 64.w,
-        title: const Text("Tin tức"),
+        title: Text(s.news),
         centerTitle: true,
       ),
       body: status is StatusLoading

@@ -24,7 +24,10 @@ class MessageRepository {
         // url: "http://192.168.1.9:9234",
         query: request.toJson(),
         parse: (data) {
-          return (data as List).map((e) => ChatMessage.fromJson(e)).toList();
+          return (data as List?)
+                  ?.map((e) => ChatMessage.fromJson(e))
+                  .toList() ??
+              [];
         },
       );
       if (res.success) {

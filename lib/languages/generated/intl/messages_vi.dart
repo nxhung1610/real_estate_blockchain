@@ -239,6 +239,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mật khẩu mới không trùng nhau"),
         "newPasswordNotValid":
             MessageLookupByLibrary.simpleMessage("Mật khẩu mới không hợp lệ"),
+        "news": MessageLookupByLibrary.simpleMessage("Tin tức"),
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),

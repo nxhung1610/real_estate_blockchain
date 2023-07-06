@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_style.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/real_estate_news.dart';
 import 'package:real_estate_blockchain/feature/real_estate/news/presentation/widgets/reputa_favicon.dart';
+import 'package:real_estate_blockchain/feature/webview/presentation/webview_page.dart';
 
 class WRealEstateNews extends StatelessWidget {
   const WRealEstateNews({Key? key, required this.it, required this.index})
@@ -16,7 +18,18 @@ class WRealEstateNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          CupertinoPageRoute(
+            builder: (context) {
+              return WebViewScreen(
+                url: it.url ?? '',
+                title: it.title ?? '',
+              );
+            },
+          ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, bottom: 24),
         child: Row(

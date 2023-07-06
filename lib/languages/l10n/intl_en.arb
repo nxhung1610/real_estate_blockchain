@@ -277,5 +277,6 @@
    "validPhoneNumber" :"Valid phone number",
    "inputOtp" : "Input OTP",
    "invalidOtp" : "Invalid Otp",
-   "changePhoneNumber" : "Change phone number"
+   "changePhoneNumber" : "Change phone number",
+   "news" : "News"
 }

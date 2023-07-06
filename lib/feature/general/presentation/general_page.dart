@@ -186,7 +186,7 @@ class _Options extends StatelessWidget {
                   color: AppColor.kPrimary1,
                 ),
               ),
-              label: "Tin tức",
+              label: s.news,
               onPressed: () {
                 context.push($appRoute.realEstateNews);
               },

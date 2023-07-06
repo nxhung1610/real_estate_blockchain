@@ -278,5 +278,6 @@
   "validPhoneNumber" :"Xác nhận số điện thoại",
   "inputOtp" : "Nhập mã xác thực OTP",
   "invalidOtp" : "Mã OTP không hợp lệ",
-  "changePhoneNumber" : "Đổi số điện thoại"
+  "changePhoneNumber" : "Đổi số điện thoại",
+  "news" : "Tin tức"
 }

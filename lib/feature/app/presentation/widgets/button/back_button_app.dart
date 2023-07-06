@@ -36,7 +36,7 @@ class BackButtonApp extends StatelessWidget {
               if (onPressed != null) {
                 onPressed?.call();
               } else {
-                context.pop();
+                Navigator.of(context).pop();
               }
             },
             child: Padding(

@@ -238,6 +238,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("New password not match"),
         "newPasswordNotValid":
             MessageLookupByLibrary.simpleMessage("New password not valid"),
+        "news": MessageLookupByLibrary.simpleMessage("News"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noBathRoom":
             MessageLookupByLibrary.simpleMessage("Number of bathroom"),
