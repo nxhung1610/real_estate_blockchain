@@ -27,6 +27,8 @@ class InputPrimaryForm extends StatefulWidget {
   final bool enable;
   final Key? textKey;
   final TextAlign? textAlign;
+
+  final int? maxLength;
   const InputPrimaryForm({
     super.key,
     this.lable,
@@ -50,6 +52,7 @@ class InputPrimaryForm extends StatefulWidget {
     this.textKey,
     this.inputFormatters,
     this.textAlign,
+    this.maxLength,
   });
 
   @override
@@ -131,6 +134,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
             ).applyDefaults(
               context.theme.inputDecorationTheme,
             ),
+            maxLength: widget.maxLength,
             inputFormatters: widget.inputFormatters,
             validator: widget.validator,
             onChanged: widget.onChanged,

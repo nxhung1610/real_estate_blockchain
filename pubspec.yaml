@@ -111,6 +111,7 @@ dependencies:
   latlong2:
   geolocator: ^9.0.2
   async: ^2.10.0
+  currency_text_input_formatter: ^2.1.10
 
   # Websocket
   stomp_dart_client: ^0.4.4

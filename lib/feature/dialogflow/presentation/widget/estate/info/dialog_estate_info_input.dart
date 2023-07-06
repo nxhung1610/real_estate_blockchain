@@ -1,4 +1,6 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -206,13 +208,31 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
                         ),
                         AppSize.mediumHeightDimens.verticalSpace,
                         InputPrimaryForm(
-                          hint: '1200000',
+                          hint: '1.200.000 đ',
                           keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(15),
+                            CurrencyTextInputFormatter(
+                              locale: 'vi',
+                              symbol: 'đ',
+                            ),
+                          ],
                           onChanged: (value) {
+                            final val = num.tryParse(
+                                    value.replaceAll(RegExp("[^0-9]"), '')) ??
+                                0;
+
                             bloc.add(DialogEstateInfoEvent.onPriceChanged(
-                                double.tryParse(value) ?? 0));
+                                val.toDouble()));
                           },
                         ),
+                        // InputPrimaryForm(
+                        //   hint: '1200000',
+                        //   keyboardType: TextInputType.number,
+                        //   onChanged: (value) {
+
+                        //   },
+                        // ),
                       ],
                     ),
                   ),

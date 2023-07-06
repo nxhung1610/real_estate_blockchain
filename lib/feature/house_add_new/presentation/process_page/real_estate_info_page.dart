@@ -1,3 +1,4 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +14,7 @@ import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_co
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:real_estate_blockchain/utils/string/number_format.dart';
 
 class RealEstateInfoPage extends StatefulWidget {
   const RealEstateInfoPage({super.key});
@@ -165,10 +167,21 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   ),
                   AppSize.mediumHeightDimens.verticalSpace,
                   InputPrimaryForm(
-                    hint: '1200000',
+                    hint: '1.200.000 đ',
                     keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(15),
+                      CurrencyTextInputFormatter(
+                        locale: 'vi',
+                        symbol: 'đ',
+                      ),
+                    ],
                     onChanged: (value) {
-                      bloc.onPriceChanged(double.tryParse(value) ?? 0);
+                      final val = num.tryParse(
+                              value.replaceAll(RegExp("[^0-9]"), '')) ??
+                          0;
+
+                      bloc.onPriceChanged(val.toDouble());
                     },
                   ),
                 ],
