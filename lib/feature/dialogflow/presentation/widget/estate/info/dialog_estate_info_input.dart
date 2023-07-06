@@ -168,8 +168,14 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
                         ),
                         AppSize.mediumHeightDimens.verticalSpace,
                         InputPrimaryForm(
-                          hint: '1230000',
+                          hint: '20.000',
                           keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(9),
+                            CurrencyTextInputFormatter(
+                              customPattern: '###,###',
+                            ),
+                          ],
                           suffixIcon: IntrinsicWidth(
                             child: Center(
                               child: Text(
@@ -183,9 +189,12 @@ class _DialogEstateInfoInputState extends State<DialogEstateInfoInput> {
                             ),
                           ),
                           onChanged: (value) {
+                            final val = num.tryParse(
+                                    value.replaceAll(RegExp("[^0-9]"), '')) ??
+                                0;
                             bloc.add(
                               DialogEstateInfoEvent.onAreaChanged(
-                                double.tryParse(value) ?? 0,
+                                val.toDouble(),
                               ),
                             );
                           },
