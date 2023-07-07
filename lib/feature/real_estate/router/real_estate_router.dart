@@ -2,6 +2,7 @@ import 'package:go_router/src/route.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/router/real_estate_detail_router.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/router/real_estate_favorites_router.dart';
+import 'package:real_estate_blockchain/feature/real_estate/market_analysis/router/market_analysis_router.dart';
 import 'package:real_estate_blockchain/feature/real_estate/news/router/real_estate_news_router.dart';
 
 import '../edit/router/real_estate_edit_router.dart';
@@ -13,6 +14,7 @@ class RealEstateRouter extends BaseRoute {
   late final RealEstateFavoritesRouter _favorites;
   late final RealEstateEditRouter edit;
   late final RealEstateNewsRouter _news;
+  late final MarketAnalysisRouter _marketAnalysis;
 
   // Path
   String get detail => _detail.url;
@@ -20,6 +22,8 @@ class RealEstateRouter extends BaseRoute {
   String get favorites => _favorites.url;
 
   String get news => _news.url;
+
+  String get marketAnalysis => _marketAnalysis.url;
 
   @override
   List<RouteBase> get routes => [
@@ -34,7 +38,8 @@ class RealEstateRouter extends BaseRoute {
         ..._detail.globalRoutes,
         ..._favorites.globalRoutes,
         ...edit.globalRoutes,
-        ..._news.globalRoutes
+        ..._news.globalRoutes,
+        ..._marketAnalysis.globalRoutes,
       ];
 
   @override
@@ -43,5 +48,6 @@ class RealEstateRouter extends BaseRoute {
     _favorites = RealEstateFavoritesRouter(url, '/favorites');
     edit = RealEstateEditRouter(url, '/edit');
     _news = RealEstateNewsRouter(url, '/news');
+    _marketAnalysis = MarketAnalysisRouter(url, '/market-analysis');
   }
 }

@@ -4,6 +4,7 @@ import 'package:real_estate_blockchain/data/real_estate/domain/params/real_estat
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_filter_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/params/search/real_estate_search_input.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/real_estate_failure.dart';
+import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/market_analysis/market_analysis.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/get_news_request/get_news_request.dart';
 import 'package:real_estate_blockchain/data/real_estate/infrastructure/dto/news/real_estate_news.dart';
 
@@ -34,6 +35,9 @@ abstract class IRealEstateRepository {
 
   Future<Either<RealEstateFailure, List<RealEstateNews>>> getNews(
       {required GetNewsRequest request});
+
+  Future<Either<RealEstateFailure, ArticleList>> getMarketAnalysis(
+      {required int page, required int size});
 
   Future<Either<RealEstateFailure, List<PostRealEstate>>> newfeeds({
     Province? provice,

@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
@@ -18,6 +17,7 @@ class ApiRemote {
   VoidCallback? _onExpireToken;
   Future<Either<dynamic, dynamic>> Function()? _refreshToken;
   Future<String> Function()? _token;
+
   init({
     required VoidCallback onExpireToken,
     Future<Either<dynamic, dynamic>> Function()? refreshToken,
@@ -30,6 +30,7 @@ class ApiRemote {
 
   Dio get _dio => _initDio();
   late final Dio dioToken = _intiDioToken();
+
   Dio _initDio() {
     final Dio dio = Dio();
 
@@ -49,7 +50,7 @@ class ApiRemote {
           ..interceptors.addAll(
             [
               JWTInterceptor(_onExpireToken, _refreshToken, dioToken, _token),
-              // CurlLoggerDioInterceptor()
+              CurlLoggerDioInterceptor()
             ],
           )
 
