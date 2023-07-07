@@ -363,6 +363,9 @@ class $AssetsImagesGen {
   AssetGenImage get myHomeBackground =>
       const AssetGenImage('assets/images/my_home_background.png');
 
+  /// File path: assets/images/no_post.png
+  AssetGenImage get noPost => const AssetGenImage('assets/images/no_post.png');
+
   /// File path: assets/images/onboarding1.png
   AssetGenImage get onboarding1 =>
       const AssetGenImage('assets/images/onboarding1.png');
@@ -383,6 +386,7 @@ class $AssetsImagesGen {
         box,
         imageHouse,
         myHomeBackground,
+        noPost,
         onboarding1,
         onboarding2,
         telegram,

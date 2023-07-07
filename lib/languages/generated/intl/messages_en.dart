@@ -246,6 +246,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noBid": MessageLookupByLibrary.simpleMessage("No bid found"),
         "noDataFound": MessageLookupByLibrary.simpleMessage("No data found"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Number of floor"),
+        "noPostFoundPleaseCreatePost": MessageLookupByLibrary.simpleMessage(
+            "No post found. Please create a post."),
         "normal": MessageLookupByLibrary.simpleMessage("Normal"),
         "north": MessageLookupByLibrary.simpleMessage("North"),
         "northEast": MessageLookupByLibrary.simpleMessage("North East"),

@@ -21,7 +21,6 @@ mixin _$MarketAnalysisEvent {
     required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loaded,
@@ -33,13 +32,11 @@ mixin _$MarketAnalysisEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MarketAnalysisLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarketAnalysisLoaded value)? loaded,
@@ -65,9 +62,9 @@ class _$MarketAnalysisEventCopyWithImpl<$Res, $Val extends MarketAnalysisEvent>
     implements $MarketAnalysisEventCopyWith<$Res> {
   _$MarketAnalysisEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -195,9 +192,9 @@ class _$MarketAnalysisStateCopyWithImpl<$Res, $Val extends MarketAnalysisState>
     implements $MarketAnalysisStateCopyWith<$Res> {
   _$MarketAnalysisStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
@@ -309,7 +306,7 @@ class _$_MarketAnalysisState extends _MarketAnalysisState {
   @override
   List<Article> get data {
     if (_data is EqualUnmodifiableListView) return _data;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
 

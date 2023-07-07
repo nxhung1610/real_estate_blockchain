@@ -24,7 +24,6 @@ mixin _$MarketAnalysisResponse {
   ArticleList? get articleList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $MarketAnalysisResponseCopyWith<MarketAnalysisResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $MarketAnalysisResponseCopyWith<$Res> {
   factory $MarketAnalysisResponseCopyWith(MarketAnalysisResponse value,
           $Res Function(MarketAnalysisResponse) then) =
       _$MarketAnalysisResponseCopyWithImpl<$Res, MarketAnalysisResponse>;
-
   @useResult
   $Res call({ArticleList? articleList});
 
@@ -50,7 +48,6 @@ class _$MarketAnalysisResponseCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -86,7 +83,6 @@ abstract class _$$_MarketAnalysisResponseCopyWith<$Res>
   factory _$$_MarketAnalysisResponseCopyWith(_$_MarketAnalysisResponse value,
           $Res Function(_$_MarketAnalysisResponse) then) =
       __$$_MarketAnalysisResponseCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({ArticleList? articleList});
@@ -172,7 +168,6 @@ abstract class _MarketAnalysisResponse implements MarketAnalysisResponse {
 
   @override
   ArticleList? get articleList;
-
   @override
   @JsonKey(ignore: true)
   _$$_MarketAnalysisResponseCopyWith<_$_MarketAnalysisResponse> get copyWith =>
@@ -186,13 +181,10 @@ Author _$AuthorFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Author {
   int? get id => throw _privateConstructorUsedError;
-
   String? get name => throw _privateConstructorUsedError;
-
   String? get profilePhoto => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AuthorCopyWith<Author> get copyWith => throw _privateConstructorUsedError;
 }
@@ -201,7 +193,6 @@ mixin _$Author {
 abstract class $AuthorCopyWith<$Res> {
   factory $AuthorCopyWith(Author value, $Res Function(Author) then) =
       _$AuthorCopyWithImpl<$Res, Author>;
-
   @useResult
   $Res call({int? id, String? name, String? profilePhoto});
 }
@@ -213,7 +204,6 @@ class _$AuthorCopyWithImpl<$Res, $Val extends Author>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -245,7 +235,6 @@ class _$AuthorCopyWithImpl<$Res, $Val extends Author>
 abstract class _$$_AuthorCopyWith<$Res> implements $AuthorCopyWith<$Res> {
   factory _$$_AuthorCopyWith(_$_Author value, $Res Function(_$_Author) then) =
       __$$_AuthorCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int? id, String? name, String? profilePhoto});
@@ -342,13 +331,10 @@ abstract class _Author implements Author {
 
   @override
   int? get id;
-
   @override
   String? get name;
-
   @override
   String? get profilePhoto;
-
   @override
   @JsonKey(ignore: true)
   _$$_AuthorCopyWith<_$_Author> get copyWith =>
@@ -362,31 +348,20 @@ Article _$ArticleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Article {
   int? get id => throw _privateConstructorUsedError;
-
   String? get title => throw _privateConstructorUsedError;
-
   String? get excerpt => throw _privateConstructorUsedError;
-
   String? get slug => throw _privateConstructorUsedError;
-
   String? get link => throw _privateConstructorUsedError;
-
   String? get featuredImage => throw _privateConstructorUsedError;
-
   @JsonKey(fromJson: fromApiDate1)
   DateTime? get postDate => throw _privateConstructorUsedError;
-
   @JsonKey(fromJson: fromApiDate1)
   DateTime? get modifiedDate => throw _privateConstructorUsedError;
-
   Author? get author => throw _privateConstructorUsedError;
-
   List<Author>? get category => throw _privateConstructorUsedError;
-
   List<Author>? get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ArticleCopyWith<Article> get copyWith => throw _privateConstructorUsedError;
 }
@@ -395,7 +370,6 @@ mixin _$Article {
 abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res, Article>;
-
   @useResult
   $Res call(
       {int? id,
@@ -420,7 +394,6 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -505,7 +478,6 @@ abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
   factory _$$_ArticleCopyWith(
           _$_Article value, $Res Function(_$_Article) then) =
       __$$_ArticleCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -639,7 +611,6 @@ class _$_Article implements _Article {
   @override
   final Author? author;
   final List<Author>? _category;
-
   @override
   List<Author>? get category {
     final value = _category;
@@ -650,7 +621,6 @@ class _$_Article implements _Article {
   }
 
   final List<Author>? _tags;
-
   @override
   List<Author>? get tags {
     final value = _tags;
@@ -734,39 +704,28 @@ abstract class _Article implements Article {
 
   @override
   int? get id;
-
   @override
   String? get title;
-
   @override
   String? get excerpt;
-
   @override
   String? get slug;
-
   @override
   String? get link;
-
   @override
   String? get featuredImage;
-
   @override
   @JsonKey(fromJson: fromApiDate1)
   DateTime? get postDate;
-
   @override
   @JsonKey(fromJson: fromApiDate1)
   DateTime? get modifiedDate;
-
   @override
   Author? get author;
-
   @override
   List<Author>? get category;
-
   @override
   List<Author>? get tags;
-
   @override
   @JsonKey(ignore: true)
   _$$_ArticleCopyWith<_$_Article> get copyWith =>
@@ -780,13 +739,10 @@ ArticleList _$ArticleListFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ArticleList {
   int? get totalCount => throw _privateConstructorUsedError;
-
   int? get totalPage => throw _privateConstructorUsedError;
-
   List<Article>? get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ArticleListCopyWith<ArticleList> get copyWith =>
       throw _privateConstructorUsedError;
@@ -797,7 +753,6 @@ abstract class $ArticleListCopyWith<$Res> {
   factory $ArticleListCopyWith(
           ArticleList value, $Res Function(ArticleList) then) =
       _$ArticleListCopyWithImpl<$Res, ArticleList>;
-
   @useResult
   $Res call({int? totalCount, int? totalPage, List<Article>? items});
 }
@@ -809,7 +764,6 @@ class _$ArticleListCopyWithImpl<$Res, $Val extends ArticleList>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -843,7 +797,6 @@ abstract class _$$_ArticleListCopyWith<$Res>
   factory _$$_ArticleListCopyWith(
           _$_ArticleList value, $Res Function(_$_ArticleList) then) =
       __$$_ArticleListCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({int? totalCount, int? totalPage, List<Article>? items});
@@ -897,7 +850,6 @@ class _$_ArticleList implements _ArticleList {
   @override
   final int? totalPage;
   final List<Article>? _items;
-
   @override
   List<Article>? get items {
     final value = _items;
@@ -954,13 +906,10 @@ abstract class _ArticleList implements ArticleList {
 
   @override
   int? get totalCount;
-
   @override
   int? get totalPage;
-
   @override
   List<Article>? get items;
-
   @override
   @JsonKey(ignore: true)
   _$$_ArticleListCopyWith<_$_ArticleList> get copyWith =>

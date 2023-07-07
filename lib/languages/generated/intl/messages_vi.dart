@@ -247,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noDataFound":
             MessageLookupByLibrary.simpleMessage("Không tìm thấy dữ liệu"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
+        "noPostFoundPleaseCreatePost": MessageLookupByLibrary.simpleMessage(
+            "Chưa có bài đăng nào, bạn hãy tạo 1 bài đăng mới."),
         "normal": MessageLookupByLibrary.simpleMessage("Thường"),
         "north": MessageLookupByLibrary.simpleMessage("Bắc"),
         "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),

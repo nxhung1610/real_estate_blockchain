@@ -2799,6 +2799,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No post found. Please create a post.`
+  String get noPostFoundPleaseCreatePost {
+    return Intl.message(
+      'No post found. Please create a post.',
+      name: 'noPostFoundPleaseCreatePost',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

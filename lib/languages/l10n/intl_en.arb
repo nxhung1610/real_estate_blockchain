@@ -278,5 +278,6 @@
    "inputOtp" : "Input OTP",
    "invalidOtp" : "Invalid Otp",
    "changePhoneNumber" : "Change phone number",
-   "news" : "News"
+   "news" : "News",
+   "noPostFoundPleaseCreatePost" : "No post found. Please create a post."
 }

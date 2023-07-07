@@ -87,24 +87,34 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
                       ),
                     );
                   }
-                  if (posts.isEmpty) {
+                  if (posts.isNotEmpty) {
                     return SliverFillRemaining(
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Assets.images.box.image(
-                              width: 150.w,
-                              height: 150.h,
+                            Assets.images.noPost.image(
+                              width: 130.w,
+                              height: 130.h,
                               color: AppColor.kNeutrals4,
                             ),
-                            AppSize.mediumHeightDimens.verticalSpace,
+                            AppSize.largeHeightDimens.verticalSpace,
                             Text(
-                              s.noDataFound,
+                              s.noPostFoundPleaseCreatePost,
                               style: context.textTheme.bodyMedium?.copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
+                            AppSize.largeHeightDimens.verticalSpace,
+                            ButtonApp(
+                              label: s.createPost,
+                              style: ButtonScaleStyle.tight,
+                              onPressed: () {
+                                context.pushReplacement($appRoute.myHome.url);
+                              },
+                              size: ButtonSize.medium,
+                              type: ButtonType.primary,
+                            )
                           ],
                         ),
                       ),
