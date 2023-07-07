@@ -6,6 +6,7 @@ import 'package:real_estate_blockchain/feature/house_add_new/routers/house_add_n
 import 'package:real_estate_blockchain/feature/main/module.dart';
 import 'package:real_estate_blockchain/feature/notification/router/notification_route.dart';
 import 'package:real_estate_blockchain/feature/onboarding/module.dart';
+import 'package:real_estate_blockchain/feature/photoview/router/photo_view_router.dart';
 import 'package:real_estate_blockchain/feature/post/detail/router/post_real_estate_detail_router.dart';
 import 'package:real_estate_blockchain/feature/real_estate/router/real_estate_router.dart';
 import 'package:real_estate_blockchain/feature/search/router/router.dart';
@@ -38,6 +39,7 @@ class AppRoute extends BaseRoute {
   late final PostRealEstateDetailRouter postRealEstateDetail;
   late final MyHomeRoute myHome;
   late final DialogflowRoute dialogflow;
+  late final PhotoViewRouter photoView;
 
   // Path
   String get onboarding => _onboardingRoute.url;
@@ -78,7 +80,8 @@ class AppRoute extends BaseRoute {
         ...postOwner.routes,
         ...postRealEstateDetail.routes,
         ...myHome.routes,
-        ...dialogflow.routes
+        ...dialogflow.routes,
+        ...photoView.routes,
       ];
 
   @override
@@ -96,6 +99,7 @@ class AppRoute extends BaseRoute {
         ...postRealEstateDetail.globalRoutes,
         ...myHome.globalRoutes,
         ...dialogflow.globalRoutes,
+        ...photoView.globalRoutes,
       ];
 
   @override
@@ -116,5 +120,6 @@ class AppRoute extends BaseRoute {
         PostRealEstateDetailRouter(url, '/posts/real-estate/detail');
     myHome = MyHomeRoute(url, '/my-home');
     dialogflow = DialogflowRoute(url, '/dialogflow');
+    photoView = PhotoViewRouter(url, '/photo-view');
   }
 }

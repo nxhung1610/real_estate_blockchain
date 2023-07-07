@@ -20,10 +20,12 @@ import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/bid/detail/presentation/popup/bid_done_popup.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/behavior/transparent_pointer.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
+import 'package:real_estate_blockchain/feature/photoview/model/photo_view_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/user/profile/application/user_profile_bloc.dart';
 import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
@@ -50,6 +52,7 @@ class _BidDetailPageState extends State<BidDetailPage>
   late final Animation<double> animation;
   late final BidDetailBloc bloc;
   bool isShowFinish = false;
+  int currentImage = 0;
   @override
   void initState() {
     super.initState();
@@ -253,9 +256,10 @@ class _BidDetailPageState extends State<BidDetailPage>
                       return GestureDetector(
                         onTap: () {
                           context.push(
-                            $appRoute.realEstateDetail,
-                            extra: RealEstateDetailPageParams(
-                              id: state.bid?.realEstate?.id.toString() ?? '',
+                            $appRoute.photoView.url,
+                            extra: PhotoViewParams(
+                              initIndex: currentImage,
+                              images: state.bid?.realEstate?.images ?? [],
                             ),
                           );
                         },
@@ -353,9 +357,12 @@ class _BidDetailPageState extends State<BidDetailPage>
                                       itemCount: state?.images?.length ?? 0,
                                       itemBuilder: (context, index, realIndex) {
                                         final image = state?.images?[index];
-                                        return ImageCustom.network(
-                                          image?.url ?? '',
-                                          fit: BoxFit.cover,
+                                        return Hero(
+                                          tag: image?.url ?? '',
+                                          child: ImageCustom.network(
+                                            image?.url ?? '',
+                                            fit: BoxFit.cover,
+                                          ),
                                         );
                                       },
                                       options: CarouselOptions(
@@ -370,13 +377,16 @@ class _BidDetailPageState extends State<BidDetailPage>
                                             const Duration(milliseconds: 800),
                                         autoPlayCurve: Curves.fastOutSlowIn,
                                         scrollDirection: Axis.horizontal,
+                                        onPageChanged: (index, reason) {
+                                          currentImage = index;
+                                        },
                                       ),
                                     );
                                   },
                                 ),
                               ),
                               Positioned.fill(
-                                  child: IgnorePointer(
+                                  child: TransparentPointer(
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(

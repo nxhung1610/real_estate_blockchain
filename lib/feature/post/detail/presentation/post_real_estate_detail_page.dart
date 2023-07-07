@@ -24,10 +24,12 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
 import 'package:real_estate_blockchain/feature/common/application/address/address_builder_cubit.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/behavior/transparent_pointer.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_custom_refresh_scroll_view.dart';
 import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
 import 'package:real_estate_blockchain/feature/message/application/chat_room_bloc/chat_room_bloc_params.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
+import 'package:real_estate_blockchain/feature/photoview/model/photo_view_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import 'package:real_estate_blockchain/feature/real_estate/favorites/application/favorites/real_estate_favorites_bloc.dart';
 import 'package:real_estate_blockchain/feature/tour/schedule_tour/model/schedule_tour_params.dart';
@@ -61,6 +63,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
   late final AnimationController animationController;
   late final Animation<double> animation;
   late final PostRealEstateDetailBloc bloc;
+  int currentImage = 0;
 
   @override
   void initState() {
@@ -75,6 +78,12 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
       ..add(
         const PostRealEstateDetailEvent.onStarted(),
       );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -254,7 +263,7 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                     ),
                   ),
                   centerTitle: true,
-                  flexibleSpace: IgnorePointer(
+                  flexibleSpace: TransparentPointer(
                     child: LayoutBuilder(
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
@@ -321,48 +330,67 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                     return state.post?.realEstate;
                                   },
                                   builder: (context, state) {
-                                    return CarouselSlider.builder(
-                                      key: PageStorageKey(state),
-                                      itemCount: state?.images?.length ?? 0,
-                                      itemBuilder: (context, index, realIndex) {
-                                        final image = state?.images?[index];
-                                        return ImageCustom.network(
-                                          image?.url ?? '',
-                                          fit: BoxFit.cover,
+                                    return GestureDetector(
+                                      onTap: () {
+                                        context.push(
+                                          $appRoute.photoView.url,
+                                          extra: PhotoViewParams(
+                                            initIndex: currentImage,
+                                            images: state?.images ?? [],
+                                          ),
                                         );
                                       },
-                                      options: CarouselOptions(
-                                        initialPage: 0,
-                                        viewportFraction: 1,
-                                        aspectRatio: 1,
-                                        enableInfiniteScroll: true,
-                                        autoPlay: true,
-                                        autoPlayInterval:
-                                            const Duration(seconds: 3),
-                                        autoPlayAnimationDuration:
-                                            const Duration(milliseconds: 800),
-                                        autoPlayCurve: Curves.fastOutSlowIn,
-                                        scrollDirection: Axis.horizontal,
+                                      child: CarouselSlider.builder(
+                                        key: PageStorageKey(state),
+                                        itemCount: state?.images?.length ?? 0,
+                                        itemBuilder:
+                                            (context, index, realIndex) {
+                                          final image = state?.images?[index];
+                                          return Hero(
+                                            tag: image?.url ?? '',
+                                            child: ImageCustom.network(
+                                              image?.url ?? '',
+                                              fit: BoxFit.cover,
+                                            ),
+                                          );
+                                        },
+                                        options: CarouselOptions(
+                                          initialPage: 0,
+                                          viewportFraction: 1,
+                                          aspectRatio: 1,
+                                          enableInfiniteScroll: true,
+                                          autoPlay: true,
+                                          autoPlayInterval:
+                                              const Duration(seconds: 3),
+                                          autoPlayAnimationDuration:
+                                              const Duration(milliseconds: 800),
+                                          autoPlayCurve: Curves.fastOutSlowIn,
+                                          scrollDirection: Axis.horizontal,
+                                          onPageChanged: (index, reason) {
+                                            currentImage = index;
+                                          },
+                                        ),
                                       ),
                                     );
                                   },
                                 ),
                               ),
                               Positioned.fill(
-                                  child: IgnorePointer(
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        AppColor.kNeutrals_.withOpacity(0.5),
-                                      ],
+                                child: TransparentPointer(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [
+                                          Colors.transparent,
+                                          AppColor.kNeutrals_.withOpacity(0.5),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ))
+                              )
                             ],
                           ),
                         );

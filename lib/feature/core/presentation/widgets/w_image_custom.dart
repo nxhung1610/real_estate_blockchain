@@ -57,7 +57,7 @@ class ImageCustom extends Image {
   }) : super.network();
 
   ImageCustom.file(
-    File file, {
+    super.file, {
     super.key,
     super.scale,
     super.frameBuilder,
@@ -77,9 +77,36 @@ class ImageCustom extends Image {
     super.gaplessPlayback = false,
     super.isAntiAlias = false,
     super.filterQuality = FilterQuality.low,
-    int? cacheWidth,
-    int? cacheHeight,
-  }) : super.file(file);
+    super.cacheWidth,
+    super.cacheHeight,
+  }) : super.file();
+
+  ImageCustom.asset(
+    super.name, {
+    super.key,
+    super.bundle,
+    super.frameBuilder,
+    super.errorBuilder,
+    super.semanticLabel,
+    super.excludeFromSemantics,
+    super.scale,
+    super.width,
+    super.height,
+    super.color,
+    super.opacity,
+    super.colorBlendMode,
+    super.fit,
+    super.alignment = Alignment.center,
+    super.repeat = ImageRepeat.noRepeat,
+    super.centerSlice,
+    super.matchTextDirection = false,
+    super.gaplessPlayback = false,
+    super.isAntiAlias = false,
+    super.package,
+    super.filterQuality = FilterQuality.low,
+    super.cacheWidth,
+    super.cacheHeight,
+  }) : super.asset();
 
   @override
   ImageErrorWidgetBuilder? get errorBuilder => (context, error, stackTrace) {
@@ -109,10 +136,12 @@ class _ErrorWidgget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColor.kNeutrals_.shade500,
-      child: Assets.icons.icImageError.svg(
-        color: Colors.white,
-        width: 50.r,
-        height: 50.r,
+      child: Center(
+        child: Assets.icons.icImageError.svg(
+          color: Colors.white,
+          width: 50.r,
+          height: 50.r,
+        ),
       ),
     );
   }

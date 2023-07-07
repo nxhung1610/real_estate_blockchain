@@ -23,6 +23,7 @@ mixin _$AppImage {
   String? get cloudName => throw _privateConstructorUsedError;
   String? get extension => throw _privateConstructorUsedError;
   int? get omitempty => throw _privateConstructorUsedError;
+  bool get isLocal => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppImageCopyWith<AppImage> get copyWith =>
@@ -41,7 +42,8 @@ abstract class $AppImageCopyWith<$Res> {
       int? height,
       String? cloudName,
       String? extension,
-      int? omitempty});
+      int? omitempty,
+      bool isLocal});
 }
 
 /// @nodoc
@@ -64,6 +66,7 @@ class _$AppImageCopyWithImpl<$Res, $Val extends AppImage>
     Object? cloudName = freezed,
     Object? extension = freezed,
     Object? omitempty = freezed,
+    Object? isLocal = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -94,6 +97,10 @@ class _$AppImageCopyWithImpl<$Res, $Val extends AppImage>
           ? _value.omitempty
           : omitempty // ignore: cast_nullable_to_non_nullable
               as int?,
+      isLocal: null == isLocal
+          ? _value.isLocal
+          : isLocal // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -112,7 +119,8 @@ abstract class _$$_AppImageCopyWith<$Res> implements $AppImageCopyWith<$Res> {
       int? height,
       String? cloudName,
       String? extension,
-      int? omitempty});
+      int? omitempty,
+      bool isLocal});
 }
 
 /// @nodoc
@@ -133,6 +141,7 @@ class __$$_AppImageCopyWithImpl<$Res>
     Object? cloudName = freezed,
     Object? extension = freezed,
     Object? omitempty = freezed,
+    Object? isLocal = null,
   }) {
     return _then(_$_AppImage(
       id: freezed == id
@@ -163,6 +172,10 @@ class __$$_AppImageCopyWithImpl<$Res>
           ? _value.omitempty
           : omitempty // ignore: cast_nullable_to_non_nullable
               as int?,
+      isLocal: null == isLocal
+          ? _value.isLocal
+          : isLocal // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -177,7 +190,8 @@ class _$_AppImage implements _AppImage {
       this.height,
       this.cloudName,
       this.extension,
-      this.omitempty});
+      this.omitempty,
+      this.isLocal = false});
 
   @override
   final int? id;
@@ -193,10 +207,13 @@ class _$_AppImage implements _AppImage {
   final String? extension;
   @override
   final int? omitempty;
+  @override
+  @JsonKey()
+  final bool isLocal;
 
   @override
   String toString() {
-    return 'AppImage(id: $id, url: $url, width: $width, height: $height, cloudName: $cloudName, extension: $extension, omitempty: $omitempty)';
+    return 'AppImage(id: $id, url: $url, width: $width, height: $height, cloudName: $cloudName, extension: $extension, omitempty: $omitempty, isLocal: $isLocal)';
   }
 
   @override
@@ -213,12 +230,13 @@ class _$_AppImage implements _AppImage {
             (identical(other.extension, extension) ||
                 other.extension == extension) &&
             (identical(other.omitempty, omitempty) ||
-                other.omitempty == omitempty));
+                other.omitempty == omitempty) &&
+            (identical(other.isLocal, isLocal) || other.isLocal == isLocal));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, url, width, height, cloudName, extension, omitempty);
+  int get hashCode => Object.hash(runtimeType, id, url, width, height,
+      cloudName, extension, omitempty, isLocal);
 
   @JsonKey(ignore: true)
   @override
@@ -235,7 +253,8 @@ abstract class _AppImage implements AppImage {
       final int? height,
       final String? cloudName,
       final String? extension,
-      final int? omitempty}) = _$_AppImage;
+      final int? omitempty,
+      final bool isLocal}) = _$_AppImage;
 
   @override
   int? get id;
@@ -251,6 +270,8 @@ abstract class _AppImage implements AppImage {
   String? get extension;
   @override
   int? get omitempty;
+  @override
+  bool get isLocal;
   @override
   @JsonKey(ignore: true)
   _$$_AppImageCopyWith<_$_AppImage> get copyWith =>

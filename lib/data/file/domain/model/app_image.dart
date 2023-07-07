@@ -15,6 +15,7 @@ class AppImage with _$AppImage {
     String? cloudName,
     String? extension,
     int? omitempty,
+    @Default(false) bool isLocal,
   }) = _AppImage;
 
   factory AppImage.fromGrpc(ARealEstateImage image) {
