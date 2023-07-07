@@ -10,10 +10,10 @@ class HouseNewFeedsShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 0.35.sh,
+      height: 0.5.sh,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(
-          AppSize.extraLargeRadius,
+          AppSize.largeRadius,
         ),
         child: Stack(
           children: [

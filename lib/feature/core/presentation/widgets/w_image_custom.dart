@@ -139,8 +139,8 @@ class _ErrorWidgget extends StatelessWidget {
       child: Center(
         child: Assets.icons.icImageError.svg(
           color: Colors.white,
-          width: 50.r,
-          height: 50.r,
+          width: 25.r,
+          height: 25.r,
         ),
       ),
     );

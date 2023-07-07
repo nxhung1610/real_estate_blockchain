@@ -105,6 +105,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // Clear token when logout account
 
       await _authLocalRepository.saveToken(null);
+      await _authLocalRepository.saveToken(null);
       emit(const AuthState.unAuthenticated());
     });
     on<AuthEventLoadUser>((event, emit) async {

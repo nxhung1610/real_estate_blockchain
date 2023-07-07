@@ -42,38 +42,47 @@ class WBiddingHistoryItem extends StatelessWidget {
           ),
           AppSize.largeWidthDimens.horizontalSpace,
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text(
-                  bidder.bidder.fullName,
-                  style: context.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: AppColor.kNeutrals2,
+                Expanded(
+                  child: Text(
+                    bidder.bidder.fullName,
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.kNeutrals2,
+                    ),
                   ),
                 ),
-                4.h.verticalSpace,
-                Text(
-                  bidder.createdAt != null
-                      ? DateFormat('dd/MM/yyyy').format(bidder.createdAt!)
-                      : '-- --',
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.kNeutrals4,
+                AppSize.smallWidthDimens.horizontalSpace,
+                IntrinsicWidth(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        bidder.createdAt != null
+                            ? DateFormat('dd/MM/yyyy').format(bidder.createdAt!)
+                            : '-- --',
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.kNeutrals4,
+                        ),
+                      ),
+                      4.h.verticalSpace,
+                      Text(
+                        NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
+                            .format(bidder.price)
+                            .toString(),
+                        style: context.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: AppColor.kPrimary1,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-          // AppSize.largeWidthDimens.horizontalSpace,
-          // Assets.icons.icArrowRight.svg(
-          //   colorFilter: const ColorFilter.mode(
-          //     AppColor.kNeutrals5,
-          //     BlendMode.srcIn,
-          //   ),
-          //   width: 20.r,
-          //   height: 20.r,
-          // )
         ],
       ),
     );

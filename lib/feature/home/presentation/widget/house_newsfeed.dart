@@ -31,18 +31,18 @@ class HouseNewsFeed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 0.35.sh,
+      height: 0.5.sh,
       clipBehavior: Clip.none,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: AppColor.kNeutrals1.withOpacity(0.1),
-            blurRadius: 2.r,
+            blurRadius: 5.r,
             spreadRadius: 2.r,
           ),
         ],
         borderRadius: BorderRadius.circular(
-          AppSize.extraLargeRadius,
+          AppSize.largeRadius,
         ),
       ),
       child: Stack(
@@ -51,7 +51,7 @@ class HouseNewsFeed extends StatelessWidget {
           Positioned.fill(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                AppSize.extraLargeRadius,
+                AppSize.largeRadius,
               ),
               child: Stack(
                 children: [
