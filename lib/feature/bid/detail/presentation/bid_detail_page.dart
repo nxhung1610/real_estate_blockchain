@@ -472,14 +472,12 @@ class _BidDetailPageState extends State<BidDetailPage>
             ];
           },
           body: Builder(builder: (context) {
-            return Expanded(
-              child: TabBarView(
-                controller: tabController,
-                children: const [
-                  BidDetailWidget(),
-                  RealEstateDetailWidget(),
-                ],
-              ),
+            return TabBarView(
+              controller: tabController,
+              children: const [
+                BidDetailWidget(),
+                RealEstateDetailWidget(),
+              ],
             );
           }),
         ),

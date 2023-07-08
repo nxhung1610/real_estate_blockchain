@@ -23,93 +23,97 @@ class _BidDetailWidgetState extends State<BidDetailWidget> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return CustomScrollView(
-      slivers: [
-        SliverOverlapInjector(
-            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context)),
-        if (!context.watch<BidDetailBloc>().state.isShimmer &&
-            context.watch<BidDetailBloc>().state.bid?.realEstate == null) ...[
-          SliverToBoxAdapter(
-            child: SizedBox(
-              width: 1.sw,
-              height: 1.sw,
-              child: Assets.icons.icError.svg(),
-            ),
-          ),
-        ],
-        if (context.watch<BidDetailBloc>().state.bid?.realEstate != null &&
-            !context.watch<BidDetailBloc>().state.isShimmer) ...[
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 24.w,
-                vertical: 24.h,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const WShortBidInfo(),
-                  SizedBox(height: 12.h),
-                  const WDetailBidInfo(),
-                ],
+    return Container(
+      color: context.theme.colorScheme.background,
+      child: CustomScrollView(
+        slivers: [
+          SliverOverlapInjector(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context)),
+          if (!context.watch<BidDetailBloc>().state.isShimmer &&
+              context.watch<BidDetailBloc>().state.bid?.realEstate == null) ...[
+            SliverToBoxAdapter(
+              child: SizedBox(
+                width: 1.sw,
+                height: 1.sw,
+                child: Assets.icons.icError.svg(),
               ),
             ),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            sliver: SliverToBoxAdapter(
-              child: Text(
-                s.biddingHistory,
-                style: context.textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
-                  color: AppColor.kNeutrals2,
+          ],
+          if (context.watch<BidDetailBloc>().state.bid?.realEstate != null &&
+              !context.watch<BidDetailBloc>().state.isShimmer) ...[
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                  vertical: 24.h,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const WShortBidInfo(),
+                    SizedBox(height: 12.h),
+                    const WDetailBidInfo(),
+                  ],
                 ),
               ),
             ),
-          ),
-          // SliverToBoxAdapter(
-          //   child: SizedBox(
-          //     height: 16.h,
-          //   ),
-          // ),
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            sliver: SliverToBoxAdapter(
-              child: BlocSelector<BidDetailBloc, BidDetailState, List<Bidder>?>(
-                selector: (state) {
-                  final bidders =
-                      List<Bidder>.from(state.bid?.bidHistory ?? []);
-                  bidders.sort(
-                    (a, b) {
-                      return b.createdAt
-                              ?.compareTo(a.createdAt ?? DateTime.now()) ??
-                          0;
-                    },
-                  );
-                  return bidders;
-                },
-                builder: (context, bidders) {
-                  if (bidders == null) {
-                    return const SizedBox.shrink();
-                  }
-                  return ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) {
-                      final bidder = bidders[index];
-                      return WBiddingHistoryItem(bidder: bidder);
-                    },
-                    itemCount: bidders.length,
-                    separatorBuilder: (BuildContext context, int index) {
-                      return 16.h.verticalSpace;
-                    },
-                  );
-                },
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              sliver: SliverToBoxAdapter(
+                child: Text(
+                  s.biddingHistory,
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: AppColor.kNeutrals2,
+                  ),
+                ),
               ),
             ),
-          )
+            // SliverToBoxAdapter(
+            //   child: SizedBox(
+            //     height: 16.h,
+            //   ),
+            // ),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              sliver: SliverToBoxAdapter(
+                child:
+                    BlocSelector<BidDetailBloc, BidDetailState, List<Bidder>?>(
+                  selector: (state) {
+                    final bidders =
+                        List<Bidder>.from(state.bid?.bidHistory ?? []);
+                    bidders.sort(
+                      (a, b) {
+                        return b.createdAt
+                                ?.compareTo(a.createdAt ?? DateTime.now()) ??
+                            0;
+                      },
+                    );
+                    return bidders;
+                  },
+                  builder: (context, bidders) {
+                    if (bidders == null) {
+                      return const SizedBox.shrink();
+                    }
+                    return ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int index) {
+                        final bidder = bidders[index];
+                        return WBiddingHistoryItem(bidder: bidder);
+                      },
+                      itemCount: bidders.length,
+                      separatorBuilder: (BuildContext context, int index) {
+                        return 16.h.verticalSpace;
+                      },
+                    );
+                  },
+                ),
+              ),
+            )
+          ],
         ],
-      ],
+      ),
     );
   }
 }

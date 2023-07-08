@@ -87,7 +87,7 @@ class _PostOwnerPageState extends State<PostOwnerPage> {
                       ),
                     );
                   }
-                  if (posts.isNotEmpty) {
+                  if (posts.isEmpty) {
                     return SliverFillRemaining(
                       child: Center(
                         child: Column(

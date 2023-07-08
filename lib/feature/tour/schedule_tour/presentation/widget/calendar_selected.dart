@@ -125,25 +125,33 @@ class _CalendarSelectedState extends State<CalendarSelected> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
-              DateTime(time.year, time.month + 1, 0).day,
-              (index) => GestureDetector(
-                onTap: () {
-                  final timeRes = time.copyWith(
-                    day: index + 1,
-                  );
-                  setState(() {
-                    time = timeRes;
-                  });
+              time.month > DateTime.now().month
+                  ? DateTime(time.year, time.month + 1, 0).day -
+                      DateTime.now().day
+                  : DateTime(time.year, time.month + 1, 0).day,
+              (index) {
+                final day = time.month > DateTime.now().month
+                    ? DateTime.now().day + index + 1
+                    : index + 1;
+                return GestureDetector(
+                  onTap: () {
+                    final timeRes = time.copyWith(
+                      day: day,
+                    );
+                    setState(() {
+                      time = timeRes;
+                    });
 
-                  onSelected(index + 1);
-                  widget.onDateChanged.call(timeRes);
-                },
-                child: itemDayOfMonth(
-                  GlobalObjectKey(index + 1),
-                  index + 1,
-                  selected: time.day == index + 1,
-                ),
-              ),
+                    onSelected(day);
+                    widget.onDateChanged.call(timeRes);
+                  },
+                  child: itemDayOfMonth(
+                    GlobalObjectKey(day),
+                    day,
+                    selected: time.day == day,
+                  ),
+                );
+              },
             ).joinWidget(12.w.horizontalSpace).toList(),
           ),
         )
