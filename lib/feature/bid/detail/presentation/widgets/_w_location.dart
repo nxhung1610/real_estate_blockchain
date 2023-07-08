@@ -48,11 +48,24 @@ class _WLocationState extends State<_WLocation> {
                       if (state == null) return const SizedBox.shrink();
                       return GestureDetector(
                         onTap: () async {
-                          final url = Uri.parse(
-                              'https://www.google.com/maps/search/?api=1&query=${state.latitude ?? 0},${state.longitude ?? 0}');
-                          if (await canLaunchUrl(url)) {
-                            await launchUrl(url);
-                          } else {}
+                          // final url = Uri.parse(
+                          //     'https://www.google.com/maps/search/?api=1&query=${state.latitude ?? 0},${state.longitude ?? 0}');
+                          // if (await canLaunchUrl(url)) {
+                          //   await launchUrl(url);
+                          // } else {}
+                          if (await ml.MapLauncher.isMapAvailable(
+                                  ml.MapType.google) ??
+                              false) {
+                            await ml.MapLauncher.showMarker(
+                              mapType: ml.MapType.google,
+                              title: '',
+                              coords: ml.Coords(
+                                state.latitude ?? 0,
+                                state.longitude ?? 0,
+                              ),
+                              zoom: 23,
+                            );
+                          }
                         },
                         child: AbsorbPointer(
                           child: FlutterMap(

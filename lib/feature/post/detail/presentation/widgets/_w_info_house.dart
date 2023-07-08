@@ -36,7 +36,7 @@ class _WInfoHouse extends StatelessWidget {
                       vertical: 4.h,
                     ),
                     decoration: BoxDecoration(
-                      color: AppColor.kNeutrals4,
+                      color: AppColor.kPrimary1,
                       borderRadius: BorderRadius.circular(
                         8.r,
                       ),

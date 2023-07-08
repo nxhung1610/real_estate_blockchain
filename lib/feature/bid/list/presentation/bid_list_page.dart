@@ -54,22 +54,21 @@ class _BidListPageState extends State<BidListPage> {
             listenWhen: (previous, current) =>
                 previous.newBids != current.newBids && current.newBids != null,
             listener: (context, state) {
-              pageController.appendLastPage([]);
-              // if (state.page == 1) {
-              //   pageController.refresh();
-              // }
-              // if (state.newBids != null) {
-              //   if (state.canLoadMore) {
-              //     pageController.appendPage(
-              //       state.newBids!,
-              //       state.page + 1,
-              //     );
-              //   } else {
-              //     pageController.appendLastPage(
-              //       state.newBids!,
-              //     );
-              //   }
-              // }
+              if (state.page == 1) {
+                pageController.refresh();
+              }
+              if (state.newBids != null) {
+                if (state.canLoadMore) {
+                  pageController.appendPage(
+                    state.newBids!,
+                    state.page + 1,
+                  );
+                } else {
+                  pageController.appendLastPage(
+                    state.newBids!,
+                  );
+                }
+              }
             },
           ),
           BlocListener<BidListBloc, BidListState>(

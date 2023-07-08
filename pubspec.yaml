@@ -103,6 +103,7 @@ dependencies:
   # Service
   dio: ^5.0.1
   pretty_dio_logger: ^1.1.1
+  map_launcher: ^2.5.0+1
   
   # Database
   hive: ^2.2.3

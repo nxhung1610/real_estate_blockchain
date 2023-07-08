@@ -14,6 +14,7 @@ import 'package:real_estate_blockchain/config/app_dialog.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/config/app_snackbar.dart';
 import 'package:real_estate_blockchain/data/auth/domain/entities/info/user.dart';
+import 'package:map_launcher/map_launcher.dart' as ml;
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bidder.dart';
 import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';

@@ -111,7 +111,7 @@ class HouseNewsFeed extends StatelessWidget {
                       vertical: 2.h,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: AppColor.kPrimary1,
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: Text(
