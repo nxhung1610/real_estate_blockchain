@@ -13,7 +13,7 @@ class ScheduleTourState with _$ScheduleTourState {
   }) = _ScheduleTourState;
   factory ScheduleTourState.init(ScheduleTourParams params) =>
       ScheduleTourState(
-        date: DateTime.now(),
+        date: DateTime.now().add(const Duration(days: 1)),
         params: params,
       );
 }

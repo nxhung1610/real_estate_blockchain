@@ -44,6 +44,26 @@ class _TimeSelectedState extends State<TimeSelected> {
       ),
     );
     controller = ScrollController();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      onSelected(itemKeys.first);
+    });
+  }
+
+  void onSelected(GlobalObjectKey<State<StatefulWidget>> index) {
+    setState(() {
+      seletectedItem = index;
+    });
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      isScroll =
+          CancelableOperation.fromFuture(controller.position.ensureVisible(
+        index.currentContext!.findRenderObject()!,
+        alignment: 0.5,
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 800),
+      ));
+    });
+
+    widget.onTimeChange.call(index.value as DateTime);
   }
 
   @override
@@ -62,20 +82,7 @@ class _TimeSelectedState extends State<TimeSelected> {
                       log('Not complete yet');
                       return;
                     }
-                    setState(() {
-                      seletectedItem = index;
-                    });
-                    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                      isScroll = CancelableOperation.fromFuture(
-                          controller.position.ensureVisible(
-                        index.currentContext!.findRenderObject()!,
-                        alignment: 0.5,
-                        curve: Curves.ease,
-                        duration: const Duration(milliseconds: 800),
-                      ));
-                    });
-
-                    widget.onTimeChange.call(index.value as DateTime);
+                    onSelected(index);
                   },
                   child: Container(
                     key: index,

@@ -125,12 +125,12 @@ class _CalendarSelectedState extends State<CalendarSelected> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
-              time.month > DateTime.now().month
+              time.month <= DateTime.now().month
                   ? DateTime(time.year, time.month + 1, 0).day -
                       DateTime.now().day
                   : DateTime(time.year, time.month + 1, 0).day,
               (index) {
-                final day = time.month > DateTime.now().month
+                final day = time.month <= DateTime.now().month
                     ? DateTime.now().day + index + 1
                     : index + 1;
                 return GestureDetector(
