@@ -49,9 +49,10 @@ class _WBottomViewerAction extends StatelessWidget {
                       builder: (context, item) {
                         if (item == null) return const SizedBox.shrink();
                         return Text(
-                          NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                              .format(item.price * (item.area ?? 0))
-                              .toString(),
+                          NumberFormat.compactLong(
+                            locale: "vi",
+                            // symbol: 'đ',
+                          ).format(item.price),
                           style: context.textTheme.titleLarge?.copyWith(
                             color: AppColor.kPrimary1,
                             fontWeight: FontWeight.w500,

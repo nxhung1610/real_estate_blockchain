@@ -278,9 +278,10 @@ class HouseNewsFeed extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                                .format(value.realEstate.price)
-                                .toString(),
+                            NumberFormat.compactLong(
+                              locale: "vi",
+                              // symbol: 'đ',
+                            ).format(value.realEstate.price),
                             style: context.textTheme.titleMedium?.copyWith(
                               color: AppColor.kPrimary1,
                             ),

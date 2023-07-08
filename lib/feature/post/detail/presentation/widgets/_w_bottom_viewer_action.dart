@@ -48,14 +48,26 @@ class _WBottomViewerAction extends StatelessWidget {
                       },
                       builder: (context, item) {
                         if (item == null) return const SizedBox.shrink();
-                        return Text(
-                          NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                              .format(item.price)
-                              .toString(),
-                          style: context.textTheme.titleLarge?.copyWith(
-                            color: AppColor.kPrimary1,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        return RichText(
+                          text: TextSpan(
+                              text: NumberFormat.compactLong(
+                                locale: "vi",
+                              ).format(item.price),
+                              style: context.textTheme.titleLarge?.copyWith(
+                                color: AppColor.kPrimary1,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: ' ~ ${NumberFormat.compactLong(
+                                    locale: "vi",
+                                  ).format(item.price / (item.area ?? 1))}/m2',
+                                  style: context.textTheme.bodyMedium?.copyWith(
+                                    color: AppColor.kNeutrals5,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                )
+                              ]),
                         );
                       },
                     ),
