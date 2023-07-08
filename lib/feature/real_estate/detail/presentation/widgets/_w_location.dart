@@ -54,7 +54,8 @@ class _WLocationState extends State<_WLocation> {
                               false) {
                             await ml.MapLauncher.showMarker(
                               mapType: ml.MapType.google,
-                              title: '',
+                              title: state.name,
+                              description: state.address,
                               coords: ml.Coords(
                                 state.latitude ?? 0,
                                 state.longitude ?? 0,
