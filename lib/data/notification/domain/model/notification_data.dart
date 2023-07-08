@@ -1,4 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
+import 'package:real_estate_blockchain/data/bid/infrastructure/dto/bid_auction_request/bid_auction_request.dart';
+import 'package:real_estate_blockchain/data/bid/infrastructure/dto/bid_auction_response/bid_auction_response.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/data/tour/infrastructure/dto/tour_response.dart';
@@ -11,6 +14,15 @@ class NotificationData with _$NotificationData {
   const factory NotificationData.newReListed({
     required int id,
   }) = NotificationDataNewReListed;
+  const factory NotificationData.reEstateCreated({
+    required int id,
+  }) = NotificationDataReEstateCreated;
+  const factory NotificationData.bidPlaceBuyer({
+    required BidAuctionResponse bid,
+  }) = NotificationDataBidPlaceBuyer;
+  const factory NotificationData.tourCreateOwner({
+    required TourResponse data,
+  }) = NotificationDataTourCreateOwner;
   const factory NotificationData.reMinted({
     @JsonKey(name: "re_id") required int id,
     required String hash,

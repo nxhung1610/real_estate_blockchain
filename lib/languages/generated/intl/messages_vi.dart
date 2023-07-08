@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
   static String m0(name) =>
-      "${name} đang làm cho việc bán nhà của bạn và tiến lên phía trước trở nên đơn giản hơn.";
+      "${name} đang đơn giản hóa việc giao dịch và cho thuê bất động sản của bạn, hãy bắt đầu ngay!!";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -227,9 +227,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "min": MessageLookupByLibrary.simpleMessage("Tối thiểu"),
         "myHome": MessageLookupByLibrary.simpleMessage("Nhà của tôi"),
         "myHomeEmptyBtnAdd":
-            MessageLookupByLibrary.simpleMessage("Thêm tài sản"),
+            MessageLookupByLibrary.simpleMessage("Thêm bất động sản"),
         "myHomeEmptyBtnAdd2":
-            MessageLookupByLibrary.simpleMessage("Thêm tài sản mới"),
+            MessageLookupByLibrary.simpleMessage("Thêm bất động sản mới"),
         "myHomeEmptyDesc": m0,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),

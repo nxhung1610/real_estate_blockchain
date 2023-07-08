@@ -23,6 +23,7 @@ class _EmptyPage extends StatelessWidget {
               children: [
                 Text(
                   s.myHomeEmptyTitle,
+                  textAlign: TextAlign.center,
                   style: context.textTheme.titleLarge?.copyWith(
                     color: context.textTheme.displayLarge?.color,
                     fontWeight: FontWeight.w500,

@@ -18,6 +18,12 @@ NotificationData _$NotificationDataFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'newReListed':
       return NotificationDataNewReListed.fromJson(json);
+    case 'reEstateCreated':
+      return NotificationDataReEstateCreated.fromJson(json);
+    case 'bidPlaceBuyer':
+      return NotificationDataBidPlaceBuyer.fromJson(json);
+    case 'tourCreateOwner':
+      return NotificationDataTourCreateOwner.fromJson(json);
     case 'reMinted':
       return NotificationDataReMinted.fromJson(json);
     case 'tour':
@@ -34,6 +40,9 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
     required TResult Function(TourResponse data) tour,
@@ -42,6 +51,9 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult? Function(TourResponse data)? tour,
   }) =>
@@ -49,6 +61,9 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult Function(TourResponse data)? tour,
     required TResult orElse(),
@@ -57,6 +72,12 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
     required TResult Function(NotificationDataReMinted value) reMinted,
     required TResult Function(NotificationDataTour value) tour,
   }) =>
@@ -64,6 +85,9 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult? Function(NotificationDataReMinted value)? reMinted,
     TResult? Function(NotificationDataTour value)? tour,
   }) =>
@@ -71,6 +95,9 @@ mixin _$NotificationData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult Function(NotificationDataReMinted value)? reMinted,
     TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
@@ -172,6 +199,9 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
     required TResult Function(TourResponse data) tour,
@@ -183,6 +213,9 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult? Function(TourResponse data)? tour,
   }) {
@@ -193,6 +226,9 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult Function(TourResponse data)? tour,
     required TResult orElse(),
@@ -207,6 +243,12 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
     required TResult Function(NotificationDataReMinted value) reMinted,
     required TResult Function(NotificationDataTour value) tour,
   }) {
@@ -217,6 +259,9 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult? Function(NotificationDataReMinted value)? reMinted,
     TResult? Function(NotificationDataTour value)? tour,
   }) {
@@ -227,6 +272,9 @@ class _$NotificationDataNewReListed implements NotificationDataNewReListed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult Function(NotificationDataReMinted value)? reMinted,
     TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
@@ -248,6 +296,565 @@ abstract class NotificationDataNewReListed implements NotificationData {
   int get id;
   @JsonKey(ignore: true)
   _$$NotificationDataNewReListedCopyWith<_$NotificationDataNewReListed>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotificationDataReEstateCreatedCopyWith<$Res> {
+  factory _$$NotificationDataReEstateCreatedCopyWith(
+          _$NotificationDataReEstateCreated value,
+          $Res Function(_$NotificationDataReEstateCreated) then) =
+      __$$NotificationDataReEstateCreatedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$NotificationDataReEstateCreatedCopyWithImpl<$Res>
+    extends _$NotificationDataCopyWithImpl<$Res,
+        _$NotificationDataReEstateCreated>
+    implements _$$NotificationDataReEstateCreatedCopyWith<$Res> {
+  __$$NotificationDataReEstateCreatedCopyWithImpl(
+      _$NotificationDataReEstateCreated _value,
+      $Res Function(_$NotificationDataReEstateCreated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$NotificationDataReEstateCreated(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable(createToJson: false)
+class _$NotificationDataReEstateCreated
+    implements NotificationDataReEstateCreated {
+  const _$NotificationDataReEstateCreated(
+      {required this.id, final String? $type})
+      : $type = $type ?? 'reEstateCreated';
+
+  factory _$NotificationDataReEstateCreated.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NotificationDataReEstateCreatedFromJson(json);
+
+  @override
+  final int id;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'NotificationData.reEstateCreated(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationDataReEstateCreated &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDataReEstateCreatedCopyWith<_$NotificationDataReEstateCreated>
+      get copyWith => __$$NotificationDataReEstateCreatedCopyWithImpl<
+          _$NotificationDataReEstateCreated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
+    required TResult Function(TourResponse data) tour,
+  }) {
+    return reEstateCreated(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
+  }) {
+    return reEstateCreated?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
+    required TResult orElse(),
+  }) {
+    if (reEstateCreated != null) {
+      return reEstateCreated(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
+    required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
+  }) {
+    return reEstateCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
+  }) {
+    return reEstateCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
+    required TResult orElse(),
+  }) {
+    if (reEstateCreated != null) {
+      return reEstateCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationDataReEstateCreated implements NotificationData {
+  const factory NotificationDataReEstateCreated({required final int id}) =
+      _$NotificationDataReEstateCreated;
+
+  factory NotificationDataReEstateCreated.fromJson(Map<String, dynamic> json) =
+      _$NotificationDataReEstateCreated.fromJson;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$NotificationDataReEstateCreatedCopyWith<_$NotificationDataReEstateCreated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotificationDataBidPlaceBuyerCopyWith<$Res> {
+  factory _$$NotificationDataBidPlaceBuyerCopyWith(
+          _$NotificationDataBidPlaceBuyer value,
+          $Res Function(_$NotificationDataBidPlaceBuyer) then) =
+      __$$NotificationDataBidPlaceBuyerCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BidAuctionResponse bid});
+
+  $BidAuctionResponseCopyWith<$Res> get bid;
+}
+
+/// @nodoc
+class __$$NotificationDataBidPlaceBuyerCopyWithImpl<$Res>
+    extends _$NotificationDataCopyWithImpl<$Res,
+        _$NotificationDataBidPlaceBuyer>
+    implements _$$NotificationDataBidPlaceBuyerCopyWith<$Res> {
+  __$$NotificationDataBidPlaceBuyerCopyWithImpl(
+      _$NotificationDataBidPlaceBuyer _value,
+      $Res Function(_$NotificationDataBidPlaceBuyer) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bid = null,
+  }) {
+    return _then(_$NotificationDataBidPlaceBuyer(
+      bid: null == bid
+          ? _value.bid
+          : bid // ignore: cast_nullable_to_non_nullable
+              as BidAuctionResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BidAuctionResponseCopyWith<$Res> get bid {
+    return $BidAuctionResponseCopyWith<$Res>(_value.bid, (value) {
+      return _then(_value.copyWith(bid: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable(createToJson: false)
+class _$NotificationDataBidPlaceBuyer implements NotificationDataBidPlaceBuyer {
+  const _$NotificationDataBidPlaceBuyer(
+      {required this.bid, final String? $type})
+      : $type = $type ?? 'bidPlaceBuyer';
+
+  factory _$NotificationDataBidPlaceBuyer.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationDataBidPlaceBuyerFromJson(json);
+
+  @override
+  final BidAuctionResponse bid;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'NotificationData.bidPlaceBuyer(bid: $bid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationDataBidPlaceBuyer &&
+            (identical(other.bid, bid) || other.bid == bid));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, bid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDataBidPlaceBuyerCopyWith<_$NotificationDataBidPlaceBuyer>
+      get copyWith => __$$NotificationDataBidPlaceBuyerCopyWithImpl<
+          _$NotificationDataBidPlaceBuyer>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
+    required TResult Function(TourResponse data) tour,
+  }) {
+    return bidPlaceBuyer(bid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
+  }) {
+    return bidPlaceBuyer?.call(bid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
+    required TResult orElse(),
+  }) {
+    if (bidPlaceBuyer != null) {
+      return bidPlaceBuyer(bid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
+    required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
+  }) {
+    return bidPlaceBuyer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
+  }) {
+    return bidPlaceBuyer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
+    required TResult orElse(),
+  }) {
+    if (bidPlaceBuyer != null) {
+      return bidPlaceBuyer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationDataBidPlaceBuyer implements NotificationData {
+  const factory NotificationDataBidPlaceBuyer(
+          {required final BidAuctionResponse bid}) =
+      _$NotificationDataBidPlaceBuyer;
+
+  factory NotificationDataBidPlaceBuyer.fromJson(Map<String, dynamic> json) =
+      _$NotificationDataBidPlaceBuyer.fromJson;
+
+  BidAuctionResponse get bid;
+  @JsonKey(ignore: true)
+  _$$NotificationDataBidPlaceBuyerCopyWith<_$NotificationDataBidPlaceBuyer>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotificationDataTourCreateOwnerCopyWith<$Res> {
+  factory _$$NotificationDataTourCreateOwnerCopyWith(
+          _$NotificationDataTourCreateOwner value,
+          $Res Function(_$NotificationDataTourCreateOwner) then) =
+      __$$NotificationDataTourCreateOwnerCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TourResponse data});
+
+  $TourResponseCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$NotificationDataTourCreateOwnerCopyWithImpl<$Res>
+    extends _$NotificationDataCopyWithImpl<$Res,
+        _$NotificationDataTourCreateOwner>
+    implements _$$NotificationDataTourCreateOwnerCopyWith<$Res> {
+  __$$NotificationDataTourCreateOwnerCopyWithImpl(
+      _$NotificationDataTourCreateOwner _value,
+      $Res Function(_$NotificationDataTourCreateOwner) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationDataTourCreateOwner(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TourResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TourResponseCopyWith<$Res> get data {
+    return $TourResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable(createToJson: false)
+class _$NotificationDataTourCreateOwner
+    implements NotificationDataTourCreateOwner {
+  const _$NotificationDataTourCreateOwner(
+      {required this.data, final String? $type})
+      : $type = $type ?? 'tourCreateOwner';
+
+  factory _$NotificationDataTourCreateOwner.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NotificationDataTourCreateOwnerFromJson(json);
+
+  @override
+  final TourResponse data;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'NotificationData.tourCreateOwner(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationDataTourCreateOwner &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDataTourCreateOwnerCopyWith<_$NotificationDataTourCreateOwner>
+      get copyWith => __$$NotificationDataTourCreateOwnerCopyWithImpl<
+          _$NotificationDataTourCreateOwner>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
+    required TResult Function(@JsonKey(name: "re_id") int id, String hash)
+        reMinted,
+    required TResult Function(TourResponse data) tour,
+  }) {
+    return tourCreateOwner(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
+    TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult? Function(TourResponse data)? tour,
+  }) {
+    return tourCreateOwner?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
+    TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
+    TResult Function(TourResponse data)? tour,
+    required TResult orElse(),
+  }) {
+    if (tourCreateOwner != null) {
+      return tourCreateOwner(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
+    required TResult Function(NotificationDataReMinted value) reMinted,
+    required TResult Function(NotificationDataTour value) tour,
+  }) {
+    return tourCreateOwner(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult? Function(NotificationDataReMinted value)? reMinted,
+    TResult? Function(NotificationDataTour value)? tour,
+  }) {
+    return tourCreateOwner?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
+    TResult Function(NotificationDataReMinted value)? reMinted,
+    TResult Function(NotificationDataTour value)? tour,
+    required TResult orElse(),
+  }) {
+    if (tourCreateOwner != null) {
+      return tourCreateOwner(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationDataTourCreateOwner implements NotificationData {
+  const factory NotificationDataTourCreateOwner(
+      {required final TourResponse data}) = _$NotificationDataTourCreateOwner;
+
+  factory NotificationDataTourCreateOwner.fromJson(Map<String, dynamic> json) =
+      _$NotificationDataTourCreateOwner.fromJson;
+
+  TourResponse get data;
+  @JsonKey(ignore: true)
+  _$$NotificationDataTourCreateOwnerCopyWith<_$NotificationDataTourCreateOwner>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -338,6 +945,9 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
     required TResult Function(TourResponse data) tour,
@@ -349,6 +959,9 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult? Function(TourResponse data)? tour,
   }) {
@@ -359,6 +972,9 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult Function(TourResponse data)? tour,
     required TResult orElse(),
@@ -373,6 +989,12 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
     required TResult Function(NotificationDataReMinted value) reMinted,
     required TResult Function(NotificationDataTour value) tour,
   }) {
@@ -383,6 +1005,9 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult? Function(NotificationDataReMinted value)? reMinted,
     TResult? Function(NotificationDataTour value)? tour,
   }) {
@@ -393,6 +1018,9 @@ class _$NotificationDataReMinted implements NotificationDataReMinted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult Function(NotificationDataReMinted value)? reMinted,
     TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),
@@ -504,6 +1132,9 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) newReListed,
+    required TResult Function(int id) reEstateCreated,
+    required TResult Function(BidAuctionResponse bid) bidPlaceBuyer,
+    required TResult Function(TourResponse data) tourCreateOwner,
     required TResult Function(@JsonKey(name: "re_id") int id, String hash)
         reMinted,
     required TResult Function(TourResponse data) tour,
@@ -515,6 +1146,9 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? newReListed,
+    TResult? Function(int id)? reEstateCreated,
+    TResult? Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult? Function(TourResponse data)? tourCreateOwner,
     TResult? Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult? Function(TourResponse data)? tour,
   }) {
@@ -525,6 +1159,9 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? newReListed,
+    TResult Function(int id)? reEstateCreated,
+    TResult Function(BidAuctionResponse bid)? bidPlaceBuyer,
+    TResult Function(TourResponse data)? tourCreateOwner,
     TResult Function(@JsonKey(name: "re_id") int id, String hash)? reMinted,
     TResult Function(TourResponse data)? tour,
     required TResult orElse(),
@@ -539,6 +1176,12 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationDataNewReListed value) newReListed,
+    required TResult Function(NotificationDataReEstateCreated value)
+        reEstateCreated,
+    required TResult Function(NotificationDataBidPlaceBuyer value)
+        bidPlaceBuyer,
+    required TResult Function(NotificationDataTourCreateOwner value)
+        tourCreateOwner,
     required TResult Function(NotificationDataReMinted value) reMinted,
     required TResult Function(NotificationDataTour value) tour,
   }) {
@@ -549,6 +1192,9 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationDataNewReListed value)? newReListed,
+    TResult? Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult? Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult? Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult? Function(NotificationDataReMinted value)? reMinted,
     TResult? Function(NotificationDataTour value)? tour,
   }) {
@@ -559,6 +1205,9 @@ class _$NotificationDataTour implements NotificationDataTour {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationDataNewReListed value)? newReListed,
+    TResult Function(NotificationDataReEstateCreated value)? reEstateCreated,
+    TResult Function(NotificationDataBidPlaceBuyer value)? bidPlaceBuyer,
+    TResult Function(NotificationDataTourCreateOwner value)? tourCreateOwner,
     TResult Function(NotificationDataReMinted value)? reMinted,
     TResult Function(NotificationDataTour value)? tour,
     required TResult orElse(),

@@ -18,6 +18,7 @@ import 'package:real_estate_blockchain/data/auth/data.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/feature/app/presentation/go_router_refresh_stream.dart';
 import 'package:real_estate_blockchain/feature/auth/module.dart';
+import 'package:real_estate_blockchain/feature/bid/detail/model/bid_detail_params.dart';
 import 'package:real_estate_blockchain/feature/connectivity/application/connectivity_bloc.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
 import 'package:real_estate_blockchain/feature/message/module.dart';
@@ -33,6 +34,7 @@ import 'package:real_estate_blockchain/languages/generated/l10n.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
 
 import '../../../config/app_notification.dart';
+import '../../post/detail/presentation/models/post_real_estate_detail_page_params.dart';
 import '../../real_estate/detail/presentation/models/real_estate_detail_page_params.dart';
 import '../application/app_bloc.dart';
 import '../router/app_route.dart';
@@ -338,10 +340,34 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                           );
                           final notification = state.notification!;
                           notification.data?.map(
-                            newReListed: (value) {
+                            tourCreateOwner: (value) {
+                              appRoute.push(
+                                $appRoute.tour.tourReview.url,
+                                extra: TourReviewParams(
+                                  tour: Tour.fromResponse(value.data),
+                                ),
+                              );
+                            },
+                            bidPlaceBuyer: (value) {
+                              appRoute.push(
+                                $appRoute.bid.url,
+                                extra: BidDetailParams(
+                                  id: value.bid.id.toString(),
+                                ),
+                              );
+                            },
+                            reEstateCreated: (value) {
                               appRoute.push(
                                 $appRoute.realEstateDetail,
                                 extra: RealEstateDetailPageParams(
+                                  id: value.id.toString(),
+                                ),
+                              );
+                            },
+                            newReListed: (value) {
+                              appRoute.push(
+                                $appRoute.postRealEstateDetail.url,
+                                extra: PostRealEstateDetailPageParams(
                                   id: value.id.toString(),
                                 ),
                               );

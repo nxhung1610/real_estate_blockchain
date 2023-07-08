@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:real_estate_blockchain/data/bid/infrastructure/dto/bid_auction_response/bid_auction_response.dart';
 import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
 import 'package:real_estate_blockchain/data/tour/infrastructure/dto/tour_response.dart';
 import 'package:real_estate_blockchain/grpc/notification/notification.pb.dart'
@@ -42,6 +43,20 @@ class UserNotification with _$UserNotification {
             return NotificationDataReMinted.fromJson(jsonDecode(dto.data));
           case NotificationCatory.tour:
             return NotificationDataTour(
+              data: TourResponse.fromJson(
+                jsonDecode(dto.data),
+              ),
+            );
+          case NotificationCatory.reEstateCreated:
+            return NotificationData.reEstateCreated(
+              id: int.parse(dto.data),
+            );
+          case NotificationCatory.bidPlaceBuyer:
+            return NotificationData.bidPlaceBuyer(
+              bid: BidAuctionResponse.fromJson(jsonDecode(dto.data)),
+            );
+          case NotificationCatory.tourCreateOwner:
+            return NotificationData.tourCreateOwner(
               data: TourResponse.fromJson(
                 jsonDecode(dto.data),
               ),

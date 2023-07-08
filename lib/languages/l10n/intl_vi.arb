@@ -61,14 +61,14 @@
   "location": "Địa điểm",
   "search": "Tìm kiếm",
   "myHomeEmptyTitle": "Sẵn sàng bán nhà của bạn?",
-  "myHomeEmptyDesc": "{name} đang làm cho việc bán nhà của bạn và tiến lên phía trước trở nên đơn giản hơn.",
+  "myHomeEmptyDesc": "{name} đang đơn giản hóa việc giao dịch và cho thuê bất động sản của bạn, hãy bắt đầu ngay!!",
   "@myHomeEmptyDesc": {
     "placeholders": {
       "name": {}
     }
   },
-  "myHomeEmptyBtnAdd": "Thêm tài sản",
-  "myHomeEmptyBtnAdd2": "Thêm tài sản mới",
+  "myHomeEmptyBtnAdd": "Thêm bất động sản",
+  "myHomeEmptyBtnAdd2": "Thêm bất động sản mới",
   "addNewPropertyAddress": "Địa chỉ",
   "addNewPropertyRealEstateInfo": "Thông tin bất động sản",
   "addNewPropertyPostInfo": "Thông tin bài viết",

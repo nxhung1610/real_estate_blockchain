@@ -109,11 +109,10 @@ class _TourReviewPageState extends State<TourReviewPage> {
                     tour: tour,
                     estate: estate,
                   ),
-                  if (tour.staff != null) ...[
+                  if (tour.staff != null && (tour.staff?.id ?? 0) > 0) ...[
                     AppSize.extraHeightDimens.verticalSpace,
                     WStaffInfo(staff: tour.staff!),
                   ],
-                  AppSize.extraHeightDimens.verticalSpace,
                 ],
               ),
             );
