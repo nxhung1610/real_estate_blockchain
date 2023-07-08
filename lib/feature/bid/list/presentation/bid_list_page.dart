@@ -54,21 +54,22 @@ class _BidListPageState extends State<BidListPage> {
             listenWhen: (previous, current) =>
                 previous.newBids != current.newBids && current.newBids != null,
             listener: (context, state) {
-              if (state.page == 1) {
-                pageController.refresh();
-              }
-              if (state.newBids != null) {
-                if (state.canLoadMore) {
-                  pageController.appendPage(
-                    state.newBids!,
-                    state.page + 1,
-                  );
-                } else {
-                  pageController.appendLastPage(
-                    state.newBids!,
-                  );
-                }
-              }
+              pageController.appendLastPage([]);
+              // if (state.page == 1) {
+              //   pageController.refresh();
+              // }
+              // if (state.newBids != null) {
+              //   if (state.canLoadMore) {
+              //     pageController.appendPage(
+              //       state.newBids!,
+              //       state.page + 1,
+              //     );
+              //   } else {
+              //     pageController.appendLastPage(
+              //       state.newBids!,
+              //     );
+              //   }
+              // }
             },
           ),
           BlocListener<BidListBloc, BidListState>(
@@ -111,14 +112,12 @@ class _BidListPageState extends State<BidListPage> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Assets.images.box.image(
-                              width: 150.w,
-                              height: 150.h,
-                              color: AppColor.kNeutrals4,
+                            Assets.images.imageAuction.image(
+                              width: 300.w,
+                              height: 300.h,
                             ),
-                            AppSize.mediumHeightDimens.verticalSpace,
                             Text(
-                              s.noDataFound,
+                              s.noBid,
                               style: context.textTheme.bodyMedium?.copyWith(
                                 fontWeight: FontWeight.w600,
                               ),

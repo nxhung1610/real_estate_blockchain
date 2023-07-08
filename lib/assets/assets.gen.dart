@@ -355,6 +355,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/box.png
   AssetGenImage get box => const AssetGenImage('assets/images/box.png');
 
+  /// File path: assets/images/image_auction.png
+  AssetGenImage get imageAuction =>
+      const AssetGenImage('assets/images/image_auction.png');
+
   /// File path: assets/images/image_house.png
   AssetGenImage get imageHouse =>
       const AssetGenImage('assets/images/image_house.png');
@@ -384,6 +388,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         box,
+        imageAuction,
         imageHouse,
         myHomeBackground,
         noPost,

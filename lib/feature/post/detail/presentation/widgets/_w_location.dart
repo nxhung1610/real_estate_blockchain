@@ -34,6 +34,41 @@ class _WLocationState extends State<_WLocation> {
                   fontWeight: FontWeight.w900,
                 ),
               ),
+              AppSize.mediumHeightDimens.verticalSpace,
+              BlocProvider(
+                create: (context) => getIt.call<AddressBuilderCubit>()
+                  ..onLoadAdress(
+                    proviceId: state.provinceId ?? '',
+                    wardId: state.wardId ?? '',
+                    districtId: state.districtId ?? '',
+                  ),
+                child: BlocBuilder<AddressBuilderCubit, AddressBuilderState>(
+                  builder: (context, addressState) {
+                    return Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Assets.icons.icLocationLight.svg(
+                          width: AppSize.smallIcon,
+                          height: AppSize.smallIcon,
+                          color: AppColor.kPrimary1,
+                        ),
+                        AppSize.smallWidthDimens.horizontalSpace,
+                        Expanded(
+                          child: Text(
+                            (() {
+                              return (state.address ?? '') +
+                                  (addressState.buildAddress(context) ?? '');
+                            })(),
+                            style: context.textTheme.bodyMedium?.copyWith(
+                              color: AppColor.kNeutrals_.shade800,
+                            ),
+                          ),
+                        )
+                      ],
+                    );
+                  },
+                ),
+              ),
               AppSize.largeHeightDimens.verticalSpace,
               ClipRRect(
                 borderRadius: BorderRadius.circular(AppSize.extraRadius),
@@ -123,7 +158,7 @@ class _WLocationState extends State<_WLocation> {
                     },
                   ),
                 ),
-              )
+              ),
             ],
           ),
         );

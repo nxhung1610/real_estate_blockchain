@@ -306,14 +306,19 @@ class _PostRealEstateDetailPageState extends State<PostRealEstateDetailPage>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Flexible(
-                                      child: Text(
-                                        state.post?.title ?? '',
-                                        style: context.textTheme.headlineSmall
-                                            ?.copyWith(
-                                          color: AppColor.kNeutrals_.shade400,
+                                      child: Tooltip(
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 24.w),
+                                        message: state.post?.title ?? '',
+                                        child: Text(
+                                          state.post?.title ?? '',
+                                          style: context.textTheme.headlineSmall
+                                              ?.copyWith(
+                                            color: AppColor.kNeutrals_.shade400,
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                   ],

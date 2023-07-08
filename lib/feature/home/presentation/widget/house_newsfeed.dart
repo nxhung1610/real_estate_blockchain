@@ -226,13 +226,60 @@ class HouseNewsFeed extends StatelessWidget {
                                 color: context.textTheme.displayLarge?.color,
                               ),
                               overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                              maxLines: 2,
+                            ),
+                          ),
+                        ],
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: BlocProvider(
+                              create: (context) => getIt
+                                  .call<AddressBuilderCubit>()
+                                ..onLoadAdress(
+                                  proviceId: value.realEstate.provinceId ?? '',
+                                  wardId: value.realEstate.wardId ?? '',
+                                  districtId: value.realEstate.districtId ?? '',
+                                ),
+                              child: BlocBuilder<AddressBuilderCubit,
+                                  AddressBuilderState>(
+                                builder: (context, addressState) {
+                                  return Row(
+                                    children: [
+                                      Assets.icons.icLocationLight.svg(
+                                        width: AppSize.smallIcon,
+                                        height: AppSize.smallIcon,
+                                        color: AppColor.kPrimary1,
+                                      ),
+                                      AppSize.smallWidthDimens.horizontalSpace,
+                                      Expanded(
+                                        child: Text(
+                                          (() {
+                                            return (value.realEstate.address ??
+                                                    '') +
+                                                (addressState.buildAddress(
+                                                        context) ??
+                                                    '');
+                                          })(),
+                                          style: context.textTheme.bodySmall
+                                              ?.copyWith(
+                                            color: AppColor.kNeutrals_.shade800,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      )
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
                           ),
                           Text(
                             NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                                .format(value.realEstate.price *
-                                    (value.realEstate.area ?? 0))
+                                .format(value.realEstate.price)
                                 .toString(),
                             style: context.textTheme.titleMedium?.copyWith(
                               color: AppColor.kPrimary1,
@@ -240,45 +287,6 @@ class HouseNewsFeed extends StatelessWidget {
                           ),
                         ],
                       ),
-                      AppSize.mediumHeightDimens.verticalSpace,
-                      BlocProvider(
-                        create: (context) => getIt.call<AddressBuilderCubit>()
-                          ..onLoadAdress(
-                            proviceId: value.realEstate.provinceId ?? '',
-                            wardId: value.realEstate.wardId ?? '',
-                            districtId: value.realEstate.districtId ?? '',
-                          ),
-                        child: BlocBuilder<AddressBuilderCubit,
-                            AddressBuilderState>(
-                          builder: (context, addressState) {
-                            return Row(
-                              children: [
-                                Assets.icons.icLocationLight.svg(
-                                  width: AppSize.smallIcon,
-                                  height: AppSize.smallIcon,
-                                  color: AppColor.kPrimary1,
-                                ),
-                                AppSize.smallWidthDimens.horizontalSpace,
-                                Expanded(
-                                  child: Text(
-                                    (() {
-                                      return (value.realEstate.address ?? '') +
-                                          (addressState.buildAddress(context) ??
-                                              '');
-                                    })(),
-                                    style:
-                                        context.textTheme.bodySmall?.copyWith(
-                                      color: AppColor.kNeutrals_.shade800,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                  ),
-                                )
-                              ],
-                            );
-                          },
-                        ),
-                      )
                     ],
                   ),
                 ),

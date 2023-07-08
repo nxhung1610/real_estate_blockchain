@@ -243,7 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
         "noBathRoom": MessageLookupByLibrary.simpleMessage("Số phòng tắm"),
         "noBedRoom": MessageLookupByLibrary.simpleMessage("Số phòng ngủ"),
-        "noBid": MessageLookupByLibrary.simpleMessage("Chưa có đấu thầu nào"),
+        "noBid":
+            MessageLookupByLibrary.simpleMessage("Chưa có phiên đấu giá nào"),
         "noDataFound":
             MessageLookupByLibrary.simpleMessage("Không tìm thấy dữ liệu"),
         "noFloor": MessageLookupByLibrary.simpleMessage("Số tầng"),
