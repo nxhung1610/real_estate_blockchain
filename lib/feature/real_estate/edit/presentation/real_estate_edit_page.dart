@@ -1,6 +1,10 @@
 import 'dart:io';
 
+import 'package:collection/collection.dart';
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,19 +22,22 @@ import 'package:real_estate_blockchain/helper/page/page_mixin.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:real_estate_blockchain/utils/extension/string_extensions.dart';
 import 'package:real_estate_blockchain/utils/logger.dart';
-import 'package:collection/collection.dart';
-import 'package:dartz/dartz.dart' as dartz;
+import 'package:real_estate_blockchain/utils/utils.dart';
+
 import '../../config/real_estate_config_bloc.dart';
 import '../application/real_estate_edit_bloc.dart';
 import 'widget/map_position_page.dart';
-part 'widget/_media.dart';
+
 part 'widget/_address.dart';
-part 'widget/_info.dart';
 part 'widget/_amenity.dart';
+part 'widget/_info.dart';
+part 'widget/_media.dart';
 
 class RealEstateEditPage extends StatefulWidget {
   final RealEstateEditParams params;
+
   const RealEstateEditPage({super.key, required this.params});
 
   @override

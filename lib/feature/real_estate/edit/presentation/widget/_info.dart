@@ -15,10 +15,16 @@ class __InfoState extends State<_Info> {
   final TextEditingController yearController = TextEditingController();
   final TextEditingController furnitureController = TextEditingController();
   bool isUpdate = false;
+
+  final ValueNotifier<String> priceNotifier = ValueNotifier("");
+
   @override
   void initState() {
-    bloc = context.read<RealEstateEditBloc>();
     super.initState();
+    bloc = context.read<RealEstateEditBloc>();
+    priceController.addListener(() {
+      priceNotifier.value = priceController.text.trim();
+    });
   }
 
   @override
@@ -170,7 +176,7 @@ class __InfoState extends State<_Info> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      s.price,
+                      s.builtAt,
                       style: context.textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                         color: context.textTheme.displayLarge?.color,
@@ -178,39 +184,74 @@ class __InfoState extends State<_Info> {
                     ),
                     AppSize.mediumHeightDimens.verticalSpace,
                     InputPrimaryForm(
-                      hint: '1200000',
-                      controller: priceController,
+                      hint: '2000',
                       keyboardType: TextInputType.number,
+                      controller: yearController,
                       onChanged: (value) {
-                        bloc.add(RealEstateEditEvent.onPriceChanged(
-                            double.tryParse(value) ?? 0));
+                        bloc.add(RealEstateEditEvent.onBuildAtChanged(
+                            int.tryParse(value) ?? 0));
                       },
-                    ),
+                    )
                   ],
                 ),
               ),
             ],
           ),
           AppSize.mediumHeightDimens.verticalSpace,
-          ...[
-            Text(
-              s.builtAt,
-              style: context.textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: context.textTheme.displayLarge?.color,
-              ),
+          Text(
+            s.price,
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: context.textTheme.displayLarge?.color,
             ),
-            AppSize.mediumHeightDimens.verticalSpace,
-            InputPrimaryForm(
-              hint: '2000',
-              keyboardType: TextInputType.number,
-              controller: yearController,
-              onChanged: (value) {
-                bloc.add(RealEstateEditEvent.onBuildAtChanged(
-                    int.tryParse(value) ?? 0));
-              },
-            )
-          ],
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          InputPrimaryForm(
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(15),
+              CurrencyTextInputFormatter(
+                locale: 'vi',
+                symbol: 'đ',
+              ),
+            ],
+            hint: '1.200.000 đ',
+            controller: priceController,
+            onChanged: (value) {
+              final val =
+                  num.tryParse(value.replaceAll(RegExp("[^0-9]"), '')) ?? 0;
+
+              bloc.add(RealEstateEditEvent.onPriceChanged(val.toDouble()));
+            },
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          Text(
+            "Bằng chữ",
+            style: context.textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: context.textTheme.displayLarge?.color,
+            ),
+          ),
+          AppSize.mediumHeightDimens.verticalSpace,
+          ValueListenableBuilder(
+            valueListenable: priceNotifier,
+            builder: (BuildContext context, String value, Widget? child) {
+              final val =
+                  num.tryParse(value.replaceAll(RegExp("[^0-9]"), '')) ?? 0;
+              String text = "";
+              if (value.isNotEmpty) {
+                try {
+                  text = Utils.numberToText(val.toDouble()).toTitleCase();
+                } catch (_) {}
+              }
+              return Text(
+                text,
+                style: context.textTheme.bodySmall?.copyWith(
+                  color: context.textTheme.displayLarge?.color,
+                ),
+              );
+            },
+          ),
           AppSize.mediumHeightDimens.verticalSpace,
           Text(
             s.legalDocuments,
@@ -608,6 +649,7 @@ class _SelectNumberOption extends StatelessWidget {
   final int minValue;
   final void Function() onIncrease;
   final void Function() onDecrease;
+
   const _SelectNumberOption({
     super.key,
     required this.lable,
