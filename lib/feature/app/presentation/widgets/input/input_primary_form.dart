@@ -29,10 +29,14 @@ class InputPrimaryForm extends StatefulWidget {
   final TextAlign? textAlign;
 
   final int? maxLength;
+
+  final Iterable<String>? autofillHints;
+
   const InputPrimaryForm({
     super.key,
     this.lable,
     this.hint,
+    this.autofillHints,
     this.validator,
     this.onChanged,
     this.controller,
@@ -96,6 +100,7 @@ class _InputPrimaryFormState extends State<InputPrimaryForm> {
           child: TextFormField(
             key: widget.textKey,
             textAlign: widget.textAlign ?? TextAlign.start,
+            autofillHints: widget.autofillHints,
             enabled: widget.enable,
             maxLines: widget.maxLines,
             focusNode: widget.focusNode,
