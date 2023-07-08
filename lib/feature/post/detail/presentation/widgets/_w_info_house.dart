@@ -19,6 +19,7 @@ class _WInfoHouse extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              AppSize.mediumHeightDimens.verticalSpace,
               Row(
                 children: [
                   Text(

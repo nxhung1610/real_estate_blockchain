@@ -295,14 +295,17 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Flexible(
-                                      child: Text(
-                                        state.estate?.name ?? '',
-                                        style: context.textTheme.headlineSmall
-                                            ?.copyWith(
-                                          color: AppColor.kNeutrals_.shade400,
+                                      child: Tooltip(
+                                        message: state.estate?.name ?? '',
+                                        child: Text(
+                                          state.estate?.name ?? '',
+                                          style: context.textTheme.headlineSmall
+                                              ?.copyWith(
+                                            color: AppColor.kNeutrals_.shade400,
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                     AppSize.smallHeightDimens.verticalSpace,
@@ -326,19 +329,26 @@ class _RealEstateDetailPageState extends State<RealEstateDetailPage>
                                                     .locale
                                                     .languageCode ==
                                                 'vi';
-                                            return Text(
-                                              (state.estate?.address ?? '') +
+                                            return Tooltip(
+                                              message: (state.estate?.address ??
+                                                      '') +
                                                   (addressState.buildAddress(
                                                           context) ??
                                                       ''),
-                                              style: context
-                                                  .textTheme.bodyMedium
-                                                  ?.copyWith(
-                                                color: AppColor
-                                                    .kNeutrals_.shade400,
+                                              child: Text(
+                                                (state.estate?.address ?? '') +
+                                                    (addressState.buildAddress(
+                                                            context) ??
+                                                        ''),
+                                                style: context
+                                                    .textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                  color: AppColor
+                                                      .kNeutrals_.shade400,
+                                                ),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
-                                              maxLines: 2,
-                                              overflow: TextOverflow.ellipsis,
                                             );
                                           },
                                         ),

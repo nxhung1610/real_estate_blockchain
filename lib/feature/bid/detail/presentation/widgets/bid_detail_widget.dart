@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bidder.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 
@@ -29,6 +31,79 @@ class _BidDetailWidgetState extends State<BidDetailWidget> {
         slivers: [
           SliverOverlapInjector(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context)),
+          if (context.watch<BidDetailBloc>().state.isShimmer) ...[
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                  vertical: 24.h,
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: 80.h,
+                      child: SkeletonWidget(
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                    ),
+                    AppSize.extraHeightDimens.verticalSpace,
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80.h,
+                                child: SkeletonWidget(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                              ),
+                            ),
+                            AppSize.largeWidthDimens.horizontalSpace,
+                            Expanded(
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80.h,
+                                child: SkeletonWidget(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        AppSize.largeHeightDimens.verticalSpace,
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80.h,
+                                child: SkeletonWidget(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                              ),
+                            ),
+                            AppSize.largeWidthDimens.horizontalSpace,
+                            Expanded(
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80.h,
+                                child: SkeletonWidget(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
           if (!context.watch<BidDetailBloc>().state.isShimmer &&
               context.watch<BidDetailBloc>().state.bid?.realEstate == null) ...[
             SliverToBoxAdapter(

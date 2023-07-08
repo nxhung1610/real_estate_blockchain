@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -163,10 +165,14 @@ class WBidItem extends StatelessWidget {
                           ),
                           AppSize.mediumHeightDimens.verticalSpace,
                           Text(
-                            NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                                .format((item.realEstate?.price ?? 0) *
-                                    (item.realEstate?.area ?? 0))
-                                .toString(),
+                            item.highestBidder != null
+                                ? NumberFormat.currency(
+                                        locale: "vi_VN", symbol: 'đ')
+                                    .format(
+                                        (max(0, item.highestBindingBid ?? 0) -
+                                            (item.bidIncrement ?? 0)))
+                                    .toString()
+                                : '- -/- -',
                             style: context.textTheme.bodyLarge?.copyWith(
                               color: AppColor.kPrimary1,
                               fontWeight: FontWeight.w800,

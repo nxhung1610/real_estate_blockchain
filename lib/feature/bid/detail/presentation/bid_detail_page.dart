@@ -304,14 +304,20 @@ class _BidDetailPageState extends State<BidDetailPage>
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Flexible(
-                                        child: Text(
-                                          state.bid?.realEstate?.name ?? '',
-                                          style: context.textTheme.headlineSmall
-                                              ?.copyWith(
-                                            color: AppColor.kNeutrals_.shade400,
+                                        child: Tooltip(
+                                          message:
+                                              state.bid?.realEstate?.name ?? '',
+                                          child: Text(
+                                            state.bid?.realEstate?.name ?? '',
+                                            style: context
+                                                .textTheme.headlineSmall
+                                                ?.copyWith(
+                                              color:
+                                                  AppColor.kNeutrals_.shade400,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
                                           ),
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       AppSize.smallHeightDimens.verticalSpace,
@@ -344,21 +350,31 @@ class _BidDetailPageState extends State<BidDetailPage>
                                                       .locale
                                                       .languageCode ==
                                                   'vi';
-                                              return Text(
-                                                (state.bid?.realEstate
+                                              return Tooltip(
+                                                message: (state.bid?.realEstate
                                                             ?.address ??
                                                         '') +
                                                     (addressState.buildAddress(
                                                             context) ??
                                                         ''),
-                                                style: context
-                                                    .textTheme.bodyMedium
-                                                    ?.copyWith(
-                                                  color: AppColor
-                                                      .kNeutrals_.shade400,
+                                                child: Text(
+                                                  (state.bid?.realEstate
+                                                              ?.address ??
+                                                          '') +
+                                                      (addressState
+                                                              .buildAddress(
+                                                                  context) ??
+                                                          ''),
+                                                  style: context
+                                                      .textTheme.bodyMedium
+                                                      ?.copyWith(
+                                                    color: AppColor
+                                                        .kNeutrals_.shade400,
+                                                  ),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
                                               );
                                             },
                                           ),
