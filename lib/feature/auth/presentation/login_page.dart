@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -81,6 +82,14 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        24.verticalSpace,
+                        Center(
+                          child: Assets.images.realustLogo.image(
+                            width: 128.w,
+                            height: 128.w,
+                          ),
+                        ),
+                        40.verticalSpace,
                         Text(
                           s.loginWelcomeBack,
                           style: context.textTheme.headlineSmall?.copyWith(
@@ -160,83 +169,94 @@ class __LoginFormState extends State<_LoginForm> with PageMixin {
     bloc = context.read<LoginBloc>();
   }
 
+  String prevPass = "";
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
-        return Form(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                s.phoneNumber,
-                style: context.textTheme.bodyMedium?.copyWith(),
-              ),
-              AppSize.mediumHeightDimens.verticalSpace,
-              InputPrimaryForm(
-                keyboardType: TextInputType.phone,
-                hint: "Nhập số điện thoại",
-                onChanged: (value) {
-                  bloc.phoneNumberChanged(value);
-                },
-              ),
-              AppSize.largeHeightDimens.verticalSpace,
-              ...[
+        return AutofillGroup(
+          child: Form(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Text(
-                  s.password,
+                  s.phoneNumber,
                   style: context.textTheme.bodyMedium?.copyWith(),
                 ),
                 AppSize.mediumHeightDimens.verticalSpace,
                 InputPrimaryForm(
-                  obscureText: !state.passwordVisible,
-                  hint: "Nhập mật khẩu",
-                  keyboardType: TextInputType.visiblePassword,
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      bloc.passwordVisibleChanged(!state.passwordVisible);
-                    },
-                    icon: state.passwordVisible
-                        ? Assets.icons.icEyeHide.svg(
-                            width: AppSize.extraLargeElevation,
-                            height: AppSize.extraLargeElevation,
-                          )
-                        : Assets.icons.icEyeShow.svg(
-                            width: AppSize.extraLargeElevation,
-                            height: AppSize.extraLargeElevation,
-                          ),
-                  ),
+                  keyboardType: TextInputType.phone,
+                  hint: "Nhập số điện thoại",
+                  autofillHints: const [AutofillHints.username],
                   onChanged: (value) {
-                    bloc.passwordChanged(value);
+                    bloc.phoneNumberChanged(value);
                   },
                 ),
-              ],
-              AppSize.extraHeightDimens.verticalSpace,
-              ButtonApp(
-                type: ButtonType.primary,
-                label: s.loginSignIn,
-                onPressed: () {
-                  dissmissFocus(context);
-                  bloc.loginPressed();
-                },
-              ),
-              AppSize.extraHeightDimens.verticalSpace,
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-                    context.push($appRoute.authForgotPassword);
+                AppSize.largeHeightDimens.verticalSpace,
+                ...[
+                  Text(
+                    s.password,
+                    style: context.textTheme.bodyMedium?.copyWith(),
+                  ),
+                  AppSize.mediumHeightDimens.verticalSpace,
+                  InputPrimaryForm(
+                    obscureText: !state.passwordVisible,
+                    autofillHints: const [AutofillHints.password],
+                    hint: "Nhập mật khẩu",
+                    keyboardType: TextInputType.visiblePassword,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        TextInput.finishAutofillContext(shouldSave: true);
+                        bloc.passwordVisibleChanged(!state.passwordVisible);
+                      },
+                      icon: state.passwordVisible
+                          ? Assets.icons.icEyeHide.svg(
+                              width: AppSize.extraLargeElevation,
+                              height: AppSize.extraLargeElevation,
+                            )
+                          : Assets.icons.icEyeShow.svg(
+                              width: AppSize.extraLargeElevation,
+                              height: AppSize.extraLargeElevation,
+                            ),
+                    ),
+                    onChanged: (value) {
+                      bloc.passwordChanged(value);
+                      if (value.length - prevPass.length > 6) {
+                        bloc.loginPressed();
+                      }
+                      prevPass = value;
+                    },
+                  ),
+                ],
+                AppSize.extraHeightDimens.verticalSpace,
+                ButtonApp(
+                  type: ButtonType.primary,
+                  label: s.loginSignIn,
+                  onPressed: () {
+                    dissmissFocus(context);
+                    bloc.loginPressed();
                   },
-                  child: Text(
-                    s.loginForgotPassword,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: AppColor.kNeutrals_.shade700,
+                ),
+                AppSize.extraHeightDimens.verticalSpace,
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      context.push($appRoute.authForgotPassword);
+                    },
+                    child: Text(
+                      s.loginForgotPassword,
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppColor.kNeutrals_.shade700,
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         );
       },

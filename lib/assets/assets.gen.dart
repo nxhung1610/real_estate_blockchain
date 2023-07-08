@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $EnvsGen {
   const $EnvsGen();
@@ -374,6 +374,10 @@ class $AssetsImagesGen {
   AssetGenImage get onboarding2 =>
       const AssetGenImage('assets/images/onboarding2.png');
 
+  /// File path: assets/images/realust_logo.png
+  AssetGenImage get realustLogo =>
+      const AssetGenImage('assets/images/realust_logo.png');
+
   /// File path: assets/images/telegram.png
   AssetGenImage get telegram =>
       const AssetGenImage('assets/images/telegram.png');
@@ -389,6 +393,7 @@ class $AssetsImagesGen {
         noPost,
         onboarding1,
         onboarding2,
+        realustLogo,
         telegram,
         zalo
       ];
