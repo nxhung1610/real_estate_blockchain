@@ -7,14 +7,13 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate_type.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
-import 'package:real_estate_blockchain/feature/house_add_new/application/enums.dart';
-import 'package:real_estate_blockchain/feature/house_add_new/application/house_process_real_info_bloc.dart';
 import 'package:real_estate_blockchain/feature/house_add_new/module.dart';
 import 'package:real_estate_blockchain/feature/real_estate/config/real_estate_config_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/enums.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
-import 'package:real_estate_blockchain/utils/string/number_format.dart';
+import 'package:real_estate_blockchain/utils/extension/string_extensions.dart';
+import 'package:real_estate_blockchain/utils/utils.dart';
 
 class RealEstateInfoPage extends StatefulWidget {
   const RealEstateInfoPage({super.key});
@@ -25,6 +24,7 @@ class RealEstateInfoPage extends StatefulWidget {
 
 class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
   late final HouseProcessRealInfoBloc bloc;
+
   @override
   void initState() {
     super.initState();
@@ -167,8 +167,9 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  AppSize.mediumHeightDimens.verticalSpace,
                   Text(
-                    s.price,
+                    s.builtAt,
                     style: context.textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: context.textTheme.displayLarge?.color,
@@ -176,46 +177,79 @@ class _RealEstateInfoPageState extends State<RealEstateInfoPage> {
                   ),
                   AppSize.mediumHeightDimens.verticalSpace,
                   InputPrimaryForm(
-                    hint: '1.200.000 đ',
+                    hint: '2000',
                     keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(15),
-                      CurrencyTextInputFormatter(
-                        locale: 'vi',
-                        symbol: 'đ',
-                      ),
-                    ],
                     onChanged: (value) {
-                      final val = num.tryParse(
-                              value.replaceAll(RegExp("[^0-9]"), '')) ??
-                          0;
-
-                      bloc.onPriceChanged(val.toDouble());
+                      bloc.onBuiltAtChanged(int.tryParse(value) ?? 0);
                     },
-                  ),
+                  )
                 ],
               ),
             ),
           ],
         ),
         AppSize.mediumHeightDimens.verticalSpace,
-        ...[
-          Text(
-            s.builtAt,
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.textTheme.displayLarge?.color,
-            ),
+        Text(
+          s.price,
+          style: context.textTheme.bodyMedium?.copyWith(
+            fontWeight: FontWeight.bold,
+            color: context.textTheme.displayLarge?.color,
           ),
-          AppSize.mediumHeightDimens.verticalSpace,
-          InputPrimaryForm(
-            hint: '2000',
-            keyboardType: TextInputType.number,
-            onChanged: (value) {
-              bloc.onBuiltAtChanged(int.tryParse(value) ?? 0);
-            },
-          )
-        ],
+        ),
+        AppSize.mediumHeightDimens.verticalSpace,
+        InputPrimaryForm(
+          hint: '1.200.000 đ',
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            LengthLimitingTextInputFormatter(15),
+            CurrencyTextInputFormatter(
+              locale: 'vi',
+              symbol: 'đ',
+            ),
+          ],
+          onChanged: (value) {
+            final val =
+                num.tryParse(value.replaceAll(RegExp("[^0-9]"), '')) ?? 0;
+
+            bloc.onPriceChanged(val.toDouble());
+          },
+        ),
+        AppSize.mediumHeightDimens.verticalSpace,
+        BlocSelector<HouseProcessRealInfoBloc, HouseProcessRealInfoState,
+            double?>(
+          selector: (state) => state.price,
+          builder: (BuildContext context, value) {
+            String text = "";
+            if (value != null) {
+              try {
+                text = Utils.numberToText(value).toTitleCase();
+              } catch (_) {}
+            }
+            if (text.isEmpty) {
+              return kEmpty;
+            }
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Bằng chữ",
+                  style: context.textTheme.bodySmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.textTheme.displayLarge?.color,
+                  ),
+                ),
+                AppSize.mediumHeightDimens.verticalSpace,
+                Text(
+                  text,
+                  style: context.textTheme.bodySmall?.copyWith(
+                    color: context.textTheme.displayLarge?.color,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
         AppSize.mediumHeightDimens.verticalSpace,
         Text(
           s.legalDocuments,
@@ -575,6 +609,7 @@ class OptionTypeRealEstate<T> extends StatefulWidget {
   final T? value;
   final String Function(T value) labelBuild;
   final void Function(T value) onChanged;
+
   const OptionTypeRealEstate({
     super.key,
     required this.data,
@@ -590,6 +625,7 @@ class OptionTypeRealEstate<T> extends StatefulWidget {
 class _OptionTypeRealEstateState<T> extends State<OptionTypeRealEstate<T>>
     with SingleTickerProviderStateMixin {
   late final TabController tabController;
+
   @override
   void initState() {
     super.initState();
@@ -640,6 +676,7 @@ class _SelectNumberOption extends StatelessWidget {
   final int minValue;
   final void Function() onIncrease;
   final void Function() onDecrease;
+
   const _SelectNumberOption({
     super.key,
     required this.lable,
