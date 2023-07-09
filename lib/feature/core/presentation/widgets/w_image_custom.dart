@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
+import 'package:real_estate_blockchain/feature/core/presentation/widgets/w_skeleton.dart';
 
 class ImageCustom extends Image {
   const ImageCustom({
@@ -152,8 +153,9 @@ class _LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColor.kNeutrals_.shade500,
-    );
+    return const SkeletonWidget();
+    // return Container(
+    //   color: AppColor.kNeutrals_.shade500,
+    // );
   }
 }

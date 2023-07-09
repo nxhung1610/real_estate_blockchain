@@ -136,6 +136,14 @@ class _NotificationPageState extends State<NotificationPage> {
                     ),
                   );
                 },
+                firstPageErrorIndicatorBuilder: (context) {
+                  return Center(
+                    child: Text(
+                      s.anErrorHasOccurredPleaseTryLater,
+                      style: context.textTheme.bodyLarge?.copyWith(),
+                    ),
+                  );
+                },
                 itemBuilder: (context, item, index) {
                   return Column(
                     children: [

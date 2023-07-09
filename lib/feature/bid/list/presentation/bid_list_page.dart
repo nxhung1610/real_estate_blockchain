@@ -133,7 +133,7 @@ class _BidListPageState extends State<BidListPage> {
                     firstPageErrorIndicatorBuilder: (context) {
                       return Center(
                         child: Text(
-                          s.noBid,
+                          s.anErrorHasOccurredPleaseTryLater,
                           style: context.textTheme.bodyLarge?.copyWith(),
                         ),
                       );
