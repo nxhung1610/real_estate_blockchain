@@ -247,6 +247,8 @@ class HouseNewsFeed extends StatelessWidget {
                                   AddressBuilderState>(
                                 builder: (context, addressState) {
                                   return Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Assets.icons.icLocationLight.svg(
                                         width: AppSize.smallIcon,
@@ -268,7 +270,7 @@ class HouseNewsFeed extends StatelessWidget {
                                             color: AppColor.kNeutrals_.shade800,
                                           ),
                                           overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
+                                          maxLines: 2,
                                         ),
                                       )
                                     ],
@@ -277,6 +279,7 @@ class HouseNewsFeed extends StatelessWidget {
                               ),
                             ),
                           ),
+                          8.horizontalSpace,
                           Text(
                             NumberFormat.compactLong(
                               locale: "vi",

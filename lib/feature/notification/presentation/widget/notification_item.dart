@@ -1,14 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
-import 'package:real_estate_blockchain/data/notification/domain/enum/notification_category.dart';
 import 'package:real_estate_blockchain/data/notification/domain/model/user_notification.dart';
 import 'package:real_estate_blockchain/data/tour/domain/model/tour.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
@@ -23,6 +19,7 @@ class NotificationItem extends StatelessWidget {
     super.key,
     required this.notification,
   });
+
   final UserNotification notification;
 
   @override
@@ -123,20 +120,23 @@ class NotificationItem extends StatelessWidget {
                     child: Text(
                       notification.body,
                       style: context.textTheme.bodyMedium?.copyWith(),
-                      maxLines: 2,
+                      maxLines: 10,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   AppSize.smallHeightDimens.verticalSpace,
-                  Text(
-                    DateFormat.yMd()
-                        .format(DateTime.parse(notification.sentAt)),
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: AppColor.kPrimary1,
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      DateFormat("hh:mm:ss dd/MM/yyyy").format(
+                          DateTime.parse(notification.sentAt).toLocal()),
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppColor.kPrimary1,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),

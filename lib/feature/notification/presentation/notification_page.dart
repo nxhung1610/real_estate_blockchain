@@ -27,6 +27,7 @@ class _NotificationPageState extends State<NotificationPage> {
   late final NotificationBloc bloc;
   late final PagingController<int, UserNotification> pageController;
   Completer<bool>? refresh;
+
   @override
   void initState() {
     bloc = context.read<NotificationBloc>()
@@ -136,7 +137,14 @@ class _NotificationPageState extends State<NotificationPage> {
                   );
                 },
                 itemBuilder: (context, item, index) {
-                  return NotificationItem(notification: item);
+                  return Column(
+                    children: [
+                      NotificationItem(notification: item),
+                      const Divider(
+                        height: 1,
+                      ),
+                    ],
+                  );
                 },
               ),
             )
