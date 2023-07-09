@@ -32,7 +32,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
         context,
         leading: const UnconstrainedBox(child: BackButtonApp()),
         leadingWidth: AppSize.mediumIcon + 64.w,
-        title: Text(s.news),
+        title: Text(widget.title),
         centerTitle: true,
       ),
       body: Column(
@@ -46,6 +46,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
           ),
           Expanded(
             child: WebView(
+              zoomEnabled: true,
               backgroundColor: context.theme.colorScheme.background,
               javascriptMode: JavascriptMode.unrestricted,
               initialUrl: widget.url,

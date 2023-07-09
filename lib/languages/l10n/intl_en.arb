@@ -279,5 +279,6 @@
    "invalidOtp" : "Invalid Otp",
    "changePhoneNumber" : "Change phone number",
    "news" : "News",
-   "noPostFoundPleaseCreatePost" : "No post found. Please create a post."
+   "noPostFoundPleaseCreatePost" : "No post found. Please create a post.",
+   "termsOfUse" : "Terms of use"
 }

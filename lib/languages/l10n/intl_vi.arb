@@ -280,5 +280,6 @@
   "invalidOtp" : "Mã OTP không hợp lệ",
   "changePhoneNumber" : "Đổi số điện thoại",
   "news" : "Tin tức",
-  "noPostFoundPleaseCreatePost" : "Chưa có bài đăng nào, bạn hãy tạo 1 bài đăng mới."
+  "noPostFoundPleaseCreatePost" : "Chưa có bài đăng nào, bạn hãy tạo 1 bài đăng mới.",
+  "termsOfUse" : "Điều khoản sử dụng"
 }

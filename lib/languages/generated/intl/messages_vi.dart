@@ -395,6 +395,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đấu giá thầu của tại"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
         "supportList": MessageLookupByLibrary.simpleMessage("Danh mục hỗ trợ"),
+        "termsOfUse":
+            MessageLookupByLibrary.simpleMessage("Điều khoản sử dụng"),
         "thePreviousBrowsingAuctionWasRejected":
             MessageLookupByLibrary.simpleMessage(
                 "Đấu giá đang duyệt trước đó đã bị từ chối, vui lòng tạo mới"),

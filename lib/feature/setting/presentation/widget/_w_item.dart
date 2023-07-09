@@ -29,7 +29,7 @@ class _WidgetItem extends StatelessWidget {
       },
       child: Padding(
         padding: EdgeInsets.symmetric(
-          vertical: AppSize.largeHeightDimens,
+          vertical: AppSize.mediumHeightDimens,
         ),
         child: Row(
           children: [

@@ -11,6 +11,7 @@ import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/auth/application/application.dart';
 import 'package:real_estate_blockchain/feature/setting/application/setting_action.dart';
 import 'package:real_estate_blockchain/feature/setting/presentation/widget/delete_account_success.dart';
+import 'package:real_estate_blockchain/feature/webview/presentation/webview_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
@@ -150,7 +151,36 @@ class _SettingPageState extends State<SettingPage> {
                         onNegative: () {},
                       );
                     },
-                  )
+                  ),
+                  _WidgetItem(
+                    type: const _WidgetItemType.none(),
+                    title: s.termsOfUse,
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                        builder: (context) {
+                          return WebViewScreen(
+                            url: 'https://4jnw.l.time4vps.cloud/terms-of-use/',
+                            title: s.termsOfUse,
+                          );
+                        },
+                      ));
+                    },
+                  ),
+                  _WidgetItem(
+                    type: const _WidgetItemType.none(),
+                    title: s.privacyPolicy,
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                        builder: (context) {
+                          return WebViewScreen(
+                            url:
+                                'https://4jnw.l.time4vps.cloud/privacy-policy/',
+                            title: s.privacyPolicy,
+                          );
+                        },
+                      ));
+                    },
+                  ),
                 ],
               )
             ],
