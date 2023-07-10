@@ -361,9 +361,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "realEstateType":
             MessageLookupByLibrary.simpleMessage("Loại bất động sản"),
         "registerCreateANameAccount1":
-            MessageLookupByLibrary.simpleMessage("Tạo một"),
-        "registerCreateANameAccount2":
-            MessageLookupByLibrary.simpleMessage("tài khoản"),
+            MessageLookupByLibrary.simpleMessage("Tạo tài khoản"),
+        "registerCreateANameAccount2": MessageLookupByLibrary.simpleMessage(""),
         "registerCreateAnAccountToContinue":
             MessageLookupByLibrary.simpleMessage("Tạo tài khoản để tiếp tục"),
         "registerSignUp": MessageLookupByLibrary.simpleMessage("Đăng ký"),
