@@ -141,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Nhập mô tả chung về bất động sản của bạn"),
+        "details": MessageLookupByLibrary.simpleMessage("Thông tin chi tiết"),
         "dialogFlowWellcome": MessageLookupByLibrary.simpleMessage(
             "Xin chào, tôi là Chatbot, tôi có thể giúp gì cho bạn."),
         "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
@@ -193,6 +194,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
+        "howToPost":
+            MessageLookupByLibrary.simpleMessage("Làm thế nào để đăng tin ?"),
+        "howToPostContent1": MessageLookupByLibrary.simpleMessage(
+            "* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n* Sau đó bạn kích vào phần “Nhà của tôi” và chọn “Thêm tài sản mới”.\r\n* Bạn sẽ được chuyển sang màn hình “Thêm tài sản mới” và đăng tin theo các bước hướng dẫn. \r\n* Khi đăng tin theo hình thức này, bạn có thể vào phần “Nhà của tôi” để chỉnh sửa thông tin theo ý mình, đồng thời bạn sẽ được đăng số tin không giới hạn nếu đáp ứng đủ các điều kiện của Realust."),
+        "howToPostContent2": MessageLookupByLibrary.simpleMessage(
+            "* Trong quá trình đăng tin, bạn phải thực hiện đầy đủ các thao tác theo hướng dẫn.\r\n* Điền đẩy đủ thông tin vào các mục.\r\n* Tiêu đề và nội dung phải viết in thường, có dấu, chuẩn chính tả (có thể xem thêm ở link sau: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Tin đăng sau 24h làm việc sẽ được hệ thống kiểm duyệt và cho hiển thị lên trang chủ ứng dụng.\r\n* Khách hàng vui lòng tuân thủ các quy định về tin đăng của Realust."),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "Tôi chưa hiểu phản hồi của bạn."),
         "images": MessageLookupByLibrary.simpleMessage("Hình ảnh"),
@@ -204,6 +211,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nhập mã xác thực OTP"),
         "invalidOtp":
             MessageLookupByLibrary.simpleMessage("Mã OTP không hợp lệ"),
+        "isPostingEffective": MessageLookupByLibrary.simpleMessage(
+            "Đăng tin có hiệu quả không ?"),
+        "isPostingEffectiveContent": MessageLookupByLibrary.simpleMessage(
+            "Realust là một kênh thông tin hàng đầu về bất động sản với số lượng và chất lượng thông tin bất động sản tốt nhất Việt Nam, vượt trội hơn hẳn so với tất cả các kênh thông tin bất động sản khác. Trong tổng số 1 triệu tin rao mới mỗi tháng, có rất nhiều tin chính chủ được cập nhật thường xuyên. Tính trung bình, số lượt xem một tin rao bán, cho thuê nhà đất đăng trên Realust cao gấp từ 3-5 lần so với tin đăng trên các ứng dụng nhà đất khác hoặc các trang rao vặt lớn nhất hiện nay.\r\n\r\nRealust  là ứng dụng tập trung lượng khách hàng chính chủ và môi giới lớn nhất so với các ứng dụng về bất động sản khác, đồng thời là một chuyên trang về bất động sản với lượng tin rao BĐS lớn, chất lượng, được biên tập kỹ càng. Những khách hàng có nhu cầu thực sự về bất động sản sẽ thường xuyên truy cập, chủ sở hữu của bất động sản cần bán hoặc cho thuê sẽ có nhiều cơ hội lựa chọn cho mình đối tác phù hợp với giá giao dịch tốt nhất.\r\n\r\nỨng dụng hoạt động chuyên nghiệp, luôn linh hoạt trong các hình thức sản phẩm phục vụ khách hàng (đặc biệt đối với nhà môi giới có hình thức đổi tin, hình thức các gói tin VIP...)."),
+        "isThereAFeeToPost":
+            MessageLookupByLibrary.simpleMessage("Đăng tin có mất phí không?"),
+        "isThereAFeeToPostContent": MessageLookupByLibrary.simpleMessage(
+            "Hiện nay, ứng dụng có 2 hình thức đăng tin là tin thường và tin VIP."),
         "land": MessageLookupByLibrary.simpleMessage("Bất động sản"),
         "lastName": MessageLookupByLibrary.simpleMessage("Tên"),
         "later": MessageLookupByLibrary.simpleMessage("Để sau"),
@@ -254,6 +269,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "north": MessageLookupByLibrary.simpleMessage("Bắc"),
         "northEast": MessageLookupByLibrary.simpleMessage("Đông Bắc"),
         "northWest": MessageLookupByLibrary.simpleMessage("Tây Bắc"),
+        "note": MessageLookupByLibrary.simpleMessage("Chú ý"),
         "notification": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Mật khẩu cũ"),
@@ -310,6 +326,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Vui lòng đăng nhập để tiếp tục."),
         "pool": MessageLookupByLibrary.simpleMessage("Hồ bơi"),
+        "post": MessageLookupByLibrary.simpleMessage("Đăng tin"),
+        "postCatalog":
+            MessageLookupByLibrary.simpleMessage("Danh mục đăng tin"),
         "postTourType": MessageLookupByLibrary.simpleMessage("Loại bài đăng"),
         "posts": MessageLookupByLibrary.simpleMessage("Bài đăng"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
@@ -432,6 +451,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Kho"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),
+        "whyAmIPostingButNotSeeingIt": MessageLookupByLibrary.simpleMessage(
+            "Tại sao tôi đăng tin nhưng không thấy hiện ?"),
+        "whyAmIPostingButNotSeeingItContent1": MessageLookupByLibrary.simpleMessage(
+            "* Các tin đăng phải theo đúng quy định của ứng dụng.\r\n* Tin của bạn sẽ được hệ thống quản trị chúng tôi kiểm duyệt và đăng trong thời gian 24h làm việc."),
+        "whyAmIPostingButNotSeeingItContent2": MessageLookupByLibrary.simpleMessage(
+            "* Nếu bạn đăng tin theo cách Đăng tin bằng tài khoản đã đăng ký trên Realust, hãy đảm bảo tài khoản của bạn vẫn có quyền đăng tin (tài khoản không bị khóa)."),
         "writeAReply": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

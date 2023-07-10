@@ -1,15 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:real_estate_blockchain/assets/assets.gen.dart';
 import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_config.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/map/model/address_data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow_bloc.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/infor/dialog_info_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
@@ -33,6 +36,7 @@ class WMessageOnResponseItem extends StatefulWidget {
 }
 
 class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
+  bool isNav = false;
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -93,6 +97,197 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
     final s = S.of(context);
     final locale = context.read<AppBloc>().state.locale;
     return data.maybeMap(
+      isThereAFeeToPost: (value) {
+        return Text(
+          s.isThereAFeeToPostContent,
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.theme.colorScheme.background,
+          ),
+        );
+      },
+      whyAmIPostingButNotSeeingIt: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        s.whyAmIPostingButNotSeeingItContent1,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Text(
+                        s.note,
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Text(
+                        s.whyAmIPostingButNotSeeingItContent2,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!isNav) {
+          isNav = true;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      isPostingEffective: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Text(
+                    s.isPostingEffectiveContent,
+                    style: context.textTheme.bodyMedium?.copyWith(),
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!isNav) {
+          isNav = true;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      howToPost: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        s.howToPostContent1,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Assets.images.guild1.image(),
+                          ),
+                          Expanded(
+                            child: Assets.images.guild2.image(),
+                          )
+                        ],
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Text(
+                        s.note,
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      AppSize.mediumHeightDimens.verticalSpace,
+                      Text(
+                        s.howToPostContent2,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!isNav) {
+          isNav = true;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
       policies: (value) {
         return RichText(
           text: TextSpan(

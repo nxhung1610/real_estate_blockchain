@@ -124,12 +124,63 @@ class MenuType with _$MenuType {
   const factory MenuType.all() = _MenuTypeAll;
   const factory MenuType.info() = _MenuTypeInfo;
   const factory MenuType.estate() = _MenuTypeEstate;
+  const factory MenuType.post() = _MenuTypePost;
 }
 
 extension MenuTypeEx on MenuType {
   List<Widget> widgets(BuildContext context) {
     final s = S.of(context);
     return map(
+      post: (value) {
+        return [
+          Text(
+            "${s.postCatalog} :",
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+            ),
+          ),
+          _button(context, text: s.isPostingEffective, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.isPostingEffective,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.howToPost, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.howToPost,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.whyAmIPostingButNotSeeingIt, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.whyAmIPostingButNotSeeingIt,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.isThereAFeeToPost, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.isThereAFeeToPost,
+                    ),
+                  ),
+                );
+          }),
+        ];
+      },
       all: (value) {
         return [
           Text(
@@ -188,6 +239,16 @@ extension MenuTypeEx on MenuType {
                   ),
                 );
           }),
+          _button(context, text: s.post, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.post,
+                    ),
+                  ),
+                );
+          }),
           _button(context, text: s.backToMainMenu, onPressed: () {
             context.read<DialogflowBloc>().add(
                   DialogflowEvent.onMessage(
@@ -238,29 +299,33 @@ extension MenuTypeEx on MenuType {
     required String text,
     required VoidCallback onPressed,
   }) {
-    return OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(8.r),
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(8.r),
+            ),
+            side: BorderSide(
+              color: Colors.white,
+              width: 3.r,
+            ),
           ),
-          side: BorderSide(
-            color: Colors.white,
-            width: 3.r,
+          padding: EdgeInsets.symmetric(
+            horizontal: 8.w,
+            vertical: 8.h,
           ),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        padding: EdgeInsets.symmetric(
-          horizontal: 8.w,
-        ),
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      ),
-      onPressed: () {
-        onPressed();
-      },
-      child: Text(
-        text,
-        style: context.textTheme.bodyMedium?.copyWith(
-          color: context.theme.colorScheme.background,
+        onPressed: () {
+          onPressed();
+        },
+        child: Text(
+          text,
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.theme.colorScheme.background,
+          ),
         ),
       ),
     );
@@ -277,4 +342,11 @@ class OnResponseData with _$OnResponseData {
   const factory OnResponseData.amenities(List<Amenity> amenities) =
       _OnResponseDataAmenities;
   const factory OnResponseData.policies() = _OnResponseDataPolicies;
+  const factory OnResponseData.isThereAFeeToPost() =
+      _OnResponseDataIsThereAFeeToPost;
+  const factory OnResponseData.whyAmIPostingButNotSeeingIt() =
+      _OnResponseDataWhyAmIPostingButNotSeeingIt;
+  const factory OnResponseData.howToPost() = _OnResponseDataHowToPost;
+  const factory OnResponseData.isPostingEffective() =
+      _OnResponseDataIsPostingEffective;
 }

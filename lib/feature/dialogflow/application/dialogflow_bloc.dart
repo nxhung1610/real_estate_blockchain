@@ -251,6 +251,89 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   break;
+                case MessageAppType.post:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.post(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.isThereAFeeToPost:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.isThereAFeeToPost(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.post(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.howToPost:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.howToPost(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.post(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.isPostingEffective:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.isPostingEffective(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.post(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.whyAmIPostingButNotSeeingIt:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data:
+                            const OnResponseData.whyAmIPostingButNotSeeingIt(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.post(),
+                      ),
+                    ),
+                  );
+                  break;
               }
             } else {
               throw Exception();

@@ -143,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "descriptionHint": MessageLookupByLibrary.simpleMessage(
             "Enter a general description of your property"),
+        "details": MessageLookupByLibrary.simpleMessage("Details"),
         "dialogFlowWellcome": MessageLookupByLibrary.simpleMessage(
             "Hi I\'m Chatbot, how can I help you."),
         "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
@@ -194,6 +195,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
+        "howToPost": MessageLookupByLibrary.simpleMessage("How to post?"),
+        "howToPostContent1": MessageLookupByLibrary.simpleMessage(
+            "Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...)."),
+        "howToPostContent2": MessageLookupByLibrary.simpleMessage(
+            "* In the process of posting, you must follow the instructions.\r\n* Fill in all the information completely.\r\n* The title and content must be in lowercase, yes. marks, spelling standards (can be seen at the following link: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Posts posted after 24 hours of work will be censored by the system and displayed on the application home page.\r\n* Customers please comply with Realust\'s posting regulations."),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "I don\'t understand your response yet."),
         "images": MessageLookupByLibrary.simpleMessage("Images"),
@@ -203,6 +209,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Information table of contents"),
         "inputOtp": MessageLookupByLibrary.simpleMessage("Input OTP"),
         "invalidOtp": MessageLookupByLibrary.simpleMessage("Invalid Otp"),
+        "isPostingEffective":
+            MessageLookupByLibrary.simpleMessage("Is posting effective ?"),
+        "isPostingEffectiveContent": MessageLookupByLibrary.simpleMessage(
+            "Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...)."),
+        "isThereAFeeToPost":
+            MessageLookupByLibrary.simpleMessage("Is there a fee to post?"),
+        "isThereAFeeToPostContent": MessageLookupByLibrary.simpleMessage(
+            "Currently, the application has 2 forms of posting news: regular news and VIP news."),
         "land": MessageLookupByLibrary.simpleMessage("Land"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "later": MessageLookupByLibrary.simpleMessage("Later"),
@@ -252,6 +266,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "north": MessageLookupByLibrary.simpleMessage("North"),
         "northEast": MessageLookupByLibrary.simpleMessage("North East"),
         "northWest": MessageLookupByLibrary.simpleMessage("North West"),
+        "note": MessageLookupByLibrary.simpleMessage("Note"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old password"),
@@ -309,6 +324,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Please login your account to continue."),
         "pool": MessageLookupByLibrary.simpleMessage("Pool"),
+        "post": MessageLookupByLibrary.simpleMessage("Post"),
+        "postCatalog":
+            MessageLookupByLibrary.simpleMessage("Post table of contents"),
         "postTourType": MessageLookupByLibrary.simpleMessage("Post tour type"),
         "posts": MessageLookupByLibrary.simpleMessage("Posts"),
         "premium": MessageLookupByLibrary.simpleMessage("Premium"),
@@ -428,6 +446,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "west": MessageLookupByLibrary.simpleMessage("West"),
+        "whyAmIPostingButNotSeeingIt": MessageLookupByLibrary.simpleMessage(
+            "Why am I posting but not seeing it?"),
+        "whyAmIPostingButNotSeeingItContent1": MessageLookupByLibrary.simpleMessage(
+            "* Posts must comply with the application\'s regulations.\r\n* Your news will be censored by our admin system and posted within 24 working hours."),
+        "whyAmIPostingButNotSeeingItContent2": MessageLookupByLibrary.simpleMessage(
+            "* If you post your story the Posting way with your account registered on Realust, make sure your account still has permission to post (the account is not locked)."),
         "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

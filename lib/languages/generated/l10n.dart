@@ -2819,6 +2819,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Post`
+  String get post {
+    return Intl.message(
+      'Post',
+      name: 'post',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post table of contents`
+  String get postCatalog {
+    return Intl.message(
+      'Post table of contents',
+      name: 'postCatalog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is posting effective ?`
+  String get isPostingEffective {
+    return Intl.message(
+      'Is posting effective ?',
+      name: 'isPostingEffective',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to post?`
+  String get howToPost {
+    return Intl.message(
+      'How to post?',
+      name: 'howToPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why am I posting but not seeing it?`
+  String get whyAmIPostingButNotSeeingIt {
+    return Intl.message(
+      'Why am I posting but not seeing it?',
+      name: 'whyAmIPostingButNotSeeingIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is there a fee to post?`
+  String get isThereAFeeToPost {
+    return Intl.message(
+      'Is there a fee to post?',
+      name: 'isThereAFeeToPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Details`
+  String get details {
+    return Intl.message(
+      'Details',
+      name: 'details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...).`
+  String get howToPostContent1 {
+    return Intl.message(
+      'Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...).',
+      name: 'howToPostContent1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `* In the process of posting, you must follow the instructions.\r\n* Fill in all the information completely.\r\n* The title and content must be in lowercase, yes. marks, spelling standards (can be seen at the following link: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Posts posted after 24 hours of work will be censored by the system and displayed on the application home page.\r\n* Customers please comply with Realust's posting regulations.`
+  String get howToPostContent2 {
+    return Intl.message(
+      '* In the process of posting, you must follow the instructions.\r\n* Fill in all the information completely.\r\n* The title and content must be in lowercase, yes. marks, spelling standards (can be seen at the following link: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Posts posted after 24 hours of work will be censored by the system and displayed on the application home page.\r\n* Customers please comply with Realust\'s posting regulations.',
+      name: 'howToPostContent2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...).`
+  String get isPostingEffectiveContent {
+    return Intl.message(
+      'Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...).',
+      name: 'isPostingEffectiveContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note`
+  String get note {
+    return Intl.message(
+      'Note',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `* Posts must comply with the application's regulations.\r\n* Your news will be censored by our admin system and posted within 24 working hours.`
+  String get whyAmIPostingButNotSeeingItContent1 {
+    return Intl.message(
+      '* Posts must comply with the application\'s regulations.\r\n* Your news will be censored by our admin system and posted within 24 working hours.',
+      name: 'whyAmIPostingButNotSeeingItContent1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `* If you post your story the Posting way with your account registered on Realust, make sure your account still has permission to post (the account is not locked).`
+  String get whyAmIPostingButNotSeeingItContent2 {
+    return Intl.message(
+      '* If you post your story the Posting way with your account registered on Realust, make sure your account still has permission to post (the account is not locked).',
+      name: 'whyAmIPostingButNotSeeingItContent2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currently, the application has 2 forms of posting news: regular news and VIP news.`
+  String get isThereAFeeToPostContent {
+    return Intl.message(
+      'Currently, the application has 2 forms of posting news: regular news and VIP news.',
+      name: 'isThereAFeeToPostContent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

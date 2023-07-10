@@ -3125,6 +3125,7 @@ mixin _$MenuType {
     required TResult Function() all,
     required TResult Function() info,
     required TResult Function() estate,
+    required TResult Function() post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3132,6 +3133,7 @@ mixin _$MenuType {
     TResult? Function()? all,
     TResult? Function()? info,
     TResult? Function()? estate,
+    TResult? Function()? post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3139,6 +3141,7 @@ mixin _$MenuType {
     TResult Function()? all,
     TResult Function()? info,
     TResult Function()? estate,
+    TResult Function()? post,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3147,6 +3150,7 @@ mixin _$MenuType {
     required TResult Function(_MenuTypeAll value) all,
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3154,6 +3158,7 @@ mixin _$MenuType {
     TResult? Function(_MenuTypeAll value)? all,
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3161,6 +3166,7 @@ mixin _$MenuType {
     TResult Function(_MenuTypeAll value)? all,
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3224,6 +3230,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     required TResult Function() all,
     required TResult Function() info,
     required TResult Function() estate,
+    required TResult Function() post,
   }) {
     return all();
   }
@@ -3234,6 +3241,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult? Function()? all,
     TResult? Function()? info,
     TResult? Function()? estate,
+    TResult? Function()? post,
   }) {
     return all?.call();
   }
@@ -3244,6 +3252,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult Function()? all,
     TResult Function()? info,
     TResult Function()? estate,
+    TResult Function()? post,
     required TResult orElse(),
   }) {
     if (all != null) {
@@ -3258,6 +3267,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     required TResult Function(_MenuTypeAll value) all,
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
   }) {
     return all(this);
   }
@@ -3268,6 +3278,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult? Function(_MenuTypeAll value)? all,
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
   }) {
     return all?.call(this);
   }
@@ -3278,6 +3289,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult Function(_MenuTypeAll value)? all,
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
     required TResult orElse(),
   }) {
     if (all != null) {
@@ -3332,6 +3344,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     required TResult Function() all,
     required TResult Function() info,
     required TResult Function() estate,
+    required TResult Function() post,
   }) {
     return info();
   }
@@ -3342,6 +3355,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult? Function()? all,
     TResult? Function()? info,
     TResult? Function()? estate,
+    TResult? Function()? post,
   }) {
     return info?.call();
   }
@@ -3352,6 +3366,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult Function()? all,
     TResult Function()? info,
     TResult Function()? estate,
+    TResult Function()? post,
     required TResult orElse(),
   }) {
     if (info != null) {
@@ -3366,6 +3381,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     required TResult Function(_MenuTypeAll value) all,
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
   }) {
     return info(this);
   }
@@ -3376,6 +3392,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult? Function(_MenuTypeAll value)? all,
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
   }) {
     return info?.call(this);
   }
@@ -3386,6 +3403,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult Function(_MenuTypeAll value)? all,
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
     required TResult orElse(),
   }) {
     if (info != null) {
@@ -3440,6 +3458,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     required TResult Function() all,
     required TResult Function() info,
     required TResult Function() estate,
+    required TResult Function() post,
   }) {
     return estate();
   }
@@ -3450,6 +3469,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult? Function()? all,
     TResult? Function()? info,
     TResult? Function()? estate,
+    TResult? Function()? post,
   }) {
     return estate?.call();
   }
@@ -3460,6 +3480,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult Function()? all,
     TResult Function()? info,
     TResult Function()? estate,
+    TResult Function()? post,
     required TResult orElse(),
   }) {
     if (estate != null) {
@@ -3474,6 +3495,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     required TResult Function(_MenuTypeAll value) all,
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
   }) {
     return estate(this);
   }
@@ -3484,6 +3506,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult? Function(_MenuTypeAll value)? all,
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
   }) {
     return estate?.call(this);
   }
@@ -3494,6 +3517,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult Function(_MenuTypeAll value)? all,
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
     required TResult orElse(),
   }) {
     if (estate != null) {
@@ -3508,6 +3532,120 @@ abstract class _MenuTypeEstate implements MenuType {
 }
 
 /// @nodoc
+abstract class _$$_MenuTypePostCopyWith<$Res> {
+  factory _$$_MenuTypePostCopyWith(
+          _$_MenuTypePost value, $Res Function(_$_MenuTypePost) then) =
+      __$$_MenuTypePostCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MenuTypePostCopyWithImpl<$Res>
+    extends _$MenuTypeCopyWithImpl<$Res, _$_MenuTypePost>
+    implements _$$_MenuTypePostCopyWith<$Res> {
+  __$$_MenuTypePostCopyWithImpl(
+      _$_MenuTypePost _value, $Res Function(_$_MenuTypePost) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MenuTypePost implements _MenuTypePost {
+  const _$_MenuTypePost();
+
+  @override
+  String toString() {
+    return 'MenuType.post()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MenuTypePost);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+    required TResult Function() post,
+  }) {
+    return post();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+    TResult? Function()? post,
+  }) {
+    return post?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    TResult Function()? post,
+    required TResult orElse(),
+  }) {
+    if (post != null) {
+      return post();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
+  }) {
+    return post(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
+  }) {
+    return post?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
+    required TResult orElse(),
+  }) {
+    if (post != null) {
+      return post(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MenuTypePost implements MenuType {
+  const factory _MenuTypePost() = _$_MenuTypePost;
+}
+
+/// @nodoc
 mixin _$OnResponseData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -3515,6 +3653,10 @@ mixin _$OnResponseData {
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
     required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3523,6 +3665,10 @@ mixin _$OnResponseData {
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
     TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3531,6 +3677,10 @@ mixin _$OnResponseData {
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
     TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3541,6 +3691,13 @@ mixin _$OnResponseData {
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
     required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3549,6 +3706,13 @@ mixin _$OnResponseData {
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
     TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3557,6 +3721,12 @@ mixin _$OnResponseData {
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
     TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3652,6 +3822,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
     required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -3663,6 +3837,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
     TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -3674,6 +3852,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
     TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -3690,6 +3872,13 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
     required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
   }) {
     return realEstateInfo(this);
   }
@@ -3701,6 +3890,13 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
     TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -3712,6 +3908,12 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
     TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -3811,6 +4013,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
     required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
   }) {
     return address(addressData);
   }
@@ -3822,6 +4028,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
     TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
   }) {
     return address?.call(addressData);
   }
@@ -3833,6 +4043,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
     TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -3849,6 +4063,13 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
     required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
   }) {
     return address(this);
   }
@@ -3860,6 +4081,13 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
     TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
   }) {
     return address?.call(this);
   }
@@ -3871,6 +4099,12 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
     TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -3968,6 +4202,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
     required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
   }) {
     return amenities(this.amenities);
   }
@@ -3979,6 +4217,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
     TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
   }) {
     return amenities?.call(this.amenities);
   }
@@ -3990,6 +4232,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
     TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4006,6 +4252,13 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
     required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
   }) {
     return amenities(this);
   }
@@ -4017,6 +4270,13 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
     TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
   }) {
     return amenities?.call(this);
   }
@@ -4028,6 +4288,12 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
     TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4090,6 +4356,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     required TResult Function(AddressData addressData) address,
     required TResult Function(List<Amenity> amenities) amenities,
     required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
   }) {
     return policies();
   }
@@ -4101,6 +4371,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult? Function(AddressData addressData)? address,
     TResult? Function(List<Amenity> amenities)? amenities,
     TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
   }) {
     return policies?.call();
   }
@@ -4112,6 +4386,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult Function(AddressData addressData)? address,
     TResult Function(List<Amenity> amenities)? amenities,
     TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4128,6 +4406,13 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     required TResult Function(_OnResponseDataAddress value) address,
     required TResult Function(_OnResponseDataAmenities value) amenities,
     required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
   }) {
     return policies(this);
   }
@@ -4139,6 +4424,13 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult? Function(_OnResponseDataAddress value)? address,
     TResult? Function(_OnResponseDataAmenities value)? amenities,
     TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
   }) {
     return policies?.call(this);
   }
@@ -4150,6 +4442,12 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult Function(_OnResponseDataAddress value)? address,
     TResult Function(_OnResponseDataAmenities value)? amenities,
     TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4161,4 +4459,612 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
 
 abstract class _OnResponseDataPolicies implements OnResponseData {
   const factory _OnResponseDataPolicies() = _$_OnResponseDataPolicies;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataIsThereAFeeToPostCopyWith<$Res> {
+  factory _$$_OnResponseDataIsThereAFeeToPostCopyWith(
+          _$_OnResponseDataIsThereAFeeToPost value,
+          $Res Function(_$_OnResponseDataIsThereAFeeToPost) then) =
+      __$$_OnResponseDataIsThereAFeeToPostCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataIsThereAFeeToPostCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataIsThereAFeeToPost>
+    implements _$$_OnResponseDataIsThereAFeeToPostCopyWith<$Res> {
+  __$$_OnResponseDataIsThereAFeeToPostCopyWithImpl(
+      _$_OnResponseDataIsThereAFeeToPost _value,
+      $Res Function(_$_OnResponseDataIsThereAFeeToPost) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataIsThereAFeeToPost
+    implements _OnResponseDataIsThereAFeeToPost {
+  const _$_OnResponseDataIsThereAFeeToPost();
+
+  @override
+  String toString() {
+    return 'OnResponseData.isThereAFeeToPost()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataIsThereAFeeToPost);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+  }) {
+    return isThereAFeeToPost();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+  }) {
+    return isThereAFeeToPost?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (isThereAFeeToPost != null) {
+      return isThereAFeeToPost();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+  }) {
+    return isThereAFeeToPost(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+  }) {
+    return isThereAFeeToPost?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (isThereAFeeToPost != null) {
+      return isThereAFeeToPost(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataIsThereAFeeToPost implements OnResponseData {
+  const factory _OnResponseDataIsThereAFeeToPost() =
+      _$_OnResponseDataIsThereAFeeToPost;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWith<$Res> {
+  factory _$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWith(
+          _$_OnResponseDataWhyAmIPostingButNotSeeingIt value,
+          $Res Function(_$_OnResponseDataWhyAmIPostingButNotSeeingIt) then) =
+      __$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataWhyAmIPostingButNotSeeingIt>
+    implements _$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWith<$Res> {
+  __$$_OnResponseDataWhyAmIPostingButNotSeeingItCopyWithImpl(
+      _$_OnResponseDataWhyAmIPostingButNotSeeingIt _value,
+      $Res Function(_$_OnResponseDataWhyAmIPostingButNotSeeingIt) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
+    implements _OnResponseDataWhyAmIPostingButNotSeeingIt {
+  const _$_OnResponseDataWhyAmIPostingButNotSeeingIt();
+
+  @override
+  String toString() {
+    return 'OnResponseData.whyAmIPostingButNotSeeingIt()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataWhyAmIPostingButNotSeeingIt);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+  }) {
+    return whyAmIPostingButNotSeeingIt();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+  }) {
+    return whyAmIPostingButNotSeeingIt?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (whyAmIPostingButNotSeeingIt != null) {
+      return whyAmIPostingButNotSeeingIt();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+  }) {
+    return whyAmIPostingButNotSeeingIt(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+  }) {
+    return whyAmIPostingButNotSeeingIt?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (whyAmIPostingButNotSeeingIt != null) {
+      return whyAmIPostingButNotSeeingIt(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataWhyAmIPostingButNotSeeingIt
+    implements OnResponseData {
+  const factory _OnResponseDataWhyAmIPostingButNotSeeingIt() =
+      _$_OnResponseDataWhyAmIPostingButNotSeeingIt;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataHowToPostCopyWith<$Res> {
+  factory _$$_OnResponseDataHowToPostCopyWith(_$_OnResponseDataHowToPost value,
+          $Res Function(_$_OnResponseDataHowToPost) then) =
+      __$$_OnResponseDataHowToPostCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataHowToPostCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataHowToPost>
+    implements _$$_OnResponseDataHowToPostCopyWith<$Res> {
+  __$$_OnResponseDataHowToPostCopyWithImpl(_$_OnResponseDataHowToPost _value,
+      $Res Function(_$_OnResponseDataHowToPost) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
+  const _$_OnResponseDataHowToPost();
+
+  @override
+  String toString() {
+    return 'OnResponseData.howToPost()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataHowToPost);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+  }) {
+    return howToPost();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+  }) {
+    return howToPost?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (howToPost != null) {
+      return howToPost();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+  }) {
+    return howToPost(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+  }) {
+    return howToPost?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (howToPost != null) {
+      return howToPost(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataHowToPost implements OnResponseData {
+  const factory _OnResponseDataHowToPost() = _$_OnResponseDataHowToPost;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataIsPostingEffectiveCopyWith<$Res> {
+  factory _$$_OnResponseDataIsPostingEffectiveCopyWith(
+          _$_OnResponseDataIsPostingEffective value,
+          $Res Function(_$_OnResponseDataIsPostingEffective) then) =
+      __$$_OnResponseDataIsPostingEffectiveCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataIsPostingEffectiveCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataIsPostingEffective>
+    implements _$$_OnResponseDataIsPostingEffectiveCopyWith<$Res> {
+  __$$_OnResponseDataIsPostingEffectiveCopyWithImpl(
+      _$_OnResponseDataIsPostingEffective _value,
+      $Res Function(_$_OnResponseDataIsPostingEffective) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataIsPostingEffective
+    implements _OnResponseDataIsPostingEffective {
+  const _$_OnResponseDataIsPostingEffective();
+
+  @override
+  String toString() {
+    return 'OnResponseData.isPostingEffective()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataIsPostingEffective);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+  }) {
+    return isPostingEffective();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+  }) {
+    return isPostingEffective?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (isPostingEffective != null) {
+      return isPostingEffective();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+  }) {
+    return isPostingEffective(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+  }) {
+    return isPostingEffective?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    required TResult orElse(),
+  }) {
+    if (isPostingEffective != null) {
+      return isPostingEffective(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataIsPostingEffective implements OnResponseData {
+  const factory _OnResponseDataIsPostingEffective() =
+      _$_OnResponseDataIsPostingEffective;
 }
