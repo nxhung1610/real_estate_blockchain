@@ -357,9 +357,9 @@ class _AppCommonState extends State<_AppCommon> with PageMixin {
                               );
                             },
                             reEstateCreated: (value) {
-                              appRoute.push(
-                                $appRoute.realEstateDetail,
-                                extra: RealEstateDetailPageParams(
+                              context.push(
+                                $appRoute.postRealEstateDetail.url,
+                                extra: PostRealEstateDetailPageParams(
                                   id: value.id.toString(),
                                 ),
                               );

@@ -45,8 +45,8 @@ class NotificationItem extends StatelessWidget {
           },
           reEstateCreated: (value) {
             context.push(
-              $appRoute.realEstateDetail,
-              extra: RealEstateDetailPageParams(
+              $appRoute.postRealEstateDetail.url,
+              extra: PostRealEstateDetailPageParams(
                 id: value.id.toString(),
               ),
             );

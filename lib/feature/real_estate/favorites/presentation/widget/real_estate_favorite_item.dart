@@ -80,6 +80,8 @@ class RealEstateFavoriteItem extends StatelessWidget {
                               color: context.textTheme.displayLarge?.color,
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           AppSize.mediumHeightDimens.verticalSpace,
                           Row(
@@ -153,9 +155,9 @@ class RealEstateFavoriteItem extends StatelessWidget {
                           ),
                           AppSize.mediumHeightDimens.verticalSpace,
                           Text(
-                            NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                                .format(item.price * (item.area ?? 0))
-                                .toString(),
+                            NumberFormat.compactLong(
+                              locale: "vi_VN",
+                            ).format(item.price).toString(),
                             style: context.textTheme.bodyLarge?.copyWith(
                               color: AppColor.kPrimary1,
                               fontWeight: FontWeight.w800,
