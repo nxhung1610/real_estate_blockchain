@@ -77,57 +77,66 @@ class WTourItem extends StatelessWidget {
                               color: context.textTheme.displayLarge?.color,
                             ),
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                        ),
-                        Text(
-                          NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                              .format(estate.realEstate.price *
-                                  (estate.realEstate.area ?? 1))
-                              .toString(),
-                          style: context.textTheme.titleMedium?.copyWith(
-                            color: AppColor.kPrimary1,
+                            maxLines: 2,
                           ),
                         ),
                       ],
                     ),
                     AppSize.mediumHeightDimens.verticalSpace,
-                    BlocProvider(
-                      create: (context) => getIt.call<AddressBuilderCubit>()
-                        ..onLoadAdress(
-                          proviceId: estate.realEstate.provinceId ?? '',
-                          wardId: estate.realEstate.wardId ?? '',
-                          districtId: estate.realEstate.districtId ?? '',
-                        ),
-                      child:
-                          BlocBuilder<AddressBuilderCubit, AddressBuilderState>(
-                        builder: (context, addressState) {
-                          return Row(
-                            children: [
-                              Assets.icons.icLocationLight.svg(
-                                width: AppSize.smallIcon,
-                                height: AppSize.smallIcon,
-                                color: AppColor.kPrimary1,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: BlocProvider(
+                            create: (context) => getIt
+                                .call<AddressBuilderCubit>()
+                              ..onLoadAdress(
+                                proviceId: estate.realEstate.provinceId ?? '',
+                                wardId: estate.realEstate.wardId ?? '',
+                                districtId: estate.realEstate.districtId ?? '',
                               ),
-                              AppSize.smallWidthDimens.horizontalSpace,
-                              Expanded(
-                                child: Text(
-                                  (() {
-                                    return (estate.realEstate.address ?? '') +
-                                        (addressState.buildAddress(context) ??
-                                            '');
-                                  })(),
-                                  style: context.textTheme.bodySmall?.copyWith(
-                                    color: AppColor.kNeutrals_.shade800,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                              )
-                            ],
-                          );
-                        },
-                      ),
+                            child: BlocBuilder<AddressBuilderCubit,
+                                AddressBuilderState>(
+                              builder: (context, addressState) {
+                                return Row(
+                                  children: [
+                                    Assets.icons.icLocationLight.svg(
+                                      width: AppSize.smallIcon,
+                                      height: AppSize.smallIcon,
+                                      color: AppColor.kPrimary1,
+                                    ),
+                                    AppSize.smallWidthDimens.horizontalSpace,
+                                    Expanded(
+                                      child: Text(
+                                        (() {
+                                          return (estate.realEstate.address ??
+                                                  '') +
+                                              (addressState
+                                                      .buildAddress(context) ??
+                                                  '');
+                                        })(),
+                                        style: context.textTheme.bodySmall
+                                            ?.copyWith(
+                                          color: AppColor.kNeutrals_.shade800,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    )
+                                  ],
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                        Text(
+                          NumberFormat.compactLong(
+                            locale: "vi_VN",
+                          ).format(estate.realEstate.price).toString(),
+                          style: context.textTheme.titleMedium?.copyWith(
+                            color: AppColor.kPrimary1,
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 ),
