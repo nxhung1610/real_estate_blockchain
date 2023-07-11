@@ -20,14 +20,20 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) =>
+  static String m0(phone, adminPhone, email) =>
+      "\tAfter you have successfully registered, you will have to enter the OTP sent to the registered phone number to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\n\tIn case you do not receive the OTP activation, or have performed the activation operation but still cannot log in into the app, contact us for help:\r\n\r\nPhone: ${phone}\r\n\r\nCustomer Call Center: ${adminPhone}\r\n\r\nEmail : ${email}";
+
+  static String m1(name) =>
       "${name} is making it simpler to sell your home and move forward.";
 
-  static String m1(phone, adminPhone, email) =>
+  static String m2(phone, adminPhone, email) =>
       "After you successfully register, you will have to enter your OTP to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\nIn case you do not receive the OTP for activation, or have performed the activation operation but still cannot log in to the application. Please contact us for help:\r\n\r\n* Phone: ${phone}\r\n\r\n* Customer Service Center: ${adminPhone}\r\n\r\n*Email: ${email}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "activationOtpHasNotBeenReceived": MessageLookupByLibrary.simpleMessage(
+            "Haven\'t received the activation OTP yet"),
+        "activationOtpHasNotBeenReceivedContent": m0,
         "addDocument": MessageLookupByLibrary.simpleMessage("Add Document"),
         "addNewPropertyAddress":
             MessageLookupByLibrary.simpleMessage("Address"),
@@ -200,6 +206,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
+        "howToChangePassword":
+            MessageLookupByLibrary.simpleMessage("How to change password?"),
+        "howToChangePasswordContent": MessageLookupByLibrary.simpleMessage(
+            "To change your password, log in to your account, then click on the \'Personal\' page.In the “Personal” page, click on “Settings” and “Change Password” and follow the instructions."),
         "howToPost": MessageLookupByLibrary.simpleMessage("How to post?"),
         "howToPostContent1": MessageLookupByLibrary.simpleMessage(
             "Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...)."),
@@ -253,7 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add property"),
         "myHomeEmptyBtnAdd2":
             MessageLookupByLibrary.simpleMessage("Add new property"),
-        "myHomeEmptyDesc": m0,
+        "myHomeEmptyDesc": m1,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Ready to sell your home?"),
         "nameNotValid": MessageLookupByLibrary.simpleMessage("Name not valid"),
@@ -469,7 +479,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "* If you post your story the Posting way with your account registered on Realust, make sure your account still has permission to post (the account is not locked)."),
         "whyCanTILogin":
             MessageLookupByLibrary.simpleMessage("Why can\'t I login?"),
-        "whyCanTILoginContent": m1,
+        "whyCanTILoginContent": m2,
         "whyShouldIRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
             "Why should I register as a member?"),
         "whyShouldIRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(

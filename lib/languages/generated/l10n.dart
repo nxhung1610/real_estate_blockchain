@@ -3049,6 +3049,47 @@ class S {
       args: [phone, adminPhone, email],
     );
   }
+
+  /// `How to change password?`
+  String get howToChangePassword {
+    return Intl.message(
+      'How to change password?',
+      name: 'howToChangePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To change your password, log in to your account, then click on the 'Personal' page.In the “Personal” page, click on “Settings” and “Change Password” and follow the instructions.`
+  String get howToChangePasswordContent {
+    return Intl.message(
+      'To change your password, log in to your account, then click on the \'Personal\' page.In the “Personal” page, click on “Settings” and “Change Password” and follow the instructions.',
+      name: 'howToChangePasswordContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Haven't received the activation OTP yet`
+  String get activationOtpHasNotBeenReceived {
+    return Intl.message(
+      'Haven\'t received the activation OTP yet',
+      name: 'activationOtpHasNotBeenReceived',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `\tAfter you have successfully registered, you will have to enter the OTP sent to the registered phone number to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\n\tIn case you do not receive the OTP activation, or have performed the activation operation but still cannot log in into the app, contact us for help:\r\n\r\nPhone: {phone}\r\n\r\nCustomer Call Center: {adminPhone}\r\n\r\nEmail : {email}`
+  String activationOtpHasNotBeenReceivedContent(
+      Object phone, Object adminPhone, Object email) {
+    return Intl.message(
+      '\tAfter you have successfully registered, you will have to enter the OTP sent to the registered phone number to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\n\tIn case you do not receive the OTP activation, or have performed the activation operation but still cannot log in into the app, contact us for help:\r\n\r\nPhone: $phone\r\n\r\nCustomer Call Center: $adminPhone\r\n\r\nEmail : $email',
+      name: 'activationOtpHasNotBeenReceivedContent',
+      desc: '',
+      args: [phone, adminPhone, email],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

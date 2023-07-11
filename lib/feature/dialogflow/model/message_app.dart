@@ -181,6 +181,27 @@ extension MenuTypeEx on MenuType {
                   ),
                 );
           }),
+          _button(context, text: s.howToChangePassword, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.howToChangePassword,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.activationOtpHasNotBeenReceived,
+              onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.activationOtpHasNotBeenReceived,
+                    ),
+                  ),
+                );
+          }),
           _button(context, text: s.backToMainMenu, onPressed: () {
             context.read<DialogflowBloc>().add(
                   DialogflowEvent.onMessage(
@@ -444,4 +465,8 @@ class OnResponseData with _$OnResponseData {
   const factory OnResponseData.whatShouldIDoWhenIForgetMyUsernamePassword() =
       _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword;
   const factory OnResponseData.whyCanTILogin() = _OnResponseDataWhyCanTILogin;
+  const factory OnResponseData.howToChangePassword() =
+      _OnResponseDataHowToChangePassword;
+  const factory OnResponseData.activationOtpHasNotBeenReceived() =
+      _OnResponseDataActivationOtpHasNotBeenReceived;
 }

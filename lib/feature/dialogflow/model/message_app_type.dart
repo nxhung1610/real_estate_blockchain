@@ -18,7 +18,10 @@ enum MessageAppType {
   howToRegisterAsAMember('HOW_TO_REGISTER_AS_A_MEMBER'),
   whatShouldIDoWhenIForgetMyUsernamePassword(
       'WHAT_SHOULD_I_DO_WHEN_I_FORGET_MY_USERNAME_PASSWORD'),
-  whyCanTILogin('WHY_CAN_T_I_LOGIN');
+  whyCanTILogin('WHY_CAN_T_I_LOGIN'),
+  howToChangePassword('HOW_TO_CHANGE_PASSWORD'),
+  activationOtpHasNotBeenReceived('ACTIVATION_OTP_HAS_NOT_BEEN_RECEIVED')
+  ;
 
   const MessageAppType(this.value);
   final String value;

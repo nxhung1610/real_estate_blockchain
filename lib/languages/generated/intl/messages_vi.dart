@@ -20,14 +20,20 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
-  static String m0(name) =>
+  static String m0(phone, adminPhone, email) =>
+      "\tSau khi bạn đăng ký thành công, bạn sẽ phải nhập OTP được gửi đến số điện thoại đã đăng ký để kích hoạt tài khoản. Khi tài khoản được kích hoạt, bạn mới đăng nhập được vào ứng dụng.\r\n\r\n\tTrong trường hợp bạn không nhận được OTP kích hoạt, hoặc đã thực hiện thao tác kích hoạt nhưng vẫn không đăng nhập được vào ứng dụng, hãy liên hệ với chúng tôi để được trợ giúp:\r\n\r\nĐiện thoại: ${phone}\r\n\r\nTổng đài CSKH: ${adminPhone}\r\n\r\nEmail: ${email}";
+
+  static String m1(name) =>
       "${name} đang đơn giản hóa việc giao dịch và cho thuê bất động sản của bạn, hãy bắt đầu ngay!!";
 
-  static String m1(phone, adminPhone, email) =>
+  static String m2(phone, adminPhone, email) =>
       "Sau khi bạn đăng ký thành công, bạn sẽ phải nhập OTP của mình để kích hoạt tài khoản. Khi tài khoản được kích hoạt, bạn mới đăng nhập được vào ứng dụng.\r\n\r\nTrong trường hợp bạn không nhận được OTP kích hoạt, hoặc đã thực hiện thao tác kích hoạt nhưng vẫn không đăng nhập được vào ứng dụng, hãy liên hệ với chúng tôi để được trợ giúp:\r\n\r\n* Điện thoại: ${phone}\r\n\r\n* Tổng đài CSKH: ${adminPhone}\r\n\r\n*Email: ${email}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "activationOtpHasNotBeenReceived":
+            MessageLookupByLibrary.simpleMessage("Không nhận được mã OTP ?"),
+        "activationOtpHasNotBeenReceivedContent": m0,
         "addDocument": MessageLookupByLibrary.simpleMessage("Thêm tài liệu"),
         "addNewPropertyAddress":
             MessageLookupByLibrary.simpleMessage("Địa chỉ"),
@@ -199,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
+        "howToChangePassword": MessageLookupByLibrary.simpleMessage(
+            "Làm thế nào để thay đổi mật khẩu?"),
+        "howToChangePasswordContent": MessageLookupByLibrary.simpleMessage(
+            "Để thay đổi mật khẩu, bạn đăng nhập vào tài khoản của mình, sau đó kích vào trang \'Cá nhân\'. Trong trang “Cá nhân” bạn kích vào “Cài đặt” và “Đổi mật khẩu” và làm theo hướng dẫn."),
         "howToPost":
             MessageLookupByLibrary.simpleMessage("Làm thế nào để đăng tin ?"),
         "howToPostContent1": MessageLookupByLibrary.simpleMessage(
@@ -254,7 +264,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thêm bất động sản"),
         "myHomeEmptyBtnAdd2":
             MessageLookupByLibrary.simpleMessage("Thêm bất động sản mới"),
-        "myHomeEmptyDesc": m0,
+        "myHomeEmptyDesc": m1,
         "myHomeEmptyTitle":
             MessageLookupByLibrary.simpleMessage("Sẵn sàng bán nhà của bạn?"),
         "nameNotValid":
@@ -473,7 +483,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "* Nếu bạn đăng tin theo cách Đăng tin bằng tài khoản đã đăng ký trên Realust, hãy đảm bảo tài khoản của bạn vẫn có quyền đăng tin (tài khoản không bị khóa)."),
         "whyCanTILogin": MessageLookupByLibrary.simpleMessage(
             "Tại sao tôi không thể đăng nhập?"),
-        "whyCanTILoginContent": m1,
+        "whyCanTILoginContent": m2,
         "whyShouldIRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
             "Tại sao tôi nên đăng ký thành viên?"),
         "whyShouldIRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(

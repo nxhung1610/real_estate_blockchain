@@ -419,6 +419,42 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   break;
+                case MessageAppType.howToChangePassword:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.howToChangePassword(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.activationOtpHasNotBeenReceived:
+                    add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.activationOtpHasNotBeenReceived(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
               }
             } else {
               throw Exception();

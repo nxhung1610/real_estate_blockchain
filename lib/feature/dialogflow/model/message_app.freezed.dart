@@ -3811,6 +3811,8 @@ mixin _$OnResponseData {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3827,6 +3829,8 @@ mixin _$OnResponseData {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3843,6 +3847,8 @@ mixin _$OnResponseData {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3868,6 +3874,11 @@ mixin _$OnResponseData {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3891,6 +3902,10 @@ mixin _$OnResponseData {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3913,6 +3928,10 @@ mixin _$OnResponseData {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -4016,6 +4035,8 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -4035,6 +4056,8 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -4054,6 +4077,8 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -4085,6 +4110,11 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return realEstateInfo(this);
   }
@@ -4111,6 +4141,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -4136,6 +4170,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -4243,6 +4281,8 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return address(addressData);
   }
@@ -4262,6 +4302,8 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return address?.call(addressData);
   }
@@ -4281,6 +4323,8 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -4312,6 +4356,11 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return address(this);
   }
@@ -4338,6 +4387,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return address?.call(this);
   }
@@ -4363,6 +4416,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -4468,6 +4525,8 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return amenities(this.amenities);
   }
@@ -4487,6 +4546,8 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return amenities?.call(this.amenities);
   }
@@ -4506,6 +4567,8 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4537,6 +4600,11 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return amenities(this);
   }
@@ -4563,6 +4631,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return amenities?.call(this);
   }
@@ -4588,6 +4660,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4658,6 +4734,8 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return policies();
   }
@@ -4677,6 +4755,8 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return policies?.call();
   }
@@ -4696,6 +4776,8 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4727,6 +4809,11 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return policies(this);
   }
@@ -4753,6 +4840,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return policies?.call(this);
   }
@@ -4778,6 +4869,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4846,6 +4941,8 @@ class _$_OnResponseDataIsThereAFeeToPost
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return isThereAFeeToPost();
   }
@@ -4865,6 +4962,8 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return isThereAFeeToPost?.call();
   }
@@ -4884,6 +4983,8 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (isThereAFeeToPost != null) {
@@ -4915,6 +5016,11 @@ class _$_OnResponseDataIsThereAFeeToPost
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return isThereAFeeToPost(this);
   }
@@ -4941,6 +5047,10 @@ class _$_OnResponseDataIsThereAFeeToPost
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return isThereAFeeToPost?.call(this);
   }
@@ -4966,6 +5076,10 @@ class _$_OnResponseDataIsThereAFeeToPost
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (isThereAFeeToPost != null) {
@@ -5035,6 +5149,8 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return whyAmIPostingButNotSeeingIt();
   }
@@ -5054,6 +5170,8 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return whyAmIPostingButNotSeeingIt?.call();
   }
@@ -5073,6 +5191,8 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyAmIPostingButNotSeeingIt != null) {
@@ -5104,6 +5224,11 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return whyAmIPostingButNotSeeingIt(this);
   }
@@ -5130,6 +5255,10 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return whyAmIPostingButNotSeeingIt?.call(this);
   }
@@ -5155,6 +5284,10 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyAmIPostingButNotSeeingIt != null) {
@@ -5221,6 +5354,8 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return howToPost();
   }
@@ -5240,6 +5375,8 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return howToPost?.call();
   }
@@ -5259,6 +5396,8 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (howToPost != null) {
@@ -5290,6 +5429,11 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return howToPost(this);
   }
@@ -5316,6 +5460,10 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return howToPost?.call(this);
   }
@@ -5341,6 +5489,10 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (howToPost != null) {
@@ -5409,6 +5561,8 @@ class _$_OnResponseDataIsPostingEffective
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return isPostingEffective();
   }
@@ -5428,6 +5582,8 @@ class _$_OnResponseDataIsPostingEffective
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return isPostingEffective?.call();
   }
@@ -5447,6 +5603,8 @@ class _$_OnResponseDataIsPostingEffective
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (isPostingEffective != null) {
@@ -5478,6 +5636,11 @@ class _$_OnResponseDataIsPostingEffective
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return isPostingEffective(this);
   }
@@ -5504,6 +5667,10 @@ class _$_OnResponseDataIsPostingEffective
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return isPostingEffective?.call(this);
   }
@@ -5529,6 +5696,10 @@ class _$_OnResponseDataIsPostingEffective
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (isPostingEffective != null) {
@@ -5598,6 +5769,8 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return whyShouldIRegisterAsAMember();
   }
@@ -5617,6 +5790,8 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return whyShouldIRegisterAsAMember?.call();
   }
@@ -5636,6 +5811,8 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyShouldIRegisterAsAMember != null) {
@@ -5667,6 +5844,11 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return whyShouldIRegisterAsAMember(this);
   }
@@ -5693,6 +5875,10 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return whyShouldIRegisterAsAMember?.call(this);
   }
@@ -5718,6 +5904,10 @@ class _$_OnResponseDataWhyShouldIRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyShouldIRegisterAsAMember != null) {
@@ -5788,6 +5978,8 @@ class _$_OnResponseDataHowToRegisterAsAMember
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return howToRegisterAsAMember();
   }
@@ -5807,6 +5999,8 @@ class _$_OnResponseDataHowToRegisterAsAMember
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return howToRegisterAsAMember?.call();
   }
@@ -5826,6 +6020,8 @@ class _$_OnResponseDataHowToRegisterAsAMember
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (howToRegisterAsAMember != null) {
@@ -5857,6 +6053,11 @@ class _$_OnResponseDataHowToRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return howToRegisterAsAMember(this);
   }
@@ -5883,6 +6084,10 @@ class _$_OnResponseDataHowToRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return howToRegisterAsAMember?.call(this);
   }
@@ -5908,6 +6113,10 @@ class _$_OnResponseDataHowToRegisterAsAMember
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (howToRegisterAsAMember != null) {
@@ -5986,6 +6195,8 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return whatShouldIDoWhenIForgetMyUsernamePassword();
   }
@@ -6005,6 +6216,8 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return whatShouldIDoWhenIForgetMyUsernamePassword?.call();
   }
@@ -6024,6 +6237,8 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whatShouldIDoWhenIForgetMyUsernamePassword != null) {
@@ -6055,6 +6270,11 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return whatShouldIDoWhenIForgetMyUsernamePassword(this);
   }
@@ -6081,6 +6301,10 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return whatShouldIDoWhenIForgetMyUsernamePassword?.call(this);
   }
@@ -6106,6 +6330,10 @@ class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whatShouldIDoWhenIForgetMyUsernamePassword != null) {
@@ -6174,6 +6402,8 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
     required TResult Function() howToRegisterAsAMember,
     required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
   }) {
     return whyCanTILogin();
   }
@@ -6193,6 +6423,8 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
     TResult? Function()? howToRegisterAsAMember,
     TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
   }) {
     return whyCanTILogin?.call();
   }
@@ -6212,6 +6444,8 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
     TResult Function()? howToRegisterAsAMember,
     TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyCanTILogin != null) {
@@ -6243,6 +6477,11 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
         whatShouldIDoWhenIForgetMyUsernamePassword,
     required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
   }) {
     return whyCanTILogin(this);
   }
@@ -6269,6 +6508,10 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
   }) {
     return whyCanTILogin?.call(this);
   }
@@ -6294,6 +6537,10 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
             _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
         whatShouldIDoWhenIForgetMyUsernamePassword,
     TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
     required TResult orElse(),
   }) {
     if (whyCanTILogin != null) {
@@ -6305,4 +6552,422 @@ class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
 
 abstract class _OnResponseDataWhyCanTILogin implements OnResponseData {
   const factory _OnResponseDataWhyCanTILogin() = _$_OnResponseDataWhyCanTILogin;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataHowToChangePasswordCopyWith<$Res> {
+  factory _$$_OnResponseDataHowToChangePasswordCopyWith(
+          _$_OnResponseDataHowToChangePassword value,
+          $Res Function(_$_OnResponseDataHowToChangePassword) then) =
+      __$$_OnResponseDataHowToChangePasswordCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataHowToChangePasswordCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataHowToChangePassword>
+    implements _$$_OnResponseDataHowToChangePasswordCopyWith<$Res> {
+  __$$_OnResponseDataHowToChangePasswordCopyWithImpl(
+      _$_OnResponseDataHowToChangePassword _value,
+      $Res Function(_$_OnResponseDataHowToChangePassword) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataHowToChangePassword
+    implements _OnResponseDataHowToChangePassword {
+  const _$_OnResponseDataHowToChangePassword();
+
+  @override
+  String toString() {
+    return 'OnResponseData.howToChangePassword()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataHowToChangePassword);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
+  }) {
+    return howToChangePassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
+  }) {
+    return howToChangePassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
+    required TResult orElse(),
+  }) {
+    if (howToChangePassword != null) {
+      return howToChangePassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
+  }) {
+    return howToChangePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
+  }) {
+    return howToChangePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
+    required TResult orElse(),
+  }) {
+    if (howToChangePassword != null) {
+      return howToChangePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataHowToChangePassword implements OnResponseData {
+  const factory _OnResponseDataHowToChangePassword() =
+      _$_OnResponseDataHowToChangePassword;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWith<$Res> {
+  factory _$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWith(
+          _$_OnResponseDataActivationOtpHasNotBeenReceived value,
+          $Res Function(_$_OnResponseDataActivationOtpHasNotBeenReceived)
+              then) =
+      __$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataActivationOtpHasNotBeenReceived>
+    implements _$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWith<$Res> {
+  __$$_OnResponseDataActivationOtpHasNotBeenReceivedCopyWithImpl(
+      _$_OnResponseDataActivationOtpHasNotBeenReceived _value,
+      $Res Function(_$_OnResponseDataActivationOtpHasNotBeenReceived) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataActivationOtpHasNotBeenReceived
+    implements _OnResponseDataActivationOtpHasNotBeenReceived {
+  const _$_OnResponseDataActivationOtpHasNotBeenReceived();
+
+  @override
+  String toString() {
+    return 'OnResponseData.activationOtpHasNotBeenReceived()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataActivationOtpHasNotBeenReceived);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+    required TResult Function() howToChangePassword,
+    required TResult Function() activationOtpHasNotBeenReceived,
+  }) {
+    return activationOtpHasNotBeenReceived();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+    TResult? Function()? howToChangePassword,
+    TResult? Function()? activationOtpHasNotBeenReceived,
+  }) {
+    return activationOtpHasNotBeenReceived?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    TResult Function()? howToChangePassword,
+    TResult Function()? activationOtpHasNotBeenReceived,
+    required TResult orElse(),
+  }) {
+    if (activationOtpHasNotBeenReceived != null) {
+      return activationOtpHasNotBeenReceived();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+    required TResult Function(_OnResponseDataHowToChangePassword value)
+        howToChangePassword,
+    required TResult Function(
+            _OnResponseDataActivationOtpHasNotBeenReceived value)
+        activationOtpHasNotBeenReceived,
+  }) {
+    return activationOtpHasNotBeenReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult? Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult? Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
+  }) {
+    return activationOtpHasNotBeenReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    TResult Function(_OnResponseDataHowToChangePassword value)?
+        howToChangePassword,
+    TResult Function(_OnResponseDataActivationOtpHasNotBeenReceived value)?
+        activationOtpHasNotBeenReceived,
+    required TResult orElse(),
+  }) {
+    if (activationOtpHasNotBeenReceived != null) {
+      return activationOtpHasNotBeenReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataActivationOtpHasNotBeenReceived
+    implements OnResponseData {
+  const factory _OnResponseDataActivationOtpHasNotBeenReceived() =
+      _$_OnResponseDataActivationOtpHasNotBeenReceived;
 }
