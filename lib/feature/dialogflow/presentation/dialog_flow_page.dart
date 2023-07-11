@@ -6,6 +6,7 @@ import 'package:real_estate_blockchain/config/app_color.dart';
 import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/dialog_message_w.dart';
+import 'package:real_estate_blockchain/injection_dependencies/injection_dependencies.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/widget_extensions.dart';
 import 'package:uuid/uuid.dart';
@@ -13,6 +14,7 @@ import 'package:uuid/uuid.dart';
 import '../application/dialogflow_bloc.dart';
 import '../model/message_app.dart';
 import 'widget/estate/info/dialog_estate_info_input.dart';
+import 'widget/infor/application/dialog_info_data_bloc.dart';
 
 class DialogFlowPage extends StatefulWidget {
   const DialogFlowPage({super.key});
@@ -41,59 +43,62 @@ class _DialogFlowPageState extends State<DialogFlowPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Scaffold(
-      appBar: CustomAppbar(
-        context,
-        title: Text(
-          s.support,
+    return BlocProvider(
+      create: (context) => getIt.call<DialogInfoDataBloc>(),
+      child: Scaffold(
+        appBar: CustomAppbar(
+          context,
+          title: Text(
+            s.support,
+          ),
+          leading: const UnconstrainedBox(child: BackButtonApp()),
+          leadingWidth: AppSize.mediumIcon + 64.w,
+          centerTitle: true,
         ),
-        leading: const UnconstrainedBox(child: BackButtonApp()),
-        leadingWidth: AppSize.mediumIcon + 64.w,
-        centerTitle: true,
-      ),
-      body: LayoutBuilder(
-        builder: (context, _) {
-          return Padding(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
-            child: Column(
-              children: [
-                const Expanded(child: DialogMessageWidget()),
-                SafeArea(
-                  minimum: EdgeInsets.symmetric(vertical: 16.h),
-                  child: const MessageTextField(),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+        body: LayoutBuilder(
+          builder: (context, _) {
+            return Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
+              child: Column(
+                children: [
+                  const Expanded(child: DialogMessageWidget()),
+                  SafeArea(
+                    minimum: EdgeInsets.symmetric(vertical: 16.h),
+                    child: const MessageTextField(),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
 
-      // body: LayoutBuilder(
-      //   builder: (context, constrains) {
-      //     return SingleChildScrollView(
-      //       child: ConstrainedBox(
-      //         constraints: BoxConstraints(minHeight: constrains.maxHeight),
-      //         child: IntrinsicHeight(
-      //           child: Column(
-      //             children: [
-      //               Expanded(
-      //                 child: Container(
-      //                   child: ,
-      //                 ),
-      //               ),
-      //               SafeArea(
-      //                 minimum: EdgeInsets.symmetric(vertical: 16.h),
-      //                 child: const MessageTextField(),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //       ),
-      //     );
-      //   },
-      // ),
+        // body: LayoutBuilder(
+        //   builder: (context, constrains) {
+        //     return SingleChildScrollView(
+        //       child: ConstrainedBox(
+        //         constraints: BoxConstraints(minHeight: constrains.maxHeight),
+        //         child: IntrinsicHeight(
+        //           child: Column(
+        //             children: [
+        //               Expanded(
+        //                 child: Container(
+        //                   child: ,
+        //                 ),
+        //               ),
+        //               SafeArea(
+        //                 minimum: EdgeInsets.symmetric(vertical: 16.h),
+        //                 child: const MessageTextField(),
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        //       ),
+        //     );
+        //   },
+        // ),
+      ),
     );
   }
 }

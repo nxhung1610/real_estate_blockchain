@@ -42,6 +42,7 @@ class _DialogMessageWidgetState extends State<DialogMessageWidget> {
           controller.jumpTo(controller.position.maxScrollExtent);
         });
         return ListView.separated(
+          shrinkWrap: true,
           controller: controller,
           itemBuilder: (context, index) {
             if (index == messages.length) {

@@ -12,6 +12,7 @@ import 'package:real_estate_blockchain/config/app_size.dart';
 import 'package:real_estate_blockchain/data/map/model/address_data.dart';
 import 'package:real_estate_blockchain/feature/app/module.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/application/dialogflow_bloc.dart';
+import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/infor/application/dialog_info_data_bloc.dart';
 import 'package:real_estate_blockchain/feature/dialogflow/presentation/widget/infor/dialog_info_page.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
@@ -36,7 +37,6 @@ class WMessageOnResponseItem extends StatefulWidget {
 }
 
 class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
-  bool isNav = false;
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -138,8 +138,13 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
           );
         }
 
-        if (!isNav) {
-          isNav = true;
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
           WidgetsBinding.instance.addPostFrameCallback((_) {
             action();
           });
@@ -184,8 +189,13 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
           );
         }
 
-        if (!isNav) {
-          isNav = true;
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
           WidgetsBinding.instance.addPostFrameCallback((_) {
             action();
           });
@@ -258,8 +268,13 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
           );
         }
 
-        if (!isNav) {
-          isNav = true;
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
           WidgetsBinding.instance.addPostFrameCallback((_) {
             action();
           });
