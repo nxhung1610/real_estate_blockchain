@@ -361,6 +361,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/guild2.png
   AssetGenImage get guild2 => const AssetGenImage('assets/images/guild2.png');
 
+  /// File path: assets/images/guilde_how_register.png
+  AssetGenImage get guildeHowRegister =>
+      const AssetGenImage('assets/images/guilde_how_register.png');
+
   /// File path: assets/images/image_auction.png
   AssetGenImage get imageAuction =>
       const AssetGenImage('assets/images/image_auction.png');
@@ -400,6 +404,7 @@ class $AssetsImagesGen {
         box,
         guild1,
         guild2,
+        guildeHowRegister,
         imageAuction,
         imageHouse,
         myHomeBackground,

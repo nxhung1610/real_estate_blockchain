@@ -3126,6 +3126,7 @@ mixin _$MenuType {
     required TResult Function() info,
     required TResult Function() estate,
     required TResult Function() post,
+    required TResult Function() account,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3134,6 +3135,7 @@ mixin _$MenuType {
     TResult? Function()? info,
     TResult? Function()? estate,
     TResult? Function()? post,
+    TResult? Function()? account,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3142,6 +3144,7 @@ mixin _$MenuType {
     TResult Function()? info,
     TResult Function()? estate,
     TResult Function()? post,
+    TResult Function()? account,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3151,6 +3154,7 @@ mixin _$MenuType {
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
     required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3159,6 +3163,7 @@ mixin _$MenuType {
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
     TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3167,6 +3172,7 @@ mixin _$MenuType {
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
     TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3231,6 +3237,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     required TResult Function() info,
     required TResult Function() estate,
     required TResult Function() post,
+    required TResult Function() account,
   }) {
     return all();
   }
@@ -3242,6 +3249,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult? Function()? info,
     TResult? Function()? estate,
     TResult? Function()? post,
+    TResult? Function()? account,
   }) {
     return all?.call();
   }
@@ -3253,6 +3261,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult Function()? info,
     TResult Function()? estate,
     TResult Function()? post,
+    TResult Function()? account,
     required TResult orElse(),
   }) {
     if (all != null) {
@@ -3268,6 +3277,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
     required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
   }) {
     return all(this);
   }
@@ -3279,6 +3289,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
     TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
   }) {
     return all?.call(this);
   }
@@ -3290,6 +3301,7 @@ class _$_MenuTypeAll implements _MenuTypeAll {
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
     TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
     required TResult orElse(),
   }) {
     if (all != null) {
@@ -3345,6 +3357,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     required TResult Function() info,
     required TResult Function() estate,
     required TResult Function() post,
+    required TResult Function() account,
   }) {
     return info();
   }
@@ -3356,6 +3369,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult? Function()? info,
     TResult? Function()? estate,
     TResult? Function()? post,
+    TResult? Function()? account,
   }) {
     return info?.call();
   }
@@ -3367,6 +3381,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult Function()? info,
     TResult Function()? estate,
     TResult Function()? post,
+    TResult Function()? account,
     required TResult orElse(),
   }) {
     if (info != null) {
@@ -3382,6 +3397,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
     required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
   }) {
     return info(this);
   }
@@ -3393,6 +3409,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
     TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
   }) {
     return info?.call(this);
   }
@@ -3404,6 +3421,7 @@ class _$_MenuTypeInfo implements _MenuTypeInfo {
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
     TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
     required TResult orElse(),
   }) {
     if (info != null) {
@@ -3459,6 +3477,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     required TResult Function() info,
     required TResult Function() estate,
     required TResult Function() post,
+    required TResult Function() account,
   }) {
     return estate();
   }
@@ -3470,6 +3489,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult? Function()? info,
     TResult? Function()? estate,
     TResult? Function()? post,
+    TResult? Function()? account,
   }) {
     return estate?.call();
   }
@@ -3481,6 +3501,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult Function()? info,
     TResult Function()? estate,
     TResult Function()? post,
+    TResult Function()? account,
     required TResult orElse(),
   }) {
     if (estate != null) {
@@ -3496,6 +3517,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
     required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
   }) {
     return estate(this);
   }
@@ -3507,6 +3529,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
     TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
   }) {
     return estate?.call(this);
   }
@@ -3518,6 +3541,7 @@ class _$_MenuTypeEstate implements _MenuTypeEstate {
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
     TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
     required TResult orElse(),
   }) {
     if (estate != null) {
@@ -3573,6 +3597,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     required TResult Function() info,
     required TResult Function() estate,
     required TResult Function() post,
+    required TResult Function() account,
   }) {
     return post();
   }
@@ -3584,6 +3609,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     TResult? Function()? info,
     TResult? Function()? estate,
     TResult? Function()? post,
+    TResult? Function()? account,
   }) {
     return post?.call();
   }
@@ -3595,6 +3621,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     TResult Function()? info,
     TResult Function()? estate,
     TResult Function()? post,
+    TResult Function()? account,
     required TResult orElse(),
   }) {
     if (post != null) {
@@ -3610,6 +3637,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     required TResult Function(_MenuTypeInfo value) info,
     required TResult Function(_MenuTypeEstate value) estate,
     required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
   }) {
     return post(this);
   }
@@ -3621,6 +3649,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     TResult? Function(_MenuTypeInfo value)? info,
     TResult? Function(_MenuTypeEstate value)? estate,
     TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
   }) {
     return post?.call(this);
   }
@@ -3632,6 +3661,7 @@ class _$_MenuTypePost implements _MenuTypePost {
     TResult Function(_MenuTypeInfo value)? info,
     TResult Function(_MenuTypeEstate value)? estate,
     TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
     required TResult orElse(),
   }) {
     if (post != null) {
@@ -3646,6 +3676,126 @@ abstract class _MenuTypePost implements MenuType {
 }
 
 /// @nodoc
+abstract class _$$_MenuTypeAccountCopyWith<$Res> {
+  factory _$$_MenuTypeAccountCopyWith(
+          _$_MenuTypeAccount value, $Res Function(_$_MenuTypeAccount) then) =
+      __$$_MenuTypeAccountCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MenuTypeAccountCopyWithImpl<$Res>
+    extends _$MenuTypeCopyWithImpl<$Res, _$_MenuTypeAccount>
+    implements _$$_MenuTypeAccountCopyWith<$Res> {
+  __$$_MenuTypeAccountCopyWithImpl(
+      _$_MenuTypeAccount _value, $Res Function(_$_MenuTypeAccount) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MenuTypeAccount implements _MenuTypeAccount {
+  const _$_MenuTypeAccount();
+
+  @override
+  String toString() {
+    return 'MenuType.account()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MenuTypeAccount);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() all,
+    required TResult Function() info,
+    required TResult Function() estate,
+    required TResult Function() post,
+    required TResult Function() account,
+  }) {
+    return account();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? all,
+    TResult? Function()? info,
+    TResult? Function()? estate,
+    TResult? Function()? post,
+    TResult? Function()? account,
+  }) {
+    return account?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? all,
+    TResult Function()? info,
+    TResult Function()? estate,
+    TResult Function()? post,
+    TResult Function()? account,
+    required TResult orElse(),
+  }) {
+    if (account != null) {
+      return account();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MenuTypeAll value) all,
+    required TResult Function(_MenuTypeInfo value) info,
+    required TResult Function(_MenuTypeEstate value) estate,
+    required TResult Function(_MenuTypePost value) post,
+    required TResult Function(_MenuTypeAccount value) account,
+  }) {
+    return account(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MenuTypeAll value)? all,
+    TResult? Function(_MenuTypeInfo value)? info,
+    TResult? Function(_MenuTypeEstate value)? estate,
+    TResult? Function(_MenuTypePost value)? post,
+    TResult? Function(_MenuTypeAccount value)? account,
+  }) {
+    return account?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MenuTypeAll value)? all,
+    TResult Function(_MenuTypeInfo value)? info,
+    TResult Function(_MenuTypeEstate value)? estate,
+    TResult Function(_MenuTypePost value)? post,
+    TResult Function(_MenuTypeAccount value)? account,
+    required TResult orElse(),
+  }) {
+    if (account != null) {
+      return account(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MenuTypeAccount implements MenuType {
+  const factory _MenuTypeAccount() = _$_MenuTypeAccount;
+}
+
+/// @nodoc
 mixin _$OnResponseData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -3657,6 +3807,10 @@ mixin _$OnResponseData {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3669,6 +3823,10 @@ mixin _$OnResponseData {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3681,6 +3839,10 @@ mixin _$OnResponseData {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3698,6 +3860,14 @@ mixin _$OnResponseData {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3713,6 +3883,14 @@ mixin _$OnResponseData {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3727,6 +3905,14 @@ mixin _$OnResponseData {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3826,6 +4012,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return realEstateInfo(this.realEstateInfo);
   }
@@ -3841,6 +4031,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return realEstateInfo?.call(this.realEstateInfo);
   }
@@ -3856,6 +4050,10 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -3879,6 +4077,14 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return realEstateInfo(this);
   }
@@ -3897,6 +4103,14 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return realEstateInfo?.call(this);
   }
@@ -3914,6 +4128,14 @@ class _$_OnResponseDataRealEstateInfo implements _OnResponseDataRealEstateInfo {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (realEstateInfo != null) {
@@ -4017,6 +4239,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return address(addressData);
   }
@@ -4032,6 +4258,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return address?.call(addressData);
   }
@@ -4047,6 +4277,10 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -4070,6 +4304,14 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return address(this);
   }
@@ -4088,6 +4330,14 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return address?.call(this);
   }
@@ -4105,6 +4355,14 @@ class _$_OnResponseDataAddress implements _OnResponseDataAddress {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (address != null) {
@@ -4206,6 +4464,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return amenities(this.amenities);
   }
@@ -4221,6 +4483,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return amenities?.call(this.amenities);
   }
@@ -4236,6 +4502,10 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4259,6 +4529,14 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return amenities(this);
   }
@@ -4277,6 +4555,14 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return amenities?.call(this);
   }
@@ -4294,6 +4580,14 @@ class _$_OnResponseDataAmenities implements _OnResponseDataAmenities {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (amenities != null) {
@@ -4360,6 +4654,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return policies();
   }
@@ -4375,6 +4673,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return policies?.call();
   }
@@ -4390,6 +4692,10 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4413,6 +4719,14 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return policies(this);
   }
@@ -4431,6 +4745,14 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return policies?.call(this);
   }
@@ -4448,6 +4770,14 @@ class _$_OnResponseDataPolicies implements _OnResponseDataPolicies {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (policies != null) {
@@ -4512,6 +4842,10 @@ class _$_OnResponseDataIsThereAFeeToPost
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return isThereAFeeToPost();
   }
@@ -4527,6 +4861,10 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return isThereAFeeToPost?.call();
   }
@@ -4542,6 +4880,10 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (isThereAFeeToPost != null) {
@@ -4565,6 +4907,14 @@ class _$_OnResponseDataIsThereAFeeToPost
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return isThereAFeeToPost(this);
   }
@@ -4583,6 +4933,14 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return isThereAFeeToPost?.call(this);
   }
@@ -4600,6 +4958,14 @@ class _$_OnResponseDataIsThereAFeeToPost
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (isThereAFeeToPost != null) {
@@ -4665,6 +5031,10 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return whyAmIPostingButNotSeeingIt();
   }
@@ -4680,6 +5050,10 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return whyAmIPostingButNotSeeingIt?.call();
   }
@@ -4695,6 +5069,10 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (whyAmIPostingButNotSeeingIt != null) {
@@ -4718,6 +5096,14 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return whyAmIPostingButNotSeeingIt(this);
   }
@@ -4736,6 +5122,14 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return whyAmIPostingButNotSeeingIt?.call(this);
   }
@@ -4753,6 +5147,14 @@ class _$_OnResponseDataWhyAmIPostingButNotSeeingIt
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (whyAmIPostingButNotSeeingIt != null) {
@@ -4815,6 +5217,10 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return howToPost();
   }
@@ -4830,6 +5236,10 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return howToPost?.call();
   }
@@ -4845,6 +5255,10 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (howToPost != null) {
@@ -4868,6 +5282,14 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return howToPost(this);
   }
@@ -4886,6 +5308,14 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return howToPost?.call(this);
   }
@@ -4903,6 +5333,14 @@ class _$_OnResponseDataHowToPost implements _OnResponseDataHowToPost {
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (howToPost != null) {
@@ -4967,6 +5405,10 @@ class _$_OnResponseDataIsPostingEffective
     required TResult Function() whyAmIPostingButNotSeeingIt,
     required TResult Function() howToPost,
     required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
   }) {
     return isPostingEffective();
   }
@@ -4982,6 +5424,10 @@ class _$_OnResponseDataIsPostingEffective
     TResult? Function()? whyAmIPostingButNotSeeingIt,
     TResult? Function()? howToPost,
     TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
   }) {
     return isPostingEffective?.call();
   }
@@ -4997,6 +5443,10 @@ class _$_OnResponseDataIsPostingEffective
     TResult Function()? whyAmIPostingButNotSeeingIt,
     TResult Function()? howToPost,
     TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (isPostingEffective != null) {
@@ -5020,6 +5470,14 @@ class _$_OnResponseDataIsPostingEffective
     required TResult Function(_OnResponseDataHowToPost value) howToPost,
     required TResult Function(_OnResponseDataIsPostingEffective value)
         isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
   }) {
     return isPostingEffective(this);
   }
@@ -5038,6 +5496,14 @@ class _$_OnResponseDataIsPostingEffective
     TResult? Function(_OnResponseDataHowToPost value)? howToPost,
     TResult? Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
   }) {
     return isPostingEffective?.call(this);
   }
@@ -5055,6 +5521,14 @@ class _$_OnResponseDataIsPostingEffective
     TResult Function(_OnResponseDataHowToPost value)? howToPost,
     TResult Function(_OnResponseDataIsPostingEffective value)?
         isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
     required TResult orElse(),
   }) {
     if (isPostingEffective != null) {
@@ -5067,4 +5541,768 @@ class _$_OnResponseDataIsPostingEffective
 abstract class _OnResponseDataIsPostingEffective implements OnResponseData {
   const factory _OnResponseDataIsPostingEffective() =
       _$_OnResponseDataIsPostingEffective;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWith<$Res> {
+  factory _$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWith(
+          _$_OnResponseDataWhyShouldIRegisterAsAMember value,
+          $Res Function(_$_OnResponseDataWhyShouldIRegisterAsAMember) then) =
+      __$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataWhyShouldIRegisterAsAMember>
+    implements _$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWith<$Res> {
+  __$$_OnResponseDataWhyShouldIRegisterAsAMemberCopyWithImpl(
+      _$_OnResponseDataWhyShouldIRegisterAsAMember _value,
+      $Res Function(_$_OnResponseDataWhyShouldIRegisterAsAMember) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataWhyShouldIRegisterAsAMember
+    implements _OnResponseDataWhyShouldIRegisterAsAMember {
+  const _$_OnResponseDataWhyShouldIRegisterAsAMember();
+
+  @override
+  String toString() {
+    return 'OnResponseData.whyShouldIRegisterAsAMember()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataWhyShouldIRegisterAsAMember);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+  }) {
+    return whyShouldIRegisterAsAMember();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+  }) {
+    return whyShouldIRegisterAsAMember?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whyShouldIRegisterAsAMember != null) {
+      return whyShouldIRegisterAsAMember();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+  }) {
+    return whyShouldIRegisterAsAMember(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+  }) {
+    return whyShouldIRegisterAsAMember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whyShouldIRegisterAsAMember != null) {
+      return whyShouldIRegisterAsAMember(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataWhyShouldIRegisterAsAMember
+    implements OnResponseData {
+  const factory _OnResponseDataWhyShouldIRegisterAsAMember() =
+      _$_OnResponseDataWhyShouldIRegisterAsAMember;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataHowToRegisterAsAMemberCopyWith<$Res> {
+  factory _$$_OnResponseDataHowToRegisterAsAMemberCopyWith(
+          _$_OnResponseDataHowToRegisterAsAMember value,
+          $Res Function(_$_OnResponseDataHowToRegisterAsAMember) then) =
+      __$$_OnResponseDataHowToRegisterAsAMemberCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataHowToRegisterAsAMemberCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataHowToRegisterAsAMember>
+    implements _$$_OnResponseDataHowToRegisterAsAMemberCopyWith<$Res> {
+  __$$_OnResponseDataHowToRegisterAsAMemberCopyWithImpl(
+      _$_OnResponseDataHowToRegisterAsAMember _value,
+      $Res Function(_$_OnResponseDataHowToRegisterAsAMember) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataHowToRegisterAsAMember
+    implements _OnResponseDataHowToRegisterAsAMember {
+  const _$_OnResponseDataHowToRegisterAsAMember();
+
+  @override
+  String toString() {
+    return 'OnResponseData.howToRegisterAsAMember()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataHowToRegisterAsAMember);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+  }) {
+    return howToRegisterAsAMember();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+  }) {
+    return howToRegisterAsAMember?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (howToRegisterAsAMember != null) {
+      return howToRegisterAsAMember();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+  }) {
+    return howToRegisterAsAMember(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+  }) {
+    return howToRegisterAsAMember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (howToRegisterAsAMember != null) {
+      return howToRegisterAsAMember(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataHowToRegisterAsAMember implements OnResponseData {
+  const factory _OnResponseDataHowToRegisterAsAMember() =
+      _$_OnResponseDataHowToRegisterAsAMember;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWith<
+    $Res> {
+  factory _$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWith(
+          _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value,
+          $Res Function(
+                  _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword)
+              then) =
+      __$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWithImpl<
+          $Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWithImpl<
+        $Res>
+    extends _$OnResponseDataCopyWithImpl<$Res,
+        _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword>
+    implements
+        _$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWith<
+            $Res> {
+  __$$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePasswordCopyWithImpl(
+      _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword _value,
+      $Res Function(_$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword)
+          _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
+    implements _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword {
+  const _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword();
+
+  @override
+  String toString() {
+    return 'OnResponseData.whatShouldIDoWhenIForgetMyUsernamePassword()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+  }) {
+    return whatShouldIDoWhenIForgetMyUsernamePassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+  }) {
+    return whatShouldIDoWhenIForgetMyUsernamePassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whatShouldIDoWhenIForgetMyUsernamePassword != null) {
+      return whatShouldIDoWhenIForgetMyUsernamePassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+  }) {
+    return whatShouldIDoWhenIForgetMyUsernamePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+  }) {
+    return whatShouldIDoWhenIForgetMyUsernamePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whatShouldIDoWhenIForgetMyUsernamePassword != null) {
+      return whatShouldIDoWhenIForgetMyUsernamePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword
+    implements OnResponseData {
+  const factory _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword() =
+      _$_OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword;
+}
+
+/// @nodoc
+abstract class _$$_OnResponseDataWhyCanTILoginCopyWith<$Res> {
+  factory _$$_OnResponseDataWhyCanTILoginCopyWith(
+          _$_OnResponseDataWhyCanTILogin value,
+          $Res Function(_$_OnResponseDataWhyCanTILogin) then) =
+      __$$_OnResponseDataWhyCanTILoginCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnResponseDataWhyCanTILoginCopyWithImpl<$Res>
+    extends _$OnResponseDataCopyWithImpl<$Res, _$_OnResponseDataWhyCanTILogin>
+    implements _$$_OnResponseDataWhyCanTILoginCopyWith<$Res> {
+  __$$_OnResponseDataWhyCanTILoginCopyWithImpl(
+      _$_OnResponseDataWhyCanTILogin _value,
+      $Res Function(_$_OnResponseDataWhyCanTILogin) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnResponseDataWhyCanTILogin implements _OnResponseDataWhyCanTILogin {
+  const _$_OnResponseDataWhyCanTILogin();
+
+  @override
+  String toString() {
+    return 'OnResponseData.whyCanTILogin()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnResponseDataWhyCanTILogin);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(RealEstateInfo realEstateInfo) realEstateInfo,
+    required TResult Function(AddressData addressData) address,
+    required TResult Function(List<Amenity> amenities) amenities,
+    required TResult Function() policies,
+    required TResult Function() isThereAFeeToPost,
+    required TResult Function() whyAmIPostingButNotSeeingIt,
+    required TResult Function() howToPost,
+    required TResult Function() isPostingEffective,
+    required TResult Function() whyShouldIRegisterAsAMember,
+    required TResult Function() howToRegisterAsAMember,
+    required TResult Function() whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function() whyCanTILogin,
+  }) {
+    return whyCanTILogin();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult? Function(AddressData addressData)? address,
+    TResult? Function(List<Amenity> amenities)? amenities,
+    TResult? Function()? policies,
+    TResult? Function()? isThereAFeeToPost,
+    TResult? Function()? whyAmIPostingButNotSeeingIt,
+    TResult? Function()? howToPost,
+    TResult? Function()? isPostingEffective,
+    TResult? Function()? whyShouldIRegisterAsAMember,
+    TResult? Function()? howToRegisterAsAMember,
+    TResult? Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function()? whyCanTILogin,
+  }) {
+    return whyCanTILogin?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(RealEstateInfo realEstateInfo)? realEstateInfo,
+    TResult Function(AddressData addressData)? address,
+    TResult Function(List<Amenity> amenities)? amenities,
+    TResult Function()? policies,
+    TResult Function()? isThereAFeeToPost,
+    TResult Function()? whyAmIPostingButNotSeeingIt,
+    TResult Function()? howToPost,
+    TResult Function()? isPostingEffective,
+    TResult Function()? whyShouldIRegisterAsAMember,
+    TResult Function()? howToRegisterAsAMember,
+    TResult Function()? whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function()? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whyCanTILogin != null) {
+      return whyCanTILogin();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnResponseDataRealEstateInfo value)
+        realEstateInfo,
+    required TResult Function(_OnResponseDataAddress value) address,
+    required TResult Function(_OnResponseDataAmenities value) amenities,
+    required TResult Function(_OnResponseDataPolicies value) policies,
+    required TResult Function(_OnResponseDataIsThereAFeeToPost value)
+        isThereAFeeToPost,
+    required TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)
+        whyAmIPostingButNotSeeingIt,
+    required TResult Function(_OnResponseDataHowToPost value) howToPost,
+    required TResult Function(_OnResponseDataIsPostingEffective value)
+        isPostingEffective,
+    required TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)
+        whyShouldIRegisterAsAMember,
+    required TResult Function(_OnResponseDataHowToRegisterAsAMember value)
+        howToRegisterAsAMember,
+    required TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    required TResult Function(_OnResponseDataWhyCanTILogin value) whyCanTILogin,
+  }) {
+    return whyCanTILogin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult? Function(_OnResponseDataAddress value)? address,
+    TResult? Function(_OnResponseDataAmenities value)? amenities,
+    TResult? Function(_OnResponseDataPolicies value)? policies,
+    TResult? Function(_OnResponseDataIsThereAFeeToPost value)?
+        isThereAFeeToPost,
+    TResult? Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult? Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult? Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult? Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult? Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult? Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult? Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+  }) {
+    return whyCanTILogin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnResponseDataRealEstateInfo value)? realEstateInfo,
+    TResult Function(_OnResponseDataAddress value)? address,
+    TResult Function(_OnResponseDataAmenities value)? amenities,
+    TResult Function(_OnResponseDataPolicies value)? policies,
+    TResult Function(_OnResponseDataIsThereAFeeToPost value)? isThereAFeeToPost,
+    TResult Function(_OnResponseDataWhyAmIPostingButNotSeeingIt value)?
+        whyAmIPostingButNotSeeingIt,
+    TResult Function(_OnResponseDataHowToPost value)? howToPost,
+    TResult Function(_OnResponseDataIsPostingEffective value)?
+        isPostingEffective,
+    TResult Function(_OnResponseDataWhyShouldIRegisterAsAMember value)?
+        whyShouldIRegisterAsAMember,
+    TResult Function(_OnResponseDataHowToRegisterAsAMember value)?
+        howToRegisterAsAMember,
+    TResult Function(
+            _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword value)?
+        whatShouldIDoWhenIForgetMyUsernamePassword,
+    TResult Function(_OnResponseDataWhyCanTILogin value)? whyCanTILogin,
+    required TResult orElse(),
+  }) {
+    if (whyCanTILogin != null) {
+      return whyCanTILogin(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnResponseDataWhyCanTILogin implements OnResponseData {
+  const factory _OnResponseDataWhyCanTILogin() = _$_OnResponseDataWhyCanTILogin;
 }

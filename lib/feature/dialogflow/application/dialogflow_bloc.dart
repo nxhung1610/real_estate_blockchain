@@ -334,6 +334,91 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                     ),
                   );
                   break;
+                case MessageAppType.authenticationRelatedQuestions:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.whyShouldIRegisterAsAMember:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data:
+                            const OnResponseData.whyShouldIRegisterAsAMember(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+
+                case MessageAppType.howToRegisterAsAMember:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.howToRegisterAsAMember(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.whatShouldIDoWhenIForgetMyUsernamePassword:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData
+                            .whatShouldIDoWhenIForgetMyUsernamePassword(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.whyCanTILogin:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.whyCanTILogin(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
               }
             } else {
               throw Exception();

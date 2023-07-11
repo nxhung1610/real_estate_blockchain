@@ -2959,6 +2959,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Questions related to accounts`
+  String get authenticationRelatedQuestions {
+    return Intl.message(
+      'Questions related to accounts',
+      name: 'authenticationRelatedQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why should I register as a member?`
+  String get whyShouldIRegisterAsAMember {
+    return Intl.message(
+      'Why should I register as a member?',
+      name: 'whyShouldIRegisterAsAMember',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Once you have an account, you can manage and edit your posted messages and many other benefits that we offer to members.`
+  String get whyShouldIRegisterAsAMemberContent {
+    return Intl.message(
+      'Once you have an account, you can manage and edit your posted messages and many other benefits that we offer to members.',
+      name: 'whyShouldIRegisterAsAMemberContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to register as a member?`
+  String get howToRegisterAsAMember {
+    return Intl.message(
+      'How to register as a member?',
+      name: 'howToRegisterAsAMember',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `* To register as a member, you click on the Register link in the bottom corner, in the middle of the login screen.\r\n\r\n* Then you fill in the information in the empty boxes and click select 'Register'. Once you have successfully registered, you can use that account to post and manage your listing.`
+  String get howToRegisterAsAMemberContent {
+    return Intl.message(
+      '* To register as a member, you click on the Register link in the bottom corner, in the middle of the login screen.\r\n\r\n* Then you fill in the information in the empty boxes and click select \'Register\'. Once you have successfully registered, you can use that account to post and manage your listing.',
+      name: 'howToRegisterAsAMemberContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What should I do when I forget my Username/Password?`
+  String get whatShouldIDoWhenIForgetMyUsernamePassword {
+    return Intl.message(
+      'What should I do when I forget my Username/Password?',
+      name: 'whatShouldIDoWhenIForgetMyUsernamePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When you forget your username/password, open the app, then click on “Forgot Password” and follow the instructions.`
+  String get whatShouldIDoWhenIForgetMyUsernamePasswordContent {
+    return Intl.message(
+      'When you forget your username/password, open the app, then click on “Forgot Password” and follow the instructions.',
+      name: 'whatShouldIDoWhenIForgetMyUsernamePasswordContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why can't I login?`
+  String get whyCanTILogin {
+    return Intl.message(
+      'Why can\'t I login?',
+      name: 'whyCanTILogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `After you successfully register, you will have to enter your OTP to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\nIn case you do not receive the OTP for activation, or have performed the activation operation but still cannot log in to the application. Please contact us for help:\r\n\r\n* Phone: {phone}\r\n\r\n* Customer Service Center: {adminPhone}\r\n\r\n*Email: {email}`
+  String whyCanTILoginContent(Object phone, Object adminPhone, Object email) {
+    return Intl.message(
+      'After you successfully register, you will have to enter your OTP to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\nIn case you do not receive the OTP for activation, or have performed the activation operation but still cannot log in to the application. Please contact us for help:\r\n\r\n* Phone: $phone\r\n\r\n* Customer Service Center: $adminPhone\r\n\r\n*Email: $email',
+      name: 'whyCanTILoginContent',
+      desc: '',
+      args: [phone, adminPhone, email],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

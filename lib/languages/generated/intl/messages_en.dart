@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(name) =>
       "${name} is making it simpler to sell your home and move forward.";
 
+  static String m1(phone, adminPhone, email) =>
+      "After you successfully register, you will have to enter your OTP to activate the account. Once the account is activated, you will be able to log in to the application.\r\n\r\nIn case you do not receive the OTP for activation, or have performed the activation operation but still cannot log in to the application. Please contact us for help:\r\n\r\n* Phone: ${phone}\r\n\r\n* Customer Service Center: ${adminPhone}\r\n\r\n*Email: ${email}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addDocument": MessageLookupByLibrary.simpleMessage("Add Document"),
@@ -75,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "auctionEnds": MessageLookupByLibrary.simpleMessage("Auction ends"),
         "auctionId": MessageLookupByLibrary.simpleMessage("Auction Id"),
         "auctions": MessageLookupByLibrary.simpleMessage("Auctions"),
+        "authenticationRelatedQuestions": MessageLookupByLibrary.simpleMessage(
+            "Questions related to accounts"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Auto review"),
         "backToMainMenu": MessageLookupByLibrary.simpleMessage(
             "Back to main table of contents"),
@@ -200,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...)."),
         "howToPostContent2": MessageLookupByLibrary.simpleMessage(
             "* In the process of posting, you must follow the instructions.\r\n* Fill in all the information completely.\r\n* The title and content must be in lowercase, yes. marks, spelling standards (can be seen at the following link: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Posts posted after 24 hours of work will be censored by the system and displayed on the application home page.\r\n* Customers please comply with Realust\'s posting regulations."),
+        "howToRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
+            "How to register as a member?"),
+        "howToRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(
+            "* To register as a member, you click on the Register link in the bottom corner, in the middle of the login screen.\r\n\r\n* Then you fill in the information in the empty boxes and click select \'Register\'. Once you have successfully registered, you can use that account to post and manage your listing."),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "I don\'t understand your response yet."),
         "images": MessageLookupByLibrary.simpleMessage("Images"),
@@ -446,12 +455,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "wards": MessageLookupByLibrary.simpleMessage("Wards"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "west": MessageLookupByLibrary.simpleMessage("West"),
+        "whatShouldIDoWhenIForgetMyUsernamePassword":
+            MessageLookupByLibrary.simpleMessage(
+                "What should I do when I forget my Username/Password?"),
+        "whatShouldIDoWhenIForgetMyUsernamePasswordContent":
+            MessageLookupByLibrary.simpleMessage(
+                "When you forget your username/password, open the app, then click on “Forgot Password” and follow the instructions."),
         "whyAmIPostingButNotSeeingIt": MessageLookupByLibrary.simpleMessage(
             "Why am I posting but not seeing it?"),
         "whyAmIPostingButNotSeeingItContent1": MessageLookupByLibrary.simpleMessage(
             "* Posts must comply with the application\'s regulations.\r\n* Your news will be censored by our admin system and posted within 24 working hours."),
         "whyAmIPostingButNotSeeingItContent2": MessageLookupByLibrary.simpleMessage(
             "* If you post your story the Posting way with your account registered on Realust, make sure your account still has permission to post (the account is not locked)."),
+        "whyCanTILogin":
+            MessageLookupByLibrary.simpleMessage("Why can\'t I login?"),
+        "whyCanTILoginContent": m1,
+        "whyShouldIRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
+            "Why should I register as a member?"),
+        "whyShouldIRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(
+            "Once you have an account, you can manage and edit your posted messages and many other benefits that we offer to members."),
         "writeAReply": MessageLookupByLibrary.simpleMessage("Write a reply..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

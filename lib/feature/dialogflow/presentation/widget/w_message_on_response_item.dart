@@ -97,6 +97,188 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
     final s = S.of(context);
     final locale = context.read<AppBloc>().state.locale;
     return data.maybeMap(
+      whyCanTILogin: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.whyCanTILoginContent('(024) 3562 5940', '1900 1881',
+                            'hotro@realust.com.vn'),
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      whatShouldIDoWhenIForgetMyUsernamePassword: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.whatShouldIDoWhenIForgetMyUsernamePasswordContent,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Assets.images.guildeHowRegister.image(
+                        width: 0.5.sw,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      howToRegisterAsAMember: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.howToRegisterAsAMemberContent,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Assets.images.guildeHowRegister.image(
+                        width: 0.5.sw,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      whyShouldIRegisterAsAMember: (value) {
+        return Text(
+          s.whyShouldIRegisterAsAMemberContent,
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.theme.colorScheme.background,
+          ),
+        );
+      },
       isThereAFeeToPost: (value) {
         return Text(
           s.isThereAFeeToPostContent,

@@ -12,7 +12,13 @@ enum MessageAppType {
   howToPost('HOW_TO_POST'),
   isPostingEffective('IS_POSTING_EFFECTIVE'),
   whyAmIPostingButNotSeeingIt('WHY_AM_I_POSTING_BUT_NOT_SEEING_IT'),
-  wellcome('WELLCOME');
+  wellcome('WELLCOME'),
+  authenticationRelatedQuestions('QUESTIONS_RELATED_TO_ACCOUNTS'),
+  whyShouldIRegisterAsAMember('WHY_SHOULD_I_REGISTER_AS_A_MEMBER'),
+  howToRegisterAsAMember('HOW_TO_REGISTER_AS_A_MEMBER'),
+  whatShouldIDoWhenIForgetMyUsernamePassword(
+      'WHAT_SHOULD_I_DO_WHEN_I_FORGET_MY_USERNAME_PASSWORD'),
+  whyCanTILogin('WHY_CAN_T_I_LOGIN');
 
   const MessageAppType(this.value);
   final String value;

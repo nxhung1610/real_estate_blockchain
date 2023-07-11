@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(name) =>
       "${name} đang đơn giản hóa việc giao dịch và cho thuê bất động sản của bạn, hãy bắt đầu ngay!!";
 
+  static String m1(phone, adminPhone, email) =>
+      "Sau khi bạn đăng ký thành công, bạn sẽ phải nhập OTP của mình để kích hoạt tài khoản. Khi tài khoản được kích hoạt, bạn mới đăng nhập được vào ứng dụng.\r\n\r\nTrong trường hợp bạn không nhận được OTP kích hoạt, hoặc đã thực hiện thao tác kích hoạt nhưng vẫn không đăng nhập được vào ứng dụng, hãy liên hệ với chúng tôi để được trợ giúp:\r\n\r\n* Điện thoại: ${phone}\r\n\r\n* Tổng đài CSKH: ${adminPhone}\r\n\r\n*Email: ${email}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addDocument": MessageLookupByLibrary.simpleMessage("Thêm tài liệu"),
@@ -74,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "auctionEnds": MessageLookupByLibrary.simpleMessage("Đấu giá kết thúc"),
         "auctionId": MessageLookupByLibrary.simpleMessage("Mã đấu thầu"),
         "auctions": MessageLookupByLibrary.simpleMessage("Đấu thầu"),
+        "authenticationRelatedQuestions": MessageLookupByLibrary.simpleMessage(
+            "Các câu hỏi liên quan đến tài khoản"),
         "autoRenew": MessageLookupByLibrary.simpleMessage("Tự động làm mới"),
         "backToMainMenu": MessageLookupByLibrary.simpleMessage("Mục chính"),
         "balconyFacing": MessageLookupByLibrary.simpleMessage("Hướng ban công"),
@@ -200,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n* Sau đó bạn kích vào phần “Nhà của tôi” và chọn “Thêm tài sản mới”.\r\n* Bạn sẽ được chuyển sang màn hình “Thêm tài sản mới” và đăng tin theo các bước hướng dẫn. \r\n* Khi đăng tin theo hình thức này, bạn có thể vào phần “Nhà của tôi” để chỉnh sửa thông tin theo ý mình, đồng thời bạn sẽ được đăng số tin không giới hạn nếu đáp ứng đủ các điều kiện của Realust."),
         "howToPostContent2": MessageLookupByLibrary.simpleMessage(
             "* Trong quá trình đăng tin, bạn phải thực hiện đầy đủ các thao tác theo hướng dẫn.\r\n* Điền đẩy đủ thông tin vào các mục.\r\n* Tiêu đề và nội dung phải viết in thường, có dấu, chuẩn chính tả (có thể xem thêm ở link sau: http://batdongsan.com.vn/quy-dinh-su-dung).\r\n* Tin đăng sau 24h làm việc sẽ được hệ thống kiểm duyệt và cho hiển thị lên trang chủ ứng dụng.\r\n* Khách hàng vui lòng tuân thủ các quy định về tin đăng của Realust."),
+        "howToRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
+            "Đăng ký thành viên như thế nào?"),
+        "howToRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(
+            "* Để đăng ký thành viên, Bạn kích vào link Đăng ký ở góc dưới cùng, ở giữa màn hình đăng nhập.\r\n\r\n* Sau đó, bạn điền đầy đủ thông tin vào các ô trống và nhấn chọn “Đăng ký”. Khi bạn đăng ký thành công, bạn có thể sử dụng tài khoản đó để đăng tin và quản lý tin đăng."),
         "iDontUnderstandYourResponseYet": MessageLookupByLibrary.simpleMessage(
             "Tôi chưa hiểu phản hồi của bạn."),
         "images": MessageLookupByLibrary.simpleMessage("Hình ảnh"),
@@ -450,12 +459,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "wards": MessageLookupByLibrary.simpleMessage("Phường xã"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Kho"),
         "west": MessageLookupByLibrary.simpleMessage("Tây"),
+        "whatShouldIDoWhenIForgetMyUsernamePassword":
+            MessageLookupByLibrary.simpleMessage(
+                "Tôi phải làm gì khi quên Tên đăng nhập/Mật khẩu?"),
+        "whatShouldIDoWhenIForgetMyUsernamePasswordContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Khi quên tên đăng nhập/mật khẩu, bạn mở ứng dụng, sau đó kích vào “Quên mật khẩu” và làm theo hướng dẫn."),
         "whyAmIPostingButNotSeeingIt": MessageLookupByLibrary.simpleMessage(
             "Tại sao tôi đăng tin nhưng không thấy hiện ?"),
         "whyAmIPostingButNotSeeingItContent1": MessageLookupByLibrary.simpleMessage(
             "* Các tin đăng phải theo đúng quy định của ứng dụng.\r\n* Tin của bạn sẽ được hệ thống quản trị chúng tôi kiểm duyệt và đăng trong thời gian 24h làm việc."),
         "whyAmIPostingButNotSeeingItContent2": MessageLookupByLibrary.simpleMessage(
             "* Nếu bạn đăng tin theo cách Đăng tin bằng tài khoản đã đăng ký trên Realust, hãy đảm bảo tài khoản của bạn vẫn có quyền đăng tin (tài khoản không bị khóa)."),
+        "whyCanTILogin": MessageLookupByLibrary.simpleMessage(
+            "Tại sao tôi không thể đăng nhập?"),
+        "whyCanTILoginContent": m1,
+        "whyShouldIRegisterAsAMember": MessageLookupByLibrary.simpleMessage(
+            "Tại sao tôi nên đăng ký thành viên?"),
+        "whyShouldIRegisterAsAMemberContent": MessageLookupByLibrary.simpleMessage(
+            "Khi có tài khoản, bạn có thể quản lý, chỉnh sửa tin đã đăng cùng nhiều tiện ích khác mà chúng tôi dành cho thành viên."),
         "writeAReply": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
         "youNeedPermissionToDisplayNotifications":
             MessageLookupByLibrary.simpleMessage(

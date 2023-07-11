@@ -125,12 +125,74 @@ class MenuType with _$MenuType {
   const factory MenuType.info() = _MenuTypeInfo;
   const factory MenuType.estate() = _MenuTypeEstate;
   const factory MenuType.post() = _MenuTypePost;
+  const factory MenuType.account() = _MenuTypeAccount;
 }
 
 extension MenuTypeEx on MenuType {
   List<Widget> widgets(BuildContext context) {
     final s = S.of(context);
     return map(
+      account: (value) {
+        return [
+          Text(
+            "${s.authenticationRelatedQuestions} :",
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.theme.colorScheme.background,
+            ),
+          ),
+          _button(context, text: s.whyShouldIRegisterAsAMember, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.whyShouldIRegisterAsAMember,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.howToRegisterAsAMember, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.howToRegisterAsAMember,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.whatShouldIDoWhenIForgetMyUsernamePassword,
+              onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.whatShouldIDoWhenIForgetMyUsernamePassword,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.whyCanTILogin, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.whyCanTILogin,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.backToMainMenu, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.mainCatalog,
+                    ),
+                  ),
+                );
+          }),
+        ];
+      },
       post: (value) {
         return [
           Text(
@@ -175,6 +237,16 @@ extension MenuTypeEx on MenuType {
                     OnMessageDataType.text(
                       id: const Uuid().v4(),
                       message: s.isThereAFeeToPost,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.backToMainMenu, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.mainCatalog,
                     ),
                   ),
                 );
@@ -245,6 +317,17 @@ extension MenuTypeEx on MenuType {
                     OnMessageDataType.text(
                       id: const Uuid().v4(),
                       message: s.post,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.authenticationRelatedQuestions,
+              onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.authenticationRelatedQuestions,
                     ),
                   ),
                 );
@@ -323,6 +406,7 @@ extension MenuTypeEx on MenuType {
         },
         child: Text(
           text,
+          textAlign: TextAlign.center,
           style: context.textTheme.bodyMedium?.copyWith(
             color: context.theme.colorScheme.background,
           ),
@@ -342,6 +426,8 @@ class OnResponseData with _$OnResponseData {
   const factory OnResponseData.amenities(List<Amenity> amenities) =
       _OnResponseDataAmenities;
   const factory OnResponseData.policies() = _OnResponseDataPolicies;
+
+  // Post
   const factory OnResponseData.isThereAFeeToPost() =
       _OnResponseDataIsThereAFeeToPost;
   const factory OnResponseData.whyAmIPostingButNotSeeingIt() =
@@ -349,4 +435,13 @@ class OnResponseData with _$OnResponseData {
   const factory OnResponseData.howToPost() = _OnResponseDataHowToPost;
   const factory OnResponseData.isPostingEffective() =
       _OnResponseDataIsPostingEffective;
+
+  // Account
+  const factory OnResponseData.whyShouldIRegisterAsAMember() =
+      _OnResponseDataWhyShouldIRegisterAsAMember;
+  const factory OnResponseData.howToRegisterAsAMember() =
+      _OnResponseDataHowToRegisterAsAMember;
+  const factory OnResponseData.whatShouldIDoWhenIForgetMyUsernamePassword() =
+      _OnResponseDataWhatShouldIDoWhenIForgetMyUsernamePassword;
+  const factory OnResponseData.whyCanTILogin() = _OnResponseDataWhyCanTILogin;
 }
