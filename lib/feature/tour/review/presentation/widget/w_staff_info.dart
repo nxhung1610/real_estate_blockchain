@@ -11,6 +11,8 @@ import 'package:real_estate_blockchain/feature/message/module.dart';
 import 'package:real_estate_blockchain/feature/tour/review/application/tour_review_bloc.dart';
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WStaffInfo extends StatelessWidget {
   const WStaffInfo({super.key, required this.staff});
@@ -19,12 +21,24 @@ class WStaffInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return GestureDetector(
-      onTap: () {
-        final ownerId = staff.id;
-        final currentUser = context.read<AuthBloc>().user;
-        context
-            .read<TourReviewBloc>()
-            .add(TourReviewEvent.onCreateChatRoom(currentUser.id, ownerId));
+      onTap: () async {
+        final phone = staff.phone.replaceFirst('0', '+84');
+        final schema = Uri.parse('tg://resolve?phone=$phone');
+        final url = Uri.parse('https://t.me/$phone');
+        try {
+          await launchUrl(schema, mode: LaunchMode.externalApplication);
+        } catch (e, trace) {
+          printLog(this, message: e, error: e);
+          if (await canLaunchUrl(url)) {
+            await launchUrl(url, mode: LaunchMode.externalApplication);
+          }
+        }
+
+        // final ownerId = staff.id;
+        // final currentUser = context.read<AuthBloc>().user;
+        // context
+        //     .read<TourReviewBloc>()
+        //     .add(TourReviewEvent.onCreateChatRoom(currentUser.id, ownerId));
       },
       child: Container(
         decoration: BoxDecoration(
