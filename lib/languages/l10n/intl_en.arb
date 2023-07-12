@@ -321,6 +321,13 @@
       "adminPhone": {},
       "email": {}
     }
-  }
+  },
+  "howToFindInformationOnTheApplication" : "How to search for real estate on the app?",
+  "howToFindInformationOnTheApplicationContent" : "To search for real estate ads:\r\n\r\nOn the homepage:\r\n+ Readers can search from the search box right on the homepage:",
+  "utilitiesOnTheApplication" : "Utilities on the application?",
+  "utilitiesOnTheApplicationContent" : "* The application not only publishes real estate buying and selling information, but also quickly updates information, analysis, judgment, real estate market orientation, price list, real estate law answers, and policies on real estate. land…\r\n\r\n* In addition, the App provides viewers with useful information about related fields: news, expert views.\r\n\r\n * The property search engine on the map is one of the preeminent and convenient features for Realust customers.",
+  "howDoIWantToDeleteMyAccount" : "How to delete my account?",
+  "howDoIWantToDeleteMyAccountContent" : "\tIn case you want to delete your account & information on Realust:\r\n\r\n* You go to Realust , click on the “Personal” section (bottom right of the screen) to switch to the “Personal” screen\r\n\r\n* Then you click on the “Support” section and select “Delete Account”."
+
   
 }

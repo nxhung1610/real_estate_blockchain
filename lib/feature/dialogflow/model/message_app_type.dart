@@ -20,8 +20,11 @@ enum MessageAppType {
       'WHAT_SHOULD_I_DO_WHEN_I_FORGET_MY_USERNAME_PASSWORD'),
   whyCanTILogin('WHY_CAN_T_I_LOGIN'),
   howToChangePassword('HOW_TO_CHANGE_PASSWORD'),
-  activationOtpHasNotBeenReceived('ACTIVATION_OTP_HAS_NOT_BEEN_RECEIVED')
-  ;
+  activationOtpHasNotBeenReceived('ACTIVATION_OTP_HAS_NOT_BEEN_RECEIVED'),
+  howToFindInformationOnTheApplication(
+      'HOW_TO_SEARCH_FOR_REAL_ESTATE_ON_THE_APP'),
+  utilitiesOnTheApplication('UTILITIES_ON_THE_APPLICATION'),
+  howDoIWantToDeleteMyAccount('HOW_DO_I_WANT_TO_DELETE_MY_ACCOUNT');
 
   const MessageAppType(this.value);
   final String value;

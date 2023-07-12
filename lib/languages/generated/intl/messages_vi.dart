@@ -205,10 +205,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "house": MessageLookupByLibrary.simpleMessage("Nhà"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("Hướng nhà"),
+        "howDoIWantToDeleteMyAccount": MessageLookupByLibrary.simpleMessage(
+            "Xóa tài khoản của tôi bằng cách nào?"),
+        "howDoIWantToDeleteMyAccountContent": MessageLookupByLibrary.simpleMessage(
+            "\tTrong trường hợp bạn muốn xóa tài khoản & các thông tin của bạn trên Realust:\r\n\r\n* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n\r\n* Sau đó bạn kích vào phần “Hỗ trợ” và chọn “Xóa tài khoản”."),
         "howToChangePassword": MessageLookupByLibrary.simpleMessage(
             "Làm thế nào để thay đổi mật khẩu?"),
         "howToChangePasswordContent": MessageLookupByLibrary.simpleMessage(
             "Để thay đổi mật khẩu, bạn đăng nhập vào tài khoản của mình, sau đó kích vào trang \'Cá nhân\'. Trong trang “Cá nhân” bạn kích vào “Cài đặt” và “Đổi mật khẩu” và làm theo hướng dẫn."),
+        "howToFindInformationOnTheApplication":
+            MessageLookupByLibrary.simpleMessage(
+                "Làm thế nào để tìm kiếm bất động sản trên ứng dụng ?"),
+        "howToFindInformationOnTheApplicationContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Để tìm kiếm tin rao bất động sản:\r\n\r\nNgay trên trang chủ:\r\n+  Người đọc có thể tìm kiếm từ hộp công cụ tìm kiếm ngay trên trang chủ:"),
         "howToPost":
             MessageLookupByLibrary.simpleMessage("Làm thế nào để đăng tin ?"),
         "howToPostContent1": MessageLookupByLibrary.simpleMessage(
@@ -458,6 +468,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Cập nhập thông tin cá nhân thành công"),
         "updateRealEstateFailed": MessageLookupByLibrary.simpleMessage(
             "Cập nhật bất động sản thất bại"),
+        "utilitiesOnTheApplication": MessageLookupByLibrary.simpleMessage(
+            "Các tiện ích trên ứng dụng ?"),
+        "utilitiesOnTheApplicationContent": MessageLookupByLibrary.simpleMessage(
+            "* Ứng dụng không chỉ đăng tải các thông tin mua bán BĐS, mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường BĐS, bảng giá, giải đáp pháp luật BĐS, và các chính sách về đất đai…\r\n\r\n* Ngoài ra, Ứng dụng mang đến cho người xem những thông tin hữu ích về các lĩnh vực liên quan: tin tức, góc nhìn chuyên gia.\r\n\r\n* Công cụ tìm kiếm bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Realust."),
         "validPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Xác nhận số điện thoại"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(

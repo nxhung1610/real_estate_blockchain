@@ -314,5 +314,18 @@
   "howToChangePassword" : "Làm thế nào để thay đổi mật khẩu?",
   "howToChangePasswordContent" : "Để thay đổi mật khẩu, bạn đăng nhập vào tài khoản của mình, sau đó kích vào trang 'Cá nhân'. Trong trang “Cá nhân” bạn kích vào “Cài đặt” và “Đổi mật khẩu” và làm theo hướng dẫn.",
   "activationOtpHasNotBeenReceived": "Không nhận được mã OTP ?",
-  "activationOtpHasNotBeenReceivedContent" : "\tSau khi bạn đăng ký thành công, bạn sẽ phải nhập OTP được gửi đến số điện thoại đã đăng ký để kích hoạt tài khoản. Khi tài khoản được kích hoạt, bạn mới đăng nhập được vào ứng dụng.\r\n\r\n\tTrong trường hợp bạn không nhận được OTP kích hoạt, hoặc đã thực hiện thao tác kích hoạt nhưng vẫn không đăng nhập được vào ứng dụng, hãy liên hệ với chúng tôi để được trợ giúp:\r\n\r\nĐiện thoại: {phone}\r\n\r\nTổng đài CSKH: {adminPhone}\r\n\r\nEmail: {email}"
+  "activationOtpHasNotBeenReceivedContent" : "\tSau khi bạn đăng ký thành công, bạn sẽ phải nhập OTP được gửi đến số điện thoại đã đăng ký để kích hoạt tài khoản. Khi tài khoản được kích hoạt, bạn mới đăng nhập được vào ứng dụng.\r\n\r\n\tTrong trường hợp bạn không nhận được OTP kích hoạt, hoặc đã thực hiện thao tác kích hoạt nhưng vẫn không đăng nhập được vào ứng dụng, hãy liên hệ với chúng tôi để được trợ giúp:\r\n\r\nĐiện thoại: {phone}\r\n\r\nTổng đài CSKH: {adminPhone}\r\n\r\nEmail: {email}",
+  "@activationOtpHasNotBeenReceivedContent": {
+    "placeholders": {
+      "phone": {},
+      "adminPhone": {},
+      "email": {}
+    }
+  },
+  "howToFindInformationOnTheApplication" : "Làm thế nào để tìm kiếm bất động sản trên ứng dụng ?",
+  "howToFindInformationOnTheApplicationContent" : "Để tìm kiếm tin rao bất động sản:\r\n\r\nNgay trên trang chủ:\r\n+  Người đọc có thể tìm kiếm từ hộp công cụ tìm kiếm ngay trên trang chủ:",
+  "utilitiesOnTheApplication" : "Các tiện ích trên ứng dụng ?",
+  "utilitiesOnTheApplicationContent" : "* Ứng dụng không chỉ đăng tải các thông tin mua bán BĐS, mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường BĐS, bảng giá, giải đáp pháp luật BĐS, và các chính sách về đất đai…\r\n\r\n* Ngoài ra, Ứng dụng mang đến cho người xem những thông tin hữu ích về các lĩnh vực liên quan: tin tức, góc nhìn chuyên gia.\r\n\r\n* Công cụ tìm kiếm bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Realust.",
+  "howDoIWantToDeleteMyAccount" : "Xóa tài khoản của tôi bằng cách nào?",
+  "howDoIWantToDeleteMyAccountContent" : "\tTrong trường hợp bạn muốn xóa tài khoản & các thông tin của bạn trên Realust:\r\n\r\n* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n\r\n* Sau đó bạn kích vào phần “Hỗ trợ” và chọn “Xóa tài khoản”."
 }

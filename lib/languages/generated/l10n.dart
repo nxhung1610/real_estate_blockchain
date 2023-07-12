@@ -3090,6 +3090,66 @@ class S {
       args: [phone, adminPhone, email],
     );
   }
+
+  /// `How to search for real estate on the app?`
+  String get howToFindInformationOnTheApplication {
+    return Intl.message(
+      'How to search for real estate on the app?',
+      name: 'howToFindInformationOnTheApplication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To search for real estate ads:\r\n\r\nOn the homepage:\r\n+ Readers can search from the search box right on the homepage:`
+  String get howToFindInformationOnTheApplicationContent {
+    return Intl.message(
+      'To search for real estate ads:\r\n\r\nOn the homepage:\r\n+ Readers can search from the search box right on the homepage:',
+      name: 'howToFindInformationOnTheApplicationContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Utilities on the application?`
+  String get utilitiesOnTheApplication {
+    return Intl.message(
+      'Utilities on the application?',
+      name: 'utilitiesOnTheApplication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `* The application not only publishes real estate buying and selling information, but also quickly updates information, analysis, judgment, real estate market orientation, price list, real estate law answers, and policies on real estate. land…\r\n\r\n* In addition, the App provides viewers with useful information about related fields: news, expert views.\r\n\r\n * The property search engine on the map is one of the preeminent and convenient features for Realust customers.`
+  String get utilitiesOnTheApplicationContent {
+    return Intl.message(
+      '* The application not only publishes real estate buying and selling information, but also quickly updates information, analysis, judgment, real estate market orientation, price list, real estate law answers, and policies on real estate. land…\r\n\r\n* In addition, the App provides viewers with useful information about related fields: news, expert views.\r\n\r\n * The property search engine on the map is one of the preeminent and convenient features for Realust customers.',
+      name: 'utilitiesOnTheApplicationContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to delete my account?`
+  String get howDoIWantToDeleteMyAccount {
+    return Intl.message(
+      'How to delete my account?',
+      name: 'howDoIWantToDeleteMyAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `\tIn case you want to delete your account & information on Realust:\r\n\r\n* You go to Realust , click on the “Personal” section (bottom right of the screen) to switch to the “Personal” screen\r\n\r\n* Then you click on the “Support” section and select “Delete Account”.`
+  String get howDoIWantToDeleteMyAccountContent {
+    return Intl.message(
+      '\tIn case you want to delete your account & information on Realust:\r\n\r\n* You go to Realust , click on the “Personal” section (bottom right of the screen) to switch to the “Personal” screen\r\n\r\n* Then you click on the “Support” section and select “Delete Account”.',
+      name: 'howDoIWantToDeleteMyAccountContent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

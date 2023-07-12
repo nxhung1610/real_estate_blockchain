@@ -97,6 +97,183 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
     final s = S.of(context);
     final locale = context.read<AppBloc>().state.locale;
     return data.maybeMap(
+      howDoIWantToDeleteMyAccount: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.howDoIWantToDeleteMyAccountContent,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      utilitiesOnTheApplication: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.utilitiesOnTheApplicationContent,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
+      howToFindInformationOnTheApplication: (value) {
+        void action() {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) {
+                return DialogInfoPage(
+                  child: Column(
+                    children: [
+                      Text(
+                        s.howToFindInformationOnTheApplicationContent,
+                        style: context.textTheme.bodyMedium?.copyWith(),
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Assets.images.guildSearch1.image(
+                        width: 0.5.sw,
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Assets.images.guildSearch2.image(
+                        width: 0.5.sw,
+                      ),
+                      AppSize.smallHeightDimens.verticalSpace,
+                      Assets.images.guildSearch3.image(
+                        width: 0.5.sw,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+
+        if (!context
+            .read<DialogInfoDataBloc>()
+            .state
+            .checkExist(widget.item.id)) {
+          context
+              .read<DialogInfoDataBloc>()
+              .add(DialogInfoDataEvent.onAddItem(widget.item.id));
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            action();
+          });
+        }
+
+        return GestureDetector(
+          onTap: () {
+            action();
+          },
+          child: Row(
+            children: [
+              Text(
+                s.details,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.theme.colorScheme.background,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              AppSize.smallWidthDimens.horizontalSpace,
+              Icon(
+                Icons.ios_share_rounded,
+                color: context.theme.colorScheme.background,
+                size: 16.r,
+              )
+            ],
+          ),
+        );
+      },
       activationOtpHasNotBeenReceived: (value) {
         void action() {
           Navigator.of(context).push(

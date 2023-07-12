@@ -202,6 +202,16 @@ extension MenuTypeEx on MenuType {
                   ),
                 );
           }),
+          _button(context, text: s.howDoIWantToDeleteMyAccount, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.howDoIWantToDeleteMyAccount,
+                    ),
+                  ),
+                );
+          }),
           _button(context, text: s.backToMainMenu, onPressed: () {
             context.read<DialogflowBloc>().add(
                   DialogflowEvent.onMessage(
@@ -383,6 +393,27 @@ extension MenuTypeEx on MenuType {
                   ),
                 );
           }),
+          _button(context, text: s.howToFindInformationOnTheApplication,
+              onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.howToFindInformationOnTheApplication,
+                    ),
+                  ),
+                );
+          }),
+          _button(context, text: s.utilitiesOnTheApplication, onPressed: () {
+            context.read<DialogflowBloc>().add(
+                  DialogflowEvent.onMessage(
+                    OnMessageDataType.text(
+                      id: const Uuid().v4(),
+                      message: s.utilitiesOnTheApplication,
+                    ),
+                  ),
+                );
+          }),
           _button(context, text: s.backToMainMenu, onPressed: () {
             context.read<DialogflowBloc>().add(
                   DialogflowEvent.onMessage(
@@ -469,4 +500,12 @@ class OnResponseData with _$OnResponseData {
       _OnResponseDataHowToChangePassword;
   const factory OnResponseData.activationOtpHasNotBeenReceived() =
       _OnResponseDataActivationOtpHasNotBeenReceived;
+  const factory OnResponseData.howDoIWantToDeleteMyAccount() =
+      _OnResponseDataHowDoIWantToDeleteMyAccount;
+
+  // Estate
+  const factory OnResponseData.howToFindInformationOnTheApplication() =
+      _OnResponseDataHowToFindInformationOnTheApplication;
+  const factory OnResponseData.utilitiesOnTheApplication() =
+      _OnResponseDataUtilitiesOnTheApplication;
 }

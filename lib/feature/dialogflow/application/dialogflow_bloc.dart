@@ -438,11 +438,67 @@ class DialogflowBloc extends Bloc<DialogflowEvent, DialogflowState> {
                   );
                   break;
                 case MessageAppType.activationOtpHasNotBeenReceived:
-                    add(
+                  add(
                     DialogflowEvent.onResponse(
                       OnResponseDataType.data(
                         id: const Uuid().v4(),
-                        data: const OnResponseData.activationOtpHasNotBeenReceived(),
+                        data: const OnResponseData
+                            .activationOtpHasNotBeenReceived(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.account(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.howToFindInformationOnTheApplication:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData
+                            .howToFindInformationOnTheApplication(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.estate(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.utilitiesOnTheApplication:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.utilitiesOnTheApplication(),
+                      ),
+                    ),
+                  );
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.menu(
+                        id: const Uuid().v4(),
+                        menuType: const MenuType.estate(),
+                      ),
+                    ),
+                  );
+                  break;
+                case MessageAppType.howDoIWantToDeleteMyAccount:
+                  add(
+                    DialogflowEvent.onResponse(
+                      OnResponseDataType.data(
+                        id: const Uuid().v4(),
+                        data: const OnResponseData.utilitiesOnTheApplication(),
                       ),
                     ),
                   );

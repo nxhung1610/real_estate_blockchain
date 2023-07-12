@@ -361,6 +361,18 @@ class $AssetsImagesGen {
   /// File path: assets/images/guild2.png
   AssetGenImage get guild2 => const AssetGenImage('assets/images/guild2.png');
 
+  /// File path: assets/images/guild_search_1.png
+  AssetGenImage get guildSearch1 =>
+      const AssetGenImage('assets/images/guild_search_1.png');
+
+  /// File path: assets/images/guild_search_2.png
+  AssetGenImage get guildSearch2 =>
+      const AssetGenImage('assets/images/guild_search_2.png');
+
+  /// File path: assets/images/guild_search_3.png
+  AssetGenImage get guildSearch3 =>
+      const AssetGenImage('assets/images/guild_search_3.png');
+
   /// File path: assets/images/guilde_how_register.png
   AssetGenImage get guildeHowRegister =>
       const AssetGenImage('assets/images/guilde_how_register.png');
@@ -404,6 +416,9 @@ class $AssetsImagesGen {
         box,
         guild1,
         guild2,
+        guildSearch1,
+        guildSearch2,
+        guildSearch3,
         guildeHowRegister,
         imageAuction,
         imageHouse,

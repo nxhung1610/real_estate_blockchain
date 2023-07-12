@@ -206,10 +206,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house": MessageLookupByLibrary.simpleMessage("House"),
         "houseFacing": MessageLookupByLibrary.simpleMessage("House Facing"),
+        "howDoIWantToDeleteMyAccount":
+            MessageLookupByLibrary.simpleMessage("How to delete my account?"),
+        "howDoIWantToDeleteMyAccountContent": MessageLookupByLibrary.simpleMessage(
+            "\tIn case you want to delete your account & information on Realust:\r\n\r\n* You go to Realust , click on the “Personal” section (bottom right of the screen) to switch to the “Personal” screen\r\n\r\n* Then you click on the “Support” section and select “Delete Account”."),
         "howToChangePassword":
             MessageLookupByLibrary.simpleMessage("How to change password?"),
         "howToChangePasswordContent": MessageLookupByLibrary.simpleMessage(
             "To change your password, log in to your account, then click on the \'Personal\' page.In the “Personal” page, click on “Settings” and “Change Password” and follow the instructions."),
+        "howToFindInformationOnTheApplication":
+            MessageLookupByLibrary.simpleMessage(
+                "How to search for real estate on the app?"),
+        "howToFindInformationOnTheApplicationContent":
+            MessageLookupByLibrary.simpleMessage(
+                "To search for real estate ads:\r\n\r\nOn the homepage:\r\n+ Readers can search from the search box right on the homepage:"),
         "howToPost": MessageLookupByLibrary.simpleMessage("How to post?"),
         "howToPostContent1": MessageLookupByLibrary.simpleMessage(
             "Realust is a leading real estate information channel with the best quality and quantity of real estate information in Vietnam, which is far superior to all other real estate information channels. Out of a total of 1 million new listings per month, there are many that are updated regularly. On average, the number of views for a real estate listing for sale or rent on Realust is 3-5 times higher than that of a listing on other real estate apps or the biggest classifieds sites today.\r\n\r\nRealust is the application that focuses on the largest number of customers and brokers compared to other real estate applications, and is a real estate website with a large number of high quality, edited real estate listings. carefully. Customers with real needs for real estate will often visit, owners of real estate for sale or rent will have many opportunities to choose for themselves the right partner with the best transaction price. \r\n\r\nThe application works professionally, always being flexible in the form of products to serve customers (especially for brokers with the form of information exchange, the form of VIP packets...)."),
@@ -454,6 +464,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Update profile success"),
         "updateRealEstateFailed":
             MessageLookupByLibrary.simpleMessage("Update estate failed"),
+        "utilitiesOnTheApplication": MessageLookupByLibrary.simpleMessage(
+            "Utilities on the application?"),
+        "utilitiesOnTheApplicationContent": MessageLookupByLibrary.simpleMessage(
+            "* The application not only publishes real estate buying and selling information, but also quickly updates information, analysis, judgment, real estate market orientation, price list, real estate law answers, and policies on real estate. land…\r\n\r\n* In addition, the App provides viewers with useful information about related fields: news, expert views.\r\n\r\n * The property search engine on the map is one of the preeminent and convenient features for Realust customers."),
         "validPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Valid phone number"),
         "videoPhotoDescription": MessageLookupByLibrary.simpleMessage(
