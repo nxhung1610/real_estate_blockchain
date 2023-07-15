@@ -107,7 +107,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.howDoIWantToDeleteMyAccountContent,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),
@@ -162,7 +164,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.utilitiesOnTheApplicationContent,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),
@@ -217,7 +221,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.howToFindInformationOnTheApplicationContent,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                       AppSize.smallHeightDimens.verticalSpace,
                       Assets.images.guildSearch1.image(
@@ -287,7 +293,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                             '(024) 3562 5940',
                             '1900 1881',
                             'hotro@realust.com.vn'),
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),
@@ -351,7 +359,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                       Text(
                         s.whyCanTILoginContent('(024) 3562 5940', '1900 1881',
                             'hotro@realust.com.vn'),
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),
@@ -406,7 +416,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.whatShouldIDoWhenIForgetMyUsernamePasswordContent,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                       AppSize.smallHeightDimens.verticalSpace,
                       Assets.images.guildeHowRegister.image(
@@ -465,7 +477,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.howToRegisterAsAMemberContent,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                       AppSize.smallHeightDimens.verticalSpace,
                       Assets.images.guildeHowRegister.image(
@@ -541,19 +555,24 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.whyAmIPostingButNotSeeingItContent1,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                       AppSize.mediumHeightDimens.verticalSpace,
                       Text(
                         s.note,
                         style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       AppSize.mediumHeightDimens.verticalSpace,
                       Text(
                         s.whyAmIPostingButNotSeeingItContent2,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),
