@@ -96,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hãy là người đầu tiên đấu giá"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Phòng ngủ"),
         "bid": MessageLookupByLibrary.simpleMessage("Đấu giá"),
+        "bidClose":
+            MessageLookupByLibrary.simpleMessage("Phiên đấu giá đã kết thúc"),
         "bidIncreasement":
             MessageLookupByLibrary.simpleMessage("Giá tăng thầu"),
         "bidIncrement": MessageLookupByLibrary.simpleMessage("Tăng giá thầu"),
@@ -119,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
             MessageLookupByLibrary.simpleMessage(
                 "Chọn một vài tiện ích hiện đang có trong bất động sản của bạn"),
+        "closedBid": MessageLookupByLibrary.simpleMessage("Chốt phiên"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Số điện thoại hoặc mật khẩu không hợp lệ"),

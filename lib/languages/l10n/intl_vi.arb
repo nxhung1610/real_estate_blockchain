@@ -327,5 +327,7 @@
   "utilitiesOnTheApplication" : "Các tiện ích trên ứng dụng ?",
   "utilitiesOnTheApplicationContent" : "* Ứng dụng không chỉ đăng tải các thông tin mua bán BĐS, mà còn cập nhật nhanh diễn biến thông tin, phân tích, nhận định, định hướng thị trường BĐS, bảng giá, giải đáp pháp luật BĐS, và các chính sách về đất đai…\r\n\r\n* Ngoài ra, Ứng dụng mang đến cho người xem những thông tin hữu ích về các lĩnh vực liên quan: tin tức, góc nhìn chuyên gia.\r\n\r\n* Công cụ tìm kiếm bất động sản trên bản đồ là một trong các tính năng ưu việt và thuận tiện cho khách hàng của Realust.",
   "howDoIWantToDeleteMyAccount" : "Xóa tài khoản của tôi bằng cách nào?",
-  "howDoIWantToDeleteMyAccountContent" : "\tTrong trường hợp bạn muốn xóa tài khoản & các thông tin của bạn trên Realust:\r\n\r\n* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n\r\n* Sau đó bạn kích vào phần “Hỗ trợ” và chọn “Xóa tài khoản”."
+  "howDoIWantToDeleteMyAccountContent" : "\tTrong trường hợp bạn muốn xóa tài khoản & các thông tin của bạn trên Realust:\r\n\r\n* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n\r\n* Sau đó bạn kích vào phần “Hỗ trợ” và chọn “Xóa tài khoản”.",
+  "bidClose" : "Phiên đấu giá đã kết thúc",
+  "closedBid" : "Chốt phiên"
 }

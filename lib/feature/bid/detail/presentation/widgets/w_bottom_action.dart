@@ -6,7 +6,10 @@ class _WBottomAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-
+    final user = context
+        .read<AuthBloc>()
+        .state
+        .mapOrNull(authenticated: (value) => value.user);
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -38,35 +41,43 @@ class _WBottomAction extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Expanded(
-                      child: ButtonApp(
-                        label: s.bidNow,
-                        onPressed: state.bid != null
-                            ? () {
-                                showModalBottomSheet(
-                                  backgroundColor: Colors.transparent,
-                                  context: context,
-                                  builder: (_) {
-                                    return BidBottomAction(
-                                      duration: context
-                                          .read<BidDetailBloc>()
-                                          .state
-                                          .remain,
-                                      bid: state.bid!,
-                                      onBid: (num bid) {
-                                        context
-                                            .read<BidDetailBloc>()
-                                            .add(BidDetailEvent.onBid(bid));
-                                      },
-                                    );
-                                  },
-                                );
-                              }
-                            : null,
-                        type: ButtonType.primary,
-                        size: ButtonSize.large,
-                      ),
-                    ),
+                    state.bid?.status != ProcessingStatus.close
+                        ? Expanded(
+                            child: ButtonApp(
+                              label: s.bidNow,
+                              onPressed: state.bid != null
+                                  ? () {
+                                      showModalBottomSheet(
+                                        backgroundColor: Colors.transparent,
+                                        context: context,
+                                        builder: (_) {
+                                          return BidBottomAction(
+                                            duration: context
+                                                .read<BidDetailBloc>()
+                                                .state
+                                                .remain,
+                                            bid: state.bid!,
+                                            onBid: (num bid) {
+                                              context.read<BidDetailBloc>().add(
+                                                  BidDetailEvent.onBid(bid));
+                                            },
+                                          );
+                                        },
+                                      );
+                                    }
+                                  : null,
+                              type: ButtonType.primary,
+                              size: ButtonSize.large,
+                            ),
+                          )
+                        : (user?.id == state.bid?.owner?.id
+                            ? ButtonApp(
+                                label: s.closedBid,
+                                onPressed: state.bid != null ? () {} : null,
+                                type: ButtonType.primary,
+                                size: ButtonSize.large,
+                              )
+                            : const SizedBox.shrink()),
                   ],
                 )
               ],

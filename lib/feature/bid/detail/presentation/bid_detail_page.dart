@@ -114,6 +114,13 @@ class _BidDetailPageState extends State<BidDetailPage>
             if (status != null && !isShowFinish) {
               isShowFinish = true;
               switch (status) {
+                case ProcessingStatus.close:
+                  await context.appDialog.showAppDialog(message: s.bidClose);
+                  if (mounted) {
+                    Navigator.of(context).pop();
+                  }
+
+                  break;
                 case ProcessingStatus.done:
                   final bidders =
                       List<Bidder>.from(state.bid?.bidHistory ?? []);
@@ -137,6 +144,8 @@ class _BidDetailPageState extends State<BidDetailPage>
                           room: result,
                         ),
                       });
+                    } else {
+                      Navigator.of(context).pop();
                     }
                   }
                   break;

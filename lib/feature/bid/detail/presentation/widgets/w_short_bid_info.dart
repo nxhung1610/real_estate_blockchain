@@ -56,8 +56,9 @@ class WShortBidInfo extends StatelessWidget {
                         children: [
                           Text(
                             state?.highestBidder != null
-                                ? NumberFormat.currency(
-                                        locale: "vi_VN", symbol: 'đ')
+                                ? NumberFormat.compactLong(
+                                    locale: "vi_VN",
+                                  )
                                     .format(
                                         (max(0, state?.highestBindingBid ?? 0) -
                                             (state?.bidIncrement ?? 0)))

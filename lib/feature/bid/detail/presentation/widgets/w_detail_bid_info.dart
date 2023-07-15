@@ -34,22 +34,22 @@ class WDetailBidInfo extends StatelessWidget {
             _Item(
               title: s.highestBindingBid,
               body: state?.highestBindingBid != null
-                  ? NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                      .format(state?.highestBindingBid ?? 0)
-                      .toString()
+                  ? NumberFormat.compactLong(
+                      locale: "vi_VN",
+                    ).format(state?.highestBindingBid ?? 0).toString()
                   : '- -/- -',
             ),
             _Item(
               title: s.bidIncrement,
-              body: NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                  .format(state?.bidIncrement ?? 0)
-                  .toString(),
+              body: NumberFormat.compactLong(
+                locale: "vi_VN",
+              ).format(state?.bidIncrement ?? 0).toString(),
             ),
             _Item(
               title: s.startPrice,
-              body: NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                  .format(state?.startingPrice ?? 0)
-                  .toString(),
+              body: NumberFormat.compactLong(
+                locale: "vi_VN",
+              ).format(state?.startingPrice ?? 0).toString(),
             ),
             _Item(
               title: s.auctionId,

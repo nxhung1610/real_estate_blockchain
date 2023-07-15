@@ -23,4 +23,5 @@ abstract class IBidRepository {
     String? reId,
   });
   Future<Either<BidFailure, BidAuction>> getBid(String bidId);
+  Future<Either<BidFailure, Unit>> close(String bidId);
 }

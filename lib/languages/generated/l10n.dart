@@ -3150,6 +3150,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Bid is closed`
+  String get bidClose {
+    return Intl.message(
+      'Bid is closed',
+      name: 'bidClose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close session`
+  String get closedBid {
+    return Intl.message(
+      'Close session',
+      name: 'closedBid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

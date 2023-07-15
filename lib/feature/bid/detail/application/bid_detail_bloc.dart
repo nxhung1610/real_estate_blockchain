@@ -7,6 +7,7 @@ import 'package:real_estate_blockchain/data/bid/domain/i_bid_repository.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/bid_auction_input.dart';
 import 'package:real_estate_blockchain/data/bid/domain/model/create_bid_input.dart';
+import 'package:real_estate_blockchain/data/post/domain/enum/processing_status.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/entities/real_estate.dart';
 import 'package:real_estate_blockchain/data/real_estate/domain/i_real_estate_repository.dart';
 import 'package:real_estate_blockchain/feature/core/module.dart';
@@ -31,6 +32,7 @@ class BidDetailBloc extends Bloc<BidDetailEvent, BidDetailState> {
     on<BidDetailEventOnCountDownTime>(_onCountDownTime);
     on<BidDetailEventOnBidEnd>(_onBidEnd);
     on<BidDetailEventOnBid>(_onBid);
+    on<BidDetailEventOnClose>(_onClose);
   }
 
   Timer? countdownTimer;
@@ -138,6 +140,34 @@ class BidDetailBloc extends Bloc<BidDetailEvent, BidDetailState> {
             ),
           );
           add(const BidDetailEvent.onStarted());
+        },
+      );
+    } on Exception catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      emit(state.copyWith(status: Status.failure(value: e)));
+    } finally {
+      emit(state.copyWith(status: const Status.idle()));
+    }
+  }
+
+  FutureOr<void> _onClose(
+    BidDetailEventOnClose event,
+    Emitter<BidDetailState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(status: const Status.loading()));
+      final res = await bidRepository.close(state.bid!.id.toString());
+      res.fold(
+        (l) => throw l,
+        (r) {
+          emit(
+            state.copyWith(
+              status: Status.success(value: r),
+              bid: state.bid?.copyWith(
+                status: ProcessingStatus.close,
+              ),
+            ),
+          );
         },
       );
     } on Exception catch (e, trace) {

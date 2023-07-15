@@ -625,7 +625,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                 return DialogInfoPage(
                   child: Text(
                     s.isPostingEffectiveContent,
-                    style: context.textTheme.bodyMedium?.copyWith(),
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      color: AppColor.kNeutrals2,
+                    ),
                   ),
                 );
               },
@@ -679,7 +681,9 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                     children: [
                       Text(
                         s.howToPostContent1,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                       AppSize.mediumHeightDimens.verticalSpace,
                       Row(
@@ -696,13 +700,16 @@ class _WMessageOnResponseItemState extends State<WMessageOnResponseItem> {
                       Text(
                         s.note,
                         style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       AppSize.mediumHeightDimens.verticalSpace,
                       Text(
                         s.howToPostContent2,
-                        style: context.textTheme.bodyMedium?.copyWith(),
+                        style: context.textTheme.bodyMedium?.copyWith(
+                          color: AppColor.kNeutrals2,
+                        ),
                       ),
                     ],
                   ),

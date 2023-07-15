@@ -288,6 +288,7 @@ mixin _$BidDetailEvent {
     required TResult Function(Duration timeRemain) onCountDownTime,
     required TResult Function(num price) onBid,
     required TResult Function() onBidEnd,
+    required TResult Function() onClose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -296,6 +297,7 @@ mixin _$BidDetailEvent {
     TResult? Function(Duration timeRemain)? onCountDownTime,
     TResult? Function(num price)? onBid,
     TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -304,6 +306,7 @@ mixin _$BidDetailEvent {
     TResult Function(Duration timeRemain)? onCountDownTime,
     TResult Function(num price)? onBid,
     TResult Function()? onBidEnd,
+    TResult Function()? onClose,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -314,6 +317,7 @@ mixin _$BidDetailEvent {
         onCountDownTime,
     required TResult Function(BidDetailEventOnBid value) onBid,
     required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -322,6 +326,7 @@ mixin _$BidDetailEvent {
     TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult? Function(BidDetailEventOnBid value)? onBid,
     TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -330,6 +335,7 @@ mixin _$BidDetailEvent {
     TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult Function(BidDetailEventOnBid value)? onBid,
     TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -396,6 +402,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
     required TResult Function(Duration timeRemain) onCountDownTime,
     required TResult Function(num price) onBid,
     required TResult Function() onBidEnd,
+    required TResult Function() onClose,
   }) {
     return onStarted();
   }
@@ -407,6 +414,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
     TResult? Function(Duration timeRemain)? onCountDownTime,
     TResult? Function(num price)? onBid,
     TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
   }) {
     return onStarted?.call();
   }
@@ -418,6 +426,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
     TResult Function(Duration timeRemain)? onCountDownTime,
     TResult Function(num price)? onBid,
     TResult Function()? onBidEnd,
+    TResult Function()? onClose,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -434,6 +443,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
         onCountDownTime,
     required TResult Function(BidDetailEventOnBid value) onBid,
     required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
   }) {
     return onStarted(this);
   }
@@ -445,6 +455,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
     TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult? Function(BidDetailEventOnBid value)? onBid,
     TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
   }) {
     return onStarted?.call(this);
   }
@@ -456,6 +467,7 @@ class _$BidDetailEventOnStarted implements BidDetailEventOnStarted {
     TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult Function(BidDetailEventOnBid value)? onBid,
     TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
     required TResult orElse(),
   }) {
     if (onStarted != null) {
@@ -541,6 +553,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
     required TResult Function(Duration timeRemain) onCountDownTime,
     required TResult Function(num price) onBid,
     required TResult Function() onBidEnd,
+    required TResult Function() onClose,
   }) {
     return onCountDownTime(timeRemain);
   }
@@ -552,6 +565,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
     TResult? Function(Duration timeRemain)? onCountDownTime,
     TResult? Function(num price)? onBid,
     TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
   }) {
     return onCountDownTime?.call(timeRemain);
   }
@@ -563,6 +577,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
     TResult Function(Duration timeRemain)? onCountDownTime,
     TResult Function(num price)? onBid,
     TResult Function()? onBidEnd,
+    TResult Function()? onClose,
     required TResult orElse(),
   }) {
     if (onCountDownTime != null) {
@@ -579,6 +594,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
         onCountDownTime,
     required TResult Function(BidDetailEventOnBid value) onBid,
     required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
   }) {
     return onCountDownTime(this);
   }
@@ -590,6 +606,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
     TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult? Function(BidDetailEventOnBid value)? onBid,
     TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
   }) {
     return onCountDownTime?.call(this);
   }
@@ -601,6 +618,7 @@ class _$BidDetailEventOnCountDownTime implements BidDetailEventOnCountDownTime {
     TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult Function(BidDetailEventOnBid value)? onBid,
     TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
     required TResult orElse(),
   }) {
     if (onCountDownTime != null) {
@@ -689,6 +707,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
     required TResult Function(Duration timeRemain) onCountDownTime,
     required TResult Function(num price) onBid,
     required TResult Function() onBidEnd,
+    required TResult Function() onClose,
   }) {
     return onBid(price);
   }
@@ -700,6 +719,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
     TResult? Function(Duration timeRemain)? onCountDownTime,
     TResult? Function(num price)? onBid,
     TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
   }) {
     return onBid?.call(price);
   }
@@ -711,6 +731,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
     TResult Function(Duration timeRemain)? onCountDownTime,
     TResult Function(num price)? onBid,
     TResult Function()? onBidEnd,
+    TResult Function()? onClose,
     required TResult orElse(),
   }) {
     if (onBid != null) {
@@ -727,6 +748,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
         onCountDownTime,
     required TResult Function(BidDetailEventOnBid value) onBid,
     required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
   }) {
     return onBid(this);
   }
@@ -738,6 +760,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
     TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult? Function(BidDetailEventOnBid value)? onBid,
     TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
   }) {
     return onBid?.call(this);
   }
@@ -749,6 +772,7 @@ class _$BidDetailEventOnBid implements BidDetailEventOnBid {
     TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult Function(BidDetailEventOnBid value)? onBid,
     TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
     required TResult orElse(),
   }) {
     if (onBid != null) {
@@ -809,6 +833,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
     required TResult Function(Duration timeRemain) onCountDownTime,
     required TResult Function(num price) onBid,
     required TResult Function() onBidEnd,
+    required TResult Function() onClose,
   }) {
     return onBidEnd();
   }
@@ -820,6 +845,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
     TResult? Function(Duration timeRemain)? onCountDownTime,
     TResult? Function(num price)? onBid,
     TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
   }) {
     return onBidEnd?.call();
   }
@@ -831,6 +857,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
     TResult Function(Duration timeRemain)? onCountDownTime,
     TResult Function(num price)? onBid,
     TResult Function()? onBidEnd,
+    TResult Function()? onClose,
     required TResult orElse(),
   }) {
     if (onBidEnd != null) {
@@ -847,6 +874,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
         onCountDownTime,
     required TResult Function(BidDetailEventOnBid value) onBid,
     required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
   }) {
     return onBidEnd(this);
   }
@@ -858,6 +886,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
     TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult? Function(BidDetailEventOnBid value)? onBid,
     TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
   }) {
     return onBidEnd?.call(this);
   }
@@ -869,6 +898,7 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
     TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
     TResult Function(BidDetailEventOnBid value)? onBid,
     TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
     required TResult orElse(),
   }) {
     if (onBidEnd != null) {
@@ -880,4 +910,125 @@ class _$BidDetailEventOnBidEnd implements BidDetailEventOnBidEnd {
 
 abstract class BidDetailEventOnBidEnd implements BidDetailEvent {
   const factory BidDetailEventOnBidEnd() = _$BidDetailEventOnBidEnd;
+}
+
+/// @nodoc
+abstract class _$$BidDetailEventOnCloseCopyWith<$Res> {
+  factory _$$BidDetailEventOnCloseCopyWith(_$BidDetailEventOnClose value,
+          $Res Function(_$BidDetailEventOnClose) then) =
+      __$$BidDetailEventOnCloseCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BidDetailEventOnCloseCopyWithImpl<$Res>
+    extends _$BidDetailEventCopyWithImpl<$Res, _$BidDetailEventOnClose>
+    implements _$$BidDetailEventOnCloseCopyWith<$Res> {
+  __$$BidDetailEventOnCloseCopyWithImpl(_$BidDetailEventOnClose _value,
+      $Res Function(_$BidDetailEventOnClose) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BidDetailEventOnClose implements BidDetailEventOnClose {
+  const _$BidDetailEventOnClose();
+
+  @override
+  String toString() {
+    return 'BidDetailEvent.onClose()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$BidDetailEventOnClose);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onStarted,
+    required TResult Function(Duration timeRemain) onCountDownTime,
+    required TResult Function(num price) onBid,
+    required TResult Function() onBidEnd,
+    required TResult Function() onClose,
+  }) {
+    return onClose();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onStarted,
+    TResult? Function(Duration timeRemain)? onCountDownTime,
+    TResult? Function(num price)? onBid,
+    TResult? Function()? onBidEnd,
+    TResult? Function()? onClose,
+  }) {
+    return onClose?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onStarted,
+    TResult Function(Duration timeRemain)? onCountDownTime,
+    TResult Function(num price)? onBid,
+    TResult Function()? onBidEnd,
+    TResult Function()? onClose,
+    required TResult orElse(),
+  }) {
+    if (onClose != null) {
+      return onClose();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BidDetailEventOnStarted value) onStarted,
+    required TResult Function(BidDetailEventOnCountDownTime value)
+        onCountDownTime,
+    required TResult Function(BidDetailEventOnBid value) onBid,
+    required TResult Function(BidDetailEventOnBidEnd value) onBidEnd,
+    required TResult Function(BidDetailEventOnClose value) onClose,
+  }) {
+    return onClose(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BidDetailEventOnStarted value)? onStarted,
+    TResult? Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
+    TResult? Function(BidDetailEventOnBid value)? onBid,
+    TResult? Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult? Function(BidDetailEventOnClose value)? onClose,
+  }) {
+    return onClose?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BidDetailEventOnStarted value)? onStarted,
+    TResult Function(BidDetailEventOnCountDownTime value)? onCountDownTime,
+    TResult Function(BidDetailEventOnBid value)? onBid,
+    TResult Function(BidDetailEventOnBidEnd value)? onBidEnd,
+    TResult Function(BidDetailEventOnClose value)? onClose,
+    required TResult orElse(),
+  }) {
+    if (onClose != null) {
+      return onClose(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BidDetailEventOnClose implements BidDetailEvent {
+  const factory BidDetailEventOnClose() = _$BidDetailEventOnClose;
 }

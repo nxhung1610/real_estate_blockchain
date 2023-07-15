@@ -69,9 +69,9 @@ class WBiddingHistoryItem extends StatelessWidget {
                       ),
                       4.h.verticalSpace,
                       Text(
-                        NumberFormat.currency(locale: "vi_VN", symbol: 'đ')
-                            .format(bidder.price)
-                            .toString(),
+                        NumberFormat.compactLong(
+                          locale: "vi_VN",
+                        ).format(bidder.price).toString(),
                         style: context.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColor.kPrimary1,

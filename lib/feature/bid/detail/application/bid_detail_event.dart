@@ -7,4 +7,5 @@ class BidDetailEvent with _$BidDetailEvent {
       BidDetailEventOnCountDownTime;
   const factory BidDetailEvent.onBid(num price) = BidDetailEventOnBid;
   const factory BidDetailEvent.onBidEnd() = BidDetailEventOnBidEnd;
+  const factory BidDetailEvent.onClose() = BidDetailEventOnClose;
 }

@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Be a First bidder"),
         "bedRoom": MessageLookupByLibrary.simpleMessage("Bed Room"),
         "bid": MessageLookupByLibrary.simpleMessage("Bid"),
+        "bidClose": MessageLookupByLibrary.simpleMessage("Bid is closed"),
         "bidIncreasement":
             MessageLookupByLibrary.simpleMessage("Bid increasement"),
         "bidIncrement": MessageLookupByLibrary.simpleMessage("Bid Increment"),
@@ -121,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseFromAFewOfTheAmenitiesCurrentlyOnYourProperty":
             MessageLookupByLibrary.simpleMessage(
                 "Choose from a few of the amenities currently on your property"),
+        "closedBid": MessageLookupByLibrary.simpleMessage("Close session"),
         "combinePhoneNumberOrPasswordInvalid":
             MessageLookupByLibrary.simpleMessage(
                 "Combine phone number or password invalid"),

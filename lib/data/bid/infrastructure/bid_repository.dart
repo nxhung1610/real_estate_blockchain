@@ -179,4 +179,23 @@ class BidRepository implements IBidRepository {
       return left(BidFailure());
     }
   }
+
+  @override
+  Future<Either<BidFailure, Unit>> close(String bidId) async {
+    try {
+      final res = await _apiRemote.get(
+        '/auction/close/$bidId',
+        parse: (data) {
+          return unit;
+        },
+      );
+      if (!res.success) {
+        throw res.errorKey!;
+      }
+      return right(unit);
+    } catch (e, trace) {
+      printLog(this, message: e, error: e, trace: trace);
+      return left(BidFailure());
+    }
+  }
 }
