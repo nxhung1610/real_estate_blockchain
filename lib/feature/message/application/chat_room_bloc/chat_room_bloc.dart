@@ -37,6 +37,7 @@ class ChatRoomBloc extends Bloc<ChatRoomEvent, ChatRoomState> {
     @factoryParam this.params,
     this.messageRepository,
   ) : super(ChatRoomState.initial(params.room)) {
+    params.messageBloc.add(const MessageEvent.onLoadRoms());
     _mapEventToState();
   }
 

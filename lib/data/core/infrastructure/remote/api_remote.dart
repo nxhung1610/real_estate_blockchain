@@ -50,7 +50,7 @@ class ApiRemote {
           ..interceptors.addAll(
             [
               JWTInterceptor(_onExpireToken, _refreshToken, dioToken, _token),
-              CurlLoggerDioInterceptor()
+              // CurlLoggerDioInterceptor()
             ],
           )
 

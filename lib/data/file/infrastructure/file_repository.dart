@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_isolate/flutter_isolate.dart';
 
 import 'package:injectable/injectable.dart';
+import 'package:mime/mime.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:real_estate_blockchain/data/core/data.dart';
 import 'package:real_estate_blockchain/data/file/data.dart';
@@ -35,7 +36,7 @@ class FileRepository implements IFileRepository {
 
       final file = MultipartFile.fromBytes(
         resultPath,
-        filename: '${tempPath.path}/${const Uuid().v4()}',
+        filename: '${tempPath.path}/${const Uuid().v4()}.jpeg',
       );
       final fromData = FormData.fromMap({
         'file': file,
@@ -43,10 +44,13 @@ class FileRepository implements IFileRepository {
       final res = await _apiRemote.post(
         FileConstant.upload,
         data: fromData,
-        options: Options(headers: {
-          'Content-Type': 'multipart/form-data',
-          "Accept": "multipart/form-data",
-        }),
+        options: Options(
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': '*/*',
+            // "Accept": "multipart/form-data",
+          },
+        ),
         parse: (data) {
           return ImageResponse.fromJson(data);
         },
