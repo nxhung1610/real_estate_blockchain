@@ -71,10 +71,11 @@ class _HomePageState extends State<HomePage>
                             // dropdownElevation: 0,
 
                             buttonStyleData: const ButtonStyleData(
-                              elevation: 0,
-                              width: double.infinity,
-                              padding: EdgeInsets.zero,
-                            ),
+                                elevation: 0,
+                                width: double.infinity,
+                                padding: EdgeInsets.zero,
+                                overlayColor: MaterialStatePropertyAll(
+                                    Colors.transparent)),
                             dropdownStyleData: DropdownStyleData(
                               padding: EdgeInsets.zero,
                               elevation: 0,
@@ -160,17 +161,50 @@ class _HomePageState extends State<HomePage>
           //   },
           // ),
           // 12.w.horizontalSpace,
-          IconButton(
-            highlightColor: Colors.transparent,
-            splashRadius: AppSize.extraRadius,
-            icon: Assets.icons.icNotificationLight.svg(
-              width: iconSize,
-              height: iconSize,
-              color: iconColor,
-            ),
-            onPressed: () {
-              context.push($appRoute.notification.url);
-            },
+          Stack(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  context.push($appRoute.notification.url);
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColor.kNeutrals5.withOpacity(0.1),
+                        blurRadius: 0.5.r,
+                        spreadRadius: 0.5.r,
+                      )
+                    ],
+                    color: context.theme.colorScheme.background,
+                    shape: BoxShape.circle,
+                    border: const Border.fromBorderSide(
+                      BorderSide(
+                        color: AppColor.kNeutrals7,
+                      ),
+                    ),
+                  ),
+                  child: Assets.icons.icNotificationLight.svg(
+                    width: iconSize,
+                    height: iconSize,
+                    color: iconColor,
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 10.r,
+                top: 10.r,
+                child: Container(
+                  width: 6.r,
+                  height: 6.r,
+                  decoration: const BoxDecoration(
+                    color: AppColor.kPrimary1,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              )
+            ],
           ),
         ],
       ),
@@ -282,37 +316,44 @@ class __NewFeedState extends State<_NewFeed> {
               ],
             ),
           ),
-          // Positioned.fill(
-          //   child: Align(
-          //     alignment: Alignment.centerRight,
-          //     child: Padding(
-          //       padding: EdgeInsets.all(AppSize.mediumWidthDimens),
-          //       child: Container(
-          //         decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-          //           color: AppColor.kBackgroundButton,
-          //         ),
-          //         child: Material(
-          //           color: Colors.transparent,
-          //           child: InkWell(
-          //             onTap: () {},
-          //             borderRadius: BorderRadius.circular(AppSize.mediumRadius),
-          //             child: Padding(
-          //               padding: EdgeInsets.all(
-          //                 AppSize.mediumWidthDimens,
-          //               ),
-          //               child: Assets.icons.icFilterLight.svg(
-          //                 width: context.theme.iconTheme.size,
-          //                 height: context.theme.iconTheme.size,
-          //                 color: AppColor.kNeutrals_.shade50,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.all(AppSize.mediumWidthDimens),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+                    color: AppColor.kBackgroundButton,
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () async {
+                        final filter = await HouseFilterPage.show(context);
+                        if (filter != null && mounted) {
+                          context
+                              .read<HomeBloc>()
+                              .add(HomeEvent.onFilterChange(filter: filter));
+                        }
+                      },
+                      borderRadius: BorderRadius.circular(AppSize.mediumRadius),
+                      child: Padding(
+                        padding: EdgeInsets.all(
+                          AppSize.mediumWidthDimens,
+                        ),
+                        child: Assets.icons.icFilterLight.svg(
+                          width: context.theme.iconTheme.size,
+                          height: context.theme.iconTheme.size,
+                          color: AppColor.kNeutrals_.shade50,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -329,7 +370,7 @@ class __NewFeedState extends State<_NewFeed> {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(
-              top: AppSize.extraLargeHeightDimens,
+              top: AppSize.smallHeightDimens,
               left: AppSize.extraWidthDimens,
               right: AppSize.extraWidthDimens,
             ),

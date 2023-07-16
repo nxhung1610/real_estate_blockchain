@@ -118,6 +118,8 @@ class RealEstateRepository extends IRealEstateRepository {
     RealEstateFilterInput? filter,
   }) async {
     try {
+      filter ??= RealEstateFilterInput();
+      filter = filter.copyWith(provinceId: provice?.code ?? '');
       final res = await _apiRemote.post<List<PostRealEstateResponse>>(
         RealEstateConstants.newfeeds,
         url: AppConfig.instance.baseUrl,
@@ -126,11 +128,7 @@ class RealEstateRepository extends IRealEstateRepository {
               .map((e) => PostRealEstateResponse.fromJson(e))
               .toList();
         },
-        data: provice != null
-            ? RealFilterRequest(
-                provinceId: provice.code,
-              ).toJson()
-            : {},
+        data: RealFilterRequest.fromModel(filter),
       );
       if (!res.success) throw res.errorKey!;
       return right(res.data?.map((e) => e.toModel()).toList() ?? []);

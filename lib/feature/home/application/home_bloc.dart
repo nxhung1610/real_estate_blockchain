@@ -66,8 +66,31 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(state.copyWith(status: const Status.idle()));
       }
     });
-    on<_HomeEventOnFilterChange>((event, emit) {
-      try {} catch (e, trace) {
+    on<_HomeEventOnFilterChange>((event, emit) async {
+      try {
+        try {
+          final provice = state.provice;
+          emit(
+            state.copyWith(
+              status: const Status.loading(),
+              provice: provice,
+            ),
+          );
+
+          final estates = await _realEstateRepository.newfeeds(
+            provice:
+                provice == const Province(fullName: 'Tất cả', fullNameEn: 'All')
+                    ? null
+                    : provice,
+            filter: event.filter,
+          );
+          estates.fold((l) => throw l, (r) => emit(state.copyWith(estates: r)));
+        } catch (e) {
+          emit(state.copyWith(status: Status.failure(value: e)));
+        } finally {
+          emit(state.copyWith(status: const Status.idle()));
+        }
+      } catch (e, trace) {
         printLog(this, message: e, trace: trace, error: e);
       }
     });
