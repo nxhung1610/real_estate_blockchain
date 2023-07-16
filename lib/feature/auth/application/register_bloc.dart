@@ -206,7 +206,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       );
       final value =
           await FirebaseAuth.instance.signInWithCredential(credential);
-      emit(state.copyWith(status: Status.success(value: value)));
+      // emit(state.copyWith(status: Status.success(value: value)));
+      add(const RegisterEvent.onCodeVerifyComplete());
     } catch (e, trace) {
       printLog(this, message: e, error: e, trace: trace);
       add(
