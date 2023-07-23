@@ -440,6 +440,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Submit Your Bid At"),
         "support": MessageLookupByLibrary.simpleMessage("Support"),
+        "supportContact":
+            MessageLookupByLibrary.simpleMessage("Support contact"),
         "supportList": MessageLookupByLibrary.simpleMessage("Support list"),
         "termsOfUse": MessageLookupByLibrary.simpleMessage("Terms of use"),
         "thePreviousBrowsingAuctionWasRejected":

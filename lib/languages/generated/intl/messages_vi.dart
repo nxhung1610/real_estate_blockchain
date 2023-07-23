@@ -444,6 +444,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "submitYourBidAt":
             MessageLookupByLibrary.simpleMessage("Đấu giá thầu của tại"),
         "support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
+        "supportContact":
+            MessageLookupByLibrary.simpleMessage("Liên hệ hỗ trợ"),
         "supportList": MessageLookupByLibrary.simpleMessage("Danh mục hỗ trợ"),
         "termsOfUse":
             MessageLookupByLibrary.simpleMessage("Điều khoản sử dụng"),

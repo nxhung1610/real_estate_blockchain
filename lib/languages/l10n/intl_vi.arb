@@ -329,5 +329,6 @@
   "howDoIWantToDeleteMyAccount" : "Xóa tài khoản của tôi bằng cách nào?",
   "howDoIWantToDeleteMyAccountContent" : "\tTrong trường hợp bạn muốn xóa tài khoản & các thông tin của bạn trên Realust:\r\n\r\n* Bạn truy cập vào Realust , kích vào phần “Cá nhân” (phía dưới cùng, bên phải màn hình) để chuyển sang màn hình “Cá nhân”\r\n\r\n* Sau đó bạn kích vào phần “Hỗ trợ” và chọn “Xóa tài khoản”.",
   "bidClose" : "Phiên đấu giá đã kết thúc",
-  "closedBid" : "Chốt phiên"
+  "closedBid" : "Chốt phiên",
+  "supportContact" : "Liên hệ hỗ trợ"
 }

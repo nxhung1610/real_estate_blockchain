@@ -3170,6 +3170,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Support contact`
+  String get supportContact {
+    return Intl.message(
+      'Support contact',
+      name: 'supportContact',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

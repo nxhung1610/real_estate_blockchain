@@ -329,7 +329,6 @@
   "howDoIWantToDeleteMyAccount" : "How to delete my account?",
   "howDoIWantToDeleteMyAccountContent" : "\tIn case you want to delete your account & information on Realust:\r\n\r\n* You go to Realust , click on the “Personal” section (bottom right of the screen) to switch to the “Personal” screen\r\n\r\n* Then you click on the “Support” section and select “Delete Account”.",
   "bidClose" : "Bid is closed",
-  "closedBid" : "Close session"
-
-  
+  "closedBid" : "Close session",
+  "supportContact" : "Support contact"
 }

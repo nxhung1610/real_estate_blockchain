@@ -117,7 +117,7 @@ class UserChangePasswordBloc
     UserChangePasswordEventOnChangeVisibleOldPassword event,
     Emitter<UserChangePasswordState> emit,
   ) {
-    emit(state.copyWith(newPasswordVisible: !state.passwordVisible));
+    emit(state.copyWith(passwordVisible: !state.passwordVisible));
   }
 
   FutureOr<void> _onValid(

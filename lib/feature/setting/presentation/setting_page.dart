@@ -15,7 +15,9 @@ import 'package:real_estate_blockchain/feature/webview/presentation/webview_page
 import 'package:real_estate_blockchain/languages/languages.dart';
 import 'package:real_estate_blockchain/utils/extension/context_extensions.dart';
 import 'package:real_estate_blockchain/utils/extension/iterable_extensions.dart';
+import 'package:real_estate_blockchain/utils/logger.dart';
 import 'package:real_estate_blockchain/utils/utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../application/setting_bloc.dart';
 
@@ -179,6 +181,23 @@ class _SettingPageState extends State<SettingPage> {
                           );
                         },
                       ));
+                    },
+                  ),
+                  _WidgetItem(
+                    type: const _WidgetItemType.none(),
+                    title: s.supportContact,
+                    onTap: () async {
+                      try {
+                        final Uri phoneUri =
+                            Uri(scheme: 'tel', path: '1900 1881');
+                        if (await canLaunchUrl(phoneUri)) {
+                          await launchUrl(phoneUri);
+                        } else {
+                          throw 'Could not launch phone call';
+                        }
+                      } catch (e, trace) {
+                        printLog(this, message: e, error: e, trace: trace);
+                      }
                     },
                   ),
                 ],
