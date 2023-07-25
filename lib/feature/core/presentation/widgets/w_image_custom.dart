@@ -139,7 +139,7 @@ class _ErrorWidgget extends StatelessWidget {
       color: AppColor.kNeutrals_.shade500,
       child: Center(
         child: Assets.icons.icImageError.svg(
-          color: Colors.white,
+          color: Colors.grey,
           width: 25.r,
           height: 25.r,
         ),

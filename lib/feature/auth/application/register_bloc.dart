@@ -141,15 +141,15 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           add(RegisterEvent.onAddVerificationId(verificationId));
         },
         codeAutoRetrievalTimeout: (verificationId) {
-          add(const RegisterEvent.onCodeVerifyFailed(
-              value: ForgotPasswordFailure.codeAutoRetrievalTimeout()));
-          add(const RegisterEvent.onAddVerificationId(''));
-          printLog(
-            this,
-            message: "codeAutoRetrievalTimeout",
-            error: "Code retrieval timeout",
-            trace: StackTrace.current,
-          );
+          // add(const RegisterEvent.onCodeVerifyFailed(
+          //     value: ForgotPasswordFailure.codeAutoRetrievalTimeout()));
+          // add(const RegisterEvent.onAddVerificationId(''));
+          // printLog(
+          //   this,
+          //   message: "codeAutoRetrievalTimeout",
+          //   error: "Code retrieval timeout",
+          //   trace: StackTrace.current,
+          // );
         },
       );
     } on Exception catch (e, trace) {

@@ -99,7 +99,9 @@ class _ValidPhoneNumberState extends State<ValidPhoneNumber>
           AppSize.mediumHeightDimens.verticalSpace,
           BlocSelector<RegisterBloc, RegisterState, bool>(
             selector: (state) {
-              return state.code?.isNotEmpty == true && state.code!.length >= 4;
+              return state.code?.isNotEmpty == true &&
+                  state.code!.length >= 4 &&
+                  state.verificationId != null;
             },
             builder: (context, state) {
               return ButtonApp(

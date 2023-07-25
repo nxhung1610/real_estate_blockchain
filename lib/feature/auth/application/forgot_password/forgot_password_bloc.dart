@@ -72,15 +72,15 @@ class ForgotPasswordBloc
           add(ForgotPasswordEvent.onAddVerificationId(verificationId));
         },
         codeAutoRetrievalTimeout: (verificationId) {
-          add(const ForgotPasswordEvent.onCodeVerifyFailed(
-              value: ForgotPasswordFailure.codeAutoRetrievalTimeout()));
-          add(const ForgotPasswordEvent.onAddVerificationId(''));
-          printLog(
-            this,
-            message: "codeAutoRetrievalTimeout",
-            error: "Code retrieval timeout",
-            trace: StackTrace.current,
-          );
+          // add(const ForgotPasswordEvent.onCodeVerifyFailed(
+          //     value: ForgotPasswordFailure.codeAutoRetrievalTimeout()));
+          // add(const ForgotPasswordEvent.onAddVerificationId(''));
+          // printLog(
+          //   this,
+          //   message: "codeAutoRetrievalTimeout",
+          //   error: "Code retrieval timeout",
+          //   trace: StackTrace.current,
+          // );
         },
       );
     } on Exception catch (e, trace) {
